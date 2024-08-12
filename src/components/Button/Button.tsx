@@ -29,7 +29,7 @@ const Button: React.FC<ButtonProps> = ({
       ? "px-2 py-2 text-xs"
       : size === "medium"
         ? "px-3 py-2 text-sm"
-        : "px-5 py-2 text-lg";
+        : "px-5 py-2 !text-lg";
 
   const buttonRadius =
     radius === "small"
