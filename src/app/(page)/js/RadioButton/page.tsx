@@ -36,8 +36,10 @@ const RadioButton = ({
   // 색상 스타일 적용
   const colorClasses: { [key: string]: string } = {
     sky: "bg-[#9AC5E5] border-[#9AC5E5]",
-    blue: "bg-[#558FFF] border-[#558FFF]",
     grey: "bg-[#DCDCDD] border-[#DCDCDD]",
+    blue: "bg-[#558FFF] border-[#558FFF]",
+    purple: "bg-[#C294F0] border-[#C294F0]",
+    green: "bg-[#7EEFAF] border-[#7EEFAF]",
     yellow: "bg-[#EDCE7B] border-[#EDCE7B]",
     red: "bg-[#FF7676] border-[#FF7676]",
   };
@@ -95,7 +97,7 @@ const RadioGroup = () => {
         onChange={handleChange}
         label="Option 2"
         size="medium"
-        color="blue"
+        color="grey"
       />
       <RadioButton
         name="options"
@@ -104,7 +106,7 @@ const RadioGroup = () => {
         onChange={handleChange}
         label="Option 3"
         size="large"
-        color="grey"
+        color="blue"
       />
       <RadioButton
         name="options"
@@ -112,8 +114,8 @@ const RadioGroup = () => {
         checked={selectedValue === "option4"}
         onChange={handleChange}
         label="Option 4"
-        size="medium"
-        color="yellow"
+        size="small"
+        color="purple"
       />
       <RadioButton
         name="options"
@@ -121,6 +123,24 @@ const RadioGroup = () => {
         checked={selectedValue === "option5"}
         onChange={handleChange}
         label="Option 5"
+        size="medium"
+        color="green"
+      />
+      <RadioButton
+        name="options"
+        value="option6"
+        checked={selectedValue === "option6"}
+        onChange={handleChange}
+        label="Option 6"
+        size="large"
+        color="yellow"
+      />
+      <RadioButton
+        name="options"
+        value="option7"
+        checked={selectedValue === "option7"}
+        onChange={handleChange}
+        label="Option 7"
         size="small"
         color="red"
       />
