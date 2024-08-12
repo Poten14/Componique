@@ -1,86 +1,165 @@
 "use client";
-
-import React, { useState } from "react";
 import RadioButton1 from "@/components/RadioButton/RadioButton1";
+import RadioButton2 from "@/components/RadioButton/RadioButton2";
+import React, { useState } from "react";
 
-const RadioButtonPage = () => {
-  const [selectedValue, setSelectedValue] = useState<string>("");
+const Page = () => {
+  const [basicSelectedValue, setBasicSelectedValue] = useState("");
+  const [labelSelectedValue, setLabelSelectedValue] = useState("");
 
-  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setSelectedValue(event.target.value);
+  const handleBasicChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setBasicSelectedValue(event.target.value);
+  };
+
+  const handleLabelChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setLabelSelectedValue(event.target.value);
   };
 
   return (
-    <div className="p-4">
-      <h1 className="mb-4 text-xl font-bold">라디오 버튼 예시</h1>
-      <div className="space-y-4">
-        <RadioButton1
-          name="options"
-          value="option1"
-          checked={selectedValue === "option1"}
-          onChange={handleChange}
-          label="Option 1"
-          size="small"
-          color="sky"
-        />
-        <RadioButton1
-          name="options"
-          value="option2"
-          checked={selectedValue === "option2"}
-          onChange={handleChange}
-          label="Option 2"
-          size="medium"
-          color="grey"
-        />
-        <RadioButton1
-          name="options"
-          value="option3"
-          checked={selectedValue === "option3"}
-          onChange={handleChange}
-          label="Option 3"
-          size="large"
-          color="blue"
-        />
-        <RadioButton1
-          name="options"
-          value="option4"
-          checked={selectedValue === "option4"}
-          onChange={handleChange}
-          label="Option 4"
-          size="small"
-          color="purple"
-        />
-        <RadioButton1
-          name="options"
-          value="option5"
-          checked={selectedValue === "option5"}
-          onChange={handleChange}
-          label="Option 5"
-          size="medium"
-          color="green"
-        />
-        <RadioButton1
-          name="options"
-          value="option6"
-          checked={selectedValue === "option6"}
-          onChange={handleChange}
-          label="Option 6"
-          size="large"
-          color="yellow"
-        />
-        <RadioButton1
-          name="options"
-          value="option7"
-          checked={selectedValue === "option7"}
-          onChange={handleChange}
-          label="Option 7"
-          size="small"
-          color="red"
-        />
-      </div>
-      <p className="mt-4">선택된 옵션: {selectedValue}</p>
+    <div className="ml-4 mt-4">
+      <h1 className="mb-4 text-lg font-semibold">
+        기본 라디오 버튼 - RadioButton1
+      </h1>
+      <RadioButton1
+        name="basicOptions"
+        value="option1"
+        checked={basicSelectedValue === "option1"}
+        onChange={handleBasicChange}
+        label="Option 1"
+        size="small"
+        color="sky"
+      />
+      <RadioButton1
+        name="basicOptions"
+        value="option2"
+        checked={basicSelectedValue === "option2"}
+        onChange={handleBasicChange}
+        label="Option 2"
+        size="small"
+        color="grey"
+      />
+      <RadioButton1
+        name="basicOptions"
+        value="option3"
+        checked={basicSelectedValue === "option3"}
+        onChange={handleBasicChange}
+        label="Option 3"
+        size="medium"
+        color="blue"
+      />
+      <RadioButton1
+        name="basicOptions"
+        value="option4"
+        checked={basicSelectedValue === "option4"}
+        onChange={handleBasicChange}
+        label="Option 4"
+        size="medium"
+        color="purple"
+      />
+      <RadioButton1
+        name="basicOptions"
+        value="option5"
+        checked={basicSelectedValue === "option5"}
+        onChange={handleBasicChange}
+        label="Option 5"
+        size="medium"
+        color="green"
+      />
+      <RadioButton1
+        name="basicOptions"
+        value="option6"
+        checked={basicSelectedValue === "option6"}
+        onChange={handleBasicChange}
+        label="Option 6"
+        size="large"
+        color="yellow"
+      />
+      <RadioButton1
+        name="basicOptions"
+        value="option7"
+        checked={basicSelectedValue === "option7"}
+        onChange={handleBasicChange}
+        label="Option 7"
+        size="large"
+        color="red"
+      />
+      <br />
+      <h2 className="mb-4 text-lg font-semibold">
+        라벨이 포함된 라디오 버튼 예시 - RadioButton2
+      </h2>
+      <RadioButton2
+        name="labelOptions" // 구분된 name 속성
+        value="Option1"
+        checked={labelSelectedValue === "Option1"}
+        onChange={handleLabelChange}
+        label="Option 1"
+        description="옵션 A를 위한 설명"
+        size="medium"
+        color="sky"
+      />
+
+      <RadioButton2
+        name="labelOptions"
+        value="Option2"
+        checked={labelSelectedValue === "Option2"}
+        onChange={handleLabelChange}
+        label="Option 2"
+        description="옵션 B를 위한 설명"
+        size="medium"
+        color="grey"
+      />
+
+      <RadioButton2
+        name="labelOptions"
+        value="option3"
+        checked={labelSelectedValue === "option3"}
+        onChange={handleLabelChange}
+        label="Option 3"
+        description="옵션 C에 대한 설명"
+        size="medium"
+        color="blue"
+      />
+      <RadioButton2
+        name="labelOptions"
+        value="option4"
+        checked={labelSelectedValue === "option4"}
+        onChange={handleLabelChange}
+        label="Option 4"
+        description="옵션 D에 대한 설명"
+        size="medium"
+        color="purple"
+      />
+      <RadioButton2
+        name="labelOptions"
+        value="option5"
+        checked={labelSelectedValue === "option5"}
+        onChange={handleLabelChange}
+        label="Option 5"
+        description="This is a script for option5"
+        size="medium"
+        color="green"
+      />
+      <RadioButton2
+        name="labelOptions"
+        value="option6"
+        checked={labelSelectedValue === "option6"}
+        onChange={handleLabelChange}
+        label="Option 6"
+        description="This is a script for option5"
+        size="large"
+        color="yellow"
+      />
+      <RadioButton2
+        name="labelOptions"
+        value="option7"
+        checked={labelSelectedValue === "option7"}
+        onChange={handleLabelChange}
+        label="Option 7"
+        description="This is a description for option5"
+        size="large"
+        color="red"
+      />
     </div>
   );
 };
-
-export default RadioButtonPage;
+export default Page;
