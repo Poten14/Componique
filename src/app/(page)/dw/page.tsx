@@ -34,6 +34,24 @@ const dw = () => {
         <Button radius="full">Radius Full Button</Button>
         <Button radius="none">Radius None Button</Button>
       </div>
+      <div className="space-x-4 space-y-4">
+        <Button variant="solid">Solid Button</Button>
+        <Button variant="border">Border Button</Button>
+        <Button variant="border" color="secondary">
+          Border Secondary Button
+        </Button>
+        <Button variant="flat">Flat Button</Button>
+        <Button variant="flat" color="warning">
+          Flat Warning Button
+        </Button>
+        <Button variant="light">Light Button</Button>
+        <Button variant="light" color="purple" radius="full">
+          Light Purple Full Button
+        </Button>
+        <Button variant="light" color="warning" radius="none">
+          Light warning None Button
+        </Button>
+      </div>
     </>
   );
 };
