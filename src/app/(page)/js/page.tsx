@@ -1,11 +1,13 @@
 "use client";
 import RadioButton1 from "@/components/RadioButton/RadioButton1";
 import RadioButton2 from "@/components/RadioButton/RadioButton2";
+import RadioButton3 from "@/components/RadioButton/RadioButton3";
 import React, { useState } from "react";
 
 const Page = () => {
   const [basicSelectedValue, setBasicSelectedValue] = useState("");
   const [labelSelectedValue, setLabelSelectedValue] = useState("");
+  const [inlineSelectedValue, setInlineSelectedValue] = useState("");
 
   const handleBasicChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setBasicSelectedValue(event.target.value);
@@ -13,6 +15,10 @@ const Page = () => {
 
   const handleLabelChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setLabelSelectedValue(event.target.value);
+  };
+
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setInlineSelectedValue(event.target.value);
   };
 
   return (
@@ -85,7 +91,7 @@ const Page = () => {
       />
       <br />
       <h2 className="mb-4 text-lg font-semibold">
-        라벨이 포함된 라디오 버튼 예시 - RadioButton2
+        라벨이 포함된 라디오 버튼 - RadioButton2
       </h2>
       <RadioButton2
         name="labelOptions" // 구분된 name 속성
@@ -94,7 +100,7 @@ const Page = () => {
         onChange={handleLabelChange}
         label="Option 1"
         description="옵션 A를 위한 설명"
-        size="medium"
+        size="small"
         color="sky"
       />
 
@@ -105,7 +111,7 @@ const Page = () => {
         onChange={handleLabelChange}
         label="Option 2"
         description="옵션 B를 위한 설명"
-        size="medium"
+        size="small"
         color="grey"
       />
 
@@ -156,6 +162,73 @@ const Page = () => {
         onChange={handleLabelChange}
         label="Option 7"
         description="This is a description for option5"
+        size="large"
+        color="red"
+      />
+      <br />
+      <h1 className="mb-4 text-lg font-semibold">
+        인라인 라디오 버튼 - RadioButton3
+      </h1>
+      <RadioButton3
+        name="basicOptions"
+        value="option1"
+        checked={inlineSelectedValue === "option1"}
+        onChange={handleChange}
+        label="Option 1"
+        size="small"
+        color="sky"
+      />
+      <RadioButton3
+        name="basicOptions"
+        value="option2"
+        checked={inlineSelectedValue === "option2"}
+        onChange={handleChange}
+        label="Option 2"
+        size="small"
+        color="grey"
+      />
+      <RadioButton3
+        name="basicOptions"
+        value="option3"
+        checked={inlineSelectedValue === "option3"}
+        onChange={handleChange}
+        label="Option 3"
+        size="medium"
+        color="blue"
+      />
+      <RadioButton3
+        name="basicOptions"
+        value="option4"
+        checked={inlineSelectedValue === "option4"}
+        onChange={handleChange}
+        label="Option 4"
+        size="medium"
+        color="purple"
+      />
+      <RadioButton3
+        name="basicOptions"
+        value="option5"
+        checked={inlineSelectedValue === "option5"}
+        onChange={handleChange}
+        label="Option 5"
+        size="medium"
+        color="green"
+      />
+      <RadioButton3
+        name="basicOptions"
+        value="option6"
+        checked={inlineSelectedValue === "option6"}
+        onChange={handleChange}
+        label="Option 6"
+        size="large"
+        color="yellow"
+      />
+      <RadioButton3
+        name="basicOptions"
+        value="option7"
+        checked={inlineSelectedValue === "option7"}
+        onChange={handleChange}
+        label="Option 7"
         size="large"
         color="red"
       />

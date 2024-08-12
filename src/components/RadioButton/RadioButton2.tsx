@@ -32,7 +32,7 @@ const RadioButton2: React.FC<RadioButtonProps> = ({
     sizeStyle = "w-5 h-5";
   }
 
-  const colorClasses: { [key: string]: string } = {
+  const colorStyle: { [key: string]: string } = {
     sky: "bg-[#9AC5E5] border-[#9AC5E5]",
     grey: "bg-[#DCDCDD] border-[#DCDCDD]",
     blue: "bg-[#558FFF] border-[#558FFF]",
@@ -42,8 +42,7 @@ const RadioButton2: React.FC<RadioButtonProps> = ({
     red: "bg-[#FF7676] border-[#FF7676]",
   };
 
-  const selectedColorStyle =
-    colorClasses[color] || `bg-blue-500 border-blue-500`;
+  const selectedColorStyle = colorStyle[color] || `bg-blue-500 border-blue-500`;
 
   return (
     <label
