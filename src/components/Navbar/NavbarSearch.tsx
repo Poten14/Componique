@@ -8,6 +8,7 @@ type NavbarSearchProps = {
   maxLength: number;
   size: number;
   placeholder: string;
+  type: string;
 };
 
 const LogoSection = () => (
@@ -23,6 +24,7 @@ const NavbarSearch = ({
   maxLength,
   size,
   placeholder,
+  type,
 }: NavbarSearchProps) => {
   return (
     <>
@@ -43,6 +45,7 @@ const NavbarSearch = ({
             maxLength={maxLength}
             size={size}
             placeholder={placeholder}
+            type={type}
           />
         </div>
       </div>
