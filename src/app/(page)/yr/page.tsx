@@ -4,7 +4,7 @@ import NavbarSearch from "@/components/Navbar/NavbarSearch";
 const page = () => {
   return (
     <>
-      <Navbar size="lg" color="blue" position="static" />
+      <Navbar size="lg" hoverColor="blue" position="static" />
       {/* <NavbarSearch /> */}
     </>
   );

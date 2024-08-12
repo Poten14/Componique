@@ -1,13 +1,10 @@
-"use client";
-
 import Logo from "../../../public/images/logo.svg";
 import Image from "next/image";
-import Link from "next/link";
 
 // NavbarProps 정의
 interface NavbarProps {
   size?: "xs" | "lg" | "xl";
-  color?: "skyblue" | "blue" | "red";
+  hoverColor?: "skyblue" | "blue" | "red";
   position?: "sticky" | "relative" | "static";
 }
 
@@ -17,10 +14,10 @@ const sizeClasses = {
   xl: "text-xl",
 };
 
-const colorClasses = {
-  skyblue: "#9AC5E5",
-  blue: "#7AA7FF",
-  red: "#FF7676",
+const hoverColorClasses = {
+  skyblue: "hover:text-[#9AC5E5]",
+  blue: "hover:text-[#7AA7FF]",
+  red: "hover:text-[#FF7676]",
 };
 
 const positionClasses = {
@@ -31,11 +28,11 @@ const positionClasses = {
 
 const Navbar = ({
   size = "lg",
-  color = "blue",
+  hoverColor = "blue",
   position = "static",
 }: NavbarProps) => {
-  const navClass = `cursor-pointer hover:${colorClasses[color]} focus:${colorClasses[color]}`;
-  const colorStyle = colorClasses[color];
+  const hoverClass = hoverColorClasses[hoverColor];
+  const navClass = `cursor-pointer ${hoverClass}`;
 
   return (
     <>
@@ -44,29 +41,15 @@ const Navbar = ({
       >
         <div className={`flex items-center justify-center`}>
           <Image src={Logo} alt="logo" width={50} height={50} />
-          <Link
-            href="#"
-            className={`ml-2 cursor-pointer text-2xl ${sizeClasses[size]}`}
-          >
+          <div className={`ml-2 cursor-pointer text-2xl ${sizeClasses[size]}`}>
             Componique
-          </Link>
+          </div>
         </div>
         <div className="flex justify-between gap-8">
-          <Link
-            href="#"
-            className={`cursor-pointer hover:${colorClasses[color]} focus:${colorClasses[color]}`}
-          >
-            Home
-          </Link>
-          <Link href="#" className={navClass}>
-            About
-          </Link>
-          <Link href="#" className={navClass}>
-            Project
-          </Link>
-          <Link href="#" className={navClass}>
-            Contact
-          </Link>
+          <div className={navClass}>Home</div>
+          <div className={navClass}>About</div>
+          <div className={navClass}>Project</div>
+          <div className={navClass}>Contact</div>
         </div>
       </div>
     </>
