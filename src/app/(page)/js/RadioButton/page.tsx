@@ -22,7 +22,7 @@ const RadioButton = ({
   onChange,
   disabled = false,
   size = "medium",
-  color = "blue",
+  color = "bg-[#9AC5E5]",
   label,
 }: RadioButtonProps) => {
   // 크기 스타일 (변경 없음)
@@ -35,11 +35,11 @@ const RadioButton = ({
 
   // 색상 스타일 적용
   const colorClasses: { [key: string]: string } = {
-    blue: "bg-blue-500 border-blue-500",
-    green: "bg-green-500 border-green-500",
-    red: "bg-red-500 border-red-500",
-    yellow: "bg-yellow-500 border-yellow-500",
-    grey: "bg-grey-500 border-grey-500",
+    sky: "bg-[#9AC5E5] border-[#9AC5E5]",
+    blue: "bg-[#558FFF] border-[#558FFF]",
+    grey: "bg-[#DCDCDD] border-[#DCDCDD]",
+    yellow: "bg-[#EDCE7B] border-[#EDCE7B]",
+    red: "bg-[#FF7676] border-[#FF7676]",
   };
 
   const selectedColorStyle =
@@ -86,7 +86,7 @@ const RadioGroup = () => {
         onChange={handleChange}
         label="Option 1"
         size="small"
-        color="blue"
+        color="sky"
       />
       <RadioButton
         name="options"
@@ -95,7 +95,7 @@ const RadioGroup = () => {
         onChange={handleChange}
         label="Option 2"
         size="medium"
-        color="green"
+        color="blue"
       />
       <RadioButton
         name="options"
@@ -104,7 +104,7 @@ const RadioGroup = () => {
         onChange={handleChange}
         label="Option 3"
         size="large"
-        color="red"
+        color="grey"
       />
       <RadioButton
         name="options"
@@ -122,7 +122,7 @@ const RadioGroup = () => {
         onChange={handleChange}
         label="Option 5"
         size="small"
-        color="grey"
+        color="red"
       />
       <p className="mt-4">Selected Option: {selectedValue}</p>
     </div>
