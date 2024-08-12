@@ -1,5 +1,3 @@
-"use client";
-
 import Image from "next/image";
 import Logo from "../../../public/images/logo.svg";
 import SearchIcon from "../../../public/images/searchIcon.svg";
@@ -12,6 +10,13 @@ type NavbarSearchProps = {
   placeholder: string;
 };
 
+const LogoSection = () => (
+  <div className="flex items-center justify-center">
+    <Image src={Logo} alt="logo" width={50} height={50} />
+    <span className="ml-2 text-2xl">Compunique</span>
+  </div>
+);
+
 const NavbarSearch = ({
   name,
   id,
@@ -22,10 +27,7 @@ const NavbarSearch = ({
   return (
     <>
       <div className="mx-auto mt-4 flex max-w-screen-lg items-center justify-between">
-        <div className="flex items-center justify-center">
-          <Image src={Logo} alt="logo" width={50} height={50} />
-          <span className="ml-2 text-2xl">Componique</span>
-        </div>
+        <LogoSection />
         <div className="relative">
           <Image
             className="absolute m-[12px] inline-block"

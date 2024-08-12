@@ -1,8 +1,9 @@
-import Logo from "../../../public/images/logo.svg";
 import Image from "next/image";
 
 // NavbarProps 정의
 interface NavbarProps {
+  logoSrc: string;
+  logoName: string;
   size?: "xs" | "lg" | "xl";
   hoverColor?: "skyblue" | "blue" | "red";
   position?: "sticky" | "relative" | "static";
@@ -30,6 +31,8 @@ const Navbar = ({
   size = "xl",
   hoverColor = "blue",
   position = "static",
+  logoName,
+  logoSrc,
 }: NavbarProps) => {
   const hoverClass = hoverColorClasses[hoverColor];
   const navClass = `cursor-pointer ${hoverClass}`;
@@ -40,9 +43,11 @@ const Navbar = ({
         className={`mx-auto mt-4 flex max-w-screen-lg items-center justify-between ${sizeClasses[size]} ${positionClasses[position]}`}
       >
         <div className={`flex items-center justify-center`}>
-          <Image src={Logo} alt="logo" width={50} height={50} />
-          <div className={`ml-2 cursor-pointer ${sizeClasses[size]}`}>
-            Componique
+          <Image src={logoSrc} alt="logo" width={50} height={50} />
+          <div
+            className={`ml-2 cursor-pointer font-semibold ${sizeClasses[size]}`}
+          >
+            {logoName}
           </div>
         </div>
         <div className="flex justify-between gap-8">

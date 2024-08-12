@@ -1,10 +1,17 @@
 import Navbar from "@/components/Navbar/Navbar";
 import NavbarSearch from "@/components/Navbar/NavbarSearch";
+import Logo from "../../../../public/images/logo.svg";
 
 const page = () => {
   return (
     <>
-      <Navbar size="xl" hoverColor="blue" position="static" />
+      <Navbar
+        logoName="Compunique"
+        logoSrc={Logo}
+        size="xl"
+        hoverColor="blue"
+        position="static"
+      />
       <NavbarSearch
         name="search"
         id="searchInput"
