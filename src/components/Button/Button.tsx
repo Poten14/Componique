@@ -1,4 +1,3 @@
-"use client";
 type ButtonProps = {
   size?: "small" | "medium" | "large";
   color?:
@@ -17,8 +16,9 @@ type ButtonProps = {
     | "basic";
   radius?: "small" | "medium" | "large" | "none" | "full";
   variant?: "solid" | "border" | "flat" | "light";
+  onClick?: () => void;
   children: React.ReactNode;
-};
+} & React.ButtonHTMLAttributes<HTMLButtonElement>;
 
 const Button: React.FC<ButtonProps> = ({
   size = "medium",
@@ -26,6 +26,7 @@ const Button: React.FC<ButtonProps> = ({
   radius = "medium",
   variant = "solid",
   children,
+  ...rest
 }) => {
   const buttonSize =
     size === "small"
@@ -127,6 +128,7 @@ const Button: React.FC<ButtonProps> = ({
   return (
     <button
       className={`${basicButton} ${buttonSize} ${buttonRadius} ${ButtonVariant}`}
+      {...rest}
     >
       {children}
     </button>

@@ -1,3 +1,4 @@
+"use client";
 import Button from "@/components/Button/Button";
 
 const dw = () => {
@@ -5,7 +6,13 @@ const dw = () => {
     <>
       <h1>dw Component</h1>
       <div className="space-x-4">
-        <Button>Basic Button</Button>
+        <Button
+          onClick={() => {
+            alert("hello, Button");
+          }}
+        >
+          Basic Button
+        </Button>
         <Button size="small">Small Button</Button>
         <Button size="medium">Medium Button</Button>
         <Button size="large">Large Button</Button>
