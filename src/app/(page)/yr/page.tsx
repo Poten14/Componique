@@ -4,8 +4,14 @@ import NavbarSearch from "@/components/Navbar/NavbarSearch";
 const page = () => {
   return (
     <>
-      <Navbar size="lg" hoverColor="blue" position="static" />
-      {/* <NavbarSearch /> */}
+      <Navbar size="xl" hoverColor="blue" position="static" />
+      <NavbarSearch
+        name="search"
+        id="searchInput"
+        maxLength={8}
+        size={10}
+        placeholder="Search"
+      />
     </>
   );
 };

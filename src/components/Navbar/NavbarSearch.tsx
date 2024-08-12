@@ -4,7 +4,7 @@ import Image from "next/image";
 import Logo from "../../../public/images/logo.svg";
 import SearchIcon from "../../../public/images/searchIcon.svg";
 
-type Props = {
+type NavbarSearchProps = {
   name: string;
   id: string;
   maxLength: number;
@@ -12,7 +12,13 @@ type Props = {
   placeholder: string;
 };
 
-const NavbarSearch = () => {
+const NavbarSearch = ({
+  name,
+  id,
+  maxLength,
+  size,
+  placeholder,
+}: NavbarSearchProps) => {
   return (
     <>
       <div className="mx-auto mt-4 flex max-w-screen-lg items-center justify-between">
@@ -30,11 +36,11 @@ const NavbarSearch = () => {
           />
           <input
             className="w-full rounded-lg border border-gray-300 bg-gray-50 p-2 ps-10 sm:w-64 md:w-80 lg:w-96 xl:w-[280px]"
-            id="name"
-            name="name"
-            maxLength={8}
-            size={10}
-            placeholder="Search"
+            id={id}
+            name={name}
+            maxLength={maxLength}
+            size={size}
+            placeholder={placeholder}
           />
         </div>
       </div>

@@ -27,7 +27,7 @@ const positionClasses = {
 };
 
 const Navbar = ({
-  size = "lg",
+  size = "xl",
   hoverColor = "blue",
   position = "static",
 }: NavbarProps) => {
@@ -41,7 +41,7 @@ const Navbar = ({
       >
         <div className={`flex items-center justify-center`}>
           <Image src={Logo} alt="logo" width={50} height={50} />
-          <div className={`ml-2 cursor-pointer text-2xl ${sizeClasses[size]}`}>
+          <div className={`ml-2 cursor-pointer ${sizeClasses[size]}`}>
             Componique
           </div>
         </div>
