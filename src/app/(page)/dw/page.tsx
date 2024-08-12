@@ -5,27 +5,34 @@ const dw = () => {
     <>
       <h1>dw Component</h1>
       <div className="space-x-4">
-        <Button>기본 버튼</Button>
-        <Button size="small">작은 버튼</Button>
-        <Button size="medium">중간 버튼</Button>
-        <Button size="large">큰 버튼</Button>
+        <Button>Basic Button</Button>
+        <Button size="small">Small Button</Button>
+        <Button size="medium">Medium Button</Button>
+        <Button size="large">Large Button</Button>
       </div>
       <div className="space-x-4 space-y-4">
-        <Button color="primary">Primary 버튼</Button>
-        <Button color="secondary">Secondary 버튼</Button>
-        <Button color="success">Success 버튼</Button>
-        <Button color="warning">Warning 버튼</Button>
-        <Button color="danger">Danger 버튼</Button>
+        <Button color="primary">Primary Button</Button>
+        <Button color="secondary">Secondary Button</Button>
+        <Button color="success">Success Button</Button>
+        <Button color="warning">Warning Button</Button>
+        <Button color="danger">Danger Button</Button>
       </div>
       <div className="space-x-4 space-y-4">
-        <Button color="red">Red 버튼</Button>
-        <Button color="orange">Orange 버튼</Button>
-        <Button color="yellow">Yellow 버튼</Button>
-        <Button color="green">Green 버튼</Button>
-        <Button color="blue">Blue 버튼</Button>
-        <Button color="purple">Purple 버튼</Button>
-        <Button color="pink">Pink 버튼</Button>
-        <Button color="basic">Basic 버튼</Button>
+        <Button color="red">Red Button</Button>
+        <Button color="orange">Orange Button</Button>
+        <Button color="yellow">Yellow Button</Button>
+        <Button color="green">Green Button</Button>
+        <Button color="blue">Blue Button</Button>
+        <Button color="purple">Purple Button</Button>
+        <Button color="pink">Pink Button</Button>
+        <Button color="basic">Basic Button</Button>
+      </div>
+      <div className="space-x-4 space-y-4">
+        <Button radius="small">Radius Small Button</Button>
+        <Button radius="medium">Radius MediumButton</Button>
+        <Button radius="large">Radius Large Button</Button>
+        <Button radius="full">Radius Full Button</Button>
+        <Button radius="none">Radius None Button</Button>
       </div>
     </>
   );

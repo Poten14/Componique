@@ -14,12 +14,14 @@ type ButtonProps = {
     | "purple"
     | "pink"
     | "basic";
+  radius?: "small" | "medium" | "large" | "none" | "full";
   children: React.ReactNode;
 };
 
 const Button: React.FC<ButtonProps> = ({
   size = "medium",
   color = "basic",
+  radius = "medium",
   children,
 }) => {
   const buttonSize =
@@ -28,6 +30,17 @@ const Button: React.FC<ButtonProps> = ({
       : size === "medium"
         ? "px-3 py-2 text-sm"
         : "px-5 py-2 text-lg";
+
+  const buttonRadius =
+    radius === "small"
+      ? "rounded-md"
+      : radius === "medium"
+        ? "rounded-lg"
+        : radius === "large"
+          ? "rounded-xl"
+          : radius === "full"
+            ? "rounded-full"
+            : "rounded-none";
 
   const buttonColor: { [key in NonNullable<ButtonProps["color"]>]: string } = {
     //Key in을 쓴 이유 : buttonColor의 모든 키가 ButtonProps의 color에 정의한 값 중 하나여야 해서 사용함 => 타입스크립트에서 자동완성이 가능함
@@ -50,7 +63,9 @@ const Button: React.FC<ButtonProps> = ({
     "text-white font-bold text-sm rounded bg-[#9AC5E5] hover:bg-[#EDCE7A] px-3 py-2 ";
 
   return (
-    <button className={`${basicButton} ${buttonSize} ${buttonColor[color]}`}>
+    <button
+      className={`${basicButton} ${buttonSize} ${buttonColor[color]} ${buttonRadius}`}
+    >
       {children}
     </button>
   );
