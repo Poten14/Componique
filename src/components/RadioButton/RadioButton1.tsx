@@ -15,7 +15,7 @@ interface RadioButtonProps {
 }
 
 // RadioButton 컴포넌트
-const RadioButton = ({
+const RadioButton1 = ({
   name,
   value,
   checked,
@@ -81,7 +81,7 @@ const RadioGroup = () => {
       <h1 className="mb-4 text-lg font-semibold">
         기본 라디오 버튼 - radioButton1
       </h1>
-      <RadioButton
+      <RadioButton1
         name="options"
         value="option1"
         checked={selectedValue === "option1"}
@@ -90,7 +90,7 @@ const RadioGroup = () => {
         size="small"
         color="sky"
       />
-      <RadioButton
+      <RadioButton1
         name="options"
         value="option2"
         checked={selectedValue === "option2"}
@@ -99,7 +99,7 @@ const RadioGroup = () => {
         size="medium"
         color="grey"
       />
-      <RadioButton
+      <RadioButton1
         name="options"
         value="option3"
         checked={selectedValue === "option3"}
@@ -108,7 +108,7 @@ const RadioGroup = () => {
         size="large"
         color="blue"
       />
-      <RadioButton
+      <RadioButton1
         name="options"
         value="option4"
         checked={selectedValue === "option4"}
@@ -117,7 +117,7 @@ const RadioGroup = () => {
         size="small"
         color="purple"
       />
-      <RadioButton
+      <RadioButton1
         name="options"
         value="option5"
         checked={selectedValue === "option5"}
@@ -126,7 +126,7 @@ const RadioGroup = () => {
         size="medium"
         color="green"
       />
-      <RadioButton
+      <RadioButton1
         name="options"
         value="option6"
         checked={selectedValue === "option6"}
@@ -135,7 +135,7 @@ const RadioGroup = () => {
         size="large"
         color="yellow"
       />
-      <RadioButton
+      <RadioButton1
         name="options"
         value="option7"
         checked={selectedValue === "option7"}
@@ -149,4 +149,4 @@ const RadioGroup = () => {
   );
 };
 
-export default RadioGroup;
+export default RadioButton1;
