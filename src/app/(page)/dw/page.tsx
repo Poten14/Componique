@@ -60,8 +60,10 @@ const dw = () => {
           Light warning None Button
         </Button>
       </div>
-      <div>
-        <CheckBox />
+      <div className="ml-3 space-y-4">
+        <CheckBox boxSize="small" description="small CheckBox" />
+        <CheckBox description="medium CheckBox" />
+        <CheckBox boxSize="large" description="large CheckBox" />
         <CheckBox
           onChange={(e) => console.log(e.target.checked)}
           description="안녕"
