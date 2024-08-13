@@ -1,7 +1,6 @@
-import Card1 from "@/components/Card/Card1";
-import Card2 from "@/components/Card/Card2";
-import Card3 from "@/components/Card/Card3";
-import logo from "../../../../public/componique_logo.svg";
+import Card1 from "@components/Card/Card1";
+import Card2 from "@components/Card/Card2";
+import Card3 from "@components/Card/Card3";
 const page = () => {
   return (
     <div>
