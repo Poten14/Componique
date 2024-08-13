@@ -9,7 +9,7 @@ type ButtonColor =
   | "Warning"
   | "Danger";
 
-interface SearchInput3Props
+interface SearchInputProps
   extends Omit<React.InputHTMLAttributes<HTMLInputElement>, "size"> {
   size?: InputSize;
   buttonText?: string;
@@ -32,7 +32,7 @@ const colorClasses = {
   Danger: "bg-Danger text-white",
 };
 
-const SearchInput3: React.FC<SearchInput3Props> = ({
+const SearchInput3: React.FC<SearchInputProps> = ({
   size = "md",
   placeholder = "input search text",
   value,

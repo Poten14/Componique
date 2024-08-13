@@ -4,10 +4,9 @@ import React, { useState } from "react";
 
 type InputSize = "sm" | "md" | "lg";
 
-interface SearchInputProps {
+interface SearchInputProps
+  extends Omit<React.InputHTMLAttributes<HTMLInputElement>, "size"> {
   size?: InputSize;
-  placeholder?: string;
-  value?: string;
   onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
@@ -23,11 +22,12 @@ const expandedSizeClasses = {
   lg: "w-[600px] h-[50px]",
 };
 
-const SearchInput: React.FC<SearchInputProps> = ({
+const SearchInput2: React.FC<SearchInputProps> = ({
   size = "md",
   placeholder,
   value,
   onChange,
+  ...props // 확장된 속성들을 받기 위해 사용
 }) => {
   const [isExpanded, setIsExpanded] = useState(false);
 
@@ -49,6 +49,7 @@ const SearchInput: React.FC<SearchInputProps> = ({
         onChange={onChange}
         onFocus={toggleExpand} // 인풋 필드에 포커스가 있을 때 확장
         onBlur={toggleExpand} // 포커스가 벗어날 때 다시 축소
+        {...props} // 추가된 속성 전달
       />
       <button className="h-full rounded-r-full pr-5 focus:outline-none">
         🔍
@@ -57,4 +58,4 @@ const SearchInput: React.FC<SearchInputProps> = ({
   );
 };
 
-export default SearchInput;
+export default SearchInput2;

@@ -2,8 +2,8 @@
 
 import React, { useState } from "react";
 
-interface SearchInputProps {
-  placeholder?: string;
+// 기본 HTML 속성을 확장하여 사용
+interface SearchInputProps extends React.InputHTMLAttributes<HTMLInputElement> {
   activeColor?: string;
   inactiveColor?: string;
   width?: string;
@@ -16,6 +16,7 @@ const SearchInput: React.FC<SearchInputProps> = ({
   inactiveColor = "bg-gray-300",
   width = "w-80",
   onSearch,
+  ...props // 나머지 속성을 모두 받음
 }) => {
   const [isActive, setIsActive] = useState(false);
   const [value, setValue] = useState("");
@@ -45,6 +46,7 @@ const SearchInput: React.FC<SearchInputProps> = ({
           placeholder={placeholder}
           value={value}
           onChange={(e) => setValue(e.target.value)}
+          {...props} // 추가된 속성 전달
         />
       )}
     </div>
