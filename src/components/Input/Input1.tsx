@@ -1,7 +1,6 @@
 import React from "react";
 import { ExtraSize } from "types/type";
 
-type InputSize = "xs" | "sm" | "md" | "lg" | "xl";
 type InputVariant = "outlined" | "filled";
 
 interface InputProps {
