@@ -1,29 +1,28 @@
 "use client";
 
 import React, { useState } from "react";
-
-type InputSize = "sm" | "md" | "lg";
+import { Size } from "types/type";
 
 interface SearchInputProps
   extends Omit<React.InputHTMLAttributes<HTMLInputElement>, "size"> {
-  size?: InputSize;
+  size?: Size;
   onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
 const sizeClasses = {
-  sm: "w-[200px] h-[30px] text-sm",
-  md: "w-[300px] h-[40px] text-base",
-  lg: "w-[400px] h-[50px] text-lg",
+  small: "w-[200px] h-[30px] text-sm",
+  medium: "w-[300px] h-[40px] text-base",
+  large: "w-[400px] h-[50px] text-lg",
 };
 
 const expandedSizeClasses = {
-  sm: "w-[400px] h-[30px]",
-  md: "w-[500px] h-[40px]",
-  lg: "w-[600px] h-[50px]",
+  small: "w-[400px] h-[30px]",
+  medium: "w-[500px] h-[40px]",
+  large: "w-[600px] h-[50px]",
 };
 
 const SearchInput2: React.FC<SearchInputProps> = ({
-  size = "md",
+  size = "medium",
   placeholder,
   value,
   onChange,

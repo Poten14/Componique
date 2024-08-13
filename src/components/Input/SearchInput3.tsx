@@ -1,6 +1,6 @@
 import React from "react";
+import { Size } from "types/type";
 
-type InputSize = "sm" | "md" | "lg";
 type ButtonColor =
   | "Basic"
   | "Primary"
@@ -11,16 +11,16 @@ type ButtonColor =
 
 interface SearchInputProps
   extends Omit<React.InputHTMLAttributes<HTMLInputElement>, "size"> {
-  size?: InputSize;
+  size?: Size;
   buttonText?: string;
   onButtonClick?: () => void;
   color?: ButtonColor;
 }
 
 const sizeClasses = {
-  sm: "w-[200px] h-[30px] text-sm",
-  md: "w-[250px] h-[40px] text-base",
-  lg: "w-[500px] h-[50px]  text-lg",
+  small: "w-[200px] h-[30px] text-sm",
+  medium: "w-[250px] h-[40px] text-base",
+  large: "w-[500px] h-[50px]  text-lg",
 };
 
 const colorClasses = {
@@ -33,7 +33,7 @@ const colorClasses = {
 };
 
 const SearchInput3: React.FC<SearchInputProps> = ({
-  size = "md",
+  size = "medium",
   placeholder = "input search text",
   value,
   onChange,

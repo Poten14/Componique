@@ -7,12 +7,12 @@ const sk = () => {
     <>
       <div className="m-4 space-y-8">
         <Input1 size="xs" placeholder="extra small size" />
-        <Input1 size="sm" placeholder="small size" />
-        <Input1 size="md" placeholder="medium size" />
-        <Input1 size="lg" placeholder="large size" />
+        <Input1 size="small" placeholder="small size" />
+        <Input1 size="medium" placeholder="medium size" />
+        <Input1 size="large" placeholder="large size" />
         <Input1 size="xl" placeholder="Extra large size" />
-        <Input1 size="md" variant="filled" placeholder="Filled input" />
-        <Input1 size="md" variant="outlined" placeholder="Outlined input" />
+        <Input1 size="medium" variant="filled" placeholder="Filled input" />
+        <Input1 size="medium" variant="outlined" placeholder="Outlined input" />
       </div>
       <div className="m-4 space-y-8">
         <SearchInput
@@ -23,17 +23,17 @@ const sk = () => {
         />
       </div>
       <div className="m-4 space-y-8">
-        <SearchInput2 size="sm" placeholder="Search..." />
-        <SearchInput2 size="md" placeholder="Search..." />
-        <SearchInput2 size="lg" placeholder="Search..." />
+        <SearchInput2 size="small" placeholder="Search..." />
+        <SearchInput2 size="medium" placeholder="Search..." />
+        <SearchInput2 size="large" placeholder="Search..." />
       </div>
       <div className="ml-4 space-y-7">
-        <SearchInput3 size="sm" color="Basic" buttonText="Search" />
-        <SearchInput3 size="sm" color="Danger" buttonText="Search" />
-        <SearchInput3 size="md" color="Primary" buttonText="Search" />
-        <SearchInput3 size="md" color="Secondary" buttonText="Search" />
-        <SearchInput3 size="lg" color="Success" buttonText="Search" />
-        <SearchInput3 size="lg" color="Warning" buttonText="Search" />
+        <SearchInput3 size="small" color="Basic" buttonText="Search" />
+        <SearchInput3 size="small" color="Danger" buttonText="Search" />
+        <SearchInput3 size="medium" color="Primary" buttonText="Search" />
+        <SearchInput3 size="medium" color="Secondary" buttonText="Search" />
+        <SearchInput3 size="large" color="Success" buttonText="Search" />
+        <SearchInput3 size="large" color="Warning" buttonText="Search" />
       </div>
     </>
   );
