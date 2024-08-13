@@ -7,7 +7,7 @@ const page = () => {
   return (
     <>
       {/* Navbar 연습 */}
-      {/* <Navbar
+      <Navbar
         logoName="Compunique"
         logoSrc={Logo}
         size="xl"
@@ -21,7 +21,7 @@ const page = () => {
         type="search"
         size={10}
         placeholder="Search"
-      /> */}
+      />
       {/* textarea 연습 */}
       <Textarea
         label="Your message"
