@@ -1,3 +1,4 @@
+
 import Card1 from "@components/Card/Card1";
 import Card2 from "@components/Card/Card2";
 import Card3 from "@components/Card/Card3";
@@ -11,6 +12,7 @@ const page = () => {
         description="Next.js is a React framework for building full-stack web applications."
       />
       <Card2
+
         title="Next.js_expand Card"
         description="Next.js is a React framework for building full-stack web applications."
         detail="You use React Components to build user interfaces, and Next.js for additional features and optimizations."
@@ -21,6 +23,7 @@ const page = () => {
         description="You can add image or icon to this card component😊"
         image="/componique_logo.svg"
       />
+
       <Card4
         title="📝Pro Plan"
         description="You can access more features."
@@ -34,12 +37,14 @@ const page = () => {
         ]}
         buy="Subscribe to Pro"
       />
+
       <Card5
         avatar="/avatar1.svg"
         name="ToongToong123"
         rate={4}
         review="This product is very convenient for me, which I like. It's a pity that it's expensive, but I think it's worth trying at least once."
       />
+
     </div>
   );
 };
