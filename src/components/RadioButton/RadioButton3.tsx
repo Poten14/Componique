@@ -13,7 +13,7 @@ interface RadioButtonProps {
   label?: string;
 }
 
-const RadioButton1 = ({
+const RadioButton3 = ({
   name,
   value,
   checked,
@@ -44,7 +44,7 @@ const RadioButton1 = ({
 
   return (
     <label
-      className={`flex items-center ${disabled ? "cursor-not-allowed opacity-50" : "cursor-pointer"}`}
+      className={`mr-3 inline-flex items-center ${disabled ? "cursor-not-allowed opacity-50" : "cursor-pointer"}`}
     >
       <input
         type="radio"
@@ -62,4 +62,4 @@ const RadioButton1 = ({
   );
 };
 
-export default RadioButton1;
+export default RadioButton3;

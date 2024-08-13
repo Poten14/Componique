@@ -1,10 +1,11 @@
 import React from "react";
+import { ExtraSize } from "types/type";
 
 type InputSize = "xs" | "sm" | "md" | "lg" | "xl";
 type InputVariant = "outlined" | "filled";
 
 interface InputProps {
-  size?: InputSize;
+  size?: ExtraSize;
   variant?: InputVariant;
   placeholder?: string;
   value?: string;
@@ -13,19 +14,19 @@ interface InputProps {
 
 const sizeClasses = {
   xs: "py-1 px-2 text-xs",
-  sm: "py-1.5 px-3 text-sm",
-  md: "py-2 px-4 text-base",
-  lg: "py-3 px-4 text-lg",
+  small: "py-1.5 px-3 text-sm",
+  medium: "py-2 px-4 text-base",
+  large: "py-3 px-4 text-lg",
   xl: "py-4 px-5 text-lg",
 };
 
 const variantClasses = {
-  outlined: "border border-Basic bg-white",
+  outlined: "border border-Primary bg-white",
   filled: "bg-Basic text-white placeholder-white border-none",
 };
 
 const Input1: React.FC<InputProps> = ({
-  size = "md",
+  size = "medium",
   variant = "outlined",
   placeholder,
   value,
