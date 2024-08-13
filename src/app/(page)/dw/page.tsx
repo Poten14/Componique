@@ -1,5 +1,6 @@
 "use client";
-import Button from "@/components/Button/Button";
+import Button from "@components/Button/Button";
+import CheckBox from "@components/CheckBox/CheckBox";
 
 const dw = () => {
   return (
@@ -51,13 +52,22 @@ const dw = () => {
         <Button variant="flat" color="warning">
           Flat Warning Button
         </Button>
-        <Button variant="light">Light Button</Button>
+        <Button variant="light">Light But12ton</Button>
         <Button variant="light" color="purple" radius="full">
           Light Purple Full Button
         </Button>
         <Button variant="light" color="warning" radius="none">
           Light warning None Button
         </Button>
+      </div>
+      <div>
+        <CheckBox />
+        <CheckBox
+          onChange={(e) => console.log(e.target.checked)}
+          description="안녕"
+        />
+
+        <CheckBox description="반가워" />
       </div>
     </>
   );
