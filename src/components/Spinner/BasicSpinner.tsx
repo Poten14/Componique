@@ -33,18 +33,10 @@ const colorClasses = {
   Warning: "border-Warning",
   Danger: "border-Danger",
 };
-
-// 속도에 따른 애니메이션 지속 시간을 설정하는 함수
-const getAnimationDuration = (speed: Speed) => {
-  switch (speed) {
-    case "slow":
-      return "3s"; // 느린 속도
-    case "fast":
-      return "0.7s"; // 빠른 속도
-    case "medium":
-    default:
-      return "1s"; // 중간 속도
-  }
+const speedClasses = {
+  slow: "animate-spin-slow",
+  medium: "animate-spin",
+  fast: "animate-spin-fast",
 };
 
 const BasicSpinner: React.FC<SpinnerProps> = ({
@@ -52,14 +44,9 @@ const BasicSpinner: React.FC<SpinnerProps> = ({
   color = "Primary",
   speed = "medium",
 }) => {
-  const animationDuration = getAnimationDuration(speed);
-
   return (
     <div
-      className={`inline-block ${sizeClasses[size]} rounded-full border-solid border-t-transparent ${colorClasses[color]}`}
-      style={{
-        animation: `spin ${animationDuration} linear infinite`,
-      }}
+      className={`inline-block ${sizeClasses[size]} ${speedClasses[speed]} rounded-full border-solid border-t-transparent ${colorClasses[color]}`}
     ></div>
   );
 };
