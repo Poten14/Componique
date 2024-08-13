@@ -2,6 +2,7 @@ import Input1 from "@components/Input/Input1";
 import SearchInput from "@components/Input/SearchInput";
 import SearchInput2 from "@components/Input/SearchInput2";
 import SearchInput3 from "@components/Input/SearchInput3";
+import Spinner from "@components/Spinner/BasicSpinner";
 const sk = () => {
   return (
     <>
@@ -34,6 +35,15 @@ const sk = () => {
         <SearchInput3 size="medium" color="Secondary" buttonText="Search" />
         <SearchInput3 size="large" color="Success" buttonText="Search" />
         <SearchInput3 size="large" color="Warning" buttonText="Search" />
+      </div>
+      <div className="ml-4 space-x-3 space-y-7">
+        <Spinner size="xs" color="Basic" speed="slow" />
+        <Spinner size="small" color="Danger" speed="slow" />
+        <Spinner size="medium" color="Primary" speed="medium" />
+        <Spinner size="medium" color="Secondary" speed="medium" />
+        <Spinner size="large" color="gray" speed="medium" />
+        <Spinner size="large" color="Warning" speed="fast" />
+        <Spinner size="xl" color="Success" speed="fast" />
       </div>
     </>
   );
