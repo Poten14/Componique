@@ -37,6 +37,7 @@ const page = () => {
         name="text"
         id="text"
         size="small"
+        color="blue"
         rows={4}
         cols={20}
         placeholder="Write"
@@ -46,6 +47,7 @@ const page = () => {
         name="text"
         id="text"
         size="medium"
+        color="red"
         rows={4}
         cols={20}
         placeholder="Write"
@@ -55,6 +57,7 @@ const page = () => {
         name="text"
         id="text"
         size="large"
+        color="green"
         rows={4}
         cols={20}
         placeholder="Write"
@@ -64,6 +67,7 @@ const page = () => {
         name="text"
         id="text"
         size="xl"
+        color="gray"
         rows={4}
         cols={20}
         placeholder="Write"
