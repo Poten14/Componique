@@ -6,7 +6,7 @@ interface BasicCard {
 
 const Card1 = ({ title, description }: BasicCard) => {
   return (
-    <div className="m-4 max-w-sm rounded-xl border-2 border-black bg-[#7EEFAF] shadow-lg">
+    <div className="m-4 max-w-sm rounded-xl border-2 border-[#4C89FF] bg-white shadow-lg">
       <div className="px-6 py-4">
         <div className="mb-2 text-2xl font-bold">{title}</div>
         <p className="text-base text-gray-700">{description}</p>
