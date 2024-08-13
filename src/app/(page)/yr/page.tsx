@@ -2,6 +2,7 @@ import Navbar from "@components/Navbar/Navbar";
 import NavbarSearch from "@components/Navbar/NavbarSearch";
 import Logo from "../../../../public/images/logo.svg";
 import Textarea from "@components/Textarea/Textarea";
+import TextareaValue from "@components/Textarea/TextareaValue";
 
 const page = () => {
   return (
@@ -73,6 +74,7 @@ const page = () => {
         cols={20}
         placeholder="Write"
       />
+      <TextareaValue />
     </>
   );
 };
