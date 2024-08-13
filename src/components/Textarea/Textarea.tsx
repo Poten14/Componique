@@ -1,7 +1,9 @@
+import { ExtraSize } from "types/type";
+
 interface TextareaProps
   extends React.TextareaHTMLAttributes<HTMLTextAreaElement> {
   label?: string;
-  size?: "xs" | "small" | "medium" | "large" | "xl";
+  size?: ExtraSize;
 }
 
 const sizeClasses = {
@@ -32,5 +34,3 @@ const Textarea: React.FC<TextareaProps> = ({
   );
 };
 export default Textarea;
-
-// size 별로
