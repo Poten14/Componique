@@ -10,7 +10,7 @@ interface interactiveCard {
 }
 
 // interactive 컴포넌트 생성
-const Card2 = ({ title, description, detail }: interactiveCard) => {
+const CardInteractive = ({ title, description, detail }: interactiveCard) => {
   // 카드 추가설명의 초기상태 설정
   const [expand, setExpand] = useState(false);
 
@@ -36,4 +36,4 @@ const Card2 = ({ title, description, detail }: interactiveCard) => {
   );
 };
 
-export default Card2;
+export default CardInteractive;

@@ -13,7 +13,7 @@ interface RadioButtonProps {
   label?: string;
 }
 
-const RadioButton3 = ({
+const RadioButtonInline = ({
   name,
   value,
   checked,
@@ -62,4 +62,4 @@ const RadioButton3 = ({
   );
 };
 
-export default RadioButton3;
+export default RadioButtonInline;

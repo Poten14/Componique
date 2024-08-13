@@ -14,7 +14,7 @@ interface RadioButtonProps {
   color?: string;
 }
 
-const RadioButton2: React.FC<RadioButtonProps> = ({
+const RadioButtonDescription: React.FC<RadioButtonProps> = ({
   name,
   value,
   checked,
@@ -69,4 +69,4 @@ const RadioButton2: React.FC<RadioButtonProps> = ({
   );
 };
 
-export default RadioButton2;
+export default RadioButtonDescription;
