@@ -20,7 +20,7 @@ const sizeClasses = {
 };
 
 const variantClasses = {
-  outlined: "border border-Basic bg-white",
+  outlined: "border border-Primary bg-white",
   filled: "bg-Basic text-white placeholder-white border-none",
 };
 
