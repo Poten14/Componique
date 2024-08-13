@@ -30,6 +30,7 @@ const page = () => {
         size="xs"
         rows={4}
         cols={20}
+        disabled
         placeholder="Write"
       />
       <Textarea
