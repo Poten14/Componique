@@ -8,20 +8,6 @@ import Select from "@components/Select/Select";
 const page = () => {
   return (
     <>
-      <div className="m-4 space-y-4">
-        <Select
-          option={[
-            "Option 1",
-            "Option 2",
-            "Option 3",
-            "Option 4",
-            "Option 5",
-            "Option 6",
-            "Option 7",
-          ]}
-          placeholder="option"
-        />
-      </div>
       {/* Navbar 연습 */}
       <div className="m-4 space-y-4">
         <Navbar
@@ -95,6 +81,61 @@ const page = () => {
       </div>
       <div className="m-4 space-y-4">
         <TextareaValue />
+      </div>
+      {/* select 구현 */}
+      <div className="m-4 flex items-center gap-4">
+        <Select
+          option={[
+            "Option 1",
+            "Option 2",
+            "Option 3",
+            "Option 4",
+            "Option 5",
+            "Option 6",
+            "Option 7",
+          ]}
+          placeholder="option"
+          color="gray"
+        />
+        <Select
+          option={[
+            "Option 1",
+            "Option 2",
+            "Option 3",
+            "Option 4",
+            "Option 5",
+            "Option 6",
+            "Option 7",
+          ]}
+          placeholder="option"
+          color="red"
+        />
+        <Select
+          option={[
+            "Option 1",
+            "Option 2",
+            "Option 3",
+            "Option 4",
+            "Option 5",
+            "Option 6",
+            "Option 7",
+          ]}
+          placeholder="option"
+          color="blue"
+        />
+        <Select
+          option={[
+            "Option 1",
+            "Option 2",
+            "Option 3",
+            "Option 4",
+            "Option 5",
+            "Option 6",
+            "Option 7",
+          ]}
+          placeholder="option"
+          color="green"
+        />
       </div>
     </>
   );
