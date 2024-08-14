@@ -22,6 +22,7 @@ const colorClasses = {
   Success: "bg-Success",
   Warning: "bg-Warning",
   Danger: "bg-Danger",
+  White: "bg-white",
 };
 
 const BarsSpinner: React.FC<BarsSpinnerProps> = ({
