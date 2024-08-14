@@ -11,9 +11,11 @@ import Button from "@components/Button/Button";
 import { useState } from "react";
 import FullScreenSpinner from "@components/Spinner/ FullScreenSpinner";
 import PacManSpinner from "@components/Spinner/PacManSpinner";
+import BasicModal from "@components/Modal/BasicModal";
 
 const sk = () => {
-  const [spinning, setSpinning] = useState(false);
+  const [spinning, setSpinning] = useState(false); //fullscreen
+  const [isOpen, setIsOpen] = useState(false); //모달
 
   const showLoader = () => {
     setSpinning(true);
@@ -106,6 +108,25 @@ const sk = () => {
           Show Basic spinner
         </Button>
         <FullScreenSpinner spinning={spinning} shape="Basic" />
+      </div>
+
+      {/* Modal */}
+      <div className="ml-4 mt-4 space-x-3 space-y-6">
+        <Button onClick={() => setIsOpen(true)}>Open xs Modal</Button>
+        <BasicModal
+          open={isOpen}
+          size="medium"
+          onClose={() => setIsOpen(false)}
+        >
+          <h2 className="text-lg font-bold">Modal Title</h2>
+          <p>
+            Magna exercitation reprehenderit magna aute tempor cupidatat
+            consequat elit dolor adipisicing. Mollit dolor eiusmod sunt ex
+            incididunt cillum quis. Velit duis sit officia eiusmod Lorem aliqua
+            enim laboris do dolor eiusmod. Et mollit incididunt nisi consectetur
+            esse laborum eiusmod pariatur proident Lorem eiusmod et.
+          </p>
+        </BasicModal>
       </div>
     </>
   );
