@@ -1,9 +1,9 @@
 import React from "react";
-import { ExtraSize, Speed } from "types/type";
+import { Color, ExtraSize, Speed } from "types/type";
 
 interface SquareSpinnerProps {
   size?: ExtraSize;
-  color?: SpinnerColor;
+  color?: Color;
   speed?: Speed;
 }
 
@@ -15,14 +15,16 @@ const sizeClasses = {
   xl: "h-10 w-10",
 };
 
-type SpinnerColor =
-  | "Basic"
-  | "Primary"
-  | "gray"
-  | "Secondary"
-  | "Success"
-  | "Warning"
-  | "Danger";
+const colorClasses = {
+  Basic: "bg-Basic",
+  Primary: "bg-Primary",
+  gray: "bg-gray",
+  Secondary: "bg-Secondary",
+  Success: "bg-Success",
+  Warning: "bg-Warning",
+  Danger: "bg-Danger",
+  White: "bg-white",
+};
 
 const speedClasses = {
   slow: "animate-spin-slow",
@@ -40,7 +42,7 @@ const SquareSpinner: React.FC<SquareSpinnerProps> = ({
       {[...Array(5)].map((_, index) => (
         <div
           key={index}
-          className={`${sizeClasses[size]} ${speedClasses[speed]} bg-${color} rounded`}
+          className={`${sizeClasses[size]} ${speedClasses[speed]} ${colorClasses[color]} rounded`}
         ></div>
       ))}
     </div>

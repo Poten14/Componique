@@ -1,3 +1,5 @@
+"use client";
+
 import Input1 from "@components/Input/Input1";
 import SearchInput from "@components/Input/SearchInput";
 import SearchInput2 from "@components/Input/SearchInput2";
@@ -5,9 +7,24 @@ import SearchInput3 from "@components/Input/SearchInput3";
 import BasicSpinner from "@components/Spinner/BasicSpinner";
 import SquareSpinner from "@components/Spinner/SquareSpinner";
 import BarsSpinner from "@components/Spinner/BarsSpinner";
+import Button from "@components/Button/Button";
+import { useState } from "react";
+import FullScreenSpinner from "@components/Spinner/ FullScreenSpinner";
+
 const sk = () => {
+  const [spinning, setSpinning] = useState(false);
+
+  const showLoader = () => {
+    setSpinning(true);
+
+    setTimeout(() => {
+      setSpinning(false);
+    }, 3000); // 3초 동안 스피너를 표시한 후 숨김
+  };
+
   return (
     <>
+      {/* BasicInput */}
       <div className="m-4 space-y-8">
         <Input1 size="xs" placeholder="extra small size" />
         <Input1 size="small" placeholder="small size" />
@@ -25,6 +42,8 @@ const sk = () => {
           width="w-96"
         />
       </div>
+
+      {/* SearchInput */}
       <div className="m-4 space-y-8">
         <SearchInput2 size="small" placeholder="Search..." />
         <SearchInput2 size="medium" placeholder="Search..." />
@@ -38,6 +57,8 @@ const sk = () => {
         <SearchInput3 size="large" color="Success" buttonText="Search" />
         <SearchInput3 size="large" color="Warning" buttonText="Search" />
       </div>
+
+      {/* Basic Spinner */}
       <div className="ml-4 space-x-3 space-y-7">
         <BasicSpinner size="xs" color="Basic" speed="slow" />
         <BasicSpinner size="small" color="Danger" speed="slow" />
@@ -62,6 +83,23 @@ const sk = () => {
         <BarsSpinner size="medium" color="gray" />
         <BarsSpinner size="large" color="Secondary" />
         <BarsSpinner size="xl" color="Basic" />
+      </div>
+
+      {/* FullScreenSpinner */}
+      <div className="m-4 ml-4 space-x-3 space-y-6">
+        {/* <Button onClick={showLoader} variant="border">
+          Show Bars spinner
+        </Button>
+        <FullScreenSpinner spinning={spinning} shape="Bars" /> */}
+        {/* <Button onClick={showLoader} variant="solid">
+          Show Square spinner
+        </Button>
+        <FullScreenSpinner spinning={spinning} shape="Square" /> */}
+
+        <Button onClick={showLoader} variant="flat">
+          Show Basic spinner
+        </Button>
+        <FullScreenSpinner spinning={spinning} shape="Basic" />
       </div>
     </>
   );

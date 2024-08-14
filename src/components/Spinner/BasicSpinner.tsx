@@ -8,6 +8,7 @@ type SpinnerColor =
   | "Secondary"
   | "Success"
   | "Warning"
+  | "White"
   | "Danger";
 
 interface SpinnerProps {
@@ -32,6 +33,7 @@ const colorClasses = {
   Success: "border-Success",
   Warning: "border-Warning",
   Danger: "border-Danger",
+  White: "border-white",
 };
 const speedClasses = {
   slow: "animate-spin-slow",
