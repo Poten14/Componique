@@ -7,14 +7,11 @@ import SearchInput3 from "@components/Input/SearchInput3";
 import BasicSpinner from "@components/Spinner/BasicSpinner";
 import SquareSpinner from "@components/Spinner/SquareSpinner";
 import BarsSpinner from "@components/Spinner/BarsSpinner";
-<<<<<<< HEAD
 import Button from "@components/Button/Button";
 import { useState } from "react";
 import FullScreenSpinner from "@components/Spinner/ FullScreenSpinner";
 import PacManSpinner from "@components/Spinner/PacManSpinner";
 
-=======
->>>>>>> c770ad5 (feat: square,bars,basic spinner 구현 (#30))
 const sk = () => {
   const [spinning, setSpinning] = useState(false);
 
@@ -87,7 +84,6 @@ const sk = () => {
         <BarsSpinner size="medium" color="gray" />
         <BarsSpinner size="large" color="Secondary" />
         <BarsSpinner size="xl" color="Basic" />
-<<<<<<< HEAD
       </div>
       <div className="ml-4 mt-4 space-x-3 space-y-6">
         <PacManSpinner size="small" color="Warning" speed="slow" />
@@ -110,8 +106,6 @@ const sk = () => {
           Show Basic spinner
         </Button>
         <FullScreenSpinner spinning={spinning} shape="Basic" />
-=======
->>>>>>> c770ad5 (feat: square,bars,basic spinner 구현 (#30))
       </div>
     </>
   );
