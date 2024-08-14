@@ -29,6 +29,19 @@ const config: Config = {
         Purple: "#A855F7",
         Pink: "#EC4899",
       },
+      animation: {
+        "spin-slow": "spin 3s linear infinite",
+        "spin-fast": "spin 0.5s linear infinite",
+      },
+      keyframes: {
+        bounce: {
+          "0%, 100%": { transform: "scaleY(0.4)", opacity: "0.5" },
+          "50%": { transform: "scaleY(1)", opacity: "1" },
+        },
+      },
+      animation2: {
+        bounce: "bounce 1.2s infinite ease-in-out",
+      },
     },
   },
   plugins: [],
