@@ -10,6 +10,8 @@ import BarsSpinner from "@components/Spinner/BarsSpinner";
 import Button from "@components/Button/Button";
 import { useState } from "react";
 import FullScreenSpinner from "@components/Spinner/ FullScreenSpinner";
+import PacManSpinner from "@components/Spinner/PacManSpinner";
+
 const sk = () => {
   const [spinning, setSpinning] = useState(false);
 
@@ -83,6 +85,11 @@ const sk = () => {
         <BarsSpinner size="medium" color="gray" />
         <BarsSpinner size="large" color="Secondary" />
         <BarsSpinner size="xl" color="Basic" />
+      </div>
+      <div className="ml-4 mt-4 space-x-3 space-y-6">
+        <PacManSpinner size="small" color="Warning" speed="slow" />
+        <PacManSpinner size="medium" color="gray" speed="medium" />
+        <PacManSpinner size="large" color="Basic" speed="fast" />
       </div>
 
       {/* FullScreenSpinner */}
