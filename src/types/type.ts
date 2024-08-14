@@ -8,4 +8,5 @@ export type Color =
   | "Secondary"
   | "Success"
   | "Warning"
-  | "Danger";
+  | "Danger"
+  | "White";
