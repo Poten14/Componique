@@ -1,6 +1,5 @@
 import React from "react";
 import { Color, ExtraSize, Speed } from "types/type";
-
 interface SquareSpinnerProps {
   size?: ExtraSize;
   color?: Color;
