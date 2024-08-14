@@ -91,6 +91,78 @@ const dw = () => {
           <CheckBox description="Pink CheckBox" color="pink" />
           <CheckBox description="Basic CheckBox" color="basic" />
         </div>
+        <h2 className="ml-4 text-2xl">체크박스의 컬러2</h2>
+        <div className="ml-4 flex space-x-5">
+          <CheckBox
+            description="Primary Border CheckBox"
+            color="primary"
+            variant="border"
+          />
+          <CheckBox
+            description="Secondary Border CheckBox"
+            color="secondary"
+            variant="border"
+          />
+          <CheckBox
+            description="Success Border CheckBox"
+            color="success"
+            variant="border"
+          />
+          <CheckBox
+            description="Warning Border CheckBox"
+            color="warning"
+            variant="border"
+          />
+          <CheckBox
+            description="Danger Border CheckBox"
+            color="danger"
+            variant="border"
+          />
+        </div>
+        <div className="ml-4 flex space-x-5">
+          <CheckBox
+            description="Red Border CheckBox"
+            color="red"
+            variant="border"
+          />
+          <CheckBox
+            description="Orange Border CheckBox"
+            color="orange"
+            variant="border"
+          />
+          <CheckBox
+            description="Yellow Border CheckBox"
+            color="yellow"
+            variant="border"
+          />
+          <CheckBox
+            description="Green Border CheckBox"
+            color="green"
+            variant="border"
+          />
+        </div>
+        <div className="ml-4 flex space-x-5">
+          <CheckBox
+            description="Blue Border CheckBox"
+            color="blue"
+            variant="border"
+          />
+          <CheckBox
+            description="Purple Border CheckBox"
+            color="purple"
+            variant="border"
+          />
+          <CheckBox
+            description="Pink Border CheckBox"
+            color="pink"
+            variant="border"
+          />
+          <CheckBox
+            description="Basic Border CheckBox"
+            color="basic"
+            variant="border"
+          />
+        </div>
       </div>
     </>
   );
