@@ -21,6 +21,26 @@ const config: Config = {
         Success: "#7EEFAF",
         Warning: "#EDCE7B",
         Danger: "#FF7676",
+        Red: "#EF4444",
+        Orange: "#F97316",
+        Yellow: "#EAB308",
+        Green: "#22C55E",
+        Blue: "#3B82F6",
+        Purple: "#A855F7",
+        Pink: "#EC4899",
+      },
+      animation: {
+        "spin-slow": "spin 3s linear infinite",
+        "spin-fast": "spin 0.5s linear infinite",
+      },
+      keyframes: {
+        bounce: {
+          "0%, 100%": { transform: "scaleY(0.4)", opacity: "0.5" },
+          "50%": { transform: "scaleY(1)", opacity: "1" },
+        },
+      },
+      animation2: {
+        bounce: "bounce 1.2s infinite ease-in-out",
       },
     },
   },
