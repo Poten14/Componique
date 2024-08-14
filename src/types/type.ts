@@ -8,5 +8,9 @@ export type Color =
   | "Secondary"
   | "Success"
   | "Warning"
+<<<<<<< HEAD
   | "Danger"
   | "White";
+=======
+  | "Danger";
+>>>>>>> c770ad5 (feat: square,bars,basic spinner 구현 (#30))

@@ -22,7 +22,10 @@ const colorClasses = {
   Success: "bg-Success",
   Warning: "bg-Warning",
   Danger: "bg-Danger",
+<<<<<<< HEAD
   White: "bg-white",
+=======
+>>>>>>> c770ad5 (feat: square,bars,basic spinner 구현 (#30))
 };
 
 const BarsSpinner: React.FC<BarsSpinnerProps> = ({
