@@ -1,8 +1,15 @@
 "use client";
 import Button from "@components/Button/Button";
 import CheckBox from "@components/CheckBox/CheckBox";
+import Drawer from "@components/Drawer/Drawer";
+import { useState } from "react";
 
 const dw = () => {
+  const [isDrawerOpen, setIsDrawerOpen] = useState(false);
+  const onclickDrawerHandler = (open: boolean) => () => {
+    setIsDrawerOpen(open);
+  };
+
   return (
     <>
       <h1>dw Component</h1>
@@ -162,6 +169,28 @@ const dw = () => {
             color="basic"
             variant="border"
           />
+        </div>
+        <div>
+          <Drawer
+            isOpen={isDrawerOpen}
+            onClose={onclickDrawerHandler(false)}
+            menu={[
+              { name: "Home", path: "/" },
+              { name: "About", path: "/about" },
+              { name: "Profile", path: "/profile" },
+              { name: "Contact", path: "/Contact" },
+              { name: "LongTitleTitleTitleTitleTitleTitle", path: "/Contact" },
+            ]}
+            logo="/componique_logo_full.svg"
+          />
+
+          <Button
+            variant="border"
+            color="yellow"
+            onClick={onclickDrawerHandler(true)}
+          >
+            Drawer Open Button
+          </Button>
         </div>
       </div>
     </>
