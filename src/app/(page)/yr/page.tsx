@@ -4,10 +4,24 @@ import Logo from "../../../../public/images/logo.svg";
 import Textarea from "@components/Textarea/Textarea";
 import TextareaValue from "@components/Textarea/TextareaValue";
 import Select from "@components/Select/Select";
+import SelectValueAdd from "@components/Select/SelectValueAdd";
 
 const page = () => {
   return (
     <>
+      <div className="m-4 space-y-4">
+        <SelectValueAdd
+          option={[
+            "Option 1",
+            "Option 2",
+            "Option 3",
+            "Option 4",
+            "Option 5",
+            "Option 6",
+            "Option 7",
+          ]}
+        />
+      </div>
       {/* Navbar 연습 */}
       <div className="m-4 space-y-4">
         <Navbar
