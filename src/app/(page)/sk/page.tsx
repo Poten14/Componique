@@ -2,6 +2,9 @@ import Input1 from "@components/Input/Input1";
 import SearchInput from "@components/Input/SearchInput";
 import SearchInput2 from "@components/Input/SearchInput2";
 import SearchInput3 from "@components/Input/SearchInput3";
+import BasicSpinner from "@components/Spinner/BasicSpinner";
+import SquareSpinner from "@components/Spinner/SquareSpinner";
+import BarsSpinner from "@components/Spinner/BarsSpinner";
 const sk = () => {
   return (
     <>
@@ -34,6 +37,31 @@ const sk = () => {
         <SearchInput3 size="medium" color="Secondary" buttonText="Search" />
         <SearchInput3 size="large" color="Success" buttonText="Search" />
         <SearchInput3 size="large" color="Warning" buttonText="Search" />
+      </div>
+      <div className="ml-4 space-x-3 space-y-7">
+        <BasicSpinner size="xs" color="Basic" speed="slow" />
+        <BasicSpinner size="small" color="Danger" speed="slow" />
+        <BasicSpinner size="medium" color="Primary" speed="medium" />
+        <BasicSpinner size="medium" color="Secondary" speed="medium" />
+        <BasicSpinner size="large" color="gray" speed="medium" />
+        <BasicSpinner size="large" color="Warning" speed="fast" />
+        <BasicSpinner size="xl" color="Success" speed="fast" />
+      </div>
+      <div className="ml-4 mt-4 space-x-3 space-y-6">
+        <SquareSpinner size="xs" color="Success" speed="slow" />
+        <SquareSpinner size="small" color="Danger" speed="slow" />
+        <SquareSpinner size="medium" color="Primary" speed="medium" />
+        <SquareSpinner size="medium" color="Secondary" speed="medium" />
+        <SquareSpinner size="large" color="gray" speed="medium" />
+        <SquareSpinner size="large" color="Warning" speed="fast" />
+        <SquareSpinner size="xl" color="Basic" speed="fast" />
+      </div>
+      <div className="ml-4 mt-4 space-x-3 space-y-6">
+        <BarsSpinner size="xs" color="Success" />
+        <BarsSpinner size="small" color="Primary" />
+        <BarsSpinner size="medium" color="gray" />
+        <BarsSpinner size="large" color="Secondary" />
+        <BarsSpinner size="xl" color="Basic" />
       </div>
     </>
   );
