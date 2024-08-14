@@ -19,6 +19,7 @@ const page = () => {
             "Option 6",
             "Option 7",
           ]}
+          placeholder="option"
         />
       </div>
       {/* Navbar 연습 */}
