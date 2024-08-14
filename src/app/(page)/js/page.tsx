@@ -15,6 +15,7 @@ import CardReview from "@components/Card/CardReview";
 
 // DropDown 컴포넌트 가져오기
 import DropDownBasic from "@components/DropDown/DropDownBasic";
+import DropDownBasicMultiSelect from "@components/DropDown/DropDownMutilSelect";
 
 const Page = () => {
   // 라디오 버튼의 선택 상태를 관리하는 useState 훅
@@ -37,6 +38,9 @@ const Page = () => {
 
   // DropDown : 선택된 값 전달
   const handleSelect = (value: string) => {
+    console.log("Selected option:", value);
+  };
+  const handleSelectMulti = (value: string[]) => {
     console.log("Selected option:", value);
   };
 
@@ -320,6 +324,26 @@ const Page = () => {
           ]}
           defaultOption="Select Option"
           onSelect={handleSelect}
+        />
+        <br />
+        <br />
+        <br />
+        <h1 className="mb-4 text-lg font-semibold">
+          DropDownMultiSelect - 다중 선택 드롭다운
+        </h1>
+        <DropDownBasicMultiSelect
+          option={[
+            "Option 1",
+            "Option 2",
+            "Option 3",
+            "Option 4",
+            "Option 5",
+            "Option 6",
+            "Option 7",
+            "Option 8",
+          ]}
+          defaultOption="Select Option"
+          onSelect={handleSelectMulti}
         />
       </div>
     </div>

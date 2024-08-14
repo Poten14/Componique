@@ -1,5 +1,5 @@
 import { useState } from "react";
-
+import Image from "next/image";
 interface DropDownBasicProps {
   option: string[];
   defaultOption: string;
@@ -27,14 +27,20 @@ const DropDownBasic = ({
   };
 
   return (
-    <div className="flex justify-between gap-4">
+    <div className="mx-20 flex justify-between">
       {/* 첫번째 드롭다운 - 기본 각진 스타일 */}
       <div className="relative inline-block w-64">
         <div
           onClick={() => toggleDropdown(0)}
-          className="cursor-pointer border-2 p-2 font-bold"
+          className="flex cursor-pointer justify-between border-2 p-2 font-bold"
         >
           {selectedOption || defaultOption}
+          <Image
+            src={isOpen === 0 ? "dropdown1.svg" : "/dropdown2.svg"}
+            alt="dropdown"
+            width={20}
+            height={20}
+          />
         </div>
         {isOpen === 0 && (
           <ul className="border">
@@ -55,9 +61,15 @@ const DropDownBasic = ({
       <div className="relative inline-block w-64">
         <div
           onClick={() => toggleDropdown(1)}
-          className="cursor-pointer rounded-lg border-2 p-2 font-bold"
+          className="flex cursor-pointer justify-between rounded-lg border-2 p-2 font-bold"
         >
           {selectedOption || defaultOption}
+          <Image
+            src={isOpen === 1 ? "dropdown1.svg" : "/dropdown2.svg"}
+            alt="dropdown"
+            width={20}
+            height={20}
+          />
         </div>
         {isOpen === 1 && (
           <ul className="rounded-lg border">
@@ -78,9 +90,15 @@ const DropDownBasic = ({
       <div className="relative inline-block w-64">
         <div
           onClick={() => toggleDropdown(2)}
-          className="cursor-pointer rounded-full border-2 border-zinc-100 p-2 font-bold shadow-md"
+          className="flex cursor-pointer justify-between rounded-full border-2 border-zinc-100 p-2 font-bold shadow-md"
         >
           {selectedOption || defaultOption}
+          <Image
+            src={isOpen === 2 ? "dropdown1.svg" : "/dropdown2.svg"}
+            alt="dropdown"
+            width={20}
+            height={20}
+          />
         </div>
         {isOpen === 2 && (
           <ul className="mt-2 rounded-xl border-2 border-zinc-100 shadow-md">
@@ -101,9 +119,15 @@ const DropDownBasic = ({
       <div className="relative inline-block w-64">
         <div
           onClick={() => toggleDropdown(3)}
-          className="cursor-pointer rounded-lg border-2 border-zinc-100 bg-white p-2 font-bold"
+          className="flex cursor-pointer justify-between rounded-lg border-2 border-zinc-100 bg-white p-2 font-bold"
         >
           {selectedOption || defaultOption}
+          <Image
+            src={isOpen === 3 ? "dropdown1.svg" : "/dropdown2.svg"}
+            alt="dropdown"
+            width={20}
+            height={20}
+          />
         </div>
         {isOpen === 3 && (
           <ul className="rounded-lg border border-zinc-100">
