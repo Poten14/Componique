@@ -7,7 +7,13 @@ interface PricingCard {
   buy: string;
 }
 
-const Card4 = ({ title, description, price, features, buy }: PricingCard) => {
+const CardPricing = ({
+  title,
+  description,
+  price,
+  features,
+  buy,
+}: PricingCard) => {
   return (
     <div className="m-4 max-w-sm rounded-xl border-2 border-[#4C89FF] bg-white shadow-lg">
       <div className="px-6 py-4">
@@ -26,4 +32,4 @@ const Card4 = ({ title, description, price, features, buy }: PricingCard) => {
     </div>
   );
 };
-export default Card4;
+export default CardPricing;
