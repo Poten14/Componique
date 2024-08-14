@@ -1,18 +1,19 @@
 import Image from "next/image";
+import { Size } from "types/type";
 
 // NavbarProps 정의
 interface NavbarProps {
   logoSrc: string;
   logoName: string;
-  size?: "xs" | "lg" | "xl";
+  size?: Size;
   hoverColor?: "skyblue" | "blue" | "red";
   position?: "sticky" | "relative" | "static";
 }
 
 const sizeClasses = {
-  xs: "text-xs",
-  lg: "text-lg",
-  xl: "text-xl",
+  small: "text-xs",
+  medium: "text-lg",
+  large: "text-xl",
 };
 
 const hoverColorClasses = {
@@ -28,7 +29,7 @@ const positionClasses = {
 };
 
 const Navbar = ({
-  size = "xl",
+  size = "small",
   hoverColor = "blue",
   position = "static",
   logoName,

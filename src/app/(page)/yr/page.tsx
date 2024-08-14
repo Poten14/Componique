@@ -2,15 +2,16 @@ import Navbar from "@components/Navbar/Navbar";
 import NavbarSearch from "@components/Navbar/NavbarSearch";
 import Logo from "../../../../public/images/logo.svg";
 import Textarea from "@components/Textarea/Textarea";
+import TextareaValue from "@components/Textarea/TextareaValue";
 
 const page = () => {
   return (
     <>
       {/* Navbar 연습 */}
-      {/* <Navbar
+      <Navbar
         logoName="Compunique"
         logoSrc={Logo}
-        size="xl"
+        size="small"
         hoverColor="blue"
         position="static"
       />
@@ -21,7 +22,7 @@ const page = () => {
         type="search"
         size={10}
         placeholder="Search"
-      /> */}
+      />
       {/* textarea 연습 */}
       <Textarea
         label="Your message"
@@ -30,6 +31,7 @@ const page = () => {
         size="xs"
         rows={4}
         cols={20}
+        disabled
         placeholder="Write"
       />
       <Textarea
@@ -37,6 +39,7 @@ const page = () => {
         name="text"
         id="text"
         size="small"
+        color="blue"
         rows={4}
         cols={20}
         placeholder="Write"
@@ -46,6 +49,7 @@ const page = () => {
         name="text"
         id="text"
         size="medium"
+        color="red"
         rows={4}
         cols={20}
         placeholder="Write"
@@ -55,6 +59,7 @@ const page = () => {
         name="text"
         id="text"
         size="large"
+        color="green"
         rows={4}
         cols={20}
         placeholder="Write"
@@ -64,10 +69,12 @@ const page = () => {
         name="text"
         id="text"
         size="xl"
+        color="gray"
         rows={4}
         cols={20}
         placeholder="Write"
       />
+      <TextareaValue />
     </>
   );
 };
