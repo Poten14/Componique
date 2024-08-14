@@ -41,7 +41,7 @@ const Page = () => {
   };
 
   return (
-    <div className="ml-4 mt-4">
+    <div className="mb-96 ml-4 mt-4">
       {/* 라디오 버튼 섹션 */}
       <div>
         <h1 className="mb-4 text-lg font-semibold">
@@ -308,7 +308,16 @@ const Page = () => {
           DropDownBasic - 기본 드롭다운
         </h1>
         <DropDownBasic
-          option={["Option 1", "Option 2", "Option 3", "Option 4", "Option 5"]}
+          option={[
+            "Option 1",
+            "Option 2",
+            "Option 3",
+            "Option 4",
+            "Option 5",
+            "Option 6",
+            "Option 7",
+            "Option 8",
+          ]}
           defaultOption="Select Option"
           onSelect={handleSelect}
         />
