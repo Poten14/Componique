@@ -60,14 +60,37 @@ const dw = () => {
           Light warning None Button
         </Button>
       </div>
-      <div>
-        <CheckBox />
-        <CheckBox
-          onChange={(e) => console.log(e.target.checked)}
-          description="안녕"
-        />
-
-        <CheckBox description="반가워" />
+      <div className="ml-3 mt-5 space-y-4">
+        <h2 className="ml-4 text-2xl">기본 체크박스</h2>
+        <div className="ml-4">
+          <CheckBox onChange={(e) => console.log(e.target.checked)} />
+        </div>
+        <h2 className="ml-4 text-2xl">체크박스의 크기</h2>
+        <div className="ml-4 flex space-x-5">
+          <CheckBox boxSize="small" description="small CheckBox" />
+          <CheckBox description="medium CheckBox" color="secondary" />
+          <CheckBox boxSize="large" description="large CheckBox" />
+        </div>
+        <h2 className="ml-4 text-2xl">체크박스의 컬러</h2>
+        <div className="ml-4 flex flex-wrap space-x-5">
+          <CheckBox description="Primary CheckBox" color="primary" />
+          <CheckBox description="Secondary CheckBox" color="secondary" />
+          <CheckBox description="Success CheckBox" color="success" />
+          <CheckBox description="Warning CheckBox" color="warning" />
+          <CheckBox description="Danger CheckBox" color="danger" />
+        </div>
+        <div className="ml-4 flex space-x-5">
+          <CheckBox description="Red CheckBox" color="red" />
+          <CheckBox description="Orange CheckBox" color="orange" />
+          <CheckBox description="Yellow CheckBox" color="yellow" />
+          <CheckBox description="Green CheckBox" color="green" />
+        </div>
+        <div className="ml-4 flex space-x-5">
+          <CheckBox description="Blue CheckBox" color="blue" />
+          <CheckBox description="Purple CheckBox" color="purple" />
+          <CheckBox description="Pink CheckBox" color="pink" />
+          <CheckBox description="Basic CheckBox" color="basic" />
+        </div>
       </div>
     </>
   );
