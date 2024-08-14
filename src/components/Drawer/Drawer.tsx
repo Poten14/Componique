@@ -8,6 +8,40 @@ type DrawerProps = {
   isOpen?: boolean;
   logo?: string;
   onClose?: () => void;
+  color?:
+    | "primary"
+    | "secondary"
+    | "success"
+    | "warning"
+    | "danger"
+    | "red"
+    | "orange"
+    | "yellow"
+    | "green"
+    | "blue"
+    | "purple"
+    | "pink"
+    | "basic"
+    | "white"
+    | "gray"
+    | "black";
+  bgColor?:
+    | "primary"
+    | "secondary"
+    | "success"
+    | "warning"
+    | "danger"
+    | "red"
+    | "orange"
+    | "yellow"
+    | "green"
+    | "blue"
+    | "purple"
+    | "pink"
+    | "basic"
+    | "white"
+    | "gray"
+    | "black";
 };
 
 type MenuProps = {
@@ -19,6 +53,8 @@ const Drawer: React.FC<DrawerProps> = ({
   menu,
   logo,
   isOpen = true,
+  color,
+  bgColor = "basic",
   onClose,
 }) => {
   const [isDrawerOpen, setIsDrawerOpen] = useState(isOpen);
@@ -49,6 +85,27 @@ const Drawer: React.FC<DrawerProps> = ({
     };
   }, [isDrawerOpen]);
 
+  const bgColors = {
+    primary: "bg-Primary",
+    secondary: "bg-Secondary",
+    success: "bg-Success",
+    warning: "bg-Warning",
+    danger: "bg-Danger",
+    red: "bg-red-500",
+    orange: "bg-orange-500",
+    yellow: "bg-yellow-500",
+    green: "bg-green-500",
+    blue: "bg-blue-500",
+    purple: "bg-purple-500",
+    pink: "bg-pink-500",
+    basic: "bg-Basic",
+    white: "bg-white",
+    gray: "bg-gray",
+    black: "bg-black",
+  };
+
+  const basicBg = `absolute top-0 h-full w-[200px] transition-transform duration-500 ease-in-out   ${bgColors[bgColor]}`;
+
   return (
     <section
       className={`fixed left-0 top-0 h-full w-full select-none bg-black bg-opacity-50 transition-opacity duration-500 ease-in-out ${
@@ -56,7 +113,7 @@ const Drawer: React.FC<DrawerProps> = ({
       }`}
     >
       <div
-        className={`absolute top-0 h-full w-[200px] bg-pink-200 transition-transform duration-500 ease-in-out ${
+        className={`${basicBg} ${
           isDrawerOpen ? "translate-x-0" : "-translate-x-full"
         }`}
       >
@@ -77,11 +134,13 @@ const Drawer: React.FC<DrawerProps> = ({
           <img src={logo} className="w-[180px] cursor-pointer text-center" />
         </div>
 
-        <ul className="space-y-2 bg-pink-200">
+        <ul className="space-y-2">
           {menu?.map((item, index) => (
             <li
               key={index}
-              className="mx-2 box-border w-[183px] cursor-pointer overflow-hidden text-ellipsis whitespace-nowrap rounded bg-[#F8F8F8] px-5 py-2 hover:bg-gray"
+              className={`mx-2 box-border w-[183px] cursor-pointer overflow-hidden text-ellipsis whitespace-nowrap rounded px-5 py-2 hover:bg-gray ${
+                color ? bgColors[color] : "bg-[#F8F8F8]"
+              } ${color === "black" ? "text-white" : ""}`}
               onClick={() => router.push(item.path)}
             >
               {item.name}
