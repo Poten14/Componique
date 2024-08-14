@@ -15,7 +15,7 @@ const shapeClasses = {
 };
 const FullScreenSpinner: React.FC<FullScreenSpinnerProps> = ({
   spinning,
-  shape = "Square",
+  shape = "Basic",
 }) => {
   if (!spinning) return null;
 
