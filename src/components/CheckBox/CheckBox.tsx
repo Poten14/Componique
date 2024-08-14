@@ -19,6 +19,7 @@ type CheckBoxProps = {
     | "purple"
     | "pink"
     | "basic";
+  variant?: "solid" | "border";
 } & React.InputHTMLAttributes<HTMLInputElement>;
 
 const CheckBox: React.FC<CheckBoxProps> = ({
@@ -28,6 +29,7 @@ const CheckBox: React.FC<CheckBoxProps> = ({
   description,
   color = "basic",
   boxSize = "medium",
+  variant = "solid",
   ...rest
 }) => {
   const [checkId, setCheckId] = useState<string | undefined>(undefined);
@@ -74,6 +76,39 @@ const CheckBox: React.FC<CheckBoxProps> = ({
     pink: "checked:!bg-Pink checked:!border-Pink hover:!border-Pink",
     basic: "checked:!bg-Basic checked:!border-Basic hover:!border-Basic",
   };
+  const borderColors = {
+    primary:
+      "checked:bg-transparent checked:after:border-b-Primary checked:after:border-r-Primary checked:!border-Primary hover:!border-Primary",
+    secondary:
+      "checked:bg-transparent checked:after:border-b-Secondary checked:after:border-r-Secondary checked:!border-Secondary hover:!border-Secondary",
+    success:
+      "checked:bg-transparent checked:after:border-b-Success checked:after:border-r-Success checked:!border-Success hover:!border-Success",
+    warning:
+      "checked:bg-transparent checked:after:border-b-Warning checked:after:border-r-Warning checked:!border-Warning hover:!border-Warning",
+    danger:
+      "checked:bg-transparent checked:after:border-b-Danger checked:after:border-r-Danger checked:!border-Danger hover:!border-Danger",
+    red: "checked:bg-transparent checked:after:border-b-Red checked:after:border-r-Red checked:!border-Red hover:!border-Red",
+    orange:
+      "checked:bg-transparent checked:after:border-b-Orange checked:after:border-r-Orange checked:!border-Orange hover:!border-Orange",
+    yellow:
+      "checked:bg-transparent checked:after:border-b-Yellow checked:after:border-r-Yellow checked:!border-Yellow hover:!border-Yellow",
+    green:
+      "checked:bg-transparent checked:after:border-b-Green checked:after:border-r-Green checked:!border-Green hover:!border-Green",
+    blue: "checked:bg-transparent checked:after:border-b-Blue checked:after:border-r-Blue checked:!border-Blue hover:!border-Blue",
+    purple:
+      "checked:bg-transparent checked:after:border-b-Purple checked:after:border-r-Purple checked:!border-Purple hover:!border-Purple",
+    pink: "checked:bg-transparent checked:after:border-b-Pink checked:after:border-r-Pink checked:!border-Pink hover:!border-Pink",
+    basic:
+      "checked:bg-transparent checked:after:border-b-Basic checked:after:border-r-Basic checked:!border-Basic hover:!border-Basic",
+  };
+
+  let ChckBoxVariant = "";
+
+  if (variant === "solid") {
+    ChckBoxVariant = `${colors[color]}`;
+  } else if (variant === "border") {
+    ChckBoxVariant = `${borderColors[color]}`;
+  }
 
   const basicCheckBox =
     "relative aspect-square h-5 w-5 cursor-pointer !appearance-none rounded border border-gray bg-white !outline-none !ring-0 !ring-offset-0 transition-all duration-300 ease-in-out after:absolute after:left-[50%] after:top-[40%] after:h-[53%] after:w-[35%] after:-translate-x-2/4 after:-translate-y-2/4 after:rotate-[25deg] after:border-b-[0.20em] after:border-r-[0.20em] after:border-b-white after:border-r-white after:transition-all after:duration-200 after:ease-linear checked:!border-Basic checked:bg-Basic checked:after:rotate-45 checked:after:opacity-100 hover:!border-Basic disabled:bg-slate-300 disabled:after:border-b-0 disabled:after:border-r-0";
@@ -83,7 +118,7 @@ const CheckBox: React.FC<CheckBoxProps> = ({
         type="checkbox"
         value={value}
         id={checkId}
-        className={`${basicCheckBox} ${checkBoxSize} ${colors[color]}`}
+        className={`${basicCheckBox} ${checkBoxSize} ${ChckBoxVariant} `}
         {...rest}
       />
       <label htmlFor={checkId} className={`ml-1 select-none ${checkBoxLabel}`}>
