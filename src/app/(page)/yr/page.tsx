@@ -5,15 +5,11 @@ import Textarea from "@components/Textarea/Textarea";
 import TextareaValue from "@components/Textarea/TextareaValue";
 import Select from "@components/Select/Select";
 import SelectValueAdd from "@components/Select/SelectValueAdd";
+import SelectList from "@components/Select/SelectList";
 
 const page = () => {
   return (
     <>
-      <div className="m-4 space-y-4">
-        <SelectValueAdd
-          option={["Option 1", "Option 2", "Option 3", "Option 4"]}
-        />
-      </div>
       {/* Navbar 연습 */}
       <div className="m-4 space-y-4">
         <Navbar
@@ -142,6 +138,14 @@ const page = () => {
           placeholder="option"
           color="green"
         />
+      </div>
+      <div className="m-4 space-y-4">
+        <SelectValueAdd
+          option={["Option 1", "Option 2", "Option 3", "Option 4"]}
+        />
+      </div>
+      <div className="m-4 space-y-4">
+        <SelectList option={["option1", "option2", "option3", "option4"]} />
       </div>
     </>
   );
