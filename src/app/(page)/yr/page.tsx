@@ -11,15 +11,7 @@ const page = () => {
     <>
       <div className="m-4 space-y-4">
         <SelectValueAdd
-          option={[
-            "Option 1",
-            "Option 2",
-            "Option 3",
-            "Option 4",
-            "Option 5",
-            "Option 6",
-            "Option 7",
-          ]}
+          option={["Option 1", "Option 2", "Option 3", "Option 4"]}
         />
       </div>
       {/* Navbar 연습 */}
