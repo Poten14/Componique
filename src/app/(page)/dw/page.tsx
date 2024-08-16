@@ -182,6 +182,8 @@ const dw = () => {
               { name: "LongTitleTitleTitleTitleTitleTitle", path: "/Contact" },
             ]}
             logo="/componique_logo_full.svg"
+            postion="left"
+            bgColor="basic"
           />
 
           <Button
