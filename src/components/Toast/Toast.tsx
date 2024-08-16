@@ -3,7 +3,9 @@
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { useEffect } from "react";
+import { Size } from "types/type";
 type ToastProps = {
+  size?: Size;
   isOpen?: boolean;
   postion?: "top" | "bottom" | "left" | "right";
   onClose?: () => void;
@@ -14,6 +16,7 @@ const Toast: React.FC<ToastProps> = ({
   children,
   isOpen = true,
   onClose,
+  size = "large",
   ...rest
 }) => {
   const [isToastOpen, setIsToastOpen] = useState(isOpen);
@@ -27,15 +30,20 @@ const Toast: React.FC<ToastProps> = ({
     setIsToastOpen(false);
     if (onClose) onClose();
   };
+
+  const ToastSize =
+    size === "small" ? "w-4/12" : size === "medium" ? "w-6/12" : "w-full";
+  const BasicToast =
+    "min-w-md fixed left-1/2 top-10 w-11/12 -translate-x-1/2 -translate-y-1/2 transform";
   return (
     <>
       <section
-        className={`min-w-md fixed left-1/2 top-10 w-11/12 -translate-x-1/2 -translate-y-1/2 transform ${
+        className={`${BasicToast} ${
           isToastOpen ? "opacity-100" : "pointer-events-none opacity-0"
         }`}
       >
         <div
-          className="flex w-full items-center justify-between rounded-md bg-Basic p-4"
+          className={`flex w-full items-center justify-between rounded-md bg-Basic p-4 ${ToastSize}`}
           {...rest}
         >
           {children}
