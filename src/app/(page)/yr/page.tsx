@@ -96,7 +96,7 @@ const page = () => {
             "Option 6",
             "Option 7",
           ]}
-          placeholder="option"
+          defaultValue="option"
           color="gray"
         />
         <Select
@@ -109,7 +109,7 @@ const page = () => {
             "Option 6",
             "Option 7",
           ]}
-          placeholder="option"
+          defaultValue="option"
           color="red"
         />
         <Select
@@ -122,7 +122,7 @@ const page = () => {
             "Option 6",
             "Option 7",
           ]}
-          placeholder="option"
+          defaultValue="option"
           color="blue"
         />
         <Select
@@ -135,7 +135,7 @@ const page = () => {
             "Option 6",
             "Option 7",
           ]}
-          placeholder="option"
+          defaultValue="option"
           color="green"
         />
       </div>
