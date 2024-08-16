@@ -19,7 +19,7 @@ const SelectList = ({ option }: SelectListProps) => {
         <ul className="flex cursor-pointer justify-evenly divide-x divide-gray rounded-lg border border-gray text-center">
           {option.map((item, key) => (
             <li
-              className={`w-full p-2 hover:bg-[#9AC5E5] hover:font-bold hover:text-[#fff] ${selectValue === item ? "rounded-lg bg-[#9AC5E5] font-bold text-[#fff]" : ""} `}
+              className={`w-full p-2 transition-transform duration-300 hover:bg-[#9AC5E5] hover:font-bold hover:text-[#fff] ${selectValue === item ? "rounded-lg bg-[#9AC5E5] font-bold text-[#fff]" : ""} `}
               key={key}
               onClick={() => handleOptionClick(item)}
             >

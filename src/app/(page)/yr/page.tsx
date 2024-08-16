@@ -6,6 +6,7 @@ import TextareaValue from "@components/Textarea/TextareaValue";
 import Select from "@components/Select/Select";
 import SelectValueAdd from "@components/Select/SelectValueAdd";
 import SelectList from "@components/Select/SelectList";
+import SelectSwitch from "@components/Select/SelectSwitch";
 
 const page = () => {
   return (
@@ -146,6 +147,9 @@ const page = () => {
       </div>
       <div className="m-4 space-y-4">
         <SelectList option={["option1", "option2", "option3", "option4"]} />
+      </div>
+      <div className="m-4 space-y-4">
+        <SelectSwitch reset={true} />
       </div>
     </>
   );
