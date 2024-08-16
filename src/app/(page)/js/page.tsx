@@ -16,7 +16,7 @@ import CardReview from "@components/Card/CardReview";
 // DropDown 컴포넌트 가져오기
 import DropDownBasic from "@components/DropDown/DropDownBasic";
 import DropDownBasicMultiSelect from "@components/DropDown/DropDownMutilSelect";
-
+import DropDownGrouped from "@components/DropDown/DropDownGrouped";
 const Page = () => {
   // 라디오 버튼의 선택 상태를 관리하는 useState 훅
   const [basicSelectedValue, setBasicSelectedValue] = useState("");
@@ -346,6 +346,30 @@ const Page = () => {
           onSelect={handleSelectMulti}
         />
       </div>
+      <br />
+      <br />
+      <br />
+      <h1 className="mb-4 text-lg font-semibold">
+        DropDownGrouped - 그룹화한 드롭다운
+      </h1>
+      <DropDownGrouped
+        options={[
+          {
+            groupName: "Fruits",
+            items: ["Apple", "Banana", "Orange", "Grapes"],
+          },
+          {
+            groupName: "Vegetables",
+            items: ["Carrot", "Broccoli", "Spinach", "Potato"],
+          },
+          {
+            groupName: "Dairy",
+            items: ["Milk", "Cheese", "Butter", "Yogurt"],
+          },
+        ]}
+        defaultOption="Select Option"
+        onSelect={handleSelect}
+      />
     </div>
   );
 };
