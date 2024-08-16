@@ -1,16 +1,16 @@
 import { useState } from "react";
 import Image from "next/image";
-interface DropDownMultiSelectProps {
+interface DropDownGroupedProups {
   option: string[];
   defaultOption: string;
   onSelect?: (value: string[]) => void;
 }
 
-const DropDownBasicMultiSelect = ({
+const DropDownGrouped = ({
   option,
   defaultOption,
   onSelect,
-}: DropDownMultiSelectProps) => {
+}: DropDownGroupedProups) => {
   const [isOpen, setIsOpen] = useState<number | null>();
   const [selectedOption, setSelectedOption] = useState<string[]>([]);
   const [displayState, setdisplayState] = useState<string[]>([]);
@@ -173,4 +173,4 @@ const DropDownBasicMultiSelect = ({
   );
 };
 
-export default DropDownBasicMultiSelect;
+export default DropDownGrouped;
