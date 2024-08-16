@@ -4,7 +4,7 @@ import { useState } from "react";
 import Image from "next/image";
 
 interface SelectProps {
-  placeholder?: string;
+  defaultValue?: string;
   option: string[];
   color?: "red" | "blue" | "green" | "gray";
 }
@@ -16,7 +16,7 @@ const colorClasses = {
   gray: "border-[#DCDCDD] focus:ring-[#DCDCDD]",
 };
 
-const Select = ({ option, color = "gray", placeholder }: SelectProps) => {
+const Select = ({ option, color = "gray", defaultValue }: SelectProps) => {
   const [selectValue, setSelectValue] = useState<string>("");
   const [open, setOpen] = useState<boolean>(false);
 
@@ -37,7 +37,7 @@ const Select = ({ option, color = "gray", placeholder }: SelectProps) => {
           onClick={handleDropDown}
         >
           <span className="text-sm font-semibold">
-            {selectValue || placeholder}
+            {selectValue || defaultValue}
           </span>
           {open ? (
             <Image src="selectdown.svg" alt="arrow" width={15} height={15} />

@@ -97,7 +97,7 @@ const page = () => {
             "Option 6",
             "Option 7",
           ]}
-          placeholder="option"
+          defaultValue="option"
           color="gray"
         />
         <Select
@@ -110,7 +110,7 @@ const page = () => {
             "Option 6",
             "Option 7",
           ]}
-          placeholder="option"
+          defaultValue="option"
           color="red"
         />
         <Select
@@ -123,7 +123,7 @@ const page = () => {
             "Option 6",
             "Option 7",
           ]}
-          placeholder="option"
+          defaultValue="option"
           color="blue"
         />
         <Select
@@ -136,20 +136,9 @@ const page = () => {
             "Option 6",
             "Option 7",
           ]}
-          placeholder="option"
+          defaultValue="option"
           color="green"
         />
-      </div>
-      <div className="m-4 space-y-4">
-        <SelectValueAdd
-          option={["Option 1", "Option 2", "Option 3", "Option 4"]}
-        />
-      </div>
-      <div className="m-4 space-y-4">
-        <SelectList option={["option1", "option2", "option3", "option4"]} />
-      </div>
-      <div className="m-4 space-y-4">
-        <SelectSwitch reset={true} />
       </div>
     </>
   );
