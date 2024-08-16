@@ -4,7 +4,7 @@ interface BasicCard {
   description: string;
 }
 
-const Card1 = ({ title, description }: BasicCard) => {
+const CardBasic = ({ title, description }: BasicCard) => {
   return (
     <div className="m-4 max-w-sm rounded-xl border-2 border-[#4C89FF] bg-white shadow-lg">
       <div className="px-6 py-4">
@@ -14,4 +14,4 @@ const Card1 = ({ title, description }: BasicCard) => {
     </div>
   );
 };
-export default Card1;
+export default CardBasic;

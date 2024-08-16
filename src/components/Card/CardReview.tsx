@@ -33,7 +33,7 @@ const ratingStars = (rate: number) => {
   return stars;
 };
 
-const Card5 = ({ avatar, name, rate, review }: ReviewCardProps) => {
+const CardReview = ({ avatar, name, rate, review }: ReviewCardProps) => {
   return (
     <div className="m-4 max-w-sm rounded-xl border-2 border-[#4C89FF] bg-white shadow-lg">
       <div className="flex items-center px-6 py-4">
@@ -52,4 +52,4 @@ const Card5 = ({ avatar, name, rate, review }: ReviewCardProps) => {
   );
 };
 
-export default Card5;
+export default CardReview;
