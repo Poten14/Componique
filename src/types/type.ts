@@ -10,3 +10,21 @@ export type Color =
   | "Warning"
   | "Danger"
   | "White";
+
+export type Color16 =
+  | "primary"
+  | "secondary"
+  | "success"
+  | "warning"
+  | "danger"
+  | "red"
+  | "orange"
+  | "yellow"
+  | "green"
+  | "blue"
+  | "purple"
+  | "pink"
+  | "basic"
+  | "white"
+  | "gray"
+  | "black";
