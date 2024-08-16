@@ -204,7 +204,12 @@ const dw = () => {
         </div>
       </div>
       <div className="ml-3 mt-5 space-y-4">
-        <Toast isOpen={isToastOpen} onClose={onclickToastHandler(false)}>
+        <Toast
+          isOpen={isToastOpen}
+          size="medium"
+          onClose={onclickToastHandler(false)}
+          color="secondary"
+        >
           가입이 완료되었습니다.
         </Toast>
         <Button

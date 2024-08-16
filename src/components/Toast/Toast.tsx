@@ -3,19 +3,21 @@
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { useEffect } from "react";
-import { Size } from "types/type";
+import { Color16, Size } from "types/type";
 type ToastProps = {
   size?: Size;
   isOpen?: boolean;
   postion?: "top" | "bottom" | "left" | "right";
   onClose?: () => void;
   children: React.ReactNode;
+  color?: Color16;
 };
 
 const Toast: React.FC<ToastProps> = ({
   children,
   isOpen = true,
   onClose,
+  color = "basic",
   size = "large",
   ...rest
 }) => {
@@ -33,6 +35,26 @@ const Toast: React.FC<ToastProps> = ({
 
   const ToastSize =
     size === "small" ? "w-4/12" : size === "medium" ? "w-6/12" : "w-full";
+
+  const bgColors = {
+    primary: "bg-Primary",
+    secondary: "bg-Secondary",
+    success: "bg-Success",
+    warning: "bg-Warning",
+    danger: "bg-Danger",
+    red: "bg-red-500",
+    orange: "bg-orange-500",
+    yellow: "bg-yellow-500",
+    green: "bg-green-500",
+    blue: "bg-blue-500",
+    purple: "bg-purple-500",
+    pink: "bg-pink-500",
+    basic: "bg-Basic",
+    white: "bg-white",
+    gray: "bg-gray",
+    black: "bg-black",
+  };
+
   const BasicToast =
     "min-w-md fixed left-1/2 top-10 w-11/12 -translate-x-1/2 -translate-y-1/2 transform";
   return (
@@ -43,7 +65,7 @@ const Toast: React.FC<ToastProps> = ({
         }`}
       >
         <div
-          className={`flex w-full items-center justify-between rounded-md bg-Basic p-4 ${ToastSize}`}
+          className={`flex w-full items-center justify-between rounded-md bg-Basic ${bgColors[color]} p-4 ${ToastSize}`}
           {...rest}
         >
           {children}
