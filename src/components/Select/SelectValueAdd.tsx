@@ -60,7 +60,7 @@ const SelectValueAdd = ({ option }: SelectValueAdd) => {
             <Image src="selectup.svg" alt="arrow" width={15} height={15} />
           )}
           {open && (
-            <ul className="absolute left-0 right-0 top-full rounded-lg border border-gray bg-white text-xs shadow-lg">
+            <ul className="absolute left-0 right-0 top-full z-30 rounded-lg border border-gray bg-white text-xs shadow-lg">
               {option.map((item, key) => (
                 <li
                   className={`block w-full cursor-pointer rounded-lg py-2 pl-4 text-sm hover:bg-[#E8F5FF] ${selectValue.includes(item) ? "bg-[#E8F5FF]" : ""}`}

@@ -6,17 +6,34 @@ import TextareaValue from "@components/Textarea/TextareaValue";
 import Select from "@components/Select/Select";
 import SelectValueAdd from "@components/Select/SelectValueAdd";
 import SelectList from "@components/Select/SelectList";
-import SelectSwitch from "@components/Select/SelectSwitch";
+import Skeleton from "@components/Skeleton/Skeleton";
 
 const page = () => {
   return (
     <>
+      <div className="m-4 space-y-4">
+        <Skeleton />
+      </div>
       {/* Navbar 연습 */}
       <div className="m-4 space-y-4">
         <Navbar
           logoName="Compunique"
           logoSrc={Logo}
           size="small"
+          hoverColor="blue"
+          position="static"
+        />
+        <Navbar
+          logoName="Compunique"
+          logoSrc={Logo}
+          size="medium"
+          hoverColor="blue"
+          position="static"
+        />
+        <Navbar
+          logoName="Compunique"
+          logoSrc={Logo}
+          size="large"
           hoverColor="blue"
           position="static"
         />

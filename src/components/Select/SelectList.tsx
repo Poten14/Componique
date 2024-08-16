@@ -15,7 +15,7 @@ const SelectList = ({ option }: SelectListProps) => {
 
   return (
     <>
-      <div className="w-1/5">
+      <div className="w-96">
         <ul className="flex cursor-pointer justify-evenly divide-x divide-gray rounded-lg border border-gray text-center">
           {option.map((item, key) => (
             <li

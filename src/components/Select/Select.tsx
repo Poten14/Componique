@@ -46,7 +46,7 @@ const Select = ({ option, color = "gray", defaultValue }: SelectProps) => {
           )}
           {open && (
             <ul
-              className={`absolute left-0 right-0 top-full rounded-lg border bg-white ${colorClasses[color]} text-xs shadow-lg`}
+              className={`absolute left-0 right-0 top-full rounded-lg border bg-white ${colorClasses[color]} z-30 text-xs shadow-lg`}
             >
               {option.map((item, key) => (
                 <li
