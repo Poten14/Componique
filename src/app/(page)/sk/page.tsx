@@ -11,9 +11,13 @@ import Button from "@components/Button/Button";
 import { useState } from "react";
 import FullScreenSpinner from "@components/Spinner/ FullScreenSpinner";
 import PacManSpinner from "@components/Spinner/PacManSpinner";
+import BasicModal from "@components/Modal/BasicModal";
+import { ExtraSize } from "types/type";
 
 const sk = () => {
-  const [spinning, setSpinning] = useState(false);
+  const [spinning, setSpinning] = useState(false); //fullscreen
+  const [isOpen, setIsOpen] = useState(false); //모달
+  const [modalSize, setModalSize] = useState<ExtraSize | "full">("medium");
 
   const showLoader = () => {
     setSpinning(true);
@@ -22,6 +26,21 @@ const sk = () => {
       setSpinning(false);
     }, 3000); // 3초 동안 스피너를 표시한 후 숨김
   };
+  const openModal = (size: ExtraSize | "full") => {
+    setModalSize(size);
+    setIsOpen(true);
+  };
+
+  const closeModal = () => setIsOpen(false);
+
+  const sizes: (ExtraSize | "full")[] = [
+    "xs",
+    "small",
+    "medium",
+    "large",
+    "xl",
+    "full",
+  ];
 
   return (
     <>
@@ -109,6 +128,42 @@ const sk = () => {
         <FullScreenSpinner spinning={spinning} shape="Basic" />
       </div>
 
+      {/* Modal */}
+      <div className="ml-4 mt-4 space-x-3 space-y-6">
+        <h1 className="mb-4 text-2xl font-bold">Modal Size Example</h1>
+        <div className="space-x-4">
+          {sizes.map((size) => (
+            <Button key={size} onClick={() => openModal(size)}>
+              {`Open ${size} Modal`}
+            </Button>
+          ))}
+        </div>
+
+        <BasicModal
+          open={isOpen}
+          size={modalSize}
+          onClose={closeModal}
+          primaryButton={{
+            text: "Okay",
+            variant: "primary",
+            onClick: closeModal,
+          }}
+          secondaryButton={{
+            text: "Close",
+            variant: "secondary",
+            onClick: closeModal,
+          }}
+        >
+          <h2 className="mb-4 text-lg font-bold">Modal Size: {modalSize}</h2>
+          <p>
+            Magna exercitation reprehenderit magna aute tempor cupidatat
+            consequat elit dolor adipisicing. Mollit dolor eiusmod sunt ex
+            incididunt cillum quis. Velit duis sit officia eiusmod Lorem aliqua
+            enim laboris do dolor eiusmod. Et mollit incididunt nisi consectetur
+            esse laborum eiusmod pariatur proident Lorem eiusmod et.
+          </p>
+        </BasicModal>
+      </div>
     </>
   );
 };
