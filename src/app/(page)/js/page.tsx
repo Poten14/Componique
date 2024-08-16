@@ -376,7 +376,7 @@ const Page = () => {
       <br />
       <br />
       <br />
-      <h1 className="mb-4 text-lg font-semibold">SwitchBasic - 기본 스위치</h1>
+      <h1 className="mb-4 text-lg font-semibold">SwitchBasic - 기본스위치</h1>
       <SwitchBasic />
     </div>
   );
