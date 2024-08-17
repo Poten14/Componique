@@ -180,7 +180,7 @@ const sk = () => {
       </div>
 
       <div className="ml-4 mt-4 space-x-3 space-y-6">
-        <h1 className="mb-4 text-2xl font-bold">Overlay Modal</h1>
+        <h1 className="mb-4 text-2xl font-bold">Overlay Scroll Modal</h1>
         <Button variant="border" onClick={handleOpenModal}>
           Open overlay Modal
         </Button>
