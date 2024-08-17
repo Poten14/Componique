@@ -13,11 +13,13 @@ import FullScreenSpinner from "@components/Spinner/ FullScreenSpinner";
 import PacManSpinner from "@components/Spinner/PacManSpinner";
 import BasicModal from "@components/Modal/BasicModal";
 import { ExtraSize } from "types/type";
+import OverlayModal from "@components/Modal/OverlayModal";
 
 const sk = () => {
   const [spinning, setSpinning] = useState(false); //fullscreen
   const [isOpen, setIsOpen] = useState(false); //모달
   const [modalSize, setModalSize] = useState<ExtraSize | "full">("medium");
+  const [isModalOpen, setIsModalOpen] = useState(false); //오버레이 모달
 
   const showLoader = () => {
     setSpinning(true);
@@ -26,12 +28,23 @@ const sk = () => {
       setSpinning(false);
     }, 3000); // 3초 동안 스피너를 표시한 후 숨김
   };
+
+  //베이직 모달
   const openModal = (size: ExtraSize | "full") => {
     setModalSize(size);
     setIsOpen(true);
   };
 
   const closeModal = () => setIsOpen(false);
+
+  //오버레이모달
+  const handleOpenModal = () => {
+    setIsModalOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+  };
 
   const sizes: (ExtraSize | "full")[] = [
     "xs",
@@ -130,7 +143,7 @@ const sk = () => {
 
       {/* Modal */}
       <div className="ml-4 mt-4 space-x-3 space-y-6">
-        <h1 className="mb-4 text-2xl font-bold">Modal Size Example</h1>
+        <h1 className="mb-4 text-2xl font-bold">Basic Modal</h1>
         <div className="space-x-4">
           {sizes.map((size) => (
             <Button key={size} onClick={() => openModal(size)}>
@@ -153,6 +166,7 @@ const sk = () => {
             variant: "secondary",
             onClick: closeModal,
           }}
+          showCloseIcon={true}
         >
           <h2 className="mb-4 text-lg font-bold">Modal Size: {modalSize}</h2>
           <p>
@@ -163,6 +177,30 @@ const sk = () => {
             esse laborum eiusmod pariatur proident Lorem eiusmod et.
           </p>
         </BasicModal>
+      </div>
+
+      <div className="ml-4 mt-4 space-x-3 space-y-6">
+        <h1 className="mb-4 text-2xl font-bold">Overlay Modal</h1>
+        <Button variant="border" onClick={handleOpenModal}>
+          Open overlay Modal
+        </Button>
+
+        <OverlayModal
+          isOpen={isModalOpen}
+          onClose={handleCloseModal}
+          title="Sample Modal"
+          size="xs"
+          closeButtonText="Close"
+          showCloseIcon={true}
+        >
+          <p>
+            Magna exercitation reprehenderit magna aute tempor cupidatat
+            consequat elit dolor adipisicing. Mollit dolor eiusmod sunt ex
+            incididunt cillum quis. Velit duis sit officia eiusmod Lorem aliqua
+            enim laboris do dolor eiusmod. Et mollit incididunt nisi consectetur
+            esse laborum eiusmod pariatur proident Lorem eiusmod et.
+          </p>
+        </OverlayModal>
       </div>
     </>
   );
