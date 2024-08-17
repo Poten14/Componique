@@ -189,7 +189,7 @@ const sk = () => {
           isOpen={isModalOpen}
           onClose={handleCloseModal}
           title="Sample Modal"
-          size="xs"
+          size="medium"
           closeButtonText="Close"
           showCloseIcon={true}
         >
@@ -198,7 +198,17 @@ const sk = () => {
             consequat elit dolor adipisicing. Mollit dolor eiusmod sunt ex
             incididunt cillum quis. Velit duis sit officia eiusmod Lorem aliqua
             enim laboris do dolor eiusmod. Et mollit incididunt nisi consectetur
-            esse laborum eiusmod pariatur proident Lorem eiusmod et.
+            esse laborum eiusmod pariatur proident Lorem eiusmod et. Magna
+            exercitation reprehenderit magna aute tempor cupidatat consequat
+            elit dolor adipisicing. Mollit dolor eiusmod sunt ex incididunt
+            cillum quis. Velit duis sit officia eiusmod Lorem aliqua enim
+            laboris do dolor eiusmod. Et mollit incididunt nisi consectetur esse
+            laborum eiusmod pariatur proident Lorem eiusmod et. Magna
+            exercitation reprehenderit magna aute tempor cupidatat consequat
+            elit dolor adipisicing. Mollit dolor eiusmod sunt ex incididunt
+            cillum quis. Velit duis sit officia eiusmod Lorem aliqua enim
+            laboris do dolor eiusmod. Et mollit incididunt nisi consectetur esse
+            laborum eiusmod pariatur proident Lorem eiusmod et. Magna
           </p>
         </OverlayModal>
       </div>

@@ -17,14 +17,21 @@ interface OverlayModalProps {
 }
 
 const SizeClass = {
-  xs: "max-w-xs",
-  small: "max-w-sm",
-  medium: "max-w-md",
-  large: "max-w-lg",
-  xl: "max-w-xl",
+  xs: "max-w-xs w-11/12 sm:w-auto",
+  small: "max-w-sm w-11/12 sm:w-auto",
+  medium: "max-w-md w-11/12 sm:w-auto",
+  large: "max-w-lg w-11/12 sm:w-auto",
+  xl: "max-w-xl w-11/12 sm:w-auto",
   full: "max-w-full w-full h-full",
 };
-
+const MaxHeight = {
+  xs: "calc(100vh - 650px)",
+  small: "calc(100vh - 600px)",
+  medium: "calc(100vh - 500px)",
+  large: "calc(100vh - 400px)",
+  xl: "calc(100vh - 300px)",
+  full: "100vh",
+};
 const OverlayModal: React.FC<OverlayModalProps> = ({
   isOpen,
   onClose,
@@ -48,7 +55,7 @@ const OverlayModal: React.FC<OverlayModalProps> = ({
       onClick={handleOverlayClick}
     >
       <div
-        className={`transform overflow-hidden rounded-lg bg-white p-4 shadow-lg transition-all ${SizeClass[size]} ${className}`}
+        className={`relative transform overflow-hidden rounded-lg bg-white p-4 shadow-lg transition-all ${SizeClass[size]} ${className}`}
         onClick={(e) => e.stopPropagation()} // 모달 내부를 클릭하면 이벤트가 div 태그에서 부모로 전파되지 않도록 막기
       >
         {showCloseIcon && (
@@ -63,7 +70,12 @@ const OverlayModal: React.FC<OverlayModalProps> = ({
             <h2 className="text-lg font-medium">{title}</h2>
           </div>
         )}
-        <div className="p-4">{children} </div>
+        <div
+          className="overflow-y-auto p-4"
+          style={{ maxHeight: MaxHeight[size] }}
+        >
+          {children}
+        </div>
         <div className="mt-4 flex justify-end space-x-2">
           <Button onClick={onClose}>{closeButtonText}</Button>
         </div>
