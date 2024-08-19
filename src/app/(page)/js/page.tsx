@@ -17,6 +17,11 @@ import CardReview from "@components/Card/CardReview";
 import DropDownBasic from "@components/DropDown/DropDownBasic";
 import DropDownBasicMultiSelect from "@components/DropDown/DropDownMutilSelect";
 import DropDownGrouped from "@components/DropDown/DropDownGrouped";
+
+// Switch 컴포넌트 가져오기
+import SwitchBasic from "@components/Swtich/SwitchBasic";
+import SwitchRound from "@components/Swtich/SwitchRound";
+import SwitchHorizental from "@components/Swtich/SwitchHorizental";
 const Page = () => {
   // 라디오 버튼의 선택 상태를 관리하는 useState 훅
   const [basicSelectedValue, setBasicSelectedValue] = useState("");
@@ -370,6 +375,24 @@ const Page = () => {
         defaultOption="Select Option"
         onSelect={handleSelect}
       />
+      <br />
+      <br />
+      <br />
+      <h1 className="mb-4 text-lg font-semibold">SwitchBasic - 기본 스위치</h1>
+      <SwitchBasic />
+      <br />
+      <br />
+      <h1 className="mb-4 text-lg font-semibold">
+        RoundSwitch - 라운드 스위치
+      </h1>
+      <SwitchRound />
+      <br />
+      <br />
+
+      <h1 className="mb-4 text-lg font-semibold">
+        SwitchHorizental - 수직 스위치
+      </h1>
+      <SwitchHorizental />
     </div>
   );
 };
