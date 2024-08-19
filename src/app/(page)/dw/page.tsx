@@ -211,6 +211,7 @@ const dw = () => {
           color="yellow"
           position="left"
           variant="border"
+          path="/"
           isProgress={true}
           text="center"
           time="5"

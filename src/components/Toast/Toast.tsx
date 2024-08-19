@@ -2,8 +2,11 @@
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { useEffect } from "react";
-import { ToastProps } from "./ToastType";
+import { ToastPosition } from "./ToastPosition";
 import { bgColors, borderColors } from "./ToastColor";
+
+import type { ToastProps } from "./ToastType";
+
 const Toast: React.FC<ToastProps> = ({
   children,
   isOpen = true,
@@ -50,7 +53,9 @@ const Toast: React.FC<ToastProps> = ({
     }
   }, [time, onClose]);
 
-  const onclickCloseHandler = () => {
+  const onclickCloseHandler = (e: React.MouseEvent<HTMLButtonElement>) => {
+    //path 입력 시 닫기 버튼은 path가 작동되지 않도록 하기 위해서 사용함
+    e.stopPropagation();
     setIsToastOpen(false);
     if (onClose) onClose();
   };
@@ -77,17 +82,6 @@ const Toast: React.FC<ToastProps> = ({
       color === "white" ? "bg-slate-400" : bgColors[color] || "bg-slate-400";
     progressBarColor = bgColors[color];
   }
-  const ToastPosition = {
-    leftTop: "top-0 left-0",
-    centerTop: "top-0 left-1/2 -translate-x-1/2 ",
-    rightTop: "top-0  right-0 ",
-    left: "top-1/2 left-0 transform -translate-y-1/2 ",
-    center: "top-1/2 left-1/2 -translate-x-1/2 ",
-    right: "top-1/2 right-0 ",
-    leftBottom: "bottom-0 left-0 ",
-    centerBottom: "bottom-0 left-1/2 -translate-x-1/2 ",
-    rightBottom: "bottom-0 right-0  ",
-  };
 
   const ToastTextAlign = {
     left: "text-left",
