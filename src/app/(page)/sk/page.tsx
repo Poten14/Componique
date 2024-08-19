@@ -1,6 +1,6 @@
 "use client";
 
-import Input1 from "@components/Input/Input1";
+import Input1 from "@components/Input/Input";
 import SearchInput from "@components/Input/SearchInput";
 import SearchInput2 from "@components/Input/SearchInput2";
 import SearchInput3 from "@components/Input/SearchInput3";
@@ -13,11 +13,27 @@ import FullScreenSpinner from "@components/Spinner/ FullScreenSpinner";
 import PacManSpinner from "@components/Spinner/PacManSpinner";
 import BasicModal from "@components/Modal/BasicModal";
 import { ExtraSize } from "types/type";
+import OverlayModal from "@components/Modal/OverlayModal";
+import FormModal from "@components/Modal/FormModal";
 
 const sk = () => {
   const [spinning, setSpinning] = useState(false); //fullscreen
   const [isOpen, setIsOpen] = useState(false); //모달
   const [modalSize, setModalSize] = useState<ExtraSize | "full">("medium");
+  const [isModalOpen, setIsModalOpen] = useState(false); //오버레이 모달
+  const [isFormModalOpen, setIsFormModalOpen] = useState(false);
+  const [submitData, setSubmitData] = useState<{
+    firstName: string;
+    lastName: string;
+  } | null>(null);
+
+  const openFormModal = () => setIsFormModalOpen(true);
+  const closeFormModal = () => setIsFormModalOpen(false);
+
+  const handleFormSubmit = (data: { firstName: string; lastName: string }) => {
+    setSubmitData(data);
+    setIsFormModalOpen(false);
+  };
 
   const showLoader = () => {
     setSpinning(true);
@@ -26,12 +42,23 @@ const sk = () => {
       setSpinning(false);
     }, 3000); // 3초 동안 스피너를 표시한 후 숨김
   };
+
+  //베이직 모달
   const openModal = (size: ExtraSize | "full") => {
     setModalSize(size);
     setIsOpen(true);
   };
 
   const closeModal = () => setIsOpen(false);
+
+  //오버레이모달
+  const handleOpenModal = () => {
+    setIsModalOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+  };
 
   const sizes: (ExtraSize | "full")[] = [
     "xs",
@@ -130,7 +157,7 @@ const sk = () => {
 
       {/* Modal */}
       <div className="ml-4 mt-4 space-x-3 space-y-6">
-        <h1 className="mb-4 text-2xl font-bold">Modal Size Example</h1>
+        <h1 className="mb-4 text-2xl font-bold">Basic Modal</h1>
         <div className="space-x-4">
           {sizes.map((size) => (
             <Button key={size} onClick={() => openModal(size)}>
@@ -153,6 +180,7 @@ const sk = () => {
             variant: "secondary",
             onClick: closeModal,
           }}
+          showCloseIcon={true}
         >
           <h2 className="mb-4 text-lg font-bold">Modal Size: {modalSize}</h2>
           <p>
@@ -163,6 +191,57 @@ const sk = () => {
             esse laborum eiusmod pariatur proident Lorem eiusmod et.
           </p>
         </BasicModal>
+      </div>
+
+      <div className="ml-4 mt-4 space-x-3 space-y-6">
+        <h1 className="mb-4 text-2xl font-bold">Overlay Scroll Modal</h1>
+        <Button variant="border" onClick={handleOpenModal}>
+          Open overlay Modal
+        </Button>
+
+        <OverlayModal
+          isOpen={isModalOpen}
+          onClose={handleCloseModal}
+          title="Sample Modal"
+          size="medium"
+          closeButtonText="Close"
+          showCloseIcon={true}
+        >
+          <p>
+            Magna exercitation reprehenderit magna aute tempor cupidatat
+            consequat elit dolor adipisicing. Mollit dolor eiusmod sunt ex
+            incididunt cillum quis. Velit duis sit officia eiusmod Lorem aliqua
+            enim laboris do dolor eiusmod. Et mollit incididunt nisi consectetur
+            esse laborum eiusmod pariatur proident Lorem eiusmod et. Magna
+            exercitation reprehenderit magna aute tempor cupidatat consequat
+            elit dolor adipisicing. Mollit dolor eiusmod sunt ex incididunt
+            cillum quis. Velit duis sit officia eiusmod Lorem aliqua enim
+            laboris do dolor eiusmod. Et mollit incididunt nisi consectetur esse
+            laborum eiusmod pariatur proident Lorem eiusmod et. Magna
+            exercitation reprehenderit magna aute tempor cupidatat consequat
+            elit dolor adipisicing. Mollit dolor eiusmod sunt ex incididunt
+            cillum quis. Velit duis sit officia eiusmod Lorem aliqua enim
+            laboris do dolor eiusmod. Et mollit incididunt nisi consectetur esse
+            laborum eiusmod pariatur proident Lorem eiusmod et. Magna
+          </p>
+        </OverlayModal>
+      </div>
+
+      <div className="p-8">
+        <h1 className="mb-4 text-2xl font-bold">Form Modal</h1>
+        <Button onClick={openFormModal} variant="light">
+          Open Form Modal
+        </Button>
+
+        <FormModal
+          open={isFormModalOpen}
+          onClose={closeFormModal}
+          onSubmit={handleFormSubmit}
+          title="Create your account"
+          size="medium"
+          firstNameLabel="Enter your id"
+          lastNameLabel="Enter your password"
+        />
       </div>
     </>
   );
