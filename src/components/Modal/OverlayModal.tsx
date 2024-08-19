@@ -37,7 +37,7 @@ const OverlayModal: React.FC<OverlayModalProps> = ({
   onClose,
   children,
   title,
-  size = "medium",
+  size = "small",
   closeOnOverlayClick = true,
   className = "",
   closeButtonText = "Close",

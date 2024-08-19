@@ -1,6 +1,6 @@
 "use client";
 
-import Input1 from "@components/Input/Input1";
+import Input1 from "@components/Input/Input";
 import SearchInput from "@components/Input/SearchInput";
 import SearchInput2 from "@components/Input/SearchInput2";
 import SearchInput3 from "@components/Input/SearchInput3";
@@ -14,12 +14,26 @@ import PacManSpinner from "@components/Spinner/PacManSpinner";
 import BasicModal from "@components/Modal/BasicModal";
 import { ExtraSize } from "types/type";
 import OverlayModal from "@components/Modal/OverlayModal";
+import FormModal from "@components/Modal/FormModal";
 
 const sk = () => {
   const [spinning, setSpinning] = useState(false); //fullscreen
   const [isOpen, setIsOpen] = useState(false); //모달
   const [modalSize, setModalSize] = useState<ExtraSize | "full">("medium");
   const [isModalOpen, setIsModalOpen] = useState(false); //오버레이 모달
+  const [isFormModalOpen, setIsFormModalOpen] = useState(false);
+  const [submitData, setSubmitData] = useState<{
+    firstName: string;
+    lastName: string;
+  } | null>(null);
+
+  const openFormModal = () => setIsFormModalOpen(true);
+  const closeFormModal = () => setIsFormModalOpen(false);
+
+  const handleFormSubmit = (data: { firstName: string; lastName: string }) => {
+    setSubmitData(data);
+    setIsFormModalOpen(false);
+  };
 
   const showLoader = () => {
     setSpinning(true);
@@ -211,6 +225,23 @@ const sk = () => {
             laborum eiusmod pariatur proident Lorem eiusmod et. Magna
           </p>
         </OverlayModal>
+      </div>
+
+      <div className="p-8">
+        <h1 className="mb-4 text-2xl font-bold">Form Modal</h1>
+        <Button onClick={openFormModal} variant="light">
+          Open Form Modal
+        </Button>
+
+        <FormModal
+          open={isFormModalOpen}
+          onClose={closeFormModal}
+          onSubmit={handleFormSubmit}
+          title="Create your account"
+          size="medium"
+          firstNameLabel="Enter your id"
+          lastNameLabel="Enter your password"
+        />
       </div>
     </>
   );
