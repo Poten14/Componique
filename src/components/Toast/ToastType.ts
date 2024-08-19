@@ -20,4 +20,5 @@ export type ToastProps = {
   color?: Color16;
   variant?: "solid" | "border";
   time?: string;
+  path?: string;
 };

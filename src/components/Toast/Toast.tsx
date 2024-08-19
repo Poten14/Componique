@@ -15,6 +15,7 @@ const Toast: React.FC<ToastProps> = ({
   variant = "solid",
   isClose = false,
   time,
+  path,
   ...rest
 }) => {
   const [isToastOpen, setIsToastOpen] = useState(isOpen);
@@ -87,7 +88,12 @@ const Toast: React.FC<ToastProps> = ({
       <section
         className={`${BasicToast} ${ToastPosition[position]} ${ToastSize[size]} ${
           isToastOpen ? "opacity-100" : "pointer-events-none opacity-0"
-        }`}
+        } ${path ? "cursor-pointer" : ""}`}
+        onClick={() => {
+          if (path) {
+            router.push(path);
+          }
+        }}
       >
         <div
           className={`flex items-center justify-between rounded-md ${ToastVariant} p-4`}
