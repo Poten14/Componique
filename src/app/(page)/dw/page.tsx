@@ -206,9 +206,10 @@ const dw = () => {
       <div className="ml-3 mt-5 space-y-4">
         <Toast
           isOpen={isToastOpen}
-          size="small"
+          size="medium"
           onClose={onclickToastHandler(false)}
           color="white"
+          text="center"
           isClose={false}
         >
           가입이 완료되었습니다.

@@ -18,6 +18,7 @@ type ToastProps = {
     | "left"
     | "right"
     | "center";
+  text?: "left" | "center" | "right";
   onClose?: () => void;
   children: React.ReactNode;
   color?: Color16;
@@ -30,6 +31,7 @@ const Toast: React.FC<ToastProps> = ({
   color = "basic",
   size = "large",
   position = "leftBottom",
+  text = "left",
   isClose = "false",
   ...rest
 }) => {
@@ -83,6 +85,12 @@ const Toast: React.FC<ToastProps> = ({
     rightBottom: "bottom-0 right-0  ",
   };
 
+  const ToastTextAlign = {
+    left: "text-left",
+    right: "text-right",
+    center: "text-center",
+  };
+
   const BasicToast = "min-w-md   box-border fixed select-none ";
   return (
     <div>
@@ -95,8 +103,7 @@ const Toast: React.FC<ToastProps> = ({
           className={`flex items-center justify-between rounded-md bg-Basic ${bgColors[color]} p-4`}
           {...rest}
         >
-          {children}
-
+          <div className={`${ToastTextAlign[text]} w-full`}>{children}</div>
           <button
             className={`group relative ml-2 h-4 w-4 bg-transparent ${isClose ? "hidden" : "block"}`}
             onClick={onclickCloseHandler}
