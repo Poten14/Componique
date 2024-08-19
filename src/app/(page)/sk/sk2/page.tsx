@@ -42,15 +42,38 @@ const sk2 = () => {
   };
 
   return (
-    <div className="p-4">
-      <LabelAutocomplete
-        options={components}
-        value={inputValue}
-        onChange={handleInputChange}
-        onSelect={handleSelect}
-        placeholder="Search for Components..."
-      />
-    </div>
+    <>
+      <div className="p-4">
+        <LabelAutocomplete
+          size="small"
+          options={components}
+          value={inputValue}
+          onChange={handleInputChange}
+          onSelect={handleSelect}
+          placeholder="Search for Components..."
+        />
+      </div>
+      <div className="p-4">
+        <LabelAutocomplete
+          size="medium"
+          options={components}
+          value={inputValue}
+          onChange={handleInputChange}
+          onSelect={handleSelect}
+          placeholder="Search for Components..."
+        />
+      </div>
+      <div className="p-4">
+        <LabelAutocomplete
+          size="large"
+          options={components}
+          value={inputValue}
+          onChange={handleInputChange}
+          onSelect={handleSelect}
+          placeholder="Search for Components..."
+        />
+      </div>
+    </>
   );
 };
 
