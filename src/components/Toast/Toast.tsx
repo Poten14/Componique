@@ -29,7 +29,7 @@ const Toast: React.FC<ToastProps> = ({
   onClose,
   color = "basic",
   size = "large",
-  position = "centerBottom",
+  position = "leftBottom",
   ...rest
 }) => {
   const [isToastOpen, setIsToastOpen] = useState(isOpen);
@@ -66,7 +66,7 @@ const Toast: React.FC<ToastProps> = ({
     purple: "bg-purple-500",
     pink: "bg-pink-500",
     basic: "bg-Basic",
-    white: "bg-white",
+    white: "bg-white !border-gray !border-2",
     gray: "bg-gray",
     black: "bg-black",
   };
@@ -100,8 +100,12 @@ const Toast: React.FC<ToastProps> = ({
             className="group relative ml-2 h-4 w-4 bg-transparent"
             onClick={onclickCloseHandler}
           >
-            <span className="absolute left-1/2 top-1/2 block h-0.5 w-full -translate-x-1/2 -translate-y-1/2 rotate-45 transform bg-white"></span>
-            <span className="absolute left-1/2 top-1/2 block h-0.5 w-full -translate-x-1/2 -translate-y-1/2 -rotate-45 transform bg-white"></span>
+            <span
+              className={`absolute left-1/2 top-1/2 block h-0.5 w-full -translate-x-1/2 -translate-y-1/2 rotate-45 transform ${color === "white" ? "!bg-slate-400" : "bg-white"}`}
+            ></span>
+            <span
+              className={`absolute left-1/2 top-1/2 block h-0.5 w-full -translate-x-1/2 -translate-y-1/2 -rotate-45 transform ${color === "white" ? "!bg-slate-400" : "bg-white"}`}
+            ></span>
           </button>
         </div>
       </section>
