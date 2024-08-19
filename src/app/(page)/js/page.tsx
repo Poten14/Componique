@@ -27,6 +27,7 @@ import SwitchLabeled from "@components/Swtich/SwitchLabeled";
 
 // Infinite Scroll 컴포넌트 가져오기
 import InfiniteScrollBasic from "@components/InfiniteScroll/InfiniteScrollBasic";
+import InfiniteScrollImage from "@components/InfiniteScroll/InfiniteScrollImage";
 
 const Page = () => {
   // 라디오 버튼의 선택 상태를 관리하는 useState 훅
@@ -34,6 +35,7 @@ const Page = () => {
   const [labelSelectedValue, setLabelSelectedValue] = useState("");
   const [inlineSelectedValue, setInlineSelectedValue] = useState("");
   const [content, setContent] = useState("");
+  const [images, setImages] = useState<string[]>([]);
 
   // 라디오 버튼 선택 시 상태를 업데이트하는 핸들러 함수
   const handleBasicChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -64,7 +66,27 @@ const Page = () => {
       setContent(text);
     };
 
+    const fetchImages = async () => {
+      // 이미지 경로를 배열로 설정 (이 예제에서는 /images 폴더의 이미지 사용)
+      const imagePaths = [
+        "/images/IfSc1.svg",
+        "/images/IfSc2.svg",
+        "/images/IfSc3.svg",
+        "/images/IfSc4.svg",
+        "/images/IfSc5.svg",
+        "/images/IfSc6.svg",
+        "/images/IfSc7.svg",
+        "/images/IfSc8.svg",
+        "/images/IfSc9.svg",
+        "/images/IfSc10.svg",
+
+        // 필요한 만큼 이미지 경로를 추가합니다.
+      ];
+      setImages(imagePaths);
+    };
+
     fetchContent();
+    fetchImages();
   }, []);
 
   return (
@@ -426,6 +448,12 @@ const Page = () => {
         Infinite Scroll Basic - 기본 인피니티 스크롤
       </h1>
       <InfiniteScrollBasic content={content} />
+      <br />
+      <br />
+      <h1 className="mb-4 text-lg font-semibold">
+        Infinite Scroll Image - 이미지 인피니티 스크롤
+      </h1>
+      <InfiniteScrollImage images={images} />
     </div>
   );
 };
