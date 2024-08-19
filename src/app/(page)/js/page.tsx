@@ -20,6 +20,7 @@ import DropDownGrouped from "@components/DropDown/DropDownGrouped";
 
 // Switch 컴포넌트 가져오기
 import SwitchBasic from "@components/Swtich/SwitchBasic";
+import SwitchRound from "@components/Swtich/SwitchRound";
 const Page = () => {
   // 라디오 버튼의 선택 상태를 관리하는 useState 훅
   const [basicSelectedValue, setBasicSelectedValue] = useState("");
@@ -378,6 +379,9 @@ const Page = () => {
       <br />
       <h1 className="mb-4 text-lg font-semibold">SwitchBasic - 기본스위치</h1>
       <SwitchBasic />
+      <br />
+      <h1 className="mb-4 text-lg font-semibold">RoundSwitch - 라운드스위치</h1>
+      <SwitchRound />
     </div>
   );
 };
