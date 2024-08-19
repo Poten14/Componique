@@ -211,6 +211,7 @@ const dw = () => {
           color="warning"
           variant="border"
           text="center"
+          time="5"
           isClose={false}
         >
           가입이 완료되었습니다.

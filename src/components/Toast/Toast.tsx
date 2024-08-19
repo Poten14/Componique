@@ -14,6 +14,7 @@ const Toast: React.FC<ToastProps> = ({
   text = "left",
   variant = "solid",
   isClose = false,
+  time,
   ...rest
 }) => {
   const [isToastOpen, setIsToastOpen] = useState(isOpen);
@@ -22,6 +23,21 @@ const Toast: React.FC<ToastProps> = ({
   useEffect(() => {
     setIsToastOpen(isOpen);
   }, [isOpen]);
+
+  useEffect(() => {
+    if (time) {
+      const timeout = setTimeout(
+        () => {
+          setIsToastOpen(false);
+          if (onClose) onClose();
+        },
+        // time을 초 단위로 만들기
+        parseInt(time) * 1000,
+      );
+      // 컴포넌트가 언마운트되거나 time이 변경되면 타이머 정리(타이머 취소)
+      return () => clearTimeout(timeout);
+    }
+  }, [time, onClose]);
 
   const onclickCloseHandler = () => {
     setIsToastOpen(false);

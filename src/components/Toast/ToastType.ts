@@ -19,4 +19,5 @@ export type ToastProps = {
   children: React.ReactNode;
   color?: Color16;
   variant?: "solid" | "border";
+  time?: string;
 };
