@@ -209,10 +209,11 @@ const dw = () => {
           size="medium"
           onClose={onclickToastHandler(false)}
           color="yellow"
-          variant="border"
           position="left"
+          variant="border"
+          isProgress={true}
           text="center"
-          time="30"
+          time="5"
           isClose={false}
         >
           가입이 완료되었습니다.

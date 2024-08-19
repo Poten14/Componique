@@ -21,4 +21,5 @@ export type ToastProps = {
   variant?: "solid" | "border";
   time?: string;
   path?: string;
+  isProgress?: boolean;
 };

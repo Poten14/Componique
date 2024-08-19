@@ -14,6 +14,7 @@ const Toast: React.FC<ToastProps> = ({
   text = "left",
   variant = "solid",
   isClose = false,
+  isProgress = true,
   time,
   path,
   ...rest
@@ -125,13 +126,15 @@ const Toast: React.FC<ToastProps> = ({
             ></span>
           </button>
         </div>
-        <div className="bg-gray-200 relative h-1 w-full rounded">
-          {/* div의 너비는 progress 상태에 의해 동적으로 설정됨, 처음에는 100%로 시작하고 시간이 지나면서 점차 줄어들게 됨 */}
-          <div
-            className={`absolute left-0 h-full ${progressBarColor} rounded ${variant === "solid" ? "top-[-4px]" : "top-[-6px]"}`}
-            style={{ width: `${progress}%` }}
-          />
-        </div>
+        {isProgress && (
+          <div className="bg-gray-200 relative h-1 w-full rounded">
+            {/* div의 너비는 progress 상태에 의해 동적으로 설정됨, 처음에는 100%로 시작하고 시간이 지나면서 점차 줄어들게 됨 */}
+            <div
+              className={`absolute left-0 h-full ${progressBarColor} rounded ${variant === "solid" ? "top-[-4px]" : "top-[-6px]"}`}
+              style={{ width: `${progress}%` }}
+            />
+          </div>
+        )}
       </section>
     </div>
   );
