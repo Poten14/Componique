@@ -22,6 +22,7 @@ type ToastProps = {
   onClose?: () => void;
   children: React.ReactNode;
   color?: Color16;
+  variant?: "solid" | "border";
 };
 
 const Toast: React.FC<ToastProps> = ({
@@ -32,7 +33,8 @@ const Toast: React.FC<ToastProps> = ({
   size = "large",
   position = "leftBottom",
   text = "left",
-  isClose = "false",
+  variant = "solid",
+  isClose = false,
   ...rest
 }) => {
   const [isToastOpen, setIsToastOpen] = useState(isOpen);
@@ -73,6 +75,37 @@ const Toast: React.FC<ToastProps> = ({
     gray: "bg-gray",
     black: "bg-black",
   };
+
+  const borderColors = {
+    primary: "border-Primary !border-2 !bg-white",
+    secondary: "border-Secondary !border-2 !bg-white",
+    success: "border-Success !border-2 !bg-white",
+    warning: "border-Warning !border-2 !bg-white",
+    danger: "border-Danger !border-2 !bg-white",
+    red: "border-red-500 !border-2 !bg-white",
+    orange: "border-orange-500 !border-2 !bg-white",
+    yellow: "border-yellow-500 !border-2 !bg-white",
+    green: "border-green-500 !border-2 !bg-white",
+    blue: "border-blue-500 !border-2 !bg-white",
+    purple: "border-purple-500 !border-2 !bg-white",
+    pink: "border-pink-500 !border-2 !bg-white",
+    basic: "border-Basic !border-2 !bg-white",
+    white: "bg-white !border-gray !border-2",
+    gray: "border-gray !border-2 !bg-white",
+    black: "border-black !border-2 !bg-white",
+  };
+
+  let ToastVariant = "";
+  let closeButtonColor = "";
+
+  if (variant === "solid") {
+    ToastVariant = `${bgColors[color]}`;
+    closeButtonColor = color === "white" ? "bg-slate-400" : "bg-white";
+  } else if (variant === "border") {
+    ToastVariant = `${borderColors[color]}`;
+    closeButtonColor =
+      color === "white" ? "bg-slate-400" : bgColors[color] || "bg-slate-400";
+  }
   const ToastPosition = {
     leftTop: "top-0 left-0",
     centerTop: "top-0 left-1/2 -translate-x-1/2 ",
@@ -100,7 +133,7 @@ const Toast: React.FC<ToastProps> = ({
         }`}
       >
         <div
-          className={`flex items-center justify-between rounded-md bg-Basic ${bgColors[color]} p-4`}
+          className={`flex items-center justify-between rounded-md ${ToastVariant} p-4`}
           {...rest}
         >
           <div className={`${ToastTextAlign[text]} w-full`}>{children}</div>
@@ -109,10 +142,10 @@ const Toast: React.FC<ToastProps> = ({
             onClick={onclickCloseHandler}
           >
             <span
-              className={`absolute left-1/2 top-1/2 block h-0.5 w-full -translate-x-1/2 -translate-y-1/2 rotate-45 transform ${color === "white" ? "!bg-slate-400" : "bg-white"}`}
+              className={`absolute left-1/2 top-1/2 block h-0.5 w-full -translate-x-1/2 -translate-y-1/2 rotate-45 transform ${closeButtonColor}`}
             ></span>
             <span
-              className={`absolute left-1/2 top-1/2 block h-0.5 w-full -translate-x-1/2 -translate-y-1/2 -rotate-45 transform ${color === "white" ? "!bg-slate-400" : "bg-white"}`}
+              className={`absolute left-1/2 top-1/2 block h-0.5 w-full -translate-x-1/2 -translate-y-1/2 -rotate-45 transform ${closeButtonColor}`}
             ></span>
           </button>
         </div>

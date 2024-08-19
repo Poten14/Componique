@@ -208,7 +208,8 @@ const dw = () => {
           isOpen={isToastOpen}
           size="medium"
           onClose={onclickToastHandler(false)}
-          color="white"
+          color="warning"
+          variant="border"
           text="center"
           isClose={false}
         >
