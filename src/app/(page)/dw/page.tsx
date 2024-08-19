@@ -208,11 +208,11 @@ const dw = () => {
           isOpen={isToastOpen}
           size="medium"
           onClose={onclickToastHandler(false)}
-          color="warning"
+          color="yellow"
           variant="border"
+          position="left"
           text="center"
-          time="5"
-          path="/"
+          time="30"
           isClose={false}
         >
           가입이 완료되었습니다.

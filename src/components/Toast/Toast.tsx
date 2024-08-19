@@ -19,6 +19,7 @@ const Toast: React.FC<ToastProps> = ({
   ...rest
 }) => {
   const [isToastOpen, setIsToastOpen] = useState(isOpen);
+  const [progress, setProgress] = useState(100);
   const router = useRouter();
 
   useEffect(() => {
@@ -27,16 +28,24 @@ const Toast: React.FC<ToastProps> = ({
 
   useEffect(() => {
     if (time) {
-      const timeout = setTimeout(
-        () => {
-          setIsToastOpen(false);
-          if (onClose) onClose();
-        },
-        // time을 초 단위로 만들기
-        parseInt(time) * 1000,
-      );
-      // 컴포넌트가 언마운트되거나 time이 변경되면 타이머 정리(타이머 취소)
-      return () => clearTimeout(timeout);
+      // 총 시간, 사용하는 곳에서 time =""를 설정한 값
+      const totalTime = parseInt(time) * 1000;
+      // 프로그래스바의 업데이트 간격 : 프로그래스 바를 1%씩 줄이기 위한 간격
+      const interval = totalTime / 100;
+      // setTimeout을 사용해서 totalTime이 지나면 Toast가 닫히도록 setIsToastOpen(false)를 호출함
+      const timeout = setTimeout(() => {
+        setIsToastOpen(false);
+        if (onClose) onClose();
+      }, totalTime);
+      //setInterval을 사용해서 progress 상태를 interval마다 1%씩 줄임
+      const progressId = setInterval(() => {
+        setProgress((prev) => (prev > 0 ? prev - 1 : 0));
+      }, interval);
+
+      return () => {
+        clearTimeout(timeout);
+        clearInterval(progressId);
+      };
     }
   }, [time, onClose]);
 
@@ -55,14 +64,17 @@ const Toast: React.FC<ToastProps> = ({
 
   let ToastVariant = "";
   let closeButtonColor = "";
+  let progressBarColor = "";
 
   if (variant === "solid") {
     ToastVariant = `${bgColors[color]}`;
     closeButtonColor = color === "white" ? "bg-slate-400" : "bg-white";
+    progressBarColor = "bg-gray";
   } else if (variant === "border") {
     ToastVariant = `${borderColors[color]}`;
     closeButtonColor =
       color === "white" ? "bg-slate-400" : bgColors[color] || "bg-slate-400";
+    progressBarColor = bgColors[color];
   }
   const ToastPosition = {
     leftTop: "top-0 left-0",
@@ -100,8 +112,9 @@ const Toast: React.FC<ToastProps> = ({
           {...rest}
         >
           <div className={`${ToastTextAlign[text]} w-full`}>{children}</div>
+
           <button
-            className={`group relative ml-2 h-4 w-4 bg-transparent ${isClose ? "hidden" : "block"}`}
+            className={`z-999 group relative ml-2 h-4 w-4 bg-transparent ${isClose ? "hidden" : "block"}`}
             onClick={onclickCloseHandler}
           >
             <span
@@ -111,6 +124,13 @@ const Toast: React.FC<ToastProps> = ({
               className={`absolute left-1/2 top-1/2 block h-0.5 w-full -translate-x-1/2 -translate-y-1/2 -rotate-45 transform ${closeButtonColor}`}
             ></span>
           </button>
+        </div>
+        <div className="bg-gray-200 relative h-1 w-full rounded">
+          {/* div의 너비는 progress 상태에 의해 동적으로 설정됨, 처음에는 100%로 시작하고 시간이 지나면서 점차 줄어들게 됨 */}
+          <div
+            className={`absolute left-0 h-full ${progressBarColor} rounded ${variant === "solid" ? "top-[-4px]" : "top-[-6px]"}`}
+            style={{ width: `${progress}%` }}
+          />
         </div>
       </section>
     </div>
