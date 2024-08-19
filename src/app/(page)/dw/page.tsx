@@ -209,6 +209,7 @@ const dw = () => {
           size="small"
           onClose={onclickToastHandler(false)}
           color="white"
+          isClose={false}
         >
           가입이 완료되었습니다.
         </Toast>

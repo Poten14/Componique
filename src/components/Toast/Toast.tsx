@@ -30,6 +30,7 @@ const Toast: React.FC<ToastProps> = ({
   color = "basic",
   size = "large",
   position = "leftBottom",
+  isClose = "false",
   ...rest
 }) => {
   const [isToastOpen, setIsToastOpen] = useState(isOpen);
@@ -97,7 +98,7 @@ const Toast: React.FC<ToastProps> = ({
           {children}
 
           <button
-            className="group relative ml-2 h-4 w-4 bg-transparent"
+            className={`group relative ml-2 h-4 w-4 bg-transparent ${isClose ? "hidden" : "block"}`}
             onClick={onclickCloseHandler}
           >
             <span
