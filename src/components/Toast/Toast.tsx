@@ -1,30 +1,9 @@
 "use client";
-
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { useEffect } from "react";
-import { Color16, Size } from "types/type";
-type ToastProps = {
-  size?: Size;
-  isOpen?: boolean;
-  isClose?: boolean;
-  position?:
-    | "leftTop"
-    | "leftBottom"
-    | "rightTop"
-    | "rightBottom"
-    | "centerTop"
-    | "centerBottom"
-    | "left"
-    | "right"
-    | "center";
-  text?: "left" | "center" | "right";
-  onClose?: () => void;
-  children: React.ReactNode;
-  color?: Color16;
-  variant?: "solid" | "border";
-};
-
+import { ToastProps } from "./ToastType";
+import { bgColors, borderColors } from "./ToastColor";
 const Toast: React.FC<ToastProps> = ({
   children,
   isOpen = true,
@@ -55,44 +34,6 @@ const Toast: React.FC<ToastProps> = ({
       "min-w-[300px] sm:min-w-[375px]  md:min-w-[585px] lg:min-w-[863px] xl:min-w-[975px]",
     large:
       "min-w-[400px] sm:min-w-[500px]  md:min-w-[780px] lg:min-w-[1150px] xl:min-w-[1300px]",
-  };
-
-  const bgColors = {
-    primary: "bg-Primary",
-    secondary: "bg-Secondary",
-    success: "bg-Success",
-    warning: "bg-Warning",
-    danger: "bg-Danger",
-    red: "bg-red-500",
-    orange: "bg-orange-500",
-    yellow: "bg-yellow-500",
-    green: "bg-green-500",
-    blue: "bg-blue-500",
-    purple: "bg-purple-500",
-    pink: "bg-pink-500",
-    basic: "bg-Basic",
-    white: "bg-white !border-gray !border-2",
-    gray: "bg-gray",
-    black: "bg-black",
-  };
-
-  const borderColors = {
-    primary: "border-Primary !border-2 !bg-white",
-    secondary: "border-Secondary !border-2 !bg-white",
-    success: "border-Success !border-2 !bg-white",
-    warning: "border-Warning !border-2 !bg-white",
-    danger: "border-Danger !border-2 !bg-white",
-    red: "border-red-500 !border-2 !bg-white",
-    orange: "border-orange-500 !border-2 !bg-white",
-    yellow: "border-yellow-500 !border-2 !bg-white",
-    green: "border-green-500 !border-2 !bg-white",
-    blue: "border-blue-500 !border-2 !bg-white",
-    purple: "border-purple-500 !border-2 !bg-white",
-    pink: "border-pink-500 !border-2 !bg-white",
-    basic: "border-Basic !border-2 !bg-white",
-    white: "bg-white !border-gray !border-2",
-    gray: "border-gray !border-2 !bg-white",
-    black: "border-black !border-2 !bg-white",
   };
 
   let ToastVariant = "";
