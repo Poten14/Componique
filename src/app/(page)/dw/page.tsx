@@ -2,14 +2,20 @@
 import Button from "@components/Button/Button";
 import CheckBox from "@components/CheckBox/CheckBox";
 import Drawer from "@components/Drawer/Drawer";
+import Toast from "@components/Toast/Toast";
 import { useState } from "react";
 
 const dw = () => {
+  //Drawer 관련 코드
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
   const onclickDrawerHandler = (open: boolean) => () => {
     setIsDrawerOpen(open);
   };
-
+  //Toast 관련 코드
+  const [isToastOpen, setIsToastOpen] = useState(true);
+  const onclickToastHandler = (open: boolean) => () => {
+    setIsToastOpen(open);
+  };
   return (
     <>
       <h1>dw Component</h1>
@@ -170,6 +176,8 @@ const dw = () => {
             variant="border"
           />
         </div>
+      </div>
+      <div className="ml-3 mt-5 space-y-4">
         <div>
           <Drawer
             isOpen={isDrawerOpen}
@@ -182,7 +190,7 @@ const dw = () => {
               { name: "LongTitleTitleTitleTitleTitleTitle", path: "/Contact" },
             ]}
             logo="/componique_logo_full.svg"
-            postion="left"
+            postion="bottom"
             bgColor="basic"
           />
 
@@ -194,6 +202,23 @@ const dw = () => {
             Drawer Open Button
           </Button>
         </div>
+      </div>
+      <div className="ml-3 mt-5 space-y-4">
+        <Toast
+          isOpen={isToastOpen}
+          size="medium"
+          onClose={onclickToastHandler(false)}
+          color="secondary"
+        >
+          가입이 완료되었습니다.
+        </Toast>
+        <Button
+          variant="border"
+          color="success"
+          onClick={onclickToastHandler(true)}
+        >
+          Toast Open Button
+        </Button>
       </div>
     </>
   );
