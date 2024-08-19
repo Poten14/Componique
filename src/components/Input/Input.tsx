@@ -24,7 +24,7 @@ const variantClasses = {
   filled: "bg-Basic text-white placeholder-white border-none",
 };
 
-const Input1: React.FC<InputProps> = ({
+const Input: React.FC<InputProps> = ({
   size = "medium",
   variant = "outlined",
   placeholder,
@@ -42,4 +42,4 @@ const Input1: React.FC<InputProps> = ({
   );
 };
 
-export default Input1;
+export default Input;

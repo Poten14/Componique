@@ -60,7 +60,7 @@ export const BasicModal: React.FC<ModalProps> = ({
             &times;
           </button>
         )}
-        {children} {/* 모달 내부에 표시할 내용 */}
+        {children}
         <div className="mt-4 flex justify-center space-x-2">
           {secondaryButton && (
             <button
