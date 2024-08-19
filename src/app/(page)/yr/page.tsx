@@ -11,9 +11,6 @@ import Skeleton from "@components/Skeleton/Skeleton";
 const page = () => {
   return (
     <>
-      <div className="m-4 space-y-4">
-        <Skeleton />
-      </div>
       {/* Navbar 연습 */}
       <div className="m-4 space-y-4">
         <Navbar
@@ -164,6 +161,12 @@ const page = () => {
       </div>
       <div className="m-4 space-y-4">
         <SelectList option={["option1", "option2", "option3", "option4"]} />
+      </div>
+      {/* Skeleton 구현 */}
+      <div className="m-4 flex gap-6">
+        <Skeleton size="small" variants="rounded" animate={true} />
+        <Skeleton size="medium" variants="rounded" animate={true} />
+        <Skeleton size="large" variants="rectangular" animate={true} />
       </div>
     </>
   );
