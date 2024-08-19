@@ -7,7 +7,7 @@ const SwitchBasic = () => {
     setIsOn(!isOn);
   };
   return (
-    <div>
+    <div className="flex items-center justify-center space-x-12">
       <div
         onClick={toggleSwitch} //
         className={`flex h-7 w-14 cursor-pointer items-center rounded-full p-1 ${isOn ? `bg-Basic` : `bg-[#9E9E9E]`}`}
