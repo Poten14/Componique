@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 // RadioButton 컴포넌트 가져오기
 import RadioButtonBasic from "@components/RadioButton/RadioButtonBasic";
@@ -24,11 +24,16 @@ import SwitchRound from "@components/Swtich/SwitchRound";
 import SwitchHorizental from "@components/Swtich/SwitchHorizental";
 import SwitchLong from "@components/Swtich/SwitchLong";
 import SwitchLabeled from "@components/Swtich/SwitchLabeled";
+
+// Infinite Scroll 컴포넌트 가져오기
+import InfiniteScrollBasic from "@components/InfiniteScroll/InfiniteScrollBasic";
+
 const Page = () => {
   // 라디오 버튼의 선택 상태를 관리하는 useState 훅
   const [basicSelectedValue, setBasicSelectedValue] = useState("");
   const [labelSelectedValue, setLabelSelectedValue] = useState("");
   const [inlineSelectedValue, setInlineSelectedValue] = useState("");
+  const [content, setContent] = useState("");
 
   // 라디오 버튼 선택 시 상태를 업데이트하는 핸들러 함수
   const handleBasicChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -50,6 +55,17 @@ const Page = () => {
   const handleSelectMulti = (value: string[]) => {
     console.log("Selected option:", value);
   };
+
+  // 파일을 클라이언트 사이드에서 가져오기
+  useEffect(() => {
+    const fetchContent = async () => {
+      const response = await fetch("/content/news1.txt");
+      const text = await response.text();
+      setContent(text);
+    };
+
+    fetchContent();
+  }, []);
 
   return (
     <div className="mb-96 ml-4 mt-4">
@@ -404,6 +420,12 @@ const Page = () => {
         SwitchLabeled - 레이블 스위치
       </h1>
       <SwitchLabeled />
+      <br />
+      <br />
+      <h1 className="mb-4 text-lg font-semibold">
+        Infinite Scroll Basic - 기본 인피니티 스크롤
+      </h1>
+      <InfiniteScrollBasic content={content} />
     </div>
   );
 };
