@@ -81,7 +81,7 @@ const GroupedAutocomplete: React.FC<AutocompleteProps> = ({
           onChange={handleInputChange}
           onClick={toggleDropdown}
           placeholder={placeholder}
-          className={`w-full p-2 pr-10 ${borderClasses[border]} ${radiusClasses[radius]} focus:outline-none focus:ring-2 focus:ring-blue-500`}
+          className={`w-full p-2 pr-10 ${borderClasses[border]} ${radius === "full" ? "rounded-full" : radiusClasses[radius]} focus:border-transparent focus:outline-none focus:ring-2 focus:ring-blue-500`}
         />
         <div className="absolute right-3 top-1/2 -translate-y-1/2 transform">
           <Image
@@ -94,7 +94,7 @@ const GroupedAutocomplete: React.FC<AutocompleteProps> = ({
       </div>
       {isOpen && (
         <ul
-          className={`absolute left-0 right-0 z-10 mt-1 max-h-60 overflow-y-auto bg-white shadow-lg ${borderClasses[border]} ${radiusClasses[radius]}`}
+          className={`absolute left-0 right-0 z-10 mt-1 max-h-60 overflow-y-auto bg-white shadow-lg ${borderClasses[border]} ${radius !== "full" ? radiusClasses[radius] : "rounded-lg"}`}
         >
           {filteredOptions.length > 0 ? (
             filteredOptions.map(({ groupName, items }, index1) => (
