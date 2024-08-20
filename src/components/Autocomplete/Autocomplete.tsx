@@ -7,12 +7,13 @@ interface AutocompleteProps {
   radius?: "small" | "medium" | "large" | "none" | "full";
   width?: string;
   height?: string;
+  noOptionsMessage?: string;
   onSelect: (selectedOption: string) => void;
 }
 
 const variantClasses = {
   outlined: "border border-gray border-2 focus:border-none",
-  filled: "bg-gray text-gray-900  focus:bg-transparent",
+  filled: "bg-gray text-gray-900 focus:bg-transparent",
   borderless: "border-none bg-transparent",
 };
 
@@ -31,10 +32,12 @@ const Autocomplete: React.FC<AutocompleteProps> = ({
   radius = "medium",
   width = "300px",
   height = "auto",
+  noOptionsMessage = "No results found",
   onSelect,
 }) => {
   const [inputValue, setInputValue] = useState("");
   const [filteredOptions, setFilteredOptions] = useState<string[]>([]);
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
@@ -44,12 +47,21 @@ const Autocomplete: React.FC<AutocompleteProps> = ({
         option.toLowerCase().includes(value.toLowerCase()),
       ),
     );
+    setIsDropdownOpen(true);
   };
 
   const handleOptionClick = (option: string) => {
     setInputValue(option);
     onSelect(option);
-    setFilteredOptions([]); // 옵션을 선택하면 필터링된 목록을 숨김
+    setIsDropdownOpen(false);
+  };
+
+  const handleBlur = () => {
+    setTimeout(() => setIsDropdownOpen(false), 100);
+  };
+
+  const handleFocus = () => {
+    setIsDropdownOpen(true);
   };
 
   return (
@@ -58,21 +70,27 @@ const Autocomplete: React.FC<AutocompleteProps> = ({
         type="text"
         value={inputValue}
         onChange={handleInputChange}
+        onFocus={handleFocus}
+        onBlur={handleBlur}
         placeholder={placeholder}
         className={`w-full ${height} p-3 ${variantClasses[variant]} ${radiusClasses[radius]} focus:outline-none focus:ring-2 focus:ring-Basic`}
         style={{ height }}
       />
-      {filteredOptions.length > 0 && (
+      {isDropdownOpen && (
         <ul className="absolute left-0 right-0 z-10 mt-1 max-h-40 overflow-y-auto rounded-md bg-white shadow-lg">
-          {filteredOptions.map((option, index) => (
-            <li
-              key={index}
-              className="hover:bg-gray-200 cursor-pointer p-2"
-              onClick={() => handleOptionClick(option)}
-            >
-              {option}
-            </li>
-          ))}
+          {filteredOptions.length > 0 ? (
+            filteredOptions.map((option, index) => (
+              <li
+                key={index}
+                className="hover:bg-gray-200 cursor-pointer p-2"
+                onClick={() => handleOptionClick(option)}
+              >
+                {option}
+              </li>
+            ))
+          ) : (
+            <li className="text-gray-500 p-2">{noOptionsMessage}</li>
+          )}
         </ul>
       )}
     </div>
