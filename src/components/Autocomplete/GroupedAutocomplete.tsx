@@ -13,7 +13,7 @@ interface AutocompleteProps {
   radius?: "none" | "small" | "medium" | "large" | "full";
   border?: "none" | "thin" | "medium" | "thick";
   width?: string;
-  noOptionsMessage?: string; // 필터링된 결과가 없을 때 표시할 메시지
+  noOptionsMessage?: string;
 }
 
 const radiusClasses = {
@@ -38,7 +38,7 @@ const GroupedAutocomplete: React.FC<AutocompleteProps> = ({
   radius = "medium",
   border = "medium",
   width = "w-64",
-  noOptionsMessage = "No results found", // 기본 메시지 설정
+  noOptionsMessage = "No results found",
 }) => {
   const [inputValue, setInputValue] = useState<string>("");
   const [filteredOptions, setFilteredOptions] =
@@ -68,10 +68,6 @@ const GroupedAutocomplete: React.FC<AutocompleteProps> = ({
     setIsOpen(false);
   };
 
-  const toggleDropdown = () => {
-    setIsOpen(!isOpen);
-  };
-
   return (
     <div className={`relative inline-block ${width}`}>
       <div className="relative flex items-center">
@@ -79,7 +75,8 @@ const GroupedAutocomplete: React.FC<AutocompleteProps> = ({
           type="text"
           value={inputValue}
           onChange={handleInputChange}
-          onClick={toggleDropdown}
+          onFocus={() => setIsOpen(true)} // 포커스 시 드롭다운 열기
+          onBlur={() => setIsOpen(false)} // 포커스를 잃으면 드롭다운 닫기
           placeholder={placeholder}
           className={`w-full p-2 pr-10 ${borderClasses[border]} ${radius === "full" ? "rounded-full" : radiusClasses[radius]} focus:border-transparent focus:outline-none focus:ring-2 focus:ring-blue-500`}
         />
@@ -104,7 +101,7 @@ const GroupedAutocomplete: React.FC<AutocompleteProps> = ({
                   {items.map((item, index2) => (
                     <li
                       key={index2}
-                      onClick={() => handleOptionClick(item)}
+                      onMouseDown={() => handleOptionClick(item)} // onClick 대신 onMouseDown 사용
                       className="cursor-pointer border-b p-2 font-light text-zinc-800 hover:bg-[#E8F5FF]"
                     >
                       {item}
@@ -114,7 +111,7 @@ const GroupedAutocomplete: React.FC<AutocompleteProps> = ({
               </li>
             ))
           ) : (
-            <li className="p-2 text-zinc-800">{noOptionsMessage}</li> // 필터링된 결과가 없을 때 메시지
+            <li className="p-2 text-zinc-800">{noOptionsMessage}</li>
           )}
         </ul>
       )}
