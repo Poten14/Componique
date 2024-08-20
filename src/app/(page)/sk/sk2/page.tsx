@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import LabelAutocomplete from "@components/Autocomplete/LabelAutocomplete";
+import Autocomplete from "@components/Autocomplete/Autocomplete";
 
 const sk2 = () => {
   const components = [
@@ -27,6 +28,18 @@ const sk2 = () => {
     { label: "Navigation", value: "Pagination" },
     { label: "Navigation", value: "Drawer" },
     { label: "Navigation", value: "Navbar" },
+  ];
+
+  const options = [
+    "Apple",
+    "Banana",
+    "Orange",
+    "Grapes",
+    "Mango",
+    "Pineapple",
+    "Strawberry",
+    "Blueberry",
+    "Peach",
   ];
 
   const [inputValue, setInputValue] = useState("");
@@ -72,6 +85,66 @@ const sk2 = () => {
           onSelect={handleSelect}
           placeholder="Search for Components..."
         />
+      </div>
+
+      <div className="space-y-8 p-8">
+        <h1 className="text-2xl font-bold">Instant Autocomplete Component</h1>
+
+        {/* Small size, Outlined variant */}
+        <div>
+          <h2 className="text-lg font-medium">Small & Outlined</h2>
+          <Autocomplete
+            options={options}
+            variant="outlined"
+            radius="small"
+            width="200px"
+            height="30px"
+            placeholder="Search..."
+            onSelect={handleSelect}
+          />
+        </div>
+
+        {/* Medium size, Filled variant */}
+        <div>
+          <h2 className="text-lg font-medium">Medium & Filled</h2>
+          <Autocomplete
+            options={options}
+            variant="filled"
+            radius="medium"
+            width="300px"
+            height="40px"
+            placeholder="Search..."
+            onSelect={handleSelect}
+          />
+        </div>
+
+        {/* Large size, Borderless variant */}
+        <div>
+          <h2 className="text-lg font-medium">Large & Borderless</h2>
+          <Autocomplete
+            options={options}
+            variant="borderless"
+            radius="large"
+            width="400px"
+            height="50px"
+            placeholder="Search..."
+            onSelect={handleSelect}
+          />
+        </div>
+
+        {/* Full-width, Custom height */}
+        <div>
+          <h2 className="text-lg font-medium">Full-width & Custom height</h2>
+          <Autocomplete
+            options={options}
+            variant="outlined"
+            radius="full"
+            width="100%"
+            height="60px"
+            placeholder="Search..."
+            onSelect={handleSelect}
+          />
+        </div>
       </div>
     </>
   );
