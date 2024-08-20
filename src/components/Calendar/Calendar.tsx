@@ -3,34 +3,33 @@
 import { useState } from "react";
 
 interface CalendarProps {
-  selectedDate?: Date;
   onDateSelect?: (date: Date) => void;
 }
 
-const Calendar = ({ selectedDate, onDateSelect }: CalendarProps) => {
+const Calendar = ({ onDateSelect }: CalendarProps) => {
   const [currentDate, setCurrentDate] = useState<Date>(new Date());
+  const [selectedDate, setSelectedDate] = useState<Date | null>(null);
+
   const year = currentDate.getFullYear();
   const month = currentDate.getMonth();
 
   // 현재 달의 첫 날
   // 현재 달의 첫 날짜 요일을 숫자로 반환 일 = 1, 월 = 1
   const firstDayOfMonth = new Date(year, month, 1);
-  // 달력 시작 날짜를 현재 달의 첫 날의 주의 일요일로 설정
-  const startDay = new Date(firstDayOfMonth);
-  startDay.setDate(1 - firstDayOfMonth.getDay());
+  const startDay = firstDayOfMonth.getDay();
 
   // 현재 달의 마지막 날
   const lastDayOfMonth = new Date(year, month + 1, 0);
-  // 달력 끝 날짜를 현재 달의 마지막 날의 주의 토요일로 설정
-  const endDay = new Date(lastDayOfMonth);
-  endDay.setDate(lastDayOfMonth.getDate() + (6 - lastDayOfMonth.getDay()));
+  const endDay = lastDayOfMonth.getDate();
 
+  // 이전달
   const handlePrevMonth = () => {
     setCurrentDate(
       new Date(currentDate.getFullYear(), currentDate.getMonth() - 1, 1),
     );
   };
 
+  // 다음달
   const handleNextMonth = () => {
     setCurrentDate(
       new Date(currentDate.getFullYear(), currentDate.getMonth() + 1, 1),
@@ -44,9 +43,38 @@ const Calendar = ({ selectedDate, onDateSelect }: CalendarProps) => {
       currentDate.getMonth(),
       day,
     );
+    setSelectedDate(selectedDate);
     if (onDateSelect) {
       onDateSelect(selectedDate);
     }
+    console.log("selectedDate", selectedDate);
+  };
+
+  // 빈칸, 날짜 추가 반복문
+  const renderDays = () => {
+    const days = [];
+    for (let i = 0; i < startDay; i++) {
+      days.push(<div key={`empty-${i} className="p-2"`} />);
+    }
+
+    for (let day = 1; day <= endDay; day++) {
+      days.push(
+        <div
+          key={day}
+          className={`cursor-pointer p-2 text-center hover:bg-gray ${
+            selectedDate?.getDate() === day &&
+            selectedDate?.getMonth() === currentDate.getMonth() &&
+            selectedDate?.getFullYear() === currentDate.getFullYear()
+              ? "bg-[#9AC5E5] text-white"
+              : "bg-white"
+          }`}
+          onClick={() => handleDateClick(day)}
+        >
+          {day}
+        </div>,
+      );
+    }
+    return days;
   };
 
   return (
@@ -54,7 +82,10 @@ const Calendar = ({ selectedDate, onDateSelect }: CalendarProps) => {
       <div className="w-64">
         <div className="mb-2 flex justify-between">
           <button onClick={handlePrevMonth}>Prev</button>
-          <span>년</span>
+          <span>
+            {currentDate.toLocaleString("default", { month: "long" })}{" "}
+            {currentDate.getFullYear()}
+          </span>
           <button onClick={handleNextMonth}>Next</button>
         </div>
         {/* 월,달,날짜 */}
@@ -66,6 +97,7 @@ const Calendar = ({ selectedDate, onDateSelect }: CalendarProps) => {
           <div className="text-center font-bold">Thu</div>
           <div className="text-center font-bold">Fri</div>
           <div className="text-center font-bold">Sat</div>
+          {renderDays()}
         </div>
       </div>
     </>
