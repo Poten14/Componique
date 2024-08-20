@@ -58,16 +58,15 @@ const Calendar = ({ onDateSelect }: CalendarProps) => {
     }
 
     for (let day = 1; day <= endDay; day++) {
+      const isSelected =
+        selectedDate?.getDate() === day &&
+        selectedDate?.getMonth() === currentDate.getMonth() &&
+        selectedDate?.getFullYear() === currentDate.getFullYear();
+
       days.push(
         <div
           key={day}
-          className={`cursor-pointer p-2 text-center hover:bg-gray ${
-            selectedDate?.getDate() === day &&
-            selectedDate?.getMonth() === currentDate.getMonth() &&
-            selectedDate?.getFullYear() === currentDate.getFullYear()
-              ? "bg-[#9AC5E5] text-white"
-              : "bg-white"
-          }`}
+          className={`m-auto h-10 w-10 cursor-pointer rounded-full p-2 text-center text-sm ${isSelected ? "bg-[#9AC5E5] text-white" : "bg-white hover:bg-[#1976d20a]"} `}
           onClick={() => handleDateClick(day)}
         >
           {day}
@@ -77,27 +76,33 @@ const Calendar = ({ onDateSelect }: CalendarProps) => {
     return days;
   };
 
+  const dateClass = "text-center text-[#ddd]";
+
   return (
     <>
-      <div className="w-64">
-        <div className="mb-2 flex justify-between">
-          <button onClick={handlePrevMonth}>Prev</button>
-          <span>
-            {currentDate.toLocaleString("default", { month: "long" })}{" "}
-            {currentDate.getFullYear()}
-          </span>
-          <button onClick={handleNextMonth}>Next</button>
-        </div>
-        {/* 월,달,날짜 */}
-        <div className="grid grid-cols-7 gap-1">
-          <div className="text-center font-bold">Sun</div>
-          <div className="text-center font-bold">Mon</div>
-          <div className="text-center font-bold">Tue</div>
-          <div className="text-center font-bold">Wed</div>
-          <div className="text-center font-bold">Thu</div>
-          <div className="text-center font-bold">Fri</div>
-          <div className="text-center font-bold">Sat</div>
-          {renderDays()}
+      <div className="w-1/5">
+        <div className="w-full">
+          <div className="mb-2 flex justify-between">
+            <span>
+              {currentDate.toLocaleString("default", { month: "long" })}{" "}
+              {currentDate.getFullYear()}
+            </span>
+            <div>
+              <button className="pr-6" onClick={handlePrevMonth}>{`<`}</button>
+              <button className="pr-2" onClick={handleNextMonth}>{`>`}</button>
+            </div>
+          </div>
+          {/* 월,달,날짜 */}
+          <div className="grid grid-cols-7 gap-2">
+            <div className={dateClass}>Sun</div>
+            <div className={dateClass}>Mon</div>
+            <div className={dateClass}>Tue</div>
+            <div className={dateClass}>Wed</div>
+            <div className={dateClass}>Thu</div>
+            <div className={dateClass}>Fri</div>
+            <div className={dateClass}>Sat</div>
+            {renderDays()}
+          </div>
         </div>
       </div>
     </>
