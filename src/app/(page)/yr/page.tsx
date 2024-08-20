@@ -6,6 +6,7 @@ import TextareaValue from "@components/Textarea/TextareaValue";
 import Select from "@components/Select/Select";
 import SelectValueAdd from "@components/Select/SelectValueAdd";
 import SelectList from "@components/Select/SelectList";
+import Skeleton from "@components/Skeleton/Skeleton";
 
 const page = () => {
   return (
@@ -16,6 +17,20 @@ const page = () => {
           logoName="Compunique"
           logoSrc={Logo}
           size="small"
+          hoverColor="blue"
+          position="static"
+        />
+        <Navbar
+          logoName="Compunique"
+          logoSrc={Logo}
+          size="medium"
+          hoverColor="blue"
+          position="static"
+        />
+        <Navbar
+          logoName="Compunique"
+          logoSrc={Logo}
+          size="large"
           hoverColor="blue"
           position="static"
         />
@@ -146,6 +161,12 @@ const page = () => {
       </div>
       <div className="m-4 space-y-4">
         <SelectList option={["option1", "option2", "option3", "option4"]} />
+      </div>
+      {/* Skeleton 구현 */}
+      <div className="m-4 flex gap-6">
+        <Skeleton size="small" variants="rounded" animate={true} />
+        <Skeleton size="medium" variants="rounded" animate={true} />
+        <Skeleton size="large" variants="rectangular" animate={true} />
       </div>
     </>
   );
