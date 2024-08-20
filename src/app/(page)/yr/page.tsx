@@ -13,7 +13,6 @@ import Calendar from "@components/Calendar/Calendar";
 const page = () => {
   return (
     <>
-      <Calendar />
       {/* Navbar 연습 */}
       <div className="m-4 space-y-4">
         <Navbar
@@ -179,6 +178,9 @@ const page = () => {
           hasAvatar={false}
           hasImage={false}
         />
+      </div>
+      <div className="m-4">
+        <Calendar />
       </div>
     </>
   );
