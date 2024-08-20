@@ -79,7 +79,7 @@ const dw = () => {
           <CheckBox onChange={(e) => console.log(e.target.checked)} />
         </div>
         <h2 className="ml-4 text-2xl">체크박스의 크기</h2>
-        <div className="ml-4 flex space-x-5">
+        <div className="ml-4 flex flex-wrap space-x-5">
           <CheckBox boxSize="small" description="small CheckBox" />
           <CheckBox description="medium CheckBox" color="secondary" />
           <CheckBox boxSize="large" description="large CheckBox" />
@@ -92,7 +92,7 @@ const dw = () => {
           <CheckBox description="Warning CheckBox" color="warning" />
           <CheckBox description="Danger CheckBox" color="danger" />
         </div>
-        <div className="ml-4 flex space-x-5">
+        <div className="ml-4 flex flex-wrap space-x-5">
           <CheckBox description="Red CheckBox" color="red" />
           <CheckBox description="Orange CheckBox" color="orange" />
           <CheckBox description="Yellow CheckBox" color="yellow" />
@@ -105,7 +105,7 @@ const dw = () => {
           <CheckBox description="Basic CheckBox" color="basic" />
         </div>
         <h2 className="ml-4 text-2xl">체크박스의 컬러2</h2>
-        <div className="ml-4 flex space-x-5">
+        <div className="ml-4 flex flex-wrap space-x-5">
           <CheckBox
             description="Primary Border CheckBox"
             color="primary"
@@ -132,7 +132,7 @@ const dw = () => {
             variant="border"
           />
         </div>
-        <div className="ml-4 flex space-x-5">
+        <div className="ml-4 flex flex-wrap space-x-5">
           <CheckBox
             description="Red Border CheckBox"
             color="red"
@@ -154,7 +154,7 @@ const dw = () => {
             variant="border"
           />
         </div>
-        <div className="ml-4 flex space-x-5">
+        <div className="ml-4 flex flex-wrap space-x-5">
           <CheckBox
             description="Blue Border CheckBox"
             color="blue"
@@ -208,7 +208,14 @@ const dw = () => {
           isOpen={isToastOpen}
           size="medium"
           onClose={onclickToastHandler(false)}
-          color="secondary"
+          color="yellow"
+          position="left"
+          variant="border"
+          path="/"
+          isProgress={true}
+          text="center"
+          time="5"
+          isClose={false}
         >
           가입이 완료되었습니다.
         </Toast>

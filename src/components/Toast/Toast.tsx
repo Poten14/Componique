@@ -1,27 +1,11 @@
 "use client";
-
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { useEffect } from "react";
-import { Color16, Size } from "types/type";
-type ToastProps = {
-  size?: Size;
-  isOpen?: boolean;
-  isClose?: boolean;
-  position?:
-    | "leftTop"
-    | "leftBottom"
-    | "rightTop"
-    | "rightBottom"
-    | "centerTop"
-    | "centerBottom"
-    | "left"
-    | "right"
-    | "center";
-  onClose?: () => void;
-  children: React.ReactNode;
-  color?: Color16;
-};
+import { ToastPosition } from "./ToastPosition";
+import { bgColors, borderColors } from "./ToastColor";
+
+import type { ToastProps } from "./ToastType";
 
 const Toast: React.FC<ToastProps> = ({
   children,
@@ -29,17 +13,49 @@ const Toast: React.FC<ToastProps> = ({
   onClose,
   color = "basic",
   size = "large",
-  position = "centerBottom",
+  position = "leftBottom",
+  text = "left",
+  variant = "solid",
+  isClose = false,
+  isProgress = true,
+  time,
+  path,
   ...rest
 }) => {
   const [isToastOpen, setIsToastOpen] = useState(isOpen);
+  const [progress, setProgress] = useState(100);
   const router = useRouter();
 
   useEffect(() => {
     setIsToastOpen(isOpen);
   }, [isOpen]);
 
-  const onclickCloseHandler = () => {
+  useEffect(() => {
+    if (time) {
+      // 총 시간, 사용하는 곳에서 time =""를 설정한 값
+      const totalTime = parseInt(time) * 1000;
+      // 프로그래스바의 업데이트 간격 : 프로그래스 바를 1%씩 줄이기 위한 간격
+      const interval = totalTime / 100;
+      // setTimeout을 사용해서 totalTime이 지나면 Toast가 닫히도록 setIsToastOpen(false)를 호출함
+      const timeout = setTimeout(() => {
+        setIsToastOpen(false);
+        if (onClose) onClose();
+      }, totalTime);
+      //setInterval을 사용해서 progress 상태를 interval마다 1%씩 줄임
+      const progressId = setInterval(() => {
+        setProgress((prev) => (prev > 0 ? prev - 1 : 0));
+      }, interval);
+
+      return () => {
+        clearTimeout(timeout);
+        clearInterval(progressId);
+      };
+    }
+  }, [time, onClose]);
+
+  const onclickCloseHandler = (e: React.MouseEvent<HTMLButtonElement>) => {
+    //path 입력 시 닫기 버튼은 path가 작동되지 않도록 하기 위해서 사용함
+    e.stopPropagation();
     setIsToastOpen(false);
     if (onClose) onClose();
   };
@@ -52,34 +68,25 @@ const Toast: React.FC<ToastProps> = ({
       "min-w-[400px] sm:min-w-[500px]  md:min-w-[780px] lg:min-w-[1150px] xl:min-w-[1300px]",
   };
 
-  const bgColors = {
-    primary: "bg-Primary",
-    secondary: "bg-Secondary",
-    success: "bg-Success",
-    warning: "bg-Warning",
-    danger: "bg-Danger",
-    red: "bg-red-500",
-    orange: "bg-orange-500",
-    yellow: "bg-yellow-500",
-    green: "bg-green-500",
-    blue: "bg-blue-500",
-    purple: "bg-purple-500",
-    pink: "bg-pink-500",
-    basic: "bg-Basic",
-    white: "bg-white",
-    gray: "bg-gray",
-    black: "bg-black",
-  };
-  const ToastPosition = {
-    leftTop: "top-0 left-0",
-    centerTop: "top-0 left-1/2 -translate-x-1/2 ",
-    rightTop: "top-0  right-0 ",
-    left: "top-1/2 left-0 transform -translate-y-1/2 ",
-    center: "top-1/2 left-1/2 -translate-x-1/2 ",
-    right: "top-1/2 right-0 ",
-    leftBottom: "bottom-0 left-0 ",
-    centerBottom: "bottom-0 left-1/2 -translate-x-1/2 ",
-    rightBottom: "bottom-0 right-0  ",
+  let ToastVariant = "";
+  let closeButtonColor = "";
+  let progressBarColor = "";
+
+  if (variant === "solid") {
+    ToastVariant = `${bgColors[color]}`;
+    closeButtonColor = color === "white" ? "bg-slate-400" : "bg-white";
+    progressBarColor = "bg-gray";
+  } else if (variant === "border") {
+    ToastVariant = `${borderColors[color]}`;
+    closeButtonColor =
+      color === "white" ? "bg-slate-400" : bgColors[color] || "bg-slate-400";
+    progressBarColor = bgColors[color];
+  }
+
+  const ToastTextAlign = {
+    left: "text-left",
+    right: "text-right",
+    center: "text-center",
   };
 
   const BasicToast = "min-w-md   box-border fixed select-none ";
@@ -88,22 +95,40 @@ const Toast: React.FC<ToastProps> = ({
       <section
         className={`${BasicToast} ${ToastPosition[position]} ${ToastSize[size]} ${
           isToastOpen ? "opacity-100" : "pointer-events-none opacity-0"
-        }`}
+        } ${path ? "cursor-pointer" : ""}`}
+        onClick={() => {
+          if (path) {
+            router.push(path);
+          }
+        }}
       >
         <div
-          className={`flex items-center justify-between rounded-md bg-Basic ${bgColors[color]} p-4`}
+          className={`flex items-center justify-between rounded-md ${ToastVariant} p-4`}
           {...rest}
         >
-          {children}
+          <div className={`${ToastTextAlign[text]} w-full`}>{children}</div>
 
           <button
-            className="group relative ml-2 h-4 w-4 bg-transparent"
+            className={`z-999 group relative ml-2 h-4 w-4 bg-transparent ${isClose ? "hidden" : "block"}`}
             onClick={onclickCloseHandler}
           >
-            <span className="absolute left-1/2 top-1/2 block h-0.5 w-full -translate-x-1/2 -translate-y-1/2 rotate-45 transform bg-white"></span>
-            <span className="absolute left-1/2 top-1/2 block h-0.5 w-full -translate-x-1/2 -translate-y-1/2 -rotate-45 transform bg-white"></span>
+            <span
+              className={`absolute left-1/2 top-1/2 block h-0.5 w-full -translate-x-1/2 -translate-y-1/2 rotate-45 transform ${closeButtonColor}`}
+            ></span>
+            <span
+              className={`absolute left-1/2 top-1/2 block h-0.5 w-full -translate-x-1/2 -translate-y-1/2 -rotate-45 transform ${closeButtonColor}`}
+            ></span>
           </button>
         </div>
+        {isProgress && (
+          <div className="bg-gray-200 relative h-1 w-full rounded">
+            {/* div의 너비는 progress 상태에 의해 동적으로 설정됨, 처음에는 100%로 시작하고 시간이 지나면서 점차 줄어들게 됨 */}
+            <div
+              className={`absolute left-0 h-full ${progressBarColor} rounded ${variant === "solid" ? "top-[-4px]" : "top-[-6px]"}`}
+              style={{ width: `${progress}%` }}
+            />
+          </div>
+        )}
       </section>
     </div>
   );
