@@ -7,6 +7,7 @@ import Select from "@components/Select/Select";
 import SelectValueAdd from "@components/Select/SelectValueAdd";
 import SelectList from "@components/Select/SelectList";
 import Skeleton from "@components/Skeleton/Skeleton";
+import SkeletonCard from "@components/Skeleton/SkeletonCard";
 
 const page = () => {
   return (
@@ -167,6 +168,15 @@ const page = () => {
         <Skeleton size="small" variants="rounded" animate={true} />
         <Skeleton size="medium" variants="rounded" animate={true} />
         <Skeleton size="large" variants="rectangular" animate={true} />
+      </div>
+      <div className="m-4 flex gap-6">
+        <SkeletonCard width="w-1/5" hasAvatar={true} hasImage={true} />
+        <SkeletonCard
+          width="w-1/5"
+          height="h-32"
+          hasAvatar={false}
+          hasImage={false}
+        />
       </div>
     </>
   );
