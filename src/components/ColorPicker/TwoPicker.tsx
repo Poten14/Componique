@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from "react";
-import ColorPickerUI from "./ColorPickerUI";
+import ColorPicker from "./ColorPicker";
 import GradientPicker from "./GradientPicker";
 
 type Picker = "Color" | "Gradient";
@@ -27,7 +27,7 @@ const TwoPicker: React.FC = () => {
       <div>
         {activePicker === "Color" ? (
           <div>
-            <ColorPickerUI />
+            <ColorPicker />
           </div>
         ) : (
           <div>
