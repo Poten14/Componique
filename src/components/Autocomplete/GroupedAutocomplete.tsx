@@ -78,7 +78,7 @@ const GroupedAutocomplete: React.FC<AutocompleteProps> = ({
           onFocus={() => setIsOpen(true)} // 포커스 시 드롭다운 열기
           onBlur={() => setIsOpen(false)} // 포커스를 잃으면 드롭다운 닫기
           placeholder={placeholder}
-          className={`w-full p-2 pr-10 ${borderClasses[border]} ${radius === "full" ? "rounded-full" : radiusClasses[radius]} focus:border-transparent focus:outline-none focus:ring-2 focus:ring-blue-500`}
+          className={`w-full p-2 pr-10 ${borderClasses[border]} ${radius === "full" ? "rounded-full" : radiusClasses[radius]} focus:border-transparent focus:outline-none focus:ring-2 focus:ring-Basic`}
         />
         <div className="absolute right-3 top-1/2 -translate-y-1/2 transform">
           <Image
