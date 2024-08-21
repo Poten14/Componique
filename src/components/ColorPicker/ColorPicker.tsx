@@ -8,10 +8,10 @@ const ColorPicker: React.FC<ColorPickerProps> = ({ colors }) => {
   const onClickCopyHandler = async (text: string) => {
     try {
       await navigator.clipboard.writeText(text);
-      setMsg("선택한 컬러가 복사되었습니다.");
+      setMsg("The selected color has been copied!");
       setTimeout(() => setMsg(""), 2000);
     } catch (error) {
-      setMsg("복사 실패하였습니다.");
+      setMsg("Copy failed.");
     }
   };
   return (
