@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import LabelAutocomplete from "@components/Autocomplete/LabelAutocomplete";
 import Autocomplete from "@components/Autocomplete/Autocomplete";
 import GroupedAutocomplete from "@components/Autocomplete/GroupedAutocomplete";
+import ButtonAutocomplete from "@components/Autocomplete/ButtonAutocomplete";
 
 const sk2 = () => {
   const components = [
@@ -217,6 +218,28 @@ const sk2 = () => {
             border="thin"
           />
         </div>
+      </div>
+
+      {/* ButtonAuto */}
+      <div className="space-y-8 p-10">
+        <h1 className="text-2xl font-bold">Button Autocomplete Component</h1>
+        <ButtonAutocomplete
+          options={options}
+          radius="full"
+          width="300px"
+          height="50px"
+          placeholder="Search..."
+          onSelect={handleSelect}
+        />
+        <ButtonAutocomplete
+          options={options}
+          radius="none"
+          width="400px"
+          height="50px"
+          color="Warning"
+          placeholder="Search..."
+          onSelect={handleSelect}
+        />
       </div>
     </>
   );
