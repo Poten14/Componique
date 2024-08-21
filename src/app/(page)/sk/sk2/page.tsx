@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import LabelAutocomplete from "@components/Autocomplete/LabelAutocomplete";
 import Autocomplete from "@components/Autocomplete/Autocomplete";
+import GroupedAutocomplete from "@components/Autocomplete/GroupedAutocomplete";
 
 const sk2 = () => {
   const components = [
@@ -42,6 +43,26 @@ const sk2 = () => {
     "Peach",
   ];
 
+  const groupOptions = [
+    {
+      groupName: "Group 1",
+      items: ["Option 1", "Option 2", "Option 3"],
+    },
+    {
+      groupName: "Group 2",
+      items: ["Option 1", "Option 2", "Option 3"],
+    },
+    {
+      groupName: "Group 3",
+      items: ["Option 1", "Option 2", "Option 3"],
+    },
+    {
+      groupName: "Group 4",
+      items: ["Option 1", "Option 2", "Option 3"],
+    },
+  ];
+
+  //label
   const [inputValue, setInputValue] = useState("");
 
   const handleInputChange = (value: string) => {
@@ -54,6 +75,10 @@ const sk2 = () => {
     console.log("Selected option:", selectedOption);
   };
 
+  //group
+  const handleSelect2 = (selectedOption: string) => {
+    console.log("Selected:", selectedOption);
+  };
   return (
     <>
       <div className="p-4">
@@ -143,6 +168,53 @@ const sk2 = () => {
             height="60px"
             placeholder="Search..."
             onSelect={handleSelect}
+          />
+        </div>
+      </div>
+
+      {/* Group */}
+      <div className="space-y-8 p-8">
+        <h1 className="text-2xl font-bold">Grouped Autocomplete Component</h1>
+        <div className="p-4">
+          <h1 className="text-lg font-bold">기본 Autocomplete</h1>
+          <GroupedAutocomplete
+            options={groupOptions}
+            radius="none"
+            onSelect={handleSelect}
+            placeholder="Search for..."
+          />
+        </div>
+        <div className="p-4">
+          <h1 className="text-lg font-bold">Custom Border and Radius</h1>
+          <GroupedAutocomplete
+            options={groupOptions}
+            onSelect={handleSelect}
+            radius="medium"
+            border="thick"
+            width="w-60"
+            placeholder="Search for..."
+          />
+        </div>
+        <div className="p-4">
+          <h1 className="text-lg font-bold">Custom No Options Message</h1>
+          <GroupedAutocomplete
+            options={groupOptions}
+            onSelect={handleSelect}
+            radius="large"
+            placeholder="Search for..."
+            width="w-80"
+            noOptionsMessage="Sorry, no matches found!"
+          />
+        </div>
+        <div className="p-4">
+          <h1 className="text-lg font-bold">Custom Width and Style</h1>
+          <GroupedAutocomplete
+            options={groupOptions}
+            onSelect={handleSelect}
+            placeholder="Search for..."
+            width="w-96"
+            radius="full"
+            border="thin"
           />
         </div>
       </div>

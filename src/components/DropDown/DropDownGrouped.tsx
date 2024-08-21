@@ -38,7 +38,7 @@ const DropDownGrouped = ({
       <div className="relative inline-block w-64">
         <div
           onClick={() => toggleDropdown(0)}
-          className="flex cursor-pointer justify-between border-2 p-2 font-bold"
+          className="flex cursor-pointer justify-between border-2 p-2 font-medium"
         >
           {selectedOption || defaultOption}
           <Image
@@ -58,7 +58,7 @@ const DropDownGrouped = ({
                     <li
                       key={index2}
                       onClick={() => handleOptionClick(item)}
-                      className="cursor-pointer border-b p-2 text-zinc-800 hover:bg-Basic"
+                      className="cursor-pointer border-b p-2 text-zinc-800 hover:bg-[#E8F5FF]"
                     >
                       {item}
                     </li>
@@ -74,7 +74,7 @@ const DropDownGrouped = ({
       <div className="relative inline-block w-64">
         <div
           onClick={() => toggleDropdown(1)}
-          className="flex cursor-pointer justify-between rounded-lg border-2 p-2 font-bold"
+          className="flex cursor-pointer justify-between rounded-lg border-2 p-2 font-medium"
         >
           {selectedOption || defaultOption}
           <Image
@@ -94,7 +94,7 @@ const DropDownGrouped = ({
                     <li
                       key={index2}
                       onClick={() => handleOptionClick(item)}
-                      className="cursor-pointer border-b p-2 text-zinc-800 hover:bg-Basic"
+                      className="cursor-pointer border-b p-2 text-zinc-800 hover:bg-[#E8F5FF]"
                     >
                       {item}
                     </li>
@@ -110,7 +110,7 @@ const DropDownGrouped = ({
       <div className="relative inline-block w-64">
         <div
           onClick={() => toggleDropdown(2)}
-          className="flex cursor-pointer justify-between rounded-full border-2 border-zinc-100 p-2 font-bold shadow-md"
+          className="flex cursor-pointer justify-between rounded-full border-2 border-zinc-100 p-2 font-medium shadow-md"
         >
           {selectedOption || defaultOption}
           <Image
@@ -130,7 +130,7 @@ const DropDownGrouped = ({
                     <li
                       key={index2}
                       onClick={() => handleOptionClick(item)}
-                      className="cursor-pointer rounded-xl border-b border-zinc-100 p-2 text-zinc-800 underline hover:bg-Basic"
+                      className="cursor-pointer rounded-xl border-b border-zinc-100 p-2 text-zinc-800 underline hover:bg-[#E8F5FF]"
                     >
                       {item}
                     </li>
@@ -146,7 +146,7 @@ const DropDownGrouped = ({
       <div className="relative inline-block w-64">
         <div
           onClick={() => toggleDropdown(3)}
-          className="flex cursor-pointer justify-between rounded-lg border-2 border-zinc-100 bg-white p-2 font-bold"
+          className="flex cursor-pointer justify-between rounded-lg border-2 border-zinc-100 bg-white p-2 font-medium"
         >
           {selectedOption || defaultOption}
           <Image
@@ -166,7 +166,7 @@ const DropDownGrouped = ({
                     <li
                       key={index2}
                       onClick={() => handleOptionClick(item)}
-                      className="cursor-pointer border-b border-zinc-100 p-2 text-zinc-800 hover:bg-Basic"
+                      className="cursor-pointer border-b border-zinc-100 p-2 text-zinc-800 hover:bg-[#E8F5FF]"
                     >
                       {item}
                     </li>
