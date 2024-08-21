@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 // RadioButton 컴포넌트 가져오기
 import RadioButtonBasic from "@components/RadioButton/RadioButtonBasic";
@@ -24,11 +24,18 @@ import SwitchRound from "@components/Swtich/SwitchRound";
 import SwitchHorizental from "@components/Swtich/SwitchHorizental";
 import SwitchLong from "@components/Swtich/SwitchLong";
 import SwitchLabeled from "@components/Swtich/SwitchLabeled";
+
+// Infinite Scroll 컴포넌트 가져오기
+import InfiniteScrollBasic from "@components/InfiniteScroll/InfiniteScrollBasic";
+import InfiniteScrollImage from "@components/InfiniteScroll/InfiniteScrollImage";
+
 const Page = () => {
   // 라디오 버튼의 선택 상태를 관리하는 useState 훅
   const [basicSelectedValue, setBasicSelectedValue] = useState("");
   const [labelSelectedValue, setLabelSelectedValue] = useState("");
   const [inlineSelectedValue, setInlineSelectedValue] = useState("");
+  const [content, setContent] = useState("");
+  const [images, setImages] = useState<string[]>([]);
 
   // 라디오 버튼 선택 시 상태를 업데이트하는 핸들러 함수
   const handleBasicChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -50,6 +57,37 @@ const Page = () => {
   const handleSelectMulti = (value: string[]) => {
     console.log("Selected option:", value);
   };
+
+  // 파일을 클라이언트 사이드에서 가져오기
+  useEffect(() => {
+    const fetchContent = async () => {
+      const response = await fetch("/content/news1.txt");
+      const text = await response.text();
+      setContent(text);
+    };
+
+    const fetchImages = async () => {
+      // 이미지 경로를 배열로 설정 (이 예제에서는 /images 폴더의 이미지 사용)
+      const imagePaths = [
+        "/images/IfSc1.svg",
+        "/images/IfSc2.svg",
+        "/images/IfSc3.svg",
+        "/images/IfSc4.svg",
+        "/images/IfSc5.svg",
+        "/images/IfSc6.svg",
+        "/images/IfSc7.svg",
+        "/images/IfSc8.svg",
+        "/images/IfSc9.svg",
+        "/images/IfSc10.svg",
+
+        // 필요한 만큼 이미지 경로를 추가합니다.
+      ];
+      setImages(imagePaths);
+    };
+
+    fetchContent();
+    fetchImages();
+  }, []);
 
   return (
     <div className="mb-96 ml-4 mt-4">
@@ -404,6 +442,18 @@ const Page = () => {
         SwitchLabeled - 레이블 스위치
       </h1>
       <SwitchLabeled />
+      <br />
+      <br />
+      <h1 className="mb-4 text-lg font-semibold">
+        Infinite Scroll Basic - 기본 인피니티 스크롤
+      </h1>
+      <InfiniteScrollBasic content={content} />
+      <br />
+      <br />
+      <h1 className="mb-4 text-lg font-semibold">
+        Infinite Scroll Image - 이미지 인피니티 스크롤
+      </h1>
+      <InfiniteScrollImage images={images} />
     </div>
   );
 };
