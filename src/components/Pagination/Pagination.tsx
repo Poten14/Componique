@@ -5,7 +5,7 @@ interface PaginationProps {
   currentPage: number;
   totalPages: number;
   variant: "circle" | "square";
-  styleType: "filled" | "outlined" | "no-border";
+  styleType: "filled" | "outlined" | "outlined-focused" | "filled-outlined";
   color: Color;
   onPageChange: (page: number) => void;
 }
@@ -37,19 +37,13 @@ const Pagination: React.FC<PaginationProps> = ({
 
   const baseButtonClasses = "w-10 h-10 flex items-center justify-center";
   const shapeClass = variant === "circle" ? "rounded-full" : "rounded-md";
-  const borderStyle =
-    styleType === "outlined"
-      ? "border-2"
-      : styleType === "no-border"
-        ? "border-none"
-        : "border";
 
   return (
     <div className="flex items-center space-x-1">
       <button
-        className={`${baseButtonClasses} ${shapeClass} ${borderStyle} ${
-          currentPage === 1 ? "text-Gray cursor-not-allowed" : "text-Basic"
-        } border-none`}
+        className={`${baseButtonClasses} ${shapeClass} border-none ${
+          currentPage === 1 ? "text-Gray cursor-not-allowed" : "text-Gray"
+        }`}
         onClick={() => onPageChange(currentPage - 1)}
         disabled={currentPage === 1}
       >
@@ -58,14 +52,24 @@ const Pagination: React.FC<PaginationProps> = ({
       {pageNumbers.map((number) => (
         <button
           key={number}
-          className={`${baseButtonClasses} ${shapeClass} ${borderStyle} ${
+          className={`${baseButtonClasses} ${shapeClass} ${
             currentPage === number
               ? styleType === "filled"
                 ? `${colorClasses[color]} text-white`
                 : styleType === "outlined"
-                  ? `${colorClasses[color]} text-${color} bg-transparent focus:border-2`
-                  : `bg-${color} text-white`
-              : "text-Gray"
+                  ? `${colorClasses[color]} text-${color} border-2 bg-transparent`
+                  : styleType === "outlined-focused"
+                    ? `${colorClasses[color]} text-${color} border-2 bg-transparent`
+                    : styleType === "filled-outlined"
+                      ? `${colorClasses[color]} text-white bg-${color} border-2`
+                      : `bg-${color} text-white`
+              : styleType === "outlined"
+                ? "text-Gray border-none"
+                : styleType === "outlined-focused"
+                  ? "text-Gray border"
+                  : styleType === "filled-outlined"
+                    ? `border text-${color} border-${color}`
+                    : "text-Gray"
           }`}
           onClick={() => onPageChange(number)}
         >
@@ -73,11 +77,11 @@ const Pagination: React.FC<PaginationProps> = ({
         </button>
       ))}
       <button
-        className={`${baseButtonClasses} ${shapeClass} ${borderStyle} ${
+        className={`${baseButtonClasses} ${shapeClass} border-none ${
           currentPage === totalPages
             ? "text-Gray cursor-not-allowed"
-            : "text-Basic"
-        } border-none`}
+            : "text-Gray"
+        }`}
         onClick={() => onPageChange(currentPage + 1)}
         disabled={currentPage === totalPages}
       >
