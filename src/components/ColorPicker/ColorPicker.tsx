@@ -16,7 +16,7 @@ const ColorPicker: React.FC<ColorPickerProps> = ({ colors }) => {
   };
   return (
     <>
-      <div className="m-5 w-72 space-y-4 rounded-lg bg-slate-100 py-9 text-center">
+      <div className="w-72 space-y-4 rounded-lg bg-slate-100 py-9 text-center">
         <div className="flex items-center justify-center">
           <input
             type="text"
