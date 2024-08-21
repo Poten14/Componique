@@ -182,7 +182,7 @@ const page = () => {
         />
       </div>
       <div className="m-4">
-        <Calendar />
+        <Calendar defaultValue={new Date(2024, 7, 22)} />
       </div>
     </>
   );

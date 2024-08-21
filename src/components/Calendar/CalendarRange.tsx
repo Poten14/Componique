@@ -3,10 +3,10 @@
 import { useState } from "react";
 
 interface CalendarProps {
-  onDateSelect?: (date: Date) => void;
+  onDateSelect?: (startDate: Date, endDate: Date) => void;
 }
 
-const CalendarRange = () => {
+const CalendarRange = ({ onDateSelect }: CalendarProps) => {
   const [currentDate, setCurrentDate] = useState<Date>(new Date());
   const [startDate, setStartDate] = useState<Date | null>(null);
   const [endDate, setEndDate] = useState<Date | null>(null);
@@ -37,6 +37,11 @@ const CalendarRange = () => {
     );
   };
 
+  // 선택날짜
+  const handleDateClick = (day: number) => {
+    const selectedDate = new Date(year, month, day);
+  };
+
   const dateClass = "text-center text-[#ddd]";
 
   return (
@@ -55,13 +60,11 @@ const CalendarRange = () => {
           </div>
           {/* 월,달,날짜 */}
           <div className="grid grid-cols-7 gap-2">
-            <div className={dateClass}>Sun</div>
-            <div className={dateClass}>Mon</div>
-            <div className={dateClass}>Tue</div>
-            <div className={dateClass}>Wed</div>
-            <div className={dateClass}>Thu</div>
-            <div className={dateClass}>Fri</div>
-            <div className={dateClass}>Sat</div>
+            {["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"].map((day) => (
+              <div key={day} className={dateClass}>
+                {day}
+              </div>
+            ))}
           </div>
         </div>
       </div>

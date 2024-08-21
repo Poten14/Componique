@@ -1,14 +1,19 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 interface CalendarProps {
   onDateSelect?: (date: Date) => void;
+  defaultValue?: Date;
 }
 
-const Calendar = ({ onDateSelect }: CalendarProps) => {
-  const [currentDate, setCurrentDate] = useState<Date>(new Date());
-  const [selectedDate, setSelectedDate] = useState<Date | null>(null);
+const Calendar = ({ onDateSelect, defaultValue }: CalendarProps) => {
+  const [currentDate, setCurrentDate] = useState<Date>(
+    defaultValue || new Date(),
+  );
+  const [selectedDate, setSelectedDate] = useState<Date | null>(
+    defaultValue || null,
+  );
 
   const year = currentDate.getFullYear();
   const month = currentDate.getMonth();
@@ -21,6 +26,13 @@ const Calendar = ({ onDateSelect }: CalendarProps) => {
   // 현재 달의 마지막 날
   const lastDayOfMonth = new Date(year, month + 1, 0);
   const endDay = lastDayOfMonth.getDate();
+
+  useEffect(() => {
+    if (defaultValue) {
+      setCurrentDate(defaultValue);
+      setSelectedDate(defaultValue);
+    }
+  }, [defaultValue]);
 
   // 이전달
   const handlePrevMonth = () => {
