@@ -1,21 +1,23 @@
 import React, { useState } from "react";
 
+type ButtonColor =
+  | "Basic"
+  | "Primary"
+  | "Secondary"
+  | "Success"
+  | "Warning"
+  | "Danger";
+
 interface AutocompleteProps {
   options: string[];
   placeholder?: string;
-  variant?: "outlined" | "filled" | "borderless";
   radius?: "small" | "medium" | "large" | "none" | "full";
   width?: string;
   height?: string;
   noOptionsMessage?: string;
+  color?: ButtonColor;
   onSelect: (selectedOption: string) => void;
 }
-
-const variantClasses = {
-  outlined: "border border-gray border-2 focus:border-none",
-  filled: "bg-gray text-gray-900 focus:bg-transparent",
-  borderless: "border-none bg-transparent",
-};
 
 const radiusClasses = {
   small: "rounded-md",
@@ -25,14 +27,32 @@ const radiusClasses = {
   none: "rounded-none",
 };
 
-const Autocomplete: React.FC<AutocompleteProps> = ({
+const colorClasses = {
+  Basic: "focus:ring-Basic focus:border-Basic",
+  Primary: "focus:ring-Primary focus:border-Primary",
+  Secondary: "focus:ring-Secondary focus:border-Secondary",
+  Success: "focus:ring-Success focus:border-Success",
+  Warning: "focus:ring-Warning focus:border-Warning",
+  Danger: "focus:ring-Danger focus:border-Danger",
+};
+
+const buttonColorClasses = {
+  Basic: "bg-Basic text-white",
+  Primary: "bg-Primary text-white",
+  Secondary: "bg-Secondary text-white",
+  Success: "bg-Success text-white",
+  Warning: "bg-Warning text-white",
+  Danger: "bg-Danger text-white",
+};
+
+const ButtonAutocomplete: React.FC<AutocompleteProps> = ({
   options,
   placeholder = "Search...",
-  variant = "outlined",
   radius = "medium",
   width = "300px",
   height = "auto",
   noOptionsMessage = "No results found",
+  color = "Basic",
   onSelect,
 }) => {
   const [inputValue, setInputValue] = useState("");
@@ -56,33 +76,40 @@ const Autocomplete: React.FC<AutocompleteProps> = ({
     setIsDropdownOpen(false);
   };
 
-  const handleBlur = () => {
-    setTimeout(() => setIsDropdownOpen(false), 100);
-  };
-
-  const handleFocus = () => {
-    setIsDropdownOpen(true);
-  };
-
   return (
     <div className="relative" style={{ width }}>
       <input
         type="text"
         value={inputValue}
         onChange={handleInputChange}
-        onFocus={handleFocus}
-        onBlur={handleBlur}
+        onFocus={() => setIsDropdownOpen(true)}
+        onBlur={() => setIsDropdownOpen(false)}
         placeholder={placeholder}
-        className={`w-full ${height} p-3 ${variantClasses[variant]} ${radiusClasses[radius]} focus:outline-none focus:ring-2 focus:ring-Basic`}
+        className={`w-full ${height} border border-gray bg-transparent p-3 ${
+          radius === "full" ? "rounded-full" : radiusClasses[radius]
+        } focus:border-transparent focus:outline-none focus:ring-2 ${colorClasses[color]}`}
         style={{ height }}
       />
+      <button
+        className={`absolute bottom-1 right-1 top-1 px-4 ${buttonColorClasses[color]} ${
+          radius === "full" ? "rounded-full" : "rounded-md"
+        } transform transition-transform focus:outline-none active:scale-90`}
+        onMouseDown={(e) => e.preventDefault()}
+        onClick={() => onSelect(inputValue)}
+      >
+        Search
+      </button>
       {isDropdownOpen && (
-        <ul className="absolute left-0 right-0 z-10 mt-1 max-h-40 overflow-y-auto rounded-md bg-white shadow-lg">
+        <ul
+          className="absolute left-0 right-0 z-10 mt-1 max-h-40 overflow-y-auto rounded-md bg-white shadow-lg"
+          onMouseDown={(e) => e.preventDefault()}
+        >
           {filteredOptions.length > 0 ? (
             filteredOptions.map((option, index) => (
               <li
                 key={index}
                 className="hover:bg-gray-200 cursor-pointer p-2"
+                onMouseDown={(e) => e.preventDefault()}
                 onClick={() => handleOptionClick(option)}
               >
                 {option}
@@ -97,4 +124,4 @@ const Autocomplete: React.FC<AutocompleteProps> = ({
   );
 };
 
-export default Autocomplete;
+export default ButtonAutocomplete;
