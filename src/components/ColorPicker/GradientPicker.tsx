@@ -73,7 +73,7 @@ const GradientPicker: React.FC = () => {
             <option value="to top right">top right</option>
             <option value="to top left">top left</option>
           </select>
-          <div className="pointer-events-none absolute inset-y-0 right-[80px] flex items-center">
+          <div className="pointer-events-none absolute inset-y-0 right-[66px] flex items-center">
             <Image src="selectdown.svg" alt="arrow" width={15} height={15} />
           </div>
         </div>
