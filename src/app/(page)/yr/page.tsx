@@ -9,10 +9,12 @@ import SelectList from "@components/Select/SelectList";
 import Skeleton from "@components/Skeleton/Skeleton";
 import SkeletonCard from "@components/Skeleton/SkeletonCard";
 import Calendar from "@components/Calendar/Calendar";
+import CalendarRange from "@components/Calendar/CalendarRange";
 
 const page = () => {
   return (
     <>
+      <CalendarRange />
       {/* Navbar 연습 */}
       <div className="m-4 space-y-4">
         <Navbar
