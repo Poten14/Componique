@@ -462,7 +462,7 @@ const Page = () => {
       <h1 className="mb-4 text-lg font-semibold">
         Progress Bar Basic - 기본 프로그래스 바
       </h1>
-      <ProgressBarBasic percent={100} showPercent={true} completed={true} />
+      <ProgressBarBasic percent={50} showPercent={true} completed={true} />
     </div>
   );
 };
