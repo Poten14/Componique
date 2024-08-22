@@ -1,65 +1,86 @@
 "use client";
-import { useState } from "react";
-import { ColorPickerProps } from "./ColorPickerType";
-import Button from "@components/Button/Button";
-const ColorPicker: React.FC<ColorPickerProps> = ({ colors }) => {
-  const [selectColor, setSelectedColor] = useState<string>("#ffffff");
-  const [msg, setMsg] = useState("");
-  const onClickCopyHandler = async (text: string) => {
-    try {
-      await navigator.clipboard.writeText(text);
-      setMsg("선택한 컬러가 복사되었습니다.");
-      setTimeout(() => setMsg(""), 2000);
-    } catch (error) {
-      setMsg("복사 실패하였습니다.");
-    }
-  };
+
+import ColorPickerUI from "@components/ColorPicker/ColorPickerUI";
+
+const ColorPicker = () => {
   return (
     <>
-      <div className="m-5 w-72 space-y-4 rounded-lg bg-slate-100 py-9 text-center">
-        <div className="flex items-center justify-center">
-          <input
-            type="text"
-            value={selectColor}
-            className="mr-2 w-24 px-2 py-1 text-center text-xl outline-none"
-            readOnly
-          />
-          <Button
-            radius="small"
-            onClick={() => {
-              onClickCopyHandler(selectColor);
-            }}
-          >
-            Copy
-          </Button>
-        </div>
-        <p className="text-sm">{msg}</p>
-        <div>
-          <input
-            type="color"
-            className="mb-2 h-10 w-52 cursor-pointer bg-transparent"
-            value={selectColor}
-            onChange={(e) => {
-              setSelectedColor(e.target.value);
-            }}
-          />
-        </div>
-        <div className="flex flex-wrap justify-center">
-          <div className="flex w-52 flex-wrap justify-evenly">
-            {colors.map((item, index) => (
-              <div
-                key={index}
-                className={`h-[33px] w-[33px] rounded border border-slate-200 ${selectColor === item ? "border-2 border-slate-500" : ""}`}
-                style={{ backgroundColor: item }}
-                onClick={() => {
-                  console.log(item);
-                  setSelectedColor(item);
-                }}
-              ></div>
-            ))}
-          </div>
-        </div>
-      </div>
+      <ColorPickerUI
+        colors={[
+          // 무채색
+          "#ffffff",
+          "#eeeeee",
+          "#dcdcdc",
+          "#999999",
+          "#666666",
+          "#000000",
+
+          // 빨간계열
+          "#ff0000",
+          "#ef4444",
+          "#ff7676",
+          "#ff6347",
+          "#ff4500",
+          "#b22222",
+
+          // 주황계열
+          "#ff7f00",
+          "#ff8c00",
+          "#f97316",
+          "#ffb347",
+          "#ff8234",
+          "#ffa500",
+
+          // 노랑계열
+          "#ffff00",
+          "#ffd700",
+          "#edce7b",
+          "#eab308",
+          "#fffacd",
+          "#faffba",
+
+          // 초록계열
+          "#00ff00",
+          "#32cd32",
+          "#7eefaf",
+          "#3cb371",
+          "#22c55e",
+          "#006400",
+
+          // 파랑계열
+          "#0000ff",
+          "#1e90ff",
+          "#3b82f6",
+          "#6495ed",
+          "#add8e6",
+          "#4169e1",
+
+          // 남색계열
+          "#000080",
+          "#00008b",
+          "#0000cd",
+
+          "#3242c0",
+          "#4682b4",
+          "#7f89d8",
+
+          // 보라계열
+          "#800080",
+          "#9b59b6",
+          "#ba55d3",
+          "#663399",
+          "#d8bfd8",
+          "#da70d6",
+
+          // 핑크계열
+          "#ff69b4",
+          "#ff1493",
+          "#db7093",
+          "#ec4899",
+          "#ffb6c1",
+          "#ffbafd",
+        ]}
+      />
     </>
   );
 };
