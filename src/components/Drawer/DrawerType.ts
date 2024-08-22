@@ -38,9 +38,11 @@ export type DrawerProps = {
     | "gray"
     | "black";
   postion: "top" | "bottom" | "left" | "right";
+  className?: string;
 };
 
 type MenuProps = {
   name: string;
   path: string;
+  className?: string;
 };
