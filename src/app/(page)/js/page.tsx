@@ -29,6 +29,9 @@ import SwitchLabeled from "@components/Swtich/SwitchLabeled";
 import InfiniteScrollBasic from "@components/InfiniteScroll/InfiniteScrollBasic";
 import InfiniteScrollImage from "@components/InfiniteScroll/InfiniteScrollImage";
 
+// ProgressBarBasic 컴포넌트 가져오기
+import ProgressBarBasic from "@components/ProgressBar/ProgressBarBasic";
+
 const Page = () => {
   // 라디오 버튼의 선택 상태를 관리하는 useState 훅
   const [basicSelectedValue, setBasicSelectedValue] = useState("");
@@ -454,6 +457,12 @@ const Page = () => {
         Infinite Scroll Image - 이미지 인피니티 스크롤
       </h1>
       <InfiniteScrollImage images={images} />
+      <br />
+      <br />
+      <h1 className="mb-4 text-lg font-semibold">
+        Progress Bar Basic - 기본 프로그래스 바
+      </h1>
+      <ProgressBarBasic percent={100} showPercent={true} completed={true} />
     </div>
   );
 };
