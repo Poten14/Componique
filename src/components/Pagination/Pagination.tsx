@@ -8,6 +8,10 @@ interface PaginationProps {
   styleType: "filled" | "outlined" | "outlined-focused" | "filled-outlined";
   color: Color;
   onPageChange: (page: number) => void;
+  showFirstLastButtons?: boolean; // 첫 페이지와 마지막 페이지 버튼 표시
+  boundaryRange?: number; // 첫/마지막 페이지 근처에 표시할 페이지 수
+  siblingRange?: number; // 현재 페이지를 중심으로 표시할 페이지 수
+  disabled?: boolean; // 전체 페이지네이션 비활성화
 }
 
 const Pagination: React.FC<PaginationProps> = ({
@@ -17,23 +21,23 @@ const Pagination: React.FC<PaginationProps> = ({
   styleType,
   color,
   onPageChange,
+  showFirstLastButtons = false,
+  boundaryRange = 1,
+  siblingRange = 1,
+  disabled = false,
 }) => {
   const generatePageNumbers = () => {
     const pageNumbers = [];
     const maxVisiblePages = 5; // 한 번에 보여줄 최대 페이지 수
 
     if (totalPages <= maxVisiblePages) {
-      // 전체 페이지 수가 최대 표시 가능한 페이지 수 이하일 때
       for (let i = 1; i <= totalPages; i++) {
         pageNumbers.push(i);
       }
     } else {
-      // 현재 페이지가 첫 부분일 때
       if (currentPage <= 3) {
         pageNumbers.push(1, 2, 3, 4, "...", totalPages);
-      }
-      // 현재 페이지가 마지막 부분일 때
-      else if (currentPage >= totalPages - 2) {
+      } else if (currentPage >= totalPages - 2) {
         pageNumbers.push(
           1,
           "...",
@@ -42,9 +46,7 @@ const Pagination: React.FC<PaginationProps> = ({
           totalPages - 1,
           totalPages,
         );
-      }
-      // 현재 페이지가 중간일 때
-      else {
+      } else {
         pageNumbers.push(
           1,
           "...",
@@ -77,13 +79,22 @@ const Pagination: React.FC<PaginationProps> = ({
   const pageNumbers = generatePageNumbers();
 
   return (
-    <div className="flex items-center space-x-1">
+    <div
+      className={`flex items-center space-x-1 ${disabled ? "cursor-not-allowed opacity-50" : ""}`}
+    >
+      {showFirstLastButtons && (
+        <button
+          className={`${baseButtonClasses} ${shapeClass} border-none ${currentPage === 1 ? "text-Gray cursor-not-allowed" : "text-Gray"}`}
+          onClick={() => !disabled && onPageChange(1)}
+          disabled={currentPage === 1 || disabled}
+        >
+          &laquo;
+        </button>
+      )}
       <button
-        className={`${baseButtonClasses} ${shapeClass} border-none ${
-          currentPage === 1 ? "text-Gray cursor-not-allowed" : "text-Gray"
-        }`}
-        onClick={() => onPageChange(currentPage - 1)}
-        disabled={currentPage === 1}
+        className={`${baseButtonClasses} ${shapeClass} border-none ${currentPage === 1 ? "text-Gray cursor-not-allowed" : "text-Gray"}`}
+        onClick={() => !disabled && onPageChange(currentPage - 1)}
+        disabled={currentPage === 1 || disabled}
       >
         &lt;
       </button>
@@ -112,7 +123,8 @@ const Pagination: React.FC<PaginationProps> = ({
                         ? `border text-${color} border-${color}`
                         : "text-Gray"
               }`}
-              onClick={() => onPageChange(number)}
+              onClick={() => !disabled && onPageChange(number)}
+              disabled={disabled}
             >
               {number}
             </button>
@@ -120,16 +132,21 @@ const Pagination: React.FC<PaginationProps> = ({
         </React.Fragment>
       ))}
       <button
-        className={`${baseButtonClasses} ${shapeClass} border-none ${
-          currentPage === totalPages
-            ? "text-Gray cursor-not-allowed"
-            : "text-Gray"
-        }`}
-        onClick={() => onPageChange(currentPage + 1)}
-        disabled={currentPage === totalPages}
+        className={`${baseButtonClasses} ${shapeClass} border-none ${currentPage === totalPages ? "text-Gray cursor-not-allowed" : "text-Gray"}`}
+        onClick={() => !disabled && onPageChange(currentPage + 1)}
+        disabled={currentPage === totalPages || disabled}
       >
         &gt;
       </button>
+      {showFirstLastButtons && (
+        <button
+          className={`${baseButtonClasses} ${shapeClass} border-none ${currentPage === totalPages ? "text-Gray cursor-not-allowed" : "text-Gray"}`}
+          onClick={() => !disabled && onPageChange(totalPages)}
+          disabled={currentPage === totalPages || disabled}
+        >
+          &raquo;
+        </button>
+      )}
     </div>
   );
 };
