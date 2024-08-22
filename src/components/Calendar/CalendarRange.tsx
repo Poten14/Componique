@@ -40,9 +40,59 @@ const CalendarRange = ({ onDateSelect }: CalendarProps) => {
   // 선택날짜
   const handleDateClick = (day: number) => {
     const selectedDate = new Date(year, month, day);
+
+    if (!startDate || (startDate && endDate)) {
+      setStartDate(selectedDate);
+      setEndDate(null);
+    } else if (startDate && !endDate) {
+      if (selectedDate >= startDate) {
+        setEndDate(selectedDate);
+        if (onDateSelect) {
+          onDateSelect(startDate, selectedDate);
+        }
+      } else {
+        setStartDate(selectedDate);
+        setEndDate(null);
+      }
+    }
   };
 
-  const dateClass = "text-center text-[#ddd]";
+  const isDateInRange = (date: Date) => {
+    if (!startDate || !endDate) return false;
+    return date >= startDate && date <= endDate;
+  };
+
+  const renderDays = () => {
+    const days = [];
+    for (let i = 0; i < startDay; i++) {
+      days.push(<div key={`empty-${i}`} className="p-2" />);
+    }
+
+    for (let day = 1; day <= endDay; day++) {
+      const date = new Date(year, month, day);
+      const isSelectedStart =
+        startDate && date.getTime() === startDate.getTime();
+      const isSelectedEnd = endDate && date.getTime() === endDate.getTime();
+      const isInRange = isDateInRange(date);
+
+      days.push(
+        <div
+          key={day}
+          className={`m-auto h-10 w-10 cursor-pointer rounded-full p-2 text-center text-sm ${
+            isSelectedStart || isSelectedEnd
+              ? "bg-[#9AC5E5] text-white"
+              : isInRange
+                ? "bg-[#9AC5E5] text-white"
+                : "bg-white hover:bg-[#99cdf5] hover:text-white"
+          }`}
+          onClick={() => handleDateClick(day)}
+        >
+          {day}
+        </div>,
+      );
+    }
+    return days;
+  };
 
   return (
     <>
@@ -61,10 +111,11 @@ const CalendarRange = ({ onDateSelect }: CalendarProps) => {
           {/* 월,달,날짜 */}
           <div className="grid grid-cols-7 gap-2">
             {["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"].map((day) => (
-              <div key={day} className={dateClass}>
+              <div key={day} className="text-center text-[#ddd]">
                 {day}
               </div>
             ))}
+            {renderDays()}
           </div>
         </div>
       </div>
