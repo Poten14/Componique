@@ -22,6 +22,7 @@ type ButtonProps = {
   icon?: IconName;
   iconColor?: string;
   iconPosition?: "left" | "right";
+  disabled?: boolean;
   onClick?: () => void;
   children: React.ReactNode;
 } & React.ButtonHTMLAttributes<HTMLButtonElement>;
@@ -34,6 +35,7 @@ const Button: React.FC<ButtonProps> = ({
   className,
   icon,
   iconColor,
+  disabled = false,
   iconSize = "medium",
   iconPosition = "left",
   children,
@@ -122,8 +124,10 @@ const Button: React.FC<ButtonProps> = ({
   };
 
   let ButtonVariant = "";
-
-  if (variant === "solid") {
+  if (disabled) {
+    ButtonVariant =
+      "cursor-not-allowed  bg-[#cccccc] text-[#666666] opacity-50";
+  } else if (variant === "solid") {
     ButtonVariant = `${colors[color]} text-white ${hoverColors[color]}`;
   } else if (variant === "border") {
     ButtonVariant = `${borderColors[color]} border-2 bg-transparent ${hoverColors[color]} hover:!text-white`;
