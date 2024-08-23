@@ -28,6 +28,7 @@ import SwitchLabeled from "@components/Swtich/SwitchLabeled";
 // Infinite Scroll 컴포넌트 가져오기
 import InfiniteScrollBasic from "@components/InfiniteScroll/InfiniteScrollBasic";
 import InfiniteScrollImage from "@components/InfiniteScroll/InfiniteScrollImage";
+import InfiniteScrollKoJson from "@components/InfiniteScroll/InfiniteScrollKoJson";
 
 // ProgressBarBasic 컴포넌트 가져오기
 import ProgressBarBasic from "@components/ProgressBar/ProgressBarBasic";
@@ -451,13 +452,19 @@ const Page = () => {
       <h1 className="mb-4 text-lg font-semibold">
         Infinite Scroll Basic - 기본 인피니티 스크롤
       </h1>
-      <InfiniteScrollBasic content={content} />
+      <InfiniteScrollBasic content={content.split(".")} />
       <br />
       <br />
       <h1 className="mb-4 text-lg font-semibold">
         Infinite Scroll Image - 이미지 인피니티 스크롤
       </h1>
       <InfiniteScrollImage images={images} />
+      <br />
+      <br />
+      <h1 className="mb-4 text-lg font-semibold">
+        Infinite Scroll KoJson - Korean JSON 인피니티 스크롤
+      </h1>
+      <InfiniteScrollKoJson />
       <br />
       <br />
       <h1 className="mb-4 text-lg font-semibold">
