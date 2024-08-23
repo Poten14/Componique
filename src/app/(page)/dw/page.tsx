@@ -80,6 +80,9 @@ const dw = () => {
         >
           ClassNameCustomButton
         </Button>
+        <Button icon="icon-home" color="secondary" size="small">
+          Home
+        </Button>
       </div>
       <div className="ml-3 mt-5 space-y-4">
         <h2 className="ml-4 text-2xl">기본 체크박스</h2>

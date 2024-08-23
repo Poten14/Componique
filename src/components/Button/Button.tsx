@@ -1,3 +1,5 @@
+import Icon from "@components/Icon/Icon";
+import { IconName } from "@components/Icon/Icon";
 type ButtonProps = {
   size?: "small" | "medium" | "large";
   color?:
@@ -16,6 +18,8 @@ type ButtonProps = {
     | "basic";
   radius?: "small" | "medium" | "large" | "none" | "full";
   variant?: "solid" | "border" | "flat" | "light";
+  icon?: IconName;
+  iconPosition?: "left" | "right";
   onClick?: () => void;
   children: React.ReactNode;
 } & React.ButtonHTMLAttributes<HTMLButtonElement>;
@@ -26,6 +30,8 @@ const Button: React.FC<ButtonProps> = ({
   radius = "medium",
   variant = "solid",
   className,
+  icon,
+  iconPosition = "left",
   children,
   ...rest
 }) => {
@@ -131,7 +137,13 @@ const Button: React.FC<ButtonProps> = ({
       className={`${basicButton} ${buttonSize} ${buttonRadius} ${ButtonVariant} ${className || ""}`}
       {...rest}
     >
+      {icon && iconPosition === "left" && (
+        <Icon name={icon} size={16} className="mr-2" color="black" />
+      )}
       {children}
+      {icon && iconPosition === "right" && (
+        <Icon name={icon} size={16} className="ml-2" color="black" />
+      )}
     </button>
   );
 };
