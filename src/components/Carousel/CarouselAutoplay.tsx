@@ -5,12 +5,28 @@ import { useEffect, useState } from "react";
 
 interface CarouselAutoplayProps {
   images: string[];
+  autoplay?: boolean;
+  interval?: number;
 }
 
-const CarouselAutoplay = ({ images }: CarouselAutoplayProps) => {
+const CarouselAutoplay = ({
+  images,
+  autoplay = false,
+  interval = 2000,
+}: CarouselAutoplayProps) => {
   const [currentSlide, setCurrentSlide] = useState(0);
 
-  useEffect(() => {}, []);
+  useEffect(() => {
+    if (autoplay) {
+      const timer = setInterval(() => {
+        setCurrentSlide((prevSlide) =>
+          prevSlide === images.length - 1 ? 0 : prevSlide + 1,
+        );
+      }, interval);
+
+      return () => clearInterval(timer);
+    }
+  }, [autoplay, images.length, interval]);
 
   const handlePrev = () => {
     setCurrentSlide((prevIndex) =>

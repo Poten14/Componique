@@ -23,7 +23,7 @@ const page = () => {
 
   return (
     <>
-      <CarouselAutoplay images={images} />
+      <CarouselAutoplay images={images} interval={3000} autoplay={true} />
       {/* Navbar 연습 */}
       <div className="m-4 space-y-4">
         <Navbar
