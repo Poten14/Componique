@@ -9,6 +9,7 @@ const Drawer: React.FC<DrawerProps> = ({
   color,
   bgColor = "basic",
   onClose,
+  className,
   postion = "left",
 }) => {
   const [isDrawerOpen, setIsDrawerOpen] = useState(isOpen);
@@ -83,7 +84,7 @@ const Drawer: React.FC<DrawerProps> = ({
 
   return (
     <section
-      className={`fixed left-0 top-0 h-full w-full select-none bg-black bg-opacity-50 transition-opacity duration-500 ease-in-out ${
+      className={`fixed left-0 top-0 h-full w-full select-none bg-black bg-opacity-50 transition-opacity duration-500 ease-in-out ${className || ""} ${
         isDrawerOpen ? "opacity-100" : "pointer-events-none opacity-0"
       }`}
     >
@@ -136,7 +137,7 @@ const Drawer: React.FC<DrawerProps> = ({
                 postion === "top" ? "mx-2 mb-2 w-[90%] text-center" : "mx-2"
               } box-border cursor-pointer overflow-hidden text-ellipsis whitespace-nowrap rounded px-5 py-2 hover:bg-gray ${
                 color ? bgColors[color] : "bg-[#F8F8F8]"
-              } ${color === "black" ? "text-white" : ""}`}
+              } ${color === "black" ? "text-white" : ""} ${item.className || ""} `}
               onClick={() => router.push(item.path)}
             >
               {item.name}

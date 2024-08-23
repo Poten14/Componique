@@ -30,6 +30,7 @@ const CheckBox: React.FC<CheckBoxProps> = ({
   color = "basic",
   boxSize = "medium",
   variant = "solid",
+  className,
   ...rest
 }) => {
   const [checkId, setCheckId] = useState<string | undefined>(undefined);
@@ -118,7 +119,7 @@ const CheckBox: React.FC<CheckBoxProps> = ({
         type="checkbox"
         value={value}
         id={checkId}
-        className={`${basicCheckBox} ${checkBoxSize} ${ChckBoxVariant} `}
+        className={`${basicCheckBox} ${checkBoxSize} ${ChckBoxVariant} ${className || ""}`}
         {...rest}
       />
       <label htmlFor={checkId} className={`ml-1 select-none ${checkBoxLabel}`}>
