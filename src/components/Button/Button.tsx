@@ -2,6 +2,7 @@ import Icon from "@components/Icon/Icon";
 import { IconName } from "@components/Icon/Icon";
 type ButtonProps = {
   size?: "small" | "medium" | "large";
+  iconSize?: "small" | "medium" | "large";
   color?:
     | "primary"
     | "secondary"
@@ -33,6 +34,7 @@ const Button: React.FC<ButtonProps> = ({
   className,
   icon,
   iconColor,
+  iconSize = "medium",
   iconPosition = "left",
   children,
   ...rest
@@ -131,6 +133,8 @@ const Button: React.FC<ButtonProps> = ({
     ButtonVariant = `bg-transparent ${lightColors[color]} ${hoverColors[color]} hover:!text-white`;
   }
 
+  const iconSizes = iconSize === "small" ? 12 : iconSize === "medium" ? 16 : 20;
+
   const basicButton =
     "font-bold text-sm rounded bg-[#9AC5E5] px-3 py-2 text-white";
 
@@ -140,11 +144,11 @@ const Button: React.FC<ButtonProps> = ({
       {...rest}
     >
       {icon && iconPosition === "left" && (
-        <Icon name={icon} size={16} color={iconColor || "black"} />
+        <Icon name={icon} size={iconSizes} color={iconColor || "black"} />
       )}
       {children}
       {icon && iconPosition === "right" && (
-        <Icon name={icon} size={16} color={iconColor || "black"} />
+        <Icon name={icon} size={iconSizes} color={iconColor || "black"} />
       )}
     </button>
   );

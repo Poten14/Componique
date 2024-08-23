@@ -80,17 +80,26 @@ const dw = () => {
         >
           ClassNameCustomButton
         </Button>
-        <Button icon="icon-home" color="secondary" size="small">
+        <Button
+          icon="icon-home"
+          color="secondary"
+          iconSize="small"
+          size="small"
+        >
+          Home small
+        </Button>
+        <Button icon="icon-home" color="warning" iconSize="medium">
           Home
         </Button>
 
         <Button
-          icon="icon-call"
+          icon="icon-home"
           color="secondary"
           size="large"
+          iconSize="large"
           iconColor="white"
         >
-          Phone
+          Home Large
         </Button>
       </div>
       <div className="ml-3 mt-5 space-y-4">
