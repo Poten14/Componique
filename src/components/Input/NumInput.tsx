@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Size } from "types/type";
 
-type ButtonColor =
+type Color =
   | "Basic"
   | "Primary"
   | "Secondary"
@@ -11,7 +11,7 @@ type ButtonColor =
 
 interface NumInputProps
   extends Omit<React.InputHTMLAttributes<HTMLInputElement>, "size"> {
-  color?: ButtonColor;
+  color?: Color;
   size?: Size;
   value?: string;
   width?: string;
@@ -30,13 +30,24 @@ const buttonSizeClasses = {
   large: "w-[50px] h-[18px] text-lg",
 };
 
+const buttonColorClasses = {
+  Basic: "bg-[#9AC5E5] text-white",
+  Primary: "bg-[#7AA7FF] text-white",
+  Secondary: "bg-[#C294F0] text-white",
+  Success: "bg-[#7EEFAF] text-white",
+  Warning: "bg-[#EDCE7B] text-white",
+  Danger: "bg-[#FF7676] text-white",
+  Gray: "bg-[#DCDCDD] text-white",
+};
+
 const colorClasses = {
-  Basic: "bg-Basic text-white",
-  Primary: "bg-Primary text-white",
-  Secondary: "bg-Secondary text-white",
-  Success: "bg-Success text-white",
-  Warning: "bg-Warning text-white",
-  Danger: "bg-Danger text-white",
+  Basic: "focus-within:ring-[#9AC5E5] focus-within:border-[#9AC5E5]",
+  Primary: "focus-within:ring-[#7AA7FF] focus-within:border-[#7AA7FF]",
+  Secondary: "focus-within:ring-[#C294F0] focus-within:border-[#C294F0]",
+  Success: "focus-within:ring-[#7EEFAF] focus-within:border-[#7EEFAF]",
+  Warning: "focus-within:ring-[#EDCE7B] focus-within:border-[#EDCE7B]",
+  Danger: "focus-within:ring-[#FF7676] focus-within:border-[#FF7676]",
+  Gray: "focus-within:ring-[#DCDCDD]] focus-within:border-[#DCDCDD]",
 };
 
 const NumInput: React.FC<NumInputProps> = ({
@@ -69,25 +80,25 @@ const NumInput: React.FC<NumInputProps> = ({
 
   return (
     <div
-      className={`flex items-center ${sizeClasses[size]} rounded-xl border-2 border-gray`}
+      className={`flex items-center ${sizeClasses[size]} rounded-xl border-2 border-gray ${colorClasses[color]} focus-within:ring-2 focus-within:ring-opacity-50`}
       style={{ width: width }}
     >
       <input
         type="text"
-        className={`${width} w-6 flex-grow border-none text-center focus:outline-none`}
+        className="w-5 flex-grow border-none text-center focus:outline-none"
         value={inputValue}
         onChange={handleChange}
         {...props}
       />
       <div className="flex flex-col">
         <button
-          className={`mr-0.5 flex h-10 items-center justify-center rounded-t-lg ${buttonSizeClasses[size]} ${colorClasses[color]}`}
+          className={`mr-0.5 flex h-10 items-center justify-center rounded-t-lg ${buttonSizeClasses[size]} ${buttonColorClasses[color]}`}
           onClick={handleIncrement}
         >
           ▲
         </button>
         <button
-          className={`mt-0.3 mt-0.5 flex h-10 items-center justify-center rounded-b-lg ${buttonSizeClasses[size]} ${colorClasses[color]}`}
+          className={`mt-0.5 flex h-10 items-center justify-center rounded-b-lg ${buttonSizeClasses[size]} ${buttonColorClasses[color]}`}
           onClick={handleDecrement}
         >
           ▼
