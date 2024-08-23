@@ -78,6 +78,14 @@ const NumInput: React.FC<NumInputProps> = ({
     if (onValueChange) onValueChange(newValue);
   };
 
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === "ArrowUp") {
+      handleIncrement();
+    } else if (e.key === "ArrowDown") {
+      handleDecrement();
+    }
+  };
+
   return (
     <div
       className={`flex items-center ${sizeClasses[size]} rounded-xl border-2 border-gray ${colorClasses[color]} focus-within:ring-2 focus-within:ring-opacity-50`}
@@ -89,6 +97,7 @@ const NumInput: React.FC<NumInputProps> = ({
         value={inputValue}
         onChange={handleChange}
         {...props}
+        onKeyDown={handleKeyDown}
       />
       <div className="flex flex-col">
         <button

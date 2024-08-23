@@ -32,7 +32,7 @@ const page = () => {
           size="large"
           color="Warning"
           width="300px"
-          value="10"
+          value="10.70"
           onValueChange={handleValueChange}
         />
       </div>
