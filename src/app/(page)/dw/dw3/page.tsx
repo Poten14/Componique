@@ -133,6 +133,7 @@ const page = () => {
             color: "blue",
             size: "medium",
             variant: "solid",
+            isProgress: false,
           },
           {
             children: "종료 되었습니다.",

@@ -9,6 +9,7 @@ import { useRouter } from "next/navigation";
 type ToastConfig = Omit<ToastProps, "isOpen" | "onClose"> & {
   children: React.ReactNode;
   path?: string;
+  isProgress?: boolean;
 };
 
 // ToastGroupProps 타입 정의: toasts 배열, position, 그리고 모든 Toast가 닫혔을 때 호출되는 onAllClosed 콜백 함수 포함
@@ -154,6 +155,7 @@ const ToastGroup: React.FC<ToastGroupProps> = ({
             position={position}
             path={item.path}
             variant={item.variant}
+            isProgress={item.isProgress}
             text={item.text}
             isClose={item.isClose}
             className={`${item.className} pointer-events-auto ${
