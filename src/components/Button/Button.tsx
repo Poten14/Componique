@@ -19,6 +19,7 @@ type ButtonProps = {
   radius?: "small" | "medium" | "large" | "none" | "full";
   variant?: "solid" | "border" | "flat" | "light";
   icon?: IconName;
+  iconColor?: string;
   iconPosition?: "left" | "right";
   onClick?: () => void;
   children: React.ReactNode;
@@ -31,6 +32,7 @@ const Button: React.FC<ButtonProps> = ({
   variant = "solid",
   className,
   icon,
+  iconColor,
   iconPosition = "left",
   children,
   ...rest
@@ -138,11 +140,11 @@ const Button: React.FC<ButtonProps> = ({
       {...rest}
     >
       {icon && iconPosition === "left" && (
-        <Icon name={icon} size={16} className="mr-2" color="black" />
+        <Icon name={icon} size={16} color={iconColor || "black"} />
       )}
       {children}
       {icon && iconPosition === "right" && (
-        <Icon name={icon} size={16} className="ml-2" color="black" />
+        <Icon name={icon} size={16} color={iconColor || "black"} />
       )}
     </button>
   );
