@@ -22,8 +22,6 @@ const Pagination: React.FC<PaginationProps> = ({
   color,
   onPageChange,
   showFirstLastButtons = false,
-  boundaryRange = 1,
-  siblingRange = 1,
   disabled = false,
 }) => {
   const generatePageNumbers = () => {
@@ -84,7 +82,7 @@ const Pagination: React.FC<PaginationProps> = ({
     >
       {showFirstLastButtons && (
         <button
-          className={`${baseButtonClasses} ${shapeClass} border-none ${currentPage === 1 ? "text-Gray cursor-not-allowed" : "text-Gray"}`}
+          className={`${baseButtonClasses} ${shapeClass} border-none ${currentPage === 1 ? "cursor-not-allowed text-Gray" : "text-Gray"}`}
           onClick={() => !disabled && onPageChange(1)}
           disabled={currentPage === 1 || disabled}
         >
@@ -92,7 +90,7 @@ const Pagination: React.FC<PaginationProps> = ({
         </button>
       )}
       <button
-        className={`${baseButtonClasses} ${shapeClass} border-none ${currentPage === 1 ? "text-Gray cursor-not-allowed" : "text-Gray"}`}
+        className={`${baseButtonClasses} ${shapeClass} border-none ${currentPage === 1 ? "cursor-not-allowed text-Gray" : "text-Gray"}`}
         onClick={() => !disabled && onPageChange(currentPage - 1)}
         disabled={currentPage === 1 || disabled}
       >
@@ -116,9 +114,9 @@ const Pagination: React.FC<PaginationProps> = ({
                           ? `${colorClasses[color]} text-white bg-${color} border-2`
                           : `bg-${color} text-white`
                   : styleType === "outlined"
-                    ? "text-Gray border-none"
+                    ? "border-none text-Gray"
                     : styleType === "outlined-focused"
-                      ? "text-Gray border"
+                      ? "border text-Gray"
                       : styleType === "filled-outlined"
                         ? `border text-${color} border-${color}`
                         : "text-Gray"
@@ -132,7 +130,7 @@ const Pagination: React.FC<PaginationProps> = ({
         </React.Fragment>
       ))}
       <button
-        className={`${baseButtonClasses} ${shapeClass} border-none ${currentPage === totalPages ? "text-Gray cursor-not-allowed" : "text-Gray"}`}
+        className={`${baseButtonClasses} ${shapeClass} border-none ${currentPage === totalPages ? "cursor-not-allowed text-Gray" : "text-Gray"}`}
         onClick={() => !disabled && onPageChange(currentPage + 1)}
         disabled={currentPage === totalPages || disabled}
       >
@@ -140,7 +138,7 @@ const Pagination: React.FC<PaginationProps> = ({
       </button>
       {showFirstLastButtons && (
         <button
-          className={`${baseButtonClasses} ${shapeClass} border-none ${currentPage === totalPages ? "text-Gray cursor-not-allowed" : "text-Gray"}`}
+          className={`${baseButtonClasses} ${shapeClass} border-none ${currentPage === totalPages ? "cursor-not-allowed text-Gray" : "text-Gray"}`}
           onClick={() => !disabled && onPageChange(totalPages)}
           disabled={currentPage === totalPages || disabled}
         >
