@@ -18,6 +18,7 @@ const Toast: React.FC<ToastProps> = ({
   variant = "solid",
   isClose = false,
   isProgress = true,
+  className,
   time,
   path,
   ...rest
@@ -95,7 +96,7 @@ const Toast: React.FC<ToastProps> = ({
       <section
         className={`${BasicToast} ${ToastPosition[position]} ${ToastSize[size]} ${
           isToastOpen ? "opacity-100" : "pointer-events-none opacity-0"
-        } ${path ? "cursor-pointer" : ""}`}
+        } ${path ? "cursor-pointer" : ""} ${className || ""}`}
         onClick={() => {
           if (path) {
             router.push(path);

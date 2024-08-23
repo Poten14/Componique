@@ -72,6 +72,14 @@ const dw = () => {
         <Button variant="light" color="warning" radius="none">
           Light warning None Button
         </Button>
+        <Button
+          variant="border"
+          color="warning"
+          radius="none"
+          className="w-[500px] !bg-red-200 !text-blue-600"
+        >
+          ClassNameCustomButton
+        </Button>
       </div>
       <div className="ml-3 mt-5 space-y-4">
         <h2 className="ml-4 text-2xl">기본 체크박스</h2>
@@ -175,15 +183,26 @@ const dw = () => {
             color="basic"
             variant="border"
           />
+          <CheckBox
+            description="Custom ClassName CheckBox"
+            color="basic"
+            className="checked:!bg-red-500"
+            variant="border"
+          />
         </div>
       </div>
       <div className="ml-3 mt-5 space-y-4">
         <div>
           <Drawer
             isOpen={isDrawerOpen}
+            className="font-bold text-Basic"
             onClose={onclickDrawerHandler(false)}
             menu={[
-              { name: "Home", path: "/" },
+              {
+                name: "Home",
+                path: "/",
+                className: "text-yellow-500 underline",
+              },
               { name: "About", path: "/about" },
               { name: "Profile", path: "/profile" },
               { name: "Contact", path: "/Contact" },
@@ -216,6 +235,7 @@ const dw = () => {
           text="center"
           time="5"
           isClose={false}
+          className="text-blue-400 underline"
         >
           가입이 완료되었습니다.
         </Toast>

@@ -25,6 +25,7 @@ const Button: React.FC<ButtonProps> = ({
   color = "basic",
   radius = "medium",
   variant = "solid",
+  className,
   children,
   ...rest
 }) => {
@@ -127,7 +128,7 @@ const Button: React.FC<ButtonProps> = ({
 
   return (
     <button
-      className={`${basicButton} ${buttonSize} ${buttonRadius} ${ButtonVariant}`}
+      className={`${basicButton} ${buttonSize} ${buttonRadius} ${ButtonVariant} ${className || ""}`}
       {...rest}
     >
       {children}
