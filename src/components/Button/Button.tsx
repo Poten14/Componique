@@ -58,9 +58,9 @@ const Button: React.FC<ButtonProps> = ({
             : "rounded-none";
 
   const colors = {
-    primary: "bg-[#7AA7FF]",
+    primary: "!bg-[#7AA7FF]",
     secondary: "bg-[#C294F0]",
-    success: "bg-[#7EEFAF]",
+    success: "!bg-[#7EEFAF]",
     warning: "bg-[#EDCE7B]",
     danger: "bg-[#FF7676]",
     red: "bg-red-500",
