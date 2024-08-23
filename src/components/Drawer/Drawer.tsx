@@ -1,6 +1,8 @@
 "use client";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
+import Icon from "@components/Icon/Icon";
+
 import type { DrawerProps } from "./DrawerType";
 const Drawer: React.FC<DrawerProps> = ({
   menu,
@@ -140,6 +142,9 @@ const Drawer: React.FC<DrawerProps> = ({
               } ${color === "black" ? "text-white" : ""} ${item.className || ""} `}
               onClick={() => router.push(item.path)}
             >
+              {item.icon && (
+                <Icon name={item.icon} size={16} color="currentColor" />
+              )}
               {item.name}
             </li>
           ))}
