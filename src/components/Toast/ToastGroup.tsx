@@ -3,10 +3,12 @@
 import Toast from "@components/Toast/Toast";
 import { useState, useEffect } from "react";
 import { ToastProps } from "./ToastType";
+import { useRouter } from "next/navigation";
 
 // ToastConfig 타입 정의: ToastProps에서 isOpen과 onClose를 제외한 속성과 자식 요소(children) 포함
 type ToastConfig = Omit<ToastProps, "isOpen" | "onClose"> & {
   children: React.ReactNode;
+  path?: string;
 };
 
 // ToastGroupProps 타입 정의: toasts 배열, position, 그리고 모든 Toast가 닫혔을 때 호출되는 onAllClosed 콜백 함수 포함
@@ -150,8 +152,9 @@ const ToastGroup: React.FC<ToastGroupProps> = ({
             color={item.color}
             time={item.time}
             position={position}
+            path={item.path}
             variant={item.variant}
-            text={item.text || "center"}
+            text={item.text}
             isClose={item.isClose}
             className={`${item.className} pointer-events-auto ${
               isBottomPosition

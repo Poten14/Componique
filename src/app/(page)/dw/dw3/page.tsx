@@ -125,6 +125,7 @@ const page = () => {
             color: "success",
             size: "large",
             variant: "border",
+            path: "/login",
           },
           {
             children: "로그아웃 되었습니다.",
