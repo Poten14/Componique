@@ -60,11 +60,12 @@ const Button: React.FC<ButtonProps> = ({
             : "rounded-none";
 
   const colors = {
-    primary: "!bg-[#7AA7FF]",
-    secondary: "bg-[#C294F0]",
-    success: "!bg-[#7EEFAF]",
-    warning: "bg-[#EDCE7B]",
-    danger: "bg-[#FF7676]",
+    basic: "bg-Basic",
+    primary: "bg-Primary",
+    secondary: "bg-Secondary",
+    success: "bg-Success",
+    warning: "bg-Warning",
+    danger: "bg-Danger",
     red: "bg-red-500",
     orange: "bg-orange-500",
     yellow: "bg-yellow-500",
@@ -72,7 +73,6 @@ const Button: React.FC<ButtonProps> = ({
     blue: "bg-blue-500",
     purple: "bg-purple-500",
     pink: "bg-pink-500",
-    basic: "bg-[#9AC5E5]",
   };
 
   const hoverColors = {
@@ -92,11 +92,11 @@ const Button: React.FC<ButtonProps> = ({
   };
 
   const borderColors = {
-    primary: "border-[#7AA7FF] !text-[#7AA7FF] hover:text-white",
-    secondary: "border-[#C294F0] !text-[#C294F0]",
-    success: "border-[#7EEFAF] !text-[#7EEFAF]",
-    warning: "border-[#EDCE7B] !text-[#EDCE7B]",
-    danger: "border-[#FF7676] !text-[#FF7676]",
+    primary: "border-Primary !text-Primary hover:text-white",
+    secondary: "border-Secondary !text-Secondary",
+    success: "border-Success !text-Success",
+    warning: "border-Warning !text-Warning",
+    danger: "border-Danger !text-Danger",
     red: "border-red-500 !text-red-500",
     orange: "border-orange-500 !text-orange-500",
     yellow: "border-yellow-500 !text-yellow-500",
@@ -104,15 +104,15 @@ const Button: React.FC<ButtonProps> = ({
     blue: "border-blue-500 !text-blue-500",
     purple: "border-purple-500 !text-purple-500",
     pink: "border-pink-500 !text-pink-500",
-    basic: "border-[#9AC5E5] !text-[#9AC5E5]",
+    basic: "border-Basic !text-Basic",
   };
 
   const lightColors = {
-    primary: "!text-[#7AA7FF]",
-    secondary: "!text-[#C294F0]",
-    success: "!text-[#7EEFAF]",
-    warning: "!text-[#EDCE7B]",
-    danger: "!text-[#FF7676]",
+    primary: "!text-Primary",
+    secondary: "!text-Secondary",
+    success: "!text-Success",
+    warning: "!text-Warning",
+    danger: "!text-Danger",
     red: "!text-red-500",
     orange: "!text-orange-500",
     yellow: "!text-yellow-500",
@@ -120,7 +120,7 @@ const Button: React.FC<ButtonProps> = ({
     blue: "!text-blue-500",
     purple: "!text-purple-500",
     pink: "!text-pink-500",
-    basic: "!text-[#9AC5E5]",
+    basic: "!text-Basic",
   };
 
   let ButtonVariant = "";
@@ -139,8 +139,7 @@ const Button: React.FC<ButtonProps> = ({
 
   const iconSizes = iconSize === "small" ? 12 : iconSize === "medium" ? 16 : 20;
 
-  const basicButton =
-    "font-bold text-sm rounded bg-[#9AC5E5] px-3 py-2 text-white";
+  const basicButton = "font-bold text-sm rounded  px-3 py-2 text-white";
 
   return (
     <button
