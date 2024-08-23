@@ -5,7 +5,7 @@ import Drawer from "@components/Drawer/Drawer";
 import Toast from "@components/Toast/Toast";
 import { useState } from "react";
 
-const dw = () => {
+const Dw = () => {
   //Drawer 관련 코드
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
   const onclickDrawerHandler = (open: boolean) => () => {
@@ -282,4 +282,4 @@ const dw = () => {
     </>
   );
 };
-export default dw;
+export default Dw;
