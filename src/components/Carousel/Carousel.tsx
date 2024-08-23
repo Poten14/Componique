@@ -1,39 +1,51 @@
 "use client";
 
-import Carousel1 from "../../../public/images/carousel-1.svg";
-import PrevIcon from "../../../public/images/prev.svg";
-import NextIcon from "../../../public/images/next.svg";
 import Image from "next/image";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 interface CarouselProps {
-  imgSrc: string;
-  imgPage?: string[];
+  images: string[];
 }
 
-const Carousel = ({}) => {
+const Carousel = ({ images }: CarouselProps) => {
   const [current, setCurrent] = useState(0);
 
-  useEffect(() => {}, []);
+  const handlePrev = () => {
+    setCurrent((prevIndex) =>
+      prevIndex === 0 ? images.length - 1 : prevIndex - 1,
+    );
+  };
+
+  const handleNext = () => {
+    setCurrent((nextIndex) =>
+      nextIndex === images.length - 1 ? 0 : nextIndex + 1,
+    );
+  };
 
   return (
     <>
       <div className="relative w-full">
         <div className="relative m-auto h-96 w-1/2 overflow-hidden rounded-lg">
-          <ul>
-            <li className="">
-              <Image
-                src={Carousel1}
-                alt="image"
-                width={100}
-                height={200}
-                className="block w-full"
-              />
-            </li>
+          <ul
+            className="flex transition-transform duration-300 ease-in-out"
+            style={{ transform: `translateX(-${current * 100}%)` }}
+          >
+            {images.map((image, index) => (
+              <li key={index} className="min-w-full">
+                <Image
+                  src={image}
+                  alt={`image-${index}`}
+                  width={720}
+                  height={500}
+                  className="block w-full"
+                />
+              </li>
+            ))}
           </ul>
           <button
             type="button"
             className="group absolute start-0 top-0 z-30 flex h-full cursor-pointer items-center justify-center px-4 focus:outline-none"
+            onClick={handlePrev}
           >
             <span className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-white/30 group-hover:bg-white/50 group-focus:outline-none group-focus:ring-4 group-focus:ring-white">
               <svg
@@ -54,7 +66,7 @@ const Carousel = ({}) => {
           <button
             type="button"
             className="group absolute end-0 top-0 z-30 flex h-full cursor-pointer items-center justify-center px-4 focus:outline-none"
-            data-carousel-next
+            onClick={handleNext}
           >
             <span className="dark:bg-gray-800/30 dark:group-hover:bg-gray-800/60 dark:group-focus:ring-gray-800/70 inline-flex h-10 w-10 items-center justify-center rounded-full bg-white/30 group-hover:bg-white/50 group-focus:outline-none group-focus:ring-4 group-focus:ring-white">
               <svg
@@ -78,10 +90,3 @@ const Carousel = ({}) => {
   );
 };
 export default Carousel;
-
-// {imgPage?.map((item, key) => (
-//   <li key={key} className="w-full">
-//     <Image src={imgSrc} alt="image" width={720} height={500} />
-//     {item}
-//   </li>
-// ))}

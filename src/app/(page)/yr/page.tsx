@@ -13,9 +13,15 @@ import CalendarRange from "@components/Calendar/CalendarRange";
 import Carousel from "@components/Carousel/Carousel";
 
 const page = () => {
+  const images = [
+    "images/IfSc1.svg",
+    "images/IfSc2.svg",
+    "images/IfSc3.svg",
+    "images/IfSc4.svg",
+  ];
+
   return (
     <>
-      <Carousel />
       {/* Navbar 연습 */}
       <div className="m-4 space-y-4">
         <Navbar
@@ -187,6 +193,9 @@ const page = () => {
       </div>
       <div className="m-4">
         <CalendarRange />
+      </div>
+      <div className="m-4">
+        <Carousel images={images} />
       </div>
     </>
   );
