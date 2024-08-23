@@ -11,6 +11,7 @@ import SkeletonCard from "@components/Skeleton/SkeletonCard";
 import Calendar from "@components/Calendar/Calendar";
 import CalendarRange from "@components/Calendar/CalendarRange";
 import Carousel from "@components/Carousel/Carousel";
+import CarouselAutoplay from "@components/Carousel/CarouselAutoplay";
 
 const page = () => {
   const images = [
@@ -22,6 +23,7 @@ const page = () => {
 
   return (
     <>
+      <CarouselAutoplay images={images} />
       {/* Navbar 연습 */}
       <div className="m-4 space-y-4">
         <Navbar

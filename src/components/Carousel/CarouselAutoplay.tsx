@@ -1,14 +1,16 @@
 "use client";
 
 import Image from "next/image";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
-interface CarouselProps {
+interface CarouselAutoplayProps {
   images: string[];
 }
 
-const Carousel = ({ images }: CarouselProps) => {
+const CarouselAutoplay = ({ images }: CarouselAutoplayProps) => {
   const [currentSlide, setCurrentSlide] = useState(0);
+
+  useEffect(() => {}, []);
 
   const handlePrev = () => {
     setCurrentSlide((prevIndex) =>
@@ -89,4 +91,4 @@ const Carousel = ({ images }: CarouselProps) => {
     </>
   );
 };
-export default Carousel;
+export default CarouselAutoplay;
