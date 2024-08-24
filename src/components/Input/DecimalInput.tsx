@@ -51,38 +51,43 @@ const colorClasses = {
   Gray: "focus-within:ring-[#DCDCDD] focus-within:border-[#DCDCDD]",
 };
 
-const NumInput: React.FC<NumInputProps> = ({
+const DecimalInput: React.FC<NumInputProps> = ({
   color = "Basic",
   size = "medium",
   width = "200px",
-  value,
+  value = "0.00",
   onValueChange,
   ...props
 }) => {
-  const [inputValue, setInputValue] = useState(value || "0");
+  const [inputValue, setInputValue] = useState(value);
 
   const handleIncrement = () => {
-    const newValue = (parseInt(inputValue, 10) + 1).toString();
+    const newValue = (parseFloat(inputValue) + 0.01).toFixed(2);
     setInputValue(newValue);
     if (onValueChange) onValueChange(newValue);
   };
 
   const handleDecrement = () => {
-    const newValue = (parseInt(inputValue, 10) - 1).toString();
+    const newValue = (parseFloat(inputValue) - 0.01).toFixed(2);
     setInputValue(newValue);
     if (onValueChange) onValueChange(newValue);
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const newValue = e.target.value;
-    setInputValue(newValue);
-    if (onValueChange) onValueChange(newValue);
+    // 유효한 숫자 형식인지 확인
+    if (/^-?\d*\.?\d*$/.test(newValue)) {
+      setInputValue(newValue);
+      if (onValueChange) onValueChange(newValue);
+    }
   };
 
   const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
     if (e.key === "ArrowUp") {
+      e.preventDefault();
       handleIncrement();
     } else if (e.key === "ArrowDown") {
+      e.preventDefault();
       handleDecrement();
     }
   };
@@ -118,4 +123,4 @@ const NumInput: React.FC<NumInputProps> = ({
   );
 };
 
-export default NumInput;
+export default DecimalInput;
