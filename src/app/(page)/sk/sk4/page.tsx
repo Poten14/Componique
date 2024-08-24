@@ -1,5 +1,6 @@
 "use client";
 
+import CurrencyInput from "@components/Input/CurrencyInput";
 import NumInput from "@components/Input/NumInput";
 
 const page = () => {
@@ -32,7 +33,16 @@ const page = () => {
           size="large"
           color="Warning"
           width="300px"
-          value="10.70"
+          value="10"
+          onValueChange={handleValueChange}
+        />
+      </div>
+      <div className="m-4">
+        <CurrencyInput
+          size="large"
+          color="Secondary"
+          width="200px"
+          // value="$10.55"
           onValueChange={handleValueChange}
         />
       </div>
