@@ -1,11 +1,12 @@
 import React from "react";
+import AvatarBasic from "@components/Avatar/AvatarBasic";
 
 // ReviewCardProps 인터페이스 정의
 interface ReviewCardProps {
   avatar: string; // 사용자 아이콘, 이미지
   name: string;
   rate: number; // 0~5
-  review: string;
+  children?: React.ReactNode;
 }
 
 // 별점 매기기
@@ -33,21 +34,17 @@ const ratingStars = (rate: number) => {
   return stars;
 };
 
-const CardReview = ({ avatar, name, rate, review }: ReviewCardProps) => {
+const CardReview = ({ avatar, name, rate, children }: ReviewCardProps) => {
   return (
     <div className="m-4 max-w-sm rounded-xl border-2 border-Blue bg-white shadow-lg">
       <div className="flex items-center px-6 py-4">
-        <img
-          src={avatar}
-          alt={name}
-          className="mr-4 h-20 w-20 rounded-full border-2 shadow-xl"
-        />
+        <AvatarBasic src="/avatar1.svg" alt="퉁퉁이" size={70} />
         <div className="flex flex-col">
           <div className="text-lg font-bold">{name}</div>
           <div className="flex">{ratingStars(rate)}</div>
         </div>
       </div>
-      <div className="px-6 pb-4 text-slate-700">{review}</div>
+      <div className="px-6 pb-4 text-slate-700">{children}</div>
     </div>
   );
 };

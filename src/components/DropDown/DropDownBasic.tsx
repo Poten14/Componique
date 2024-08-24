@@ -2,13 +2,13 @@ import { useState } from "react";
 import Image from "next/image";
 interface DropDownBasicProps {
   option: string[];
-  defaultOption: string;
+  placeholder?: string;
   onSelect?: (value: string) => void;
 }
 
 const DropDownBasic = ({
   option,
-  defaultOption,
+  placeholder = "Select Option",
   onSelect,
 }: DropDownBasicProps) => {
   const [isOpen, setIsOpen] = useState<number | null>();
@@ -34,7 +34,12 @@ const DropDownBasic = ({
           onClick={() => toggleDropdown(0)}
           className="flex cursor-pointer justify-between border-2 p-2 font-medium"
         >
-          {selectedOption || defaultOption}
+          <span
+            className={`font-bold ${selectedOption ? "text-black" : "text-slate-600"}`}
+          >
+            {selectedOption || placeholder}
+          </span>
+
           <Image
             src={isOpen === 0 ? "dropdown1.svg" : "/dropdown2.svg"}
             alt="dropdown"
@@ -63,7 +68,11 @@ const DropDownBasic = ({
           onClick={() => toggleDropdown(1)}
           className="flex cursor-pointer justify-between rounded-lg border-2 p-2 font-medium"
         >
-          {selectedOption || defaultOption}
+          <span
+            className={`font-bold ${selectedOption ? "text-black" : "text-slate-600"}`}
+          >
+            {selectedOption || placeholder}
+          </span>
           <Image
             src={isOpen === 1 ? "dropdown1.svg" : "/dropdown2.svg"}
             alt="dropdown"
@@ -92,7 +101,11 @@ const DropDownBasic = ({
           onClick={() => toggleDropdown(2)}
           className="flex cursor-pointer justify-between rounded-full border-2 border-zinc-100 p-2 font-medium shadow-md"
         >
-          {selectedOption || defaultOption}
+          <span
+            className={`font-bold ${selectedOption ? "text-black" : "text-slate-600"}`}
+          >
+            {selectedOption || placeholder}
+          </span>
           <Image
             src={isOpen === 2 ? "dropdown1.svg" : "/dropdown2.svg"}
             alt="dropdown"
@@ -121,7 +134,11 @@ const DropDownBasic = ({
           onClick={() => toggleDropdown(3)}
           className="flex cursor-pointer justify-between rounded-lg border-2 border-zinc-100 bg-white p-2 font-medium"
         >
-          {selectedOption || defaultOption}
+          <span
+            className={`font-bold ${selectedOption ? "text-black" : "text-slate-600"}`}
+          >
+            {selectedOption || placeholder}
+          </span>
           <Image
             src={isOpen === 3 ? "dropdown1.svg" : "/dropdown2.svg"}
             alt="dropdown"
