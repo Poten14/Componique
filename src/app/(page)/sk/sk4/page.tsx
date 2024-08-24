@@ -3,10 +3,15 @@
 import CurrencyInput from "@components/Input/CurrencyInput";
 import DecimalInput from "@components/Input/DecimalInput";
 import NumInput from "@components/Input/NumInput";
+import PinInput from "@components/Input/PinInput";
 
 const page = () => {
   const handleValueChange = (value: string) => {
     console.log("Value changed to:", value);
+  };
+
+  const handlePinChange = (value: string) => {
+    console.log("PIN Value:", value);
   };
 
   return (
@@ -55,6 +60,25 @@ const page = () => {
           value="10.55"
           onValueChange={handleValueChange}
         />
+      </div>
+      <div className="space-y-4 p-4">
+        <h2 className="font-bold">With Formatter (Uppercase)</h2>
+        <PinInput
+          formatter={(val) => val.toUpperCase()}
+          onChange={handlePinChange}
+        />
+
+        <h2 className="font-bold">With Disabled</h2>
+        <PinInput disabled />
+
+        <h2 className="font-bold">With Length (8)</h2>
+        <PinInput length={8} />
+
+        <h2 className="font-bold">With Variant</h2>
+        <PinInput variant="filled" />
+
+        <h2 className="font-bold">With Custom Display Character</h2>
+        <PinInput customCharacter="*" />
       </div>
     </>
   );
