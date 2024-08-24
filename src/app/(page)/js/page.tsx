@@ -315,26 +315,27 @@ const Page = () => {
       <br />
       <h1 className="mb-4 text-lg font-semibold">Card1 - 기본 카드</h1>
       <div className="mt-8">
-        <CardBasic
-          title="Next.js"
-          description="Next.js is a React framework for building full-stack web applications."
-        />
+        <CardBasic title="Next.js">
+          <p>
+            Next.js is a React framework for building full-stack web
+            applications.
+          </p>
+        </CardBasic>
         <br />
         <h1 className="mb-4 text-lg font-semibold">Card2 - 확장 카드</h1>
-        <CardInteractive
-          title="Next.js_expand Card"
-          description="Next.js is a React framework for building full-stack web applications."
-          detail="You use React Components to build user interfaces, and Next.js for additional features and optimizations."
-        />
+        <CardInteractive title="Next.js_expand Card">
+          <div>
+            Next.js is a React framework for building full-stack web
+            applications.
+          </div>
+        </CardInteractive>
         <br />
         <h1 className="mb-4 text-lg font-semibold">
           Card3 - 가로형 이미지 카드
         </h1>
-        <CardImage
-          title="Image Card_Vertical"
-          description="You can add image or icon to this card component😊"
-          image="/componique_logo.svg"
-        />
+        <CardImage title="Image Card_Vertical" image="/componique_logo.svg">
+          <p>You can add image or icon to this card component😊</p>
+        </CardImage>
         <br />
         <h1 className="mb-4 text-lg font-semibold">Card4 - 상품 카드</h1>
         <CardPricing
