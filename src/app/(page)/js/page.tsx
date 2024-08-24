@@ -37,6 +37,7 @@ import ProgressBarSlider from "@components/ProgressBar/ProgressBarSlider";
 
 // Avatar 컴포넌트 가져오기
 import AvatarBasic from "@components/Avatar/AvatarBasic";
+import AvatarLabel from "@components/Avatar/AvatarLabel";
 
 const Page = () => {
   // 라디오 버튼의 선택 상태를 관리하는 useState 훅
@@ -491,6 +492,9 @@ const Page = () => {
       <br />
       <h2>이미지가 없는 경우 이니셜 5글자까지 입력</h2>
       <AvatarBasic initial="toong" size={100} />
+      <br />
+      <h1 className="mb-4 text-lg font-semibold">AvatarLabel - 라벨아바타</h1>
+      <AvatarLabel src="/avatar1.svg" label="A1" size={100} />
     </div>
   );
 };
