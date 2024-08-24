@@ -22,6 +22,10 @@ const CarouselDots = ({ images }: CarouselDotsProps) => {
     );
   };
 
+  const handleDotClick = (dots: number) => {
+    setCurrentSlide(dots);
+  };
+
   return (
     <>
       <div className="relative w-full">
@@ -42,6 +46,15 @@ const CarouselDots = ({ images }: CarouselDotsProps) => {
               </li>
             ))}
           </ul>
+          <div className="-tr absolute bottom-4 left-1/2 flex -translate-x-1/2 transform space-x-2">
+            {images.map((_, dots) => (
+              <button
+                key={dots}
+                className={`h-3 w-3 rounded-full ${dots === currentSlide ? "bg-white" : "bg-gray"}`}
+                onClick={() => handleDotClick(dots)}
+              />
+            ))}
+          </div>
           <button
             type="button"
             className="group absolute start-0 top-0 z-30 flex h-full cursor-pointer items-center justify-center px-4 focus:outline-none"

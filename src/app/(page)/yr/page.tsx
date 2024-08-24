@@ -24,7 +24,6 @@ const page = () => {
 
   return (
     <>
-      <CarouselDots images={images} />
       {/* Navbar 연습 */}
       <div className="m-4 space-y-4">
         <Navbar
@@ -202,6 +201,9 @@ const page = () => {
       </div>
       <div className="m-4">
         <CarouselAutoplay images={images} interval={3000} autoplay={true} />
+      </div>
+      <div className="m-4">
+        <CarouselDots images={images} />
       </div>
     </>
   );
