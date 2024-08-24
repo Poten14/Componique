@@ -203,7 +203,7 @@ const page = () => {
         <CarouselAutoplay images={images} interval={3000} autoplay={true} />
       </div>
       <div className="m-4">
-        <CarouselDots images={images} />
+        <CarouselDots images={images} showDots={true} />
       </div>
     </>
   );
