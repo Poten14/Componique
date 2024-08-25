@@ -29,10 +29,10 @@ const SelectValueAdd = ({ option }: SelectValueAdd) => {
 
   return (
     <>
-      <div className="relative w-1/6">
+      <div className="relative w-1/4">
         <div
           className={
-            "flex h-9 w-full cursor-pointer items-center justify-between rounded-lg border border-gray p-2 shadow-lg"
+            "inline-flex h-9 w-full cursor-pointer items-center justify-between rounded-lg border border-gray p-2 shadow-lg"
           }
           onClick={handleDropDown}
         >
