@@ -43,6 +43,8 @@ const page = () => {
           onValueChange={handleValueChange}
         />
       </div>
+
+      <h1 className="mb-6 text-3xl font-bold">Currency Input</h1>
       <div className="m-4">
         <CurrencyInput
           size="large"
@@ -52,6 +54,8 @@ const page = () => {
           onValueChange={handleValueChange}
         />
       </div>
+
+      <h1 className="mb-6 text-3xl font-bold">Decimal Input</h1>
       <div className="m-4">
         <DecimalInput
           size="large"
@@ -62,6 +66,7 @@ const page = () => {
         />
       </div>
       <div className="space-y-4 p-4">
+        <h1 className="mb-6 text-3xl font-bold">Formatter</h1>
         <h2 className="font-bold">With Formatter (Uppercase)</h2>
         <PinInput
           formatter={(val) => val.toUpperCase()}
@@ -77,7 +82,7 @@ const page = () => {
         <h2 className="font-bold">With Variant</h2>
         <PinInput variant="filled" />
 
-        <h2 className="font-bold">With Custom Display Character</h2>
+        <h2 className="font-bold">Custom Display</h2>
         <PinInput customCharacter="*" />
       </div>
     </>

@@ -67,8 +67,12 @@ const PinInput: React.FC<PinInputProps> = ({
           ref={(el) => {
             if (el) inputsRef.current[index] = el;
           }}
-          className={`h-10 w-10 border text-center ${variant === "filled" ? "bg-gray-100" : "border-gray-300"} rounded-md focus:outline-none ${
-            disabled ? "bg-gray-200" : "bg-white"
+          className={`h-9 w-7 rounded-md border border-[#E0E0E0] text-center focus:outline-none ${
+            variant === "filled"
+              ? "bg-[#E0E0E0] focus:border-Basic focus:bg-white focus:ring focus:ring-blue-200"
+              : "bg-white"
+          } focus:border-Basic focus:ring focus:ring-blue-200 ${
+            disabled ? "bg-[#E0E0E0]" : "bg-white"
           }`}
         />
       ))}

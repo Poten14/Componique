@@ -61,19 +61,19 @@ const CurrencyInput: React.FC<CurrencyInputProps> = ({
   const [inputValue, setInputValue] = useState(value || "0");
 
   const incrementValue = () => {
-    const parsedValue = (parseFloat(inputValue.replace(/^\$/, "")) + 1).toFixed(
-      2,
-    );
+    const parsedValue = (
+      parseFloat(inputValue.replace(/^\$/, "")) + 0.01
+    ).toFixed(2);
     const newValue = `$${parsedValue}`;
     setInputValue(newValue);
     if (onValueChange) onValueChange(newValue);
   };
 
   const decrementValue = () => {
-    const parsedValue = (parseFloat(inputValue.replace(/^\$/, "")) - 1).toFixed(
-      2,
-    );
-    const newValue = `$${parsedValue}`;
+    const parsedValue = (
+      parseFloat(inputValue.replace(/^\$/, "")) - 0.01
+    ).toFixed(2);
+    const newValue = `${parsedValue}`;
     setInputValue(newValue);
     if (onValueChange) onValueChange(newValue);
   };
