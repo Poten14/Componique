@@ -13,6 +13,7 @@ import CalendarRange from "@components/Calendar/CalendarRange";
 import Carousel from "@components/Carousel/Carousel";
 import CarouselAutoplay from "@components/Carousel/CarouselAutoplay";
 import CarouselDots from "@components/Carousel/CarouselDots";
+import SkeletonAvatar from "@components/Skeleton/SkeletonAvatar";
 
 const page = () => {
   const images = [
@@ -182,13 +183,13 @@ const page = () => {
         <Skeleton size="large" variants="rectangular" animate={true} />
       </div>
       <div className="m-4 flex gap-6">
-        <SkeletonCard width="w-1/5" hasAvatar={true} hasImage={true} />
+        {/* <SkeletonCard width="w-1/5" hasAvatar={true} hasImage={true} /> */}
         <SkeletonCard
           width="w-1/5"
-          height="h-32"
-          hasAvatar={false}
-          hasImage={false}
+          avatar={<SkeletonAvatar />}
+          hasImage={true}
         />
+        <SkeletonCard width="w-1/5" height="h-32" hasImage={false} />
       </div>
       <div className="m-4">
         <Calendar defaultValue={new Date(2024, 7, 22)} />
