@@ -28,11 +28,16 @@ import SwitchLabeled from "@components/Swtich/SwitchLabeled";
 // Infinite Scroll 컴포넌트 가져오기
 import InfiniteScrollBasic from "@components/InfiniteScroll/InfiniteScrollBasic";
 import InfiniteScrollImage from "@components/InfiniteScroll/InfiniteScrollImage";
+import InfiniteScrollKoJson from "@components/InfiniteScroll/InfiniteScrollKoJson";
 
 // ProgressBarBasic 컴포넌트 가져오기
 import ProgressBarBasic from "@components/ProgressBar/ProgressBarBasic";
 import ProgressBarCircle from "@components/ProgressBar/ProgressBarCircle";
 import ProgressBarSlider from "@components/ProgressBar/ProgressBarSlider";
+
+// Avatar 컴포넌트 가져오기
+import AvatarBasic from "@components/Avatar/AvatarBasic";
+
 const Page = () => {
   // 라디오 버튼의 선택 상태를 관리하는 useState 훅
   const [basicSelectedValue, setBasicSelectedValue] = useState("");
@@ -305,7 +310,6 @@ const Page = () => {
           color="red"
         />
       </div>
-
       {/* 카드 섹션 */}
       <br />
       <h1 className="mb-4 text-lg font-semibold">Card1 - 기본 카드</h1>
@@ -451,13 +455,19 @@ const Page = () => {
       <h1 className="mb-4 text-lg font-semibold">
         Infinite Scroll Basic - 기본 인피니티 스크롤
       </h1>
-      <InfiniteScrollBasic content={content} />
+      <InfiniteScrollBasic content={content.split(".")} />
       <br />
       <br />
       <h1 className="mb-4 text-lg font-semibold">
         Infinite Scroll Image - 이미지 인피니티 스크롤
       </h1>
       <InfiniteScrollImage images={images} />
+      <br />
+      <br />
+      <h1 className="mb-4 text-lg font-semibold">
+        Infinite Scroll KoJson - Korean JSON 인피니티 스크롤
+      </h1>
+      <InfiniteScrollKoJson />
       <br />
       <br />
       <h1 className="mb-4 text-lg font-semibold">
@@ -474,6 +484,13 @@ const Page = () => {
         Progress Bar Slider - 슬라이더 프로그래스 바
       </h1>
       <ProgressBarSlider percent={40} showPercent={true} completed={true} />
+      <br />
+      <h1 className="mb-4 text-lg font-semibold">AvatarBasic - 기본아바타</h1>
+      <h2>이미지가 있는 아바타</h2>
+      <AvatarBasic src="/avatar1.svg" alt="퉁퉁이" size={100} />
+      <br />
+      <h2>이미지가 없는 경우 이니셜 5글자까지 입력</h2>
+      <AvatarBasic initial="toong" size={100} />
     </div>
   );
 };
