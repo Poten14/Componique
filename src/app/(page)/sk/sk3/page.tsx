@@ -59,6 +59,18 @@ export default function Home() {
       />
 
       <div className="my-8"></div>
+
+      <Pagination
+        currentPage={currentPage}
+        totalPages={totalPages}
+        variant="circle"
+        styleType="outlined"
+        color="Secondary"
+        onPageChange={handlePageChange}
+        showFirstLastButtons={true}
+      />
+
+      <div className="my-8"></div>
     </div>
   );
 }
