@@ -10,6 +10,9 @@
     "format": "prettier --write ."
   },
   "dependencies": {
+    "@mdx-js/loader": "^3.0.1",
+    "@mdx-js/react": "^3.0.1",
+    "@next/mdx": "^14.2.6",
     "@types/uuid": "^10.0.0",
     "next": "14.2.5",
     "react": "^18",
@@ -17,8 +20,9 @@
     "uuid": "^10.0.0"
   },
   "devDependencies": {
+    "@types/mdx-js__react": "^2.0.0",
     "@types/node": "^20",
-    "@types/react": "^18",
+    "@types/react": "^18.3.4",
     "@types/react-dom": "^18",
     "eslint": "^8",
     "eslint-config-next": "14.2.5",
