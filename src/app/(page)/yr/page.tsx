@@ -13,6 +13,7 @@ import CalendarRange from "@components/Calendar/CalendarRange";
 import Carousel from "@components/Carousel/Carousel";
 import CarouselAutoplay from "@components/Carousel/CarouselAutoplay";
 
+
 const page = () => {
   const images = [
     "images/IfSc1.svg",
