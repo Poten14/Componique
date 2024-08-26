@@ -1,6 +1,6 @@
 "use client";
 
-import Input1 from "@components/Input/Input";
+import Input from "@components/Input/Input";
 import SearchInput from "@components/Input/SearchInput";
 import SearchInput2 from "@components/Input/SearchInput2";
 import SearchInput3 from "@components/Input/SearchInput3";
@@ -73,13 +73,13 @@ const sk = () => {
     <>
       {/* BasicInput */}
       <div className="m-4 space-y-8">
-        <Input1 size="xs" placeholder="extra small size" />
-        <Input1 size="small" placeholder="small size" />
-        <Input1 size="medium" placeholder="medium size" />
-        <Input1 size="large" placeholder="large size" />
-        <Input1 size="xl" placeholder="Extra large size" />
-        <Input1 size="medium" variant="filled" placeholder="Filled input" />
-        <Input1 size="medium" variant="outlined" placeholder="Outlined input" />
+        <Input size="xs" placeholder="extra small size" />
+        <Input size="small" placeholder="small size" />
+        <Input size="medium" placeholder="medium size" />
+        <Input size="large" placeholder="large size" />
+        <Input size="xl" placeholder="Extra large size" />
+        <Input size="medium" variant="filled" placeholder="Filled input" />
+        <Input size="medium" variant="outlined" placeholder="Outlined input" />
       </div>
       <div className="m-4 space-y-8">
         <SearchInput
