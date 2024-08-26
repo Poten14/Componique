@@ -34,7 +34,7 @@ const Input: React.FC<InputProps> = ({
   return (
     <input
       type="text"
-      className={`focus:border-basic rounded-md ${variantClasses[variant]} ${sizeClasses[size]} md:w-1/4 lg:w-2/3 xl:w-3/5`}
+      className={`rounded-md focus:border-Basic ${variantClasses[variant]} ${sizeClasses[size]} md:w-1/4 lg:w-2/3 xl:w-3/5`}
       placeholder={placeholder}
       value={value}
       onChange={onChange}
