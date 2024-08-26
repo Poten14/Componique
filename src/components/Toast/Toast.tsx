@@ -62,11 +62,11 @@ const Toast: React.FC<ToastProps> = ({
   };
   const ToastSize = {
     small:
-      "min-w-[200px] sm:min-w-[250px]  md:min-w-[390px] lg:min-w-[575px] xl:min-w-[650px]",
+      "min-w-[200px] sm:min-w-[250px]  md:min-w-[390px] lg:min-w-[575px] xl:min-w-[650px] max-w-[200px] sm:max-w-[250px] md:max-w-[390px] lg:max-w-[575px] xl:max-w-[650px]",
     medium:
-      "min-w-[300px] sm:min-w-[375px]  md:min-w-[585px] lg:min-w-[863px] xl:min-w-[975px]",
+      "min-w-[300px] sm:min-w-[375px]  md:min-w-[585px] lg:min-w-[863px] xl:min-w-[975px] max-w-[300px] sm:max-w-[375px] md:max-w-[585px] lg:max-w-[863px] xl:max-w-[975px]",
     large:
-      "min-w-[400px] sm:min-w-[500px]  md:min-w-[780px] lg:min-w-[1150px] xl:min-w-[1300px]",
+      "min-w-[400px] sm:min-w-[500px]  md:min-w-[780px] lg:min-w-[1150px] xl:min-w-[1300px] max-w-[400px] sm:max-w-[500px] md:max-w-[780px] lg:max-w-[1150px] xl:max-w-[1300px]",
   };
 
   let ToastVariant = "";
@@ -92,7 +92,7 @@ const Toast: React.FC<ToastProps> = ({
 
   const BasicToast = "min-w-md   box-border fixed select-none ";
   return (
-    <div>
+    <>
       <section
         className={`${BasicToast} ${ToastPosition[position]} ${ToastSize[size]} ${
           isToastOpen ? "opacity-100" : "pointer-events-none opacity-0"
@@ -107,7 +107,7 @@ const Toast: React.FC<ToastProps> = ({
           className={`flex items-center justify-between rounded-md ${ToastVariant} p-4`}
           {...rest}
         >
-          <div className={`${ToastTextAlign[text]} w-full`}>{children}</div>
+          <div className={`${ToastTextAlign[text]} `}>{children}</div>
 
           <button
             className={`z-999 group relative ml-2 h-4 w-4 bg-transparent ${isClose ? "hidden" : "block"}`}
@@ -131,7 +131,7 @@ const Toast: React.FC<ToastProps> = ({
           </div>
         )}
       </section>
-    </div>
+    </>
   );
 };
 export default Toast;

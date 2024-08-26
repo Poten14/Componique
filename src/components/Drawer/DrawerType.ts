@@ -1,3 +1,4 @@
+import { IconName } from "@components/Icon/Icon";
 export type DrawerProps = {
   menu?: MenuProps[];
   isOpen?: boolean;
@@ -45,4 +46,5 @@ type MenuProps = {
   name: string;
   path: string;
   className?: string;
+  icon?: IconName;
 };

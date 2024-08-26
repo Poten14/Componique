@@ -14,6 +14,7 @@ import Carousel from "@components/Carousel/Carousel";
 import CarouselAutoplay from "@components/Carousel/CarouselAutoplay";
 import CarouselDots from "@components/Carousel/CarouselDots";
 
+
 const page = () => {
   const images = [
     "images/IfSc1.svg",
@@ -202,9 +203,11 @@ const page = () => {
       <div className="m-4">
         <CarouselAutoplay images={images} interval={3000} autoplay={true} />
       </div>
+
       <div className="m-4">
         <CarouselDots images={images} showDots={true} />
       </div>
+
     </>
   );
 };

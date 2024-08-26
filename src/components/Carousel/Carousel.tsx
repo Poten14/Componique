@@ -8,10 +8,12 @@ interface CarouselProps {
 }
 
 const Carousel = ({ images }: CarouselProps) => {
+
   const [currentSlide, setCurrentSlide] = useState(0);
 
   const handlePrev = () => {
     setCurrentSlide((prevIndex) =>
+
       prevIndex === 0 ? images.length - 1 : prevIndex - 1,
     );
   };
@@ -29,6 +31,7 @@ const Carousel = ({ images }: CarouselProps) => {
           <ul
             className="flex transition-transform duration-300 ease-in-out"
             style={{ transform: `translateX(-${currentSlide * 100}%)` }}
+
           >
             {images.map((image, index) => (
               <li key={index} className="min-w-full">
