@@ -1,15 +1,16 @@
 // BasicCard 인터페이스 정의
 interface BasicCard {
   title: string;
-  description: string;
+
+  children?: React.ReactNode; //React에서 렌더링할 수 있는 모든 것을 포함하는 타입
 }
 
-const CardBasic = ({ title, description }: BasicCard) => {
+const CardBasic = ({ title, children }: BasicCard) => {
   return (
-    <div className="m-4 max-w-sm rounded-xl border-2 border-[#4C89FF] bg-white shadow-lg">
+    <div className="m-4 max-w-sm rounded-xl border-2 border-Blue bg-white shadow-lg">
       <div className="px-6 py-4">
         <div className="mb-2 text-2xl font-bold">{title}</div>
-        <p className="text-base text-gray-700">{description}</p>
+        <div className="text-base text-slate-700">{children}</div>
       </div>
     </div>
   );
