@@ -35,7 +35,7 @@ const ratingStars = (rate: number) => {
 
 const CardReview = ({ avatar, name, rate, review }: ReviewCardProps) => {
   return (
-    <div className="m-4 max-w-sm rounded-xl border-2 border-[#4C89FF] bg-white shadow-lg">
+    <div className="m-4 max-w-sm rounded-xl border-2 border-Blue bg-white shadow-lg">
       <div className="flex items-center px-6 py-4">
         <img
           src={avatar}

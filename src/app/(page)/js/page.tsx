@@ -37,6 +37,7 @@ import ProgressBarSlider from "@components/ProgressBar/ProgressBarSlider";
 
 // Avatar 컴포넌트 가져오기
 import AvatarBasic from "@components/Avatar/AvatarBasic";
+import AvatarLabel from "@components/Avatar/AvatarLabel";
 
 const Page = () => {
   // 라디오 버튼의 선택 상태를 관리하는 useState 훅
@@ -314,26 +315,27 @@ const Page = () => {
       <br />
       <h1 className="mb-4 text-lg font-semibold">Card1 - 기본 카드</h1>
       <div className="mt-8">
-        <CardBasic
-          title="Next.js"
-          description="Next.js is a React framework for building full-stack web applications."
-        />
+        <CardBasic title="Next.js">
+          <p>
+            Next.js is a React framework for building full-stack web
+            applications.
+          </p>
+        </CardBasic>
         <br />
         <h1 className="mb-4 text-lg font-semibold">Card2 - 확장 카드</h1>
-        <CardInteractive
-          title="Next.js_expand Card"
-          description="Next.js is a React framework for building full-stack web applications."
-          detail="You use React Components to build user interfaces, and Next.js for additional features and optimizations."
-        />
+        <CardInteractive title="Next.js_expand Card">
+          <div>
+            Next.js is a React framework for building full-stack web
+            applications.
+          </div>
+        </CardInteractive>
         <br />
         <h1 className="mb-4 text-lg font-semibold">
           Card3 - 가로형 이미지 카드
         </h1>
-        <CardImage
-          title="Image Card_Vertical"
-          description="You can add image or icon to this card component😊"
-          image="/componique_logo.svg"
-        />
+        <CardImage title="Image Card_Vertical" image="/componique_logo.svg">
+          <p>You can add image or icon to this card component😊</p>
+        </CardImage>
         <br />
         <h1 className="mb-4 text-lg font-semibold">Card4 - 상품 카드</h1>
         <CardPricing
@@ -491,6 +493,9 @@ const Page = () => {
       <br />
       <h2>이미지가 없는 경우 이니셜 5글자까지 입력</h2>
       <AvatarBasic initial="toong" size={100} />
+      <br />
+      <h1 className="mb-4 text-lg font-semibold">AvatarLabel - 라벨아바타</h1>
+      <AvatarLabel src="/avatar1.svg" label="A1" size={100} />
     </div>
   );
 };
