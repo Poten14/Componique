@@ -7,7 +7,7 @@ interface InfiniteScrollBasicProps {
 }
 
 interface InfiniteScrollProps {
-  content: string; // 텍스트 파일의 내용을 받는 props
+  content: string[]; // 텍스트 파일의 내용을 받는 props
 }
 
 const InfiniteScrollBasic: React.FC<InfiniteScrollProps> = ({ content }) => {
@@ -17,7 +17,6 @@ const InfiniteScrollBasic: React.FC<InfiniteScrollProps> = ({ content }) => {
   const [hasMore, setHasMore] = useState(true); // 추가로 로드할 내용이 있으면 true로 변경
   const loader = useRef(null); // 렌더링될때 새로운 문장을 로드하도록 설정
 
-  const lines = content.split(".");
   const itemsPerPage = 1; // 문장별로 나누고 1문장씩 보여주기
 
   const loadMoreItems = useCallback(() => {
@@ -31,13 +30,13 @@ const InfiniteScrollBasic: React.FC<InfiniteScrollProps> = ({ content }) => {
       const end = start + itemsPerPage;
 
       // 시작점이 전체 로드의 데이터 수보다 클 경우 로드할 내용이 없음.
-      if (start >= lines.length) {
+      if (start >= content.length) {
         setHasMore(false);
         setIsLoading(false);
         return;
       }
 
-      const newItems = lines.slice(start, end).map((content, index) => ({
+      const newItems = content.slice(start, end).map((content, index) => ({
         id: start + index + 1,
         text: content,
       }));
@@ -46,8 +45,8 @@ const InfiniteScrollBasic: React.FC<InfiniteScrollProps> = ({ content }) => {
       setPage((prev) => prev + 1);
 
       setIsLoading(false);
-    }, 1000);
-  }, [page, lines, isLoading, hasMore]);
+    }, 200);
+  }, [page, content, isLoading, hasMore]);
 
   useEffect(() => {
     const options = {
@@ -79,7 +78,10 @@ const InfiniteScrollBasic: React.FC<InfiniteScrollProps> = ({ content }) => {
     <div className="p-4">
       <ul className="space-y-4">
         {items.map((item) => (
-          <li key={item.id} className="rounded-md border p-4 shadow-sm">
+          <li
+            key={item.id}
+            className="mb-2 border-b-2 border-dashed p-2 shadow-sm"
+          >
             {item.text}
           </li>
         ))}

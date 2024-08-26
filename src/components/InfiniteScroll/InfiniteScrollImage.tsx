@@ -41,7 +41,7 @@ const InfiniteScrollImage = ({ images }: InfiniteScrollImageProps) => {
       setPage((prev) => prev + 1);
 
       setIsLoading(false); // 로딩 종료
-    }, 500);
+    }, 200);
   }, [page, images, isLoading, hasMore]);
 
   useEffect(() => {
@@ -82,8 +82,8 @@ const InfiniteScrollImage = ({ images }: InfiniteScrollImageProps) => {
             key={index}
             src={src}
             alt={`image${index + 1}`}
-            width={500}
-            height={300}
+            width={200}
+            height={200}
             className="rounded-md border shadow-sm"
           />
         ))}
