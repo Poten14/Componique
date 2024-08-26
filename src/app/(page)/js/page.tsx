@@ -32,7 +32,7 @@ import InfiniteScrollImage from "@components/InfiniteScroll/InfiniteScrollImage"
 // ProgressBarBasic 컴포넌트 가져오기
 import ProgressBarBasic from "@components/ProgressBar/ProgressBarBasic";
 import ProgressBarCircle from "@components/ProgressBar/ProgressBarCircle";
-
+import ProgressBarSlider from "@components/ProgressBar/ProgressBarSlider";
 const Page = () => {
   // 라디오 버튼의 선택 상태를 관리하는 useState 훅
   const [basicSelectedValue, setBasicSelectedValue] = useState("");
@@ -469,6 +469,11 @@ const Page = () => {
         Progress Bar Cricle - 원형 프로그래스 바
       </h1>
       <ProgressBarCircle percent={100} showPercent={true} completed={true} />
+      <br />
+      <h1 className="mb-4 text-lg font-semibold">
+        Progress Bar Slider - 슬라이더 프로그래스 바
+      </h1>
+      <ProgressBarSlider percent={40} showPercent={true} completed={true} />
     </div>
   );
 };
