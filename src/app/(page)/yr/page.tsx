@@ -10,11 +10,18 @@ import Skeleton from "@components/Skeleton/Skeleton";
 import SkeletonCard from "@components/Skeleton/SkeletonCard";
 import Calendar from "@components/Calendar/Calendar";
 import CalendarRange from "@components/Calendar/CalendarRange";
+import Carousel from "@components/Carousel/Carousel";
 
 const page = () => {
+  const images = [
+    "images/IfSc1.svg",
+    "images/IfSc2.svg",
+    "images/IfSc3.svg",
+    "images/IfSc4.svg",
+  ];
+
   return (
     <>
-      <CalendarRange />
       {/* Navbar 연습 */}
       <div className="m-4 space-y-4">
         <Navbar
@@ -183,6 +190,12 @@ const page = () => {
       </div>
       <div className="m-4">
         <Calendar defaultValue={new Date(2024, 7, 22)} />
+      </div>
+      <div className="m-4">
+        <CalendarRange />
+      </div>
+      <div className="m-4">
+        <Carousel images={images} />
       </div>
     </>
   );
