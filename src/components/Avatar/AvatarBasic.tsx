@@ -8,7 +8,8 @@ interface AvatarBasicProps {
 const AvatarBasic = ({ src, alt, initial, size = 100 }: AvatarBasicProps) => {
   return (
     <div
-      className={`flex items-center justify-center rounded-full bg-Basic font-bold uppercase text-white`}
+      className={`m-2 flex flex-shrink-0 items-center justify-center rounded-full bg-Basic font-bold uppercase text-white`}
+      /*flex-shrink-0 들어간 이미지가 수축되지 않도록 설정 */
       style={{
         width: `${size}px`,
         height: `${size}px`,

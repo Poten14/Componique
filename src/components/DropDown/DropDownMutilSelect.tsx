@@ -2,13 +2,13 @@ import { useState } from "react";
 import Image from "next/image";
 interface DropDownGroupedProups {
   option: string[];
-  defaultOption: string;
+  defaultOption?: string;
   onSelect?: (value: string[]) => void;
 }
 
 const DropDownGrouped = ({
   option,
-  defaultOption,
+  defaultOption = "Select Option",
   onSelect,
 }: DropDownGroupedProups) => {
   const [isOpen, setIsOpen] = useState<number | null>();
@@ -60,7 +60,11 @@ const DropDownGrouped = ({
           onClick={() => toggleDropdown(0)}
           className="flex cursor-pointer justify-between border-2 p-2 font-medium"
         >
-          {displayDefaultOption()}
+          <span
+            className={`font-bold ${displayDefaultOption() ? "text-black" : "text-slate-600"}`}
+          >
+            {displayDefaultOption() || defaultOption}
+          </span>
           <Image
             src={isOpen === 0 ? "dropdown1.svg" : "/dropdown2.svg"}
             alt="dropdown"
@@ -89,7 +93,11 @@ const DropDownGrouped = ({
           onClick={() => toggleDropdown(1)}
           className="flex cursor-pointer justify-between rounded-lg border-2 p-2 font-medium"
         >
-          {displayDefaultOption()}
+          <span
+            className={`font-bold ${displayDefaultOption() ? "text-black" : "text-slate-600"}`}
+          >
+            {displayDefaultOption() || defaultOption}
+          </span>
           <Image
             src={isOpen === 1 ? "dropdown1.svg" : "/dropdown2.svg"}
             alt="dropdown"
@@ -118,7 +126,11 @@ const DropDownGrouped = ({
           onClick={() => toggleDropdown(2)}
           className="flex cursor-pointer justify-between rounded-full border-2 border-zinc-100 p-2 font-medium shadow-md"
         >
-          {displayDefaultOption()}
+          <span
+            className={`font-bold ${displayDefaultOption() ? "text-black" : "text-slate-600"}`}
+          >
+            {displayDefaultOption() || defaultOption}
+          </span>
           <Image
             src={isOpen === 2 ? "dropdown1.svg" : "/dropdown2.svg"}
             alt="dropdown"
@@ -147,7 +159,11 @@ const DropDownGrouped = ({
           onClick={() => toggleDropdown(3)}
           className="flex cursor-pointer justify-between rounded-lg border-2 border-zinc-100 bg-white p-2 font-medium"
         >
-          {displayDefaultOption()}
+          <span
+            className={`font-bold ${displayDefaultOption() ? "text-black" : "text-slate-600"}`}
+          >
+            {displayDefaultOption() || defaultOption}
+          </span>
           <Image
             src={isOpen === 3 ? "dropdown1.svg" : "/dropdown2.svg"}
             alt="dropdown"

@@ -333,7 +333,7 @@ const Page = () => {
         <h1 className="mb-4 text-lg font-semibold">
           Card3 - 가로형 이미지 카드
         </h1>
-        <CardImage title="Image Card_Vertical" image="/componique_logo.svg">
+        <CardImage title="Image Card_Vertical">
           <p>You can add image or icon to this card component😊</p>
         </CardImage>
         <br />
@@ -353,12 +353,18 @@ const Page = () => {
         />
         <br />
         <h1 className="mb-4 text-lg font-semibold">Card5 - 리뷰 카드</h1>
-        <CardReview
-          avatar="/avatar1.svg"
-          name="ToongToong123"
-          rate={4}
-          review="This product is very convenient for me, which I like. It's a pity that it's expensive, but I think it's worth trying at least once."
-        />
+        <CardReview avatar="/avatar1.svg" name="ToongToong123" rate={4}>
+          <p>
+            This product is very convenient for me, which I like. It&apos;s a
+            pity that it&apos;s expensive, but I think it&apos;s worth trying at
+            least once.
+          </p>
+          {/* ESLint 규칙위반 -> 추후 기술블로그로 작성 ' -> &apos;로 작성해야함. */}
+          {/* <p>
+            This product is very convenient for me, which I like. It's a pity
+            that it's expensive, but I think it's worth trying at least once.
+          </p> */}
+        </CardReview>
       </div>
       {/* 라디오 버튼 섹션 */}
       <div>
@@ -377,7 +383,6 @@ const Page = () => {
             "Option 7",
             "Option 8",
           ]}
-          defaultOption="Select Option"
           onSelect={handleSelect}
         />
         <br />
@@ -422,7 +427,6 @@ const Page = () => {
             items: ["Milk", "Cheese", "Butter", "Yogurt"],
           },
         ]}
-        defaultOption="Select Option"
         onSelect={handleSelect}
       />
       <br />
