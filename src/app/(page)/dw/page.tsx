@@ -225,14 +225,23 @@ const dw = () => {
                 name: "Home",
                 path: "/",
                 className: "text-yellow-500 underline",
+                icon: "icon-home",
               },
               { name: "About", path: "/about" },
               { name: "Profile", path: "/profile" },
-              { name: "Contact", path: "/Contact" },
-              { name: "LongTitleTitleTitleTitleTitleTitle", path: "/Contact" },
+              {
+                name: "Contact",
+                path: "/Contact",
+                icon: "icon-call",
+                className: "text-red-600",
+              },
+              {
+                name: "LongTitleTitleTitleTitleTitleTitle",
+                path: "/Contact",
+              },
             ]}
             logo="/componique_logo_full.svg"
-            postion="bottom"
+            postion="right"
             bgColor="basic"
           />
 
