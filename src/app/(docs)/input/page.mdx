@@ -1,3 +1,71 @@
-# Input Component
+import Input from "@components/Input/Input"; // Input 컴포넌트 불러오기
+import { Prism as SyntaxHighlighter } from "react-syntax-highlighter"; // 코드 하이라이팅 컴포넌트
 
-This is the documentation for the component.
+export const meta = {
+  title: "Input",
+  description: "The Input component is used for user input in forms.",
+};
+
+# Input 컴포넌트
+
+## 개요
+
+`Input` 컴포넌트는 사용자 입력을 처리하기 위해 사용되는 기본 UI 요소입니다. 크기와 변형을 조정하여 다양한 스타일을 적용할 수 있습니다.
+
+- `size`: Input의 크기를 설정합니다. (`xs`, `small`, `medium`, `large`, `xl`)
+- `variant`: Input의 스타일을 설정합니다. (`outlined`, `filled`)
+- `placeholder`: Input의 플레이스홀더 텍스트를 설정합니다.
+- `value`: Input의 초기 값을 설정합니다.
+- `onChange`: Input 값이 변경될 때 호출되는 함수입니다.
+
+# 코드 예제
+
+<SyntaxHighlighter language="tsx">
+{`
+import React, { useState } from "react";
+import Input from "@components/Input/Input";
+
+function Example() {
+const [value, setValue] = useState("");
+
+return (
+
+<div>
+  <Input
+    size="medium"
+    variant="outlined"
+    placeholder="Type something..."
+    value={value}
+    onChange={(e) => setValue(e.target.value)}
+  />
+</div>
+); }
+
+export default Example;
+`}
+
+</SyntaxHighlighter>
+
+## Props
+
+### Button Props
+
+`Button` 컴포넌트에 사용할 수 있는 Props 목록입니다.
+
+#### `colorScheme`
+
+| Name          | Description                                   | Type                                                                                                                                     | Default |
+| ------------- | --------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- | ------- |
+| `colorScheme` | The visual color appearance of the component. | `"whiteAlpha" \| "blackAlpha" \| "gray" \| "red" \| "orange" \| "yellow" \| "green" \| "teal" \| "blue" \| "cyan" \| "purple" \| "pink"` | `gray`  |
+
+#### `iconSpacing`
+
+| Name          | Description                                  | Type                                                  | Default |
+| ------------- | -------------------------------------------- | ----------------------------------------------------- | ------- |
+| `iconSpacing` | The space between the button icon and label. | `ResponsiveValue<string \| number \| (string \| {})>` | `null`  |
+
+#### `isActive`
+
+| Name       | Description                                               | Type      | Default |
+| ---------- | --------------------------------------------------------- | --------- | ------- |
+| `isActive` | If `true`, the button will be styled in its active state. | `boolean` | `false` |

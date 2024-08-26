@@ -1,3 +1,5 @@
+import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
+
 # 첫번째 큰글씨#
 
 ## 두번째 큰글씨##
@@ -20,8 +22,21 @@ _기울이기 글씨_
   클릭
 </Button>
 
-```
-function hello() {
-  console.log("Hello, world!");
-}
-```
+# 코드 예제
+
+<SyntaxHighlighter language="tsx">
+{`
+  import { Button } from '@components/Button';
+
+function Example() {
+return (
+
+<Button color="primary" size="medium">
+  Primary Button
+</Button>
+); }
+
+export default Example;
+`}
+
+</SyntaxHighlighter>
