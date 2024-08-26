@@ -24,7 +24,8 @@ i {
   font-variant: normal;
   text-transform: none;
   line-height: 1;
-
+  vertical-align: middle;
+  margin-right: 4px;
   /* Better Font Rendering =========== */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
