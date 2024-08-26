@@ -22,4 +22,5 @@ export type ToastProps = {
   time?: string;
   path?: string;
   isProgress?: boolean;
+  className?: string;
 };
