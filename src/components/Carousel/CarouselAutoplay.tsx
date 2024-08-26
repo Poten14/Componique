@@ -1,19 +1,35 @@
 "use client";
 
 import Image from "next/image";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
-interface CarouselProps {
+interface CarouselAutoplayProps {
   images: string[];
+  autoplay?: boolean;
+  interval?: number;
 }
 
-const Carousel = ({ images }: CarouselProps) => {
-
+const CarouselAutoplay = ({
+  images,
+  autoplay = false,
+  interval = 2000,
+}: CarouselAutoplayProps) => {
   const [currentSlide, setCurrentSlide] = useState(0);
+
+  useEffect(() => {
+    if (autoplay) {
+      const timer = setInterval(() => {
+        setCurrentSlide((prevSlide) =>
+          prevSlide === images.length - 1 ? 0 : prevSlide + 1,
+        );
+      }, interval);
+
+      return () => clearInterval(timer);
+    }
+  }, [autoplay, images.length, interval]);
 
   const handlePrev = () => {
     setCurrentSlide((prevIndex) =>
-
       prevIndex === 0 ? images.length - 1 : prevIndex - 1,
     );
   };
@@ -31,7 +47,6 @@ const Carousel = ({ images }: CarouselProps) => {
           <ul
             className="flex transition-transform duration-300 ease-in-out"
             style={{ transform: `translateX(-${currentSlide * 100}%)` }}
-
           >
             {images.map((image, index) => (
               <li key={index} className="min-w-full">
@@ -92,4 +107,4 @@ const Carousel = ({ images }: CarouselProps) => {
     </>
   );
 };
-export default Carousel;
+export default CarouselAutoplay;
