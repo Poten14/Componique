@@ -18,10 +18,12 @@ const ButtonDoc: React.FC = () => {
       <h1 className="text-[#2D3748]">Button</h1>
       <p>
         <code>Button</code> 컴포넌트는 클릭 가능한 버튼을 생성하기 위해
-        사용됩니다. 다양한 크기, 색상, 변형, 아이콘 및 기타 옵션을 통해 다양한
-        스타일의 버튼을 구현할 수 있습니다.
+        사용됩니다.
       </p>
-
+      <p>
+        다양한 크기, 색상, 변형, 아이콘 및 기타 옵션을 통해 다양한 스타일의
+        버튼을 구현할 수 있습니다.
+      </p>
       <h2 className="text-[#2D3748]">Import</h2>
       <div className="relative">
         <CopyToClipboard
@@ -41,7 +43,6 @@ const ButtonDoc: React.FC = () => {
           {`import { Button } from '@components/Button';`}
         </SyntaxHighlighter>
       </div>
-
       <h2 className="text-[#2D3748]">Usage</h2>
       <p>기본 사용 예제는 아래와 같습니다:</p>
       <div style={{ marginBottom: "20px" }}>
@@ -87,20 +88,17 @@ export default Example;
 `}
         </SyntaxHighlighter>
       </div>
-
       <h1 className="pt-2 text-[#2D3748]">Size</h1>
       <p>
         <code>size</code> prop을 이용하여 버튼의 크기를 설정할 수 있습니다.
         가능한 값은 <code>small</code>, <code>medium</code>,<code>large</code>{" "}
         입니다.
       </p>
-
       <div className="space-x-4 space-y-4">
         <Button size="small">Small Button</Button>
         <Button size="medium">Medium Button</Button>
         <Button size="large">Large Button</Button>
       </div>
-
       <div className="relative">
         <CopyToClipboard
           text={`import { Button } from '@components/Button';
@@ -145,18 +143,17 @@ export default Example;
 `}
         </SyntaxHighlighter>
       </div>
-
       <h1 className="pt-2 text-[#2D3748]">Color</h1>
-
       <p>
         <code>color</code> prop을 이용하여 버튼의 색상을 설정할 수 있습니다.
+      </p>
+      <p>
         가능한 값은 <code>primary</code>, <code>secondary</code>,
         <code>success</code>,<code>warning</code>, <code>danger</code>,
         <code>red</code>,<code>orange</code>, <code>yellow</code>,
         <code>green</code>,<code>blue</code>, <code>purple</code>,
         <code>pink</code>, <code>basic</code> 입니다.
       </p>
-
       <div className="space-x-4 space-y-4">
         <Button>Primary Button</Button>
         <Button color="secondary">Secondary Button</Button>
@@ -172,7 +169,6 @@ export default Example;
         <Button color="pink">Pink Button</Button>
         <Button color="basic">Basic Button</Button>
       </div>
-
       <div className="relative">
         <CopyToClipboard
           text={`import { Button } from '@components/Button';
@@ -237,15 +233,15 @@ export default Example;
 `}
         </SyntaxHighlighter>
       </div>
-
       <h1 className="pt-2 text-[#2D3748]">Radius</h1>
-
       <p>
         <code>radius</code> prop을 이용하여 버튼의 모서리 둥근 정도를 설정할 수
-        있습니다. 가능한 값은 <code>small</code>, <code>medium</code>,
-        <code>large</code>,<code>none</code>, <code>full</code> 입니다.
+        있습니다.{" "}
       </p>
-
+      <p>
+        가능한 값은 <code>small</code>, <code>medium</code>,<code>large</code>,
+        <code>none</code>, <code>full</code> 입니다.
+      </p>
       <div className="space-x-4 space-y-4">
         <Button radius="small">Small Radius Button</Button>
         <Button radius="medium">Medium Radius Button</Button>
@@ -302,11 +298,13 @@ export default Example;
         </SyntaxHighlighter>
       </div>
       <h1 className="pt-2 text-[#2D3748]">Variant</h1>
-
       <p>
         <code>variant</code> prop을 이용하여 버튼의 스타일 변형을 설정할 수
-        있습니다. 가능한 값은 <code>solid</code>, <code>border</code>,
-        <code>flat</code>,<code>light</code> 입니다.
+        있습니다.
+      </p>
+      <p>
+        가능한 값은 <code>solid</code>, <code>border</code>,<code>flat</code>,
+        <code>light</code> 입니다.
       </p>
       <div className="space-x-4 space-y-4">
         <Button variant="solid">Solid Button</Button>
@@ -361,11 +359,17 @@ export default Example;
         </SyntaxHighlighter>
       </div>
       <h1 className="pt-2 text-[#2D3748]">Icon</h1>
-
       <p>
-        <code>icon</code> prop을 이용하여 버튼에 아이콘을 추가할 수 있습니다.
-        <code>iconPosition</code> prop으로 아이콘의 위치를 설정할 수 있으며,
-        <code>iconSize</code> prop으로 아이콘의 크기를 조절할 수 있습니다.
+        <code>icon</code> prop을 이용하여 버튼에 아이콘을 추가할 수 있습니다.{" "}
+      </p>
+      <p>
+        <code>iconPosition</code> prop으로 아이콘의 위치를 설정할 수 있습니다.
+      </p>
+      <p>
+        <code>iconSize</code> prop으로 아이콘의 크기를 설정할 수 있습니다.
+      </p>
+      <p>
+        <code>iconColor</code> prop으로 아이콘의 컬러를 설정할 수 있습니다.
       </p>
       <p> Icon에 대한 자세한 정보는 Icon Docs를 참고 하시면 됩니다.</p>
       <div className="space-x-4 space-y-4">
@@ -463,11 +467,9 @@ export default Example;
         </SyntaxHighlighter>
       </div>
       <h1 className="pt-2 text-[#2D3748]">Disabled</h1>
-
       <p>
         <code>disabled</code> prop을 이용하여 버튼을 비활성화할 수 있습니다.
       </p>
-
       <div className="space-x-4 space-y-4">
         <Button disabled>Disabled Button</Button>
       </div>
@@ -507,19 +509,17 @@ export default Example;
 `}
         </SyntaxHighlighter>
       </div>
-
       <h1 className="pt-2 text-[#2D3748]">ClassName</h1>
-
       <p>
         <code>className</code> prop을 사용하여 <code>Button</code> 컴포넌트의
-        스타일을 커스터마이징할 수 있습니다. 아래는 버튼의 배경색과 텍스트
-        색상을 커스터마이징한 예시입니다.
+        스타일을 커스터마이징할 수 있습니다.
       </p>
+      <p> 아래 예시는 버튼의 배경색과 텍스트 색상을 커스터마이징한 것입니다.</p>
       <p>
-        아래 예시처럼 바로 적용이 가능한 부분도 있지만 CSS 우선순위에 의해서
-        !important를 사용해야 적용되는 부분도 있을수 있습니다.
+        !아래 예시처럼 바로 적용이 가능한 부분도 있지만 CSS 우선순위에 의해서
+        !important를 사용해야 적용되는 부분도 있을수 있습니다. (Tailwind는
+        !text-xl 처럼 사용해야 합니다.)
       </p>
-
       <div className="space-x-4 space-y-4">
         <Button
           variant="border"
@@ -530,7 +530,6 @@ export default Example;
           ClassNameCustomButton
         </Button>
       </div>
-
       <div className="relative">
         <CopyToClipboard
           text={`import { Button } from '@components/Button';
@@ -581,11 +580,8 @@ export default Example;
 `}
         </SyntaxHighlighter>
       </div>
-
       <h2 className="text-[#2D3748]">Full Example with Mixed Props</h2>
-
       <p>여러 속성을 섞어서 사용한 버튼 예제입니다.</p>
-
       <div className="space-x-4 space-y-4">
         <Button variant="border" color="purple" radius="full">
           Border Purple Full Button
@@ -602,7 +598,6 @@ export default Example;
           ClassNameCustomButton
         </Button>
       </div>
-
       <div className="relative">
         <CopyToClipboard
           text={`import { Button } from '@components/Button';
@@ -670,11 +665,9 @@ export default Example;
         </SyntaxHighlighter>
       </div>
       <h1 className="pt-2 text-[#2D3748]">Props</h1>
-
       <p>
         <code>Button</code> 컴포넌트는 아래와 같은 Props를 가집니다:
       </p>
-
       <table>
         <thead>
           <tr>
