@@ -4,7 +4,7 @@ import Button from "@components/Button/Button";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { CopyToClipboard } from "react-copy-to-clipboard";
 
-const page = () => {
+const DocsExample = () => {
   const [copied, setCopied] = useState(false);
 
   const handleCopy = () => {
@@ -33,4 +33,4 @@ const page = () => {
     </div> //최 상단 prose의 끝나는 지점
   );
 };
-export default page;
+export default DocsExample;

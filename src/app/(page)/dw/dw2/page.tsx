@@ -4,7 +4,7 @@ import ColorPicker from "@components/ColorPicker/ColorPicker";
 import GradientPicker from "@components/ColorPicker/GradientPicker";
 import TwoPicker from "@components/ColorPicker/TwoPicker";
 import ToastGroup from "@components/Toast/ToastGroup";
-const dw2 = () => {
+const Dw2 = () => {
   const [showToastGroup, setShowToastGroup] = useState(true);
 
   const allToastsCloseHandler = () => {
@@ -51,4 +51,4 @@ const dw2 = () => {
     </div>
   );
 };
-export default dw2;
+export default Dw2;
