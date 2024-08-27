@@ -62,7 +62,7 @@ const page = () => {
           id="searchInput"
           maxLength={8}
           type="search"
-          size={10}
+          size="medium"
           placeholder="Search"
         />
       </div>
