@@ -26,7 +26,7 @@ const DropDownComponent: React.FC = () => {
           제공하며, 선택된 값은 부모 컴포넌트로 전달될 수 있습니다.
         </p>
         <h2 className="text-[#2D3748]">Import</h2>
-        <div className="relative">
+        <div>
           <CopyToClipboard
             text={`import DropDownBasic from '@components/DropDown/DropDownBasic';`}
             onCopy={handleCopy}
@@ -45,11 +45,11 @@ const DropDownComponent: React.FC = () => {
         <div style={{ marginBottom: "20px" }}>
           <DropDownBasic
             option={["Option 1", "Option 2", "Option 3"]}
-            placeholder="Select an Option"
+            placeholder="Select Option"
             onSelect={(value) => console.log("Selected:", value)}
           />
         </div>
-        <div className="relative">
+        <div>
           <CopyToClipboard
             text={`import DropDownBasic from '@components/DropDown/DropDownBasic';
 
@@ -143,7 +143,7 @@ export default Example;
         </table>
 
         <h2 className="text-[#2D3748]">Full Example</h2>
-        <div className="relative">
+        <div className="">
           <CopyToClipboard
             text={`import DropDownBasic from '@components/DropDown/DropDownBasic';
 
@@ -209,7 +209,7 @@ export default FullExample;
             컴포넌트의 부모 컴포넌트로 전달됩니다.
           </p>
           <h2 className="text-[#2D3748]">Import</h2>
-          <div className="relative">
+          <div className="">
             <CopyToClipboard
               text={`import DropDownMutilSelect from '@components/DropDown/DropDownMutilSelect';`}
               onCopy={handleCopy}
@@ -232,7 +232,7 @@ export default FullExample;
               onSelect={(value) => console.log("Selected:", value)}
             />
           </div>
-          <div className="relative">
+          <div className="">
             <CopyToClipboard
               text={`import DropDownMutilSelect from '@components/DropDown/DropDownMutilSelect';
 
@@ -327,7 +327,7 @@ export default Example;
           </table>
 
           <h2 className="text-[#2D3748]">Full Example</h2>
-          <div className="relative">
+          <div className="">
             <CopyToClipboard
               text={`import DropDownMutilSelect from '@components/DropDown/DropDownMutilSelect';
 
@@ -394,7 +394,7 @@ export default FullExample;
             수 있으며, 선택된 값은 부모 컴포넌트로 전달될 수 있습니다.
           </p>
           <h2 className="text-[#2D3748]">Import</h2>
-          <div className="relative">
+          <div className="">
             <CopyToClipboard
               text={`import DropDownGrouped from '@components/DropDown/DropDownGrouped';`}
               onCopy={handleCopy}
@@ -425,7 +425,7 @@ export default FullExample;
               onSelect={(value) => console.log("Selected:", value)}
             />
           </div>
-          <div className="relative">
+          <div className="">
             <CopyToClipboard
               text={`import DropDownGrouped from '@components/DropDown/DropDownGrouped';
 
@@ -526,7 +526,7 @@ export default Example;
           </table>
 
           <h2 className="text-[#2D3748]">Full Example</h2>
-          <div className="relative">
+          <div className="">
             <CopyToClipboard
               text={`import DropDownGrouped from '@components/DropDown/DropDownGrouped';
 

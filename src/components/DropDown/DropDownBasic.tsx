@@ -45,10 +45,10 @@ const DropDownBasic = ({
           </span>
 
           <Image
-            src={isOpen === 0 ? "dropdown1.svg" : "/dropdown2.svg"}
+            src={isOpen === 0 ? "/dropdown1.svg" : "/dropdown2.svg"}
             alt="dropdown"
-            width={12}
-            height={12}
+            width={20}
+            height={20}
           />
         </div>
         {isOpen === 0 && (
@@ -78,10 +78,10 @@ const DropDownBasic = ({
             {selectedOption || placeholder}
           </span>
           <Image
-            src={isOpen === 1 ? "dropdown1.svg" : "/dropdown2.svg"}
+            src={isOpen === 1 ? "/dropdown1.svg" : "/dropdown2.svg"}
             alt="dropdown"
-            width={12}
-            height={12}
+            width={20}
+            height={20}
           />
         </div>
         {isOpen === 1 && (
@@ -111,10 +111,10 @@ const DropDownBasic = ({
             {selectedOption || placeholder}
           </span>
           <Image
-            src={isOpen === 2 ? "dropdown1.svg" : "/dropdown2.svg"}
+            src={isOpen === 2 ? "/dropdown1.svg" : "/dropdown2.svg"}
             alt="dropdown"
-            width={12}
-            height={12}
+            width={20}
+            height={20}
           />
         </div>
         {isOpen === 2 && (
@@ -144,10 +144,10 @@ const DropDownBasic = ({
             {selectedOption || placeholder}
           </span>
           <Image
-            src={isOpen === 3 ? "dropdown1.svg" : "/dropdown2.svg"}
+            src={isOpen === 3 ? "/dropdown1.svg" : "/dropdown2.svg"}
             alt="dropdown"
-            width={12}
-            height={12}
+            width={20}
+            height={20}
           />
         </div>
         {isOpen === 3 && (
