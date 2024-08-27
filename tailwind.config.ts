@@ -8,6 +8,21 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      typography: {
+        DEFAULT: {
+          css: {
+            code: {
+              backgroundColor: "#FEF3D5",
+              color: "#DD8501",
+              borderRadius: "0.375rem",
+              paddingLeft: "0.5rem",
+              paddingRight: "0.5rem",
+              paddingTop: "0.25rem",
+              paddingBottom: "0.25rem",
+            },
+          },
+        },
+      },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
@@ -43,8 +58,14 @@ const config: Config = {
       animation2: {
         bounce: "bounce 1.2s infinite ease-in-out",
       },
+      extend: {
+        copyButton: {
+          "@apply absolute right-0 top-0 mr-1 mt-1 rounded bg-Basic px-2 py-0.5 text-white transform active:scale-95 active:bg-[#679DC3] focus:outline-none focus:ring-2 focus:ring-[#679DC3]":
+            {},
+        },
+      },
     },
   },
-  plugins: [],
+  plugins: [require("@tailwindcss/typography")],
 };
 export default config;
