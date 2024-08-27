@@ -14,13 +14,19 @@ import Carousel from "@components/Carousel/Carousel";
 import CarouselAutoplay from "@components/Carousel/CarouselAutoplay";
 import CarouselDots from "@components/Carousel/CarouselDots";
 
-
 const page = () => {
   const images = [
     "images/IfSc1.svg",
     "images/IfSc2.svg",
     "images/IfSc3.svg",
     "images/IfSc4.svg",
+  ];
+
+  const navLinks = [
+    { name: "Home", href: "/" },
+    { name: "About", href: "/about" },
+    { name: "Project", href: "/project" },
+    { name: "Contact", href: "/contact" },
   ];
 
   return (
@@ -33,6 +39,7 @@ const page = () => {
           size="small"
           hoverColor="blue"
           position="static"
+          links={navLinks}
         />
         <Navbar
           logoName="Compunique"
@@ -40,6 +47,7 @@ const page = () => {
           size="medium"
           hoverColor="blue"
           position="static"
+          links={navLinks}
         />
         <Navbar
           logoName="Compunique"
@@ -47,6 +55,7 @@ const page = () => {
           size="large"
           hoverColor="blue"
           position="static"
+          links={navLinks}
         />
         <NavbarSearch
           name="search"
@@ -207,7 +216,6 @@ const page = () => {
       <div className="m-4">
         <CarouselDots images={images} showDots={true} />
       </div>
-
     </>
   );
 };
