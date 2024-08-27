@@ -29,7 +29,7 @@ const ButtonDoc: React.FC = () => {
           onCopy={handleCopy}
         >
           <Button
-            icon={copied ? "icon-check" : "icon-docs"}
+            icon={copied ? "icon-check" : undefined}
             className="copyButton"
             size="small"
             iconColor={copied ? "green" : "white"}
@@ -63,7 +63,7 @@ export default Example;`}
           onCopy={handleCopy}
         >
           <Button
-            icon={copied ? "icon-check" : "icon-docs"}
+            icon={copied ? "icon-check" : undefined}
             className="copyButton"
             iconColor={copied ? "green" : "white"}
             size="small"
@@ -119,7 +119,7 @@ export default Example;`}
           onCopy={handleCopy}
         >
           <Button
-            icon={copied ? "icon-check" : "icon-docs"}
+            icon={copied ? "icon-check" : undefined}
             className="copyButton"
             iconColor={copied ? "green" : "white"}
             size="small"
@@ -201,7 +201,7 @@ export default Example;`}
           onCopy={handleCopy}
         >
           <Button
-            icon={copied ? "icon-check" : "icon-docs"}
+            icon={copied ? "icon-check" : undefined}
             className="copyButton"
             iconColor={copied ? "green" : "white"}
             size="small"
@@ -273,7 +273,7 @@ export default Example;`}
           onCopy={handleCopy}
         >
           <Button
-            icon={copied ? "icon-check" : "icon-docs"}
+            icon={copied ? "icon-check" : undefined}
             className="copyButton"
             iconColor={copied ? "green" : "white"}
             size="small"
@@ -333,7 +333,7 @@ export default Example;`}
           onCopy={handleCopy}
         >
           <Button
-            icon={copied ? "icon-check" : "icon-docs"}
+            icon={copied ? "icon-check" : undefined}
             className="copyButton"
             iconColor={copied ? "green" : "white"}
             size="small"
@@ -421,7 +421,7 @@ export default Example;`}
           onCopy={handleCopy}
         >
           <Button
-            icon={copied ? "icon-check" : "icon-docs"}
+            icon={copied ? "icon-check" : undefined}
             className="copyButton"
             iconColor={copied ? "green" : "white"}
             size="small"
@@ -485,7 +485,7 @@ export default Example;`}
           onCopy={handleCopy}
         >
           <Button
-            icon={copied ? "icon-check" : "icon-docs"}
+            icon={copied ? "icon-check" : undefined}
             className="copyButton"
             iconColor={copied ? "green" : "white"}
             size="small"
@@ -552,7 +552,7 @@ export default Example;`}
           onCopy={handleCopy}
         >
           <Button
-            icon={copied ? "icon-check" : "icon-docs"}
+            icon={copied ? "icon-check" : undefined}
             className="copyButton"
             iconColor={copied ? "green" : "white"}
             size="small"
@@ -632,7 +632,7 @@ export default Example;`}
           onCopy={handleCopy}
         >
           <Button
-            icon={copied ? "icon-check" : "icon-docs"}
+            icon={copied ? "icon-check" : undefined}
             className="copyButton"
             size="small"
             iconColor={copied ? "green" : "white"}
