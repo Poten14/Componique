@@ -39,7 +39,7 @@ const Navbar = ({
   links,
 }: NavbarProps) => {
   const hoverClass = hoverColorClasses[hoverColor];
-  const navClass = `cursor-pointer ${hoverClass}`;
+  const navClass = `cursor-pointer ${hoverClass} no-underline`;
 
   return (
     <>
