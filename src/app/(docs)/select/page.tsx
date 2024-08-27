@@ -24,10 +24,7 @@ const SelectDocs: React.FC = () => {
 
       <h2 className="text-[#2D3748]">Import</h2>
       <div className="relative">
-        <CopyToClipboard
-          text={`import Select from '@components/Select';`}
-          onCopy={handleCopy}
-        >
+        <CopyToClipboard text={`import Select from '@components/Select';`}>
           <button className="copyButton">{copied ? "Copied!" : "Copy"}</button>
         </CopyToClipboard>
         <SyntaxHighlighter language="tsx">
