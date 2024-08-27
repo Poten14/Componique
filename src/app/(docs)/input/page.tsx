@@ -11,6 +11,7 @@ import NumInput from "@components/Input/NumInput";
 import CurrencyInput from "@components/Input/CurrencyInput";
 import DecimalInput from "@components/Input/DecimalInput";
 import PinInput from "@components/Input/PinInput";
+import CodeBox from "@components/CodeBox";
 
 const Input: React.FC = () => {
   const [copied, setCopied] = useState<{ [key: number]: boolean }>({});
@@ -30,44 +31,22 @@ const Input: React.FC = () => {
       </p>
 
       <h2 className="text-[#2D3748]">Import</h2>
-      <div className="relative">
-        <CopyToClipboard
-          text={`import { Input } from '@components/Input';`}
-          onCopy={() => handleCopy(1)}
-        >
-          <button className="copyButton">
-            {copied[1] ? "Copied!" : "Copy"}
-          </button>
-        </CopyToClipboard>
-        <SyntaxHighlighter language="tsx">
-          {`import { Input } from '@componique/react';`}
-        </SyntaxHighlighter>
-      </div>
+      <CodeBox
+        code={`import { Input } from '@componique/react';`}
+        copyText={`import { Input } from '@components/Input';`}
+        language="tsx"
+        index={1}
+        copied={copied}
+        handleCopy={handleCopy}
+      />
 
       <h2 className="text-[#2D3748]">Usage</h2>
       <p>기본 사용 예제는 아래와 같습니다:</p>
       <div style={{ marginBottom: "20px" }}>
         <Input1 placeholder="Basic usage" />
       </div>
-      <div className="relative">
-        <CopyToClipboard
-          text={`import { Input } from '@components/Input';
-
-function Example() {
-  return (
-    <Input placeholder="Basic usage" />
-  );
-}
-
-export default Example;`}
-          onCopy={() => handleCopy(2)}
-        >
-          <button className="copyButton">
-            {copied[2] ? "copied!" : "Copy"}
-          </button>
-        </CopyToClipboard>
-        <SyntaxHighlighter language="tsx">
-          {`
+      <CodeBox
+        code={`
 import { Input } from '@components/Input';
 
 function Example() {
@@ -78,8 +57,20 @@ function Example() {
 
 export default Example;
 `}
-        </SyntaxHighlighter>
-      </div>
+        copyText={`import { Input } from '@components/Input';
+
+function Example() {
+  return (
+    <Input placeholder="Basic usage" />
+  );
+}
+
+export default Example;`}
+        language="tsx"
+        index={2}
+        copied={copied}
+        handleCopy={handleCopy}
+      />
 
       <h2 className="text-[#2D3748]">Changing the Size of the Input</h2>
       <p>
