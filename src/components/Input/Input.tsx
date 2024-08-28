@@ -21,7 +21,8 @@ const sizeClasses = {
 
 const variantClasses = {
   outlined: "border border-Primary bg-white",
-  filled: "bg-Basic text-white placeholder-white border-none",
+  filled:
+    "bg-[#9AC5E5] focus:border-white text-white placeholder-white border-none",
 };
 
 const Input: React.FC<InputProps> = ({

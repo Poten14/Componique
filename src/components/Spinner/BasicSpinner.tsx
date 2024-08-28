@@ -30,7 +30,7 @@ const speedClasses = {
   fast: "animate-spin-fast",
 };
 
-const BasicSpinner: React.FC<SpinnerProps> = ({
+const Spinner: React.FC<SpinnerProps> = ({
   size = "medium",
   color = "Primary",
   speed = "medium",
@@ -42,4 +42,4 @@ const BasicSpinner: React.FC<SpinnerProps> = ({
   );
 };
 
-export default BasicSpinner;
+export default Spinner;

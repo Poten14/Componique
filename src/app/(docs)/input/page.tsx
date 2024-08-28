@@ -1,6 +1,5 @@
 "use client";
 
-import React, { useState } from "react";
 import Input1 from "@components/Input/Input";
 import SearchInput from "@components/Input/SearchInput";
 import SearchInput2 from "@components/Input/SearchInput2";
@@ -10,6 +9,7 @@ import CurrencyInput from "@components/Input/CurrencyInput";
 import DecimalInput from "@components/Input/DecimalInput";
 import PinInput from "@components/Input/PinInput";
 import CodeBox from "@components/CodeBox";
+import { useState } from "react";
 
 const Input: React.FC = () => {
   const [copied, setCopied] = useState<{ [key: number]: boolean }>({});
@@ -211,6 +211,9 @@ export default Example;`}
       </table>
 
       <h2 className="text-[#2D3748]">Full Example</h2>
+      <Input1 placeholder="Basic usage" />
+      <Input1 placeholder="small size" size="small" />
+      <Input1 placeholder="filled" variant="filled" />
       <CodeBox
         code={`import { Input } from '@components/Input';
 
@@ -219,7 +222,7 @@ function Example() {
     <div>
       <Input placeholder="Basic usage" />
       <Input placeholder="small size" size="small" />
-      <Input placeholder="outlined" variant="outlined" />
+      <Input placeholder="filled" variant="filled" />
     </div>
   );
 }
@@ -544,9 +547,9 @@ export default Example;`}
         </li>
       </ul>
       <div className="m-4 space-y-4">
-        <SearchInput2 size="small" placeholder="Search..." />
-        <SearchInput2 size="medium" placeholder="Search..." />
-        <SearchInput2 size="large" placeholder="Search..." />
+        <SearchInput2 placeholder="small size" size="small" />
+        <SearchInput2 placeholder="medium size" size="medium" />
+        <SearchInput2 placeholder="large size" size="large" />
       </div>
       <CodeBox
         code={`import SearchInput2 from '@components/SearchInput2/SearchInput2';
