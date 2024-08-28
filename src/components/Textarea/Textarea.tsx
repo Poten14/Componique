@@ -5,6 +5,7 @@ interface TextareaProps
   label?: string;
   size?: ExtraSize;
   color?: "red" | "blue" | "green" | "gray";
+  resize?: "none" | "both" | "horizontal" | "vertical";
 }
 
 const sizeClasses = {
@@ -22,22 +23,33 @@ const colorClasses = {
   gray: "border-[#DCDCDD] focus:ring-[#DCDCDD]",
 };
 
+const resizeClasses = {
+  none: "resize-none",
+  both: "resize",
+  horizontal: "resize-x",
+  vertical: "resize-y",
+};
+
 const Textarea: React.FC<TextareaProps> = ({
   label,
   id,
   color = "blue",
-  size = "xl",
+  size = "large",
+  resize = "vertical",
   ...props
 }) => {
   return (
     <>
-      <label htmlFor={id} className="text-gray-900 mb-2 block text-sm">
+      <label
+        htmlFor={id}
+        className={`text-gray-900 mb-2 block ${sizeClasses[size]}`}
+      >
         {label}
       </label>
       <textarea
         id={id}
         {...props}
-        className={`text-gray-900 ${sizeClasses[size]} block rounded-lg border p-2 focus:outline-none ${colorClasses[color]}`}
+        className={`text-gray-900 ${sizeClasses[size]} block rounded-lg border p-2 focus:outline-none ${colorClasses[color]} ${resizeClasses[resize]}`}
       ></textarea>
     </>
   );

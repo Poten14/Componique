@@ -1,3 +1,5 @@
+"use client";
+
 import Navbar from "@components/Navbar/Navbar";
 import NavbarSearch from "@components/Navbar/NavbarSearch";
 import Logo from "../../../../public/images/logo.svg";
@@ -13,20 +15,30 @@ import CalendarRange from "@components/Calendar/CalendarRange";
 import Carousel from "@components/Carousel/Carousel";
 import CarouselAutoplay from "@components/Carousel/CarouselAutoplay";
 import CarouselDots from "@components/Carousel/CarouselDots";
+import { useState } from "react";
 
 const page = () => {
-  const images = [
-    "images/IfSc1.svg",
-    "images/IfSc2.svg",
-    "images/IfSc3.svg",
-    "images/IfSc4.svg",
-  ];
-
+  // navbar links
   const navLinks = [
     { name: "Home", href: "/" },
     { name: "About", href: "/about" },
     { name: "Project", href: "/project" },
     { name: "Contact", href: "/contact" },
+  ];
+
+  // Textarea value
+  const [text, setText] = useState("");
+
+  const handleChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
+    setText(e.target.value);
+  };
+
+  // carousel image
+  const images = [
+    "images/IfSc1.svg",
+    "images/IfSc2.svg",
+    "images/IfSc3.svg",
+    "images/IfSc4.svg",
   ];
 
   return (
@@ -68,6 +80,48 @@ const page = () => {
       </div>
       {/* textarea 연습 */}
       <div className="m-4 space-y-4">
+        {/* resize 예시 */}
+        <Textarea
+          label="Your message"
+          name="text"
+          id="text"
+          size="xs"
+          resize="none"
+          rows={4}
+          cols={20}
+          placeholder="Write"
+        />
+        <Textarea
+          label="Your message"
+          name="text"
+          id="text"
+          size="xs"
+          resize="both"
+          rows={4}
+          cols={20}
+          placeholder="Write"
+        />
+        <Textarea
+          label="Your message"
+          name="text"
+          id="text"
+          size="xs"
+          resize="horizontal"
+          rows={4}
+          cols={20}
+          placeholder="Write"
+        />
+        {/* size, color 예시 */}
+        <Textarea
+          label="Your message"
+          name="text"
+          id="text"
+          size="xs"
+          resize="vertical"
+          rows={4}
+          cols={20}
+          placeholder="Write"
+        />
         <Textarea
           label="Your message"
           name="text"
@@ -120,7 +174,7 @@ const page = () => {
         />
       </div>
       <div className="m-4 space-y-4">
-        <TextareaValue />
+        <TextareaValue value={text} onChange={handleChange} />
       </div>
       {/* select 구현 */}
       <div className="m-4 flex items-center gap-4">

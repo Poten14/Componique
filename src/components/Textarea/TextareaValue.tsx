@@ -15,7 +15,7 @@ const TextareaValue: React.FC<TextareaValueProps> = ({ ...props }) => {
   return (
     <>
       <textarea
-        className="text-gray-900 block w-1/4 rounded-lg border border-gray p-2"
+        className="text-gray-900 block w-full rounded-lg border border-gray p-2"
         {...props}
         value={textvalue}
         onChange={handleChange}
