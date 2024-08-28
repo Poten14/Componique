@@ -1,7 +1,7 @@
 "use client";
 import ToastGroup from "@components/Toast/ToastGroup";
 import { useState } from "react";
-const page = () => {
+const Dw3 = () => {
   // 초기값은 true로 설정해서 ToastGroup이 렌더링되도록 함
   const [showToastGroup, setShowToastGroup] = useState(true);
 
@@ -147,4 +147,4 @@ const page = () => {
     </>
   );
 };
-export default page;
+export default Dw3;

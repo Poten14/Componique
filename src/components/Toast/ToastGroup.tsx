@@ -144,7 +144,7 @@ const ToastGroup: React.FC<ToastGroupProps> = ({
       className={`pointer-events-none fixed left-0 top-0 z-[9999] h-full w-full`}
     >
       {toasts.map((item, index) => (
-        <div className="">
+        <div key={index}>
           <Toast
             key={index}
             isOpen={openToasts[index]}
