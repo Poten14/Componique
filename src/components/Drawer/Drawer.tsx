@@ -12,7 +12,7 @@ const Drawer: React.FC<DrawerProps> = ({
   bgColor = "basic",
   onClose,
   className,
-  postion = "left",
+  position: position = "left",
 }) => {
   const [isDrawerOpen, setIsDrawerOpen] = useState(isOpen);
   const router = useRouter();
@@ -64,40 +64,40 @@ const Drawer: React.FC<DrawerProps> = ({
   let location = "";
   let motion = "";
 
-  if (postion === "right") {
+  if (position === "right") {
     location = "right-0";
     motion = isDrawerOpen ? "translate-x-0" : "translate-x-full";
-  } else if (postion === "left") {
+  } else if (position === "left") {
     location = "left-0";
     motion = isDrawerOpen ? "translate-x-0" : "-translate-x-full";
-  } else if (postion === "top") {
+  } else if (position === "top") {
     location = "top-0";
     motion = isDrawerOpen ? "translate-y-0" : "-translate-y-full";
-  } else if (postion === "bottom") {
+  } else if (position === "bottom") {
     location = "bottom-0";
     motion = isDrawerOpen ? "translate-y-0" : "translate-y-full";
   }
 
   const basicBg = `absolute ${location} ${
-    postion === "top" || postion === "bottom"
+    position === "top" || position === "bottom"
       ? "h-auto w-full"
       : "h-full w-[200px]"
   } transition-transform duration-500 ease-in-out ${bgColors[bgColor]}`;
 
   return (
     <section
-      className={`fixed left-0 top-0 h-full w-full select-none bg-black bg-opacity-50 transition-opacity duration-500 ease-in-out ${className || ""} ${
+      className={`fixed left-0 top-0 z-50 h-full w-full select-none bg-black bg-opacity-50 transition-opacity duration-500 ease-in-out ${className || ""} ${
         isDrawerOpen ? "opacity-100" : "pointer-events-none opacity-0"
       }`}
     >
       <div className={`${basicBg} ${motion}`}>
         <div
           className={`absolute ${
-            postion === "right"
+            position === "right"
               ? "left-[-40px]"
-              : postion === "left"
+              : position === "left"
                 ? "right-[-40px]"
-                : postion === "top"
+                : position === "top"
                   ? "bottom-[-40px] right-2"
                   : "right-2 top-[-40px]"
           }`}
@@ -113,21 +113,21 @@ const Drawer: React.FC<DrawerProps> = ({
 
         <div
           className={`flex justify-center py-2 ${
-            postion === "top" || postion === "bottom" ? "my-2" : "my-0"
+            position === "top" || position === "bottom" ? "my-2" : "my-0"
           }`}
           onClick={() => router.push("/")}
         >
           <img
             src={logo}
-            className={`cursor-pointer text-center ${postion === "top" || postion === "bottom" ? "w-[300px]" : "w-[180px]"}`}
+            className={`cursor-pointer text-center ${position === "top" || position === "bottom" ? "w-[300px]" : "w-[180px]"}`}
           />
         </div>
 
         <ul
           className={`${
-            postion === "top"
+            position === "top"
               ? "flex flex-wrap justify-center pb-2"
-              : postion === "bottom"
+              : position === "bottom"
                 ? "space-y-2 pb-4"
                 : "space-y-2"
           }`}
@@ -136,7 +136,7 @@ const Drawer: React.FC<DrawerProps> = ({
             <li
               key={index}
               className={`${
-                postion === "top" ? "mx-2 mb-2 w-[90%] text-center" : "mx-2"
+                position === "top" ? "mx-2 mb-2 w-[90%] text-center" : "mx-2"
               } box-border cursor-pointer overflow-hidden text-ellipsis whitespace-nowrap rounded px-5 py-2 hover:bg-gray ${
                 color ? bgColors[color] : "bg-[#F8F8F8]"
               } ${color === "black" ? "text-white" : ""} ${item.className || ""} `}
