@@ -2,7 +2,7 @@ import React from "react";
 import Image from "next/image";
 import { Size } from "types/type";
 
-interface Option {
+export interface Option {
   label: string;
   value: string;
 }
