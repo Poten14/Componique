@@ -10,17 +10,19 @@ import SearchInput3 from "@components/Input/SearchInput3";
 import NumInput from "@components/Input/NumInput";
 import CurrencyInput from "@components/Input/CurrencyInput";
 import DecimalInput from "@components/Input/DecimalInput";
+import PinInput from "@components/Input/PinInput";
+import CodeBox from "@components/CodeBox";
 
 const Input: React.FC = () => {
-  const [copied, setCopied] = useState(false);
+  const [copied, setCopied] = useState<{ [key: number]: boolean }>({});
 
-  const handleCopy = () => {
-    setCopied(true);
-    setTimeout(() => setCopied(false), 500); // 0.5초 후에 상태를 초기화
+  const handleCopy = (index: number) => {
+    setCopied((prev) => ({ ...prev, [index]: true }));
+    setTimeout(() => setCopied((prev) => ({ ...prev, [index]: false })), 500);
   };
 
   return (
-    <div className="prose p-5 text-[#6D6D6D]">
+    <div className="prose mb-40 max-w-[1000px] text-[#6D6D6D]">
       <h1 className="text-[#2D3748]">Input</h1>
       <p>
         <code>Input</code> 컴포넌트는 사용자 입력을 처리하기 위해 사용되는 기본
@@ -29,40 +31,22 @@ const Input: React.FC = () => {
       </p>
 
       <h2 className="text-[#2D3748]">Import</h2>
-      <div className="relative">
-        <CopyToClipboard
-          text={`import { Input } from '@components/Input';`}
-          onCopy={handleCopy}
-        >
-          <button className="copyButton">{copied ? "Copied!" : "Copy"}</button>
-        </CopyToClipboard>
-        <SyntaxHighlighter language="tsx">
-          {`import { Input } from '@componique/react';`}
-        </SyntaxHighlighter>
-      </div>
+      <CodeBox
+        code={`import { Input } from '@componique/react';`}
+        copyText={`import { Input } from '@components/Input';`}
+        language="tsx"
+        index={1}
+        copied={copied}
+        handleCopy={handleCopy}
+      />
 
       <h2 className="text-[#2D3748]">Usage</h2>
       <p>기본 사용 예제는 아래와 같습니다:</p>
       <div style={{ marginBottom: "20px" }}>
         <Input1 placeholder="Basic usage" />
       </div>
-      <div className="relative">
-        <CopyToClipboard
-          text={`import { Input } from '@components/Input';
-
-function Example() {
-  return (
-    <Input placeholder="Basic usage" />
-  );
-}
-
-export default Example;`}
-          onCopy={handleCopy}
-        >
-          <button className="copyButton">{copied ? "Copied!" : "Copy"}</button>
-        </CopyToClipboard>
-        <SyntaxHighlighter language="tsx">
-          {`
+      <CodeBox
+        code={`
 import { Input } from '@components/Input';
 
 function Example() {
@@ -73,8 +57,20 @@ function Example() {
 
 export default Example;
 `}
-        </SyntaxHighlighter>
-      </div>
+        copyText={`import { Input } from '@components/Input';
+
+function Example() {
+  return (
+    <Input placeholder="Basic usage" />
+  );
+}
+
+export default Example;`}
+        language="tsx"
+        index={2}
+        copied={copied}
+        handleCopy={handleCopy}
+      />
 
       <h2 className="text-[#2D3748]">Changing the Size of the Input</h2>
       <p>
@@ -121,9 +117,11 @@ function Example() {
   );
 }
 export default Example;`}
-          onCopy={handleCopy}
+          onCopy={() => handleCopy(3)}
         >
-          <button className="copyButton">{copied ? "Copied!" : "Copy"}</button>
+          <button className="copyButton">
+            {copied[3] ? "Copied!" : "Copy"}
+          </button>
         </CopyToClipboard>
         <SyntaxHighlighter language="tsx">
           {`
@@ -239,9 +237,11 @@ function Example() {
 }
 
 export default Example;`}
-          onCopy={handleCopy}
+          onCopy={() => handleCopy(4)}
         >
-          <button className="copyButton">{copied ? "Copied!" : "Copy"}</button>
+          <button className="copyButton">
+            {copied[4] ? "Copied!" : "Copy"}
+          </button>
         </CopyToClipboard>
         <SyntaxHighlighter language="tsx">
           {`
@@ -273,12 +273,14 @@ export default Example;
       <div className="relative">
         <CopyToClipboard
           text={`import SearchInput from '@components/SearchInput/SearchInput';`}
-          onCopy={handleCopy}
+          onCopy={() => handleCopy(5)}
         >
-          <button className="copyButton">{copied ? "Copied!" : "Copy"}</button>
+          <button className="copyButton">
+            {copied[5] ? "Copied!" : "Copy"}
+          </button>
         </CopyToClipboard>
         <SyntaxHighlighter language="tsx">
-        {`import { SearchInput } from '@componique/react';`}
+          {`import { SearchInput } from '@componique/react';`}
         </SyntaxHighlighter>
       </div>
 
@@ -298,9 +300,11 @@ function Example() {
 }
 
 export default Example;`}
-          onCopy={handleCopy}
+          onCopy={() => handleCopy(6)}
         >
-          <button className="copyButton">{copied ? "Copied!" : "Copy"}</button>
+          <button className="copyButton">
+            {copied[6] ? "Copied!" : "Copy"}
+          </button>
         </CopyToClipboard>
         <SyntaxHighlighter language="tsx">
           {`
@@ -317,10 +321,12 @@ export default Example;
         </SyntaxHighlighter>
       </div>
 
-      <h2 className="text-[#2D3748]">Changing the Active and Inactive Colors</h2>
+      <h2 className="text-[#2D3748]">
+        Changing the Active and Inactive Colors
+      </h2>
       <p>
-        <code>SearchInput</code> 컴포넌트는 활성화 및 비활성화 상태에 따른 색상을
-        커스터마이즈할 수 있습니다. 예제는 다음과 같습니다:
+        <code>SearchInput</code> 컴포넌트는 활성화 및 비활성화 상태에 따른
+        색상을 커스터마이즈할 수 있습니다. 예제는 다음과 같습니다:
       </p>
       <div style={{ marginBottom: "20px" }}>
         <SearchInput activeColor="bg-Primary" inactiveColor="bg-gray-400" />
@@ -336,9 +342,11 @@ function Example() {
 }
 
 export default Example;`}
-          onCopy={handleCopy}
+          onCopy={() => handleCopy(7)}
         >
-          <button className="copyButton">{copied ? "Copied!" : "Copy"}</button>
+          <button className="copyButton">
+            {copied[7] ? "Copied!" : "Copy"}
+          </button>
         </CopyToClipboard>
         <SyntaxHighlighter language="tsx">
           {`
@@ -357,8 +365,8 @@ export default Example;
 
       <h2 className="text-[#2D3748]">Changing the Width of the Input</h2>
       <p>
-        <code>SearchInput</code> 컴포넌트의 너비는 동적으로 조정 가능합니다. 기본
-        너비는 <code>w-80</code>입니다.
+        <code>SearchInput</code> 컴포넌트의 너비는 동적으로 조정 가능합니다.
+        기본 너비는 <code>w-80</code>입니다.
       </p>
       <div style={{ marginBottom: "20px" }}>
         <SearchInput width="w-96" placeholder="Custom width..." />
@@ -374,9 +382,11 @@ function Example() {
 }
 
 export default Example;`}
-          onCopy={handleCopy}
+          onCopy={() => handleCopy(8)}
         >
-          <button className="copyButton">{copied ? "Copied!" : "Copy"}</button>
+          <button className="copyButton">
+            {copied[8] ? "Copied!" : "Copy"}
+          </button>
         </CopyToClipboard>
         <SyntaxHighlighter language="tsx">
           {`
@@ -459,9 +469,11 @@ export default Example;
             <td>
               <code>onSearch</code>
             </td>
-            <td>사용자가 검색어를 입력하고 확인을 클릭했을 때 호출되는 함수입니다.</td>
             <td>
-              <code>(value: string) => void</code>
+              사용자가 검색어를 입력하고 확인을 클릭했을 때 호출되는 함수입니다.
+            </td>
+            <td>
+              <code>(value: string) =&gt; void</code>
             </td>
             <td>
               <code>-</code>
@@ -490,9 +502,11 @@ function Example() {
 }
 
 export default Example;`}
-          onCopy={handleCopy}
+          onCopy={() => handleCopy(9)}
         >
-          <button className="copyButton">{copied ? "Copied!" : "Copy"}</button>
+          <button className="copyButton">
+            {copied[9] ? "Copied!" : "Copy"}
+          </button>
         </CopyToClipboard>
         <SyntaxHighlighter language="tsx">
           {`
@@ -528,12 +542,14 @@ export default Example;
       <div className="relative">
         <CopyToClipboard
           text={`import SearchInput2 from '@components/SearchInput2/SearchInput2';`}
-          onCopy={handleCopy}
+          onCopy={() => handleCopy(10)}
         >
-          <button className="copyButton">{copied ? "Copied!" : "Copy"}</button>
+          <button className="copyButton">
+            {copied[10] ? "Copied!" : "Copy"}
+          </button>
         </CopyToClipboard>
         <SyntaxHighlighter language="tsx">
-        {`import { SearchInput2 } from '@componique/react';`}
+          {`import { SearchInput2 } from '@componique/react';`}
         </SyntaxHighlighter>
       </div>
 
@@ -553,9 +569,11 @@ function Example() {
 }
 
 export default Example;`}
-          onCopy={handleCopy}
+          onCopy={() => handleCopy(11)}
         >
-          <button className="copyButton">{copied ? "Copied!" : "Copy"}</button>
+          <button className="copyButton">
+            {copied[11] ? "Copied!" : "Copy"}
+          </button>
         </CopyToClipboard>
         <SyntaxHighlighter language="tsx">
           {`
@@ -574,8 +592,8 @@ export default Example;
 
       <h2 className="text-[#2D3748]">Changing the Size of the Input</h2>
       <p>
-        <code>SearchInput2</code> 컴포넌트는 다양한 크기로 제공됩니다. 기본 크기는{" "}
-        <code>medium</code>입니다:
+        <code>SearchInput2</code> 컴포넌트는 다양한 크기로 제공됩니다. 기본
+        크기는 <code>medium</code>입니다:
       </p>
       <ul>
         <li>
@@ -608,9 +626,11 @@ function Example() {
 }
 
 export default Example;`}
-          onCopy={handleCopy}
+          onCopy={() => handleCopy(12)}
         >
-          <button className="copyButton">{copied ? "Copied!" : "Copy"}</button>
+          <button className="copyButton">
+            {copied[12] ? "Copied!" : "Copy"}
+          </button>
         </CopyToClipboard>
         <SyntaxHighlighter language="tsx">
           {`
@@ -721,9 +741,11 @@ function Example() {
 }
 
 export default Example;`}
-          onCopy={handleCopy}
+          onCopy={() => handleCopy(13)}
         >
-          <button className="copyButton">{copied ? "Copied!" : "Copy"}</button>
+          <button className="copyButton">
+            {copied[13] ? "Copied!" : "Copy"}
+          </button>
         </CopyToClipboard>
         <SyntaxHighlighter language="tsx">
           {`
@@ -756,19 +778,22 @@ export default Example;
       </div>
       <h1 className="mt-40 text-[#2D3748]">SearchInput3</h1>
       <p>
-        <code>SearchInput3</code> 컴포넌트는 검색 입력 필드와 버튼을 함께 제공하는 UI 요소입니다.
+        <code>SearchInput3</code> 컴포넌트는 검색 입력 필드와 버튼을 함께
+        제공하는 UI 요소입니다.
       </p>
 
       <h2 className="text-[#2D3748]">Import</h2>
       <div className="relative">
         <CopyToClipboard
           text={`import SearchInput3 from '@components/SearchInput3/SearchInput3';`}
-          onCopy={handleCopy}
+          onCopy={() => handleCopy(14)}
         >
-          <button className="copyButton">{copied ? "Copied!" : "Copy"}</button>
+          <button className="copyButton">
+            {copied[14] ? "Copied!" : "Copy"}
+          </button>
         </CopyToClipboard>
         <SyntaxHighlighter language="tsx">
-        {`import { SearchInput3 } from '@componique/react';`}
+          {`import { SearchInput3 } from '@componique/react';`}
         </SyntaxHighlighter>
       </div>
 
@@ -779,9 +804,11 @@ export default Example;
       <div className="relative">
         <CopyToClipboard
           text={`<SearchInput3 placeholder="Search..." />`}
-          onCopy={handleCopy}
+          onCopy={() => handleCopy(15)}
         >
-          <button className="copyButton">{copied ? "Copied!" : "Copy"}</button>
+          <button className="copyButton">
+            {copied[15] ? "Copied!" : "Copy"}
+          </button>
         </CopyToClipboard>
         <SyntaxHighlighter language="tsx">
           {`<SearchInput3 placeholder="Search..." />`}
@@ -815,7 +842,10 @@ export default Example;
               <code>color</code>
             </td>
             <td>
-              <code>"Basic" | "Primary" | "Secondary" | "Success" | "Warning" | "Danger"</code>
+              <code>
+                "Basic" | "Primary" | "Secondary" | "Success" | "Warning" |
+                "Danger"
+              </code>
             </td>
             <td>
               <code>"Basic"</code>
@@ -825,13 +855,25 @@ export default Example;
       </table>
       <h2 className="text-[#2D3748]">Full Example</h2>
       <div className="ml-4 space-y-3">
-      <SearchInput3 size="small" color="Basic" placeholder="Small Search..." />
-      <SearchInput3 size="medium" color="Primary" placeholder="Medium Search..." />
-      <SearchInput3 size="large" color="Danger" placeholder="Large Search..." />
+        <SearchInput3
+          size="small"
+          color="Basic"
+          placeholder="Small Search..."
+        />
+        <SearchInput3
+          size="medium"
+          color="Primary"
+          placeholder="Medium Search..."
+        />
+        <SearchInput3
+          size="large"
+          color="Danger"
+          placeholder="Large Search..."
+        />
       </div>
-<div className="relative">
-  <CopyToClipboard
-    text={`import SearchInput3 from '@components/SearchInput3/SearchInput3';
+      <div className="relative">
+        <CopyToClipboard
+          text={`import SearchInput3 from '@components/SearchInput3/SearchInput3';
 
 function Example() {
   return (
@@ -844,12 +886,14 @@ function Example() {
 }
 
 export default Example;`}
-    onCopy={handleCopy}
-  >
-    <button className="copyButton">{copied ? "Copied!" : "Copy"}</button>
-  </CopyToClipboard>
-  <SyntaxHighlighter language="tsx">
-    {`
+          onCopy={() => handleCopy(16)}
+        >
+          <button className="copyButton">
+            {copied[16] ? "Copied!" : "Copy"}
+          </button>
+        </CopyToClipboard>
+        <SyntaxHighlighter language="tsx">
+          {`
 import SearchInput3 from '@components/SearchInput3/SearchInput3';
 
 function Example() {
@@ -864,10 +908,10 @@ function Example() {
 
 export default Example;
 `}
-  </SyntaxHighlighter>
-  </div>
+        </SyntaxHighlighter>
+      </div>
 
-  <h1 className="mt-40 text-[#2D3748]">NumInput</h1>
+      <h1 className="mt-40 text-[#2D3748]">NumInput</h1>
       <p>
         <code>NumInput</code> 컴포넌트는 숫자를 입력하거나 증감할 수 있는
         인터페이스를 제공합니다. 버튼을 사용해 숫자를 증가시키거나 감소시킬 수
@@ -878,36 +922,57 @@ export default Example;
       <div className="relative">
         <CopyToClipboard
           text={`import SearchInput3 from '@components/SearchInput3/SearchInput3';`}
-          onCopy={handleCopy}
+          onCopy={() => handleCopy(17)}
         >
-          <button className="copyButton">{copied ? "Copied!" : "Copy"}</button>
+          <button className="copyButton">
+            {copied[17] ? "Copied!" : "Copy"}
+          </button>
         </CopyToClipboard>
         <SyntaxHighlighter language="tsx">
           {`import {NumInput} from '@componique/react';`}
         </SyntaxHighlighter>
       </div>
 
-
       <h2 className="text-[#2D3748]">Usage</h2>
+      <p>기본 사용 예제는 아래와 같습니다:</p>
       <div style={{ marginBottom: "20px" }}>
         <NumInput
           size="medium"
           color="Basic"
-          value="10"
           onValueChange={(value) => console.log("New value:", value)}
         />
       </div>
-      <CopyToClipboard
-          text={`import SearchInput3 from '@components/SearchInput3/SearchInput3';`}
-          onCopy={handleCopy}
+      <div className="relative">
+        <CopyToClipboard
+          text={`import NumInput from '@components/Input/NumInput';
+
+function Example() {
+  return (
+    <NumInput/>
+  );
+}
+
+export default Example;`}
+          onCopy={() => handleCopy(18)}
         >
-          <button className="copyButton">{copied ? "Copied!" : "Copy"}</button>
+          <button className="copyButton">
+            {copied[18] ? "Copied!" : "Copy"}
+          </button>
         </CopyToClipboard>
-      <SyntaxHighlighter language="tsx">
-        {`
-    <NumInput size="medium" color="Primary" />
-        `}
-      </SyntaxHighlighter>
+        <SyntaxHighlighter language="tsx">
+          {`
+import NumInput from '@components/Input/NumInput';
+
+function Example() {
+  return (
+    <NumInput />
+  );
+}
+
+export default Example;
+`}
+        </SyntaxHighlighter>
+      </div>
 
       <h2 className="text-[#2D3748]">Props</h2>
       <p>
@@ -941,7 +1006,10 @@ export default Example;
             </td>
             <td>버튼의 색상을 설정합니다.</td>
             <td>
-              <code>"Basic" | "Primary" | "Secondary" | "Success" | "Warning" | "Gray" | "Danger"</code>
+              <code>
+                "Basic" | "Primary" | "Secondary" | "Success" | "Warning" |
+                "Gray" | "Danger"
+              </code>
             </td>
             <td>
               <code>"Basic"</code>
@@ -996,297 +1064,676 @@ export default Example;
           onValueChange={(value) => console.log("Updated value:", value)}
         />
       </div>
-      <SyntaxHighlighter language="tsx">
-        {`
-import NumInput from '@components/NumInput';
+      <div className="relative">
+        <CopyToClipboard
+          text={`import NumInput from '@components/Input/NumInput';
 
 function FullExample() {
   return (
-    <NumInput 
-      size="large" 
-      color="Basic" 
-      value="5" 
-      width="250px" 
-      onValueChange={(value) => console.log("Updated value:", value)} 
-    />
+    <NumInput
+    size="large"
+    color="Basic"
+    value="5"
+    width="250px"
+    onValueChange={(value) => console.log("Updated value:", value)}
+  />
+  );
+}
+
+export default FullExample;`}
+          onCopy={() => handleCopy(19)}
+        >
+          <button className="copyButton">
+            {copied[19] ? "Copied!" : "Copy"}
+          </button>
+        </CopyToClipboard>
+        <SyntaxHighlighter language="tsx">
+          {`
+import NumInput from '@components/Input/NumInput';
+
+function FullExample() {
+  return (
+    <NumInput
+    size="large"
+    color="Basic"
+    value="5"
+    width="250px"
+    onValueChange={(value) => console.log("Updated value:", value)}
+  />
   );
 }
 
 export default FullExample;
-        `}
-      </SyntaxHighlighter>
+    `}
+        </SyntaxHighlighter>
+      </div>
 
       <h1 className="mt-40 text-[#2D3748]">CurrencyInput</h1>
-<p>
-  <code>CurrencyInput</code> 컴포넌트는 금액을 입력하거나 증감할 수 있는 인터페이스를 제공합니다. 사용자가 입력 필드를 통해 금액을 입력하거나, 증감 버튼을 통해 금액을 조정할 수 있습니다.
-</p>
+      <p>
+        <code>CurrencyInput</code> 컴포넌트는 금액을 입력하거나 증감할 수 있는
+        인터페이스를 제공합니다. 사용자가 입력 필드를 통해 금액을 입력하거나,
+        증감 버튼을 통해 금액을 조정할 수 있습니다.
+      </p>
 
-<h2 className="text-[#2D3748]">Import</h2>
-<div className="relative">
-  <CopyToClipboard text={`import CurrencyInput from '@components/Input/CurrencyInput';`} onCopy={handleCopy}>
-    <button className="copyButton">{copied ? "Copied!" : "Copy"}</button>
-  </CopyToClipboard>
-  <SyntaxHighlighter language="tsx">
-    {`import { CurrencyInput } from '@componique/react';`}
-  </SyntaxHighlighter>
-</div>
+      <h2 className="text-[#2D3748]">Import</h2>
+      <div className="relative">
+        <CopyToClipboard
+          text={`import CurrencyInput from '@components/Input/CurrencyInput';`}
+          onCopy={() => handleCopy(20)}
+        >
+          <button className="copyButton">
+            {copied[20] ? "Copied!" : "Copy"}
+          </button>
+        </CopyToClipboard>
+        <SyntaxHighlighter language="tsx">
+          {`import { CurrencyInput } from '@componique/react';`}
+        </SyntaxHighlighter>
+      </div>
 
-<h2 className="text-[#2D3748]">Usage</h2>
-<div style={{ marginBottom: "20px" }}>
-  <CurrencyInput size="medium" color="Primary" value="$10.00" onValueChange={(value) => console.log("New value:", value)} />
-</div>
-<div className="relative">
-  <CopyToClipboard
-    text={`<CurrencyInput 
-  size="medium" 
-  color="Primary" 
-  value="$10.00" 
-  onValueChange={(value) => console.log("New value:", value)} 
+      <h2 className="text-[#2D3748]">Usage</h2>
+      <div style={{ marginBottom: "20px" }}>
+        <CurrencyInput
+          size="medium"
+          color="Primary"
+          value="$10.00"
+          onValueChange={(value) => console.log("New value:", value)}
+        />
+      </div>
+      <div className="relative">
+        <CopyToClipboard
+          text={`<CurrencyInput
+  size="medium"
+  color="Primary"
+  value="$10.00"
+  onValueChange={(value) => console.log("New value:", value)}
 />`}
-    onCopy={handleCopy}
-  >
-    <button className="copyButton">{copied ? "Copied!" : "Copy"}</button>
-  </CopyToClipboard>
-  <SyntaxHighlighter language="tsx">
-    {`
-<CurrencyInput 
-  size="medium" 
-  color="Primary" 
-  value="$10.00" 
-  onValueChange={(value) => console.log("New value:", value)} 
+          onCopy={() => handleCopy(21)}
+        >
+          <button className="copyButton">
+            {copied[21] ? "Copied!" : "Copy"}
+          </button>
+        </CopyToClipboard>
+        <SyntaxHighlighter language="tsx">
+          {`
+<CurrencyInput
+  size="medium"
+  color="Primary"
+  value="$10.00"
+  onValueChange={(value) => console.log("New value:", value)}
 />
     `}
-  </SyntaxHighlighter>
-</div>
+        </SyntaxHighlighter>
+      </div>
 
-<h2 className="text-[#2D3748]">Props</h2>
-<p>
-  <code>CurrencyInput</code> 컴포넌트는 다음과 같은 props를 가집니다:
-</p>
-<table>
-  <thead>
-    <tr>
-      <th>Prop</th>
-      <th>Description</th>
-      <th>Type</th>
-      <th>Default</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><code>size</code></td>
-      <td>입력 필드 및 버튼의 크기를 설정합니다.</td>
-      <td><code>"small" | "medium" | "large"</code></td>
-      <td><code>"medium"</code></td>
-    </tr>
-    <tr>
-      <td><code>color</code></td>
-      <td>버튼의 색상을 설정합니다.</td>
-      <td><code>"Basic" | "Primary" | "Secondary" | "Success" | "Warning" | "Danger"</code></td>
-      <td><code>"Basic"</code></td>
-    </tr>
-    <tr>
-      <td><code>value</code></td>
-      <td>입력 필드의 초기 금액 값입니다.</td>
-      <td><code>string</code></td>
-      <td><code>"$0.00"</code></td>
-    </tr>
-    <tr>
-      <td><code>onValueChange</code></td>
-      <td>값이 변경될 때 호출되는 콜백 함수입니다.</td>
-      <td><code>(value: string) =&gt; void</code></td>
-      <td><code>-</code></td>
-    </tr>
-    <tr>
-      <td><code>width</code></td>
-      <td>컴포넌트의 너비를 설정합니다.</td>
-      <td><code>string</code></td>
-      <td><code>"200px"</code></td>
-    </tr>
-  </tbody>
-</table>
+      <h2 className="text-[#2D3748]">Props</h2>
+      <p>
+        <code>CurrencyInput</code> 컴포넌트는 다음과 같은 props를 가집니다:
+      </p>
+      <table>
+        <thead>
+          <tr>
+            <th>Prop</th>
+            <th>Description</th>
+            <th>Type</th>
+            <th>Default</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              <code>size</code>
+            </td>
+            <td>입력 필드 및 버튼의 크기를 설정합니다.</td>
+            <td>
+              <code>"small" | "medium" | "large"</code>
+            </td>
+            <td>
+              <code>"medium"</code>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <code>color</code>
+            </td>
+            <td>버튼의 색상을 설정합니다.</td>
+            <td>
+              <code>
+                "Basic" | "Primary" | "Secondary" | "Success" | "Warning" |
+                "Danger"
+              </code>
+            </td>
+            <td>
+              <code>"Basic"</code>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <code>value</code>
+            </td>
+            <td>입력 필드의 초기 금액 값입니다.</td>
+            <td>
+              <code>string</code>
+            </td>
+            <td>
+              <code>"$0.00"</code>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <code>onValueChange</code>
+            </td>
+            <td>값이 변경될 때 호출되는 콜백 함수입니다.</td>
+            <td>
+              <code>(value: string) =&gt; void</code>
+            </td>
+            <td>
+              <code>-</code>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <code>width</code>
+            </td>
+            <td>컴포넌트의 너비를 설정합니다.</td>
+            <td>
+              <code>string</code>
+            </td>
+            <td>
+              <code>"200px"</code>
+            </td>
+          </tr>
+        </tbody>
+      </table>
 
-<h2 className="text-[#2D3748]">Full Example</h2>
-<div style={{ marginBottom: "20px" }}>
-  <CurrencyInput size="large" color="Basic" value="$50.00" width="300px" onValueChange={(value) => console.log("Updated value:", value)} />
-</div>
-<div className="relative">
-  <CopyToClipboard
-    text={`import CurrencyInput from '@components/Input/CurrencyInput';
+      <h2 className="text-[#2D3748]">Full Example</h2>
+      <div style={{ marginBottom: "20px" }}>
+        <CurrencyInput
+          size="large"
+          color="Basic"
+          value="$50.00"
+          width="300px"
+          onValueChange={(value) => console.log("Updated value:", value)}
+        />
+      </div>
+      <div className="relative">
+        <CopyToClipboard
+          text={`import CurrencyInput from '@components/Input/CurrencyInput';
 
 function FullExample() {
   return (
-    <CurrencyInput 
-      size="large" 
-      color="Basic" 
-      value="$50.00" 
-      width="300px" 
-      onValueChange={(value) => console.log("Updated value:", value)} 
+    <CurrencyInput
+      size="large"
+      color="Basic"
+      value="$50.00"
+      width="300px"
+      onValueChange={(value) => console.log("Updated value:", value)}
     />
   );
 }
 
 export default FullExample;`}
-    onCopy={handleCopy}
-  >
-    <button className="copyButton">{copied ? "Copied!" : "Copy"}</button>
-  </CopyToClipboard>
-  <SyntaxHighlighter language="tsx">
-    {`
+          onCopy={() => handleCopy(22)}
+        >
+          <button className="copyButton">
+            {copied[22] ? "Copied!" : "Copy"}
+          </button>
+        </CopyToClipboard>
+        <SyntaxHighlighter language="tsx">
+          {`
 import CurrencyInput from '@components/Input/CurrencyInput';
 
 function FullExample() {
   return (
-    <CurrencyInput 
-      size="large" 
-      color="Basic" 
-      value="$50.00" 
-      width="300px" 
-      onValueChange={(value) => console.log("Updated value:", value)} 
+    <CurrencyInput
+      size="large"
+      color="Basic"
+      value="$50.00"
+      width="300px"
+      onValueChange={(value) => console.log("Updated value:", value)}
     />
   );
 }
 
 export default FullExample;
     `}
-  </SyntaxHighlighter>
-</div>
+        </SyntaxHighlighter>
+      </div>
 
       <h1 className="mt-40 text-[#2D3748]">DecimalInput</h1>
-<p>
-  <code>DecimalInput</code> 컴포넌트는 사용자가 소수점이 포함된 숫자를 입력하거나 증감할 수 있도록 도와주는 인터페이스를 제공합니다. 사용자는 입력 필드를 통해 값을 입력하거나, 증감 버튼을 통해 값을 조정할 수 있습니다.
-</p>
+      <p>
+        <code>DecimalInput</code> 컴포넌트는 사용자가 소수점이 포함된 숫자를
+        입력하거나 증감할 수 있도록 도와주는 인터페이스를 제공합니다. 사용자는
+        입력 필드를 통해 값을 입력하거나, 증감 버튼을 통해 값을 조정할 수
+        있습니다.
+      </p>
 
-<h2 className="text-[#2D3748]">Import</h2>
-<div className="relative">
-  <CopyToClipboard text={`import DecimalInput from '@components/Input/DecimalInput';`} onCopy={handleCopy}>
-    <button className="copyButton">{copied ? "Copied!" : "Copy"}</button>
-  </CopyToClipboard>
-  <SyntaxHighlighter language="tsx">
-    {`import { DecimalInput } from '@componique/react';`}
-  </SyntaxHighlighter>
-</div>
+      <h2 className="text-[#2D3748]">Import</h2>
+      <div className="relative">
+        <CopyToClipboard
+          text={`import DecimalInput from '@components/Input/DecimalInput';`}
+          onCopy={() => handleCopy(23)}
+        >
+          <button className="copyButton">
+            {copied[23] ? "Copied!" : "Copy"}
+          </button>
+        </CopyToClipboard>
+        <SyntaxHighlighter language="tsx">
+          {`import { DecimalInput } from '@componique/react';`}
+        </SyntaxHighlighter>
+      </div>
 
-<h2 className="text-[#2D3748]">Usage</h2>
-<div style={{ marginBottom: "20px" }}>
-  <DecimalInput size="medium" color="Primary" value="10.00" onValueChange={(value) => console.log("New value:", value)} />
-</div>
-<div className="relative">
-  <CopyToClipboard
-    text={`<DecimalInput 
-  size="medium" 
-  color="Primary" 
-  value="10.00" 
-  onValueChange={(value) => console.log("New value:", value)} 
+      <h2 className="text-[#2D3748]">Usage</h2>
+      <div style={{ marginBottom: "20px" }}>
+        <DecimalInput
+          size="medium"
+          color="Primary"
+          onValueChange={(value) => console.log("New value:", value)}
+        />
+      </div>
+      <div className="relative">
+        <CopyToClipboard
+          text={`<DecimalInput
+  size="medium"
+  color="Primary"
+  value="10.00"
+  onValueChange={(value) => console.log("New value:", value)}
 />`}
-    onCopy={handleCopy}
-  >
-    <button className="copyButton">{copied ? "Copied!" : "Copy"}</button>
-  </CopyToClipboard>
-  <SyntaxHighlighter language="tsx">
-    {`
-<DecimalInput 
-  size="medium" 
-  color="Primary" 
-  value="10.00" 
-  onValueChange={(value) => console.log("New value:", value)} 
+          onCopy={() => handleCopy(24)}
+        >
+          <button className="copyButton">
+            {copied[24] ? "Copied!" : "Copy"}
+          </button>
+        </CopyToClipboard>
+        <SyntaxHighlighter language="tsx">
+          {`
+<DecimalInput
+  size="medium"
+  color="Primary"
+  value="10.00"
+  onValueChange={(value) => console.log("New value:", value)}
 />
     `}
-  </SyntaxHighlighter>
-</div>
+        </SyntaxHighlighter>
+      </div>
 
-<h2 className="text-[#2D3748]">Props</h2>
-<p>
-  <code>DecimalInput</code> 컴포넌트는 다음과 같은 props를 가집니다:
-</p>
-<table>
-  <thead>
-    <tr>
-      <th>Prop</th>
-      <th>Description</th>
-      <th>Type</th>
-      <th>Default</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><code>size</code></td>
-      <td>입력 필드 및 버튼의 크기를 설정합니다.</td>
-      <td><code>"small" | "medium" | "large"</code></td>
-      <td><code>"medium"</code></td>
-    </tr>
-    <tr>
-      <td><code>color</code></td>
-      <td>버튼의 색상을 설정합니다.</td>
-      <td><code>"Basic" | "Primary" | "Secondary" | "Success" | "Warning" | "Gray" | "Danger"</code></td>
-      <td><code>"Basic"</code></td>
-    </tr>
-    <tr>
-      <td><code>value</code></td>
-      <td>입력 필드의 초기 값입니다.</td>
-      <td><code>string</code></td>
-      <td><code>"0.00"</code></td>
-    </tr>
-    <tr>
-      <td><code>onValueChange</code></td>
-      <td>값이 변경될 때 호출되는 콜백 함수입니다.</td>
-      <td><code>(value: string) =&gt; void</code></td>
-      <td><code>-</code></td>
-    </tr>
-    <tr>
-      <td><code>width</code></td>
-      <td>컴포넌트의 너비를 설정합니다.</td>
-      <td><code>string</code></td>
-      <td><code>"200px"</code></td>
-    </tr>
-  </tbody>
-</table>
+      <h2 className="text-[#2D3748]">Props</h2>
+      <p>
+        <code>DecimalInput</code> 컴포넌트는 다음과 같은 props를 가집니다:
+      </p>
+      <table>
+        <thead>
+          <tr>
+            <th>Prop</th>
+            <th>Description</th>
+            <th>Type</th>
+            <th>Default</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              <code>size</code>
+            </td>
+            <td>입력 필드 및 버튼의 크기를 설정합니다.</td>
+            <td>
+              <code>"small" | "medium" | "large"</code>
+            </td>
+            <td>
+              <code>"medium"</code>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <code>color</code>
+            </td>
+            <td>버튼의 색상을 설정합니다.</td>
+            <td>
+              <code>
+                "Basic" | "Primary" | "Secondary" | "Success" | "Warning" |
+                "Gray" | "Danger"
+              </code>
+            </td>
+            <td>
+              <code>"Basic"</code>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <code>value</code>
+            </td>
+            <td>입력 필드의 초기 값입니다.</td>
+            <td>
+              <code>string</code>
+            </td>
+            <td>
+              <code>"0.00"</code>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <code>onValueChange</code>
+            </td>
+            <td>값이 변경될 때 호출되는 콜백 함수입니다.</td>
+            <td>
+              <code>(value: string) =&gt; void</code>
+            </td>
+            <td>
+              <code>-</code>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <code>width</code>
+            </td>
+            <td>컴포넌트의 너비를 설정합니다.</td>
+            <td>
+              <code>string</code>
+            </td>
+            <td>
+              <code>"200px"</code>
+            </td>
+          </tr>
+        </tbody>
+      </table>
 
-<h2 className="text-[#2D3748]">Full Example</h2>
-<div style={{ marginBottom: "20px" }}>
-  <DecimalInput size="large" color="Basic" value="50.00" width="300px" onValueChange={(value) => console.log("Updated value:", value)} />
-</div>
-<div className="relative">
-  <CopyToClipboard
-    text={`import DecimalInput from '@components/Input/DecimalInput';
+      <h2 className="text-[#2D3748]">Full Example</h2>
+      <div style={{ marginBottom: "20px" }}>
+        <DecimalInput
+          size="large"
+          color="Basic"
+          value="50.00"
+          width="300px"
+          onValueChange={(value) => console.log("Updated value:", value)}
+        />
+      </div>
+      <div className="relative">
+        <CopyToClipboard
+          text={`import DecimalInput from '@components/Input/DecimalInput';
 
 function FullExample() {
   return (
-    <DecimalInput 
-      size="large" 
-      color="Basic" 
-      value="50.00" 
-      width="300px" 
-      onValueChange={(value) => console.log("Updated value:", value)} 
+    <DecimalInput
+      size="large"
+      color="Basic"
+      value="50.00"
+      width="300px"
+      onValueChange={(value) => console.log("Updated value:", value)}
     />
   );
 }
 
 export default FullExample;`}
-    onCopy={handleCopy}
-  >
-    <button className="copyButton">{copied ? "Copied!" : "Copy"}</button>
-  </CopyToClipboard>
-  <SyntaxHighlighter language="tsx">
-    {`
+          onCopy={() => handleCopy(25)}
+        >
+          <button className="copyButton">
+            {copied[25] ? "Copied!" : "Copy"}
+          </button>
+        </CopyToClipboard>
+        <SyntaxHighlighter language="tsx">
+          {`
 import DecimalInput from '@components/Input/DecimalInput';
 
 function FullExample() {
   return (
-    <DecimalInput 
-      size="large" 
-      color="Basic" 
-      value="50.00" 
-      width="300px" 
-      onValueChange={(value) => console.log("Updated value:", value)} 
+    <DecimalInput
+      size="large"
+      color="Basic"
+      value="50.00"
+      width="300px"
+      onValueChange={(value) => console.log("Updated value:", value)}
     />
   );
 }
 
 export default FullExample;
     `}
-  </SyntaxHighlighter>
-</div>
+        </SyntaxHighlighter>
+      </div>
+
+      <h1 className="mt-40 text-[#2D3748]">PinInput</h1>
+      <p>
+        <code>PinInput</code> 컴포넌트는 사용자에게 PIN 코드를 입력받기 위한 UI
+        요소입니다. 사용자는 각 입력 칸에 개별적으로 숫자를 입력할 수 있으며,
+        숫자가 입력되면 자동으로 다음 칸으로 포커스가 이동합니다.
+      </p>
+
+      <h2 className="text-[#2D3748]">Import</h2>
+      <div className="relative">
+        <CopyToClipboard
+          text={`import PinInput from '@components/Input/PinInput';`}
+          onCopy={() => handleCopy(26)}
+        >
+          <button className="copyButton">
+            {copied[26] ? "Copied!" : "Copy"}
+          </button>
+        </CopyToClipboard>
+        <SyntaxHighlighter language="tsx">
+          {`import { PinInput } from '@componique/react';`}
+        </SyntaxHighlighter>
+      </div>
+
+      <h2 className="text-[#2D3748]">Usage</h2>
+      <p>기본 사용 예제는 아래와 같습니다:</p>
+      <div style={{ marginBottom: "20px" }}>
+        <PinInput length={4} />
+      </div>
+      <div className="relative">
+        <CopyToClipboard
+          text={`import PinInput from '@components/Input/PinInput';
+
+function Example() {
+  return (
+    <PinInput length={4} />
+  );
+}
+
+export default Example;`}
+          onCopy={() => handleCopy(27)}
+        >
+          <button className="copyButton">
+            {copied[27] ? "Copied!" : "Copy"}
+          </button>
+        </CopyToClipboard>
+        <SyntaxHighlighter language="tsx">
+          {`
+import PinInput from '@components/Input/PinInput';
+
+function Example() {
+  return (
+    <PinInput length={4} />
+  );
+}
+
+export default Example;
+`}
+        </SyntaxHighlighter>
+      </div>
+
+      <h2 className="text-[#2D3748]">Customizing the PinInput</h2>
+      <p>
+        <code>PinInput</code> 컴포넌트는 다양한 옵션을 통해 커스터마이징 할 수
+        있습니다. 예를 들어, 필드의 개수, 변형 스타일, 비활성화 상태 등을 설정할
+        수 있습니다:
+      </p>
+      <div style={{ marginBottom: "10px" }}>
+        <PinInput length={6} variant="filled" disabled={true} />
+      </div>
+      <div style={{ marginBottom: "20px" }}>
+        <PinInput customCharacter="🥳" />
+      </div>
+      <div className="relative">
+        <CopyToClipboard
+          text={`import PinInput from '@components/Input/PinInput';
+
+function Example() {
+  return (
+    <PinInput length={6} variant="filled" disabled={true} />
+    <PinInput customCharacter="🥳" />
+  );
+}
+
+export default Example;`}
+          onCopy={() => handleCopy(28)}
+        >
+          <button className="copyButton">
+            {copied[28] ? "Copied!" : "Copy"}
+          </button>
+        </CopyToClipboard>
+        <SyntaxHighlighter language="tsx">
+          {`
+import PinInput from '@components/Input/PinInput';
+
+function Example() {
+  return (
+    <PinInput length={6} variant="filled" disabled={true} />
+    <PinInput customCharacter="🥳" />
+  );
+}
+
+export default Example;
+`}
+        </SyntaxHighlighter>
+      </div>
+
+      <h2 className="text-[#2D3748]">Props</h2>
+      <p>
+        <code>PinInput</code> 컴포넌트는 다음과 같은 props를 가집니다:
+      </p>
+      <table>
+        <thead>
+          <tr>
+            <th>Prop</th>
+            <th>Description</th>
+            <th>Type</th>
+            <th>Default</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              <code>length</code>
+            </td>
+            <td>PIN 입력 칸의 개수를 설정합니다.</td>
+            <td>
+              <code>number</code>
+            </td>
+            <td>
+              <code>6</code>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <code>disabled</code>
+            </td>
+            <td>입력 필드를 비활성화할지 여부를 설정합니다.</td>
+            <td>
+              <code>boolean</code>
+            </td>
+            <td>
+              <code>false</code>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <code>formatter</code>
+            </td>
+            <td>입력된 값을 형식화하기 위한 함수입니다.</td>
+            <td>
+              <code>(value: string) =&gt; string</code>
+            </td>
+            <td>
+              <code>-</code>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <code>variant</code>
+            </td>
+            <td>입력 필드의 스타일 변형을 설정합니다.</td>
+            <td>
+              <code>"filled" | "outline"</code>
+            </td>
+            <td>
+              <code>"outline"</code>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <code>customCharacter</code>
+            </td>
+            <td>입력 대신 표시할 사용자 지정 문자를 설정합니다.</td>
+            <td>
+              <code>string</code>
+            </td>
+            <td>
+              <code>""</code>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <code>onChange</code>
+            </td>
+            <td>값이 변경될 때 호출되는 콜백 함수입니다.</td>
+            <td>
+              <code>(value: string) =&gt; void</code>
+            </td>
+            <td>
+              <code>-</code>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2 className="text-[#2D3748]">Full Example</h2>
+      <div style={{ marginBottom: "20px" }}>
+        <PinInput
+          length={4}
+          variant="filled"
+          formatter={(value) => value.toUpperCase()}
+          onChange={(value) => console.log("Updated PIN:", value)}
+        />
+      </div>
+      <div className="relative">
+        <CopyToClipboard
+          text={`import PinInput from '@components/Input/PinInput';
+
+function FullExample() {
+  return (
+    <PinInput
+      length={4}
+      variant="filled"
+      formatter={(value) => value.toUpperCase()}
+      onChange={(value) => console.log("Updated PIN:", value)}
+    />
+  );
+}
+
+export default FullExample;`}
+          onCopy={() => handleCopy(29)}
+        >
+          <button className="copyButton">
+            {copied[29] ? "Copied!" : "Copy"}
+          </button>
+        </CopyToClipboard>
+        <SyntaxHighlighter language="tsx">
+          {`
+import PinInput from '@components/Input/PinInput';
+
+function FullExample() {
+  return (
+    <PinInput
+      length={4}
+      variant="filled"
+      formatter={(value) => value.toUpperCase()}
+      onChange={(value) => console.log("Updated PIN:", value)}
+    />
+  );
+}
+
+export default FullExample;
+`}
+        </SyntaxHighlighter>
+      </div>
     </div>
   );
 };
