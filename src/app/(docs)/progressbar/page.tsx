@@ -417,7 +417,7 @@ export default ProgressBarCircle;`}
       </div>
       <br />
       <br />
-      {/* progressbar3 */}
+      {/* progressbar3  */}
       <div className="">
         <h1 className="text-[#2D3748]">ProgressBarSlider</h1>
         <p>
