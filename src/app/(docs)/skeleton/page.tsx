@@ -173,7 +173,6 @@ function Example() {
       </div>
       <CodeBox
         code={`import SkeletonCard from '@components/SkeletonCard';
-
 function Example() {
   return <SkeletonCard />;
 }
