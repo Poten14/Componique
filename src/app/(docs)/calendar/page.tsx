@@ -179,6 +179,8 @@ export default Example;`}
         copied={copied}
         handleCopy={handleCopy}
       />
+      <br />
+      <br />
       <h1 className="text-[#2D3748]">CalendarRange</h1>
       <p>
         <code>CalendarRange</code> 컴포넌트는 날짜 범위를 선택할 수 있는 달력을
