@@ -1,14 +1,20 @@
+"use client";
+
+import React from "react";
 import Image from "next/image";
 import Logo from "../../../public/images/logo.svg";
-import SearchIcon from "../../../public/images/searchIcon.svg";
+import SearchInput2 from "@components/Input/SearchInput2";
+import { Size } from "types/type";
 
 type NavbarSearchProps = {
   name: string;
   id: string;
   maxLength: number;
-  size: number;
+  size?: Size;
   placeholder: string;
   type: string;
+  value?: string;
+  onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
 };
 
 const LogoSection = () => (
@@ -22,34 +28,30 @@ const NavbarSearch = ({
   name,
   id,
   maxLength,
-  size,
+  size = "medium",
   placeholder,
   type,
+  value,
+  onChange,
+  ...props
 }: NavbarSearchProps) => {
   return (
-    <>
-      <div className="mx-auto mt-4 flex max-w-screen-lg items-center justify-between">
-        <LogoSection />
-        <div className="relative">
-          <Image
-            className="absolute m-[12px] inline-block"
-            src={SearchIcon}
-            alt="searchIcon"
-            width={18}
-            height={18}
-          />
-          <input
-            className="w-full rounded-lg border border-gray-300 bg-gray-50 p-2 ps-10 sm:w-64 md:w-80 lg:w-96 xl:w-[280px]"
-            id={id}
-            name={name}
-            maxLength={maxLength}
-            size={size}
-            placeholder={placeholder}
-            type={type}
-          />
-        </div>
+    <div className="mx-auto mt-4 flex max-w-screen-lg items-center justify-between">
+      <LogoSection />
+      <div className="relative">
+        <SearchInput2
+          name={name}
+          id={id}
+          maxLength={maxLength}
+          size={size} // 전달된 size 사용
+          placeholder={placeholder}
+          type={type}
+          value={value}
+          onChange={onChange}
+          {...props} // 나머지 props 전달
+        />
       </div>
-    </>
+    </div>
   );
 };
 
