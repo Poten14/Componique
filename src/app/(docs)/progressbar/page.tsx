@@ -2,7 +2,6 @@
 
 import React, { useState } from "react";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
-import { CopyToClipboard } from "react-copy-to-clipboard";
 import ProgressBarBasic from "@components/ProgressBar/ProgressBarBasic";
 import ProgressBarCircle from "@components/ProgressBar/ProgressBarCircle";
 import ProgressBarSlider from "@components/ProgressBar/ProgressBarSlider";
@@ -19,7 +18,7 @@ const ProgressBarBasicDocs: React.FC = () => {
     <div className="prose max-w-[1000px] p-5 text-[#6D6D6D]">
       {/* progressbar1 */}
       <div>
-        <h1 className="text-[#2D3748]">ProgressBarBasic</h1>
+        <h1 className="text-[#2D3748]">1. ProgressBarBasic</h1>
         <p>
           <code>ProgressBarBasic</code> 컴포넌트는 작업의 진행 상태를 시각적으로
           표시하는 기본 진행 바(Progress Bar) 컴포넌트입니다. 이 컴포넌트는
@@ -27,7 +26,7 @@ const ProgressBarBasicDocs: React.FC = () => {
           아이콘으로 나타낼 수 있습니다.
         </p>
 
-        <h2 className="text-[#2D3748]">Import</h2>
+        <h2 className="text-[#2D3748]">1.1. Import</h2>
         <CodeBox
           code={`import ProgressBarBasic from '@components/ProgressBar/ProgressBarBasic';`}
           copyText={`import ProgressBarBasic from '@components/ProgressBar/ProgressBarBasic';`}
@@ -37,7 +36,7 @@ const ProgressBarBasicDocs: React.FC = () => {
           handleCopy={handleCopy}
         />
 
-        <h2 className="text-[#2D3748]">Usage</h2>
+        <h2 className="text-[#2D3748]">1.2. Usage</h2>
         <p>기본 사용 예제는 아래와 같습니다:</p>
         <div style={{ marginBottom: "20px" }}>
           <ProgressBarBasic percent={70} showPercent completed />
@@ -63,7 +62,7 @@ export default Example;`}
           handleCopy={handleCopy}
         />
 
-        <h2 className="text-[#2D3748]">Props</h2>
+        <h2 className="text-[#2D3748]">1.3. Props</h2>
         <p>
           <code>ProgressBarBasic</code> 컴포넌트는 아래와 같은 Props를 가집니다:
         </p>
@@ -116,7 +115,7 @@ export default Example;`}
           </tbody>
         </table>
 
-        <h2 className="text-[#2D3748]">Full Example</h2>
+        <h2 className="text-[#2D3748]">1.4. Full Example</h2>
         <CodeBox
           code={`import { useState, useEffect } from "react";
 
@@ -196,13 +195,13 @@ export default ProgressBarBasic;`}
       <br />
       {/* progressbar2 */}
       <div className="">
-        <h1 className="text-[#2D3748]">ProgressBarCircle</h1>
+        <h1 className="text-[#2D3748]">2. ProgressBarCircle</h1>
         <p>
           <code>ProgressBarCircle</code> 컴포넌트는 원형 진행 바를 표시하는
           컴포넌트로, 진행률과 완료 여부를 시각적으로 표현할 수 있습니다.
         </p>
 
-        <h2 className="text-[#2D3748]">Import</h2>
+        <h2 className="text-[#2D3748]">2.1. Import</h2>
         <CodeBox
           code={`import ProgressBarCircle from '@components/ProgressBar/ProgressBarCircle';`}
           copyText={`import ProgressBarCircle from '@components/ProgressBar/ProgressBarCircle';`}
@@ -212,7 +211,7 @@ export default ProgressBarBasic;`}
           handleCopy={handleCopy}
         />
 
-        <h2 className="text-[#2D3748]">Usage</h2>
+        <h2 className="text-[#2D3748]">2.2. Usage</h2>
         <p>기본 사용 예제는 아래와 같습니다:</p>
         <div style={{ marginBottom: "20px" }}>
           <ProgressBarCircle
@@ -242,7 +241,7 @@ export default Example;`}
           handleCopy={handleCopy}
         />
 
-        <h2 className="text-[#2D3748]">Props</h2>
+        <h2 className="text-[#2D3748]">2.3. Props</h2>
         <p>
           <code>ProgressBarCircle</code> 컴포넌트는 아래와 같은 Props를
           가집니다:
@@ -299,7 +298,7 @@ export default Example;`}
           </tbody>
         </table>
 
-        <h2 className="text-[#2D3748]">Full Example</h2>
+        <h2 className="text-[#2D3748]">2.4. Full Example</h2>
         <CodeBox
           code={`import { useState, useEffect } from "react";
 
@@ -419,7 +418,7 @@ export default ProgressBarCircle;`}
       <br />
       {/* progressbar3  */}
       <div className="">
-        <h1 className="text-[#2D3748]">ProgressBarSlider</h1>
+        <h1 className="text-[#2D3748]">3. ProgressBarSlider</h1>
         <p>
           <code>ProgressBarSlider</code> 컴포넌트는 슬라이더를 통해 진행률을
           조정할 수 있는 컴포넌트입니다. 진행률에 따라 변화하는 프로그레스 바와,
@@ -427,7 +426,7 @@ export default ProgressBarCircle;`}
           있습니다.
         </p>
 
-        <h2 className="text-[#2D3748]">Import</h2>
+        <h2 className="text-[#2D3748]">3.1. Import</h2>
         <CodeBox
           code={`import ProgressBarSlider from '@components/ProgressBar/ProgressBarSlider';`}
           copyText={`import ProgressBarSlider from '@components/ProgressBar/ProgressBarSlider';`}
@@ -437,7 +436,7 @@ export default ProgressBarCircle;`}
           handleCopy={handleCopy}
         />
 
-        <h2 className="text-[#2D3748]">Usage</h2>
+        <h2 className="text-[#2D3748]">3.2. Usage</h2>
         <p>기본 사용 예제는 아래와 같습니다:</p>
         <div style={{ marginBottom: "20px" }}>
           <ProgressBarSlider percent={50} showPercent={true} completed={true} />
@@ -463,7 +462,7 @@ export default Example;`}
           handleCopy={handleCopy}
         />
 
-        <h2 className="text-[#2D3748]">Props</h2>
+        <h2 className="text-[#2D3748]">3.3. Props</h2>
         <p>
           <code>ProgressBarSlider</code> 컴포넌트는 아래와 같은 Props를
           가집니다:
@@ -517,7 +516,7 @@ export default Example;`}
           </tbody>
         </table>
 
-        <h2 className="text-[#2D3748]">Full Example</h2>
+        <h2 className="text-[#2D3748]">3.4. Full Example</h2>
         <CodeBox
           code={`import { useState, useEffect } from "react";
 

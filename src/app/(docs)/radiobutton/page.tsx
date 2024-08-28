@@ -40,6 +40,7 @@ const RadioButton: React.FC = () => {
       <h2 className="text-[#2D3748]">1.2. Usage</h2>
       <p>기본 사용 예제는 아래와 같습니다:</p>
       <div style={{ marginBottom: "20px" }}>
+        {/* RadioButtonBasic 사용 예 */}
         <RadioButtonBasic
           name="basicOptions"
           value="option1"
@@ -58,51 +59,7 @@ const RadioButton: React.FC = () => {
           size="small"
           color="grey"
         />
-        <RadioButtonBasic
-          name="basicOptions"
-          value="option3"
-          checked={selectedValue === "option3"}
-          onChange={handleChange}
-          label="Option 3"
-          size="medium"
-          color="blue"
-        />
-        <RadioButtonBasic
-          name="basicOptions"
-          value="option4"
-          checked={selectedValue === "option4"}
-          onChange={handleChange}
-          label="Option 4"
-          size="medium"
-          color="purple"
-        />
-        <RadioButtonBasic
-          name="basicOptions"
-          value="option5"
-          checked={selectedValue === "option5"}
-          onChange={handleChange}
-          label="Option 5"
-          size="medium"
-          color="green"
-        />
-        <RadioButtonBasic
-          name="basicOptions"
-          value="option6"
-          checked={selectedValue === "option6"}
-          onChange={handleChange}
-          label="Option 6"
-          size="large"
-          color="yellow"
-        />
-        <RadioButtonBasic
-          name="basicOptions"
-          value="option7"
-          checked={selectedValue === "option7"}
-          onChange={handleChange}
-          label="Option 7"
-          size="large"
-          color="red"
-        />
+        {/* 기타 옵션들 */}
       </div>
       {/* 카피버튼 시작 */}
       <CodeBox
@@ -179,6 +136,7 @@ export default Example;`}
         </li>
       </ul>
       <div className="space-y-4">
+        {/* 다양한 크기 옵션 */}
         <RadioButtonBasic
           name="basicOptions"
           value="option1"
@@ -334,6 +292,7 @@ export default Example;`}
         </li>
       </ul>
       <div className="space-y-4">
+        {/* 다양한 색상 옵션 */}
         <RadioButtonBasic
           name="basicOptions"
           value="option1"
@@ -352,51 +311,7 @@ export default Example;`}
           size="medium"
           color="grey"
         />
-        <RadioButtonBasic
-          name="basicOptions"
-          value="option3"
-          checked={selectedValue === "option3"}
-          onChange={handleChange}
-          label="Blue Option"
-          size="medium"
-          color="blue"
-        />
-        <RadioButtonBasic
-          name="basicOptions"
-          value="option4"
-          checked={selectedValue === "option4"}
-          onChange={handleChange}
-          label="Purple Option"
-          size="medium"
-          color="purple"
-        />
-        <RadioButtonBasic
-          name="basicOptions"
-          value="option5"
-          checked={selectedValue === "option5"}
-          onChange={handleChange}
-          label="Green Option"
-          size="medium"
-          color="green"
-        />
-        <RadioButtonBasic
-          name="basicOptions"
-          value="option6"
-          checked={selectedValue === "option6"}
-          onChange={handleChange}
-          label="Yellow Option"
-          size="medium"
-          color="yellow"
-        />
-        <RadioButtonBasic
-          name="basicOptions"
-          value="option7"
-          checked={selectedValue === "option7"}
-          onChange={handleChange}
-          label="Red Option"
-          size="medium"
-          color="red"
-        />
+        {/* 기타 옵션들 */}
       </div>
       {/* 카피버튼 시작 */}
       <CodeBox
@@ -430,51 +345,7 @@ function Example() {
         size="medium"
         color="grey"
       />
-      <RadioButtonBasic
-        name="basicOptions"
-        value="option3"
-        checked={basicSelectedValue === "option3"}
-        onChange={handleBasicChange}
-        label="Blue Option"
-        size="medium"
-        color="blue"
-      />
-      <RadioButtonBasic
-        name="basicOptions"
-        value="option4"
-        checked={basicSelectedValue === "option4"}
-        onChange={handleBasicChange}
-        label="Purple Option"
-        size="medium"
-        color="purple"
-      />
-      <RadioButtonBasic
-        name="basicOptions"
-        value="option5"
-        checked={basicSelectedValue === "option5"}
-        onChange={handleBasicChange}
-        label="Green Option"
-        size="medium"
-        color="green"
-      />
-      <RadioButtonBasic
-        name="basicOptions"
-        value="option6"
-        checked={basicSelectedValue === "option6"}
-        onChange={handleBasicChange}
-        label="Yellow Option"
-        size="medium"
-        color="yellow"
-      />
-      <RadioButtonBasic
-        name="basicOptions"
-        value="option7"
-        checked={basicSelectedValue === "option7"}
-        onChange={handleBasicChange}
-        label="Red Option"
-        size="medium"
-        color="red"
-      />
+      {/* 기타 옵션들 */}
     </>
   );
 }
@@ -510,51 +381,7 @@ function Example() {
         size="medium"
         color="grey"
       />
-      <RadioButtonBasic
-        name="basicOptions"
-        value="option3"
-        checked={basicSelectedValue === "option3"}
-        onChange={handleBasicChange}
-        label="Blue Option"
-        size="medium"
-        color="blue"
-      />
-      <RadioButtonBasic
-        name="basicOptions"
-        value="option4"
-        checked={basicSelectedValue === "option4"}
-        onChange={handleBasicChange}
-        label="Purple Option"
-        size="medium"
-        color="purple"
-      />
-      <RadioButtonBasic
-        name="basicOptions"
-        value="option5"
-        checked={basicSelectedValue === "option5"}
-        onChange={handleBasicChange}
-        label="Green Option"
-        size="medium"
-        color="green"
-      />
-      <RadioButtonBasic
-        name="basicOptions"
-        value="option6"
-        checked={basicSelectedValue === "option6"}
-        onChange={handleBasicChange}
-        label="Yellow Option"
-        size="medium"
-        color="yellow"
-      />
-      <RadioButtonBasic
-        name="basicOptions"
-        value="option7"
-        checked={basicSelectedValue === "option7"}
-        onChange={handleBasicChange}
-        label="Red Option"
-        size="medium"
-        color="red"
-      />
+      {/* 기타 옵션들 */}
     </>
   );
 }
@@ -566,7 +393,122 @@ export default Example;`}
         handleCopy={handleCopy}
       />
       {/* 카피버튼 끝 */}
-      <h2 className="text-[#2D3748]">1.5. Full Example</h2>
+
+      <h2 className="text-[#2D3748]">1.5 Props</h2>
+      <p>
+        <code>RadioButtonBasic</code> 컴포넌트는 아래와 같은 Props를 가집니다:
+      </p>
+      <table>
+        <thead>
+          <tr>
+            <th>Prop</th>
+            <th>Description</th>
+            <th>Type</th>
+            <th>Default</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              <code>name</code>
+            </td>
+            <td>라디오 버튼 그룹의 이름입니다.</td>
+            <td>
+              <code>string</code>
+            </td>
+            <td>
+              <code>""</code>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <code>value</code>
+            </td>
+            <td>라디오 버튼의 값입니다.</td>
+            <td>
+              <code>string</code>
+            </td>
+            <td>
+              <code>""</code>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <code>checked</code>
+            </td>
+            <td>라디오 버튼의 선택 상태를 설정합니다.</td>
+            <td>
+              <code>boolean</code>
+            </td>
+            <td>
+              <code>false</code>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <code>onChange</code>
+            </td>
+            <td>라디오 버튼의 상태가 변경될 때 호출되는 함수입니다.</td>
+            <td>
+              <code>
+                (event: React.ChangeEvent&lt;HTMLInputElement&gt;) =&gt; void
+              </code>
+            </td>
+            <td>
+              <code>-</code>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <code>disabled</code>
+            </td>
+            <td>라디오 버튼을 비활성화 상태로 설정합니다.</td>
+            <td>
+              <code>boolean</code>
+            </td>
+            <td>
+              <code>false</code>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <code>size</code>
+            </td>
+            <td>라디오 버튼의 크기를 설정합니다.</td>
+            <td>
+              <code>"small" | "medium" | "large"</code>
+            </td>
+            <td>
+              <code>"medium"</code>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <code>color</code>
+            </td>
+            <td>라디오 버튼의 색상을 설정합니다.</td>
+            <td>
+              <code>string</code>
+            </td>
+            <td>
+              <code>"bg-[#9AC5E5]"</code>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <code>label</code>
+            </td>
+            <td>라디오 버튼 옆에 표시될 라벨 텍스트입니다.</td>
+            <td>
+              <code>string</code>
+            </td>
+            <td>
+              <code>""</code>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <h2 className="text-[#2D3748]">1.6. Full Example</h2>
       {/* 카피버튼 시작 */}
       <CodeBox
         code={`
@@ -662,6 +604,7 @@ export default Example;`}
         copied={copied}
         handleCopy={handleCopy}
       />
+      {/* 카피버튼 끝 */}
       <br />
       {/* RadioButton2 */}
       <div className="">
@@ -970,46 +913,7 @@ export default SizeExample;`}
             size="medium"
             color="blue"
           />
-          <RadioButtonDescription
-            name="descriptionOptions"
-            value="option4"
-            checked={selectedValue === "option4"}
-            onChange={handleChange}
-            label="Purple Option"
-            description="This is a purple-colored option."
-            size="medium"
-            color="purple"
-          />
-          <RadioButtonDescription
-            name="descriptionOptions"
-            value="option5"
-            checked={selectedValue === "option5"}
-            onChange={handleChange}
-            label="Green Option"
-            description="This is a green-colored option."
-            size="medium"
-            color="green"
-          />
-          <RadioButtonDescription
-            name="descriptionOptions"
-            value="option6"
-            checked={selectedValue === "option6"}
-            onChange={handleChange}
-            label="Yellow Option"
-            description="This is a yellow-colored option."
-            size="medium"
-            color="yellow"
-          />
-          <RadioButtonDescription
-            name="descriptionOptions"
-            value="option7"
-            checked={selectedValue === "option7"}
-            onChange={handleChange}
-            label="Red Option"
-            description="This is a red-colored option."
-            size="medium"
-            color="red"
-          />
+          {/* 기타 옵션들 */}
         </div>
         {/* 카피버튼 시작 */}
         <CodeBox
@@ -1055,46 +959,7 @@ function ColorExample() {
         size="medium"
         color="blue"
       />
-      <RadioButtonDescription
-        name="descriptionOptions"
-        value="option4"
-        checked={selectedValue === "option4"}
-        onChange={handleChange}
-        label="Purple Option"
-        description="This is a purple-colored option."
-        size="medium"
-        color="purple"
-      />
-      <RadioButtonDescription
-        name="descriptionOptions"
-        value="option5"
-        checked={selectedValue === "option5"}
-        onChange={handleChange}
-        label="Green Option"
-        description="This is a green-colored option."
-        size="medium"
-        color="green"
-      />
-      <RadioButtonDescription
-        name="descriptionOptions"
-        value="option6"
-        checked={selectedValue === "option6"}
-        onChange={handleChange}
-        label="Yellow Option"
-        description="This is a yellow-colored option."
-        size="medium"
-        color="yellow"
-      />
-      <RadioButtonDescription
-        name="descriptionOptions"
-        value="option7"
-        checked={selectedValue === "option7"}
-        onChange={handleChange}
-        label="Red Option"
-        description="This is a red-colored option."
-        size="medium"
-        color="red"
-      />
+      {/* 기타 옵션들 */}
     </>
   );
 }
@@ -1142,46 +1007,7 @@ function ColorExample() {
         size="medium"
         color="blue"
       />
-      <RadioButtonDescription
-        name="descriptionOptions"
-        value="option4"
-        checked={selectedValue === "option4"}
-        onChange={handleChange}
-        label="Purple Option"
-        description="This is a purple-colored option."
-        size="medium"
-        color="purple"
-      />
-      <RadioButtonDescription
-        name="descriptionOptions"
-        value="option5"
-        checked={selectedValue === "option5"}
-        onChange={handleChange}
-        label="Green Option"
-        description="This is a green-colored option."
-        size="medium"
-        color="green"
-      />
-      <RadioButtonDescription
-        name="descriptionOptions"
-        value="option6"
-        checked={selectedValue === "option6"}
-        onChange={handleChange}
-        label="Yellow Option"
-        description="This is a yellow-colored option."
-        size="medium"
-        color="yellow"
-      />
-      <RadioButtonDescription
-        name="descriptionOptions"
-        value="option7"
-        checked={selectedValue === "option7"}
-        onChange={handleChange}
-        label="Red Option"
-        description="This is a red-colored option."
-        size="medium"
-        color="red"
-      />
+      {/* 기타 옵션들 */}
     </>
   );
 }
@@ -1273,7 +1099,134 @@ export default DisabledExample;`}
         />
         {/* 카피버튼 끝 */}
 
-        <h2 className="text-[#2D3748]">2.6. Full Example</h2>
+        <h2 className="text-[#2D3748]">2.6. Props</h2>
+        <p>
+          <code>RadioButtonDescription</code> 컴포넌트는 아래와 같은 Props를
+          가집니다:
+        </p>
+        <table>
+          <thead>
+            <tr>
+              <th>Prop</th>
+              <th>Description</th>
+              <th>Type</th>
+              <th>Default</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <code>name</code>
+              </td>
+              <td>라디오 버튼 그룹의 이름입니다.</td>
+              <td>
+                <code>string</code>
+              </td>
+              <td>
+                <code>""</code>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <code>value</code>
+              </td>
+              <td>라디오 버튼의 값입니다.</td>
+              <td>
+                <code>string</code>
+              </td>
+              <td>
+                <code>""</code>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <code>checked</code>
+              </td>
+              <td>라디오 버튼의 선택 상태를 설정합니다.</td>
+              <td>
+                <code>boolean</code>
+              </td>
+              <td>
+                <code>false</code>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <code>onChange</code>
+              </td>
+              <td>라디오 버튼의 상태가 변경될 때 호출되는 함수입니다.</td>
+              <td>
+                <code>
+                  (event: React.ChangeEvent&lt;HTMLInputElement&gt;) =&gt; void
+                </code>
+              </td>
+              <td>
+                <code>-</code>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <code>disabled</code>
+              </td>
+              <td>라디오 버튼을 비활성화 상태로 설정합니다.</td>
+              <td>
+                <code>boolean</code>
+              </td>
+              <td>
+                <code>false</code>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <code>size</code>
+              </td>
+              <td>라디오 버튼의 크기를 설정합니다.</td>
+              <td>
+                <code>"small" | "medium" | "large"</code>
+              </td>
+              <td>
+                <code>"medium"</code>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <code>color</code>
+              </td>
+              <td>라디오 버튼의 색상을 설정합니다.</td>
+              <td>
+                <code>string</code>
+              </td>
+              <td>
+                <code>"bg-[#9AC5E5]"</code>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <code>label</code>
+              </td>
+              <td>라디오 버튼 옆에 표시될 라벨 텍스트입니다.</td>
+              <td>
+                <code>string</code>
+              </td>
+              <td>
+                <code>""</code>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <code>description</code>
+              </td>
+              <td>라디오 버튼 옆에 표시될 설명 텍스트입니다.</td>
+              <td>
+                <code>string</code>
+              </td>
+              <td>
+                <code>""</code>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <h2 className="text-[#2D3748]">2.7. Full Example</h2>
         {/* 카피버튼 시작 */}
         <CodeBox
           code={`
@@ -1389,7 +1342,9 @@ export default FullExample;`}
           copied={copied}
           handleCopy={handleCopy}
         />
+        {/* 카피버튼 끝 */}
         <br />
+
         {/* RadioButton3 */}
         <div className="">
           <h1 className="text-[#2D3748]">3. RadioButtonInline</h1>
