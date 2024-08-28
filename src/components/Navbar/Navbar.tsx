@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { Size } from "types/type";
 
 // NavbarProps 정의
@@ -8,6 +9,7 @@ interface NavbarProps {
   size?: Size;
   hoverColor?: "skyblue" | "blue" | "red";
   position?: "sticky" | "relative" | "static";
+  links: { name: string; href: string }[];
 }
 
 const sizeClasses = {
@@ -34,9 +36,10 @@ const Navbar = ({
   position = "static",
   logoName,
   logoSrc,
+  links,
 }: NavbarProps) => {
   const hoverClass = hoverColorClasses[hoverColor];
-  const navClass = `cursor-pointer ${hoverClass}`;
+  const navClass = `cursor-pointer ${hoverClass} no-underline`;
 
   return (
     <>
@@ -52,10 +55,11 @@ const Navbar = ({
           </div>
         </div>
         <div className="flex justify-between gap-8">
-          <div className={navClass}>Home</div>
-          <div className={navClass}>About</div>
-          <div className={navClass}>Project</div>
-          <div className={navClass}>Contact</div>
+          {links.map((link) => (
+            <Link key={link.name} href={link.href} className={navClass}>
+              {link.name}
+            </Link>
+          ))}
         </div>
       </div>
     </>
