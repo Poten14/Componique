@@ -193,7 +193,7 @@ const page = () => {
             "Option 6",
             "Option 7",
           ]}
-          defaultValue="option"
+          placeholder="option"
           color="gray"
         />
         <Select
@@ -206,7 +206,7 @@ const page = () => {
             "Option 6",
             "Option 7",
           ]}
-          defaultValue="option"
+          placeholder="option"
           color="red"
         />
         <Select
@@ -219,7 +219,7 @@ const page = () => {
             "Option 6",
             "Option 7",
           ]}
-          defaultValue="option"
+          placeholder="option"
           color="blue"
         />
         <Select
@@ -232,18 +232,22 @@ const page = () => {
             "Option 6",
             "Option 7",
           ]}
-          defaultValue="option"
+          placeholder="option"
           color="green"
         />
       </div>
       <div className="m-4 space-y-4">
         <SelectValueAdd
           option={["Option 1", "Option 2", "Option 3", "Option 4"]}
-          onSelect={handleSelect}
+          onSelect={(value) => console.log("Selected:", value)}
+          placeholder="Option 1"
         />
       </div>
       <div className="m-4 space-y-4">
-        <SelectList option={["option1", "option2", "option3", "option4"]} />
+        <SelectList
+          option={["option1", "option2", "option3", "option4"]}
+          onSelect={(value) => console.log("Selected value:", value)}
+        />
       </div>
       {/* Skeleton 구현 */}
       <div className="m-4 flex gap-6">

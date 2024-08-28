@@ -4,13 +4,17 @@ import { useState } from "react";
 
 interface SelectListProps {
   option: string[];
+  onSelect?: (value: string) => void;
 }
 
-const SelectList = ({ option }: SelectListProps) => {
+const SelectList = ({ option, onSelect }: SelectListProps) => {
   const [selectValue, setSelectValue] = useState<string>("");
 
   const handleOptionClick = (item: string) => {
     setSelectValue(item);
+    if (onSelect) {
+      onSelect(item);
+    }
   };
 
   return (

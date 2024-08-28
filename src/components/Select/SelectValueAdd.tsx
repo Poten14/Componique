@@ -5,10 +5,15 @@ import { useState } from "react";
 
 interface SelectValueAddProps {
   option: string[];
+  placeholder: string;
   onSelect?: (value: string[]) => void;
 }
 
-const SelectValueAdd = ({ option, onSelect }: SelectValueAddProps) => {
+const SelectValueAdd = ({
+  option,
+  onSelect,
+  placeholder = "Option 1",
+}: SelectValueAddProps) => {
   const [selectValue, setSelectValue] = useState<string[]>([]);
   const [open, setOpen] = useState<boolean>(false);
 
@@ -43,30 +48,34 @@ const SelectValueAdd = ({ option, onSelect }: SelectValueAddProps) => {
   return (
     <div className="relative">
       <div
-        className="flex h-9 min-w-60 max-w-96 cursor-pointer items-center justify-between rounded-lg border border-gray p-2 shadow-lg"
+        className="flex h-9 min-w-60 max-w-[450px] cursor-pointer items-center justify-between rounded-lg border border-gray p-2 shadow-lg"
         onClick={handleDropDown}
         style={{ width: open ? "auto" : "fit-content" }}
       >
         <div className="flex flex-wrap gap-1">
-          {selectValue.length > 0
-            ? selectValue.map((item, key) => (
-                <div
-                  key={key}
-                  className="flex items-center rounded-md bg-gray p-[2px] px-1.5 text-sm"
+          {selectValue.length > 0 ? (
+            selectValue.map((item, key) => (
+              <div
+                key={key}
+                className="mr-1.5 flex items-center rounded-md bg-gray p-[2px] px-1.5 text-sm"
+              >
+                {item}
+                <span
+                  className="cursor-pointer pl-2"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    handleOptionRemove(item);
+                  }}
                 >
-                  {item}
-                  <span
-                    className="cursor-pointer pl-2"
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      handleOptionRemove(item);
-                    }}
-                  >
-                    X
-                  </span>
-                </div>
-              ))
-            : ""}
+                  X
+                </span>
+              </div>
+            ))
+          ) : (
+            <span className="rounded-md bg-gray p-[2px] px-1.5 text-sm">
+              {placeholder}
+            </span>
+          )}
         </div>
         {open ? (
           <Image src="selectdown.svg" alt="arrow" width={15} height={15} />
@@ -74,7 +83,7 @@ const SelectValueAdd = ({ option, onSelect }: SelectValueAddProps) => {
           <Image src="selectup.svg" alt="arrow" width={15} height={15} />
         )}
         {open && (
-          <ul className="absolute left-0 right-0 top-full z-30 min-w-60 min-w-[150px] max-w-80 max-w-96 rounded-lg border border-gray bg-white text-xs shadow-lg">
+          <ul className="absolute left-0 right-0 top-full z-30 min-w-60 max-w-[450px] rounded-lg border border-gray bg-white text-xs shadow-lg">
             {option.map((item, key) => (
               <li
                 className={`block w-full cursor-pointer rounded-lg py-2 pl-4 text-sm hover:bg-[#E8F5FF] ${

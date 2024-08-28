@@ -38,7 +38,8 @@ const SelectDocs: React.FC = () => {
       <div style={{ marginBottom: "20px" }}>
         <Select
           option={["Option 1", "Option 2", "Option 3"]}
-          defaultValue="Select an option"
+          placeholder="Select an option"
+          color="gray"
         />
       </div>
       <CodeBox
@@ -48,7 +49,8 @@ function Example() {
   return (
     <Select
       option={["Option 1", "Option 2", "Option 3"]}
-      defaultValue="Select an option"
+      placeholder="Select an option"
+      color="gray"
     />
   );
 }
@@ -60,7 +62,8 @@ function Example() {
   return (
     <Select
       option={["Option 1", "Option 2", "Option 3"]}
-      defaultValue="Select an option"
+      placeholder="Select an option"
+      color="gray"
     />
   );
 }
@@ -91,26 +94,26 @@ export default Example;`}
           <code>gray</code>: 회색 테두리 (기본값)
         </li>
       </ul>
-      <div className="mb-5 flex items-center gap-4">
+      <div className="my-5 flex items-center gap-4">
         <Select
           option={["Option 1", "Option 2", "Option 3"]}
+          placeholder="Select an option"
           color="red"
-          defaultValue="Select an option"
         />
         <Select
           option={["Option 1", "Option 2", "Option 3"]}
+          placeholder="Select an option"
           color="blue"
-          defaultValue="Select an option"
         />
         <Select
           option={["Option 1", "Option 2", "Option 3"]}
+          placeholder="Select an option"
           color="green"
-          defaultValue="Select an option"
         />
         <Select
           option={["Option 1", "Option 2", "Option 3"]}
+          placeholder="Select an option"
           color="gray"
-          defaultValue="Select an option"
         />
       </div>
       <CodeBox
@@ -121,23 +124,23 @@ function Example() {
     <>
       <Select
         option={["Option 1", "Option 2", "Option 3"]}
+        placeholder="Select an option"
         color="red"
-        defaultValue="Select an option"
       />
       <Select
         option={["Option 1", "Option 2", "Option 3"]}
+        placeholder="Select an option"
         color="blue"
-        defaultValue="Select an option"
       />
       <Select
         option={["Option 1", "Option 2", "Option 3"]}
+        placeholder="Select an option"
         color="green"
-        defaultValue="Select an option"
       />
       <Select
         option={["Option 1", "Option 2", "Option 3"]}
+        placeholder="Select an option"
         color="gray"
-        defaultValue="Select an option"
       />
     </>
   );
@@ -151,23 +154,23 @@ function Example() {
     <>
       <Select
         option={["Option 1", "Option 2", "Option 3"]}
+        placeholder="Select an option"
         color="red"
-        defaultValue="Select an option"
       />
       <Select
         option={["Option 1", "Option 2", "Option 3"]}
+        placeholder="Select an option"
         color="blue"
-        defaultValue="Select an option"
       />
       <Select
         option={["Option 1", "Option 2", "Option 3"]}
+        placeholder="Select an option"
         color="green"
-        defaultValue="Select an option"
       />
       <Select
         option={["Option 1", "Option 2", "Option 3"]}
+        placeholder="Select an option"
         color="gray"
-        defaultValue="Select an option"
       />
     </>
   );`}
@@ -217,14 +220,14 @@ function Example() {
           </tr>
           <tr>
             <td>
-              <code>defaultValue</code>
+              <code>placeholder</code>
             </td>
-            <td>기본적으로 표시될 텍스트를 설정합니다.</td>
+            <td>선택되지 않았을 때 표시되는 텍스트를 설정합니다.</td>
             <td>
               <code>string</code>
             </td>
             <td>
-              <code>""</code>
+              <code>"Select an option"</code>
             </td>
           </tr>
         </tbody>
@@ -239,8 +242,8 @@ function Example() {
     <div>
       <Select
         option={["Option 1", "Option 2", "Option 3"]}
+        placeholder="Select an option"
         color="blue"
-        defaultValue="Select an option"
       />
     </div>
   );
@@ -254,8 +257,8 @@ function Example() {
     <div>
       <Select
         option={["Option 1", "Option 2", "Option 3"]}
+        placeholder="Select an option"
         color="blue"
-        defaultValue="Select an option"
       />
     </div>
   );`}
@@ -264,12 +267,11 @@ function Example() {
         copied={copied}
         handleCopy={handleCopy}
       />
-      <h1 className="mt-8 text-[#2D3748]">SelectList</h1>
+      <h1 className="mb-6 mt-12 text-[#2D3748]">SelectList</h1>
       <p>
-        <code>SelectList</code> 컴포넌트는 사용자가 여러 항목 중에서 하나를
-        선택할 수 있는 리스트를 제공합니다. 이 컴포넌트는 드롭다운과 달리,
-        선택지가 화면에 리스트 형태로 펼쳐져 있으며, 사용자는 클릭을 통해 선택할
-        수 있습니다.
+        <code>SelectList</code> 컴포넌트는 여러 옵션 중 하나를 선택할 수 있는
+        리스트 형태의 선택 컴포넌트입니다. 사용자는 화면에 펼쳐진 리스트에서
+        옵션을 선택할 수 있습니다.
       </p>
 
       <h2 className="text-[#2D3748]">Import</h2>
@@ -293,7 +295,7 @@ function Example() {
 function Example() {
   return (
     <SelectList
-      options={["Item 1", "Item 2", "Item 3", "Item4"]}
+      option={["Item 1", "Item 2", "Item 3", "Item 4"]}
     />
   );
 }
@@ -304,7 +306,7 @@ export default Example;`}
 function Example() {
   return (
     <SelectList
-      options={["Item 1", "Item 2", "Item 3", "Item4"]}
+      option={["Item 1", "Item 2", "Item 3", "Item 4"]}
     />
   );
 }
@@ -332,7 +334,7 @@ export default Example;`}
         <tbody>
           <tr>
             <td>
-              <code>options</code>
+              <code>option</code>
             </td>
             <td>리스트에서 선택할 수 있는 항목 목록을 설정합니다.</td>
             <td>
@@ -340,6 +342,18 @@ export default Example;`}
             </td>
             <td>
               <code>[]</code>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <code>onSelect</code>
+            </td>
+            <td>선택된 값이 변경될 때 호출되는 콜백 함수입니다.</td>
+            <td>
+              <code>(value: string) =&gt; void</code>
+            </td>
+            <td>
+              <code>undefined</code>
             </td>
           </tr>
         </tbody>
@@ -353,7 +367,7 @@ function Example() {
   return (
     <div>
       <SelectList
-        options={["Item 1", "Item 2", "Item 3", "Item4"]}
+        option={["Item 1", "Item 2", "Item 3", "Item 4"]}
       />
     </div>
   );
@@ -366,7 +380,7 @@ function Example() {
   return (
     <div>
       <SelectList
-        options={["Item 1", "Item 2", "Item 3", "Item 4"]}
+        option={["Item 1", "Item 2", "Item 3", "Item 4"]}
       />
     </div>
   );`}
@@ -375,12 +389,12 @@ function Example() {
         copied={copied}
         handleCopy={handleCopy}
       />
-
-      <h1 className="text-[#2D3748]">SelectValueAdd</h1>
+      <h1 className="mb-6 mt-12 text-[#2D3748]">SelectValueAdd</h1>
       <p>
-        <code>SelectValueAdd</code> 컴포넌트는 사용자가 여러 옵션 중에서 하나
-        이상의 옵션을 선택할 수 있도록 설계된 드롭다운 메뉴입니다. 선택된 값들은
-        태그 형태로 표시되며, 사용자는 이를 추가하거나 제거할 수 있습니다.
+        <code>SelectValueAdd</code> 컴포넌트는 사용자가 여러 옵션 중 여러 개를
+        선택하고, 선택한 항목을 제거할 수 있는 UI 요소입니다. 이 컴포넌트는
+        `placeholder`를 제공하여 초기 상태에서 표시할 기본 텍스트를 설정할 수
+        있습니다.
       </p>
 
       <h2 className="text-[#2D3748]">Import</h2>
@@ -398,6 +412,8 @@ function Example() {
       <div style={{ marginBottom: "20px" }}>
         <SelectValueAdd
           option={["Option 1", "Option 2", "Option 3", "Option 4"]}
+          placeholder="Select an option"
+          onSelect={(selectedValues) => console.log(selectedValues)}
         />
       </div>
       <CodeBox
@@ -407,6 +423,8 @@ function Example() {
   return (
     <SelectValueAdd
       option={["Option 1", "Option 2", "Option 3", "Option 4"]}
+      placeholder="Select an option"
+      onSelect={(selectedValues) => console.log(selectedValues)}
     />
   );
 }
@@ -418,6 +436,8 @@ function Example() {
   return (
     <SelectValueAdd
       option={["Option 1", "Option 2", "Option 3", "Option 4"]}
+      placeholder="Select an option"
+      onSelect={(selectedValues) => console.log(selectedValues)}
     />
   );
 }
@@ -447,12 +467,36 @@ export default Example;`}
             <td>
               <code>option</code>
             </td>
-            <td>드롭다운에서 선택할 수 있는 옵션 목록을 설정합니다.</td>
+            <td>선택 가능한 옵션 목록을 설정합니다.</td>
             <td>
               <code>string[]</code>
             </td>
             <td>
               <code>[]</code>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <code>placeholder</code>
+            </td>
+            <td>선택된 항목이 없을 때 표시되는 텍스트를 설정합니다.</td>
+            <td>
+              <code>string</code>
+            </td>
+            <td>
+              <code>"Option 1"</code>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <code>onSelect</code>
+            </td>
+            <td>선택된 값이 변경될 때 호출되는 콜백 함수입니다.</td>
+            <td>
+              <code>(value: string[]) =&gt; void</code>
+            </td>
+            <td>
+              <code>undefined</code>
             </td>
           </tr>
         </tbody>
@@ -467,6 +511,8 @@ function Example() {
     <div>
       <SelectValueAdd
         option={["Option 1", "Option 2", "Option 3", "Option 4"]}
+        placeholder="Select an option"
+        onSelect={(selectedValues) => console.log(selectedValues)}
       />
     </div>
   );
@@ -480,11 +526,13 @@ function Example() {
     <div>
       <SelectValueAdd
         option={["Option 1", "Option 2", "Option 3", "Option 4"]}
+        placeholder="Select an option"
+        onSelect={(selectedValues) => console.log(selectedValues)}
       />
     </div>
   );`}
         language="tsx"
-        index={3}
+        index={4}
         copied={copied}
         handleCopy={handleCopy}
       />

@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 
 interface SelectProps {
-  defaultValue?: string;
+  placeholder?: string;
   option: string[];
   color?: "red" | "blue" | "green" | "gray";
 }
@@ -16,7 +16,7 @@ const colorClasses = {
   gray: "border-[#DCDCDD] focus:ring-[#DCDCDD]",
 };
 
-const Select = ({ option, color = "gray", defaultValue }: SelectProps) => {
+const Select = ({ option, color = "gray", placeholder }: SelectProps) => {
   const [selectValue, setSelectValue] = useState<string>("");
   const [open, setOpen] = useState<boolean>(false);
   const dropMenuRef = useRef<HTMLDivElement>(null);
@@ -68,7 +68,7 @@ const Select = ({ option, color = "gray", defaultValue }: SelectProps) => {
           onClick={handleDropDown}
         >
           <span className="text-sm font-semibold">
-            {selectValue || defaultValue}
+            {selectValue || placeholder}
           </span>
           <Image src={arrowImage()} alt="arrow" width={15} height={15} />
         </div>
