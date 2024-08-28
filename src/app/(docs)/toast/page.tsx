@@ -36,13 +36,13 @@ const ToastDocs: React.FC = () => {
 
   return (
     <div className="prose max-w-[1000px] p-5 text-[#6D6D6D]">
-      <h1 className="text-[#2D3748]">Toast</h1>
+      <h1 className="text-[#2D3748]">1. Toast</h1>
       <p>
         <code>Toast</code> 컴포넌트는 사용자에게 알림 메시지를 표시할 때
         사용됩니다. 다양한 위치, 크기, 색상, 변형 스타일을 지원하고 진행 바와
         닫기 버튼을 포함할 수 있습니다.
       </p>
-      <h2 className="text-[#2D3748]">Import</h2>
+      <h2 className="text-[#2D3748]">1.1. Import</h2>
       <CodeBox
         code={`import Toast from "@components/Toast/Toast";`}
         copyText={`import Toast from "@components/Toast/Toast";`}
@@ -52,7 +52,7 @@ const ToastDocs: React.FC = () => {
         handleCopy={handleCopy}
       />
 
-      <h2 className="text-[#2D3748]">Usage</h2>
+      <h2 className="text-[#2D3748]">1.2. Usage</h2>
       <p>기본 사용 예제는 아래와 같습니다:</p>
       <p>아래 예제에서는 버튼을 클릭하면 Toast가 렌더링됩니다.</p>
       <Button onClick={onclickToastHandler(setIsToastOpen, true)}>
@@ -122,7 +122,7 @@ export default ToastExample;
         handleCopy={handleCopy}
       />
 
-      <h2 className="text-[#2D3748]">Position</h2>
+      <h1 className="pt-10 text-[#2D3748]">2. Position</h1>
       <p>
         <code>position</code> prop을 이용하여 Toast의 위치를 설정할 수 있습니다.
       </p>
@@ -296,7 +296,7 @@ export default ToastExample;
         handleCopy={handleCopy}
       />
 
-      <h2 className="text-[#2D3748]">Variant</h2>
+      <h1 className="pt-10 text-[#2D3748]">3. Variant</h1>
       <p>
         <code>variant</code> prop을 이용하여 Toast의 스타일 변형을 설정할 수
         있습니다.
@@ -380,7 +380,7 @@ export default ToastExample;
         handleCopy={handleCopy}
       />
 
-      <h2 className="text-[#2D3748]">Time</h2>
+      <h1 className="pt-10 text-[#2D3748]">4. Time</h1>
       <p>
         <code>time</code> prop을 이용하여 Toast가 자동으로 닫히기 전까지의
         시간을 설정할 수 있습니다. 시간은 초 단위로 설정합니다.
@@ -460,7 +460,7 @@ export default ToastExample;
         handleCopy={handleCopy}
       />
 
-      <h2 className="text-[#2D3748]">isClose</h2>
+      <h1 className="pt-10 text-[#2D3748]">5. isClose</h1>
       <p>
         <code>isClose</code> prop을 사용하여 Toast에 닫기 버튼을 표시할지 여부를
         설정할 수 있습니다. 기본 값은 <code>false</code>이고 <code>true</code>로
@@ -552,7 +552,7 @@ export default ToastExample;
         handleCopy={handleCopy}
       />
 
-      <h2 className="text-[#2D3748]">Progress</h2>
+      <h1 className="pt-10 text-[#2D3748]">6. Progress</h1>
       <p>
         <code>isProgress</code> prop을 이용하여 Toast에 진행 바를 표시할 수
         있습니다.
@@ -640,7 +640,7 @@ export default ToastExample;
         copied={copied}
         handleCopy={handleCopy}
       />
-      <h2 className="text-[#2D3748]">Progress + Time</h2>
+      <h1 className="pt-10 text-[#2D3748]">7. Progress + Time</h1>
       <p>
         <code>isProgress</code> prop과 <code>Time</code> prop을 이용하여 사용자
         경험을 향상시키는 Toast를 만들수 있습니다.
@@ -731,7 +731,7 @@ export default ToastExample;
         handleCopy={handleCopy}
       />
 
-      <h2 className="text-[#2D3748]">ClassName</h2>
+      <h1 className="pt-10 text-[#2D3748]">8. ClassName</h1>
       <p>
         <code>className</code> prop을 이용하여 Toast에 커스텀 스타일을 적용할 수
         있습니다.
@@ -812,7 +812,7 @@ export default ToastExample;
         handleCopy={handleCopy}
       />
 
-      <h1>Toast Group Docs</h1>
+      <h1 className="pt-10">9. Toast Group Docs</h1>
       <p>
         하나의 Toast가 아닌 여러개의 Toast가 필요하다면 ToastGroup 컴포넌트가
         있습니다. 아래의 버튼을 클릭하면 이동합니다.
@@ -825,7 +825,7 @@ export default ToastExample;
         Toast Docs로 이동
       </Button>
 
-      <h2 className="text-[#2D3748]">Props</h2>
+      <h1 className="pt-10 text-[#2D3748]">10. Props</h1>
       <p>
         <code>Toast</code> 컴포넌트는 아래와 같은 Props를 가집니다:
       </p>
