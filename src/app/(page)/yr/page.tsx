@@ -33,6 +33,11 @@ const page = () => {
     setText(e.target.value);
   };
 
+  // Select 선택된 값 전달
+  const handleSelect = (value: string[]) => {
+    console.log("Selected option:", value);
+  };
+
   // carousel image
   const images = [
     "images/IfSc1.svg",
@@ -174,7 +179,7 @@ const page = () => {
         />
       </div>
       <div className="m-4 space-y-4">
-        <TextareaValue value={text} onChange={handleChange} />
+        <TextareaValue value={text} onSelect={handleChange} />
       </div>
       {/* select 구현 */}
       <div className="m-4 flex items-center gap-4">
@@ -234,6 +239,7 @@ const page = () => {
       <div className="m-4 space-y-4">
         <SelectValueAdd
           option={["Option 1", "Option 2", "Option 3", "Option 4"]}
+          onSelect={handleSelect}
         />
       </div>
       <div className="m-4 space-y-4">
