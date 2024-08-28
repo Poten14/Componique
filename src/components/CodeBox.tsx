@@ -1,6 +1,6 @@
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { CopyToClipboard } from "react-copy-to-clipboard";
-
+import Button from "./Button/Button";
 interface CodeBoxProps {
   code: string;
   copyText: string;
@@ -21,9 +21,17 @@ const CodeBox: React.FC<CodeBoxProps> = ({
   return (
     <div className="relative">
       <CopyToClipboard text={copyText} onCopy={() => handleCopy(index)}>
-        <button className="copyButton">
+        {/* <button className="copyButton">
           {copied[index] ? "Copied!" : "Copy"}
-        </button>
+        </button> */}
+        <Button
+          icon={copied[index] ? "icon-check" : undefined}
+          className="copyButton"
+          iconColor={copied[index] ? "green" : "white"}
+          size="small"
+        >
+          {copied[index] ? "Copied!" : "Copy"}
+        </Button>
       </CopyToClipboard>
       <SyntaxHighlighter language={language}>{code}</SyntaxHighlighter>
     </div>
