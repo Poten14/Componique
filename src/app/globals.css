@@ -25,7 +25,7 @@ i {
   line-height: 1;
   vertical-align: middle;
   margin-right: 4px;
-
+  margin-left: 4px;
   /* Better Font Rendering =========== */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -618,5 +618,5 @@ i {
 }
 
 .copyButton {
-  @apply absolute right-0 top-0 mr-1 mt-1 transform rounded bg-Basic px-2 py-0.5 text-white focus:outline-none focus:ring-2 focus:ring-[#679DC3] active:scale-95 active:bg-[#679DC3];
+  @apply absolute right-0 top-0 transform rounded focus:outline-none focus:ring-2 focus:ring-[#679DC3] active:scale-95 active:bg-[#679DC3];
 }
