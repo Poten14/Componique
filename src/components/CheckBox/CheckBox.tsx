@@ -110,7 +110,8 @@ const CheckBox: React.FC<CheckBoxProps> = ({
   } else if (variant === "border") {
     ChckBoxVariant = `${borderColors[color]}`;
   }
-
+  const disabledStyle =
+    "!disabled:bg-gray-300 disabled:cursor-not-allowed disabled:!border-gray-300 disabled:after:border-gray-400";
   const basicCheckBox =
     "relative aspect-square h-5 w-5 cursor-pointer !appearance-none rounded border border-gray bg-white !outline-none !ring-0 !ring-offset-0 transition-all duration-300 ease-in-out after:absolute after:left-[50%] after:top-[40%] after:h-[53%] after:w-[35%] after:-translate-x-2/4 after:-translate-y-2/4 after:rotate-[25deg] after:border-b-[0.20em] after:border-r-[0.20em] after:border-b-white after:border-r-white after:transition-all after:duration-200 after:ease-linear checked:!border-Basic checked:bg-Basic checked:after:rotate-45 checked:after:opacity-100 hover:!border-Basic disabled:bg-slate-300 disabled:after:border-b-0 disabled:after:border-r-0";
   return (
@@ -119,10 +120,13 @@ const CheckBox: React.FC<CheckBoxProps> = ({
         type="checkbox"
         value={value}
         id={checkId}
-        className={`${basicCheckBox} ${checkBoxSize} ${ChckBoxVariant} ${className || ""}`}
+        className={`${basicCheckBox} ${checkBoxSize} ${ChckBoxVariant} ${className || ""} cursor-pointer ${disabledStyle}`}
         {...rest}
       />
-      <label htmlFor={checkId} className={`ml-1 select-none ${checkBoxLabel}`}>
+      <label
+        htmlFor={checkId}
+        className={`ml-1 select-none ${checkBoxLabel} cursor-pointer ${disabledStyle}`}
+      >
         {description}
       </label>
     </div>
