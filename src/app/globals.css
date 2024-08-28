@@ -629,6 +629,12 @@ li {
 .prose :where(li):not(:where([class~="not-prose"], [class~="not-prose"] *)) {
   margin-top: 0;
   margin-bottom: 0;
+  padding-inline-start: 0;
+}
+
+.prose :where(img):not(:where([class~="not-prose"], [class~="not-prose"] *)) {
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
 .prose :where(ul):not(:where([class~="not-prose"], [class~="not-prose"] *)) {
