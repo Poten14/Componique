@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import Button from "@components/Button/Button";
 import Toast from "@components/Toast/Toast";
 import CodeBox from "@components/CodeBox";
-
+import { useRouter } from "next/navigation";
 const ToastDocs: React.FC = () => {
   const [copied, setCopied] = useState<{ [key: number]: boolean }>({});
   const [isToastOpen, setIsToastOpen] = useState(false);
@@ -31,6 +31,8 @@ const ToastDocs: React.FC = () => {
     () => {
       setOpen(open);
     };
+
+  const router = useRouter();
 
   return (
     <div className="prose max-w-[1000px] p-5 text-[#6D6D6D]">
@@ -809,6 +811,19 @@ export default ToastExample;
         copied={copied}
         handleCopy={handleCopy}
       />
+
+      <h1>Toast Group Docs</h1>
+      <p>
+        하나의 Toast가 아닌 여러개의 Toast가 필요하다면 ToastGroup 컴포넌트가
+        있습니다. 아래의 버튼을 클릭하면 이동합니다.
+      </p>
+      <Button
+        onClick={() => {
+          router.push("/toastgroup");
+        }}
+      >
+        Toast Docs로 이동
+      </Button>
 
       <h2 className="text-[#2D3748]">Props</h2>
       <p>
