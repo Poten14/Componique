@@ -21,9 +21,6 @@ const CodeBox: React.FC<CodeBoxProps> = ({
   return (
     <div className="relative">
       <CopyToClipboard text={copyText} onCopy={() => handleCopy(index)}>
-        {/* <button className="copyButton">
-          {copied[index] ? "Copied!" : "Copy"}
-        </button> */}
         <Button
           icon={copied[index] ? "icon-check" : undefined}
           className="copyButton"
