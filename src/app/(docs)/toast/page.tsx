@@ -455,7 +455,7 @@ const ToastExample = () => {
 export default ToastExample;
 `}
         language="tsx"
-        index={7}
+        index={6}
         copied={copied}
         handleCopy={handleCopy}
       />
@@ -547,7 +547,7 @@ const ToastExample = () => {
 export default ToastExample;
 `}
         language="tsx"
-        index={8}
+        index={7}
         copied={copied}
         handleCopy={handleCopy}
       />
@@ -636,7 +636,7 @@ const ToastExample = () => {
 export default ToastExample;
 `}
         language="tsx"
-        index={6}
+        index={8}
         copied={copied}
         handleCopy={handleCopy}
       />
@@ -726,7 +726,7 @@ const ToastExample = () => {
 export default ToastExample;
 `}
         language="tsx"
-        index={6}
+        index={9}
         copied={copied}
         handleCopy={handleCopy}
       />
@@ -807,7 +807,7 @@ const ToastExample = () => {
 export default ToastExample;
 `}
         language="tsx"
-        index={8}
+        index={10}
         copied={copied}
         handleCopy={handleCopy}
       />
