@@ -1,7 +1,6 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
 @font-face {
   font-family: "componique";
   src: url("/fonts/componique.eot");
@@ -26,11 +25,18 @@ i {
   line-height: 1;
   vertical-align: middle;
   margin-right: 4px;
+
   /* Better Font Rendering =========== */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-check:before {
+  content: "\e982";
+}
+.icon-docs:before {
+  content: "\e983";
+}
 .icon-login:before {
   content: "\e973";
 }
