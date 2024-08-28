@@ -47,7 +47,9 @@ export type IconName =
   | "icon-setting"
   | "icon-share"
   | "icon-user"
-  | "icon-video";
+  | "icon-video"
+  | "icon-docs"
+  | "icon-check";
 
 type IconProps = {
   name: IconName;

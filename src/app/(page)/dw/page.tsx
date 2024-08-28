@@ -88,16 +88,16 @@ const Dw = () => {
         >
           Home small
         </Button>
-        <Button icon="icon-home" color="warning" iconSize="medium">
+        <Button icon="icon-docs" color="warning" iconSize="medium">
           Home
         </Button>
 
         <Button
-          icon="icon-home"
+          icon="icon-check"
           color="secondary"
           size="large"
           iconSize="large"
-          iconColor="white"
+          iconColor="green"
         >
           Home Large
         </Button>
