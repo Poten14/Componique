@@ -43,7 +43,7 @@ const CarouselAutoplay = ({
   return (
     <>
       <div className="relative w-full">
-        <div className="relative m-auto h-96 w-1/2 overflow-hidden rounded-lg">
+        <div className="relative m-auto h-96 w-9/12 overflow-hidden rounded-lg">
           <ul
             className="flex transition-transform duration-300 ease-in-out"
             style={{ transform: `translateX(-${currentSlide * 100}%)` }}

@@ -288,7 +288,12 @@ const page = () => {
       </div>
 
       <div className="m-4">
-        <CarouselDots images={images} showDots={true} />
+        <CarouselDots
+          images={images}
+          showDots={true}
+          autoplay={true}
+          interval={3000}
+        />
       </div>
     </>
   );
