@@ -177,7 +177,7 @@ export default FullExample;`}
         />
       </div>
 
-      <br />
+      <hr />
 
       {/* dropdown2 */}
       <div>
@@ -341,7 +341,7 @@ export default FullExample;`}
         />
       </div>
 
-      <br />
+      <hr />
 
       {/* dropdown3 */}
       <div>

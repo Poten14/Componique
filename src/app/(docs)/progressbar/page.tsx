@@ -191,8 +191,7 @@ export default ProgressBarBasic;`}
           handleCopy={handleCopy}
         />
       </div>
-      <br />
-      <br />
+      <hr />
       {/* progressbar2 */}
       <div className="">
         <h1 className="text-[#2D3748]">2. ProgressBarCircle</h1>
@@ -414,8 +413,7 @@ export default ProgressBarCircle;`}
           handleCopy={handleCopy}
         />
       </div>
-      <br />
-      <br />
+      <hr />
       {/* progressbar3  */}
       <div className="">
         <h1 className="text-[#2D3748]">3. ProgressBarSlider</h1>
