@@ -9,7 +9,7 @@ import PacManSpinner from "@components/Spinner/PacManSpinner";
 import FullScreenSpinner from "@components/Spinner/ FullScreenSpinner";
 import Button from "@components/Button/Button";
 
-const page: React.FC = () => {
+const SpinnerDoc: React.FC = () => {
   const [copied, setCopied] = useState<{ [key: number]: boolean }>({});
   const [spinning, setSpinning] = useState<{ [key: string]: boolean }>({});
 
@@ -1547,4 +1547,4 @@ export default Example;`}
   );
 };
 
-export default page;
+export default SpinnerDoc;
