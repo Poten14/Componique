@@ -241,7 +241,7 @@ const Dw = () => {
               },
             ]}
             logo="/componique_logo_full.svg"
-            postion="right"
+            position="right"
             bgColor="basic"
           />
 
