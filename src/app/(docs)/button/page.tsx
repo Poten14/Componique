@@ -4,13 +4,13 @@ import React, { useState } from "react";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { CopyToClipboard } from "react-copy-to-clipboard";
 import Button from "@components/Button/Button";
-
+import CodeBox from "@components/CodeBox";
 const ButtonDoc: React.FC = () => {
-  const [copied, setCopied] = useState(false);
+  const [copied, setCopied] = useState<{ [key: number]: boolean }>({});
 
-  const handleCopy = () => {
-    setCopied(true);
-    setTimeout(() => setCopied(false), 500); // 0.5초 후에 상태를 초기화
+  const handleCopy = (index: number) => {
+    setCopied((prev) => ({ ...prev, [index]: true }));
+    setTimeout(() => setCopied((prev) => ({ ...prev, [index]: false })), 500);
   };
 
   return (
@@ -25,32 +25,23 @@ const ButtonDoc: React.FC = () => {
         버튼을 구현할 수 있습니다.
       </p>
       <h2 className="text-[#2D3748]">Import</h2>
-      <div className="relative">
-        <CopyToClipboard
-          text={`import { Button } from '@components/Button';`}
-          onCopy={handleCopy}
-        >
-          <Button
-            icon={copied ? "icon-check" : undefined}
-            className="copyButton"
-            size="small"
-            iconColor={copied ? "green" : "white"}
-          >
-            {copied ? "Copied!" : "Copy"}
-          </Button>
-        </CopyToClipboard>
-        <SyntaxHighlighter language="tsx">
-          {`import { Button } from '@components/Button';`}
-        </SyntaxHighlighter>
-      </div>
+
+      <CodeBox
+        code={`import { Button } from '@components/Button';`}
+        copyText={`import { Button } from '@components/Button';`}
+        language="tsx"
+        index={1}
+        copied={copied}
+        handleCopy={handleCopy}
+      />
+
       <h2 className="text-[#2D3748]">Usage</h2>
       <p>기본 사용 예제는 아래와 같습니다:</p>
       <div style={{ marginBottom: "20px" }}>
         <Button>Button</Button>
       </div>
-      <div className="relative">
-        <CopyToClipboard
-          text={`import { Button } from '@components/Button';
+      <CodeBox
+        code={`import { Button } from '@components/Button';
 
 function Example() {
   return (
@@ -61,20 +52,7 @@ function Example() {
 }
 
 export default Example;`}
-          onCopy={handleCopy}
-        >
-          <Button
-            icon={copied ? "icon-check" : undefined}
-            className="copyButton"
-            iconColor={copied ? "green" : "white"}
-            size="small"
-          >
-            {copied ? "Copied!" : "Copy"}
-          </Button>
-        </CopyToClipboard>
-        <SyntaxHighlighter language="tsx">
-          {`
-import { Button } from '@components/Button';
+        copyText={`import { Button } from '@components/Button';
 
 function Example() {
   return (
@@ -84,10 +62,13 @@ function Example() {
   );
 }
 
-export default Example;
-`}
-        </SyntaxHighlighter>
-      </div>
+export default Example;`}
+        language="tsx"
+        index={2}
+        copied={copied}
+        handleCopy={handleCopy}
+      />
+
       <h1 className="pt-2 text-[#2D3748]">Size</h1>
       <p>
         <code>size</code> prop을 이용하여 버튼의 크기를 설정할 수 있습니다.
@@ -99,9 +80,8 @@ export default Example;
         <Button size="medium">Medium Button</Button>
         <Button size="large">Large Button</Button>
       </div>
-      <div className="relative">
-        <CopyToClipboard
-          text={`import { Button } from '@components/Button';
+      <CodeBox
+        code={`import { Button } from '@components/Button';
 
 function Example() {
   return (
@@ -114,20 +94,7 @@ function Example() {
 }
 
 export default Example;`}
-          onCopy={handleCopy}
-        >
-          <Button
-            icon={copied ? "icon-check" : undefined}
-            className="copyButton"
-            iconColor={copied ? "green" : "white"}
-            size="small"
-          >
-            {copied ? "Copied!" : "Copy"}
-          </Button>
-        </CopyToClipboard>
-        <SyntaxHighlighter language="tsx">
-          {`
-import { Button } from '@components/Button';
+        copyText={`import { Button } from '@components/Button';
 
 function Example() {
   return (
@@ -139,10 +106,13 @@ function Example() {
   );
 }
 
-export default Example;
-`}
-        </SyntaxHighlighter>
-      </div>
+export default Example;`}
+        language="tsx"
+        index={3}
+        copied={copied}
+        handleCopy={handleCopy}
+      />
+
       <h1 className="pt-2 text-[#2D3748]">Color</h1>
       <p>
         <code>color</code> prop을 이용하여 버튼의 색상을 설정할 수 있습니다.
@@ -169,9 +139,8 @@ export default Example;
         <Button color="pink">Pink Button</Button>
         <Button color="basic">Basic Button</Button>
       </div>
-      <div className="relative">
-        <CopyToClipboard
-          text={`import { Button } from '@components/Button';
+      <CodeBox
+        code={`import { Button } from '@components/Button';
 
 function Example() {
   return (
@@ -194,20 +163,7 @@ function Example() {
 }
 
 export default Example;`}
-          onCopy={handleCopy}
-        >
-          <Button
-            icon={copied ? "icon-check" : undefined}
-            className="copyButton"
-            iconColor={copied ? "green" : "white"}
-            size="small"
-          >
-            {copied ? "Copied!" : "Copy"}
-          </Button>
-        </CopyToClipboard>
-        <SyntaxHighlighter language="tsx">
-          {`
-import { Button } from '@components/Button';
+        copyText={`import { Button } from '@components/Button';
 
 function Example() {
   return (
@@ -229,10 +185,13 @@ function Example() {
   );
 }
 
-export default Example;
-`}
-        </SyntaxHighlighter>
-      </div>
+export default Example;`}
+        language="tsx"
+        index={4}
+        copied={copied}
+        handleCopy={handleCopy}
+      />
+
       <h1 className="pt-2 text-[#2D3748]">Radius</h1>
       <p>
         <code>radius</code> prop을 이용하여 버튼의 모서리 둥근 정도를 설정할 수
@@ -249,9 +208,8 @@ export default Example;
         <Button radius="none">No Radius Button</Button>
         <Button radius="full">Full Radius Button</Button>
       </div>
-      <div className="relative">
-        <CopyToClipboard
-          text={`import { Button } from '@components/Button';
+      <CodeBox
+        code={`import { Button } from '@components/Button';
 
 function Example() {
   return (
@@ -266,20 +224,7 @@ function Example() {
 }
 
 export default Example;`}
-          onCopy={handleCopy}
-        >
-          <Button
-            icon={copied ? "icon-check" : undefined}
-            className="copyButton"
-            iconColor={copied ? "green" : "white"}
-            size="small"
-          >
-            {copied ? "Copied!" : "Copy"}
-          </Button>
-        </CopyToClipboard>
-        <SyntaxHighlighter language="tsx">
-          {`
-import { Button } from '@components/Button';
+        copyText={`import { Button } from '@components/Button';
 
 function Example() {
   return (
@@ -293,10 +238,13 @@ function Example() {
   );
 }
 
-export default Example;
-`}
-        </SyntaxHighlighter>
-      </div>
+export default Example;`}
+        language="tsx"
+        index={5}
+        copied={copied}
+        handleCopy={handleCopy}
+      />
+
       <h1 className="pt-2 text-[#2D3748]">Variant</h1>
       <p>
         <code>variant</code> prop을 이용하여 버튼의 스타일 변형을 설정할 수
@@ -312,9 +260,8 @@ export default Example;
         <Button variant="flat">Flat Button</Button>
         <Button variant="light">Light Button</Button>
       </div>
-      <div className="relative">
-        <CopyToClipboard
-          text={`import { Button } from '@components/Button';
+      <CodeBox
+        code={`import { Button } from '@components/Button';
 
 function Example() {
   return (
@@ -328,20 +275,7 @@ function Example() {
 }
 
 export default Example;`}
-          onCopy={handleCopy}
-        >
-          <Button
-            icon={copied ? "icon-check" : undefined}
-            className="copyButton"
-            iconColor={copied ? "green" : "white"}
-            size="small"
-          >
-            {copied ? "Copied!" : "Copy"}
-          </Button>
-        </CopyToClipboard>
-        <SyntaxHighlighter language="tsx">
-          {`
-import { Button } from '@components/Button';
+        copyText={`import { Button } from '@components/Button';
 
 function Example() {
   return (
@@ -354,10 +288,13 @@ function Example() {
   );
 }
 
-export default Example;
-`}
-        </SyntaxHighlighter>
-      </div>
+export default Example;`}
+        language="tsx"
+        index={6}
+        copied={copied}
+        handleCopy={handleCopy}
+      />
+
       <h1 className="pt-2 text-[#2D3748]">Icon</h1>
       <p>
         <code>icon</code> prop을 이용하여 버튼에 아이콘을 추가할 수 있습니다.{" "}
@@ -392,9 +329,8 @@ export default Example;
           Right Large Icon Button
         </Button>
       </div>
-      <div className="relative">
-        <CopyToClipboard
-          text={`import { Button } from '@components/Button';
+      <CodeBox
+        code={`import { Button } from '@components/Button';
 
 function Example() {
   return (
@@ -422,20 +358,7 @@ function Example() {
 }
 
 export default Example;`}
-          onCopy={handleCopy}
-        >
-          <Button
-            icon={copied ? "icon-check" : undefined}
-            className="copyButton"
-            iconColor={copied ? "green" : "white"}
-            size="small"
-          >
-            {copied ? "Copied!" : "Copy"}
-          </Button>
-        </CopyToClipboard>
-        <SyntaxHighlighter language="tsx">
-          {`
-import { Button } from '@components/Button';
+        copyText={`import { Button } from '@components/Button';
 
 function Example() {
   return (
@@ -462,10 +385,13 @@ function Example() {
   );
 }
 
-export default Example;
-`}
-        </SyntaxHighlighter>
-      </div>
+export default Example;`}
+        language="tsx"
+        index={7}
+        copied={copied}
+        handleCopy={handleCopy}
+      />
+
       <h1 className="pt-2 text-[#2D3748]">Disabled</h1>
       <p>
         <code>disabled</code> prop을 이용하여 버튼을 비활성화할 수 있습니다.
@@ -473,9 +399,8 @@ export default Example;
       <div className="space-x-4 space-y-4">
         <Button disabled>Disabled Button</Button>
       </div>
-      <div className="relative">
-        <CopyToClipboard
-          text={`import { Button } from '@components/Button';
+      <CodeBox
+        code={`import { Button } from '@components/Button';
 
 function Example() {
   return (
@@ -484,31 +409,21 @@ function Example() {
 }
 
 export default Example;`}
-          onCopy={handleCopy}
-        >
-          <Button
-            icon={copied ? "icon-check" : undefined}
-            className="copyButton"
-            iconColor={copied ? "green" : "white"}
-            size="small"
-          >
-            {copied ? "Copied!" : "Copy"}
-          </Button>
-        </CopyToClipboard>
-        <SyntaxHighlighter language="tsx">
-          {`
-import { Button } from '@components/Button';
+        copyText={`import { Button } from '@components/Button';
 
 function Example() {
   return (
-          <Button disabled>Button Disabled</Button>
-   );
+            <Button disabled>Button Disabled</Button>
+  );
 }
 
-export default Example;
-`}
-        </SyntaxHighlighter>
-      </div>
+export default Example;`}
+        language="tsx"
+        index={8}
+        copied={copied}
+        handleCopy={handleCopy}
+      />
+
       <h1 className="pt-2 text-[#2D3748]">ClassName</h1>
       <p>
         <code>className</code> prop을 사용하여 <code>Button</code> 컴포넌트의
@@ -530,9 +445,8 @@ export default Example;
           ClassNameCustomButton
         </Button>
       </div>
-      <div className="relative">
-        <CopyToClipboard
-          text={`import { Button } from '@components/Button';
+      <CodeBox
+        code={`import { Button } from '@components/Button';
 
 function Example() {
   return (
@@ -548,20 +462,7 @@ function Example() {
 }
 
 export default Example;`}
-          onCopy={handleCopy}
-        >
-          <Button
-            icon={copied ? "icon-check" : undefined}
-            className="copyButton"
-            iconColor={copied ? "green" : "white"}
-            size="small"
-          >
-            {copied ? "Copied!" : "Copy"}
-          </Button>
-        </CopyToClipboard>
-        <SyntaxHighlighter language="tsx">
-          {`
-import { Button } from '@components/Button';
+        copyText={`import { Button } from '@components/Button';
 
 function Example() {
   return (
@@ -576,10 +477,13 @@ function Example() {
   );
 }
 
-export default Example;
-`}
-        </SyntaxHighlighter>
-      </div>
+export default Example;`}
+        language="tsx"
+        index={9}
+        copied={copied}
+        handleCopy={handleCopy}
+      />
+
       <h2 className="text-[#2D3748]">Full Example with Mixed Props</h2>
       <p>여러 속성을 섞어서 사용한 버튼 예제입니다.</p>
       <div className="space-x-4 space-y-4">
@@ -598,9 +502,8 @@ export default Example;
           ClassNameCustomButton
         </Button>
       </div>
-      <div className="relative">
-        <CopyToClipboard
-          text={`import { Button } from '@components/Button';
+      <CodeBox
+        code={`import { Button } from '@components/Button';
 
 function Example() {
   return (
@@ -624,20 +527,7 @@ function Example() {
 }
 
 export default Example;`}
-          onCopy={handleCopy}
-        >
-          <Button
-            icon={copied ? "icon-check" : undefined}
-            className="copyButton"
-            size="small"
-            iconColor={copied ? "green" : "white"}
-          >
-            {copied ? "Copied!" : "Copy"}
-          </Button>
-        </CopyToClipboard>
-        <SyntaxHighlighter language="tsx">
-          {`
-import { Button } from '@components/Button';
+        copyText={`import { Button } from '@components/Button';
 
 function Example() {
   return (
@@ -660,10 +550,13 @@ function Example() {
   );
 }
 
-export default Example;
-`}
-        </SyntaxHighlighter>
-      </div>
+export default Example;`}
+        language="tsx"
+        index={10}
+        copied={copied}
+        handleCopy={handleCopy}
+      />
+
       <h1 className="pt-2 text-[#2D3748]">Props</h1>
       <p>
         <code>Button</code> 컴포넌트는 아래와 같은 Props를 가집니다:

@@ -1,13 +1,11 @@
 "use client";
 
 import React, { useState } from "react";
-import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
-import { CopyToClipboard } from "react-copy-to-clipboard";
 import CheckBox from "@components/CheckBox/CheckBox";
-import Button from "@components/Button/Button";
+import CodeBox from "@components/CodeBox";
 
 const CheckBoxDoc: React.FC = () => {
-  const [copied, setCopied] = useState(false);
+  const [copied, setCopied] = useState<{ [key: number]: boolean }>({});
   const [checkBoxStates, setCheckBoxStates] = useState({
     example: true,
     small: true,
@@ -23,6 +21,11 @@ const CheckBoxDoc: React.FC = () => {
     custom: true,
   });
 
+  const handleCopy = (index: number) => {
+    setCopied((prev) => ({ ...prev, [index]: true }));
+    setTimeout(() => setCopied((prev) => ({ ...prev, [index]: false })), 500);
+  };
+
   const handleCheckBoxChange =
     (key: string) => (e: React.ChangeEvent<HTMLInputElement>) => {
       setCheckBoxStates((prevState) => ({
@@ -30,11 +33,6 @@ const CheckBoxDoc: React.FC = () => {
         [key]: e.target.checked,
       }));
     };
-
-  const handleCopy = () => {
-    setCopied(true);
-    setTimeout(() => setCopied(false), 500); // 0.5초 후에 상태를 초기화
-  };
 
   return (
     <div className="prose max-w-[1000px] p-5 text-[#6D6D6D]">
@@ -49,24 +47,14 @@ const CheckBoxDoc: React.FC = () => {
       </p>
 
       <h2 className="text-[#2D3748]">Import</h2>
-      <div className="relative">
-        <CopyToClipboard
-          text={`import { CheckBox } from '@components/CheckBox';`}
-          onCopy={handleCopy}
-        >
-          <Button
-            icon={copied ? "icon-check" : undefined}
-            className="copyButton"
-            size="small"
-            iconColor={copied ? "green" : "white"}
-          >
-            {copied ? "Copied!" : "Copy"}
-          </Button>
-        </CopyToClipboard>
-        <SyntaxHighlighter language="tsx">
-          {`import { CheckBox } from '@components/CheckBox';`}
-        </SyntaxHighlighter>
-      </div>
+      <CodeBox
+        code={`import { CheckBox } from '@components/CheckBox';`}
+        copyText={`import { CheckBox } from '@components/CheckBox';`}
+        language="tsx"
+        index={1}
+        copied={copied}
+        handleCopy={handleCopy}
+      />
 
       <h2 className="text-[#2D3748]">Usage</h2>
       <p>기본 사용 예제는 아래와 같습니다:</p>
@@ -77,9 +65,8 @@ const CheckBoxDoc: React.FC = () => {
           onChange={handleCheckBoxChange("example")}
         />
       </div>
-      <div className="relative">
-        <CopyToClipboard
-          text={`import { CheckBox } from '@components/CheckBox';
+      <CodeBox
+        code={`import { CheckBox } from '@components/CheckBox';
 
 function Example() {
   return (
@@ -88,20 +75,7 @@ function Example() {
 }
 
 export default Example;`}
-          onCopy={handleCopy}
-        >
-          <Button
-            icon={copied ? "icon-check" : undefined}
-            className="copyButton"
-            size="small"
-            iconColor={copied ? "green" : "white"}
-          >
-            {copied ? "Copied!" : "Copy"}
-          </Button>
-        </CopyToClipboard>
-        <SyntaxHighlighter language="tsx">
-          {`
-import { CheckBox } from '@components/CheckBox';
+        copyText={`import { CheckBox } from '@components/CheckBox';
 
 function Example() {
   return (
@@ -109,10 +83,12 @@ function Example() {
   );
 }
 
-export default Example;
-`}
-        </SyntaxHighlighter>
-      </div>
+export default Example;`}
+        language="tsx"
+        index={2}
+        copied={copied}
+        handleCopy={handleCopy}
+      />
 
       <h1 className="pt-2 text-[#2D3748]">Size</h1>
       <p>
@@ -140,9 +116,8 @@ export default Example;
           onChange={handleCheckBoxChange("large")}
         />
       </div>
-      <div className="relative">
-        <CopyToClipboard
-          text={`import { CheckBox } from '@components/CheckBox';
+      <CodeBox
+        code={`import { CheckBox } from '@components/CheckBox';
 
 function Example() {
   return (
@@ -155,20 +130,7 @@ function Example() {
 }
 
 export default Example;`}
-          onCopy={handleCopy}
-        >
-          <Button
-            icon={copied ? "icon-check" : undefined}
-            className="copyButton"
-            size="small"
-            iconColor={copied ? "green" : "white"}
-          >
-            {copied ? "Copied!" : "Copy"}
-          </Button>
-        </CopyToClipboard>
-        <SyntaxHighlighter language="tsx">
-          {`
-import { CheckBox } from '@components/CheckBox';
+        copyText={`import { CheckBox } from '@components/CheckBox';
 
 function Example() {
   return (
@@ -180,10 +142,12 @@ function Example() {
   );
 }
 
-export default Example;
-`}
-        </SyntaxHighlighter>
-      </div>
+export default Example;`}
+        language="tsx"
+        index={3}
+        copied={copied}
+        handleCopy={handleCopy}
+      />
 
       <h1 className="pt-2 text-[#2D3748]">Color</h1>
       <p>
@@ -228,9 +192,8 @@ export default Example;
           onChange={handleCheckBoxChange("danger")}
         />
       </div>
-      <div className="relative">
-        <CopyToClipboard
-          text={`import { CheckBox } from '@components/CheckBox';
+      <CodeBox
+        code={`import { CheckBox } from '@components/CheckBox';
 
 function Example() {
   return (
@@ -245,20 +208,7 @@ function Example() {
 }
 
 export default Example;`}
-          onCopy={handleCopy}
-        >
-          <Button
-            icon={copied ? "icon-check" : undefined}
-            className="copyButton"
-            size="small"
-            iconColor={copied ? "green" : "white"}
-          >
-            {copied ? "Copied!" : "Copy"}
-          </Button>
-        </CopyToClipboard>
-        <SyntaxHighlighter language="tsx">
-          {`
-import { CheckBox } from '@components/CheckBox';
+        copyText={`import { CheckBox } from '@components/CheckBox';
 
 function Example() {
   return (
@@ -272,10 +222,12 @@ function Example() {
   );
 }
 
-export default Example;
-`}
-        </SyntaxHighlighter>
-      </div>
+export default Example;`}
+        language="tsx"
+        index={4}
+        copied={copied}
+        handleCopy={handleCopy}
+      />
 
       <h1 className="pt-2 text-[#2D3748]">Variant</h1>
       <p>
@@ -299,9 +251,8 @@ export default Example;
           onChange={handleCheckBoxChange("border")}
         />
       </div>
-      <div className="relative">
-        <CopyToClipboard
-          text={`import { CheckBox } from '@components/CheckBox';
+      <CodeBox
+        code={`import { CheckBox } from '@components/CheckBox';
 
 function Example() {
   return (
@@ -313,20 +264,7 @@ function Example() {
 }
 
 export default Example;`}
-          onCopy={handleCopy}
-        >
-          <Button
-            icon={copied ? "icon-check" : undefined}
-            className="copyButton"
-            size="small"
-            iconColor={copied ? "green" : "white"}
-          >
-            {copied ? "Copied!" : "Copy"}
-          </Button>
-        </CopyToClipboard>
-        <SyntaxHighlighter language="tsx">
-          {`
-import { CheckBox } from '@components/CheckBox';
+        copyText={`import { CheckBox } from '@components/CheckBox';
 
 function Example() {
   return (
@@ -337,10 +275,12 @@ function Example() {
   );
 }
 
-export default Example;
-`}
-        </SyntaxHighlighter>
-      </div>
+export default Example;`}
+        language="tsx"
+        index={5}
+        copied={copied}
+        handleCopy={handleCopy}
+      />
 
       <h1 className="pt-2 text-[#2D3748]">Variant Border의 Color</h1>
       <p>
@@ -388,9 +328,8 @@ export default Example;
           onChange={handleCheckBoxChange("danger")}
         />
       </div>
-      <div className="relative">
-        <CopyToClipboard
-          text={`import { CheckBox } from '@components/CheckBox';
+      <CodeBox
+        code={`import { CheckBox } from '@components/CheckBox';
 
 function Example() {
   return (
@@ -405,20 +344,7 @@ function Example() {
 }
 
 export default Example;`}
-          onCopy={handleCopy}
-        >
-          <Button
-            icon={copied ? "icon-check" : undefined}
-            className="copyButton"
-            size="small"
-            iconColor={copied ? "green" : "white"}
-          >
-            {copied ? "Copied!" : "Copy"}
-          </Button>
-        </CopyToClipboard>
-        <SyntaxHighlighter language="tsx">
-          {`
-import { CheckBox } from '@components/CheckBox';
+        copyText={`import { CheckBox } from '@components/CheckBox';
 
 function Example() {
   return (
@@ -432,10 +358,12 @@ function Example() {
   );
 }
 
-export default Example;
-`}
-        </SyntaxHighlighter>
-      </div>
+export default Example;`}
+        language="tsx"
+        index={6}
+        copied={copied}
+        handleCopy={handleCopy}
+      />
 
       <h1 className="pt-2 text-[#2D3748]">Disabled</h1>
       <p>
@@ -448,9 +376,8 @@ export default Example;
           disabled={true}
         />
       </div>
-      <div className="relative">
-        <CopyToClipboard
-          text={`import { CheckBox } from '@components/CheckBox';
+      <CodeBox
+        code={`import { CheckBox } from '@components/CheckBox';
 
 function Example() {
   return (
@@ -459,20 +386,7 @@ function Example() {
 }
 
 export default Example;`}
-          onCopy={handleCopy}
-        >
-          <Button
-            icon={copied ? "icon-check" : undefined}
-            className="copyButton"
-            size="small"
-            iconColor={copied ? "green" : "white"}
-          >
-            {copied ? "Copied!" : "Copy"}
-          </Button>
-        </CopyToClipboard>
-        <SyntaxHighlighter language="tsx">
-          {`
-import { CheckBox } from '@components/CheckBox';
+        copyText={`import { CheckBox } from '@components/CheckBox';
 
 function Example() {
   return (
@@ -480,10 +394,12 @@ function Example() {
   );
 }
 
-export default Example;
-`}
-        </SyntaxHighlighter>
-      </div>
+export default Example;`}
+        language="tsx"
+        index={7}
+        copied={copied}
+        handleCopy={handleCopy}
+      />
 
       <h1 className="pt-2 text-[#2D3748]">ClassName</h1>
       <p>
@@ -501,9 +417,8 @@ export default Example;
           onChange={handleCheckBoxChange("custom")}
         />
       </div>
-      <div className="relative">
-        <CopyToClipboard
-          text={`import { CheckBox } from '@components/CheckBox';
+      <CodeBox
+        code={`import { CheckBox } from '@components/CheckBox';
 
 function Example() {
   return (
@@ -517,20 +432,7 @@ function Example() {
 }
 
 export default Example;`}
-          onCopy={handleCopy}
-        >
-          <Button
-            icon={copied ? "icon-check" : undefined}
-            className="copyButton"
-            size="small"
-            iconColor={copied ? "green" : "white"}
-          >
-            {copied ? "Copied!" : "Copy"}
-          </Button>
-        </CopyToClipboard>
-        <SyntaxHighlighter language="tsx">
-          {`
-import { CheckBox } from '@components/CheckBox';
+        copyText={`import { CheckBox } from '@components/CheckBox';
 
 function Example() {
   return (
@@ -543,10 +445,12 @@ function Example() {
   );
 }
 
-export default Example;
-`}
-        </SyntaxHighlighter>
-      </div>
+export default Example;`}
+        language="tsx"
+        index={8}
+        copied={copied}
+        handleCopy={handleCopy}
+      />
 
       <h1 className="pt-2 text-[#2D3748]">Props</h1>
       <p>
