@@ -173,8 +173,7 @@ export default Example;`}
         copied={copied}
         handleCopy={handleCopy}
       />
-      <br />
-      <br />
+      <hr />
       <h1 className="text-[#2D3748]">2. CarouselAutoplay</h1>
       <p>
         <code>CarouselAutoplay</code> 컴포넌트는 여러 이미지를 슬라이드 방식으로
@@ -375,8 +374,7 @@ export default Example;`}
         copied={copied}
         handleCopy={handleCopy}
       />
-      <br />
-      <br />
+      <hr />
       <h1 className="text-[#2D3748]">3. CarouselDots</h1>
       <p>
         <code>CarouselDots</code> 컴포넌트는 이미지 슬라이드 기능을 제공하며,

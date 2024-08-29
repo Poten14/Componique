@@ -1,18 +1,17 @@
 "use client";
 
 import React, { useState } from "react";
-import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
-import { CopyToClipboard } from "react-copy-to-clipboard";
 import Logo from "../../../../public/images/logo.svg";
 import Navbar from "@components/Navbar/Navbar";
 import NavbarSearch from "@components/Navbar/NavbarSearch";
+import CodeBox from "@components/CodeBox";
 
 const NavbarDocs: React.FC = () => {
-  const [copied, setCopied] = useState(false);
+  const [copied, setCopied] = useState<{ [key: number]: boolean }>({});
 
-  const handleCopy = () => {
-    setCopied(true);
-    setTimeout(() => setCopied(false), 500); // 0.5초 후에 상태를 초기화
+  const handleCopy = (index: number) => {
+    setCopied((prev) => ({ ...prev, [index]: true }));
+    setTimeout(() => setCopied((prev) => ({ ...prev, [index]: false })), 500);
   };
 
   return (
@@ -25,17 +24,14 @@ const NavbarDocs: React.FC = () => {
       </p>
 
       <h2 className="text-[#2D3748]">1.1. Import</h2>
-      <div className="relative">
-        <CopyToClipboard
-          text={`import { Navbar } from '@components/Navbar';`}
-          onCopy={handleCopy}
-        >
-          <button className="copyButton">{copied ? "Copied!" : "Copy"}</button>
-        </CopyToClipboard>
-        <SyntaxHighlighter language="tsx">
-          {`import { Navbar } from '@components/Navbar';`}
-        </SyntaxHighlighter>
-      </div>
+      <CodeBox
+        code={`import { Navbar } from '@components/Navbar';`}
+        copyText={`import { Navbar } from '@components/Navbar';`}
+        language="tsx"
+        index={1}
+        copied={copied}
+        handleCopy={() => handleCopy(1)}
+      />
 
       <h2 className="text-[#2D3748]">1.2. Usage</h2>
       <p>기본 사용 예제는 아래와 같습니다:</p>
@@ -51,9 +47,8 @@ const NavbarDocs: React.FC = () => {
           ]}
         />
       </div>
-      <div className="relative">
-        <CopyToClipboard
-          text={`import { Navbar } from '@components/Navbar';
+      <CodeBox
+        code={`import { Navbar } from '@components/Navbar';
 function Example() {
   return (
     <Navbar
@@ -69,13 +64,7 @@ function Example() {
   );
 }
 export default Example;`}
-          onCopy={handleCopy}
-        >
-          <button className="copyButton">{copied ? "Copied!" : "Copy"}</button>
-        </CopyToClipboard>
-        <SyntaxHighlighter language="tsx">
-          {`
-import { Navbar } from '@components/Navbar';
+        copyText={`import { Navbar } from '@components/Navbar';
 function Example() {
   return (
     <Navbar
@@ -90,10 +79,12 @@ function Example() {
     />
   );
 }
-export default Example;
-`}
-        </SyntaxHighlighter>
-      </div>
+export default Example;`}
+        language="tsx"
+        index={2}
+        copied={copied}
+        handleCopy={() => handleCopy(2)}
+      />
 
       <h2 className="text-[#2D3748]">1.3. Changing the Size of the Navbar</h2>
       <p>
@@ -146,9 +137,8 @@ export default Example;
           ]}
         />
       </div>
-      <div className="relative">
-        <CopyToClipboard
-          text={`import { Navbar } from '@components/Navbar';
+      <CodeBox
+        code={`import { Navbar } from '@components/Navbar';
 function Example() {
   return (
     <>
@@ -162,24 +152,16 @@ function Example() {
         { name: "About", href: "/about" },
         { name: "Projects", href: "/projects" },
         { name: "Contact", href: "/contact" },]} />
-      ]} />
       <Navbar logoName="Componique" logoSrc={Logo} size="large" links={[
         { name: "Home", href: "/" },
         { name: "About", href: "/about" },
         { name: "Projects", href: "/projects" },
         { name: "Contact", href: "/contact" },]} />
-      ]} />
     </>
   );
 }
 export default Example;`}
-          onCopy={handleCopy}
-        >
-          <button className="copyButton">{copied ? "Copied!" : "Copy"}</button>
-        </CopyToClipboard>
-        <SyntaxHighlighter language="tsx">
-          {`
-import { Navbar } from '@components/Navbar';
+        copyText={`import { Navbar } from '@components/Navbar';
 function Example() {
   return (
     <>
@@ -201,10 +183,12 @@ function Example() {
     </>
   );
 }
-export default Example;
-`}
-        </SyntaxHighlighter>
-      </div>
+export default Example;`}
+        language="tsx"
+        index={3}
+        copied={copied}
+        handleCopy={() => handleCopy(3)}
+      />
 
       <h2 className="text-[#2D3748]">1.4. Changing the Hover Color</h2>
       <p>
@@ -257,9 +241,8 @@ export default Example;
           ]}
         />
       </div>
-      <div className="relative">
-        <CopyToClipboard
-          text={`import { Navbar } from '@components/Navbar';
+      <CodeBox
+        code={`import { Navbar } from '@components/Navbar';
 function Example() {
   return (
     <>
@@ -282,38 +265,34 @@ function Example() {
   );
 }
 export default Example;`}
-          onCopy={handleCopy}
-        >
-          <button className="copyButton">{copied ? "Copied!" : "Copy"}</button>
-        </CopyToClipboard>
-        <SyntaxHighlighter language="tsx">
-          {`
-import { Navbar } from '@components/Navbar';
+        copyText={`import { Navbar } from '@components/Navbar';
 function Example() {
   return (
     <>
       <Navbar logoName="Componique" logoSrc={Logo} hoverColor="skyblue" links={[
-         { name: "Home", href: "/" },
-         { name: "About", href: "/about" },
-         { name: "Projects", href: "/projects" },
-         { name: "Contact", href: "/contact" },]} />
-      <Navbar logoName="Componique" logoSrc={Logo} hoverColor="blue" links={[
         { name: "Home", href: "/" },
          { name: "About", href: "/about" },
          { name: "Projects", href: "/projects" },
          { name: "Contact", href: "/contact" },]} />
-      <Navbar logoName="Componique" logoSrc={Logo} hoverColor="red" links={[
+      <Navbar logoName="Componique" logoSrc={Logo} hoverColor="blue" links={[
          { name: "Home", href: "/" },
+         { name: "About", href: "/about" },
+         { name: "Projects", href: "/projects" },
+         { name: "Contact", href: "/contact" },]} />
+      <Navbar logoName="Componique" logoSrc={Logo} hoverColor="red" links={[
+        { name: "Home", href: "/" },
          { name: "About", href: "/about" },
          { name: "Projects", href: "/projects" },
          { name: "Contact", href: "/contact" },]} />
     </>
   );
 }
-export default Example;
-`}
-        </SyntaxHighlighter>
-      </div>
+export default Example;`}
+        language="tsx"
+        index={4}
+        copied={copied}
+        handleCopy={() => handleCopy(4)}
+      />
 
       <h2 className="text-[#2D3748]">1.5. Props</h2>
       <p>
@@ -407,9 +386,8 @@ export default Example;
       </table>
 
       <h2 className="text-[#2D3748]">1.6. Full Example</h2>
-      <div className="relative">
-        <CopyToClipboard
-          text={`import { Navbar } from '@components/Navbar';
+      <CodeBox
+        code={`import { Navbar } from '@components/Navbar';
             import Logo from "@/images/logo.svg";
             
 function Example() {
@@ -433,15 +411,9 @@ function Example() {
 }
 
 export default Example;`}
-          onCopy={handleCopy}
-        >
-          <button className="copyButton">{copied ? "Copied!" : "Copy"}</button>
-        </CopyToClipboard>
-        <SyntaxHighlighter language="tsx">
-          {`
-import { Navbar } from '@components/Navbar';
-import Logo from "@/images/logo.svg";
-
+        copyText={`import { Navbar } from '@components/Navbar';
+            import Logo from "@/images/logo.svg";
+            
 function Example() {
   return (
     <div>
@@ -461,50 +433,48 @@ function Example() {
     </div>
   );
 }
-export default Example;
-`}
-        </SyntaxHighlighter>
+
+export default Example;`}
+        language="tsx"
+        index={5}
+        copied={copied}
+        handleCopy={() => handleCopy(5)}
+      />
+
+      <hr />
+      <h1 className="text-[#2D3748]">2. NavbarSearch</h1>
+      <p>
+        <code>NavbarSearch</code> 컴포넌트는 웹 사이트의 상단에 로고와 검색
+        필드를 포함한 네비게이션 바를 제공합니다. 다양한 크기와 입력 필드 설정을
+        통해 사용자 맞춤형 검색 바를 만들 수 있습니다.
+      </p>
+
+      <h2 className="text-[#2D3748]">2.1. Import</h2>
+      <CodeBox
+        code={`import NavbarSearch from '@components/NavbarSearch/NavbarSearch';`}
+        copyText={`import NavbarSearch from '@components/NavbarSearch/NavbarSearch';`}
+        language="tsx"
+        index={6}
+        copied={copied}
+        handleCopy={() => handleCopy(6)}
+      />
+
+      <h2 className="text-[#2D3748]">2.2. Usage</h2>
+      <p>기본 사용 예제는 아래와 같습니다:</p>
+      <div style={{ marginBottom: "20px" }}>
+        <NavbarSearch
+          name="search"
+          id="searchInput"
+          maxLength={8}
+          type="search"
+          size="medium"
+          placeholder="Search"
+          value=""
+          onChange={(e) => console.log(e.target.value)}
+        />
       </div>
-      <div className="prose max-w-[1000px] p-5 text-[#6D6D6D]">
-        <h1 className="text-[#2D3748]">2. NavbarSearch</h1>
-        <p>
-          <code>NavbarSearch</code> 컴포넌트는 웹 사이트의 상단에 로고와 검색
-          필드를 포함한 네비게이션 바를 제공합니다. 다양한 크기와 입력 필드
-          설정을 통해 사용자 맞춤형 검색 바를 만들 수 있습니다.
-        </p>
-
-        <h2 className="text-[#2D3748]">2.1. Import</h2>
-        <div className="relative">
-          <CopyToClipboard
-            text={`import NavbarSearch from '@components/NavbarSearch/NavbarSearch';`}
-            onCopy={handleCopy}
-          >
-            <button className="copyButton">
-              {copied ? "Copied!" : "Copy"}
-            </button>
-          </CopyToClipboard>
-          <SyntaxHighlighter language="tsx">
-            {`import NavbarSearch from '@components/NavbarSearch/NavbarSearch';`}
-          </SyntaxHighlighter>
-        </div>
-
-        <h2 className="text-[#2D3748]">2.2. Usage</h2>
-        <p>기본 사용 예제는 아래와 같습니다:</p>
-        <div style={{ marginBottom: "20px" }}>
-          <NavbarSearch
-            name="search"
-            id="searchInput"
-            maxLength={8}
-            type="search"
-            size="medium"
-            placeholder="Search"
-            value=""
-            onChange={(e) => console.log(e.target.value)}
-          />
-        </div>
-        <div className="relative">
-          <CopyToClipboard
-            text={`import NavbarSearch from '@components/NavbarSearch/NavbarSearch';
+      <CodeBox
+        code={`import NavbarSearch from '@components/NavbarSearch/NavbarSearch';
   
 
 function Example() {
@@ -523,15 +493,8 @@ function Example() {
 }
 
 export default Example;`}
-            onCopy={handleCopy}
-          >
-            <button className="copyButton">
-              {copied ? "Copied!" : "Copy"}
-            </button>
-          </CopyToClipboard>
-          <SyntaxHighlighter language="tsx">
-            {`
-import NavbarSearch from '@components/NavbarSearch/NavbarSearch';
+        copyText={`import NavbarSearch from '@components/NavbarSearch/NavbarSearch';
+  
 
 function Example() {
   return (
@@ -548,128 +511,129 @@ function Example() {
   );
 }
 
-export default Example;
-`}
-          </SyntaxHighlighter>
-        </div>
+export default Example;`}
+        language="tsx"
+        index={7}
+        copied={copied}
+        handleCopy={() => handleCopy(7)}
+      />
 
-        <h2 className="text-[#2D3748]">2.3. Props</h2>
-        <p>
-          <code>NavbarSearch</code> 컴포넌트는 아래와 같은 Props를 가집니다:
-        </p>
-        <table>
-          <thead>
-            <tr>
-              <th>Prop</th>
-              <th>Description</th>
-              <th>Type</th>
-              <th>Default</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>
-                <code>name</code>
-              </td>
-              <td>검색 입력 필드의 name 속성을 설정합니다.</td>
-              <td>
-                <code>string</code>
-              </td>
-              <td>
-                <code>-</code>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <code>id</code>
-              </td>
-              <td>검색 입력 필드의 id 속성을 설정합니다.</td>
-              <td>
-                <code>string</code>
-              </td>
-              <td>
-                <code>-</code>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <code>maxLength</code>
-              </td>
-              <td>검색 입력 필드의 최대 길이를 설정합니다.</td>
-              <td>
-                <code>number</code>
-              </td>
-              <td>
-                <code>-</code>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <code>size</code>
-              </td>
-              <td>검색 입력 필드의 크기를 설정합니다.</td>
-              <td>
-                <code>"small" | "medium" | "large"</code>
-              </td>
-              <td>
-                <code>"medium"</code>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <code>placeholder</code>
-              </td>
-              <td>검색 입력 필드의 플레이스홀더 텍스트를 설정합니다.</td>
-              <td>
-                <code>string</code>
-              </td>
-              <td>
-                <code>-</code>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <code>type</code>
-              </td>
-              <td>검색 입력 필드의 타입을 설정합니다.</td>
-              <td>
-                <code>string</code>
-              </td>
-              <td>
-                <code>"text"</code>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <code>value</code>
-              </td>
-              <td>검색 입력 필드의 값을 설정합니다.</td>
-              <td>
-                <code>string</code>
-              </td>
-              <td>
-                <code>""</code>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <code>onChange</code>
-              </td>
-              <td>검색 입력 필드의 값이 변경될 때 호출되는 핸들러입니다.</td>
-              <td>
-                <code>(e: React.ChangeEvent&lt;HTMLInputElement&gt;)</code>
-              </td>
-              <td>
-                <code>-</code>
-              </td>
-            </tr>
-          </tbody>
-        </table>
+      <h2 className="text-[#2D3748]">2.3. Props</h2>
+      <p>
+        <code>NavbarSearch</code> 컴포넌트는 아래와 같은 Props를 가집니다:
+      </p>
+      <table>
+        <thead>
+          <tr>
+            <th>Prop</th>
+            <th>Description</th>
+            <th>Type</th>
+            <th>Default</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              <code>name</code>
+            </td>
+            <td>검색 입력 필드의 name 속성을 설정합니다.</td>
+            <td>
+              <code>string</code>
+            </td>
+            <td>
+              <code>-</code>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <code>id</code>
+            </td>
+            <td>검색 입력 필드의 id 속성을 설정합니다.</td>
+            <td>
+              <code>string</code>
+            </td>
+            <td>
+              <code>-</code>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <code>maxLength</code>
+            </td>
+            <td>검색 입력 필드의 최대 길이를 설정합니다.</td>
+            <td>
+              <code>number</code>
+            </td>
+            <td>
+              <code>-</code>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <code>size</code>
+            </td>
+            <td>검색 입력 필드의 크기를 설정합니다.</td>
+            <td>
+              <code>"small" | "medium" | "large"</code>
+            </td>
+            <td>
+              <code>"medium"</code>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <code>placeholder</code>
+            </td>
+            <td>검색 입력 필드의 플레이스홀더 텍스트를 설정합니다.</td>
+            <td>
+              <code>string</code>
+            </td>
+            <td>
+              <code>-</code>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <code>type</code>
+            </td>
+            <td>검색 입력 필드의 타입을 설정합니다.</td>
+            <td>
+              <code>string</code>
+            </td>
+            <td>
+              <code>"text"</code>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <code>value</code>
+            </td>
+            <td>검색 입력 필드의 값을 설정합니다.</td>
+            <td>
+              <code>string</code>
+            </td>
+            <td>
+              <code>""</code>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <code>onChange</code>
+            </td>
+            <td>검색 입력 필드의 값이 변경될 때 호출되는 핸들러입니다.</td>
+            <td>
+              <code>(e: React.ChangeEvent&lt;HTMLInputElement&gt;)</code>
+            </td>
+            <td>
+              <code>-</code>
+            </td>
+          </tr>
+        </tbody>
+      </table>
 
-        <h2 className="text-[#2D3748]">2.4. Full Example</h2>
-        <div className="relative">
-          <CopyToClipboard
-            text={`import NavbarSearch from '@components/NavbarSearch/NavbarSearch';
+      <h2 className="text-[#2D3748]">2.4. Full Example</h2>
+      <CodeBox
+        code={`import NavbarSearch from '@components/NavbarSearch/NavbarSearch';
 
 function Example() {
   return (
@@ -687,15 +651,7 @@ function Example() {
 }
 
 export default Example;`}
-            onCopy={handleCopy}
-          >
-            <button className="copyButton">
-              {copied ? "Copied!" : "Copy"}
-            </button>
-          </CopyToClipboard>
-          <SyntaxHighlighter language="tsx">
-            {`
-import NavbarSearch from '@components/NavbarSearch/NavbarSearch';
+        copyText={`import NavbarSearch from '@components/NavbarSearch/NavbarSearch';
 
 function Example() {
   return (
@@ -712,11 +668,12 @@ function Example() {
   );
 }
 
-export default Example;
-`}
-          </SyntaxHighlighter>
-        </div>
-      </div>
+export default Example;`}
+        language="tsx"
+        index={8}
+        copied={copied}
+        handleCopy={() => handleCopy(8)}
+      />
     </div>
   );
 };

@@ -267,7 +267,8 @@ function Example() {
         copied={copied}
         handleCopy={handleCopy}
       />
-      <h1 className="mb-6 mt-12 text-[#2D3748]">2. SelectList</h1>
+      <hr />
+      <h1 className="text-[#2D3748]">2. SelectList</h1>
       <p>
         <code>SelectList</code> 컴포넌트는 여러 옵션 중 하나를 선택할 수 있는
         리스트 형태의 선택 컴포넌트입니다. 사용자는 화면에 펼쳐진 리스트에서
@@ -389,7 +390,8 @@ function Example() {
         copied={copied}
         handleCopy={handleCopy}
       />
-      <h1 className="mb-6 mt-12 text-[#2D3748]">3. SelectValueAdd</h1>
+      <hr />
+      <h1 className="text-[#2D3748]">3. SelectValueAdd</h1>
       <p>
         <code>SelectValueAdd</code> 컴포넌트는 사용자가 여러 옵션 중 여러 개를
         선택하고, 선택한 항목을 제거할 수 있는 UI 요소입니다. 이 컴포넌트는
