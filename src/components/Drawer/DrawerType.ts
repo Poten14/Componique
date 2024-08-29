@@ -38,7 +38,7 @@ export type DrawerProps = {
     | "white"
     | "gray"
     | "black";
-  postion: "top" | "bottom" | "left" | "right";
+  position?: "top" | "bottom" | "left" | "right";
   className?: string;
 };
 
