@@ -260,6 +260,12 @@ const page = () => {
         <SkeletonCard
           width="w-1/5"
           height="h-32"
+          hasAvatar={true}
+          hasImage={true}
+        />
+        <SkeletonCard
+          width="w-1/5"
+          height="h-32"
           hasAvatar={false}
           hasImage={false}
         />
