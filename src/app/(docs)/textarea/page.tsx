@@ -1,17 +1,16 @@
 "use client";
 
 import React, { useState } from "react";
-import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
-import { CopyToClipboard } from "react-copy-to-clipboard";
 import Textarea from "@components/Textarea/Textarea";
 import TextareaValue from "@components/Textarea/TextareaValue";
+import CodeBox from "@components/CodeBox";
 
 const TextareaDocs: React.FC = () => {
-  const [copied, setCopied] = useState(false);
+  const [copied, setCopied] = useState<{ [key: number]: boolean }>({});
 
-  const handleCopy = () => {
-    setCopied(true);
-    setTimeout(() => setCopied(false), 500); // 0.5초 후에 상태를 초기화
+  const handleCopy = (index: number) => {
+    setCopied((prev) => ({ ...prev, [index]: true }));
+    setTimeout(() => setCopied((prev) => ({ ...prev, [index]: false })), 500);
   };
 
   return (
@@ -24,17 +23,14 @@ const TextareaDocs: React.FC = () => {
       </p>
 
       <h2 className="text-[#2D3748]">1.1. Import</h2>
-      <div className="relative">
-        <CopyToClipboard
-          text={`import Textarea from '@components/Textarea';`}
-          onCopy={handleCopy}
-        >
-          <button className="copyButton">{copied ? "Copied!" : "Copy"}</button>
-        </CopyToClipboard>
-        <SyntaxHighlighter language="tsx">
-          {`import Textarea from '@components/Textarea';`}
-        </SyntaxHighlighter>
-      </div>
+      <CodeBox
+        code={`import Textarea from '@components/Textarea';`}
+        copyText={`import Textarea from '@components/Textarea';`}
+        language="tsx"
+        index={1}
+        copied={copied}
+        handleCopy={() => handleCopy(1)}
+      />
 
       <h2 className="text-[#2D3748]">1.2. Usage</h2>
       <p>기본 사용 예제는 아래와 같습니다:</p>
@@ -45,9 +41,8 @@ const TextareaDocs: React.FC = () => {
           placeholder="Enter your text here"
         />
       </div>
-      <div className="relative">
-        <CopyToClipboard
-          text={`import Textarea from '@components/Textarea';
+      <CodeBox
+        code={`import Textarea from '@components/Textarea';
 
 function Example() {
   return (
@@ -60,13 +55,7 @@ function Example() {
 }
 
 export default Example;`}
-          onCopy={handleCopy}
-        >
-          <button className="copyButton">{copied ? "Copied!" : "Copy"}</button>
-        </CopyToClipboard>
-        <SyntaxHighlighter language="tsx">
-          {`
-import Textarea from '@components/Textarea';
+        copyText={`import Textarea from '@components/Textarea';
 
 function Example() {
   return (
@@ -78,10 +67,12 @@ function Example() {
   );
 }
 
-export default Example;
-`}
-        </SyntaxHighlighter>
-      </div>
+export default Example;`}
+        language="tsx"
+        index={2}
+        copied={copied}
+        handleCopy={() => handleCopy(2)}
+      />
 
       <h2 className="text-[#2D3748]">1.3. Changing the Size of the Textarea</h2>
       <p>
@@ -137,9 +128,8 @@ export default Example;
           placeholder="Extra large size"
         />
       </div>
-      <div className="relative">
-        <CopyToClipboard
-          text={`import Textarea from '@components/Textarea';
+      <CodeBox
+        code={`import Textarea from '@components/Textarea';
 
 function Example() {
   return (
@@ -154,13 +144,7 @@ function Example() {
 }
 
 export default Example;`}
-          onCopy={handleCopy}
-        >
-          <button className="copyButton">{copied ? "Copied!" : "Copy"}</button>
-        </CopyToClipboard>
-        <SyntaxHighlighter language="tsx">
-          {`
-import Textarea from '@components/Textarea';
+        copyText={`import Textarea from '@components/Textarea';
 
 function Example() {
   return (
@@ -174,10 +158,12 @@ function Example() {
   );
 }
 
-export default Example;
-`}
-        </SyntaxHighlighter>
-      </div>
+export default Example;`}
+        language="tsx"
+        index={3}
+        copied={copied}
+        handleCopy={() => handleCopy(3)}
+      />
 
       <h2 className="text-[#2D3748]">
         1.4. Changing the Color of the Textarea
@@ -226,9 +212,8 @@ export default Example;
           placeholder="Gray color"
         />
       </div>
-      <div className="relative">
-        <CopyToClipboard
-          text={`import Textarea from '@components/Textarea';
+      <CodeBox
+        code={`import Textarea from '@components/Textarea';
 
 function Example() {
   return (
@@ -242,13 +227,7 @@ function Example() {
 }
 
 export default Example;`}
-          onCopy={handleCopy}
-        >
-          <button className="copyButton">{copied ? "Copied!" : "Copy"}</button>
-        </CopyToClipboard>
-        <SyntaxHighlighter language="tsx">
-          {`
-import Textarea from '@components/Textarea';
+        copyText={`import Textarea from '@components/Textarea';
 
 function Example() {
   return (
@@ -261,10 +240,12 @@ function Example() {
   );
 }
 
-export default Example;
-`}
-        </SyntaxHighlighter>
-      </div>
+export default Example;`}
+        language="tsx"
+        index={4}
+        copied={copied}
+        handleCopy={() => handleCopy(4)}
+      />
 
       <h2 className="text-[#2D3748]">1.5. Changing the Resize Property</h2>
       <p>
@@ -311,9 +292,8 @@ export default Example;
           placeholder="Resize vertically"
         />
       </div>
-      <div className="relative">
-        <CopyToClipboard
-          text={`import Textarea from '@components/Textarea';
+      <CodeBox
+        code={`import Textarea from '@components/Textarea';
 
 function Example() {
   return (
@@ -327,13 +307,7 @@ function Example() {
 }
 
 export default Example;`}
-          onCopy={handleCopy}
-        >
-          <button className="copyButton">{copied ? "Copied!" : "Copy"}</button>
-        </CopyToClipboard>
-        <SyntaxHighlighter language="tsx">
-          {`
-import Textarea from '@components/Textarea';
+        copyText={`import Textarea from '@components/Textarea';
 
 function Example() {
   return (
@@ -346,10 +320,12 @@ function Example() {
   );
 }
 
-export default Example;
-`}
-        </SyntaxHighlighter>
-      </div>
+export default Example;`}
+        language="tsx"
+        index={5}
+        copied={copied}
+        handleCopy={() => handleCopy(5)}
+      />
 
       <h2 className="text-[#2D3748]">1.6. Props</h2>
       <p>
@@ -441,9 +417,8 @@ export default Example;
       </table>
 
       <h2 className="text-[#2D3748]">1.7. Full Example</h2>
-      <div className="relative">
-        <CopyToClipboard
-          text={`import Textarea from '@components/Textarea';
+      <CodeBox
+        code={`import Textarea from '@components/Textarea';
 
 function Example() {
   return (
@@ -461,13 +436,7 @@ function Example() {
 }
 
 export default Example;`}
-          onCopy={handleCopy}
-        >
-          <button className="copyButton">{copied ? "Copied!" : "Copy"}</button>
-        </CopyToClipboard>
-        <SyntaxHighlighter language="tsx">
-          {`
-import Textarea from '@components/Textarea';
+        copyText={`import Textarea from '@components/Textarea';
 
 function Example() {
   return (
@@ -484,12 +453,14 @@ function Example() {
   );
 }
 
-export default Example;
-`}
-        </SyntaxHighlighter>
-      </div>
-      <br />
-      <br />
+export default Example;`}
+        language="tsx"
+        index={6}
+        copied={copied}
+        handleCopy={() => handleCopy(6)}
+      />
+
+      <hr />
       <h1 className="text-[#2D3748]">2. TextareaValue</h1>
       <p>
         <code>TextareaValue</code> 컴포넌트는 텍스트 영역에 입력된 값을
@@ -498,17 +469,14 @@ export default Example;
       </p>
 
       <h2 className="text-[#2D3748]">2.1. Import</h2>
-      <div className="relative">
-        <CopyToClipboard
-          text={`import TextareaValue from '@components/TextareaValue';`}
-          onCopy={handleCopy}
-        >
-          <button className="copyButton">{copied ? "Copied!" : "Copy"}</button>
-        </CopyToClipboard>
-        <SyntaxHighlighter language="tsx">
-          {`import TextareaValue from '@components/TextareaValue';`}
-        </SyntaxHighlighter>
-      </div>
+      <CodeBox
+        code={`import TextareaValue from '@components/TextareaValue';`}
+        copyText={`import TextareaValue from '@components/TextareaValue';`}
+        language="tsx"
+        index={7}
+        copied={copied}
+        handleCopy={() => handleCopy(7)}
+      />
 
       <h2 className="text-[#2D3748]">2.2. Usage</h2>
       <p>기본 사용 예제는 아래와 같습니다:</p>
@@ -519,9 +487,8 @@ export default Example;
           onChange={(e) => console.log(e.target.value)}
         />
       </div>
-      <div className="relative">
-        <CopyToClipboard
-          text={`import TextareaValue from '@components/TextareaValue';
+      <CodeBox
+        code={`import TextareaValue from '@components/TextareaValue';
 
 function Example() {
   const [text, setText] = useState("Initial text");
@@ -540,13 +507,7 @@ function Example() {
 }
 
 export default Example;`}
-          onCopy={handleCopy}
-        >
-          <button className="copyButton">{copied ? "Copied!" : "Copy"}</button>
-        </CopyToClipboard>
-        <SyntaxHighlighter language="tsx">
-          {`
-import TextareaValue from '@components/TextareaValue';
+        copyText={`import TextareaValue from '@components/TextareaValue';
 
 function Example() {
   const [text, setText] = useState("Initial text");
@@ -564,10 +525,12 @@ function Example() {
   );
 }
 
-export default Example;
-`}
-        </SyntaxHighlighter>
-      </div>
+export default Example;`}
+        language="tsx"
+        index={8}
+        copied={copied}
+        handleCopy={() => handleCopy(8)}
+      />
 
       <h2 className="text-[#2D3748]">2.3. Props</h2>
       <p>
@@ -623,9 +586,8 @@ export default Example;
       </table>
 
       <h2 className="text-[#2D3748]">2.4. Full Example</h2>
-      <div className="relative">
-        <CopyToClipboard
-          text={`import TextareaValue from '@components/TextareaValue';
+      <CodeBox
+        code={`import TextareaValue from '@components/TextareaValue';
 
 function Example() {
   const [text, setText] = useState("");
@@ -646,13 +608,7 @@ function Example() {
 }
 
 export default Example;`}
-          onCopy={handleCopy}
-        >
-          <button className="copyButton">{copied ? "Copied!" : "Copy"}</button>
-        </CopyToClipboard>
-        <SyntaxHighlighter language="tsx">
-          {`
-import TextareaValue from '@components/TextareaValue';
+        copyText={`import TextareaValue from '@components/TextareaValue';
 
 function Example() {
   const [text, setText] = useState("");
@@ -672,10 +628,12 @@ function Example() {
   );
 }
 
-export default Example;
-`}
-        </SyntaxHighlighter>
-      </div>
+export default Example;`}
+        language="tsx"
+        index={9}
+        copied={copied}
+        handleCopy={() => handleCopy(9)}
+      />
     </div>
   );
 };
