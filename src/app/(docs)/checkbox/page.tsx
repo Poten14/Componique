@@ -36,7 +36,7 @@ const CheckBoxDoc: React.FC = () => {
 
   return (
     <div className="prose max-w-[1000px] p-5 text-[#6D6D6D]">
-      <h1 className="text-[#2D3748]">CheckBox</h1>
+      <h1 className="text-[#2D3748]">1. CheckBox</h1>
       <p>
         <code>CheckBox</code> 컴포넌트는 사용자가 선택할 수 있는 체크박스를
         생성하기 위해 사용됩니다.
@@ -46,7 +46,7 @@ const CheckBoxDoc: React.FC = () => {
         구현할 수 있습니다.
       </p>
 
-      <h2 className="text-[#2D3748]">Import</h2>
+      <h2 className="text-[#2D3748]">1.1. Import</h2>
       <CodeBox
         code={`import { CheckBox } from '@components/CheckBox';`}
         copyText={`import { CheckBox } from '@components/CheckBox';`}
@@ -56,7 +56,7 @@ const CheckBoxDoc: React.FC = () => {
         handleCopy={handleCopy}
       />
 
-      <h2 className="text-[#2D3748]">Usage</h2>
+      <h2 className="text-[#2D3748]">1.2. Usage</h2>
       <p>기본 사용 예제는 아래와 같습니다:</p>
       <div style={{ marginBottom: "20px" }}>
         <CheckBox
@@ -90,7 +90,7 @@ export default Example;`}
         handleCopy={handleCopy}
       />
 
-      <h1 className="pt-2 text-[#2D3748]">Size</h1>
+      <h2 className="pt-2 text-[#2D3748]">3. Size</h2>
       <p>
         <code>boxSize</code> prop을 이용하여 체크박스의 크기를 설정할 수
         있습니다. 가능한 값은 <code>small</code>, <code>medium</code>,
@@ -149,7 +149,7 @@ export default Example;`}
         handleCopy={handleCopy}
       />
 
-      <h1 className="pt-2 text-[#2D3748]">Color</h1>
+      <h2 className="pt-2 text-[#2D3748]">4. Color</h2>
       <p>
         <code>color</code> prop을 이용하여 체크박스의 색상을 설정할 수 있습니다.
       </p>
@@ -229,7 +229,7 @@ export default Example;`}
         handleCopy={handleCopy}
       />
 
-      <h1 className="pt-2 text-[#2D3748]">Variant</h1>
+      <h2 className="pt-2 text-[#2D3748]">5. Variant</h2>
       <p>
         <code>variant</code> prop을 이용하여 체크박스의 스타일 변형을 설정할 수
         있습니다.
@@ -282,7 +282,7 @@ export default Example;`}
         handleCopy={handleCopy}
       />
 
-      <h1 className="pt-2 text-[#2D3748]">Variant Border의 Color</h1>
+      <h2 className="pt-2 text-[#2D3748]">6. Variant Border의 Color</h2>
       <p>
         <code>variant</code> prop을 이용하여 체크박스의 스타일 변형을 설정할 수
         있습니다.
@@ -365,7 +365,7 @@ export default Example;`}
         handleCopy={handleCopy}
       />
 
-      <h1 className="pt-2 text-[#2D3748]">Disabled</h1>
+      <h2 className="pt-2 text-[#2D3748]">7. Disabled</h2>
       <p>
         <code>disabled</code> prop을 이용하여 체크박스를 비활성화할 수 있습니다.
       </p>
@@ -401,7 +401,7 @@ export default Example;`}
         handleCopy={handleCopy}
       />
 
-      <h1 className="pt-2 text-[#2D3748]">ClassName</h1>
+      <h2 className="pt-2 text-[#2D3748]">8. ClassName</h2>
       <p>
         <code>className</code> prop을 사용하여 <code>CheckBox</code> 컴포넌트의
         스타일을 커스터마이징할 수 있습니다.
@@ -452,7 +452,7 @@ export default Example;`}
         handleCopy={handleCopy}
       />
 
-      <h1 className="pt-2 text-[#2D3748]">Props</h1>
+      <h2 className="pt-2 text-[#2D3748]">9. Props</h2>
       <p>
         <code>CheckBox</code> 컴포넌트는 아래와 같은 Props를 가집니다:
       </p>

@@ -28,13 +28,13 @@ const ToastGroupDocs: React.FC = () => {
 
   return (
     <div className="prose max-w-[1000px] p-5 text-[#6D6D6D]">
-      <h1 className="text-[#2D3748]">ToastGroup</h1>
+      <h1 className="text-[#2D3748]">1. ToastGroup</h1>
       <p>
         <code>ToastGroup</code> 컴포넌트는 여러 개의 Toast를 그룹화하여
         순차적으로 표시하는 기능을 제공합니다. 이 컴포넌트를 사용하면 다양한
         알림 메시지를 시간차로 표시할 수 있습니다.
       </p>
-      <h2 className="text-[#2D3748]">Import</h2>
+      <h2 className="text-[#2D3748]">1.1. Import</h2>
       <CodeBox
         code={`import ToastGroup from "@components/Toast/ToastGroup";`}
         copyText={`import ToastGroup from "@components/Toast/ToastGroup";`}
@@ -44,7 +44,7 @@ const ToastGroupDocs: React.FC = () => {
         handleCopy={handleCopy}
       />
 
-      <h2 className="text-[#2D3748]">Usage</h2>
+      <h2 className="text-[#2D3748]">1.2. Usage</h2>
       <p>기본 사용 예제는 아래와 같습니다:</p>
       <p>
         아래 예제에서는 다양한 옵션을 가진 여러 개의 Toast가 순차적으로
@@ -206,7 +206,7 @@ export default ToastGroupExample;
         handleCopy={handleCopy}
       />
 
-      <h1 className="text-[#2D3748]">Position</h1>
+      <h2 className="text-[#2D3748]">2. Position</h2>
       <p>
         <code>position</code> prop을 이용하여 Toast Group의 위치를 설정할 수
         있습니다.
@@ -214,13 +214,13 @@ export default ToastGroupExample;
       <p>Toast Group에 한해서 개별 Toast의 위치는 따로 설정하실수 없습니다.</p>
       <p>
         기본 값은 <code>leftBottom</code> 이고, 가능한 값은 <code>leftTop</code>
-        , <code>leftBottom</code>, <code>rightTop</code>,{" "}
-        <code>rightBottom</code>, <code>centerTop</code>,{" "}
-        <code>centerBottom</code>, <code>left</code>, <code>center</code>,{" "}
+        , <code>leftBottom</code>, <code>rightTop</code>,
+        <code>rightBottom</code>, <code>centerTop</code>,
+        <code>centerBottom</code>, <code>left</code>, <code>center</code>,
         <code>right</code> 입니다.
       </p>
 
-      <h1>Toast Docs</h1>
+      <h2>3. Toast Docs</h2>
       <p>
         Toast 컴포넌트에 대한 자세한 설명은 아래의 버튼을 클릭하면 이동합니다.
       </p>
@@ -231,7 +231,7 @@ export default ToastGroupExample;
       >
         Toast Docs로 이동
       </Button>
-      <h1 className="text-[#2D3748]">Props</h1>
+      <h2 className="text-[#2D3748]">4. Props</h2>
       <p>
         <code>ToastGroup</code> 컴포넌트는 아래와 같은 Props를 가집니다:
       </p>
