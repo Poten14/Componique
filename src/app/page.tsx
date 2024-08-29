@@ -1,8 +1,11 @@
+import Image from "next/image";
+import Content from "@components/Content/page";
+
 const page = () => {
   return (
-    <>
-      <h1>page Component</h1>
-    </>
+    <div>
+      <Content />
+    </div>
   );
 };
 export default page;

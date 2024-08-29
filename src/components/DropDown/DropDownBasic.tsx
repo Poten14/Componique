@@ -4,7 +4,7 @@ import Image from "next/image";
 interface DropDownBasicProps {
   option: string[];
   placeholder?: string;
-  onSelect?: (value: string) => void;
+  onSelect?: (value: string, index: number) => void;
 }
 
 const DropDownBasic = ({
@@ -13,17 +13,24 @@ const DropDownBasic = ({
   onSelect,
 }: DropDownBasicProps) => {
   const [isOpen, setIsOpen] = useState<number | null>(null);
-  const [selectedOption, setSelectedOption] = useState("");
+  const [selectedOptions, setSelectedOptions] = useState<string[]>([
+    "",
+    "",
+    "",
+    "",
+  ]);
 
   const toggleDropdown = (index: number) => {
     setIsOpen(isOpen === index ? null : index);
   };
 
-  const handleOptionClick = (option: string) => {
-    setSelectedOption(option);
+  const handleOptionClick = (option: string, index: number) => {
+    const updatedOptions = [...selectedOptions];
+    updatedOptions[index] = option;
+    setSelectedOptions(updatedOptions);
     setIsOpen(null);
     if (onSelect) {
-      onSelect(option);
+      onSelect(option, index);
     }
   };
 
@@ -39,9 +46,11 @@ const DropDownBasic = ({
           className="border-gray-300 flex h-10 cursor-pointer items-center justify-between border-2 bg-white p-2 font-medium"
         >
           <span
-            className={`font-bold ${selectedOption ? "text-black" : "text-slate-600"}`}
+            className={`font-bold ${
+              selectedOptions[0] ? "text-black" : "text-slate-600"
+            }`}
           >
-            {selectedOption || placeholder}
+            {selectedOptions[0] || placeholder}
           </span>
 
           <Image
@@ -56,7 +65,7 @@ const DropDownBasic = ({
             {option.map((item, index) => (
               <li
                 key={index}
-                onClick={() => handleOptionClick(item)}
+                onClick={() => handleOptionClick(item, 0)}
                 className="border-gray-200 cursor-pointer border-b p-2 text-zinc-800 hover:bg-[#E8F5FF]"
               >
                 {item}
@@ -73,9 +82,11 @@ const DropDownBasic = ({
           className="border-gray-300 flex h-10 cursor-pointer items-center justify-between rounded-lg border-2 bg-white p-2 font-medium"
         >
           <span
-            className={`font-bold ${selectedOption ? "text-black" : "text-slate-600"}`}
+            className={`font-bold ${
+              selectedOptions[1] ? "text-black" : "text-slate-600"
+            }`}
           >
-            {selectedOption || placeholder}
+            {selectedOptions[1] || placeholder}
           </span>
           <Image
             src={isOpen === 1 ? "/dropdown1.svg" : "/dropdown2.svg"}
@@ -89,7 +100,7 @@ const DropDownBasic = ({
             {option.map((item, index) => (
               <li
                 key={index}
-                onClick={() => handleOptionClick(item)}
+                onClick={() => handleOptionClick(item, 1)}
                 className="border-gray-200 cursor-pointer border-b p-2 text-zinc-800 hover:bg-[#E8F5FF]"
               >
                 {item}
@@ -106,9 +117,11 @@ const DropDownBasic = ({
           className="flex h-10 cursor-pointer items-center justify-between rounded-full border-2 border-zinc-100 bg-white p-2 font-medium shadow-md"
         >
           <span
-            className={`font-bold ${selectedOption ? "text-black" : "text-slate-600"}`}
+            className={`font-bold ${
+              selectedOptions[2] ? "text-black" : "text-slate-600"
+            }`}
           >
-            {selectedOption || placeholder}
+            {selectedOptions[2] || placeholder}
           </span>
           <Image
             src={isOpen === 2 ? "/dropdown1.svg" : "/dropdown2.svg"}
@@ -122,7 +135,7 @@ const DropDownBasic = ({
             {option.map((item, index) => (
               <li
                 key={index}
-                onClick={() => handleOptionClick(item)}
+                onClick={() => handleOptionClick(item, 2)}
                 className="cursor-pointer rounded-xl border-b border-zinc-100 p-2 text-zinc-800 underline hover:bg-[#E8F5FF]"
               >
                 {item}
@@ -139,9 +152,11 @@ const DropDownBasic = ({
           className="flex h-10 cursor-pointer items-center justify-between rounded-lg border-2 border-zinc-100 bg-white p-2 font-medium"
         >
           <span
-            className={`font-bold ${selectedOption ? "text-black" : "text-slate-600"}`}
+            className={`font-bold ${
+              selectedOptions[3] ? "text-black" : "text-slate-600"
+            }`}
           >
-            {selectedOption || placeholder}
+            {selectedOptions[3] || placeholder}
           </span>
           <Image
             src={isOpen === 3 ? "/dropdown1.svg" : "/dropdown2.svg"}
@@ -155,7 +170,7 @@ const DropDownBasic = ({
             {option.map((item, index) => (
               <li
                 key={index}
-                onClick={() => handleOptionClick(item)}
+                onClick={() => handleOptionClick(item, 3)}
                 className="cursor-pointer border-b border-zinc-100 p-2 text-zinc-800 hover:bg-[#E8F5FF]"
               >
                 {item}

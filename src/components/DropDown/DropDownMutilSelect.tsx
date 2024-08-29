@@ -13,29 +13,38 @@ const DropDownMutilSelect = ({
   onSelect,
 }: DropDownMutilSelectProups) => {
   const [isOpen, setIsOpen] = useState<number | null>(null);
-  const [selectedOption, setSelectedOption] = useState<string[]>([]);
+  const [selectedOptions, setSelectedOptions] = useState<string[][]>([
+    [],
+    [],
+    [],
+    [],
+  ]);
 
   const toggleDropdown = (index: number) => {
     setIsOpen(isOpen === index ? null : index);
   };
 
-  const handleOptionClick = (option: string) => {
-    let updateSelectOption: string[];
+  const handleOptionClick = (option: string, dropdownIndex: number) => {
+    let updatedSelectOption: string[];
 
-    if (selectedOption.includes(option)) {
-      updateSelectOption = selectedOption.filter((item) => item !== option);
+    if (selectedOptions[dropdownIndex].includes(option)) {
+      updatedSelectOption = selectedOptions[dropdownIndex].filter(
+        (item) => item !== option,
+      );
     } else {
-      updateSelectOption = [...selectedOption, option];
+      updatedSelectOption = [...selectedOptions[dropdownIndex], option];
     }
 
-    setSelectedOption(updateSelectOption);
+    const updatedSelectedOptions = [...selectedOptions];
+    updatedSelectedOptions[dropdownIndex] = updatedSelectOption;
+    setSelectedOptions(updatedSelectedOptions);
 
-    if (onSelect) onSelect(updateSelectOption);
+    if (onSelect) onSelect(updatedSelectOption);
   };
 
-  const displayDefaultOption = () => {
-    if (selectedOption.length > 0) {
-      return selectedOption.join(", ");
+  const displayDefaultOption = (dropdownIndex: number) => {
+    if (selectedOptions[dropdownIndex].length > 0) {
+      return selectedOptions[dropdownIndex].join(", ");
     } else {
       return defaultOption;
     }
@@ -54,10 +63,10 @@ const DropDownMutilSelect = ({
         >
           <span
             className={`font-bold ${
-              selectedOption.length > 0 ? "text-black" : "text-slate-600"
+              selectedOptions[0].length > 0 ? "text-black" : "text-slate-600"
             }`}
           >
-            {displayDefaultOption()}
+            {displayDefaultOption(0)}
           </span>
           <Image
             src={isOpen === 0 ? "/dropdown1.svg" : "/dropdown2.svg"}
@@ -71,9 +80,9 @@ const DropDownMutilSelect = ({
             {option.map((item, index) => (
               <li
                 key={index}
-                onClick={() => handleOptionClick(item)}
+                onClick={() => handleOptionClick(item, 0)}
                 className={`border-gray-200 cursor-pointer border-b p-2 text-zinc-800 hover:bg-[#E8F5FF] ${
-                  selectedOption.includes(item) ? "bg-blue-100" : ""
+                  selectedOptions[0].includes(item) ? "bg-blue-100" : ""
                 }`}
               >
                 {item}
@@ -91,10 +100,10 @@ const DropDownMutilSelect = ({
         >
           <span
             className={`font-bold ${
-              selectedOption.length > 0 ? "text-black" : "text-slate-600"
+              selectedOptions[1].length > 0 ? "text-black" : "text-slate-600"
             }`}
           >
-            {displayDefaultOption()}
+            {displayDefaultOption(1)}
           </span>
           <Image
             src={isOpen === 1 ? "/dropdown1.svg" : "/dropdown2.svg"}
@@ -108,9 +117,9 @@ const DropDownMutilSelect = ({
             {option.map((item, index) => (
               <li
                 key={index}
-                onClick={() => handleOptionClick(item)}
+                onClick={() => handleOptionClick(item, 1)}
                 className={`border-gray-200 cursor-pointer border-b p-2 text-zinc-800 hover:bg-[#E8F5FF] ${
-                  selectedOption.includes(item) ? "bg-blue-100" : ""
+                  selectedOptions[1].includes(item) ? "bg-blue-100" : ""
                 }`}
               >
                 {item}
@@ -128,10 +137,10 @@ const DropDownMutilSelect = ({
         >
           <span
             className={`font-bold ${
-              selectedOption.length > 0 ? "text-black" : "text-slate-600"
+              selectedOptions[2].length > 0 ? "text-black" : "text-slate-600"
             }`}
           >
-            {displayDefaultOption()}
+            {displayDefaultOption(2)}
           </span>
           <Image
             src={isOpen === 2 ? "/dropdown1.svg" : "/dropdown2.svg"}
@@ -145,9 +154,9 @@ const DropDownMutilSelect = ({
             {option.map((item, index) => (
               <li
                 key={index}
-                onClick={() => handleOptionClick(item)}
+                onClick={() => handleOptionClick(item, 2)}
                 className={`cursor-pointer rounded-xl border-b border-zinc-100 p-2 text-zinc-800 hover:bg-[#E8F5FF] ${
-                  selectedOption.includes(item) ? "bg-blue-100" : ""
+                  selectedOptions[2].includes(item) ? "bg-blue-100" : ""
                 }`}
               >
                 {item}
@@ -165,10 +174,10 @@ const DropDownMutilSelect = ({
         >
           <span
             className={`font-bold ${
-              selectedOption.length > 0 ? "text-black" : "text-slate-600"
+              selectedOptions[3].length > 0 ? "text-black" : "text-slate-600"
             }`}
           >
-            {displayDefaultOption()}
+            {displayDefaultOption(3)}
           </span>
           <Image
             src={isOpen === 3 ? "/dropdown1.svg" : "/dropdown2.svg"}
@@ -182,9 +191,9 @@ const DropDownMutilSelect = ({
             {option.map((item, index) => (
               <li
                 key={index}
-                onClick={() => handleOptionClick(item)}
+                onClick={() => handleOptionClick(item, 3)}
                 className={`cursor-pointer border-b border-zinc-100 p-2 text-zinc-800 hover:bg-[#E8F5FF] ${
-                  selectedOption.includes(item) ? "bg-blue-100" : ""
+                  selectedOptions[3].includes(item) ? "bg-blue-100" : ""
                 }`}
               >
                 {item}

@@ -18,14 +18,21 @@ const DropDownGrouped = ({
   onSelect,
 }: DropDownBasicProps) => {
   const [isOpen, setIsOpen] = useState<number | null>(null);
-  const [selectedOption, setSelectedOption] = useState<string>("");
+  const [selectedOptions, setSelectedOptions] = useState<string[]>([
+    "",
+    "",
+    "",
+    "",
+  ]);
 
   const toggleDropdown = (index: number) => {
     setIsOpen(isOpen === index ? null : index);
   };
 
-  const handleOptionClick = (option: string) => {
-    setSelectedOption(option);
+  const handleOptionClick = (option: string, dropdownIndex: number) => {
+    const updatedOptions = [...selectedOptions];
+    updatedOptions[dropdownIndex] = option;
+    setSelectedOptions(updatedOptions);
     setIsOpen(null);
     if (onSelect) {
       onSelect(option);
@@ -45,10 +52,10 @@ const DropDownGrouped = ({
         >
           <span
             className={`font-bold ${
-              selectedOption ? "text-black" : "text-slate-600"
+              selectedOptions[0] ? "text-black" : "text-slate-600"
             }`}
           >
-            {selectedOption || defaultOption}
+            {selectedOptions[0] || defaultOption}
           </span>
           <Image
             src={isOpen === 0 ? "/dropdown1.svg" : "/dropdown2.svg"}
@@ -66,7 +73,7 @@ const DropDownGrouped = ({
                   {items.map((item, index2) => (
                     <li
                       key={index2}
-                      onClick={() => handleOptionClick(item)}
+                      onClick={() => handleOptionClick(item, 0)}
                       className="border-gray-200 cursor-pointer border-b p-2 text-zinc-800 hover:bg-[#E8F5FF]"
                     >
                       {item}
@@ -87,10 +94,10 @@ const DropDownGrouped = ({
         >
           <span
             className={`font-bold ${
-              selectedOption ? "text-black" : "text-slate-600"
+              selectedOptions[1] ? "text-black" : "text-slate-600"
             }`}
           >
-            {selectedOption || defaultOption}
+            {selectedOptions[1] || defaultOption}
           </span>
           <Image
             src={isOpen === 1 ? "/dropdown1.svg" : "/dropdown2.svg"}
@@ -108,7 +115,7 @@ const DropDownGrouped = ({
                   {items.map((item, index2) => (
                     <li
                       key={index2}
-                      onClick={() => handleOptionClick(item)}
+                      onClick={() => handleOptionClick(item, 1)}
                       className="border-gray-200 cursor-pointer border-b p-2 text-zinc-800 hover:bg-[#E8F5FF]"
                     >
                       {item}
@@ -129,10 +136,10 @@ const DropDownGrouped = ({
         >
           <span
             className={`font-bold ${
-              selectedOption ? "text-black" : "text-slate-600"
+              selectedOptions[2] ? "text-black" : "text-slate-600"
             }`}
           >
-            {selectedOption || defaultOption}
+            {selectedOptions[2] || defaultOption}
           </span>
           <Image
             src={isOpen === 2 ? "/dropdown1.svg" : "/dropdown2.svg"}
@@ -150,7 +157,7 @@ const DropDownGrouped = ({
                   {items.map((item, index2) => (
                     <li
                       key={index2}
-                      onClick={() => handleOptionClick(item)}
+                      onClick={() => handleOptionClick(item, 2)}
                       className="cursor-pointer rounded-xl border-b border-zinc-100 p-2 text-zinc-800 hover:bg-[#E8F5FF]"
                     >
                       {item}
@@ -171,10 +178,10 @@ const DropDownGrouped = ({
         >
           <span
             className={`font-bold ${
-              selectedOption ? "text-black" : "text-slate-600"
+              selectedOptions[3] ? "text-black" : "text-slate-600"
             }`}
           >
-            {selectedOption || defaultOption}
+            {selectedOptions[3] || defaultOption}
           </span>
           <Image
             src={isOpen === 3 ? "/dropdown1.svg" : "/dropdown2.svg"}
@@ -192,7 +199,7 @@ const DropDownGrouped = ({
                   {items.map((item, index2) => (
                     <li
                       key={index2}
-                      onClick={() => handleOptionClick(item)}
+                      onClick={() => handleOptionClick(item, 3)}
                       className="cursor-pointer border-b border-zinc-100 p-2 text-zinc-800 hover:bg-[#E8F5FF]"
                     >
                       {item}
