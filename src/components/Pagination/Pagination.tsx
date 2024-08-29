@@ -2,11 +2,11 @@ import React from "react";
 import { Color } from "types/type";
 
 interface PaginationProps {
-  currentPage: number;
-  totalPages: number;
-  variant: "circle" | "square";
-  styleType: "filled" | "outlined" | "outlined-focused" | "filled-outlined";
-  color: Color;
+  currentPage?: number;
+  totalPages?: number;
+  variant?: "circle" | "square";
+  styleType?: "filled" | "outlined" | "outlined-focused" | "filled-outlined";
+  color?: Color;
   onPageChange: (page: number) => void;
   showFirstLastButtons?: boolean; // 첫 페이지와 마지막 페이지 버튼 표시
   boundaryRange?: number; // 첫/마지막 페이지 근처에 표시할 페이지 수
@@ -15,11 +15,11 @@ interface PaginationProps {
 }
 
 const Pagination: React.FC<PaginationProps> = ({
-  currentPage,
-  totalPages,
-  variant,
-  styleType,
-  color,
+  currentPage = 1,
+  totalPages = 10,
+  variant = "circle",
+  styleType = "outlined",
+  color = "Basic",
   onPageChange,
   showFirstLastButtons = false,
   disabled = false,
@@ -68,7 +68,7 @@ const Pagination: React.FC<PaginationProps> = ({
     Success: "bg-Success border-Success",
     Warning: "bg-Warning border-Warning",
     Danger: "bg-Danger border-Danger",
-    White: "bg-white border-white",
+    White: "bg-white border-white text-[#000]",
   };
 
   const baseButtonClasses = "w-10 h-10 flex items-center justify-center";
