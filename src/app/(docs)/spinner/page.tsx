@@ -355,8 +355,8 @@ export default Example;`}
         copied={copied}
         handleCopy={handleCopy}
       />
-
-      <h1 className="mt-40 text-[#2D3748]">2. BarsSpinner</h1>
+      <hr />
+      <h1 className="text-[#2D3748]">2. BarsSpinner</h1>
       <p>
         <code>BarsSpinner</code> 컴포넌트는 로딩 상태를 시각적으로 나타내기 위해
         사용되는 컴포넌트입니다. 크기와 색상을 커스터마이즈할 수 있습니다.
@@ -618,8 +618,8 @@ export default Example;`}
         copied={copied}
         handleCopy={handleCopy}
       />
-
-      <h1 className="mt-40 text-[#2D3748]">3. SquareSpinner</h1>
+      <hr />
+      <h1 className="text-[#2D3748]">3. SquareSpinner</h1>
       <p>
         <code>SquareSpinner</code> 컴포넌트는 로딩 상태를 시각적으로 나타내기
         위해 사용되는 컴포넌트입니다. 크기, 색상, 속도를 커스터마이즈할 수
@@ -950,8 +950,8 @@ export default Example;`}
         copied={copied}
         handleCopy={handleCopy}
       />
-
-      <h1 className="mt-40 text-[#2D3748]">4. PacManSpinner</h1>
+      <hr />
+      <h1 className="text-[#2D3748]">4. PacManSpinner</h1>
       <p>
         <code>PacManSpinner</code> 컴포넌트는 로딩 상태를 시각적으로 나타내기
         위해 사용되는 컴포넌트입니다. 크기, 색상, 속도를 커스터마이즈할 수
@@ -1270,7 +1270,8 @@ export default Example;`}
         copied={copied}
         handleCopy={handleCopy}
       />
-      <h1 className="mt-40 text-[#2D3748]">5. FullScreenSpinner</h1>
+      <hr />
+      <h1 className="text-[#2D3748]">5. FullScreenSpinner</h1>
       <p>
         <code>FullScreenSpinner</code> 컴포넌트는 전체 화면에 로딩 스피너를
         표시하는 컴포넌트입니다. 모양(Shape)과 스피너의 종류를 커스터마이즈할 수
