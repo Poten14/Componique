@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const SwitchBasic = () => {
+const SwitchRound = () => {
   const [isOn, setIsOn] = useState(false);
 
   const toggleSwitch = () => {
@@ -28,4 +28,4 @@ const SwitchBasic = () => {
     </div>
   );
 };
-export default SwitchBasic;
+export default SwitchRound;
