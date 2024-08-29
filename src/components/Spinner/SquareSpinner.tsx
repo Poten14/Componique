@@ -33,7 +33,7 @@ const speedClasses = {
 
 const SquareSpinner: React.FC<SquareSpinnerProps> = ({
   size = "medium",
-  color = "Primary",
+  color = "Basic",
   speed = "medium",
 }) => {
   return (
