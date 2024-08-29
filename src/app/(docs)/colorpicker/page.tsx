@@ -66,8 +66,8 @@ export default Example;`}
         copied={copied}
         handleCopy={handleCopy}
       />
-
-      <h1 className="pt-10 text-[#2D3748]">2. ColorPickerUI - 커스터마이징</h1>
+      <hr />
+      <h1 className="text-[#2D3748]">2. ColorPickerUI - 커스터마이징</h1>
       <p>
         <code>ColorPickerUI</code> 컴포넌트는 사용자가 원하는 색상을 팔레트에
         담은 후, 색상을 선택하고 복사할 수 있도록 설계되었습니다.
@@ -147,8 +147,8 @@ export default Example;`}
           </tr>
         </tbody>
       </table>
-
-      <h1 className="pt-10 text-[#2D3748]">3. GradientPicker</h1>
+      <hr />
+      <h1 className="text-[#2D3748]">3. GradientPicker</h1>
       <p>
         <code>GradientPicker</code> 컴포넌트는 그라데이션 색상을 선택하고
         미리보기를 제공하며, 이를 복사할 수 있습니다.
@@ -230,8 +230,8 @@ export default Example;`}
           </tr>
         </tbody>
       </table>
-
-      <h1 className="pt-10 text-[#2D3748]">4. TwoPicker</h1>
+      <hr />
+      <h1 className="text-[#2D3748]">4. TwoPicker</h1>
       <p>
         <code>TwoPicker</code> 컴포넌트는 사용자가 ColorPicker와 GradientPicker
         중 하나를 선택하여 사용할 수 있게 합니다.
