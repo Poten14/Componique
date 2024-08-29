@@ -3,11 +3,17 @@
 import Image from "next/image";
 import { useState } from "react";
 
-interface SelectValueAdd {
+interface SelectValueAddProps {
   option: string[];
+  placeholder: string;
+  onSelect?: (value: string[]) => void;
 }
 
-const SelectValueAdd = ({ option }: SelectValueAdd) => {
+const SelectValueAdd = ({
+  option,
+  onSelect,
+  placeholder = "Option 1",
+}: SelectValueAddProps) => {
   const [selectValue, setSelectValue] = useState<string[]>([]);
   const [open, setOpen] = useState<boolean>(false);
 
@@ -16,65 +22,84 @@ const SelectValueAdd = ({ option }: SelectValueAdd) => {
   };
 
   const handleOptionClick = (item: string) => {
+    let updatedValue: string[];
+
     if (selectValue.includes(item)) {
-      setSelectValue(selectValue.filter((value) => value !== item));
+      updatedValue = selectValue.filter((value) => value !== item);
     } else {
-      setSelectValue([...selectValue, item]);
+      updatedValue = [...selectValue, item];
+    }
+    setSelectValue(updatedValue);
+
+    if (onSelect) {
+      onSelect(updatedValue);
     }
   };
 
   const handleOptionRemove = (item: string) => {
-    setSelectValue(selectValue.filter((value) => value !== item));
+    const updatedValue = selectValue.filter((value) => value !== item);
+    setSelectValue(updatedValue);
+
+    if (onSelect) {
+      onSelect(updatedValue);
+    }
   };
 
   return (
-    <>
-      <div className="relative w-1/6">
-        <div
-          className={
-            "flex h-9 w-full cursor-pointer items-center justify-between rounded-lg border border-gray p-2 shadow-lg"
-          }
-          onClick={handleDropDown}
-        >
-          <div className="flex gap-1">
-            {selectValue.length > 0
-              ? selectValue.map((item, key) => (
-                  <div
-                    key={key}
-                    className="rounded-md bg-gray p-[2px] px-1.5 text-sm"
-                  >
-                    {item}
-                    <span
-                      className="pl-2"
-                      onClick={() => handleOptionRemove(item)}
-                    >
-                      X
-                    </span>
-                  </div>
-                ))
-              : ""}
-          </div>
-          {open ? (
-            <Image src="selectdown.svg" alt="arrow" width={15} height={15} />
-          ) : (
-            <Image src="selectup.svg" alt="arrow" width={15} height={15} />
-          )}
-          {open && (
-            <ul className="absolute left-0 right-0 top-full z-30 rounded-lg border border-gray bg-white text-xs shadow-lg">
-              {option.map((item, key) => (
-                <li
-                  className={`block w-full cursor-pointer rounded-lg py-2 pl-4 text-sm hover:bg-[#E8F5FF] ${selectValue.includes(item) ? "bg-[#E8F5FF]" : ""}`}
-                  key={key}
-                  onClick={() => handleOptionClick(item)}
+    <div className="relative">
+      <div
+        className="flex h-9 min-w-60 max-w-[450px] cursor-pointer items-center justify-between rounded-lg border border-gray p-2 shadow-lg"
+        onClick={handleDropDown}
+        style={{ width: open ? "auto" : "fit-content" }}
+      >
+        <div className="flex flex-wrap gap-1">
+          {selectValue.length > 0 ? (
+            selectValue.map((item, key) => (
+              <div
+                key={key}
+                className="mr-1.5 flex items-center rounded-md bg-gray p-[2px] px-1.5 text-sm"
+              >
+                {item}
+                <span
+                  className="cursor-pointer pl-2"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    handleOptionRemove(item);
+                  }}
                 >
-                  {item}
-                </li>
-              ))}
-            </ul>
+                  X
+                </span>
+              </div>
+            ))
+          ) : (
+            <span className="rounded-md bg-gray p-[2px] px-1.5 text-sm">
+              {placeholder}
+            </span>
           )}
         </div>
+        {open ? (
+          <Image src="selectdown.svg" alt="arrow" width={15} height={15} />
+        ) : (
+          <Image src="selectup.svg" alt="arrow" width={15} height={15} />
+        )}
+        {open && (
+          <ul className="absolute left-0 right-0 top-full z-30 min-w-60 max-w-[450px] rounded-lg border border-gray bg-white text-xs shadow-lg">
+            {option.map((item, key) => (
+              <li
+                className={`block w-full cursor-pointer rounded-lg py-2 pl-4 text-sm hover:bg-[#E8F5FF] ${
+                  selectValue.includes(item) ? "bg-[#E8F5FF]" : ""
+                }`}
+                key={key}
+                onClick={() => handleOptionClick(item)}
+              >
+                {item}
+              </li>
+            ))}
+          </ul>
+        )}
       </div>
-    </>
+    </div>
   );
 };
+
 export default SelectValueAdd;
