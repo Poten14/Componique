@@ -271,10 +271,14 @@ const page = () => {
         />
       </div>
       <div className="m-4">
-        <Calendar defaultValue={new Date(2024, 7, 22)} />
+        <Calendar defaultValue={new Date()} />
       </div>
       <div className="m-4">
-        <CalendarRange />
+        <CalendarRange
+          onDateSelect={(startDate, endDate) =>
+            console.log("Selected range:", startDate, "to", endDate)
+          }
+        />
       </div>
       <div className="m-4">
         <Carousel images={images} />
