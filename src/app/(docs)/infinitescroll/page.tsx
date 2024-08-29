@@ -2,7 +2,6 @@
 
 import React, { useState } from "react";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
-import { CopyToClipboard } from "react-copy-to-clipboard";
 import InfiniteScrollBasic from "@components/InfiniteScroll/InfiniteScrollBasic";
 import InfiniteScrollImage from "@components/InfiniteScroll/InfiniteScrollImage";
 import InfiniteScrollKoJson from "@components/InfiniteScroll/InfiniteScrollKoJson";
@@ -45,13 +44,13 @@ const InfiniteScrollDocs: React.FC = () => {
     <div className="prose max-w-[1000px] p-5 text-[#6D6D6D]">
       {/* infinitescroll1 */}
       <div>
-        <h1 className="text-[#2D3748]">InfiniteScrollBasic</h1>
+        <h1 className="text-[#2D3748]">1. InfiniteScrollBasic</h1>
         <p>
           <code>InfiniteScrollBasic</code> 컴포넌트는 사용자가 페이지를 스크롤할
           때마다 새로운 항목을 로드하는 기본적인 인피니티 스크롤을 제공합니다.
           아래는 이 컴포넌트를 사용하는 방법에 대한 설명입니다.
         </p>
-        <h2 className="text-[#2D3748]">Import</h2>
+        <h2 className="text-[#2D3748]">1.1. Import</h2>
         <CodeBox
           code={`import InfiniteScrollBasic from '@components/InfiniteScroll/InfiniteScrollBasic';`}
           copyText={`import InfiniteScrollBasic from '@components/InfiniteScroll/InfiniteScrollBasic';`}
@@ -61,7 +60,7 @@ const InfiniteScrollDocs: React.FC = () => {
           handleCopy={handleCopy}
         />
 
-        <h2 className="text-[#2D3748]">Usage</h2>
+        <h2 className="text-[#2D3748]">1.2. Usage</h2>
         <p>기본 사용 예제는 아래와 같습니다:</p>
         <div style={{ marginBottom: "20px" }}>
           <InfiniteScrollBasic content={content} />
@@ -101,7 +100,7 @@ export default Example;`}
           handleCopy={handleCopy}
         />
 
-        <h2 className="text-[#2D3748]">Props</h2>
+        <h2 className="text-[#2D3748]">1.3. Props</h2>
         <p>
           <code>InfiniteScrollBasic</code> 컴포넌트는 아래와 같은 Props를
           가집니다:
@@ -131,7 +130,7 @@ export default Example;`}
           </tbody>
         </table>
 
-        <h2 className="text-[#2D3748]">Full Example</h2>
+        <h2 className="text-[#2D3748]">1.4. Full Example</h2>
         <CodeBox
           code={`import InfiniteScrollBasic from '@components/InfiniteScroll/InfiniteScrollBasic';
 
@@ -168,13 +167,13 @@ export default FullExample;`}
       <br />
       {/* infinitescroll2 */}
       <div className="">
-        <h1 className="text-[#2D3748]">InfiniteScrollImage</h1>
+        <h1 className="text-[#2D3748]">2. InfiniteScrollImage</h1>
         <p>
           <code>InfiniteScrollImage</code> 컴포넌트는 사용자가 페이지를 스크롤할
           때마다 새로운 이미지를 로드하는 인피니티 스크롤을 제공합니다. 이
           컴포넌트는 이미지 URL 배열을 받아 이미지를 무한히 로드할 수 있습니다.
         </p>
-        <h2 className="text-[#2D3748]">Import</h2>
+        <h2 className="text-[#2D3748]">2.1. Import</h2>
         <CodeBox
           code={`import InfiniteScrollImage from '@components/InfiniteScroll/InfiniteScrollImage';`}
           copyText={`import InfiniteScrollImage from '@components/InfiniteScroll/InfiniteScrollImage';`}
@@ -184,7 +183,7 @@ export default FullExample;`}
           handleCopy={handleCopy}
         />
 
-        <h2 className="text-[#2D3748]">Usage</h2>
+        <h2 className="text-[#2D3748]">2.2. Usage</h2>
         <p>기본 사용 예제는 아래와 같습니다:</p>
         <div style={{ marginBottom: "20px" }}>
           <InfiniteScrollImage images={images} />
@@ -226,7 +225,7 @@ export default Example;`}
           handleCopy={handleCopy}
         />
 
-        <h2 className="text-[#2D3748]">Props</h2>
+        <h2 className="text-[#2D3748]">2.3. Props</h2>
         <p>
           <code>InfiniteScrollImage</code> 컴포넌트는 아래와 같은 Props를
           가집니다:
@@ -256,7 +255,7 @@ export default Example;`}
           </tbody>
         </table>
 
-        <h2 className="text-[#2D3748]">Full Example</h2>
+        <h2 className="text-[#2D3748]">2.4. Full Example</h2>
         <CodeBox
           code={`import InfiniteScrollImage from '@components/InfiniteScroll/InfiniteScrollImage';
 
@@ -299,53 +298,54 @@ export default FullExample;`}
       <br />
       {/* infinitescroll3 */}
       <div className="">
-        <h1 className="text-[#2D3748]">InfiniteScrollKoJson</h1>
+        <h1 className="text-[#2D3748]">3. InfiniteScrollBlogPosts</h1>
         <p>
-          <code>InfiniteScrollKoJson</code> 컴포넌트는 외부 API에서 JSON
-          데이터를 가져와 무한 스크롤을 통해 표시하는 예제입니다. 이 컴포넌트는
-          <code>InfiniteScrollBasic</code>을 사용하여 데이터를 스크롤하면서
-          표시합니다.
+          <code>InfiniteScrollBlogPosts</code> 컴포넌트는 외부 API에서 블로그
+          포스트 데이터를 가져와 무한 스크롤을 통해 표시하는 예제입니다. 이
+          컴포넌트는 <code>InfiniteScrollBasic</code>을 사용하여 데이터를
+          스크롤하면서 표시합니다.
         </p>
         <p>
-          API 데이터는{" "}
+          데이터는{" "}
           <a
-            href="https://koreanjson.com/"
+            href="https://koreanjson.com/posts/1"
             target="_blank"
             rel="noopener noreferrer"
           >
             koreanjson.com
           </a>{" "}
-          에서 제공되는 샘플 JSON 데이터를 사용합니다. 이 데이터는 간단한 블로그
-          포스트 형식으로, 제목과 본문을 포함하고 있으며, 각 문장을 무한
-          스크롤로 나누어 표시합니다.
+          에서 제공되는 샘플 블로그 포스트 데이터를 사용하며, 제목과 본문을 무한
+          스크롤로 표시합니다. 각 포스트의 문장은 구분자로 나뉘어 각각의
+          항목으로 표시됩니다.
         </p>
-        <h2 className="text-[#2D3748]">Import</h2>
+
+        <h2 className="text-[#2D3748]">3.1. Import</h2>
         <CodeBox
-          code={`import InfiniteScrollKoJson from '@components/InfiniteScroll/InfiniteScrollKoJson';`}
-          copyText={`import InfiniteScrollKoJson from '@components/InfiniteScroll/InfiniteScrollKoJson';`}
+          code={`import InfiniteScrollBlogPosts from '@components/InfiniteScroll/InfiniteScrollBlogPosts';`}
+          copyText={`import InfiniteScrollBlogPosts from '@components/InfiniteScroll/InfiniteScrollBlogPosts';`}
           language="tsx"
           index={0}
           copied={copied}
           handleCopy={handleCopy}
         />
 
-        <h2 className="text-[#2D3748]">Usage</h2>
+        <h2 className="text-[#2D3748]">3.2. Usage</h2>
         <p>기본 사용 예제는 아래와 같습니다:</p>
         <div style={{ marginBottom: "20px" }}>
           <InfiniteScrollKoJson />
         </div>
         <CodeBox
-          code={`import InfiniteScrollKoJson from '@components/InfiniteScroll/InfiniteScrollKoJson';
+          code={`import InfiniteScrollBlogPosts from '@components/InfiniteScroll/InfiniteScrollBlogPosts';
 
 function Example() {
-  return <InfiniteScrollKoJson />;
+  return <InfiniteScrollBlogPosts />;
 }
 
 export default Example;`}
-          copyText={`import InfiniteScrollKoJson from '@components/InfiniteScroll/InfiniteScrollKoJson';
+          copyText={`import InfiniteScrollBlogPosts from '@components/InfiniteScroll/InfiniteScrollBlogPosts';
 
 function Example() {
-  return <InfiniteScrollKoJson />;
+  return <InfiniteScrollBlogPosts />;
 }
 
 export default Example;`}
@@ -355,18 +355,18 @@ export default Example;`}
           handleCopy={handleCopy}
         />
 
-        <h2 className="text-[#2D3748]">Props</h2>
+        <h2 className="text-[#2D3748]">3.3. Props</h2>
         <p>
-          <code>InfiniteScrollKoJson</code> 컴포넌트는 별도의 props를 사용하지
-          않습니다.
+          <code>InfiniteScrollBlogPosts</code> 컴포넌트는 별도의 props를
+          사용하지 않으며, 내부에서 데이터를 가져와 표시하는 기능을 수행합니다.
         </p>
 
-        <h2 className="text-[#2D3748]">Full Example</h2>
+        <h2 className="text-[#2D3748]">3.4. Full Example</h2>
         <CodeBox
           code={`import { useState, useEffect } from "react";
 import InfiniteScrollBasic from "./InfiniteScrollBasic";
 
-interface Data {
+interface BlogPost {
   id: number;
   title: string;
   content: string;
@@ -375,26 +375,26 @@ interface Data {
   UserId: number;
 }
 
-const InfiniteScrollKoJson = () => {
+const InfiniteScrollBlogPosts = () => {
   const [content, setContent] = useState<string[]>([]);
 
   useEffect(() => {
-    const fetchJsonContent = async () => {
+    const fetchBlogPosts = async () => {
       try {
-        const result = await fetch("https://koreanjson.com/posts/1");
-        const jsonData: Data = await result.json();
+        const response = await fetch("https://koreanjson.com/posts/1");
+        const data: BlogPost = await response.json();
 
-        const title = jsonData.title.split(".");
-        const content = jsonData.content.split(".");
+        const titleParts = data.title.split(".");
+        const contentParts = data.content.split(".");
 
-        const displayText = [...title, ...content];
+        const displayText = [...titleParts, ...contentParts];
         setContent(displayText);
       } catch (error) {
-        console.error("Failed load Data", error);
+        console.error("Failed to load data", error);
       }
     };
 
-    fetchJsonContent();
+    fetchBlogPosts();
   }, []);
 
   return (
@@ -403,11 +403,12 @@ const InfiniteScrollKoJson = () => {
     </div>
   );
 };
-export default InfiniteScrollKoJson;`}
+
+export default InfiniteScrollBlogPosts;`}
           copyText={`import { useState, useEffect } from "react";
 import InfiniteScrollBasic from "./InfiniteScrollBasic";
 
-interface Data {
+interface BlogPost {
   id: number;
   title: string;
   content: string;
@@ -416,26 +417,26 @@ interface Data {
   UserId: number;
 }
 
-const InfiniteScrollKoJson = () => {
+const InfiniteScrollBlogPosts = () => {
   const [content, setContent] = useState<string[]>([]);
 
   useEffect(() => {
-    const fetchJsonContent = async () => {
+    const fetchBlogPosts = async () => {
       try {
-        const result = await fetch("https://koreanjson.com/posts/1");
-        const jsonData: Data = await result.json();
+        const response = await fetch("https://koreanjson.com/posts/1");
+        const data: BlogPost = await response.json();
 
-        const title = jsonData.title.split(".");
-        const content = jsonData.content.split(".");
+        const titleParts = data.title.split(".");
+        const contentParts = data.content.split(".");
 
-        const displayText = [...title, ...content];
+        const displayText = [...titleParts, ...contentParts];
         setContent(displayText);
       } catch (error) {
-        console.error("Failed load Data", error);
+        console.error("Failed to load data", error);
       }
     };
 
-    fetchJsonContent();
+    fetchBlogPosts();
   }, []);
 
   return (
@@ -444,7 +445,8 @@ const InfiniteScrollKoJson = () => {
     </div>
   );
 };
-export default InfiniteScrollKoJson;`}
+
+export default InfiniteScrollBlogPosts;`}
           language="tsx"
           index={2}
           copied={copied}
