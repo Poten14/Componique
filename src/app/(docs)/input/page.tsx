@@ -246,7 +246,8 @@ export default Example;`}
         copied={copied}
         handleCopy={handleCopy}
       />
-      <h1 className="mt-40 text-[#2D3748]">SearchInput</h1>
+      <hr />
+      <h1 className="text-[#2D3748]">SearchInput</h1>
       <p>
         <code>SearchInput</code> 컴포넌트는 사용자가 검색어를 입력할 수 있도록
         해주는 기본적인 UI 요소입니다. 활성화 여부에 따라 버튼과 입력 필드가
@@ -482,7 +483,9 @@ export default Example;`}
         handleCopy={handleCopy}
       />
 
-      <h1 className="mt-40 text-[#2D3748]">SearchInput2</h1>
+      <hr />
+
+      <h1 className="text-[#2D3748]">SearchInput2</h1>
       <p>
         <code>SearchInput2</code> 컴포넌트는 검색 입력 필드가 포커스될 때 크기가
         동적으로 확장되는 기능을 제공합니다. 크기와 스타일을 조정하여 다양한
@@ -704,8 +707,8 @@ export default Example;`}
         copied={copied}
         handleCopy={handleCopy}
       />
-
-      <h1 className="mt-40 text-[#2D3748]">SearchInput3</h1>
+      <hr />
+      <h1 className="text-[#2D3748]">SearchInput3</h1>
       <p>
         <code>SearchInput3</code> 컴포넌트는 검색 입력 필드와 버튼을 함께
         제공하는 UI 요소입니다.
@@ -823,8 +826,8 @@ export default Example;`}
         copied={copied}
         handleCopy={handleCopy}
       />
-
-      <h1 className="mt-40 text-[#2D3748]">NumInput</h1>
+      <hr />
+      <h1 className="text-[#2D3748]">NumInput</h1>
       <p>
         <code>NumInput</code> 컴포넌트는 숫자를 입력하거나 증감할 수 있는
         인터페이스를 제공합니다. 버튼을 사용해 숫자를 증가시키거나 감소시킬 수
@@ -1001,8 +1004,8 @@ export default FullExample;`}
         copied={copied}
         handleCopy={handleCopy}
       />
-
-      <h1 className="mt-40 text-[#2D3748]">CurrencyInput</h1>
+      <hr />
+      <h1 className="text-[#2D3748]">CurrencyInput</h1>
       <p>
         <code>CurrencyInput</code> 컴포넌트는 금액을 입력하거나 증감할 수 있는
         인터페이스를 제공합니다. 사용자가 입력 필드를 통해 금액을 입력하거나,
@@ -1173,8 +1176,8 @@ export default FullExample;`}
         copied={copied}
         handleCopy={handleCopy}
       />
-
-      <h1 className="mt-40 text-[#2D3748]">DecimalInput</h1>
+      <hr />
+      <h1 className="text-[#2D3748]">DecimalInput</h1>
       <p>
         <code>DecimalInput</code> 컴포넌트는 사용자가 소수점이 포함된 숫자를
         입력하거나 증감할 수 있도록 도와주는 인터페이스를 제공합니다. 사용자는
@@ -1345,8 +1348,8 @@ export default FullExample;`}
         copied={copied}
         handleCopy={handleCopy}
       />
-
-      <h1 className="mt-40 text-[#2D3748]">PinInput</h1>
+      <hr />
+      <h1 className="text-[#2D3748]">PinInput</h1>
       <p>
         <code>PinInput</code> 컴포넌트는 사용자에게 PIN 코드를 입력받기 위한 UI
         요소입니다. 사용자는 각 입력 칸에 개별적으로 숫자를 입력할 수 있으며,
