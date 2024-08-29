@@ -1,8 +1,5 @@
 "use client";
 
-import React, { useState } from "react";
-import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
-import { CopyToClipboard } from "react-copy-to-clipboard";
 import Input1 from "@components/Input/Input";
 import SearchInput from "@components/Input/SearchInput";
 import SearchInput2 from "@components/Input/SearchInput2";
@@ -12,6 +9,7 @@ import CurrencyInput from "@components/Input/CurrencyInput";
 import DecimalInput from "@components/Input/DecimalInput";
 import PinInput from "@components/Input/PinInput";
 import CodeBox from "@components/CodeBox";
+import { useState } from "react";
 
 const Input: React.FC = () => {
   const [copied, setCopied] = useState<{ [key: number]: boolean }>({});
@@ -46,8 +44,7 @@ const Input: React.FC = () => {
         <Input1 placeholder="Basic usage" />
       </div>
       <CodeBox
-        code={`
-import { Input } from '@components/Input';
+        code={`import { Input } from '@components/Input';
 
 function Example() {
   return (
@@ -101,9 +98,8 @@ export default Example;`}
         <Input1 placeholder="large size" size="large" />
         <Input1 placeholder="extra large size" size="xl" />
       </div>
-      <div className="relative">
-        <CopyToClipboard
-          text={`import { Input } from '@components/Input';
+      <CodeBox
+        code={`import { Input } from '@components/Input';
 
 function Example() {
   return (
@@ -117,15 +113,7 @@ function Example() {
   );
 }
 export default Example;`}
-          onCopy={() => handleCopy(3)}
-        >
-          <button className="copyButton">
-            {copied[3] ? "Copied!" : "Copy"}
-          </button>
-        </CopyToClipboard>
-        <SyntaxHighlighter language="tsx">
-          {`
-import { Input } from '@components/Input';
+        copyText={`import { Input } from '@components/Input';
 
 function Example() {
   return (
@@ -138,11 +126,12 @@ function Example() {
     </>
   );
 }
-
-export default Example;
-`}
-        </SyntaxHighlighter>
-      </div>
+export default Example;`}
+        language="tsx"
+        index={3}
+        copied={copied}
+        handleCopy={handleCopy}
+      />
 
       <h2 className="text-[#2D3748]">Props</h2>
       <p>
@@ -222,9 +211,24 @@ export default Example;
       </table>
 
       <h2 className="text-[#2D3748]">Full Example</h2>
-      <div className="relative">
-        <CopyToClipboard
-          text={`import { Input } from '@components/Input';
+      <Input1 placeholder="Basic usage" />
+      <Input1 placeholder="small size" size="small" />
+      <Input1 placeholder="filled" variant="filled" />
+      <CodeBox
+        code={`import { Input } from '@components/Input';
+
+function Example() {
+  return (
+    <div>
+      <Input placeholder="Basic usage" />
+      <Input placeholder="small size" size="small" />
+      <Input placeholder="filled" variant="filled" />
+    </div>
+  );
+}
+
+export default Example;`}
+        copyText={`import { Input } from '@components/Input';
 
 function Example() {
   return (
@@ -237,31 +241,11 @@ function Example() {
 }
 
 export default Example;`}
-          onCopy={() => handleCopy(4)}
-        >
-          <button className="copyButton">
-            {copied[4] ? "Copied!" : "Copy"}
-          </button>
-        </CopyToClipboard>
-        <SyntaxHighlighter language="tsx">
-          {`
-import { Input } from '@components/Input';
-
-function Example() {
-  return (
-    <div>
-      <Input placeholder="Basic usage" />
-      <Input placeholder="small size" size="small" />
-      <Input placeholder="outlined" variant="outlined" />
-    </div>
-  );
-}
-
-export default Example;
-`}
-        </SyntaxHighlighter>
-      </div>
-
+        language="tsx"
+        index={4}
+        copied={copied}
+        handleCopy={handleCopy}
+      />
       <h1 className="mt-40 text-[#2D3748]">SearchInput</h1>
       <p>
         <code>SearchInput</code> 컴포넌트는 사용자가 검색어를 입력할 수 있도록
@@ -270,28 +254,22 @@ export default Example;
       </p>
 
       <h2 className="text-[#2D3748]">Import</h2>
-      <div className="relative">
-        <CopyToClipboard
-          text={`import SearchInput from '@components/SearchInput/SearchInput';`}
-          onCopy={() => handleCopy(5)}
-        >
-          <button className="copyButton">
-            {copied[5] ? "Copied!" : "Copy"}
-          </button>
-        </CopyToClipboard>
-        <SyntaxHighlighter language="tsx">
-          {`import { SearchInput } from '@componique/react';`}
-        </SyntaxHighlighter>
-      </div>
+      <CodeBox
+        code={`import { SearchInput } from '@componique/react';`}
+        copyText={`import SearchInput from '@components/SearchInput/SearchInput';`}
+        language="tsx"
+        index={5}
+        copied={copied}
+        handleCopy={handleCopy}
+      />
 
       <h2 className="text-[#2D3748]">Usage</h2>
       <p>기본 사용 예제는 아래와 같습니다:</p>
       <div style={{ marginBottom: "20px" }}>
         <SearchInput placeholder="Search..." />
       </div>
-      <div className="relative">
-        <CopyToClipboard
-          text={`import SearchInput from '@components/SearchInput/SearchInput';
+      <CodeBox
+        code={`import SearchInput from '@components/SearchInput/SearchInput';
 
 function Example() {
   return (
@@ -300,15 +278,7 @@ function Example() {
 }
 
 export default Example;`}
-          onCopy={() => handleCopy(6)}
-        >
-          <button className="copyButton">
-            {copied[6] ? "Copied!" : "Copy"}
-          </button>
-        </CopyToClipboard>
-        <SyntaxHighlighter language="tsx">
-          {`
-import SearchInput from '@components/SearchInput/SearchInput';
+        copyText={`import SearchInput from '@components/SearchInput/SearchInput';
 
 function Example() {
   return (
@@ -316,10 +286,12 @@ function Example() {
   );
 }
 
-export default Example;
-`}
-        </SyntaxHighlighter>
-      </div>
+export default Example;`}
+        language="tsx"
+        index={6}
+        copied={copied}
+        handleCopy={handleCopy}
+      />
 
       <h2 className="text-[#2D3748]">
         Changing the Active and Inactive Colors
@@ -331,9 +303,8 @@ export default Example;
       <div style={{ marginBottom: "20px" }}>
         <SearchInput activeColor="bg-Primary" inactiveColor="bg-gray-400" />
       </div>
-      <div className="relative">
-        <CopyToClipboard
-          text={`import SearchInput from '@components/SearchInput/SearchInput';
+      <CodeBox
+        code={`import SearchInput from '@components/SearchInput/SearchInput';
 
 function Example() {
   return (
@@ -342,15 +313,7 @@ function Example() {
 }
 
 export default Example;`}
-          onCopy={() => handleCopy(7)}
-        >
-          <button className="copyButton">
-            {copied[7] ? "Copied!" : "Copy"}
-          </button>
-        </CopyToClipboard>
-        <SyntaxHighlighter language="tsx">
-          {`
-import SearchInput from '@components/SearchInput/SearchInput';
+        copyText={`import SearchInput from '@components/SearchInput/SearchInput';
 
 function Example() {
   return (
@@ -358,10 +321,12 @@ function Example() {
   );
 }
 
-export default Example;
-`}
-        </SyntaxHighlighter>
-      </div>
+export default Example;`}
+        language="tsx"
+        index={7}
+        copied={copied}
+        handleCopy={handleCopy}
+      />
 
       <h2 className="text-[#2D3748]">Changing the Width of the Input</h2>
       <p>
@@ -371,9 +336,8 @@ export default Example;
       <div style={{ marginBottom: "20px" }}>
         <SearchInput width="w-96" placeholder="Custom width..." />
       </div>
-      <div className="relative">
-        <CopyToClipboard
-          text={`import SearchInput from '@components/SearchInput/SearchInput';
+      <CodeBox
+        code={`import SearchInput from '@components/SearchInput/SearchInput';
 
 function Example() {
   return (
@@ -382,15 +346,7 @@ function Example() {
 }
 
 export default Example;`}
-          onCopy={() => handleCopy(8)}
-        >
-          <button className="copyButton">
-            {copied[8] ? "Copied!" : "Copy"}
-          </button>
-        </CopyToClipboard>
-        <SyntaxHighlighter language="tsx">
-          {`
-import SearchInput from '@components/SearchInput/SearchInput';
+        copyText={`import SearchInput from '@components/SearchInput/SearchInput';
 
 function Example() {
   return (
@@ -398,10 +354,12 @@ function Example() {
   );
 }
 
-export default Example;
-`}
-        </SyntaxHighlighter>
-      </div>
+export default Example;`}
+        language="tsx"
+        index={8}
+        copied={copied}
+        handleCopy={handleCopy}
+      />
 
       <h2 className="text-[#2D3748]">Props</h2>
       <p>
@@ -483,9 +441,8 @@ export default Example;
       </table>
 
       <h2 className="text-[#2D3748]">Full Example</h2>
-      <div className="relative">
-        <CopyToClipboard
-          text={`import SearchInput from '@components/SearchInput/SearchInput';
+      <CodeBox
+        code={`import SearchInput from '@components/SearchInput/SearchInput';
 
 function Example() {
   const handleSearch = (value: string) => {
@@ -502,15 +459,7 @@ function Example() {
 }
 
 export default Example;`}
-          onCopy={() => handleCopy(9)}
-        >
-          <button className="copyButton">
-            {copied[9] ? "Copied!" : "Copy"}
-          </button>
-        </CopyToClipboard>
-        <SyntaxHighlighter language="tsx">
-          {`
-import SearchInput from '@components/SearchInput/SearchInput';
+        copyText={`import SearchInput from '@components/SearchInput/SearchInput';
 
 function Example() {
   const handleSearch = (value: string) => {
@@ -526,10 +475,12 @@ function Example() {
   );
 }
 
-export default Example;
-`}
-        </SyntaxHighlighter>
-      </div>
+export default Example;`}
+        language="tsx"
+        index={9}
+        copied={copied}
+        handleCopy={handleCopy}
+      />
 
       <h1 className="mt-40 text-[#2D3748]">SearchInput2</h1>
       <p>
@@ -539,28 +490,22 @@ export default Example;
       </p>
 
       <h2 className="text-[#2D3748]">Import</h2>
-      <div className="relative">
-        <CopyToClipboard
-          text={`import SearchInput2 from '@components/SearchInput2/SearchInput2';`}
-          onCopy={() => handleCopy(10)}
-        >
-          <button className="copyButton">
-            {copied[10] ? "Copied!" : "Copy"}
-          </button>
-        </CopyToClipboard>
-        <SyntaxHighlighter language="tsx">
-          {`import { SearchInput2 } from '@componique/react';`}
-        </SyntaxHighlighter>
-      </div>
+      <CodeBox
+        code={`import { SearchInput2 } from '@componique/react';`}
+        copyText={`import SearchInput2 from '@components/SearchInput2/SearchInput2';`}
+        language="tsx"
+        index={10}
+        copied={copied}
+        handleCopy={handleCopy}
+      />
 
       <h2 className="text-[#2D3748]">Usage</h2>
       <p>기본 사용 예제는 아래와 같습니다:</p>
       <div className="mb-5">
         <SearchInput2 placeholder="Search..." />
       </div>
-      <div className="relative">
-        <CopyToClipboard
-          text={`import SearchInput2 from '@components/SearchInput2/SearchInput2';
+      <CodeBox
+        code={`import SearchInput2 from '@components/SearchInput2/SearchInput2';
 
 function Example() {
   return (
@@ -569,15 +514,7 @@ function Example() {
 }
 
 export default Example;`}
-          onCopy={() => handleCopy(11)}
-        >
-          <button className="copyButton">
-            {copied[11] ? "Copied!" : "Copy"}
-          </button>
-        </CopyToClipboard>
-        <SyntaxHighlighter language="tsx">
-          {`
-import SearchInput2 from '@components/SearchInput2/SearchInput2';
+        copyText={`import SearchInput2 from '@components/SearchInput2/SearchInput2';
 
 function Example() {
   return (
@@ -585,15 +522,18 @@ function Example() {
   );
 }
 
-export default Example;
-`}
-        </SyntaxHighlighter>
-      </div>
+export default Example;`}
+        language="tsx"
+        index={11}
+        copied={copied}
+        handleCopy={handleCopy}
+      />
 
       <h2 className="text-[#2D3748]">Changing the Size of the Input</h2>
       <p>
         <code>SearchInput2</code> 컴포넌트는 다양한 크기로 제공됩니다. 기본
-        크기는 <code>medium</code>입니다:
+        크기는
+        <code>medium</code>입니다:
       </p>
       <ul>
         <li>
@@ -607,13 +547,12 @@ export default Example;
         </li>
       </ul>
       <div className="m-4 space-y-4">
-        <SearchInput2 size="small" placeholder="Search..." />
-        <SearchInput2 size="medium" placeholder="Search..." />
-        <SearchInput2 size="large" placeholder="Search..." />
+        <SearchInput2 placeholder="small size" size="small" />
+        <SearchInput2 placeholder="medium size" size="medium" />
+        <SearchInput2 placeholder="large size" size="large" />
       </div>
-      <div className="relative">
-        <CopyToClipboard
-          text={`import SearchInput2 from '@components/SearchInput2/SearchInput2';
+      <CodeBox
+        code={`import SearchInput2 from '@components/SearchInput2/SearchInput2';
 
 function Example() {
   return (
@@ -626,15 +565,7 @@ function Example() {
 }
 
 export default Example;`}
-          onCopy={() => handleCopy(12)}
-        >
-          <button className="copyButton">
-            {copied[12] ? "Copied!" : "Copy"}
-          </button>
-        </CopyToClipboard>
-        <SyntaxHighlighter language="tsx">
-          {`
-import SearchInput2 from '@components/SearchInput2/SearchInput2';
+        copyText={`import SearchInput2 from '@components/SearchInput2/SearchInput2';
 
 function Example() {
   return (
@@ -645,9 +576,13 @@ function Example() {
     </>
   );
 }
+
 export default Example;`}
-        </SyntaxHighlighter>
-      </div>
+        language="tsx"
+        index={12}
+        copied={copied}
+        handleCopy={handleCopy}
+      />
 
       <h2 className="text-[#2D3748]">Props</h2>
       <p>
@@ -715,9 +650,8 @@ export default Example;`}
       </table>
 
       <h2 className="text-[#2D3748]">Full Example</h2>
-      <div className="relative">
-        <CopyToClipboard
-          text={`import SearchInput2 from '@components/SearchInput2/SearchInput2';
+      <CodeBox
+        code={`import SearchInput2 from '@components/SearchInput2/SearchInput2';
 
 function Example() {
   const [searchTerm, setSearchTerm] = useState("");
@@ -741,15 +675,7 @@ function Example() {
 }
 
 export default Example;`}
-          onCopy={() => handleCopy(13)}
-        >
-          <button className="copyButton">
-            {copied[13] ? "Copied!" : "Copy"}
-          </button>
-        </CopyToClipboard>
-        <SyntaxHighlighter language="tsx">
-          {`
-import SearchInput2 from '@components/SearchInput2/SearchInput2';
+        copyText={`import SearchInput2 from '@components/SearchInput2/SearchInput2';
 
 function Example() {
   const [searchTerm, setSearchTerm] = useState("");
@@ -772,10 +698,13 @@ function Example() {
   );
 }
 
-export default Example;
-`}
-        </SyntaxHighlighter>
-      </div>
+export default Example;`}
+        language="tsx"
+        index={13}
+        copied={copied}
+        handleCopy={handleCopy}
+      />
+
       <h1 className="mt-40 text-[#2D3748]">SearchInput3</h1>
       <p>
         <code>SearchInput3</code> 컴포넌트는 검색 입력 필드와 버튼을 함께
@@ -783,37 +712,27 @@ export default Example;
       </p>
 
       <h2 className="text-[#2D3748]">Import</h2>
-      <div className="relative">
-        <CopyToClipboard
-          text={`import SearchInput3 from '@components/SearchInput3/SearchInput3';`}
-          onCopy={() => handleCopy(14)}
-        >
-          <button className="copyButton">
-            {copied[14] ? "Copied!" : "Copy"}
-          </button>
-        </CopyToClipboard>
-        <SyntaxHighlighter language="tsx">
-          {`import { SearchInput3 } from '@componique/react';`}
-        </SyntaxHighlighter>
-      </div>
+      <CodeBox
+        code={`import { SearchInput3 } from '@componique/react';`}
+        copyText={`import SearchInput3 from '@components/SearchInput3/SearchInput3';`}
+        language="tsx"
+        index={14}
+        copied={copied}
+        handleCopy={handleCopy}
+      />
 
       <h2 className="text-[#2D3748]">Usage</h2>
       <div style={{ marginBottom: "20px" }}>
         <SearchInput3 placeholder="Search..." />
       </div>
-      <div className="relative">
-        <CopyToClipboard
-          text={`<SearchInput3 placeholder="Search..." />`}
-          onCopy={() => handleCopy(15)}
-        >
-          <button className="copyButton">
-            {copied[15] ? "Copied!" : "Copy"}
-          </button>
-        </CopyToClipboard>
-        <SyntaxHighlighter language="tsx">
-          {`<SearchInput3 placeholder="Search..." />`}
-        </SyntaxHighlighter>
-      </div>
+      <CodeBox
+        code={`<SearchInput3 placeholder="Search..." />`}
+        copyText={`<SearchInput3 placeholder="Search..." />`}
+        language="tsx"
+        index={15}
+        copied={copied}
+        handleCopy={handleCopy}
+      />
 
       <h2 className="text-[#2D3748]">Props</h2>
       <p>크기(size)와 색상(color)를 조절할 수 있습니다.</p>
@@ -853,6 +772,7 @@ export default Example;
           </tr>
         </tbody>
       </table>
+
       <h2 className="text-[#2D3748]">Full Example</h2>
       <div className="ml-4 space-y-3">
         <SearchInput3
@@ -871,9 +791,8 @@ export default Example;
           placeholder="Large Search..."
         />
       </div>
-      <div className="relative">
-        <CopyToClipboard
-          text={`import SearchInput3 from '@components/SearchInput3/SearchInput3';
+      <CodeBox
+        code={`import SearchInput3 from '@components/SearchInput3/SearchInput3';
 
 function Example() {
   return (
@@ -886,15 +805,7 @@ function Example() {
 }
 
 export default Example;`}
-          onCopy={() => handleCopy(16)}
-        >
-          <button className="copyButton">
-            {copied[16] ? "Copied!" : "Copy"}
-          </button>
-        </CopyToClipboard>
-        <SyntaxHighlighter language="tsx">
-          {`
-import SearchInput3 from '@components/SearchInput3/SearchInput3';
+        copyText={`import SearchInput3 from '@components/SearchInput3/SearchInput3';
 
 function Example() {
   return (
@@ -906,10 +817,12 @@ function Example() {
   );
 }
 
-export default Example;
-`}
-        </SyntaxHighlighter>
-      </div>
+export default Example;`}
+        language="tsx"
+        index={16}
+        copied={copied}
+        handleCopy={handleCopy}
+      />
 
       <h1 className="mt-40 text-[#2D3748]">NumInput</h1>
       <p>
@@ -919,19 +832,14 @@ export default Example;
       </p>
 
       <h2 className="text-[#2D3748]">Import</h2>
-      <div className="relative">
-        <CopyToClipboard
-          text={`import SearchInput3 from '@components/SearchInput3/SearchInput3';`}
-          onCopy={() => handleCopy(17)}
-        >
-          <button className="copyButton">
-            {copied[17] ? "Copied!" : "Copy"}
-          </button>
-        </CopyToClipboard>
-        <SyntaxHighlighter language="tsx">
-          {`import {NumInput} from '@componique/react';`}
-        </SyntaxHighlighter>
-      </div>
+      <CodeBox
+        code={`import { NumInput } from '@componique/react';`}
+        copyText={`import NumInput from '@components/Input/NumInput';`}
+        language="tsx"
+        index={17}
+        copied={copied}
+        handleCopy={handleCopy}
+      />
 
       <h2 className="text-[#2D3748]">Usage</h2>
       <p>기본 사용 예제는 아래와 같습니다:</p>
@@ -942,26 +850,8 @@ export default Example;
           onValueChange={(value) => console.log("New value:", value)}
         />
       </div>
-      <div className="relative">
-        <CopyToClipboard
-          text={`import NumInput from '@components/Input/NumInput';
-
-function Example() {
-  return (
-    <NumInput/>
-  );
-}
-
-export default Example;`}
-          onCopy={() => handleCopy(18)}
-        >
-          <button className="copyButton">
-            {copied[18] ? "Copied!" : "Copy"}
-          </button>
-        </CopyToClipboard>
-        <SyntaxHighlighter language="tsx">
-          {`
-import NumInput from '@components/Input/NumInput';
+      <CodeBox
+        code={`import NumInput from '@components/Input/NumInput';
 
 function Example() {
   return (
@@ -969,10 +859,21 @@ function Example() {
   );
 }
 
-export default Example;
-`}
-        </SyntaxHighlighter>
-      </div>
+export default Example;`}
+        copyText={`import NumInput from '@components/Input/NumInput';
+
+function Example() {
+  return (
+    <NumInput />
+  );
+}
+
+export default Example;`}
+        language="tsx"
+        index={18}
+        copied={copied}
+        handleCopy={handleCopy}
+      />
 
       <h2 className="text-[#2D3748]">Props</h2>
       <p>
@@ -1064,49 +965,42 @@ export default Example;
           onValueChange={(value) => console.log("Updated value:", value)}
         />
       </div>
-      <div className="relative">
-        <CopyToClipboard
-          text={`import NumInput from '@components/Input/NumInput';
+      <CodeBox
+        code={`import NumInput from '@components/Input/NumInput';
 
 function FullExample() {
   return (
     <NumInput
-    size="large"
-    color="Basic"
-    value="5"
-    width="250px"
-    onValueChange={(value) => console.log("Updated value:", value)}
-  />
+      size="large"
+      color="Basic"
+      value="5"
+      width="250px"
+      onValueChange={(value) => console.log("Updated value:", value)}
+    />
   );
 }
 
 export default FullExample;`}
-          onCopy={() => handleCopy(19)}
-        >
-          <button className="copyButton">
-            {copied[19] ? "Copied!" : "Copy"}
-          </button>
-        </CopyToClipboard>
-        <SyntaxHighlighter language="tsx">
-          {`
-import NumInput from '@components/Input/NumInput';
+        copyText={`import NumInput from '@components/Input/NumInput';
 
 function FullExample() {
   return (
     <NumInput
-    size="large"
-    color="Basic"
-    value="5"
-    width="250px"
-    onValueChange={(value) => console.log("Updated value:", value)}
-  />
+      size="large"
+      color="Basic"
+      value="5"
+      width="250px"
+      onValueChange={(value) => console.log("Updated value:", value)}
+    />
   );
 }
 
-export default FullExample;
-    `}
-        </SyntaxHighlighter>
-      </div>
+export default FullExample;`}
+        language="tsx"
+        index={19}
+        copied={copied}
+        handleCopy={handleCopy}
+      />
 
       <h1 className="mt-40 text-[#2D3748]">CurrencyInput</h1>
       <p>
@@ -1116,19 +1010,14 @@ export default FullExample;
       </p>
 
       <h2 className="text-[#2D3748]">Import</h2>
-      <div className="relative">
-        <CopyToClipboard
-          text={`import CurrencyInput from '@components/Input/CurrencyInput';`}
-          onCopy={() => handleCopy(20)}
-        >
-          <button className="copyButton">
-            {copied[20] ? "Copied!" : "Copy"}
-          </button>
-        </CopyToClipboard>
-        <SyntaxHighlighter language="tsx">
-          {`import { CurrencyInput } from '@componique/react';`}
-        </SyntaxHighlighter>
-      </div>
+      <CodeBox
+        code={`import { CurrencyInput } from '@componique/react';`}
+        copyText={`import CurrencyInput from '@components/Input/CurrencyInput';`}
+        language="tsx"
+        index={20}
+        copied={copied}
+        handleCopy={handleCopy}
+      />
 
       <h2 className="text-[#2D3748]">Usage</h2>
       <div style={{ marginBottom: "20px" }}>
@@ -1139,31 +1028,24 @@ export default FullExample;
           onValueChange={(value) => console.log("New value:", value)}
         />
       </div>
-      <div className="relative">
-        <CopyToClipboard
-          text={`<CurrencyInput
+      <CodeBox
+        code={`<CurrencyInput
   size="medium"
   color="Primary"
   value="$10.00"
   onValueChange={(value) => console.log("New value:", value)}
 />`}
-          onCopy={() => handleCopy(21)}
-        >
-          <button className="copyButton">
-            {copied[21] ? "Copied!" : "Copy"}
-          </button>
-        </CopyToClipboard>
-        <SyntaxHighlighter language="tsx">
-          {`
-<CurrencyInput
+        copyText={`<CurrencyInput
   size="medium"
   color="Primary"
   value="$10.00"
   onValueChange={(value) => console.log("New value:", value)}
-/>
-    `}
-        </SyntaxHighlighter>
-      </div>
+/>`}
+        language="tsx"
+        index={21}
+        copied={copied}
+        handleCopy={handleCopy}
+      />
 
       <h2 className="text-[#2D3748]">Props</h2>
       <p>
@@ -1255,9 +1137,8 @@ export default FullExample;
           onValueChange={(value) => console.log("Updated value:", value)}
         />
       </div>
-      <div className="relative">
-        <CopyToClipboard
-          text={`import CurrencyInput from '@components/Input/CurrencyInput';
+      <CodeBox
+        code={`import CurrencyInput from '@components/Input/CurrencyInput';
 
 function FullExample() {
   return (
@@ -1272,15 +1153,7 @@ function FullExample() {
 }
 
 export default FullExample;`}
-          onCopy={() => handleCopy(22)}
-        >
-          <button className="copyButton">
-            {copied[22] ? "Copied!" : "Copy"}
-          </button>
-        </CopyToClipboard>
-        <SyntaxHighlighter language="tsx">
-          {`
-import CurrencyInput from '@components/Input/CurrencyInput';
+        copyText={`import CurrencyInput from '@components/Input/CurrencyInput';
 
 function FullExample() {
   return (
@@ -1294,10 +1167,12 @@ function FullExample() {
   );
 }
 
-export default FullExample;
-    `}
-        </SyntaxHighlighter>
-      </div>
+export default FullExample;`}
+        language="tsx"
+        index={22}
+        copied={copied}
+        handleCopy={handleCopy}
+      />
 
       <h1 className="mt-40 text-[#2D3748]">DecimalInput</h1>
       <p>
@@ -1308,19 +1183,14 @@ export default FullExample;
       </p>
 
       <h2 className="text-[#2D3748]">Import</h2>
-      <div className="relative">
-        <CopyToClipboard
-          text={`import DecimalInput from '@components/Input/DecimalInput';`}
-          onCopy={() => handleCopy(23)}
-        >
-          <button className="copyButton">
-            {copied[23] ? "Copied!" : "Copy"}
-          </button>
-        </CopyToClipboard>
-        <SyntaxHighlighter language="tsx">
-          {`import { DecimalInput } from '@componique/react';`}
-        </SyntaxHighlighter>
-      </div>
+      <CodeBox
+        code={`import { DecimalInput } from '@componique/react';`}
+        copyText={`import DecimalInput from '@components/Input/DecimalInput';`}
+        language="tsx"
+        index={23}
+        copied={copied}
+        handleCopy={handleCopy}
+      />
 
       <h2 className="text-[#2D3748]">Usage</h2>
       <div style={{ marginBottom: "20px" }}>
@@ -1330,31 +1200,24 @@ export default FullExample;
           onValueChange={(value) => console.log("New value:", value)}
         />
       </div>
-      <div className="relative">
-        <CopyToClipboard
-          text={`<DecimalInput
+      <CodeBox
+        code={`<DecimalInput
   size="medium"
   color="Primary"
   value="10.00"
   onValueChange={(value) => console.log("New value:", value)}
 />`}
-          onCopy={() => handleCopy(24)}
-        >
-          <button className="copyButton">
-            {copied[24] ? "Copied!" : "Copy"}
-          </button>
-        </CopyToClipboard>
-        <SyntaxHighlighter language="tsx">
-          {`
-<DecimalInput
+        copyText={`<DecimalInput
   size="medium"
   color="Primary"
   value="10.00"
   onValueChange={(value) => console.log("New value:", value)}
-/>
-    `}
-        </SyntaxHighlighter>
-      </div>
+/>`}
+        language="tsx"
+        index={24}
+        copied={copied}
+        handleCopy={handleCopy}
+      />
 
       <h2 className="text-[#2D3748]">Props</h2>
       <p>
@@ -1446,9 +1309,8 @@ export default FullExample;
           onValueChange={(value) => console.log("Updated value:", value)}
         />
       </div>
-      <div className="relative">
-        <CopyToClipboard
-          text={`import DecimalInput from '@components/Input/DecimalInput';
+      <CodeBox
+        code={`import DecimalInput from '@components/Input/DecimalInput';
 
 function FullExample() {
   return (
@@ -1463,15 +1325,7 @@ function FullExample() {
 }
 
 export default FullExample;`}
-          onCopy={() => handleCopy(25)}
-        >
-          <button className="copyButton">
-            {copied[25] ? "Copied!" : "Copy"}
-          </button>
-        </CopyToClipboard>
-        <SyntaxHighlighter language="tsx">
-          {`
-import DecimalInput from '@components/Input/DecimalInput';
+        copyText={`import DecimalInput from '@components/Input/DecimalInput';
 
 function FullExample() {
   return (
@@ -1485,10 +1339,12 @@ function FullExample() {
   );
 }
 
-export default FullExample;
-    `}
-        </SyntaxHighlighter>
-      </div>
+export default FullExample;`}
+        language="tsx"
+        index={25}
+        copied={copied}
+        handleCopy={handleCopy}
+      />
 
       <h1 className="mt-40 text-[#2D3748]">PinInput</h1>
       <p>
@@ -1498,28 +1354,22 @@ export default FullExample;
       </p>
 
       <h2 className="text-[#2D3748]">Import</h2>
-      <div className="relative">
-        <CopyToClipboard
-          text={`import PinInput from '@components/Input/PinInput';`}
-          onCopy={() => handleCopy(26)}
-        >
-          <button className="copyButton">
-            {copied[26] ? "Copied!" : "Copy"}
-          </button>
-        </CopyToClipboard>
-        <SyntaxHighlighter language="tsx">
-          {`import { PinInput } from '@componique/react';`}
-        </SyntaxHighlighter>
-      </div>
+      <CodeBox
+        code={`import { PinInput } from '@componique/react';`}
+        copyText={`import PinInput from '@components/Input/PinInput';`}
+        language="tsx"
+        index={26}
+        copied={copied}
+        handleCopy={handleCopy}
+      />
 
       <h2 className="text-[#2D3748]">Usage</h2>
       <p>기본 사용 예제는 아래와 같습니다:</p>
       <div style={{ marginBottom: "20px" }}>
         <PinInput length={4} />
       </div>
-      <div className="relative">
-        <CopyToClipboard
-          text={`import PinInput from '@components/Input/PinInput';
+      <CodeBox
+        code={`import PinInput from '@components/Input/PinInput';
 
 function Example() {
   return (
@@ -1528,15 +1378,7 @@ function Example() {
 }
 
 export default Example;`}
-          onCopy={() => handleCopy(27)}
-        >
-          <button className="copyButton">
-            {copied[27] ? "Copied!" : "Copy"}
-          </button>
-        </CopyToClipboard>
-        <SyntaxHighlighter language="tsx">
-          {`
-import PinInput from '@components/Input/PinInput';
+        copyText={`import PinInput from '@components/Input/PinInput';
 
 function Example() {
   return (
@@ -1544,10 +1386,12 @@ function Example() {
   );
 }
 
-export default Example;
-`}
-        </SyntaxHighlighter>
-      </div>
+export default Example;`}
+        language="tsx"
+        index={27}
+        copied={copied}
+        handleCopy={handleCopy}
+      />
 
       <h2 className="text-[#2D3748]">Customizing the PinInput</h2>
       <p>
@@ -1561,9 +1405,8 @@ export default Example;
       <div style={{ marginBottom: "20px" }}>
         <PinInput customCharacter="🥳" />
       </div>
-      <div className="relative">
-        <CopyToClipboard
-          text={`import PinInput from '@components/Input/PinInput';
+      <CodeBox
+        code={`import PinInput from '@components/Input/PinInput';
 
 function Example() {
   return (
@@ -1573,15 +1416,7 @@ function Example() {
 }
 
 export default Example;`}
-          onCopy={() => handleCopy(28)}
-        >
-          <button className="copyButton">
-            {copied[28] ? "Copied!" : "Copy"}
-          </button>
-        </CopyToClipboard>
-        <SyntaxHighlighter language="tsx">
-          {`
-import PinInput from '@components/Input/PinInput';
+        copyText={`import PinInput from '@components/Input/PinInput';
 
 function Example() {
   return (
@@ -1590,10 +1425,12 @@ function Example() {
   );
 }
 
-export default Example;
-`}
-        </SyntaxHighlighter>
-      </div>
+export default Example;`}
+        language="tsx"
+        index={28}
+        copied={copied}
+        handleCopy={handleCopy}
+      />
 
       <h2 className="text-[#2D3748]">Props</h2>
       <p>
@@ -1693,9 +1530,8 @@ export default Example;
           onChange={(value) => console.log("Updated PIN:", value)}
         />
       </div>
-      <div className="relative">
-        <CopyToClipboard
-          text={`import PinInput from '@components/Input/PinInput';
+      <CodeBox
+        code={`import PinInput from '@components/Input/PinInput';
 
 function FullExample() {
   return (
@@ -1709,15 +1545,7 @@ function FullExample() {
 }
 
 export default FullExample;`}
-          onCopy={() => handleCopy(29)}
-        >
-          <button className="copyButton">
-            {copied[29] ? "Copied!" : "Copy"}
-          </button>
-        </CopyToClipboard>
-        <SyntaxHighlighter language="tsx">
-          {`
-import PinInput from '@components/Input/PinInput';
+        copyText={`import PinInput from '@components/Input/PinInput';
 
 function FullExample() {
   return (
@@ -1730,10 +1558,12 @@ function FullExample() {
   );
 }
 
-export default FullExample;
-`}
-        </SyntaxHighlighter>
-      </div>
+export default FullExample;`}
+        language="tsx"
+        index={29}
+        copied={copied}
+        handleCopy={handleCopy}
+      />
     </div>
   );
 };
