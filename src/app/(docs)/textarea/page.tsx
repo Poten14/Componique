@@ -16,14 +16,14 @@ const TextareaDocs: React.FC = () => {
 
   return (
     <div className="prose max-w-[1000px] p-5 text-[#6D6D6D]">
-      <h1 className="text-[#2D3748]">Textarea</h1>
+      <h1 className="text-[#2D3748]">1. Textarea</h1>
       <p>
         <code>Textarea</code> 컴포넌트는 사용자가 긴 텍스트를 입력할 수 있도록
         설계된 입력 필드입니다. 크기, 색상, 및 크기 조절 가능 여부를 조정하여
         다양한 스타일을 적용할 수 있습니다.
       </p>
 
-      <h2 className="text-[#2D3748]">Import</h2>
+      <h2 className="text-[#2D3748]">1.1. Import</h2>
       <div className="relative">
         <CopyToClipboard
           text={`import Textarea from '@components/Textarea';`}
@@ -36,7 +36,7 @@ const TextareaDocs: React.FC = () => {
         </SyntaxHighlighter>
       </div>
 
-      <h2 className="text-[#2D3748]">Usage</h2>
+      <h2 className="text-[#2D3748]">1.2. Usage</h2>
       <p>기본 사용 예제는 아래와 같습니다:</p>
       <div style={{ marginBottom: "20px" }}>
         <Textarea
@@ -83,7 +83,7 @@ export default Example;
         </SyntaxHighlighter>
       </div>
 
-      <h2 className="text-[#2D3748]">Changing the Size of the Textarea</h2>
+      <h2 className="text-[#2D3748]">1.3. Changing the Size of the Textarea</h2>
       <p>
         <code>Textarea</code> 컴포넌트는 다양한 크기로 제공됩니다. 기본 크기는{" "}
         <code>large</code>입니다:
@@ -179,7 +179,9 @@ export default Example;
         </SyntaxHighlighter>
       </div>
 
-      <h2 className="text-[#2D3748]">Changing the Color of the Textarea</h2>
+      <h2 className="text-[#2D3748]">
+        1.4. Changing the Color of the Textarea
+      </h2>
       <p>
         <code>Textarea</code> 컴포넌트는 다양한 색상으로 제공됩니다. 기본 색상은{" "}
         <code>blue</code>입니다:
@@ -264,7 +266,7 @@ export default Example;
         </SyntaxHighlighter>
       </div>
 
-      <h2 className="text-[#2D3748]">Changing the Resize Property</h2>
+      <h2 className="text-[#2D3748]">1.5. Changing the Resize Property</h2>
       <p>
         <code>Textarea</code> 컴포넌트는 다양한 크기 조절 가능 여부를 설정할 수
         있습니다. 기본 <code>resize</code> 속성은 <code>vertical</code>입니다:
@@ -349,7 +351,7 @@ export default Example;
         </SyntaxHighlighter>
       </div>
 
-      <h2 className="text-[#2D3748]">Props</h2>
+      <h2 className="text-[#2D3748]">1.6. Props</h2>
       <p>
         <code>Textarea</code> 컴포넌트는 아래와 같은 Props를 가집니다:
       </p>
@@ -438,7 +440,7 @@ export default Example;
         </tbody>
       </table>
 
-      <h2 className="text-[#2D3748]">Full Example</h2>
+      <h2 className="text-[#2D3748]">1.7. Full Example</h2>
       <div className="relative">
         <CopyToClipboard
           text={`import Textarea from '@components/Textarea';
@@ -488,14 +490,14 @@ export default Example;
       </div>
       <br />
       <br />
-      <h1 className="text-[#2D3748]">TextareaValue</h1>
+      <h1 className="text-[#2D3748]">2. TextareaValue</h1>
       <p>
         <code>TextareaValue</code> 컴포넌트는 텍스트 영역에 입력된 값을
         실시간으로 표시하는 기능을 제공합니다. 사용자가 입력한 내용이 화면에
         즉시 반영됩니다.
       </p>
 
-      <h2 className="text-[#2D3748]">Import</h2>
+      <h2 className="text-[#2D3748]">2.1. Import</h2>
       <div className="relative">
         <CopyToClipboard
           text={`import TextareaValue from '@components/TextareaValue';`}
@@ -508,7 +510,7 @@ export default Example;
         </SyntaxHighlighter>
       </div>
 
-      <h2 className="text-[#2D3748]">Usage</h2>
+      <h2 className="text-[#2D3748]">2.2. Usage</h2>
       <p>기본 사용 예제는 아래와 같습니다:</p>
       <div style={{ marginBottom: "20px" }}>
         <TextareaValue
@@ -567,7 +569,7 @@ export default Example;
         </SyntaxHighlighter>
       </div>
 
-      <h2 className="text-[#2D3748]">Props</h2>
+      <h2 className="text-[#2D3748]">2.3. Props</h2>
       <p>
         <code>TextareaValue</code> 컴포넌트는 아래와 같은 Props를 가집니다:
       </p>
@@ -620,7 +622,7 @@ export default Example;
         </tbody>
       </table>
 
-      <h2 className="text-[#2D3748]">Full Example</h2>
+      <h2 className="text-[#2D3748]">2.4. Full Example</h2>
       <div className="relative">
         <CopyToClipboard
           text={`import TextareaValue from '@components/TextareaValue';
