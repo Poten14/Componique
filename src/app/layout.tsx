@@ -14,7 +14,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="ko">
-      <body className="bg-[url(/background.svg)] bg-cover bg-fixed bg-no-repeat">
+      <body>
         <header className="fixed z-10 flex h-[90px] w-full items-center justify-between bg-transparent">
           <Logo />
           <UserPage />
