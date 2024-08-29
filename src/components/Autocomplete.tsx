@@ -46,6 +46,20 @@ const Autocomplete: React.FC<AutocompleteProps> = ({
     router.push(pagePath);
   };
 
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === "Enter") {
+      // Enter 키를 눌렀을 때 현재 입력된 값으로 이동
+      const matchingOption = filteredOptions[0]; // 첫 번째 필터링된 옵션을 선택
+      if (matchingOption) {
+        handleOptionClick(matchingOption);
+      } else if (inputValue) {
+        // 입력된 값으로도 이동 가능하도록
+        const pagePath = `/${inputValue.toLowerCase().replace(/\s+/g, "")}`;
+        router.push(pagePath);
+      }
+    }
+  };
+
   return (
     <div className="relative max-w-[740px]">
       <div className="flex h-16 items-center rounded-full bg-white px-4 shadow-lg focus-within:border-Basic focus-within:ring-2 focus-within:ring-Basic">
@@ -59,6 +73,7 @@ const Autocomplete: React.FC<AutocompleteProps> = ({
           type="text"
           value={inputValue}
           onChange={handleInputChange}
+          onKeyDown={handleKeyDown} // 키보드 이벤트 처리 추가
           onFocus={() => setIsDropdownOpen(true)}
           onBlur={() => setIsDropdownOpen(false)}
           placeholder={placeholder}
@@ -67,7 +82,7 @@ const Autocomplete: React.FC<AutocompleteProps> = ({
         <Icon name="icon-search" size={24} />
       </div>
       {isDropdownOpen && (
-        <ul className="absolute left-0 right-0 z-10 mt-2 max-h-60 overflow-y-auto rounded-lg bg-white shadow-lg">
+        <ul className="absolute left-0 right-0 z-10 mt-1 max-h-60 overflow-y-auto rounded-xl bg-white shadow-lg">
           {moveCircle && (
             <li className="flex items-center space-x-2 p-3">
               <div className="h-8 w-8 rounded-full bg-[#E4C987]"></div>

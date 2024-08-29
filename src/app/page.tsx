@@ -2,7 +2,7 @@
 
 import Autocomplete from "@components/Autocomplete";
 import Image from "next/image";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const options = [
   { label: "Form", value: "Button" },
@@ -32,9 +32,20 @@ const options = [
 
 const Page = () => {
   const [selectedOption, setSelectedOption] = useState<string>("");
+  const [recentSearches, setRecentSearches] = useState<string[]>([]);
+
+  useEffect(() => {
+    const storedSearches = sessionStorage.getItem("recentSearches");
+    if (storedSearches) {
+      setRecentSearches(JSON.parse(storedSearches));
+    }
+  }, []);
 
   const handleSelect = (option: string) => {
     setSelectedOption(option);
+    const updatedSearches = [...recentSearches, option].slice(-5); // 최근 5개만 유지
+    setRecentSearches(updatedSearches);
+    sessionStorage.setItem("recentSearches", JSON.stringify(updatedSearches));
   };
 
   return (
@@ -55,6 +66,18 @@ const Page = () => {
             placeholder="Search for a Components..."
             onSelect={handleSelect}
           />
+        </div>
+        <div className="mt-4">
+          <div className="flex flex-wrap gap-2">
+            {recentSearches.map((search, index) => (
+              <span
+                key={index}
+                className="rounded-full border border-Basic px-3 py-1 text-Basic"
+              >
+                {search}
+              </span>
+            ))}
+          </div>
         </div>
       </div>
     </>
