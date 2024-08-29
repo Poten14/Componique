@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useState } from "react";
-import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import Skeleton from "@components/Skeleton/Skeleton";
 import CodeBox from "@components/CodeBox";
 import SkeletonCard from "@components/Skeleton/SkeletonCard";
@@ -23,7 +22,9 @@ const SkeletonDocs: React.FC = () => {
         제공하여 유연하게 사용할 수 있습니다.
       </p>
 
-      <h2 className="text-[#2D3748]">1.1. Import</h2>
+      <h2 id="Import" className="text-[#2D3748]">
+        1.1. Import
+      </h2>
       <CodeBox
         code={`import { Skeleton } from '@components/Skeleton';`}
         copyText={`import { Skeleton } from '@components/Skeleton';`}
@@ -33,7 +34,9 @@ const SkeletonDocs: React.FC = () => {
         handleCopy={handleCopy}
       />
 
-      <h2 className="text-[#2D3748]">1.2. Usage</h2>
+      <h2 id="Usage" className="text-[#2D3748]">
+        1.2. Usage
+      </h2>
       <p>기본 사용 예제는 아래와 같습니다:</p>
       <div style={{ marginBottom: "20px" }}>
         <Skeleton size="medium" variants="rounded" animate={true} />
@@ -63,7 +66,9 @@ export default Example;`}
         handleCopy={handleCopy}
       />
 
-      <h2 className="text-[#2D3748]">1.3. Props</h2>
+      <h2 id="Props" className="text-[#2D3748]">
+        1.3. Props
+      </h2>
       <p>
         <code>Skeleton</code> 컴포넌트는 아래와 같은 Props를 가집니다:
       </p>
@@ -122,7 +127,9 @@ export default Example;`}
         </tbody>
       </table>
 
-      <h2 className="text-[#2D3748]">1.4. Full Example</h2>
+      <h2 id="Example" className="text-[#2D3748]">
+        1.4. Full Example
+      </h2>
       <CodeBox
         code={`import Skeleton from '@components/Skeleton';
 
