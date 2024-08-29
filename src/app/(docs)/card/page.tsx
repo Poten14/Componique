@@ -164,10 +164,8 @@ export default FullExample;`}
         />
         {/* 카피버튼 끝 */}
       </div>
-
+      <hr />
       {/* Card2 */}
-      <br />
-      <br />
       <div>
         <h1 className="text-[#2D3748]">2. CardInteractive</h1>
         <p>
@@ -317,8 +315,7 @@ export default FullExample;`}
       </div>
 
       {/* Card3 */}
-      <br />
-      <br />
+      <hr />
       <div>
         <h1 className="text-[#2D3748]">3. CardImage</h1>
         <p>
@@ -467,8 +464,7 @@ export default FullExample;`}
       </div>
 
       {/* Card4 */}
-      <br />
-      <br />
+      <hr />
       <div>
         <h1 className="text-[#2D3748]">4. CardPricing</h1>
         <p>
@@ -723,8 +719,7 @@ export default FullExample;`}
       </div>
 
       {/* Card5 */}
-      <br />
-      <br />
+      <hr />
       <div>
         <h1 className="text-[#2D3748]">5. CardReview</h1>
         <p>

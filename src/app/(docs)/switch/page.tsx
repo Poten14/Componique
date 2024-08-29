@@ -192,8 +192,7 @@ export default Example;
           handleCopy={handleCopy}
         />
       </div>
-      <br />
-      <br />
+      <hr />
       {/* switch2 */}
       <div className="">
         <h1 className="text-[#2D3748]">2. SwitchHorizental</h1>
@@ -370,8 +369,7 @@ export default Example;
           handleCopy={handleCopy}
         />
       </div>
-      <br />
-      <br />
+      <hr />
       {/* switch3 */}
       <div className="">
         <h1 className="text-[#2D3748]">3. SwitchLong</h1>
@@ -548,8 +546,7 @@ export default Example;
           handleCopy={handleCopy}
         />
       </div>
-      <br />
-      <br />
+      <hr />
       {/* switch4 */}
       <div className="">
         <h1 className="text-[#2D3748]">4. SwitchRound</h1>
@@ -727,8 +724,7 @@ export default Example;
           handleCopy={handleCopy}
         />
       </div>
-      <br />
-      <br />
+      <hr />
       {/* switch5 */}
       <div className="">
         <h1 className="text-[#2D3748]">5. SwitchLabeled</h1>

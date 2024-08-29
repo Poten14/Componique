@@ -605,7 +605,7 @@ export default Example;`}
         handleCopy={handleCopy}
       />
       {/* 카피버튼 끝 */}
-      <br />
+      <hr />
       {/* RadioButton2 */}
       <div className="">
         <h1 className="text-[#2D3748]">2. RadioButtonDescription</h1>
@@ -1343,7 +1343,7 @@ export default FullExample;`}
           handleCopy={handleCopy}
         />
         {/* 카피버튼 끝 */}
-        <br />
+        <hr />
 
         {/* RadioButton3 */}
         <div className="">

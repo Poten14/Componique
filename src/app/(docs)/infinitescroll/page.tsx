@@ -164,7 +164,7 @@ export default FullExample;`}
           handleCopy={handleCopy}
         />
       </div>
-      <br />
+      <hr />
       {/* infinitescroll2 */}
       <div className="">
         <h1 className="text-[#2D3748]">2. InfiniteScrollImage</h1>
@@ -295,7 +295,7 @@ export default FullExample;`}
           handleCopy={handleCopy}
         />
       </div>
-      <br />
+      <hr />
       {/* infinitescroll3 */}
       <div className="">
         <h1 className="text-[#2D3748]">3. InfiniteScrollBlogPosts</h1>
