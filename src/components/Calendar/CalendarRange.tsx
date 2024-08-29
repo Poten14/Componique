@@ -96,7 +96,7 @@ const CalendarRange = ({ onDateSelect }: CalendarProps) => {
 
   return (
     <>
-      <div className="w-1/5">
+      <div className="m-auto w-2/5">
         <div className="w-full">
           <div className="mb-2 flex justify-between">
             <span>

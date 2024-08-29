@@ -148,7 +148,8 @@ function Example() {
         copied={copied}
         handleCopy={handleCopy}
       />
-      <hr />
+      <br />
+      <br />
       <h1 className="text-[#2D3748]">SkeletonCard</h1>
       <p>
         <code>SkeletonCard</code> 컴포넌트는 로딩 상태를 시각적으로 나타내기
@@ -173,7 +174,6 @@ function Example() {
       </div>
       <CodeBox
         code={`import SkeletonCard from '@components/SkeletonCard';
-
 function Example() {
   return <SkeletonCard />;
 }
