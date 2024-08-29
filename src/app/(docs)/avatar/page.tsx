@@ -232,7 +232,7 @@ export default AvatarBasic;`}
           handleCopy={handleCopy}
         />
       </div>
-
+      <hr />
       {/* avatar2 */}
       <div className="prose max-w-[1000px] p-5 text-[#6D6D6D]">
         <h1 className="text-[#2D3748]">2. AvatarLabel</h1>
