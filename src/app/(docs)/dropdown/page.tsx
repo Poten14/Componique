@@ -18,13 +18,13 @@ const DropDownComponent: React.FC = () => {
     <div className="prose max-w-[1000px] p-5 text-[#6D6D6D]">
       {/* dropdown1 */}
       <div>
-        <h1 className="text-[#2D3748]">DropDownBasic</h1>
+        <h1 className="text-[#2D3748]">1. DropDownBasic</h1>
         <p>
           <code>DropDownBasic</code> 컴포넌트는 사용자가 옵션을 선택할 수 있는
           간단한 드롭다운 메뉴를 제공합니다. 여러 가지 스타일의 드롭다운을
           제공하며, 선택된 값은 부모 컴포넌트로 전달될 수 있습니다.
         </p>
-        <h2 className="text-[#2D3748]">Import</h2>
+        <h2 className="text-[#2D3748]">1.1. Import</h2>
         <CodeBox
           code={`import DropDownBasic from '@components/DropDown/DropDownBasic';`}
           copyText={`import DropDownBasic from '@components/DropDown/DropDownBasic';`}
@@ -33,7 +33,7 @@ const DropDownComponent: React.FC = () => {
           copied={copied}
           handleCopy={handleCopy}
         />
-        <h2 className="text-[#2D3748]">Usage</h2>
+        <h2 className="text-[#2D3748]">1.2. Usage</h2>
         <p>기본 사용 예제는 아래와 같습니다:</p>
         <div style={{ marginBottom: "20px" }}>
           <DropDownBasic
@@ -75,7 +75,7 @@ export default Example;`}
           handleCopy={handleCopy}
         />
 
-        <h2 className="text-[#2D3748]">Props</h2>
+        <h2 className="text-[#2D3748]">1.3. Props</h2>
         <p>
           <code>DropDownBasic</code> 컴포넌트는 아래와 같은 Props를 가집니다:
         </p>
@@ -128,7 +128,7 @@ export default Example;`}
           </tbody>
         </table>
 
-        <h2 className="text-[#2D3748]">Full Example</h2>
+        <h2 className="text-[#2D3748]">1.4. Full Example</h2>
         <CodeBox
           code={`import DropDownBasic from '@components/DropDown/DropDownBasic';
 
@@ -178,17 +178,16 @@ export default FullExample;`}
       </div>
 
       <br />
-      <br />
 
       {/* dropdown2 */}
       <div>
-        <h1 className="text-[#2D3748]">DropDownMutilSelect</h1>
+        <h1 className="text-[#2D3748]">2. DropDownMutilSelect</h1>
         <p>
           <code>DropDownMutilSelect</code> 컴포넌트는 사용자가 여러 옵션을
           선택할 수 있는 멀티 셀렉트 드롭다운 메뉴를 제공합니다. 선택된 값들은
           컴포넌트의 부모 컴포넌트로 전달됩니다.
         </p>
-        <h2 className="text-[#2D3748]">Import</h2>
+        <h2 className="text-[#2D3748]">2.1. Import</h2>
         <CodeBox
           code={`import DropDownMutilSelect from '@components/DropDown/DropDownMutilSelect';`}
           copyText={`import DropDownMutilSelect from '@components/DropDown/DropDownMutilSelect';`}
@@ -197,7 +196,7 @@ export default FullExample;`}
           copied={copied}
           handleCopy={handleCopy}
         />
-        <h2 className="text-[#2D3748]">Usage</h2>
+        <h2 className="text-[#2D3748]">2.2. Usage</h2>
         <p>기본 사용 예제는 아래와 같습니다:</p>
         <div style={{ marginBottom: "20px" }}>
           <DropDownMutilSelect
@@ -239,7 +238,7 @@ export default Example;`}
           handleCopy={handleCopy}
         />
 
-        <h2 className="text-[#2D3748]">Props</h2>
+        <h2 className="text-[#2D3748]">2.3. Props</h2>
         <p>
           <code>DropDownMutilSelect</code> 컴포넌트는 아래와 같은 Props를
           가집니다:
@@ -293,7 +292,7 @@ export default Example;`}
           </tbody>
         </table>
 
-        <h2 className="text-[#2D3748]">Full Example</h2>
+        <h2 className="text-[#2D3748]">2.4. Full Example</h2>
         <CodeBox
           code={`import DropDownMutilSelect from '@components/DropDown/DropDownMutilSelect';
 
@@ -343,17 +342,16 @@ export default FullExample;`}
       </div>
 
       <br />
-      <br />
 
       {/* dropdown3 */}
       <div>
-        <h1 className="text-[#2D3748]">DropDownGrouped</h1>
+        <h1 className="text-[#2D3748]">3. DropDownGrouped</h1>
         <p>
           <code>DropDownGrouped</code> 컴포넌트는 그룹화된 옵션을 선택할 수 있는
           드롭다운 메뉴를 제공합니다. 사용자는 각 그룹에서 옵션을 선택할 수
           있으며, 선택된 값은 부모 컴포넌트로 전달될 수 있습니다.
         </p>
-        <h2 className="text-[#2D3748]">Import</h2>
+        <h2 className="text-[#2D3748]">3.1. Import</h2>
         <CodeBox
           code={`import DropDownGrouped from '@components/DropDown/DropDownGrouped';`}
           copyText={`import DropDownGrouped from '@components/DropDown/DropDownGrouped';`}
@@ -362,7 +360,7 @@ export default FullExample;`}
           copied={copied}
           handleCopy={handleCopy}
         />
-        <h2 className="text-[#2D3748]">Usage</h2>
+        <h2 className="text-[#2D3748]">3.2. Usage</h2>
         <p>기본 사용 예제는 아래와 같습니다:</p>
         <div style={{ marginBottom: "20px" }}>
           <DropDownGrouped
@@ -418,7 +416,7 @@ export default Example;`}
           handleCopy={handleCopy}
         />
 
-        <h2 className="text-[#2D3748]">Props</h2>
+        <h2 className="text-[#2D3748]">3.3. Props</h2>
         <p>
           <code>DropDownGrouped</code> 컴포넌트는 아래와 같은 Props를 가집니다:
         </p>
@@ -471,7 +469,7 @@ export default Example;`}
           </tbody>
         </table>
 
-        <h2 className="text-[#2D3748]">Full Example</h2>
+        <h2 className="text-[#2D3748]">3.4. Full Example</h2>
         <CodeBox
           code={`import DropDownGrouped from '@components/DropDown/DropDownGrouped';
 

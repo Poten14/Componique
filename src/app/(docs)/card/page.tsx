@@ -2,7 +2,6 @@
 
 import React, { useState } from "react";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
-import { CopyToClipboard } from "react-copy-to-clipboard";
 import CodeBox from "@components/CodeBox";
 import CardBasic from "@components/Card/CardBasic";
 import CardInteractive from "@components/Card/CardInteractive";
@@ -22,13 +21,13 @@ const CardExample: React.FC = () => {
     <div className="prose max-w-[1000px] p-5 text-[#6D6D6D]">
       {/* Card1 */}
       <div>
-        <h1 className="text-[#2D3748]">CardBasic</h1>
+        <h1 className="text-[#2D3748]">1. CardBasic</h1>
         <p>
           <code>CardBasic</code> 컴포넌트는 기본 카드 레이아웃을 제공하며,
           제목과 본문 내용을 포함할 수 있습니다. 이 컴포넌트는 간단한 텍스트
           또는 기타 React 컴포넌트를 카드 형태로 감싸서 표시할 때 유용합니다.
         </p>
-        <h2 className="text-[#2D3748]">Import</h2>
+        <h2 className="text-[#2D3748]">1.1. Import</h2>
         {/* 카피버튼 시작 */}
         <CodeBox
           code={`import CardBasic from '@components/Card/CardBasic';`}
@@ -39,7 +38,7 @@ const CardExample: React.FC = () => {
           handleCopy={handleCopy}
         />
         {/* 카피버튼 끝 */}
-        <h2 className="text-[#2D3748]">Usage</h2>
+        <h2 className="text-[#2D3748]">1.2. Usage</h2>
         <p>기본 사용 예제는 아래와 같습니다:</p>
         <div style={{ marginBottom: "20px" }}>
           <CardBasic title="Example Card">
@@ -76,7 +75,7 @@ export default Example;`}
           handleCopy={handleCopy}
         />
         {/* 카피버튼 끝 */}
-        <h2 className="text-[#2D3748]">Props</h2>
+        <h2 className="text-[#2D3748]">1.3. Props</h2>
         <p>
           <code>CardBasic</code> 컴포넌트는 아래와 같은 Props를 가집니다:
         </p>
@@ -117,7 +116,7 @@ export default Example;`}
           </tbody>
         </table>
 
-        <h2 className="text-[#2D3748]">Full Example</h2>
+        <h2 className="text-[#2D3748]">1.4. Full Example</h2>
         {/* 카피버튼 시작 */}
         <CodeBox
           code={`import CardBasic from '@components/Card/CardBasic';
@@ -170,14 +169,14 @@ export default FullExample;`}
       <br />
       <br />
       <div>
-        <h1 className="text-[#2D3748]">CardInteractive</h1>
+        <h1 className="text-[#2D3748]">2. CardInteractive</h1>
         <p>
           <code>CardInteractive</code> 컴포넌트는 사용자가 클릭하여 추가적인
           내용을 확장하거나 축소할 수 있는 인터랙티브한 카드 레이아웃을
           제공합니다. 이 컴포넌트는 제목과 본문 내용을 포함할 수 있으며, 본문
           내용은 클릭 시 확장됩니다.
         </p>
-        <h2 className="text-[#2D3748]">Import</h2>
+        <h2 className="text-[#2D3748]">2.1. Import</h2>
         {/* 카피버튼 시작 */}
         <CodeBox
           code={`import CardInteractive from '@components/Card/CardInteractive';`}
@@ -189,7 +188,7 @@ export default FullExample;`}
         />
         {/* 카피버튼 끝 */}
 
-        <h2 className="text-[#2D3748]">Usage</h2>
+        <h2 className="text-[#2D3748]">2.2. Usage</h2>
         <p>기본 사용 예제는 아래와 같습니다:</p>
         <div style={{ marginBottom: "20px" }}>
           <CardInteractive title="Interactive Card">
@@ -227,7 +226,7 @@ export default Example;`}
         />
         {/* 카피버튼 끝 */}
 
-        <h2 className="text-[#2D3748]">Props</h2>
+        <h2 className="text-[#2D3748]">2.3. Props</h2>
         <p>
           <code>CardInteractive</code> 컴포넌트는 아래와 같은 Props를 가집니다:
         </p>
@@ -268,7 +267,7 @@ export default Example;`}
           </tbody>
         </table>
 
-        <h2 className="text-[#2D3748]">Full Example</h2>
+        <h2 className="text-[#2D3748]">2.4. Full Example</h2>
         {/* 카피버튼 시작 */}
         <CodeBox
           code={`import CardInteractive from '@components/Card/CardInteractive';
@@ -321,13 +320,13 @@ export default FullExample;`}
       <br />
       <br />
       <div>
-        <h1 className="text-[#2D3748]">CardImage</h1>
+        <h1 className="text-[#2D3748]">3. CardImage</h1>
         <p>
           <code>CardImage</code> 컴포넌트는 이미지 또는 아바타와 함께 텍스트를
           표시하는 카드 레이아웃을 제공합니다. 이 컴포넌트는 제목과 본문 내용을
           포함할 수 있으며, 이미지를 카드 왼쪽에 배치할 수 있습니다.
         </p>
-        <h2 className="text-[#2D3748]">Import</h2>
+        <h2 className="text-[#2D3748]">3.1. Import</h2>
         {/* 카피버튼 시작 */}
         <CodeBox
           code={`import CardImage from '@components/Card/CardImage';`}
@@ -339,7 +338,7 @@ export default FullExample;`}
         />
         {/* 카피버튼 끝 */}
 
-        <h2 className="text-[#2D3748]">Usage</h2>
+        <h2 className="text-[#2D3748]">3.2. Usage</h2>
         <p>기본 사용 예제는 아래와 같습니다:</p>
         <div style={{ marginBottom: "20px" }}>
           <CardImage title="Image Card">
@@ -377,7 +376,7 @@ export default Example;`}
         />
         {/* 카피버튼 끝 */}
 
-        <h2 className="text-[#2D3748]">Props</h2>
+        <h2 className="text-[#2D3748]">3.3. Props</h2>
         <p>
           <code>CardImage</code> 컴포넌트는 아래와 같은 Props를 가집니다:
         </p>
@@ -418,7 +417,7 @@ export default Example;`}
           </tbody>
         </table>
 
-        <h2 className="text-[#2D3748]">Full Example</h2>
+        <h2 className="text-[#2D3748]">3.4. Full Example</h2>
         {/* 카피버튼 시작 */}
         <CodeBox
           code={`import CardImage from '@components/Card/CardImage';
@@ -471,13 +470,13 @@ export default FullExample;`}
       <br />
       <br />
       <div>
-        <h1 className="text-[#2D3748]">CardPricing</h1>
+        <h1 className="text-[#2D3748]">4. CardPricing</h1>
         <p>
           <code>CardPricing</code> 컴포넌트는 상품 또는 서비스의 가격, 설명,
           주요 특징을 표시하는 카드 레이아웃을 제공합니다. 구매 버튼도 포함되어
           있어, 사용자가 바로 상품을 구매할 수 있습니다.
         </p>
-        <h2 className="text-[#2D3748]">Import</h2>
+        <h2 className="text-[#2D3748]">4.1. Import</h2>
         {/* 카피버튼 시작 */}
         <CodeBox
           code={`import CardPricing from '@components/Card/CardPricing';`}
@@ -489,7 +488,7 @@ export default FullExample;`}
         />
         {/* 카피버튼 끝 */}
 
-        <h2 className="text-[#2D3748]">Usage</h2>
+        <h2 className="text-[#2D3748]">4.2. Usage</h2>
         <p>기본 사용 예제는 아래와 같습니다:</p>
         <div style={{ marginBottom: "20px" }}>
           <CardPricing
@@ -551,7 +550,7 @@ export default Example;`}
         />
         {/* 카피버튼 끝 */}
 
-        <h2 className="text-[#2D3748]">Props</h2>
+        <h2 className="text-[#2D3748]">4.3. Props</h2>
         <p>
           <code>CardPricing</code> 컴포넌트는 아래와 같은 Props를 가집니다:
         </p>
@@ -628,7 +627,7 @@ export default Example;`}
           </tbody>
         </table>
 
-        <h2 className="text-[#2D3748]">Full Example</h2>
+        <h2 className="text-[#2D3748]">4.4. Full Example</h2>
         {/* 카피버튼 시작 */}
         <CodeBox
           code={`import CardPricing from '@components/Card/CardPricing';
@@ -727,13 +726,13 @@ export default FullExample;`}
       <br />
       <br />
       <div>
-        <h1 className="text-[#2D3748]">CardReview</h1>
+        <h1 className="text-[#2D3748]">5. CardReview</h1>
         <p>
           <code>CardReview</code> 컴포넌트는 사용자 리뷰와 함께 사용자 아바타,
           이름, 별점을 표시하는 카드 레이아웃을 제공합니다. 사용자가 남긴 텍스트
           리뷰와 별점을 함께 표시할 수 있습니다.
         </p>
-        <h2 className="text-[#2D3748]">Import</h2>
+        <h2 className="text-[#2D3748]">5.1. Import</h2>
         {/* 카피버튼 시작 */}
         <CodeBox
           code={`import CardReview from '@components/Card/CardReview';`}
@@ -745,7 +744,7 @@ export default FullExample;`}
         />
         {/* 카피버튼 끝 */}
 
-        <h2 className="text-[#2D3748]">Usage</h2>
+        <h2 className="text-[#2D3748]">5.2. Usage</h2>
         <p>기본 사용 예제는 아래와 같습니다:</p>
         <div style={{ marginBottom: "20px" }}>
           <CardReview avatar="/avatar1.svg" name="John Doe" rate={4}>
@@ -783,7 +782,7 @@ export default Example;`}
         />
         {/* 카피버튼 끝 */}
 
-        <h2 className="text-[#2D3748]">Props</h2>
+        <h2 className="text-[#2D3748]">5.3. Props</h2>
         <p>
           <code>CardReview</code> 컴포넌트는 아래와 같은 Props를 가집니다:
         </p>
@@ -848,7 +847,7 @@ export default Example;`}
           </tbody>
         </table>
 
-        <h2 className="text-[#2D3748]">Full Example</h2>
+        <h2 className="text-[#2D3748]">5.4. Full Example</h2>
         {/* 카피버튼 시작 */}
         <CodeBox
           code={`import CardReview from '@components/Card/CardReview';
