@@ -442,7 +442,8 @@ export default Example;`}
         copied={copied}
         handleCopy={handleCopy}
       />
-      <h1 className="mt-40 text-[#2D3748]">2. ButtonAutocomplete</h1>
+      <hr />
+      <h1 className="text-[#2D3748]">2. ButtonAutocomplete</h1>
       <p>
         <code>ButtonAutocomplete</code> 컴포넌트는 사용자가 텍스트를 입력할 때
         관련 옵션을 필터링하여 제공하며, 입력 필드에 검색 버튼이 포함된
@@ -832,8 +833,8 @@ export default Example;`}
         copied={copied}
         handleCopy={handleCopy}
       />
-
-      <h1 className="mt-40 text-[#2D3748]">3. GroupedAutocomplete</h1>
+      <hr />
+      <h1 className="text-[#2D3748]">3. GroupedAutocomplete</h1>
       <p>
         <code>GroupedAutocomplete</code> 컴포넌트는 그룹화된 항목을 자동 완성할
         수 있는 기능을 제공하는 입력 필드입니다. 사용자 입력에 따라 관련 항목을
@@ -1265,8 +1266,8 @@ export default Example;`}
         copied={copied}
         handleCopy={handleCopy}
       />
-
-      <h1 className="mt-40 text-[#2D3748]">4. LabelAutocomplete</h1>
+      <hr />
+      <h1 className="text-[#2D3748]">4. LabelAutocomplete</h1>
       <p>
         <code>LabelAutocomplete</code> 컴포넌트는 입력된 값을 기반으로 사용자가
         선택할 수 있는 항목 목록을 제공하는 자동 완성 입력 필드입니다. 옵션은
