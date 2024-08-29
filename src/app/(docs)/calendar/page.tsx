@@ -15,14 +15,14 @@ const CalendarDocs: React.FC = () => {
 
   return (
     <div className="prose max-w-[1000px] p-5 text-[#6D6D6D]">
-      <h1 className="text-[#2D3748]">Calendar</h1>
+      <h1 className="text-[#2D3748]">1. Calendar</h1>
       <p>
         <code>Calendar</code> 컴포넌트는 날짜를 선택할 수 있는 인터랙티브한
         달력을 제공합니다. 사용자가 특정 날짜를 선택할 수 있으며, 선택된 날짜는
         부모 컴포넌트로 전달될 수 있습니다.
       </p>
 
-      <h2 className="text-[#2D3748]">Import</h2>
+      <h2 className="text-[#2D3748]">1.1. Import</h2>
       <CodeBox
         code={`import Calendar from '@components/Calendar';`}
         copyText={`import Calendar from '@components/Calendar';`}
@@ -32,7 +32,7 @@ const CalendarDocs: React.FC = () => {
         handleCopy={handleCopy}
       />
 
-      <h2 className="text-[#2D3748]">Usage</h2>
+      <h2 className="text-[#2D3748]">1.2. Usage</h2>
       <p>기본 사용 예제는 아래와 같습니다:</p>
       <div style={{ marginBottom: "20px" }}>
         <Calendar />
@@ -58,7 +58,7 @@ export default Example;`}
         handleCopy={handleCopy}
       />
 
-      <h2 className="text-[#2D3748]">Customizing Calendar</h2>
+      <h2 className="text-[#2D3748]">1.3. Customizing Calendar</h2>
       <p>
         <code>Calendar</code> 컴포넌트는 다양한 속성을 통해 사용자 정의할 수
         있습니다. 기본 날짜를 설정하거나 날짜 선택 시 호출될 콜백 함수를 전달할
@@ -103,7 +103,7 @@ export default Example;`}
         handleCopy={handleCopy}
       />
 
-      <h2 className="text-[#2D3748]">Props</h2>
+      <h2 className="text-[#2D3748]">1.4. Props</h2>
       <p>
         <code>Calendar</code> 컴포넌트는 아래와 같은 Props를 가집니다:
       </p>
@@ -144,7 +144,7 @@ export default Example;`}
         </tbody>
       </table>
 
-      <h2 className="text-[#2D3748]">Full Example</h2>
+      <h2 className="text-[#2D3748]">1.5. Full Example</h2>
       <CodeBox
         code={`import Calendar from '@components/Calendar';
 
@@ -181,14 +181,14 @@ export default Example;`}
       />
       <br />
       <br />
-      <h1 className="text-[#2D3748]">CalendarRange</h1>
+      <h1 className="text-[#2D3748]">2. CalendarRange</h1>
       <p>
         <code>CalendarRange</code> 컴포넌트는 날짜 범위를 선택할 수 있는 달력을
         제공합니다. 사용자는 시작 날짜와 종료 날짜를 선택할 수 있으며, 선택된
         범위는 부모 컴포넌트로 전달될 수 있습니다.
       </p>
 
-      <h2 className="text-[#2D3748]">Import</h2>
+      <h2 className="text-[#2D3748]">2.1. Import</h2>
       <CodeBox
         code={`import CalendarRange from '@components/CalendarRange';`}
         copyText={`import CalendarRange from '@components/CalendarRange';`}
@@ -198,7 +198,7 @@ export default Example;`}
         handleCopy={handleCopy}
       />
 
-      <h2 className="text-[#2D3748]">Usage</h2>
+      <h2 className="text-[#2D3748]">2.2. Usage</h2>
       <p>기본 사용 예제는 아래와 같습니다:</p>
       <div style={{ marginBottom: "20px" }}>
         <CalendarRange />
@@ -224,7 +224,7 @@ export default Example;`}
         handleCopy={handleCopy}
       />
 
-      <h2 className="text-[#2D3748]">Customizing CalendarRange</h2>
+      <h2 className="text-[#2D3748]">2.3. Customizing CalendarRange</h2>
       <p>
         <code>CalendarRange</code> 컴포넌트는 날짜 선택 시 호출될 콜백 함수인{" "}
         <code>onDateSelect</code>를 전달하여 선택된 날짜 범위를 처리할 수
@@ -268,7 +268,7 @@ export default Example;`}
         handleCopy={handleCopy}
       />
 
-      <h2 className="text-[#2D3748]">Props</h2>
+      <h2 className="text-[#2D3748]">2.4. Props</h2>
       <p>
         <code>CalendarRange</code> 컴포넌트는 아래와 같은 Props를 가집니다:
       </p>
@@ -297,7 +297,7 @@ export default Example;`}
         </tbody>
       </table>
 
-      <h2 className="text-[#2D3748]">Full Example</h2>
+      <h2 className="text-[#2D3748]">2.5. Full Example</h2>
       <CodeBox
         code={`import CalendarRange from '@components/CalendarRange';
 
