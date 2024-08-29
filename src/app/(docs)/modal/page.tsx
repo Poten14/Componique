@@ -689,8 +689,8 @@ export default Example;`}
         copied={copied}
         handleCopy={handleCopy}
       />
-
-      <h1 className="mt-40 text-[#2D3748]">2. FormModal</h1>
+      <hr />
+      <h1 className="text-[#2D3748]">2. FormModal</h1>
       <p>
         <code>FormModal</code> 컴포넌트는 사용자 입력을 수집하기 위한 폼을
         포함한 모달입니다. 다양한 크기와 버튼 옵션을 지원합니다.
@@ -1180,7 +1180,8 @@ export default Example;`}
         copied={copied}
         handleCopy={handleCopy}
       />
-      <h1 className="mt-40 text-[#2D3748]">3. OverlayModal</h1>
+      <hr />
+      <h1 className="text-[#2D3748]">3. OverlayModal</h1>
       <p>
         <code>OverlayModal</code> 컴포넌트는 페이지 구조와 독립적으로 관리되는
         오버레이 모달입니다. 다양한 크기와 버튼 옵션을 지원합니다.
