@@ -11,11 +11,11 @@ export default function DocsLayout({
   children: React.ReactNode;
 }) {
   const quickmenuItems = [
-    "Import",
-    "Usage",
-    "Customization",
-    "Props",
-    "Full Example",
+    { label: "Import", id: "Import" },
+    { label: "Usage", id: "Usage" },
+    { label: "Customization", id: "Customization" },
+    { label: "Props", id: "Props" },
+    { label: "Example", id: "Example" },
   ];
   return (
     <>
