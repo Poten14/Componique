@@ -2,6 +2,8 @@ import React from "react";
 
 //아이콘 SVG를 Font로 변환
 export type IconName =
+  | "icon-check"
+  | "icon-docs"
   | "icon-login"
   | "icon-logout"
   | "icon-qr"
@@ -15,30 +17,12 @@ export type IconName =
   | "icon-camera"
   | "icon-code"
   | "icon-download"
-  | "icon-emoji-angry"
-  | "icon-emoji-bored"
-  | "icon-emoji-cry"
-  | "icon-emoji-dead"
-  | "icon-emoji-feeling"
-  | "icon-emoji-happy"
-  | "icon-emoji-heart"
-  | "icon-emoji-joy"
-  | "icon-emoji-rest"
-  | "icon-emoji-sad"
-  | "icon-emoji-sadness"
-  | "icon-emoji-shocked"
-  | "icon-emoji-smile"
-  | "icon-emoji-surprised"
-  | "icon-emoji-tired"
-  | "icon-emoji-worried"
-  | "icon-emoji-wow"
   | "icon-error"
   | "icon-heart"
   | "icon-help"
   | "icon-home"
   | "icon-image"
   | "icon-info"
-  | "icon-internet"
   | "icon-mail"
   | "icon-map"
   | "icon-menu"
@@ -48,8 +32,7 @@ export type IconName =
   | "icon-share"
   | "icon-user"
   | "icon-video"
-  | "icon-docs"
-  | "icon-check";
+  | "icon-web";
 
 type IconProps = {
   name: IconName;
