@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { CopyToClipboard } from "react-copy-to-clipboard";
+import CodeBox from "@components/CodeBox";
 import CardBasic from "@components/Card/CardBasic";
 import CardInteractive from "@components/Card/CardInteractive";
 import CardImage from "@components/Card/CardImage";
@@ -10,15 +11,15 @@ import CardPricing from "@components/Card/CardPricing";
 import CardReview from "@components/Card/CardReview";
 
 const CardExample: React.FC = () => {
-  const [copied, setCopied] = useState(false);
+  const [copied, setCopied] = useState<{ [key: number]: boolean }>({});
 
-  const handleCopy = () => {
-    setCopied(true);
-    setTimeout(() => setCopied(false), 500);
+  const handleCopy = (index: number) => {
+    setCopied((prev) => ({ ...prev, [index]: true }));
+    setTimeout(() => setCopied((prev) => ({ ...prev, [index]: false })), 500);
   };
 
   return (
-    <div className="text-[#6D6D6D prose max-w-[1000px] p-5">
+    <div className="prose max-w-[1000px] p-5 text-[#6D6D6D]">
       {/* Card1 */}
       <div>
         <h1 className="text-[#2D3748]">CardBasic</h1>
@@ -28,20 +29,16 @@ const CardExample: React.FC = () => {
           또는 기타 React 컴포넌트를 카드 형태로 감싸서 표시할 때 유용합니다.
         </p>
         <h2 className="text-[#2D3748]">Import</h2>
-        <div className="relative">
-          <CopyToClipboard
-            text={`import CardBasic from '@components/Card/CardBasic';`}
-            onCopy={handleCopy}
-          >
-            <button className="copyButton">
-              {copied ? "Copied!" : "Copy"}
-            </button>
-          </CopyToClipboard>
-          <SyntaxHighlighter language="tsx">
-            {`import CardBasic from '@components/Card/CardBasic';`}
-          </SyntaxHighlighter>
-        </div>
-
+        {/* 카피버튼 시작 */}
+        <CodeBox
+          code={`import CardBasic from '@components/Card/CardBasic';`}
+          copyText={`import CardBasic from '@components/Card/CardBasic';`}
+          language="tsx"
+          index={1}
+          copied={copied}
+          handleCopy={handleCopy}
+        />
+        {/* 카피버튼 끝 */}
         <h2 className="text-[#2D3748]">Usage</h2>
         <p>기본 사용 예제는 아래와 같습니다:</p>
         <div style={{ marginBottom: "20px" }}>
@@ -49,9 +46,9 @@ const CardExample: React.FC = () => {
             <p>This is an example of a basic card component in React.</p>
           </CardBasic>
         </div>
-        <div className="relative">
-          <CopyToClipboard
-            text={`import CardBasic from '@components/Card/CardBasic';
+        {/* 카피버튼 시작 */}
+        <CodeBox
+          code={`import CardBasic from '@components/Card/CardBasic';
 
 function Example() {
   return (
@@ -62,15 +59,7 @@ function Example() {
 }
 
 export default Example;`}
-            onCopy={handleCopy}
-          >
-            <button className="copyButton">
-              {copied ? "Copied!" : "Copy"}
-            </button>
-          </CopyToClipboard>
-          <SyntaxHighlighter language="tsx">
-            {`
-import CardBasic from '@components/Card/CardBasic';
+          copyText={`import CardBasic from '@components/Card/CardBasic';
 
 function Example() {
   return (
@@ -80,11 +69,13 @@ function Example() {
   );
 }
 
-export default Example;
-`}
-          </SyntaxHighlighter>
-        </div>
-
+export default Example;`}
+          language="tsx"
+          index={2}
+          copied={copied}
+          handleCopy={handleCopy}
+        />
+        {/* 카피버튼 끝 */}
         <h2 className="text-[#2D3748]">Props</h2>
         <p>
           <code>CardBasic</code> 컴포넌트는 아래와 같은 Props를 가집니다:
@@ -127,9 +118,9 @@ export default Example;
         </table>
 
         <h2 className="text-[#2D3748]">Full Example</h2>
-        <div className="relative">
-          <CopyToClipboard
-            text={`import CardBasic from '@components/Card/CardBasic';
+        {/* 카피버튼 시작 */}
+        <CodeBox
+          code={`import CardBasic from '@components/Card/CardBasic';
 
 function FullExample() {
   return (
@@ -148,15 +139,7 @@ function FullExample() {
 }
 
 export default FullExample;`}
-            onCopy={handleCopy}
-          >
-            <button className="copyButton">
-              {copied ? "Copied!" : "Copy"}
-            </button>
-          </CopyToClipboard>
-          <SyntaxHighlighter language="tsx">
-            {`
-import CardBasic from '@components/Card/CardBasic';
+          copyText={`import CardBasic from '@components/Card/CardBasic';
 
 function FullExample() {
   return (
@@ -174,11 +157,15 @@ function FullExample() {
   );
 }
 
-export default FullExample;
-`}
-          </SyntaxHighlighter>
-        </div>
+export default FullExample;`}
+          language="tsx"
+          index={3}
+          copied={copied}
+          handleCopy={handleCopy}
+        />
+        {/* 카피버튼 끝 */}
       </div>
+
       {/* Card2 */}
       <br />
       <br />
@@ -191,19 +178,16 @@ export default FullExample;
           내용은 클릭 시 확장됩니다.
         </p>
         <h2 className="text-[#2D3748]">Import</h2>
-        <div className="relative">
-          <CopyToClipboard
-            text={`import CardInteractive from '@components/Card/CardInteractive';`}
-            onCopy={handleCopy}
-          >
-            <button className="copyButton">
-              {copied ? "Copied!" : "Copy"}
-            </button>
-          </CopyToClipboard>
-          <SyntaxHighlighter language="tsx">
-            {`import CardInteractive from '@components/Card/CardInteractive';`}
-          </SyntaxHighlighter>
-        </div>
+        {/* 카피버튼 시작 */}
+        <CodeBox
+          code={`import CardInteractive from '@components/Card/CardInteractive';`}
+          copyText={`import CardInteractive from '@components/Card/CardInteractive';`}
+          language="tsx"
+          index={4}
+          copied={copied}
+          handleCopy={handleCopy}
+        />
+        {/* 카피버튼 끝 */}
 
         <h2 className="text-[#2D3748]">Usage</h2>
         <p>기본 사용 예제는 아래와 같습니다:</p>
@@ -212,9 +196,9 @@ export default FullExample;
             <p>This content is hidden until the card is clicked.</p>
           </CardInteractive>
         </div>
-        <div className="relative">
-          <CopyToClipboard
-            text={`import CardInteractive from '@components/Card/CardInteractive';
+        {/* 카피버튼 시작 */}
+        <CodeBox
+          code={`import CardInteractive from '@components/Card/CardInteractive';
 
 function Example() {
   return (
@@ -225,15 +209,7 @@ function Example() {
 }
 
 export default Example;`}
-            onCopy={handleCopy}
-          >
-            <button className="copyButton">
-              {copied ? "Copied!" : "Copy"}
-            </button>
-          </CopyToClipboard>
-          <SyntaxHighlighter language="tsx">
-            {`
-import CardInteractive from '@components/Card/CardInteractive';
+          copyText={`import CardInteractive from '@components/Card/CardInteractive';
 
 function Example() {
   return (
@@ -243,10 +219,13 @@ function Example() {
   );
 }
 
-export default Example;
-`}
-          </SyntaxHighlighter>
-        </div>
+export default Example;`}
+          language="tsx"
+          index={5}
+          copied={copied}
+          handleCopy={handleCopy}
+        />
+        {/* 카피버튼 끝 */}
 
         <h2 className="text-[#2D3748]">Props</h2>
         <p>
@@ -290,9 +269,9 @@ export default Example;
         </table>
 
         <h2 className="text-[#2D3748]">Full Example</h2>
-        <div className="relative">
-          <CopyToClipboard
-            text={`import CardInteractive from '@components/Card/CardInteractive';
+        {/* 카피버튼 시작 */}
+        <CodeBox
+          code={`import CardInteractive from '@components/Card/CardInteractive';
 
 function FullExample() {
   return (
@@ -311,15 +290,7 @@ function FullExample() {
 }
 
 export default FullExample;`}
-            onCopy={handleCopy}
-          >
-            <button className="copyButton">
-              {copied ? "Copied!" : "Copy"}
-            </button>
-          </CopyToClipboard>
-          <SyntaxHighlighter language="tsx">
-            {`
-import CardInteractive from '@components/Card/CardInteractive';
+          copyText={`import CardInteractive from '@components/Card/CardInteractive';
 
 function FullExample() {
   return (
@@ -337,14 +308,18 @@ function FullExample() {
   );
 }
 
-export default FullExample;
-`}
-          </SyntaxHighlighter>
-        </div>
+export default FullExample;`}
+          language="tsx"
+          index={6}
+          copied={copied}
+          handleCopy={handleCopy}
+        />
+        {/* 카피버튼 끝 */}
       </div>
+
+      {/* Card3 */}
       <br />
       <br />
-      {/* card3 */}
       <div>
         <h1 className="text-[#2D3748]">CardImage</h1>
         <p>
@@ -353,19 +328,16 @@ export default FullExample;
           포함할 수 있으며, 이미지를 카드 왼쪽에 배치할 수 있습니다.
         </p>
         <h2 className="text-[#2D3748]">Import</h2>
-        <div className="relative">
-          <CopyToClipboard
-            text={`import CardImage from '@components/Card/CardImage';`}
-            onCopy={handleCopy}
-          >
-            <button className="copyButton">
-              {copied ? "Copied!" : "Copy"}
-            </button>
-          </CopyToClipboard>
-          <SyntaxHighlighter language="tsx">
-            {`import CardImage from '@components/Card/CardImage';`}
-          </SyntaxHighlighter>
-        </div>
+        {/* 카피버튼 시작 */}
+        <CodeBox
+          code={`import CardImage from '@components/Card/CardImage';`}
+          copyText={`import CardImage from '@components/Card/CardImage';`}
+          language="tsx"
+          index={7}
+          copied={copied}
+          handleCopy={handleCopy}
+        />
+        {/* 카피버튼 끝 */}
 
         <h2 className="text-[#2D3748]">Usage</h2>
         <p>기본 사용 예제는 아래와 같습니다:</p>
@@ -374,9 +346,9 @@ export default FullExample;
             <p>This card includes an image alongside the text.</p>
           </CardImage>
         </div>
-        <div className="relative">
-          <CopyToClipboard
-            text={`import CardImage from '@components/Card/CardImage';
+        {/* 카피버튼 시작 */}
+        <CodeBox
+          code={`import CardImage from '@components/Card/CardImage';
 
 function Example() {
   return (
@@ -387,15 +359,7 @@ function Example() {
 }
 
 export default Example;`}
-            onCopy={handleCopy}
-          >
-            <button className="copyButton">
-              {copied ? "Copied!" : "Copy"}
-            </button>
-          </CopyToClipboard>
-          <SyntaxHighlighter language="tsx">
-            {`
-import CardImage from '@components/Card/CardImage';
+          copyText={`import CardImage from '@components/Card/CardImage';
 
 function Example() {
   return (
@@ -405,10 +369,13 @@ function Example() {
   );
 }
 
-export default Example;
-`}
-          </SyntaxHighlighter>
-        </div>
+export default Example;`}
+          language="tsx"
+          index={8}
+          copied={copied}
+          handleCopy={handleCopy}
+        />
+        {/* 카피버튼 끝 */}
 
         <h2 className="text-[#2D3748]">Props</h2>
         <p>
@@ -452,9 +419,9 @@ export default Example;
         </table>
 
         <h2 className="text-[#2D3748]">Full Example</h2>
-        <div className="relative">
-          <CopyToClipboard
-            text={`import CardImage from '@components/Card/CardImage';
+        {/* 카피버튼 시작 */}
+        <CodeBox
+          code={`import CardImage from '@components/Card/CardImage';
 
 function FullExample() {
   return (
@@ -473,15 +440,7 @@ function FullExample() {
 }
 
 export default FullExample;`}
-            onCopy={handleCopy}
-          >
-            <button className="copyButton">
-              {copied ? "Copied!" : "Copy"}
-            </button>
-          </CopyToClipboard>
-          <SyntaxHighlighter language="tsx">
-            {`
-import CardImage from '@components/Card/CardImage';
+          copyText={`import CardImage from '@components/Card/CardImage';
 
 function FullExample() {
   return (
@@ -499,53 +458,55 @@ function FullExample() {
   );
 }
 
-export default FullExample;
-`}
-          </SyntaxHighlighter>
-        </div>
-        <br />
-        <br />
-        {/* card4 */}
-        <div>
-          <h1 className="text-[#2D3748]">CardPricing</h1>
-          <p>
-            <code>CardPricing</code> 컴포넌트는 상품 또는 서비스의 가격, 설명,
-            주요 특징을 표시하는 카드 레이아웃을 제공합니다. 구매 버튼도
-            포함되어 있어, 사용자가 바로 상품을 구매할 수 있습니다.
-          </p>
-          <h2 className="text-[#2D3748]">Import</h2>
-          <div className="relative">
-            <CopyToClipboard
-              text={`import CardPricing from '@components/Card/CardPricing';`}
-              onCopy={handleCopy}
-            >
-              <button className="copyButton">
-                {copied ? "Copied!" : "Copy"}
-              </button>
-            </CopyToClipboard>
-            <SyntaxHighlighter language="tsx">
-              {`import CardPricing from '@components/Card/CardPricing';`}
-            </SyntaxHighlighter>
-          </div>
+export default FullExample;`}
+          language="tsx"
+          index={9}
+          copied={copied}
+          handleCopy={handleCopy}
+        />
+        {/* 카피버튼 끝 */}
+      </div>
 
-          <h2 className="text-[#2D3748]">Usage</h2>
-          <p>기본 사용 예제는 아래와 같습니다:</p>
-          <div style={{ marginBottom: "20px" }}>
-            <CardPricing
-              title="Pro Plan"
-              description="Access more features with the Pro plan."
-              price="$20/month"
-              features={[
-                "5x more usage",
-                "Access to Claude 3 Haiku",
-                "Priority access during high-traffic periods",
-              ]}
-              buy="Subscribe Now"
-            />
-          </div>
-          <div className="relative">
-            <CopyToClipboard
-              text={`import CardPricing from '@components/Card/CardPricing';
+      {/* Card4 */}
+      <br />
+      <br />
+      <div>
+        <h1 className="text-[#2D3748]">CardPricing</h1>
+        <p>
+          <code>CardPricing</code> 컴포넌트는 상품 또는 서비스의 가격, 설명,
+          주요 특징을 표시하는 카드 레이아웃을 제공합니다. 구매 버튼도 포함되어
+          있어, 사용자가 바로 상품을 구매할 수 있습니다.
+        </p>
+        <h2 className="text-[#2D3748]">Import</h2>
+        {/* 카피버튼 시작 */}
+        <CodeBox
+          code={`import CardPricing from '@components/Card/CardPricing';`}
+          copyText={`import CardPricing from '@components/Card/CardPricing';`}
+          language="tsx"
+          index={10}
+          copied={copied}
+          handleCopy={handleCopy}
+        />
+        {/* 카피버튼 끝 */}
+
+        <h2 className="text-[#2D3748]">Usage</h2>
+        <p>기본 사용 예제는 아래와 같습니다:</p>
+        <div style={{ marginBottom: "20px" }}>
+          <CardPricing
+            title="Pro Plan"
+            description="Access more features with the Pro plan."
+            price="$20/month"
+            features={[
+              "5x more usage",
+              "Access to Claude 3 Haiku",
+              "Priority access during high-traffic periods",
+            ]}
+            buy="Subscribe Now"
+          />
+        </div>
+        {/* 카피버튼 시작 */}
+        <CodeBox
+          code={`import CardPricing from '@components/Card/CardPricing';
 
 function Example() {
   return (
@@ -564,15 +525,7 @@ function Example() {
 }
 
 export default Example;`}
-              onCopy={handleCopy}
-            >
-              <button className="copyButton">
-                {copied ? "Copied!" : "Copy"}
-              </button>
-            </CopyToClipboard>
-            <SyntaxHighlighter language="tsx">
-              {`
-import CardPricing from '@components/Card/CardPricing';
+          copyText={`import CardPricing from '@components/Card/CardPricing';
 
 function Example() {
   return (
@@ -590,94 +543,95 @@ function Example() {
   );
 }
 
-export default Example;
-`}
-            </SyntaxHighlighter>
-          </div>
+export default Example;`}
+          language="tsx"
+          index={11}
+          copied={copied}
+          handleCopy={handleCopy}
+        />
+        {/* 카피버튼 끝 */}
 
-          <h2 className="text-[#2D3748]">Props</h2>
-          <p>
-            <code>CardPricing</code> 컴포넌트는 아래와 같은 Props를 가집니다:
-          </p>
-          <table>
-            <thead>
-              <tr>
-                <th>Prop</th>
-                <th>Description</th>
-                <th>Type</th>
-                <th>Default</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>
-                  <code>title</code>
-                </td>
-                <td>카드의 제목을 지정합니다.</td>
-                <td>
-                  <code>string</code>
-                </td>
-                <td>
-                  <code>""</code>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <code>description</code>
-                </td>
-                <td>상품 또는 서비스에 대한 설명을 제공합니다.</td>
-                <td>
-                  <code>string</code>
-                </td>
-                <td>
-                  <code>""</code>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <code>price</code>
-                </td>
-                <td>상품 또는 서비스의 가격을 표시합니다.</td>
-                <td>
-                  <code>string</code>
-                </td>
-                <td>
-                  <code>""</code>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <code>features</code>
-                </td>
-                <td>
-                  상품 또는 서비스의 주요 특징을 리스트 형태로 표시합니다.
-                </td>
-                <td>
-                  <code>string[]</code>
-                </td>
-                <td>
-                  <code>[]</code>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <code>buy</code>
-                </td>
-                <td>구매 버튼에 표시될 텍스트를 지정합니다.</td>
-                <td>
-                  <code>string</code>
-                </td>
-                <td>
-                  <code>""</code>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+        <h2 className="text-[#2D3748]">Props</h2>
+        <p>
+          <code>CardPricing</code> 컴포넌트는 아래와 같은 Props를 가집니다:
+        </p>
+        <table>
+          <thead>
+            <tr>
+              <th>Prop</th>
+              <th>Description</th>
+              <th>Type</th>
+              <th>Default</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <code>title</code>
+              </td>
+              <td>카드의 제목을 지정합니다.</td>
+              <td>
+                <code>string</code>
+              </td>
+              <td>
+                <code>""</code>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <code>description</code>
+              </td>
+              <td>상품 또는 서비스에 대한 설명을 제공합니다.</td>
+              <td>
+                <code>string</code>
+              </td>
+              <td>
+                <code>""</code>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <code>price</code>
+              </td>
+              <td>상품 또는 서비스의 가격을 표시합니다.</td>
+              <td>
+                <code>string</code>
+              </td>
+              <td>
+                <code>""</code>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <code>features</code>
+              </td>
+              <td>상품 또는 서비스의 주요 특징을 리스트 형태로 표시합니다.</td>
+              <td>
+                <code>string[]</code>
+              </td>
+              <td>
+                <code>[]</code>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <code>buy</code>
+              </td>
+              <td>구매 버튼에 표시될 텍스트를 지정합니다.</td>
+              <td>
+                <code>string</code>
+              </td>
+              <td>
+                <code>""</code>
+              </td>
+            </tr>
+          </tbody>
+        </table>
 
-          <h2 className="text-[#2D3748]">Full Example</h2>
-          <div className="relative">
-            <CopyToClipboard
-              text={`import CardPricing from '@components/Card/CardPricing';
+        <h2 className="text-[#2D3748]">Full Example</h2>
+        {/* 카피버튼 시작 */}
+        <CodeBox
+          code={`import CardPricing from '@components/Card/CardPricing';
 
 function FullExample() {
   return (
@@ -719,15 +673,7 @@ function FullExample() {
 }
 
 export default FullExample;`}
-              onCopy={handleCopy}
-            >
-              <button className="copyButton">
-                {copied ? "Copied!" : "Copy"}
-              </button>
-            </CopyToClipboard>
-            <SyntaxHighlighter language="tsx">
-              {`
-import CardPricing from '@components/Card/CardPricing';
+          copyText={`import CardPricing from '@components/Card/CardPricing';
 
 function FullExample() {
   return (
@@ -768,15 +714,18 @@ function FullExample() {
   );
 }
 
-export default FullExample;
-`}
-            </SyntaxHighlighter>
-          </div>
-        </div>
+export default FullExample;`}
+          language="tsx"
+          index={12}
+          copied={copied}
+          handleCopy={handleCopy}
+        />
+        {/* 카피버튼 끝 */}
       </div>
+
+      {/* Card5 */}
       <br />
       <br />
-      {/* card5 */}
       <div>
         <h1 className="text-[#2D3748]">CardReview</h1>
         <p>
@@ -785,19 +734,16 @@ export default FullExample;
           리뷰와 별점을 함께 표시할 수 있습니다.
         </p>
         <h2 className="text-[#2D3748]">Import</h2>
-        <div className="relative">
-          <CopyToClipboard
-            text={`import CardReview from '@components/Card/CardReview';`}
-            onCopy={handleCopy}
-          >
-            <button className="copyButton">
-              {copied ? "Copied!" : "Copy"}
-            </button>
-          </CopyToClipboard>
-          <SyntaxHighlighter language="tsx">
-            {`import CardReview from '@components/Card/CardReview';`}
-          </SyntaxHighlighter>
-        </div>
+        {/* 카피버튼 시작 */}
+        <CodeBox
+          code={`import CardReview from '@components/Card/CardReview';`}
+          copyText={`import CardReview from '@components/Card/CardReview';`}
+          language="tsx"
+          index={13}
+          copied={copied}
+          handleCopy={handleCopy}
+        />
+        {/* 카피버튼 끝 */}
 
         <h2 className="text-[#2D3748]">Usage</h2>
         <p>기본 사용 예제는 아래와 같습니다:</p>
@@ -806,9 +752,9 @@ export default FullExample;
             <p>This is an excellent product! Highly recommended.</p>
           </CardReview>
         </div>
-        <div className="relative">
-          <CopyToClipboard
-            text={`import CardReview from '@components/Card/CardReview';
+        {/* 카피버튼 시작 */}
+        <CodeBox
+          code={`import CardReview from '@components/Card/CardReview';
 
 function Example() {
   return (
@@ -819,15 +765,7 @@ function Example() {
 }
 
 export default Example;`}
-            onCopy={handleCopy}
-          >
-            <button className="copyButton">
-              {copied ? "Copied!" : "Copy"}
-            </button>
-          </CopyToClipboard>
-          <SyntaxHighlighter language="tsx">
-            {`
-import CardReview from '@components/Card/CardReview';
+          copyText={`import CardReview from '@components/Card/CardReview';
 
 function Example() {
   return (
@@ -837,10 +775,13 @@ function Example() {
   );
 }
 
-export default Example;
-`}
-          </SyntaxHighlighter>
-        </div>
+export default Example;`}
+          language="tsx"
+          index={14}
+          copied={copied}
+          handleCopy={handleCopy}
+        />
+        {/* 카피버튼 끝 */}
 
         <h2 className="text-[#2D3748]">Props</h2>
         <p>
@@ -908,9 +849,9 @@ export default Example;
         </table>
 
         <h2 className="text-[#2D3748]">Full Example</h2>
-        <div className="relative">
-          <CopyToClipboard
-            text={`import CardReview from '@components/Card/CardReview';
+        {/* 카피버튼 시작 */}
+        <CodeBox
+          code={`import CardReview from '@components/Card/CardReview';
 
 function FullExample() {
   return (
@@ -929,15 +870,7 @@ function FullExample() {
 }
 
 export default FullExample;`}
-            onCopy={handleCopy}
-          >
-            <button className="copyButton">
-              {copied ? "Copied!" : "Copy"}
-            </button>
-          </CopyToClipboard>
-          <SyntaxHighlighter language="tsx">
-            {`
-import CardReview from '@components/Card/CardReview';
+          copyText={`import CardReview from '@components/Card/CardReview';
 
 function FullExample() {
   return (
@@ -955,10 +888,13 @@ function FullExample() {
   );
 }
 
-export default FullExample;
-`}
-          </SyntaxHighlighter>
-        </div>
+export default FullExample;`}
+          language="tsx"
+          index={15}
+          copied={copied}
+          handleCopy={handleCopy}
+        />
+        {/* 카피버튼 끝 */}
       </div>
     </div>
   );

@@ -6,14 +6,15 @@ const SwitchLabeled = () => {
   const toggleSwitch = () => {
     setIsOn(!isOn);
   };
+
   return (
     <div>
       <div
         onClick={toggleSwitch}
-        className="relative h-14 w-24 cursor-pointer rounded-xl bg-[#DDDDDD]"
+        className="relative flex h-14 w-24 cursor-pointer items-center justify-between rounded-xl bg-[#DDDDDD] px-1"
       >
         <p
-          className={`absolute top-1/2 flex h-12 w-12 -translate-y-1/2 transform items-center justify-center rounded-xl text-center shadow-lg duration-700 ease-in-out ${isOn ? "translate-x-11 bg-Basic" : "bg-[#BCBCBC]"} text-2xl font-bold text-white`}
+          className={`flex h-12 w-12 transform items-center justify-center rounded-xl text-center text-2xl font-bold text-white shadow-lg duration-700 ease-in-out ${isOn ? "translate-x-full bg-Basic" : "bg-[#BCBCBC]"}`}
         >
           {isOn ? "ON" : "OFF"}
         </p>
@@ -21,10 +22,10 @@ const SwitchLabeled = () => {
       <br />
       <div
         onClick={toggleSwitch}
-        className="relative h-14 w-24 cursor-pointer rounded-xl bg-[#DDDDDD]"
+        className="relative flex h-14 w-24 cursor-pointer items-center justify-between rounded-xl bg-[#DDDDDD] px-1"
       >
         <p
-          className={`absolute top-1/2 flex h-12 w-12 -translate-y-1/2 transform items-center justify-center rounded-xl text-center shadow-lg duration-700 ease-in-out ${!isOn ? "translate-x-11 bg-Basic" : "bg-[#BCBCBC]"} text-2xl font-bold text-white`}
+          className={`flex h-12 w-12 transform items-center justify-center rounded-xl text-center text-2xl font-bold text-white shadow-lg duration-700 ease-in-out ${!isOn ? "translate-x-full bg-Basic" : "bg-[#BCBCBC]"}`}
         >
           {isOn ? "OFF" : "ON"}
         </p>
@@ -32,4 +33,5 @@ const SwitchLabeled = () => {
     </div>
   );
 };
+
 export default SwitchLabeled;
