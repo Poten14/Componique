@@ -17,14 +17,14 @@ const NavbarDocs: React.FC = () => {
 
   return (
     <div className="prose max-w-[1000px] p-5 text-[#6D6D6D]">
-      <h1 className="text-[#2D3748]">Navbar</h1>
+      <h1 className="text-[#2D3748]">1. Navbar</h1>
       <p>
         <code>Navbar</code> 컴포넌트는 웹 사이트의 상단에 위치하여 사용자에게
         주요 페이지로의 링크를 제공합니다. 로고, 링크, 크기, 색상, 위치를
         설정하여 커스터마이즈 할 수 있습니다.
       </p>
 
-      <h2 className="text-[#2D3748]">Import</h2>
+      <h2 className="text-[#2D3748]">1.1. Import</h2>
       <div className="relative">
         <CopyToClipboard
           text={`import { Navbar } from '@components/Navbar';`}
@@ -37,7 +37,7 @@ const NavbarDocs: React.FC = () => {
         </SyntaxHighlighter>
       </div>
 
-      <h2 className="text-[#2D3748]">Usage</h2>
+      <h2 className="text-[#2D3748]">1.2. Usage</h2>
       <p>기본 사용 예제는 아래와 같습니다:</p>
       <div style={{ marginBottom: "20px" }}>
         <Navbar
@@ -95,7 +95,7 @@ export default Example;
         </SyntaxHighlighter>
       </div>
 
-      <h2 className="text-[#2D3748]">Changing the Size of the Navbar</h2>
+      <h2 className="text-[#2D3748]">1.3. Changing the Size of the Navbar</h2>
       <p>
         <code>Navbar</code> 컴포넌트는 다양한 크기로 제공됩니다. 기본 크기는{" "}
         <code>small</code>입니다:
@@ -206,7 +206,7 @@ export default Example;
         </SyntaxHighlighter>
       </div>
 
-      <h2 className="text-[#2D3748]">Changing the Hover Color</h2>
+      <h2 className="text-[#2D3748]">1.4. Changing the Hover Color</h2>
       <p>
         <code>Navbar</code> 컴포넌트는 링크에 마우스를 올렸을 때 텍스트 색상을
         변경할 수 있습니다:
@@ -315,7 +315,7 @@ export default Example;
         </SyntaxHighlighter>
       </div>
 
-      <h2 className="text-[#2D3748]">Props</h2>
+      <h2 className="text-[#2D3748]">1.5. Props</h2>
       <p>
         <code>Navbar</code> 컴포넌트는 아래와 같은 Props를 가집니다:
       </p>
@@ -406,7 +406,7 @@ export default Example;
         </tbody>
       </table>
 
-      <h2 className="text-[#2D3748]">Full Example</h2>
+      <h2 className="text-[#2D3748]">1.6. Full Example</h2>
       <div className="relative">
         <CopyToClipboard
           text={`import { Navbar } from '@components/Navbar';
@@ -466,14 +466,14 @@ export default Example;
         </SyntaxHighlighter>
       </div>
       <div className="prose max-w-[1000px] p-5 text-[#6D6D6D]">
-        <h1 className="text-[#2D3748]">NavbarSearch</h1>
+        <h1 className="text-[#2D3748]">2. NavbarSearch</h1>
         <p>
           <code>NavbarSearch</code> 컴포넌트는 웹 사이트의 상단에 로고와 검색
           필드를 포함한 네비게이션 바를 제공합니다. 다양한 크기와 입력 필드
           설정을 통해 사용자 맞춤형 검색 바를 만들 수 있습니다.
         </p>
 
-        <h2 className="text-[#2D3748]">Import</h2>
+        <h2 className="text-[#2D3748]">2.1. Import</h2>
         <div className="relative">
           <CopyToClipboard
             text={`import NavbarSearch from '@components/NavbarSearch/NavbarSearch';`}
@@ -488,7 +488,7 @@ export default Example;
           </SyntaxHighlighter>
         </div>
 
-        <h2 className="text-[#2D3748]">Usage</h2>
+        <h2 className="text-[#2D3748]">2.2. Usage</h2>
         <p>기본 사용 예제는 아래와 같습니다:</p>
         <div style={{ marginBottom: "20px" }}>
           <NavbarSearch
@@ -551,87 +551,9 @@ function Example() {
 export default Example;
 `}
           </SyntaxHighlighter>
-          {/* </div>
-
-        <h2 className="text-[#2D3748]">
-          Changing the Size of the Search Input
-        </h2>
-        <p>
-          <code>NavbarSearch</code> 컴포넌트는 검색 입력 필드의 크기를 설정할 수
-          있습니다. 기본 크기는 <code>medium</code>입니다:
-        </p>
-        <ul>
-          <li>
-            <code>small</code>: 작은 크기
-          </li>
-          <li>
-            <code>medium</code>: 중간 크기 (기본값)
-          </li>
-          <li>
-            <code>large</code>: 큰 크기
-          </li>
-        </ul>
-        <div className="space-y-4">
-          <NavbarSearch
-            name="search"
-            id="searchInput"
-            maxLength={8}
-            type="search"
-            size="medium"
-            placeholder="Search"
-          />
-        </div>
-        <div className="relative">
-          <CopyToClipboard
-            text={`import NavbarSearch from '@components/NavbarSearch/NavbarSearch';
-
-function Example() {
-  return (
-    <>
-      <NavbarSearch
-        name="search"
-        id="searchInput"
-        maxLength={8}
-        type="search"
-        size="medium"
-        placeholder="Search"
-      />
-    </>
-  );
-}
-
-export default Example;`}
-            onCopy={handleCopy}
-          >
-            <button className="copyButton">
-              {copied ? "Copied!" : "Copy"}
-            </button>
-          </CopyToClipboard>
-          <SyntaxHighlighter language="tsx">
-            {`
-import NavbarSearch from '@components/NavbarSearch/NavbarSearch';
-
-function Example() {
-  return (
-    <>
-      <NavbarSearch
-        name="search"
-        id="searchInput"
-        maxLength={8}
-        type="search"
-        size="medium"
-        placeholder="Search"
-      />
-    </>
-  );
-}
-
-export default Example;
-`}
-          </SyntaxHighlighter> */}
         </div>
 
-        <h2 className="text-[#2D3748]">Props</h2>
+        <h2 className="text-[#2D3748]">2.3. Props</h2>
         <p>
           <code>NavbarSearch</code> 컴포넌트는 아래와 같은 Props를 가집니다:
         </p>
@@ -744,7 +666,7 @@ export default Example;
           </tbody>
         </table>
 
-        <h2 className="text-[#2D3748]">Full Example</h2>
+        <h2 className="text-[#2D3748]">2.4. Full Example</h2>
         <div className="relative">
           <CopyToClipboard
             text={`import NavbarSearch from '@components/NavbarSearch/NavbarSearch';
