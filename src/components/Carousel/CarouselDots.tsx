@@ -1,15 +1,34 @@
 "use client";
 
 import Image from "next/image";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 interface CarouselDotsProps {
   images: string[];
   showDots?: boolean;
+  autoplay?: boolean;
+  interval?: number;
 }
 
-const CarouselDots = ({ images, showDots = true }: CarouselDotsProps) => {
+const CarouselDots = ({
+  images,
+  showDots = true,
+  autoplay = false,
+  interval = 2000,
+}: CarouselDotsProps) => {
   const [currentSlide, setCurrentSlide] = useState(0);
+
+  useEffect(() => {
+    if (autoplay) {
+      const timer = setInterval(() => {
+        setCurrentSlide((prevSlide) =>
+          prevSlide === images.length - 1 ? 0 : prevSlide + 1,
+        );
+      }, interval);
+
+      return () => clearInterval(timer);
+    }
+  }, [autoplay, images.length, interval]);
 
   const handlePrev = () => {
     setCurrentSlide((prevIndex) =>
@@ -30,7 +49,7 @@ const CarouselDots = ({ images, showDots = true }: CarouselDotsProps) => {
   return (
     <>
       <div className="relative w-full">
-        <div className="relative m-auto h-96 w-1/2 overflow-hidden rounded-lg">
+        <div className="relative m-auto h-96 w-9/12 overflow-hidden rounded-lg">
           <ul
             className="flex transition-transform duration-300 ease-in-out"
             style={{ transform: `translateX(-${currentSlide * 100}%)` }}
@@ -48,7 +67,7 @@ const CarouselDots = ({ images, showDots = true }: CarouselDotsProps) => {
             ))}
           </ul>
           {showDots && (
-            <div className="-tr absolute bottom-4 left-1/2 flex -translate-x-1/2 transform space-x-2">
+            <div className="absolute bottom-4 left-1/2 flex -translate-x-1/2 transform space-x-2">
               {images.map((_, dots) => (
                 <button
                   key={dots}
@@ -105,4 +124,5 @@ const CarouselDots = ({ images, showDots = true }: CarouselDotsProps) => {
     </>
   );
 };
+
 export default CarouselDots;
