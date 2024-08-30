@@ -82,11 +82,13 @@ const AutocompleteDoc: React.FC = () => {
       <p>
         아래는 <code>Autocomplete</code> 컴포넌트의 기본 사용 예제입니다:
       </p>
-      <Autocomplete
-        options={options}
-        placeholder="Search fruits..."
-        onSelect={handleSelect}
-      />
+      <div className="m-3">
+        <Autocomplete
+          options={options}
+          placeholder="Search fruits..."
+          onSelect={handleSelect}
+        />
+      </div>
       <p>선택된 옵션: {selectedOption}</p>
 
       <CodeBox
@@ -166,7 +168,7 @@ export default Example;`}
           <code>borderless</code>: 외곽선이 없는 스타일
         </li>
       </ul>
-      <div className="space-y-6">
+      <div className="m-3 space-y-6">
         <Autocomplete
           options={options}
           placeholder="Outlined style"
@@ -1391,7 +1393,7 @@ export default Example;`}
           <code>large</code>: 큰 크기
         </li>
       </ul>
-      <div className="space-y-4">
+      <div className="m-3 space-y-4">
         <LabelAutocomplete
           options={options3}
           value={value}
@@ -1399,6 +1401,14 @@ export default Example;`}
           onSelect={handleSelect3}
           size="small"
           placeholder="Search (small)..."
+        />
+        <LabelAutocomplete
+          options={options3}
+          value={value}
+          onChange={setValue}
+          onSelect={handleSelect3}
+          size="medium"
+          placeholder="Search (medium)..."
         />
         <LabelAutocomplete
           options={options3}
