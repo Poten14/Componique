@@ -133,10 +133,13 @@ const Drawer: React.FC<DrawerProps> = ({
               : position === "bottom"
                 ? "space-y-2 pb-4"
                 : "space-y-2"
-          }`}
+          } h-full overflow-y-auto`}
         >
           {menu?.map((group, index) => (
-            <li key={index} className="mb-4">
+            <li
+              key={index}
+              className={`mb-4 ${position === "top" || position === "bottom" ? "w-full" : ""}`}
+            >
               {group.groupName && (
                 <div
                   className={`mx-2 mb-2 rounded px-2 font-semibold text-white ${group.groupNameClassName || ""}`}
@@ -149,8 +152,8 @@ const Drawer: React.FC<DrawerProps> = ({
                   <li
                     key={itemIndex}
                     className={`${
-                      position === "top"
-                        ? "mx-2 mb-2 w-[90%] text-center"
+                      position === "top" || position === "bottom"
+                        ? "mx-auto mb-2 w-[90%] text-center"
                         : "mx-2"
                     } box-border cursor-pointer overflow-hidden text-ellipsis whitespace-nowrap rounded px-5 py-2 hover:bg-gray ${
                       color ? bgColors[color] : "bg-[#F8F8F8]"
