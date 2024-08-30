@@ -18,6 +18,8 @@ const DrawerDocs = () => {
   const [isClassDrawerOpen, setIsClassDrawerOpen] = useState(false);
   const [isLogoDrawerOpen, setIsLogoDrawerOpen] = useState(false);
   const [isIconDrawerOpen, setIsIconoDrawerOpen] = useState(false);
+  const [isGroupDrawerOpen, setIsGroupDrawerOpen] = useState(false);
+
   const onclickDrawerHandler = (open: boolean) => () => {
     setIsDrawerOpen(open);
   };
@@ -29,7 +31,7 @@ const DrawerDocs = () => {
 
   return (
     <div className="prose max-w-[1000px] p-5 text-[#6D6D6D]">
-      <h1 className="text-[#2D3748]">Drawer</h1>
+      <h1 className="text-[#2D3748]">1. Drawer</h1>
       <p>
         <code>Drawer</code> 컴포넌트는 슬라이딩 메뉴 또는 사이드바를 구현하기
         위해 사용됩니다.
@@ -38,7 +40,7 @@ const DrawerDocs = () => {
         이 컴포넌트는 메뉴 항목, 로고, 색상, 위치 등을 사용자 정의할 수 있는
         다양한 옵션을 제공합니다.
       </p>
-      <h2 className="text-[#2D3748]">Import</h2>
+      <h2 className="text-[#2D3748]">1.1. Import</h2>
       <CodeBox
         code={`import Drawer from "@components/Drawer/Drawer"`}
         copyText={`import Drawer from "@components/Drawer/Drawer"`}
@@ -47,17 +49,21 @@ const DrawerDocs = () => {
         copied={copied}
         handleCopy={handleCopy}
       />
-      <h2 className="text-[#2D3748]">Usage</h2>
+      <h2 className="text-[#2D3748]">1.2. Usage</h2>
       <p>기본 사용 예제는 아래와 같습니다:</p>
       <Drawer
         isOpen={isDrawerOpen}
         className="not-prose"
         onClose={onclickDrawerHandler(false)}
         menu={[
-          { name: "Home", path: "/" },
-          { name: "About", path: "/about" },
-          { name: "Profile", path: "/profile" },
-          { name: "Contact", path: "/Contact" },
+          {
+            items: [
+              { name: "Home", path: "/" },
+              { name: "About", path: "/about" },
+              { name: "Profile", path: "/profile" },
+              { name: "Contact", path: "/contact" },
+            ],
+          },
         ]}
       />
       <Button variant="border" onClick={onclickDrawerHandler(true)}>
@@ -78,12 +84,16 @@ function Example() {
       <Drawer
         isOpen={isDrawerOpen}
         onClose={onclickDrawerHandler(false)}
-        menu={[
-          { name: "Home", path: "/" },
-          { name: "About", path: "/about" },
-          { name: "Profile", path: "/profile" },
-          { name: "Contact", path: "/Contact" },
-        ]}
+          menu={[
+              {
+                items: [
+                  { name: "Home", path: "/"},
+                  { name: "About", path: "/about"},
+                  { name: "Profile", path: "/profile"},
+                  { name: "Contact", path: "/contact"},
+                ],
+              },
+            ]}
       />
       <Button
         variant="border"
@@ -112,12 +122,16 @@ function Example() {
       <Drawer
         isOpen={isDrawerOpen}
         onClose={onclickDrawerHandler(false)}
-        menu={[
-          { name: "Home", path: "/" },
-          { name: "About", path: "/about" },
-          { name: "Profile", path: "/profile" },
-          { name: "Contact", path: "/Contact" },
-        ]}
+          menu={[
+              {
+                items: [
+                  { name: "Home", path: "/" },
+                  { name: "About", path: "/about"},
+                  { name: "Profile", path: "/profile" },
+                  { name: "Contact", path: "/contact" },
+                ],
+              },
+            ]}
       />
       <Button
         variant="border"
@@ -137,7 +151,7 @@ export default Example;
         copied={copied}
         handleCopy={handleCopy}
       />
-      <h1 className="pt-2 text-[#2D3748]">Menu</h1>
+      <h2 className="pt-2 text-[#2D3748]">2. Menu</h2>
       <p>
         <code>menu</code> prop을 이용하여 Drawer에 표시할 메뉴 항목을 정의할 수
         있습니다.
@@ -154,9 +168,13 @@ export default Example;
         className="not-prose"
         onClose={() => setIsMenuDrawerOpen(false)}
         menu={[
-          { name: "menu1", path: "/menu1" },
-          { name: "menu2", path: "/menu2" },
-          { name: "menu3", path: "/menu3" },
+          {
+            items: [
+              { name: "menu1", path: "/menu1" },
+              { name: "menu2", path: "/menu2" },
+              { name: "menu3", path: "/menu3" },
+            ],
+          },
         ]}
       />
       <Button variant="border" onClick={() => setIsMenuDrawerOpen(true)}>
@@ -177,11 +195,14 @@ function Example() {
       <Drawer
         isOpen={isDrawerOpen}
         onClose={onclickDrawerHandler(false)}
-        menu={[
-          { name: "menu1", path: "/menu1" },
-          { name: "menu2", path: "/menu2" },
-          { name: "menu3", path: "/menu3" },
-        ]}
+               menu={[
+          {
+            items: [
+              { name: "menu1", path: "/menu1" },
+              { name: "menu2", path: "/menu2" },
+              { name: "menu3", path: "/menu3" },
+            ],
+          },
       />
       <Button
         variant="border"
@@ -210,11 +231,14 @@ function Example() {
       <Drawer
         isOpen={isDrawerOpen}
         onClose={onclickDrawerHandler(false)}
-        menu={[
-          { name: "menu1", path: "/menu1" },
-          { name: "menu2", path: "/menu2" },
-          { name: "menu3", path: "/menu3" },
-        ]}
+               menu={[
+          {
+            items: [
+              { name: "menu1", path: "/menu1" },
+              { name: "menu2", path: "/menu2" },
+              { name: "menu3", path: "/menu3" },
+            ],
+          },
       />
       <Button
         variant="border"
@@ -234,7 +258,7 @@ export default Example;
         copied={copied}
         handleCopy={handleCopy}
       />
-      <h1 className="text-[#2D3748]">Logo</h1>
+      <h2 className="text-[#2D3748]">3. Logo</h2>
       <p>
         <code>logo</code> prop을 사용하여 Drawer 상단에 로고 이미지를 표시할 수
         있습니다. 로고는 이미지 URL을 문자열로 전달하며, 로고 이미지는 클릭 시
@@ -246,10 +270,14 @@ export default Example;
         onClose={() => setIsLogoDrawerOpen(false)}
         logo="/componique_logo_full.svg"
         menu={[
-          { name: "Home", path: "/" },
-          { name: "About", path: "/about" },
-          { name: "Profile", path: "/profile" },
-          { name: "Contact", path: "/Contact" },
+          {
+            items: [
+              { name: "Home", path: "/" },
+              { name: "About", path: "/about" },
+              { name: "Profile", path: "/profile" },
+              { name: "Contact", path: "/contact" },
+            ],
+          },
         ]}
       />
       <Button variant="border" onClick={() => setIsLogoDrawerOpen(true)}>
@@ -271,12 +299,16 @@ function Example() {
         isOpen={isDrawerOpen}
         logo="/componique_logo_full.svg"
         onClose={onclickDrawerHandler(false)}
-        menu={[
-          { name: "Home", path: "/", className: "text-Red" },
-          { name: "About", path: "/about" },
-          { name: "Profile", path: "/profile" },
-          { name: "Contact", path: "/Contact" },
-        ]}
+       menu={[
+              {
+                items: [
+                  { name: "Home", path: "/" },
+                  { name: "About", path: "/about"},
+                  { name: "Profile", path: "/profile" },
+                  { name: "Contact", path: "/contact" },
+                ],
+              },
+            ]}
       />
       <Button
         variant="border"
@@ -306,12 +338,16 @@ function Example() {
         isOpen={isDrawerOpen}
         logo="/componique_logo_full.svg" 
         onClose={onclickDrawerHandler(false)}
-        menu={[
-          { name: "Home", path: "/", className: "text-Red" },
-          { name: "About", path: "/about" },
-          { name: "Profile", path: "/profile" },
-          { name: "Contact", path: "/Contact" },
-        ]}
+      menu={[
+              {
+                items: [
+                  { name: "Home", path: "/" },
+                  { name: "About", path: "/about"},
+                  { name: "Profile", path: "/profile" },
+                  { name: "Contact", path: "/contact" },
+                ],
+              },
+            ]}
       />
       <Button
         variant="border"
@@ -331,7 +367,7 @@ export default Example;
         copied={copied}
         handleCopy={handleCopy}
       />
-      <h1 className="pt-2 text-[#2D3748]">Position</h1>
+      <h2 className="pt-2 text-[#2D3748]">4. Position</h2>
       <p>
         <code>postion</code> prop을 이용하여 Drawer의 슬라이딩 위치를 설정할 수
         있습니다.
@@ -346,10 +382,14 @@ export default Example;
         className="not-prose"
         onClose={() => setIsLeftDrawerOpen(false)}
         menu={[
-          { name: "Home", path: "/" },
-          { name: "About", path: "/about" },
-          { name: "Profile", path: "/profile" },
-          { name: "Contact", path: "/Contact" },
+          {
+            items: [
+              { name: "Home", path: "/" },
+              { name: "About", path: "/about" },
+              { name: "Profile", path: "/profile" },
+              { name: "Contact", path: "/contact" },
+            ],
+          },
         ]}
       />
       <Drawer
@@ -358,10 +398,14 @@ export default Example;
         className="not-prose"
         onClose={() => setIsRightDrawerOpen(false)}
         menu={[
-          { name: "Home", path: "/" },
-          { name: "About", path: "/about" },
-          { name: "Profile", path: "/profile" },
-          { name: "Contact", path: "/Contact" },
+          {
+            items: [
+              { name: "Home", path: "/" },
+              { name: "About", path: "/about" },
+              { name: "Profile", path: "/profile" },
+              { name: "Contact", path: "/contact" },
+            ],
+          },
         ]}
       />
       <Drawer
@@ -370,10 +414,14 @@ export default Example;
         className="not-prose"
         onClose={() => setIsTopDrawerOpen(false)}
         menu={[
-          { name: "Home", path: "/" },
-          { name: "About", path: "/about" },
-          { name: "Profile", path: "/profile" },
-          { name: "Contact", path: "/Contact" },
+          {
+            items: [
+              { name: "Home", path: "/" },
+              { name: "About", path: "/about" },
+              { name: "Profile", path: "/profile" },
+              { name: "Contact", path: "/contact" },
+            ],
+          },
         ]}
       />
       <Drawer
@@ -382,10 +430,14 @@ export default Example;
         className="not-prose"
         onClose={() => setIsBottomDrawerOpen(false)}
         menu={[
-          { name: "Home", path: "/" },
-          { name: "About", path: "/about" },
-          { name: "Profile", path: "/profile" },
-          { name: "Contact", path: "/Contact" },
+          {
+            items: [
+              { name: "Home", path: "/" },
+              { name: "About", path: "/about" },
+              { name: "Profile", path: "/profile" },
+              { name: "Contact", path: "/contact" },
+            ],
+          },
         ]}
       />
       <div className="m-auto flex justify-center space-x-4">
@@ -435,12 +487,16 @@ function Example() {
         isOpen={isDrawerOpen}
         onClose={onclickDrawerHandler(false)}
         position="right"
-        menu={[
-          { name: "Home", path: "/" },
-          { name: "About", path: "/about" },
-          { name: "Profile", path: "/profile" },
-          { name: "Contact", path: "/Contact" },
-        ]}
+       menu={[
+              {
+                items: [
+                  { name: "Home", path: "/" },
+                  { name: "About", path: "/about"},
+                  { name: "Profile", path: "/profile" },
+                  { name: "Contact", path: "/contact" },
+                ],
+              },
+            ]}
       />
       <Button
         variant="border"
@@ -471,11 +527,15 @@ function Example() {
         onClose={onclickDrawerHandler(false)}
         position="right"
         menu={[
-          { name: "Home", path: "/" },
-          { name: "About", path: "/about" },
-          { name: "Profile", path: "/profile" },
-          { name: "Contact", path: "/Contact" },
-        ]}
+              {
+                items: [
+                  { name: "Home", path: "/" },
+                  { name: "About", path: "/about"},
+                  { name: "Profile", path: "/profile" },
+                  { name: "Contact", path: "/contact" },
+                ],
+              },
+            ]}
       />
       <Button
         variant="border"
@@ -496,7 +556,7 @@ export default Example;
         handleCopy={handleCopy}
       />
       <p>위의 예시 코드는 위치를 right로 한 예시입니다.</p>
-      <h1 className="pt-2 text-[#2D3748]">Color</h1>
+      <h2 className="pt-2 text-[#2D3748]">5. Color</h2>
       <p>
         <code>color</code> prop을 이용하여 메뉴 항목의 배경 색상을 설정할 수
         있습니다.
@@ -520,10 +580,14 @@ export default Example;
         bgColor="blue"
         color="primary"
         menu={[
-          { name: "Home", path: "/" },
-          { name: "About", path: "/about" },
-          { name: "Profile", path: "/profile" },
-          { name: "Contact", path: "/Contact" },
+          {
+            items: [
+              { name: "Home", path: "/" },
+              { name: "About", path: "/about" },
+              { name: "Profile", path: "/profile" },
+              { name: "Contact", path: "/contact" },
+            ],
+          },
         ]}
       />
       <Button variant="border" onClick={() => setIsColorDrawerOpen(true)}>
@@ -546,12 +610,16 @@ function Example() {
         onClose={onclickDrawerHandler(false)}
         bgColor="blue"
         color="primary"
-        menu={[
-          { name: "Home", path: "/" },
-          { name: "About", path: "/about" },
-          { name: "Profile", path: "/profile" },
-          { name: "Contact", path: "/Contact" },
-        ]}
+       menu={[
+              {
+                items: [
+                  { name: "Home", path: "/" },
+                  { name: "About", path: "/about"},
+                  { name: "Profile", path: "/profile" },
+                  { name: "Contact", path: "/contact" },
+                ],
+              },
+            ]}
       />
       <Button
         variant="border"
@@ -582,12 +650,16 @@ function Example() {
         onClose={onclickDrawerHandler(false)}
        bgColor="blue"
         color="primary"
-        menu={[
-          { name: "Home", path: "/" },
-          { name: "About", path: "/about" },
-          { name: "Profile", path: "/profile" },
-          { name: "Contact", path: "/Contact" },
-        ]}
+       menu={[
+              {
+                items: [
+                  { name: "Home", path: "/" },
+                  { name: "About", path: "/about"},
+                  { name: "Profile", path: "/profile" },
+                  { name: "Contact", path: "/contact" },
+                ],
+              },
+            ]}
       />
       <Button
         variant="border"
@@ -607,7 +679,135 @@ export default Example;
         copied={copied}
         handleCopy={handleCopy}
       />
-      <h1 className="pt-2 text-[#2D3748]">ClassName</h1>
+      <h2 className="pt-2 text-[#2D3748]">6. Group</h2>
+      <p>
+        <code>groupName</code> 및 <code>groupNameClassName</code> prop을
+        사용하여 Drawer 내에서 메뉴 항목을 그룹화하고 그룹 이름에 스타일을
+        적용할 수 있습니다.
+      </p>
+      <p>
+        <code>groupName</code>은 각 그룹의 제목을 나타내고,{" "}
+        <code>groupNameClassName</code>을 통해 그룹 이름의 스타일을
+        커스터마이징할 수 있습니다.
+      </p>
+      <Drawer
+        isOpen={isGroupDrawerOpen}
+        className="not-prose"
+        onClose={() => setIsGroupDrawerOpen(false)}
+        menu={[
+          {
+            groupName: "Main",
+            items: [
+              { name: "Home", path: "/" },
+              { name: "About", path: "/about" },
+            ],
+          },
+          {
+            groupName: "User",
+            groupNameClassName: "!text-[#FF6347]",
+            items: [
+              { name: "Profile", path: "/profile" },
+              { name: "Contact", path: "/contact" },
+            ],
+          },
+        ]}
+      />
+      <Button variant="border" onClick={() => setIsGroupDrawerOpen(true)}>
+        Group Drawer
+      </Button>
+      <CodeBox
+        code={`"use client";
+import Drawer from "@components/Drawer/Drawer";
+import Button from "@components/Button/Button";
+import { useState } from "react";
+function Example() {
+  const [isDrawerOpen, setIsDrawerOpen] = useState(false);
+  const onclickDrawerHandler = (open: boolean) => () => {
+    setIsDrawerOpen(open);
+  };
+  return (
+    <>
+      <Drawer
+        isOpen={isDrawerOpen}
+        onClose={onclickDrawerHandler(false)}
+        menu={[
+          {
+            groupName: "Main",
+            items: [
+              { name: "Home", path: "/" },
+              { name: "About", path: "/about" },
+            ],
+          },
+          {
+            groupName: "User",
+            groupNameClassName: "!text-[#FF6347]",
+            items: [
+              { name: "Profile", path: "/profile" },
+              { name: "Contact", path: "/contact" },
+            ],
+          },
+        ]}
+      />
+      <Button
+        variant="border"
+        onClick={onclickDrawerHandler(true)}
+      >
+        Drawer Open Button
+      </Button>
+    </>
+  );
+}
+
+export default Example;`}
+        copyText={`"use client";
+import Drawer from "@components/Drawer/Drawer";
+import Button from "@components/Button/Button";
+import { useState } from "react";
+function Example() {
+  const [isDrawerOpen, setIsDrawerOpen] = useState(false);
+  const onclickDrawerHandler = (open: boolean) => () => {
+    setIsDrawerOpen(open);
+  };
+  return (
+    <>
+      <Drawer
+        isOpen={isDrawerOpen}
+        onClose={onclickDrawerHandler(false)}
+        menu={[
+          {
+            groupName: "Main",
+            items: [
+              { name: "Home", path: "/" },
+              { name: "About", path: "/about" },
+            ],
+          },
+          {
+            groupName: "User",
+            groupNameClassName: "!text-[#FF6347]",
+            items: [
+              { name: "Profile", path: "/profile" },
+              { name: "Contact", path: "/contact" },
+            ],
+          },
+        ]}
+      />
+      <Button
+        variant="border"
+        onClick={onclickDrawerHandler(true)}
+      >
+        Drawer Open Button
+      </Button>
+    </>
+  );
+}
+
+export default Example;`}
+        language="tsx"
+        index={10}
+        copied={copied}
+        handleCopy={handleCopy}
+      />
+      <h2 className="pt-2 text-[#2D3748]">7. ClassName</h2>
       <p>
         <code>className</code> prop을 사용하여 <code>Drawer</code> 컴포넌트의
         스타일을 커스터마이징할 수 있습니다.
@@ -630,10 +830,14 @@ export default Example;
         className="not-prose font-bold"
         onClose={() => setIsClassDrawerOpen(false)}
         menu={[
-          { name: "Home", path: "/", className: "text-Red" },
-          { name: "About", path: "/about" },
-          { name: "Profile", path: "/profile" },
-          { name: "Contact", path: "/Contact" },
+          {
+            items: [
+              { name: "Home", path: "/", className: "text-Red" },
+              { name: "About", path: "/about" },
+              { name: "Profile", path: "/profile" },
+              { name: "Contact", path: "/contact" },
+            ],
+          },
         ]}
       />
       <Button variant="border" onClick={() => setIsClassDrawerOpen(true)}>
@@ -715,7 +919,7 @@ export default Example;
         copied={copied}
         handleCopy={handleCopy}
       />
-      <h1 className="text-[#2D3748]">Icon</h1>
+      <h2 className="text-[#2D3748]">8. Icon</h2>
       <p>
         <code>icon</code> prop을 사용하여 각 메뉴 항목 앞에 아이콘을 추가할 수
         있습니다.
@@ -726,10 +930,14 @@ export default Example;
         className="not-prose"
         onClose={() => setIsIconoDrawerOpen(false)}
         menu={[
-          { name: "Home", path: "/", icon: "icon-home" },
-          { name: "About", path: "/about", icon: "icon-info" },
-          { name: "Profile", path: "/profile", icon: "icon-user" },
-          { name: "Contact", path: "/Contact", icon: "icon-call" },
+          {
+            items: [
+              { name: "Home", path: "/", icon: "icon-home" },
+              { name: "About", path: "/about", icon: "icon-info" },
+              { name: "Profile", path: "/profile", icon: "icon-user" },
+              { name: "Contact", path: "/contact", icon: "icon-call" },
+            ],
+          },
         ]}
       />
       <Button variant="border" onClick={() => setIsIconoDrawerOpen(true)}>
@@ -750,11 +958,15 @@ function Example() {
       <Drawer
         isOpen={isDrawerOpen}
         onClose={onclickDrawerHandler(false)}
-        menu={[
-          { name: "Home", path: "/", icon: "icon-home" },
-          { name: "About", path: "/about", icon: "icon-info" },
-          { name: "Profile", path: "/profile", icon: "icon-user" },
-          { name: "Contact", path: "/Contact", icon: "icon-call" },
+       menu={[
+          {
+            items: [
+              { name: "Home", path: "/", icon: "icon-home" },
+              { name: "About", path: "/about", icon: "icon-info" },
+              { name: "Profile", path: "/profile", icon: "icon-user" },
+              { name: "Contact", path: "/contact", icon: "icon-call" },
+            ],
+          },
         ]}
       />
       <Button
@@ -785,10 +997,14 @@ function Example() {
         isOpen={isDrawerOpen}
         onClose={onclickDrawerHandler(false)}
         menu={[
-          { name: "Home", path: "/", icon: "icon-home" },
-          { name: "About", path: "/about", icon: "icon-info" },
-          { name: "Profile", path: "/profile", icon: "icon-user" },
-          { name: "Contact", path: "/Contact", icon: "icon-call" },
+          {
+            items: [
+              { name: "Home", path: "/", icon: "icon-home" },
+              { name: "About", path: "/about", icon: "icon-info" },
+              { name: "Profile", path: "/profile", icon: "icon-user" },
+              { name: "Contact", path: "/contact", icon: "icon-call" },
+            ],
+          },
         ]}
       />
       <Button
@@ -809,7 +1025,7 @@ export default Example;
         copied={copied}
         handleCopy={handleCopy}
       />
-      <h1 className="pt-2 text-[#2D3748]">Props</h1>
+      <h2 className="pt-2 text-[#2D3748]">9. Props</h2>
       <p>
         <code>Drawer</code> 컴포넌트는 아래와 같은 Props를 가집니다:
       </p>

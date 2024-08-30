@@ -21,7 +21,9 @@ export default function DocsLayout({
     <>
       <div>
         {children}
-        <Quickmenu items={quickmenuItems} />
+        <div className="hidden xl:block">
+          <Quickmenu items={quickmenuItems} />
+        </div>
       </div>
     </>
   );
