@@ -168,7 +168,7 @@ export default Example;`}
           <code>borderless</code>: 외곽선이 없는 스타일
         </li>
       </ul>
-      <div className="m-3 space-y-6">
+      <div className="m-3 space-y-3">
         <Autocomplete
           options={options}
           placeholder="Outlined style"
