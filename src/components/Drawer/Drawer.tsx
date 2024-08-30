@@ -32,6 +32,11 @@ const Drawer: React.FC<DrawerProps> = ({
     setIsDrawerOpen(false);
     if (onClose) onClose();
   };
+  const onClickLogoCloseHandler = () => {
+    router.push("/");
+    setIsDrawerOpen(false);
+    if (onClose) onClose();
+  };
 
   useEffect(() => {
     if (isDrawerOpen) {
@@ -118,7 +123,7 @@ const Drawer: React.FC<DrawerProps> = ({
           className={`flex justify-center py-2 ${
             position === "top" || position === "bottom" ? "my-2" : "my-0"
           }`}
-          onClick={() => router.push("/")}
+          onClick={onClickLogoCloseHandler}
         >
           <img
             src={logo}
