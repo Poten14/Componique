@@ -47,6 +47,12 @@ i {
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-github:before {
+  content: "\e90a";
+}
+.icon-blog:before {
+  content: "\e90b";
+}
 .icon-docs2:before {
   content: "\e909";
 }

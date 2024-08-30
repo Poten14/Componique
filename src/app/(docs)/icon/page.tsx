@@ -26,7 +26,6 @@ const IconDoc: React.FC = () => {
     "icon-camera",
     "icon-code",
     "icon-download",
-
     "icon-error",
     "icon-heart",
     "icon-help",
@@ -47,6 +46,8 @@ const IconDoc: React.FC = () => {
     "icon-check",
     "icon-search",
     "icon-docs2",
+    "icon-github",
+    "icon-blog",
   ];
   const router = useRouter();
   return (
