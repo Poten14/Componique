@@ -1,5 +1,6 @@
 "use client";
 
+import Icon from "@components/Icon/Icon";
 import React, { useState } from "react";
 import { Size } from "types/type";
 
@@ -19,6 +20,12 @@ const expandedSizeClasses = {
   small: "w-[400px] h-[30px]",
   medium: "w-[500px] h-[40px]",
   large: "w-[600px] h-[50px]",
+};
+
+const iconSizeClasses = {
+  small: 16,
+  medium: 20,
+  large: 24,
 };
 
 const SearchInput2: React.FC<SearchInputProps> = ({
@@ -51,7 +58,7 @@ const SearchInput2: React.FC<SearchInputProps> = ({
         {...props} // 추가된 속성 전달
       />
       <button className="h-full rounded-r-full pr-5 focus:outline-none">
-        🔍
+        <Icon name="icon-search" size={iconSizeClasses[size]} />
       </button>
     </div>
   );
