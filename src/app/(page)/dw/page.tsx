@@ -218,31 +218,31 @@ const Dw = () => {
         <div>
           <Drawer
             isOpen={isDrawerOpen}
-            className="font-bold text-Basic"
+            className="text-[#3e3e3e]"
             onClose={onclickDrawerHandler(false)}
+            color="white"
+            bgColor="white"
             menu={[
               {
-                name: "Home",
-                path: "/",
-                className: "text-yellow-500 underline",
-                icon: "icon-home",
+                groupName: "Main",
+                groupNameClassName: "!text-[#9AC5E5] bg-[#f8f8f8] py-2",
+                items: [
+                  { name: "Home", path: "/", className: "py-0" },
+                  { name: "About", path: "/about", className: "py-0" },
+                ],
               },
-              { name: "About", path: "/about" },
-              { name: "Profile", path: "/profile" },
+
               {
-                name: "Contact",
-                path: "/Contact",
-                icon: "icon-call",
-                className: "text-red-600",
-              },
-              {
-                name: "LongTitleTitleTitleTitleTitleTitle",
-                path: "/Contact",
+                groupName: "User",
+                groupNameClassName: "!text-[#9AC5E5] bg-[#f8f8f8] py-2",
+                items: [
+                  { name: "Profile", path: "/profile", className: "py-0" },
+                  { name: "Contact", path: "/contact", className: "py-0" },
+                ],
               },
             ]}
             logo="/componique_logo_full.svg"
             position="right"
-            bgColor="basic"
           />
 
           <Button

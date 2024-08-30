@@ -1,6 +1,6 @@
 import { IconName } from "@components/Icon/Icon";
 export type DrawerProps = {
-  menu?: MenuProps[];
+  menu?: MenuGroupProps[];
   isOpen?: boolean;
   logo?: string;
   onClose?: () => void;
@@ -40,6 +40,12 @@ export type DrawerProps = {
     | "black";
   position?: "top" | "bottom" | "left" | "right";
   className?: string;
+};
+
+export type MenuGroupProps = {
+  groupName?: string;
+  groupNameClassName?: string;
+  items: MenuProps[];
 };
 
 type MenuProps = {

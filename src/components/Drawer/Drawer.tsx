@@ -3,7 +3,8 @@ import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import Icon from "@components/Icon/Icon";
 
-import type { DrawerProps } from "./DrawerType";
+import type { DrawerProps, MenuGroupProps } from "./DrawerType";
+
 const Drawer: React.FC<DrawerProps> = ({
   menu,
   logo,
@@ -26,17 +27,13 @@ const Drawer: React.FC<DrawerProps> = ({
     if (onClose) onClose();
   };
 
-  // 스크롤 감추기
   useEffect(() => {
     if (isDrawerOpen) {
-      // Drawer가 열려 있을 때 body 스크롤 감추기
       document.body.style.overflow = "hidden";
     } else {
-      // Drawer가 닫힐 때 body 스크롤 보이기
       document.body.style.overflow = "";
     }
 
-    // 컴포넌트가 언마운트될 때 스크롤 다시 보이기
     return () => {
       document.body.style.overflow = "";
     };
@@ -132,20 +129,35 @@ const Drawer: React.FC<DrawerProps> = ({
                 : "space-y-2"
           }`}
         >
-          {menu?.map((item, index) => (
-            <li
-              key={index}
-              className={`${
-                position === "top" ? "mx-2 mb-2 w-[90%] text-center" : "mx-2"
-              } box-border cursor-pointer overflow-hidden text-ellipsis whitespace-nowrap rounded px-5 py-2 hover:bg-gray ${
-                color ? bgColors[color] : "bg-[#F8F8F8]"
-              } ${color === "black" ? "text-white" : ""} ${item.className || ""} `}
-              onClick={() => router.push(item.path)}
-            >
-              {item.icon && (
-                <Icon name={item.icon} size={16} color="currentColor" />
+          {menu?.map((group, index) => (
+            <li key={index} className="mb-4">
+              {group.groupName && (
+                <div
+                  className={`mx-2 mb-2 rounded px-2 font-semibold text-white ${group.groupNameClassName || ""}`}
+                >
+                  {group.groupName}
+                </div>
               )}
-              {item.name}
+              <ul className="space-y-2">
+                {group.items?.map((item, itemIndex) => (
+                  <li
+                    key={itemIndex}
+                    className={`${
+                      position === "top"
+                        ? "mx-2 mb-2 w-[90%] text-center"
+                        : "mx-2"
+                    } box-border cursor-pointer overflow-hidden text-ellipsis whitespace-nowrap rounded px-5 py-2 hover:bg-gray ${
+                      color ? bgColors[color] : "bg-[#F8F8F8]"
+                    } ${color === "black" ? "text-white" : ""} ${item.className || ""}`}
+                    onClick={() => router.push(item.path)}
+                  >
+                    {item.icon && (
+                      <Icon name={item.icon} size={16} color="currentColor" />
+                    )}
+                    {item.name}
+                  </li>
+                ))}
+              </ul>
             </li>
           ))}
         </ul>
