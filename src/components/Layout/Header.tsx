@@ -47,6 +47,8 @@ const Header = () => {
           onClose={onclickDrawerHandler(false)}
           color="white"
           bgColor="white"
+          logo="/componique_logo_full.svg"
+          position="right"
           menu={[
             {
               groupName: "FORM",
@@ -112,7 +114,6 @@ const Header = () => {
               ],
             },
           ]}
-          logo="/componique_logo_full.svg"
         />
       </div>
     </header>
