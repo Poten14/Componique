@@ -1,8 +1,10 @@
+
 "use client";
 
 import Autocomplete from "@components/Autocomplete";
 import Image from "next/image";
 import { useState, useEffect } from "react";
+import Content from "@components/Content/page";
 
 const options = [
   { label: "Form", value: "Button" },
@@ -80,7 +82,9 @@ const Page = () => {
           </div>
         </div>
       </div>
+       <Content />
     </>
+
   );
 };
 export default Page;
