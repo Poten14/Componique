@@ -104,17 +104,19 @@ export default Example;`}
           <code>square</code>: 사각형 버튼
         </li>
       </ul>
-      <Pagination
-        currentPage={currentPage}
-        totalPages={10}
-        onPageChange={handlePageChange}
-      />
-      <Pagination
-        variant="square"
-        currentPage={currentPage}
-        totalPages={10}
-        onPageChange={handlePageChange}
-      />
+      <div className="m-3">
+        <Pagination
+          currentPage={currentPage}
+          totalPages={10}
+          onPageChange={handlePageChange}
+        />
+        <Pagination
+          variant="square"
+          currentPage={currentPage}
+          totalPages={10}
+          onPageChange={handlePageChange}
+        />
+      </div>
       <CodeBox
         code={`import { Pagination } from '@componique/react';
 
@@ -197,30 +199,26 @@ export default Example;`}
           <code>filled-outlined</code>: 채워진 외곽선 스타일
         </li>
       </ul>
-      <Pagination
-        currentPage={3}
-        totalPages={10}
-        styleType="filled"
-        onPageChange={(page) => console.log(page)}
-      />
-      <Pagination
-        currentPage={3}
-        totalPages={10}
-        styleType="outlined"
-        onPageChange={(page) => console.log(page)}
-      />
-      <Pagination
-        currentPage={3}
-        totalPages={10}
-        styleType="outlined-focused"
-        onPageChange={(page) => console.log(page)}
-      />
-      <Pagination
-        currentPage={3}
-        totalPages={10}
-        styleType="filled-outlined"
-        onPageChange={(page) => console.log(page)}
-      />
+      <div className="m-3">
+        <Pagination
+          currentPage={currentPage}
+          totalPages={10}
+          styleType="outlined"
+          onPageChange={handlePageChange}
+        />
+        <Pagination
+          currentPage={currentPage}
+          totalPages={10}
+          styleType="outlined-focused"
+          onPageChange={handlePageChange}
+        />
+        <Pagination
+          currentPage={currentPage}
+          totalPages={10}
+          styleType="filled-outlined"
+          onPageChange={handlePageChange}
+        />
+      </div>
       <CodeBox
         code={`import { Pagination } from '@componique/react';
 
