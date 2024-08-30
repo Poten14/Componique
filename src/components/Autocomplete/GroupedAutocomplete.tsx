@@ -96,13 +96,13 @@ const GroupedAutocomplete: React.FC<AutocompleteProps> = ({
           {filteredOptions.length > 0 ? (
             filteredOptions.map(({ groupName, items }, index1) => (
               <li key={index1} className="p-2">
-                <div className="font-medium">{groupName}</div>
+                <div className="m-3 font-medium">{groupName}</div>
                 <ul className="ml-4">
                   {items.map((item, index2) => (
                     <li
                       key={index2}
                       onMouseDown={() => handleOptionClick(item)} // onClick 대신 onMouseDown 사용
-                      className="cursor-pointer border-b p-2 font-light text-zinc-800 hover:bg-[#E8F5FF]"
+                      className="cursor-pointer border-b p-2 pl-5 font-light text-zinc-800 hover:bg-[#E8F5FF]"
                     >
                       {item}
                     </li>

@@ -89,7 +89,7 @@ const NumInput: React.FC<NumInputProps> = ({
 
   return (
     <div
-      className={`flex items-center ${sizeClasses[size]} rounded-xl border-2 border-gray ${colorClasses[color]} focus-within:ring-2 focus-within:ring-opacity-50`}
+      className={`flex items-center ${sizeClasses[size]} rounded-xl border-2 border-gray ${colorClasses[color]} bg-white focus-within:ring-2 focus-within:ring-opacity-50`}
       style={{ width: width }}
     >
       <input
