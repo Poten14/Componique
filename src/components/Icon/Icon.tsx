@@ -33,7 +33,8 @@ export type IconName =
   | "icon-user"
   | "icon-video"
   | "icon-web"
-  | "icon-search";
+  | "icon-search"
+  | "icon-docs2";
 
 type IconProps = {
   name: IconName;

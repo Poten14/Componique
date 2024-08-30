@@ -47,6 +47,9 @@ i {
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-docs2:before {
+  content: "\e909";
+}
 .icon-search:before {
   content: "\e908";
 }
