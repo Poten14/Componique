@@ -46,6 +46,7 @@ const IconDoc: React.FC = () => {
     "icon-docs",
     "icon-check",
     "icon-search",
+    "icon-docs2",
   ];
   const router = useRouter();
   return (
