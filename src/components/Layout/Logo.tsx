@@ -14,8 +14,8 @@ const Logo = () => {
       <Image
         src="/componique_logo_full.svg"
         alt="logo"
-        width={221}
-        height={75}
+        width={206}
+        height={70}
       />
     </div>
   );
