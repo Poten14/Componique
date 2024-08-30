@@ -1,5 +1,6 @@
 "use client";
 
+import Icon from "@components/Icon/Icon";
 import React, { useState } from "react";
 
 // 기본 HTML 속성을 확장하여 사용
@@ -35,9 +36,15 @@ const SearchInput: React.FC<SearchInputProps> = ({
     >
       <button
         onClick={() => setIsActive(!isActive)}
-        className={`flex h-8 w-8 items-center justify-center rounded-full transition-colors duration-300 ${isActive ? activeColor : inactiveColor}`}
+        className={`flex h-8 w-8 items-center justify-center rounded-full transition-colors duration-300 ${
+          isActive ? activeColor : inactiveColor
+        }`}
       >
-        🔍
+        <Icon
+          name="icon-search"
+          size={24}
+          color={isActive ? "white" : "black"}
+        />
       </button>
       {isActive && (
         <input

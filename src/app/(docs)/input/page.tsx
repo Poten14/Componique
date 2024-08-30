@@ -211,9 +211,11 @@ export default Example;`}
       </table>
 
       <h2 className="text-[#2D3748]">Full Example</h2>
-      <Input1 placeholder="Basic usage" />
-      <Input1 placeholder="small size" size="small" />
-      <Input1 placeholder="filled" variant="filled" />
+      <div className="ml-4 space-y-3">
+        <Input1 placeholder="Basic usage" />
+        <Input1 placeholder="small size" size="small" />
+        <Input1 placeholder="filled" variant="filled" />
+      </div>
       <CodeBox
         code={`import { Input } from '@components/Input';
 
