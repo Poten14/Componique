@@ -68,7 +68,7 @@ const Pagination: React.FC<PaginationProps> = ({
     Success: "bg-Success border-Success",
     Warning: "bg-Warning border-Warning",
     Danger: "bg-Danger border-Danger",
-    White: "bg-white border-white text-[#000]",
+    White: "bg-white border-white text-[#ccc]",
   };
 
   const baseButtonClasses = "w-10 h-10 flex items-center justify-center";

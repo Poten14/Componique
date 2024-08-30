@@ -108,7 +108,7 @@ const ButtonAutocomplete: React.FC<AutocompleteProps> = ({
             filteredOptions.map((option, index) => (
               <li
                 key={index}
-                className="hover:bg-gray-200 cursor-pointer p-2"
+                className="hover:bg-gray-200 m-3 cursor-pointer p-2"
                 onMouseDown={(e) => e.preventDefault()}
                 onClick={() => handleOptionClick(option)}
               >
@@ -116,7 +116,7 @@ const ButtonAutocomplete: React.FC<AutocompleteProps> = ({
               </li>
             ))
           ) : (
-            <li className="text-gray-500 p-2">{noOptionsMessage}</li>
+            <li className="text-gray-500 m-3 p-2">{noOptionsMessage}</li>
           )}
         </ul>
       )}

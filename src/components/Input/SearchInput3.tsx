@@ -19,7 +19,7 @@ interface SearchInputProps
 
 const sizeClasses = {
   small: "w-[200px] h-[30px] text-sm",
-  medium: "w-[250px] h-[40px] text-base",
+  medium: "w-[450px] h-[40px] text-base",
   large: "w-[500px] h-[50px]  text-lg",
 };
 
