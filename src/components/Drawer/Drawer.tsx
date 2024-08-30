@@ -27,6 +27,12 @@ const Drawer: React.FC<DrawerProps> = ({
     if (onClose) onClose();
   };
 
+  const onClickMenuCloseHandler = (path: string) => {
+    router.push(path);
+    setIsDrawerOpen(false);
+    if (onClose) onClose();
+  };
+
   useEffect(() => {
     if (isDrawerOpen) {
       document.body.style.overflow = "hidden";
@@ -149,7 +155,7 @@ const Drawer: React.FC<DrawerProps> = ({
                     } box-border cursor-pointer overflow-hidden text-ellipsis whitespace-nowrap rounded px-5 py-2 hover:bg-gray ${
                       color ? bgColors[color] : "bg-[#F8F8F8]"
                     } ${color === "black" ? "text-white" : ""} ${item.className || ""}`}
-                    onClick={() => router.push(item.path)}
+                    onClick={() => onClickMenuCloseHandler(item.path)}
                   >
                     {item.icon && (
                       <Icon name={item.icon} size={16} color="currentColor" />
