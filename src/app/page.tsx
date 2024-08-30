@@ -1,4 +1,3 @@
-
 "use client";
 
 import Autocomplete from "@components/Autocomplete";
@@ -54,13 +53,7 @@ const Page = () => {
     <>
       <div className="mt-16 flex flex-col items-center justify-center">
         <div className="mb-8 w-full max-w-[440px]">
-          <Image
-            src="/Componique.svg"
-            alt="logo"
-            layout="responsive"
-            width={440}
-            height={72}
-          />
+          <Image src="/Componique.svg" alt="logo" width={440} height={72} />
         </div>
         <div className="w-full max-w-[740px]">
           <Autocomplete
@@ -82,9 +75,8 @@ const Page = () => {
           </div>
         </div>
       </div>
-       <Content />
+      <Content />
     </>
-
   );
 };
 export default Page;
