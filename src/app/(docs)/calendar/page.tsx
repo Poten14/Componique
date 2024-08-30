@@ -34,7 +34,7 @@ const CalendarDocs: React.FC = () => {
 
       <h2 className="text-[#2D3748]">1.2. Usage</h2>
       <p>기본 사용 예제는 아래와 같습니다:</p>
-      <div style={{ marginBottom: "20px" }}>
+      <div className="my-7">
         <Calendar />
       </div>
       <CodeBox
@@ -65,7 +65,7 @@ export default Example;`}
         수 있습니다.
       </p>
 
-      <div className="mb-5">
+      <div className="my-7">
         <Calendar
           defaultValue={new Date()}
           onDateSelect={(date) => console.log(date)}
@@ -199,7 +199,7 @@ export default Example;`}
 
       <h2 className="text-[#2D3748]">2.2. Usage</h2>
       <p>기본 사용 예제는 아래와 같습니다:</p>
-      <div style={{ marginBottom: "20px" }}>
+      <div className="my-7">
         <CalendarRange />
       </div>
       <CodeBox
@@ -230,7 +230,7 @@ export default Example;`}
         있습니다.
       </p>
 
-      <div className="mb-5">
+      <div className="my-7">
         <CalendarRange
           onDateSelect={(startDate, endDate) =>
             console.log("Selected range:", startDate, "to", endDate)
