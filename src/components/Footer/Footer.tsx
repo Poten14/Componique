@@ -74,7 +74,6 @@ const Footer = () => {
             ))}
           </ul>
 
-          {/* Project GitHub link */}
           <a
             href="https://github.com/Poten14/Componique"
             className="mb-4 flex items-center text-stone-950 hover:text-slate-700"
@@ -85,13 +84,11 @@ const Footer = () => {
             Project Repository on GitHub
           </a>
 
-          {/* TopButton */}
           <button onClick={TopButton} className="flex items-center">
             <RxDoubleArrowUp className="text-5xl text-[#9AC5E5]" />
           </button>
         </div>
 
-        {/* Copyright text */}
         <p className="mt-4">© 2024 Team POTEN. All rights reserved.</p>
       </div>
     </footer>
