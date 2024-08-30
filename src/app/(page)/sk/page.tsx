@@ -16,7 +16,7 @@ import { ExtraSize } from "types/type";
 import OverlayModal from "@components/Modal/OverlayModal";
 import FormModal from "@components/Modal/FormModal";
 
-const sk = () => {
+const Sk = () => {
   const [spinning, setSpinning] = useState(false); //fullscreen
   const [isOpen, setIsOpen] = useState(false); //모달
   const [modalSize, setModalSize] = useState<ExtraSize | "full">("medium");
@@ -246,4 +246,4 @@ const sk = () => {
     </>
   );
 };
-export default sk;
+export default Sk;

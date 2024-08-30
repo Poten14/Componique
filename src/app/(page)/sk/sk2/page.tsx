@@ -6,7 +6,7 @@ import Autocomplete from "@components/Autocomplete/Autocomplete";
 import GroupedAutocomplete from "@components/Autocomplete/GroupedAutocomplete";
 import ButtonAutocomplete from "@components/Autocomplete/ButtonAutocomplete";
 
-const sk2 = () => {
+const Sk2 = () => {
   const components = [
     { label: "Form", value: "Button" },
     { label: "Form", value: "Input" },
@@ -245,4 +245,4 @@ const sk2 = () => {
   );
 };
 
-export default sk2;
+export default Sk2;

@@ -17,7 +17,7 @@ import CarouselAutoplay from "@components/Carousel/CarouselAutoplay";
 import CarouselDots from "@components/Carousel/CarouselDots";
 import { useState } from "react";
 
-const page = () => {
+const Yr = () => {
   // navbar links
   const navLinks = [
     { name: "Home", href: "/" },
@@ -298,4 +298,4 @@ const page = () => {
     </>
   );
 };
-export default page;
+export default Yr;
