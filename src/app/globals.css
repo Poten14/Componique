@@ -2,6 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 @font-face {
+  font-family: "Pretendard-Regular";
+  src: url("https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff")
+    format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
   font-family: "componique";
   src: url("/fonts/componique.eot");
   src:
@@ -12,6 +19,15 @@
   font-weight: normal;
   font-style: normal;
   font-display: block;
+}
+html {
+  font-family: "Pretendard-Regular";
+}
+body {
+  background-image: url("/Background.svg");
+  background-size: cover; /* bg-cover */
+  background-attachment: fixed; /* bg-fixed */
+  background-repeat: no-repeat; /* bg-no-repeat */
 }
 
 i {
