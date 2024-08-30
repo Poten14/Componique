@@ -49,7 +49,9 @@ const SpinnerDoc: React.FC = () => {
       <p>
         아래는 <code>Spinner</code> 컴포넌트의 기본 사용 예제입니다:
       </p>
-      <Spinner />
+      <div className="my-7 space-y-4">
+        <Spinner />
+      </div>
       <CodeBox
         code={`import { Spinner } from '@components/Spinner';
 
@@ -93,11 +95,13 @@ export default Example;`}
           <code>xl</code>: 아주 큰 크기
         </li>
       </ul>
-      <Spinner size="xs" />
-      <Spinner size="small" />
-      <Spinner size="medium" />
-      <Spinner size="large" />
-      <Spinner size="xl" />
+      <div className="my-7 space-x-3 space-y-4">
+        <Spinner size="xs" />
+        <Spinner size="small" />
+        <Spinner size="medium" />
+        <Spinner size="large" />
+        <Spinner size="xl" />
+      </div>
       <CodeBox
         code={`import { Spinner } from '@components/Spinner';
 
@@ -166,14 +170,16 @@ export default Example;`}
           <code>White</code>: 흰색
         </li>
       </ul>
-      <Spinner color="Basic" />
-      <Spinner color="Primary" />
-      <Spinner color="gray" />
-      <Spinner color="Secondary" />
-      <Spinner color="Success" />
-      <Spinner color="Warning" />
-      <Spinner color="Danger" />
-      <Spinner color="White" />
+      <div className="my-7 space-x-3 space-y-4">
+        <Spinner color="Basic" />
+        <Spinner color="Primary" />
+        <Spinner color="gray" />
+        <Spinner color="Secondary" />
+        <Spinner color="Success" />
+        <Spinner color="Warning" />
+        <Spinner color="Danger" />
+        <Spinner color="White" />
+      </div>
       <CodeBox
         code={`import { Spinner } from '@components/Spinner';
 
@@ -233,9 +239,11 @@ export default Example;`}
           <code>fast</code>: 빠른 회전 속도
         </li>
       </ul>
-      <Spinner speed="slow" />
-      <Spinner speed="medium" />
-      <Spinner speed="fast" />
+      <div className="my-7 space-x-3 space-y-4">
+        <Spinner speed="slow" />
+        <Spinner speed="medium" />
+        <Spinner speed="fast" />
+      </div>
 
       <CodeBox
         code={`import { Spinner } from '@components/Spinner';
@@ -377,7 +385,7 @@ export default Example;`}
         {/* <BarsSpinner /> */}
         아래는 <code>BarsSpinner</code> 컴포넌트의 기본 사용 예제입니다:
       </p>
-      <div>
+      <div className="my-7 space-x-3 space-y-4">
         <BarsSpinner />
       </div>
       <CodeBox
@@ -425,7 +433,7 @@ export default Example;`}
           <code>xl</code>: 아주 큰 크기
         </li>
       </ul>
-      <div className="ml-4 space-x-3 space-y-7">
+      <div className="my-7 space-x-3 space-y-4">
         <BarsSpinner size="xs" />
         <BarsSpinner size="small" />
         <BarsSpinner size="medium" />
@@ -641,7 +649,7 @@ export default Example;`}
         {/* <SquareSpinner /> */}
         아래는 <code>SquareSpinner</code> 컴포넌트의 기본 사용 예제입니다:
       </p>
-      <div>
+      <div className="my-7 space-x-3 space-y-4">
         <SquareSpinner />
       </div>
       <CodeBox
@@ -689,7 +697,7 @@ export default Example;`}
           <code>xl</code>: 아주 큰 크기
         </li>
       </ul>
-      <div className="ml-4 space-x-3 space-y-7">
+      <div className="my-7 space-x-3 space-y-4">
         <SquareSpinner size="xs" />
         <SquareSpinner size="small" />
         <SquareSpinner size="medium" />
@@ -827,7 +835,7 @@ export default Example;`}
           <code>fast</code>: 빠른 속도
         </li>
       </ul>
-      <div className="ml-4 space-x-3 space-y-7">
+      <div className="my-7 space-x-3 space-y-4">
         <SquareSpinner speed="slow" />
         <SquareSpinner speed="medium" />
         <SquareSpinner speed="fast" />
@@ -973,7 +981,7 @@ export default Example;`}
         {/* <PacManSpinner /> */}
         아래는 <code>PacManSpinner</code> 컴포넌트의 기본 사용 예제입니다:
       </p>
-      <div>
+      <div className="my-7 space-y-4">
         <PacManSpinner />
       </div>
       <CodeBox
@@ -1015,7 +1023,7 @@ export default Example;`}
           <code>large</code>: 큰 크기
         </li>
       </ul>
-      <div className="ml-4 space-x-3 space-y-7">
+      <div className="my-7 space-x-3 space-y-4">
         <PacManSpinner size="small" />
         <PacManSpinner size="medium" />
         <PacManSpinner size="large" />
@@ -1147,7 +1155,7 @@ export default Example;`}
           <code>fast</code>: 빠른 속도
         </li>
       </ul>
-      <div className="ml-4 space-x-3 space-y-7">
+      <div className="my-7 space-x-3 space-y-4">
         <PacManSpinner speed="slow" />
         <PacManSpinner speed="medium" />
         <PacManSpinner speed="fast" />
@@ -1292,7 +1300,7 @@ export default Example;`}
       <p>
         아래는 <code>FullScreenSpinner</code> 컴포넌트의 기본 사용 예제입니다:
       </p>
-      <div>
+      <div className="my-7 space-x-3 space-y-4">
         <Button onClick={() => showLoader("spinner1")} variant="flat">
           Show Basic spinner
         </Button>
@@ -1373,7 +1381,7 @@ export default Example;`}
           <code>Bars</code>: 바 스피너
         </li>
       </ul>
-      <div className="ml-4 space-x-3 space-y-7">
+      <div className="my-7 space-x-3 space-y-4">
         <Button onClick={() => showLoader("spinner2")}>
           Show Square spinner
         </Button>

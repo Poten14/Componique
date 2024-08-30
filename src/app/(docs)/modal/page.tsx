@@ -77,12 +77,15 @@ const ModalDoc: React.FC = () => {
       <p>
         아래는 <code>Modal</code> 컴포넌트의 기본 사용 예제입니다:
       </p>
-      <button
-        onClick={() => openModal("medium")}
-        className="rounded-md bg-Basic px-4 py-2 text-white"
-      >
-        Open Basic Modal
-      </button>
+
+      <div className="my-7 space-y-4">
+        <button
+          onClick={() => openModal("medium")}
+          className="rounded-md bg-Basic px-4 py-2 text-white"
+        >
+          Open Basic Modal
+        </button>
+      </div>
       <BasicModal open={isOpen} onClose={closeModal} showCloseIcon={true}>
         <p>This is a basic modal content.</p>
       </BasicModal>
@@ -165,7 +168,8 @@ export default Example;`}
           <code>full</code>: 전체 화면 크기
         </li>
       </ul>
-      <div className="space-x-4">
+
+      <div className="my-7 space-x-2 space-y-4">
         {sizes.map((size) => (
           <Button key={size} onClick={() => openModal(size)}>
             {`Open ${size} Modal`}
@@ -709,36 +713,38 @@ export default Example;`}
       <p>
         아래는 <code>FormModal</code> 컴포넌트의 기본 사용 예제입니다:
       </p>
-      <Button
-        onClick={() => openModal2(1, "medium")}
-        className="rounded-md bg-Basic px-4 py-2 text-white"
-      >
-        Open Form Modal 1
-      </Button>
-      <Button
-        onClick={() => openModal2(2, "large")}
-        className="rounded-md bg-Basic px-4 py-2 text-white"
-      >
-        Open Form Modal 2
-      </Button>
-      <FormModal
-        open={openModalKey === 1}
-        onClose={closeModal2}
-        size={modalSize2}
-        title="Form Modal 1"
-        onSubmit={closeModal2}
-        firstNameLabel="First Name"
-        lastNameLabel="Last Name"
-      />
-      <FormModal
-        open={openModalKey === 2}
-        onClose={closeModal2}
-        size={modalSize2}
-        title="Form Modal 2"
-        onSubmit={closeModal2}
-        firstNameLabel="First Name"
-        lastNameLabel="Last Name"
-      />
+      <div className="my-7 space-x-2 space-y-4">
+        <Button
+          onClick={() => openModal2(1, "medium")}
+          className="rounded-md bg-Basic px-4 py-2 text-white"
+        >
+          Open Form Modal 1
+        </Button>
+        <Button
+          onClick={() => openModal2(2, "large")}
+          className="rounded-md bg-Basic px-4 py-2 text-white"
+        >
+          Open Form Modal 2
+        </Button>
+        <FormModal
+          open={openModalKey === 1}
+          onClose={closeModal2}
+          size={modalSize2}
+          title="Form Modal 1"
+          onSubmit={closeModal2}
+          firstNameLabel="First Name"
+          lastNameLabel="Last Name"
+        />
+        <FormModal
+          open={openModalKey === 2}
+          onClose={closeModal2}
+          size={modalSize2}
+          title="Form Modal 2"
+          onSubmit={closeModal2}
+          firstNameLabel="First Name"
+          lastNameLabel="Last Name"
+        />
+      </div>
 
       <CodeBox
         code={`import { FormModal } from '@components/Modal/FormModal';
@@ -867,10 +873,12 @@ export default Example;`}
           <code>xl</code>: 아주 큰 크기
         </li>
       </ul>
-      <Button className="mr-3" onClick={() => openModal2(1, "xs")}>
-        Open xs FormModal
-      </Button>
-      <Button onClick={() => openModal2(2, "xl")}>Open xl FormModal</Button>
+      <div className="my-7 space-x-2 space-y-4">
+        <Button className="mr-3" onClick={() => openModal2(1, "xs")}>
+          Open xs FormModal
+        </Button>
+        <Button onClick={() => openModal2(2, "xl")}>Open xl FormModal</Button>
+      </div>
       <FormModal
         open={openModalKey === 1}
         onClose={closeModal2}
@@ -1200,12 +1208,14 @@ export default Example;`}
       <p>
         아래는 <code>OverlayModal</code> 컴포넌트의 기본 사용 예제입니다:
       </p>
-      <Button
-        onClick={() => openModal3(1, "small")}
-        className="mr-3 rounded-md bg-Basic px-4 py-2 text-white"
-      >
-        Open Overlay Modal
-      </Button>
+      <div className="my-7 space-x-2 space-y-4">
+        <Button
+          onClick={() => openModal3(1, "small")}
+          className="mr-3 rounded-md bg-Basic px-4 py-2 text-white"
+        >
+          Open Overlay Modal
+        </Button>
+      </div>
       <OverlayModal
         isOpen={openModalKey3 === 1}
         onClose={closeModal3}
@@ -1324,10 +1334,14 @@ export default Example;`}
           <code>full</code>: 전체 화면 크기
         </li>
       </ul>
-      <Button onClick={() => openModal3(1, "xs")}>Open XS OverlayModal</Button>
-      <Button onClick={() => openModal3(2, "xl")} className="ml-3">
-        Open XL OverlayModal
-      </Button>
+      <div className="my-7 space-x-2 space-y-4">
+        <Button onClick={() => openModal3(1, "xs")}>
+          Open XS OverlayModal
+        </Button>
+        <Button onClick={() => openModal3(2, "xl")} className="ml-3">
+          Open XL OverlayModal
+        </Button>
+      </div>
       <OverlayModal
         isOpen={openModalKey3 === 1}
         onClose={closeModal3}
