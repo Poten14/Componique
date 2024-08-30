@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import Pagination from "@components/Pagination/Pagination";
 
-export default function Home() {
+export default function Sk3() {
   const [currentPage, setCurrentPage] = useState(1);
   const totalPages = 10;
 

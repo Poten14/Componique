@@ -5,7 +5,7 @@ import DecimalInput from "@components/Input/DecimalInput";
 import NumInput from "@components/Input/NumInput";
 import PinInput from "@components/Input/PinInput";
 
-const page = () => {
+const Sk4 = () => {
   const handleValueChange = (value: string) => {
     console.log("Value changed to:", value);
   };
@@ -88,4 +88,4 @@ const page = () => {
     </>
   );
 };
-export default page;
+export default Sk4;

@@ -2,7 +2,6 @@
 
 import React, { useState } from "react";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
-import { CopyToClipboard } from "react-copy-to-clipboard";
 import Button from "@components/Button/Button";
 import CodeBox from "@components/CodeBox";
 import ColorPickerUI from "@components/ColorPicker/ColorPickerUI";
