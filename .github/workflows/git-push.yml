@@ -12,7 +12,7 @@ jobs:
     steps:
       - uses: actions/setup-node@v3
         with:
-          node-version: '16'
+          node-version: '20'
       - name: Install mustache (to update the date)
         run: apk add ruby && gem install mustache
       - name: creates output
