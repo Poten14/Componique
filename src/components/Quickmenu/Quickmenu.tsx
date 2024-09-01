@@ -19,6 +19,14 @@ const Quickmenu: React.FC = () => {
     setQuickMenu(items);
   }, []);
 
+  const handleClick = (index: number, id: string) => {
+    setActiveIndex(index);
+    const moveMenu = document.getElementById(id);
+    if (moveMenu) {
+      moveMenu.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <>
       <div className="fixed right-0 top-1/2 w-60 justify-end text-sm">
@@ -30,7 +38,7 @@ const Quickmenu: React.FC = () => {
               <li
                 className={`${activeIndex === index ? "font-bold text-[#9AC5E5]" : "text-[#4A5568] hover:text-black"} py-1`}
                 key={index}
-                onClick={() => setActiveIndex(index)}
+                onClick={() => handleClick(index, item.id)}
               >
                 <Link href={`#${item.id}`}>{item.label}</Link>
               </li>
