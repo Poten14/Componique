@@ -170,6 +170,7 @@ li {
   margin-top: 0;
   margin-bottom: 0;
   padding-inline-start: 0;
+  padding-left: 4px;
 }
 
 .prose :where(img):not(:where([class~="not-prose"], [class~="not-prose"] *)) {
