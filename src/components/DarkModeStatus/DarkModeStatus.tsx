@@ -28,7 +28,7 @@ const DarkModeStatus = ({ children }: { children: ReactNode }) => {
 
   return (
     <div>
-      <button onClick={toggleDarkMode}>Toggle Dark Mode</button>
+      <button onClick={toggleDarkMode}></button>
       {children}
     </div>
   );

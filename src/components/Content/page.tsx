@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 const components = [
@@ -51,6 +52,8 @@ const components = [
 ];
 
 const page = () => {
+  const [darkMode, setDarkMode] = useState(false);
+
   return (
     <div className="container mx-auto p-8">
       {components.map((category) => (

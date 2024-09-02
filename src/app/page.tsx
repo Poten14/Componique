@@ -42,12 +42,12 @@ const Page = () => {
     }
   }, []);
 
-  //메인 페이지가 렌더링될때 추가 되고, 메인페이지를 떠날때 삭제되는 로직 (배경이미지 관련)
+  // 메인 페이지가 렌더링될 때 배경 이미지 클래스를 추가하고, 페이지를 떠날 때 클래스를 제거합니다.
   useEffect(() => {
-    document.body.classList.add("main-bg");
+    document.body.classList.add("main-page");
 
     return () => {
-      document.body.classList.remove("main-bg");
+      document.body.classList.remove("main-page");
     };
   }, []);
 
@@ -89,4 +89,5 @@ const Page = () => {
     </div>
   );
 };
+
 export default Page;
