@@ -5,13 +5,13 @@ import AvatarBasic from "@components/Avatar/AvatarBasic";
 const Dw5 = () => {
   const [avatarImage, setAvatarImage] = useState<string | undefined>(undefined);
 
-  const onSelectImageHandler = (Data: string | null) => {
-    setAvatarImage(Data ?? undefined);
+  const onSelectImageHandler = (data: string | null) => {
+    setAvatarImage(data ?? undefined);
   };
   return (
     <>
       <AvatarBasic src={avatarImage} alt="image" size={80} />
-      <ImageUpload onFileSelect={onSelectImageHandler} />
+      <ImageUpload onImageSelect={onSelectImageHandler} />
     </>
   );
 };

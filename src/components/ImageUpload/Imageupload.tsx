@@ -10,7 +10,7 @@ type ImageUploadProps = {
   text?: string;
   variant?: "solid" | "border";
   className?: string;
-  onFileSelect?: (fileData: string | null) => void;
+  onImageSelect?: (data: string | null) => void;
 };
 
 const ImageUpload: React.FC<ImageUploadProps> = ({
@@ -20,7 +20,7 @@ const ImageUpload: React.FC<ImageUploadProps> = ({
   text = "+ Upload",
   variant = "solid",
   className,
-  onFileSelect,
+  onImageSelect,
 }) => {
   const [previewImage, setPreviewImage] = useState<string | null>(null);
   const [id, setId] = useState<string>("");
@@ -90,14 +90,14 @@ const ImageUpload: React.FC<ImageUploadProps> = ({
       reader.onloadend = () => {
         const result = reader.result as string;
         setPreviewImage(result); // 미리보기 이미지를 설정
-        if (onFileSelect) {
-          onFileSelect(result); //선택한 이미지의 Base64 데이터를 사용하는 컴포넌트에 콜백 함수로 전달
+        if (onImageSelect) {
+          onImageSelect(result); //선택한 이미지의 Base64 데이터를 사용하는 컴포넌트에 콜백 함수로 전달
         }
       };
       reader.readAsDataURL(file); //이미지를 Base64 형식으로 읽어오기
     } else {
-      if (onFileSelect) {
-        onFileSelect(null); //이미지가 선택되지 않은 경우 null 전달
+      if (onImageSelect) {
+        onImageSelect(null); //이미지가 선택되지 않은 경우 null 전달
       }
     }
   };

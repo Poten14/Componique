@@ -56,7 +56,7 @@ const Dw4 = () => {
         <ImageUpload text="BgColor" className="bg-red-600" shape="rectangle" />
       </div>
       <div>
-        <ImageUpload onFileSelect={onSelectImageHandler} />
+        <ImageUpload onImageSelect={onSelectImageHandler} />
       </div>
     </>
   );
