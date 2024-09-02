@@ -34,6 +34,7 @@ const options = [
 const Page = () => {
   const [selectedOption, setSelectedOption] = useState<string>("");
   const [recentSearches, setRecentSearches] = useState<string[]>([]);
+  const [isDarkMode, setIsDarkMode] = useState<boolean>(false);
 
   useEffect(() => {
     const storedSearches = sessionStorage.getItem("recentSearches");
@@ -51,6 +52,26 @@ const Page = () => {
     };
   }, []);
 
+  useEffect(() => {
+    // 다크 모드 상태를 확인하고 설정
+    const checkDarkMode = () => {
+      setIsDarkMode(document.documentElement.classList.contains("dark"));
+    };
+
+    // 초기 다크 모드 상태 확인
+    checkDarkMode();
+
+    // 다크 모드 변경을 감지하는 Observer 설정
+    const observer = new MutationObserver(checkDarkMode);
+    observer.observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ["class"],
+    });
+
+    // 컴포넌트가 언마운트될 때 Observer를 정리
+    return () => observer.disconnect();
+  }, []);
+
   const handleSelect = (option: string) => {
     setSelectedOption(option);
     const updatedSearches = Array.from(new Set([option, ...recentSearches])); // 중복 제거 후 최근 검색어 목록 업데이트
@@ -59,11 +80,14 @@ const Page = () => {
     sessionStorage.setItem("recentSearches", JSON.stringify(limitedSearches));
   };
 
+  // 다크 모드에 따라 로고 이미지 소스 결정
+  const logoSrc = isDarkMode ? "/ComponiqueDark.svg" : "/Componique.svg";
+
   return (
     <div className="main-wrapper">
       <div className="mt-16 flex flex-col items-center justify-center">
         <div className="mb-8 w-full max-w-[440px]">
-          <Image src="/Componique.svg" alt="logo" width={440} height={72} />
+          <Image src={logoSrc} alt="logo" width={440} height={72} />
         </div>
         <div className="w-full max-w-[740px]">
           <Autocomplete

@@ -6,12 +6,36 @@ import HamburgerMenu from "./HamburgerMenu";
 import Drawer from "@components/Drawer/Drawer";
 import Button from "@components/Button/Button";
 import SwitchDark from "@components/Swtich/SwitchDark";
+
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
+  const [isDarkMode, setIsDarkMode] = useState(false);
 
   useEffect(() => {
-    const onScrollHadler = () => {
+    // 다크 모드 상태 체크 함수
+    const checkDarkMode = () => {
+      const darkMode = document.documentElement.classList.contains("dark");
+      setIsDarkMode(darkMode);
+    };
+
+    checkDarkMode(); // 초기 다크 모드 상태 체크
+    window.addEventListener("storage", checkDarkMode);
+
+    const observer = new MutationObserver(checkDarkMode);
+    observer.observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ["class"],
+    });
+
+    return () => {
+      window.removeEventListener("storage", checkDarkMode);
+      observer.disconnect();
+    };
+  }, []);
+
+  useEffect(() => {
+    const onScrollHandler = () => {
       if (window.scrollY > 100) {
         setIsScrolled(true);
       } else {
@@ -19,18 +43,22 @@ const Header = () => {
       }
     };
 
-    window.addEventListener("scroll", onScrollHadler);
+    window.addEventListener("scroll", onScrollHandler);
 
     return () => {
-      window.removeEventListener("scroll", onScrollHadler);
+      window.removeEventListener("scroll", onScrollHandler);
     };
   }, []);
+
   const onclickDrawerHandler = (open: boolean) => () => {
     setIsDrawerOpen(open);
   };
+
   return (
     <header
-      className={`fixed left-0 top-0 z-10 flex h-[90px] w-full items-center justify-between transition-colors duration-300 ${isScrolled ? "bg-white shadow-md" : "bg-transparent"}`}
+      className={`fixed left-0 top-0 z-10 flex h-[90px] w-full items-center justify-between transition-colors duration-300 ${
+        isScrolled ? "bg-white shadow-md dark:bg-[#252629]" : "bg-transparent"
+      }`}
     >
       <Logo />
       <div className="flex items-center">
@@ -109,6 +137,27 @@ const Header = () => {
             {
               groupName: "Navigation",
               groupNameClassName: "!text-[#9AC5E5] bg-[#f8f8f8] py-2",
+              items: [
+                { name: "Pagination", path: "/pagination", className: "py-0" },
+                { name: "Drawer", path: "/drawer", className: "py-0" },
+                { name: "Navbar", path: "/navbar", className: "py-0" },
+              ],
+            },
+            {
+              groupName: "Feedback",
+              groupNameClassName:
+                "!text-[#9AC5E5] dark:!text-[#2A6490] bg-[#f8f8f8] dark:bg-[#2A2E39] py-2",
+              items: [
+                { name: "Spinner", path: "/spinner", className: "py-0" },
+                { name: "Toast", path: "/toast", className: "py-0" },
+                { name: "Skeleton", path: "/skeleton", className: "py-0" },
+                { name: "Modal", path: "/modal", className: "py-0" },
+              ],
+            },
+            {
+              groupName: "Navigation",
+              groupNameClassName:
+                "!text-[#9AC5E5] dark:!text-[#2A6490] bg-[#f8f8f8] dark:bg-[#2A2E39] py-2",
               items: [
                 { name: "Pagination", path: "/pagination", className: "py-0" },
                 { name: "Drawer", path: "/drawer", className: "py-0" },

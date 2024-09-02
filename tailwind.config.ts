@@ -51,6 +51,7 @@ const config: Config = {
         Blue: "#3B82F6",
         Purple: "#A855F7",
         Pink: "#EC4899",
+        Dark: "#252629",
       },
       animation: {
         "spin-slow": "spin 3s linear infinite",

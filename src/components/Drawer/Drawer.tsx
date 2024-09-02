@@ -3,7 +3,7 @@ import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import Icon from "@components/Icon/Icon";
 
-import type { DrawerProps, MenuGroupProps } from "./DrawerType";
+import type { DrawerProps } from "./DrawerType";
 
 const Drawer: React.FC<DrawerProps> = ({
   menu,
@@ -13,7 +13,7 @@ const Drawer: React.FC<DrawerProps> = ({
   bgColor = "basic",
   onClose,
   className,
-  position: position = "left",
+  position = "left",
 }) => {
   const [isDrawerOpen, setIsDrawerOpen] = useState(isOpen);
   const router = useRouter();
@@ -32,6 +32,7 @@ const Drawer: React.FC<DrawerProps> = ({
     setIsDrawerOpen(false);
     if (onClose) onClose();
   };
+
   const onClickLogoCloseHandler = () => {
     router.push("/");
     setIsDrawerOpen(false);
@@ -55,6 +56,7 @@ const Drawer: React.FC<DrawerProps> = ({
     };
   }, [isDrawerOpen]);
 
+  // 배경색을 위한 설정
   const bgColors = {
     primary: "bg-Primary",
     secondary: "bg-Secondary",
@@ -72,11 +74,13 @@ const Drawer: React.FC<DrawerProps> = ({
     white: "bg-white",
     gray: "bg-gray",
     black: "bg-black",
+    dark: "bg-[#252629]", // 다크 모드에 대한 색상 추가
   };
 
   let location = "";
   let motion = "";
 
+  // 위치별로 다르게 위치 설정 및 애니메이션
   if (position === "right") {
     location = "right-0";
     motion = isDrawerOpen ? "translate-x-0" : "translate-x-full";
@@ -91,10 +95,11 @@ const Drawer: React.FC<DrawerProps> = ({
     motion = isDrawerOpen ? "translate-y-0" : "translate-y-full";
   }
 
+  // 기본 배경 설정 및 크기 조정
   const basicBg = `absolute ${location} ${
     position === "top" || position === "bottom"
       ? "h-auto w-full"
-      : "h-full w-[200px]"
+      : "h-full w-[300px]" // 기본 너비를 300px로 설정하고 필요에 따라 조정
   } transition-transform duration-500 ease-in-out ${bgColors[bgColor]}`;
 
   return (
@@ -106,7 +111,7 @@ const Drawer: React.FC<DrawerProps> = ({
     >
       <div
         className={`${basicBg} ${motion}`}
-        //검은배경 말고 안에 메뉴 클릭시 전파 방지
+        // 검은 배경 말고 안에 메뉴 클릭 시 전파 방지
         onClick={(e) => e.stopPropagation()}
       >
         <div
@@ -124,8 +129,8 @@ const Drawer: React.FC<DrawerProps> = ({
             className="group relative h-8 w-8 bg-transparent"
             onClick={onclickCloseHandler}
           >
-            <span className="absolute left-1/2 top-1/2 block h-1 w-full -translate-x-1/2 -translate-y-1/2 rotate-45 transform bg-white"></span>
-            <span className="absolute left-1/2 top-1/2 block h-1 w-full -translate-x-1/2 -translate-y-1/2 -rotate-45 transform bg-white"></span>
+            <span className="dark:bg-dark absolute left-1/2 top-1/2 block h-1 w-full -translate-x-1/2 -translate-y-1/2 rotate-45 transform bg-white"></span>
+            <span className="dark:bg-dark absolute left-1/2 top-1/2 block h-1 w-full -translate-x-1/2 -translate-y-1/2 -rotate-45 transform bg-white"></span>
           </button>
         </div>
 
@@ -137,7 +142,11 @@ const Drawer: React.FC<DrawerProps> = ({
         >
           <img
             src={logo}
-            className={`cursor-pointer text-center ${position === "top" || position === "bottom" ? "w-[300px]" : "w-[180px]"}`}
+            className={`cursor-pointer text-center ${
+              position === "top" || position === "bottom"
+                ? "w-[300px]"
+                : "w-[180px]"
+            }`}
           />
         </div>
 
