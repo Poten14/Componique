@@ -14,7 +14,7 @@ const SwitchDark = () => {
         onClick={toggleSwitch}
         className={`flex h-7 w-14 cursor-pointer items-center rounded-full p-1 ${isOn ? `bg-[#FFFFFF]` : `bg-[#232A31]`}`}
       >
-        {/* 이미지 컨테이너 */}
+        {/* 이미지 container*/}
         <div className="relative flex h-full items-center">
           {/* 이미지 요소 */}
           <Image
