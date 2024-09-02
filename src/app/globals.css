@@ -29,7 +29,12 @@ body {
   background-attachment: fixed; /* bg-fixed */
   background-repeat: no-repeat; /* bg-no-repeat */
 }
-
+html.dark body {
+  background-image: url("/BackgroundDark.svg");
+  background-size: cover; /* bg-cover */
+  background-attachment: fixed; /* bg-fixed */
+  background-repeat: no-repeat;
+}
 i {
   /* use !important to prevent issues with browser extensions that change fonts */
   font-family: "componique" !important;

@@ -5,6 +5,7 @@ import UserPage from "@components/Layout/UserPage";
 import HamburgerMenu from "./HamburgerMenu";
 import Drawer from "@components/Drawer/Drawer";
 import Button from "@components/Button/Button";
+import SwitchDark from "@components/Swtich/SwitchDark";
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
@@ -33,6 +34,7 @@ const Header = () => {
     >
       <Logo />
       <div className="flex items-center">
+        <SwitchDark />
         <UserPage />
         <Button
           className="mr-2 xl:hidden"
