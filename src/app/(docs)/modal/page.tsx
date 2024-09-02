@@ -14,6 +14,7 @@ const ModalDoc: React.FC = () => {
   const [modalSize, setModalSize] = useState<ExtraSize | "full">("medium");
   const [openModalKey, setOpenModalKey] = useState<number | null>(null);
   const [modalSize2, setModalSize2] = useState<ExtraSize>("medium");
+  const [openModalKey2, setOpenModalKey2] = useState<number | null>(null);
   const [openModalKey3, setOpenModalKey3] = useState<number | null>(null);
   const [modalSize3, setModalSize3] = useState<ExtraSize>("small");
 
@@ -41,11 +42,11 @@ const ModalDoc: React.FC = () => {
 
   //폼모달
   const openModal2 = (key: number, size: ExtraSize) => {
-    setModalSize(size);
-    setOpenModalKey(key);
+    setModalSize2(size);
+    setOpenModalKey2(key);
   };
 
-  const closeModal2 = () => setOpenModalKey3(null);
+  const closeModal2 = () => setOpenModalKey2(null);
 
   //오버레이 모달
   const openModal3 = (key: number, size: ExtraSize) => {
@@ -77,12 +78,15 @@ const ModalDoc: React.FC = () => {
       <p>
         아래는 <code>Modal</code> 컴포넌트의 기본 사용 예제입니다:
       </p>
-      <button
-        onClick={() => openModal("medium")}
-        className="rounded-md bg-Basic px-4 py-2 text-white"
-      >
-        Open Basic Modal
-      </button>
+
+      <div className="my-7 space-y-4">
+        <button
+          onClick={() => openModal("medium")}
+          className="rounded-md bg-Basic px-4 py-2 text-white"
+        >
+          Open Basic Modal
+        </button>
+      </div>
       <BasicModal open={isOpen} onClose={closeModal} showCloseIcon={true}>
         <p>This is a basic modal content.</p>
       </BasicModal>
@@ -165,7 +169,8 @@ export default Example;`}
           <code>full</code>: 전체 화면 크기
         </li>
       </ul>
-      <div className="space-x-4">
+
+      <div className="my-7 space-x-2 space-y-4">
         {sizes.map((size) => (
           <Button key={size} onClick={() => openModal(size)}>
             {`Open ${size} Modal`}
@@ -709,36 +714,38 @@ export default Example;`}
       <p>
         아래는 <code>FormModal</code> 컴포넌트의 기본 사용 예제입니다:
       </p>
-      <Button
-        onClick={() => openModal2(1, "medium")}
-        className="rounded-md bg-Basic px-4 py-2 text-white"
-      >
-        Open Form Modal 1
-      </Button>
-      <Button
-        onClick={() => openModal2(2, "large")}
-        className="rounded-md bg-Basic px-4 py-2 text-white"
-      >
-        Open Form Modal 2
-      </Button>
-      <FormModal
-        open={openModalKey === 1}
-        onClose={closeModal2}
-        size={modalSize2}
-        title="Form Modal 1"
-        onSubmit={closeModal2}
-        firstNameLabel="First Name"
-        lastNameLabel="Last Name"
-      />
-      <FormModal
-        open={openModalKey === 2}
-        onClose={closeModal2}
-        size={modalSize2}
-        title="Form Modal 2"
-        onSubmit={closeModal2}
-        firstNameLabel="First Name"
-        lastNameLabel="Last Name"
-      />
+      <div className="my-7 space-x-2 space-y-4">
+        <Button
+          onClick={() => openModal2(1, "medium")}
+          className="rounded-md bg-Basic px-4 py-2 text-white"
+        >
+          Open Form Modal 1
+        </Button>
+        <Button
+          onClick={() => openModal2(2, "large")}
+          className="rounded-md bg-Basic px-4 py-2 text-white"
+        >
+          Open Form Modal 2
+        </Button>
+        <FormModal
+          open={openModalKey === 1}
+          onClose={closeModal2}
+          size={modalSize2}
+          title="Form Modal 1"
+          onSubmit={closeModal2}
+          firstNameLabel="First Name"
+          lastNameLabel="Last Name"
+        />
+        <FormModal
+          open={openModalKey === 2}
+          onClose={closeModal2}
+          size={modalSize2}
+          title="Form Modal 2"
+          onSubmit={closeModal2}
+          firstNameLabel="First Name"
+          lastNameLabel="Last Name"
+        />
+      </div>
 
       <CodeBox
         code={`import { FormModal } from '@components/Modal/FormModal';
@@ -867,12 +874,14 @@ export default Example;`}
           <code>xl</code>: 아주 큰 크기
         </li>
       </ul>
-      <Button className="mr-3" onClick={() => openModal2(1, "xs")}>
-        Open xs FormModal
-      </Button>
-      <Button onClick={() => openModal2(2, "xl")}>Open xl FormModal</Button>
+      <div className="my-7 space-x-2 space-y-4">
+        <Button className="mr-3" onClick={() => openModal2(1, "xs")}>
+          Open xs FormModal
+        </Button>
+        <Button onClick={() => openModal2(2, "xl")}>Open xl FormModal</Button>
+      </div>
       <FormModal
-        open={openModalKey === 1}
+        open={openModalKey2 === 1}
         onClose={closeModal2}
         size={modalSize2}
         title="Form Modal XS"
@@ -881,7 +890,7 @@ export default Example;`}
         lastNameLabel="Last Name"
       />
       <FormModal
-        open={openModalKey === 2}
+        open={openModalKey2 === 2}
         onClose={closeModal2}
         size={modalSize2}
         title="Form Modal XL"
@@ -1200,21 +1209,22 @@ export default Example;`}
       <p>
         아래는 <code>OverlayModal</code> 컴포넌트의 기본 사용 예제입니다:
       </p>
-      <Button
-        onClick={() => openModal3(1, "small")}
-        className="mr-3 rounded-md bg-Basic px-4 py-2 text-white"
-      >
-        Open Overlay Modal
-      </Button>
+      <div className="my-7 space-x-2 space-y-4">
+        <Button
+          onClick={() => openModal3(1, "small")}
+          className="mr-3 rounded-md bg-Basic px-4 py-2 text-white"
+        >
+          Open Overlay Modal
+        </Button>
+      </div>
       <OverlayModal
         isOpen={openModalKey3 === 1}
         onClose={closeModal3}
-        size={modalSize3}
         title="Overlay Modal"
         closeButtonText="Close"
         showCloseIcon={true}
       >
-        <p>This is a overlay modal content.</p>
+        <p>This is basic overlay modal content.</p>
       </OverlayModal>
 
       <CodeBox
@@ -1223,74 +1233,75 @@ import { useState } from 'react';
 import Button from '@components/Button/Button';
 
 function Example() {
-  const [openModalKey, setOpenModalKey] = useState<number | null>(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const [modalSize, setModalSize] = useState<ExtraSize>("small");
 
-  const openModal = (key: number, size: ExtraSize) => {
-    setModalSize(size);
-    setOpenModalKey(key);
+  const handleOpenModal = () => {
+    setIsModalOpen(true);
   };
 
-  const closeModal = () => setOpenModalKey(null);
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+  };
 
   return (
     <>
-      <Button onClick={() => openModal(1, "small")}>
-        Open Overlay Modal
+      <Button variant="border" onClick={handleOpenModal}>
+      Open overlay Modal
       </Button>
 
       <OverlayModal
-        isOpen={openModalKey === 1}
-        onClose={closeModal}
-        size={modalSize}
-        title="Overlay Modal"
+        isOpen={isModalOpen}
+        onClose={handleCloseModal}
+        title="Sample Modal"
         closeButtonText="Close"
         showCloseIcon={true}
       >
-        <p>This is a overlayModal content.</p>
+      <p>This is a overlayModal content.</p>
       </OverlayModal>
-
     </>
   );
 }
 
 export default Example;`}
         copyText={`import { OverlayModal } from '@components/Modal/OverlayModal';
-import { useState } from 'react';
-import Button from '@components/Button/Button';
-
-function Example() {
-  const [openModalKey, setOpenModalKey] = useState<number | null>(null);
-  const [modalSize, setModalSize] = useState<ExtraSize>("small");
-
-  const openModal = (key: number, size: ExtraSize) => {
-    setModalSize(size);
-    setOpenModalKey(key);
-  };
-
-  const closeModal = () => setOpenModalKey(null);
-
-  return (
-    <>
-      <Button onClick={() => openModal(1, "small")}>
-        Open Overlay Modal
-      </Button>
-
-      <OverlayModal
-        isOpen={openModalKey === 1}
-        onClose={closeModal}
-        size={modalSize}
-        title="Overlay Modal"
-        closeButtonText="Close"
-        showCloseIcon={true}
-      >
-        <p>This is a overlay modal content.</p>
-      </OverlayModal>
-    </>
-  );
-}
-
-export default Example;`}
+        import { useState } from 'react';
+        import Button from '@components/Button/Button';
+        
+        function Example() {
+          const [isModalOpen, setIsModalOpen] = useState(false);
+          const [modalSize, setModalSize] = useState<ExtraSize>("small");
+        
+          const handleOpenModal = () => {
+            setIsModalOpen(true);
+          };
+        
+        
+          const handleCloseModal = () => {
+            setIsModalOpen(false);
+          };
+        
+          return (
+            <>
+              <Button variant="border" onClick={handleOpenModal}>
+              Open overlay Modal
+              </Button>
+        
+              <OverlayModal
+                isOpen={isModalOpen}
+                onClose={handleCloseModal}
+                title="Sample Modal"
+                closeButtonText="Close"
+                showCloseIcon={true}
+              >
+              <p>This is a overlayModal content.</p>
+              </OverlayModal>
+            </>
+          );
+        }
+        
+        export default Example;`}
         language="tsx"
         index={2}
         copied={copied}
@@ -1324,29 +1335,67 @@ export default Example;`}
           <code>full</code>: 전체 화면 크기
         </li>
       </ul>
-      <Button onClick={() => openModal3(1, "xs")}>Open XS OverlayModal</Button>
-      <Button onClick={() => openModal3(2, "xl")} className="ml-3">
-        Open XL OverlayModal
-      </Button>
+
+      <div className="my-7 space-x-2 space-y-4">
+        <Button onClick={() => openModal3(1, "xs")}>
+          Open XS OverlayModal
+        </Button>
+        <Button onClick={() => openModal3(2, "xl")} className="ml-3">
+          Open XL OverlayModal
+        </Button>
+      </div>
+
       <OverlayModal
-        isOpen={openModalKey3 === 1}
+        isOpen={openModalKey3 === 2}
         onClose={closeModal3}
         size="xs"
         title="XS Overlay Modal"
         closeButtonText="Close"
         showCloseIcon={true}
       >
-        <p>This is an XS overlay modal content.</p>
+        <p>
+          Magna exercitation reprehenderit magna aute tempor cupidatat consequat
+          elit dolor adipisicing. Mollit dolor eiusmod sunt ex incididunt cillum
+          quis. Velit duis sit officia eiusmod Lorem aliqua enim laboris do
+          dolor eiusmod. Et mollit incididunt nisi consectetur esse laborum
+          eiusmod pariatur proident Lorem eiusmod et. Magna exercitation
+          reprehenderit magna aute tempor cupidatat consequat elit dolor
+          adipisicing. Mollit dolor eiusmod sunt ex incididunt cillum quis.
+          Velit duis sit officia eiusmod Lorem aliqua enim laboris do dolor
+          eiusmod. Et mollit incididunt nisi consectetur esse laborum eiusmod
+          pariatur proident Lorem eiusmod et. Magna exercitation reprehenderit
+          magna aute tempor cupidatat consequat elit dolor adipisicing. Mollit
+          dolor eiusmod sunt ex incididunt cillum quis. Velit duis sit officia
+          eiusmod Lorem aliqua enim laboris do dolor eiusmod. Et mollit
+          incididunt nisi consectetur esse laborum eiusmod pariatur proident
+          Lorem eiusmod et. Magna
+        </p>
       </OverlayModal>
       <OverlayModal
-        isOpen={openModalKey3 === 2}
+        isOpen={openModalKey3 === 3}
         onClose={closeModal3}
         size="xl"
         title="XL Overlay Modal"
         closeButtonText="Close"
         showCloseIcon={true}
       >
-        <p>This is an XL overlay modal content.</p>
+        <p>
+          Magna exercitation reprehenderit magna aute tempor cupidatat consequat
+          elit dolor adipisicing. Mollit dolor eiusmod sunt ex incididunt cillum
+          quis. Velit duis sit officia eiusmod Lorem aliqua enim laboris do
+          dolor eiusmod. Et mollit incididunt nisi consectetur esse laborum
+          eiusmod pariatur proident Lorem eiusmod et. Magna exercitation
+          reprehenderit magna aute tempor cupidatat consequat elit dolor
+          adipisicing. Mollit dolor eiusmod sunt ex incididunt cillum quis.
+          Velit duis sit officia eiusmod Lorem aliqua enim laboris do dolor
+          eiusmod. Et mollit incididunt nisi consectetur esse laborum eiusmod
+          pariatur proident Lorem eiusmod et. Magna exercitation reprehenderit
+          magna aute tempor cupidatat consequat elit dolor adipisicing. Mollit
+          dolor eiusmod sunt ex incididunt cillum quis. Velit duis sit officia
+          eiusmod Lorem aliqua enim laboris do dolor eiusmod. Et mollit
+          incididunt nisi consectetur esse laborum eiusmod pariatur proident
+          Lorem eiusmod et. Magna
+        </p>
       </OverlayModal>
 
       <CodeBox
@@ -1355,45 +1404,46 @@ import { useState } from 'react';
 import Button from '@components/Button/Button';
 
 function Example() {
-  const [openModalKey, setOpenModalKey] = useState<number | null>(null);
-  const [modalSize, setModalSize] = useState<ExtraSize>("small");
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [modalSize, setModalSize] = useState<ExtraSize>("medium");
 
-  const openModal = (key: number, size: ExtraSize) => {
-    setModalSize(size);
-    setOpenModalKey(key);
+  const handleOpenModal = () => {
+    setIsModalOpen(true);
   };
 
-  const closeModal = () => setOpenModalKey(null);
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+  };
 
   return (
     <>
-      <Button onClick={() => openModal(1, "xs")}>
-        Open XS OverlayModal
-      </Button>
-      <Button onClick={() => openModal(2, "xl")}>
-        Open XL OverlayModal
+      <Button variant="border" onClick={handleOpenModal}>
+      Open xl overlay Modal
       </Button>
 
       <OverlayModal
-        isOpen={openModalKey === 1}
-        onClose={closeModal}
-        size={modalSize}
-        title="XS Overlay Modal"
-        closeButtonText="Close"
-        showCloseIcon={true}
-      >
-        <p>This is an XS overlay modal content.</p>
-      </OverlayModal>
-
-      <OverlayModal
-        isOpen={openModalKey === 2}
-        onClose={closeModal}
-        size={modalSize}
+        isOpen={isModalOpen}
+        onClose={handleCloseModal}
         title="XL Overlay Modal"
         closeButtonText="Close"
         showCloseIcon={true}
       >
-        <p>This is an XL overlay modal content.</p>
+      <p>Magna exercitation reprehenderit magna aute tempor cupidatat consequat
+      elit dolor adipisicing. Mollit dolor eiusmod sunt ex incididunt cillum
+      quis. Velit duis sit officia eiusmod Lorem aliqua enim laboris do
+      dolor eiusmod. Et mollit incididunt nisi consectetur esse laborum
+      eiusmod pariatur proident Lorem eiusmod et. Magna exercitation
+      reprehenderit magna aute tempor cupidatat consequat elit dolor
+      adipisicing. Mollit dolor eiusmod sunt ex incididunt cillum quis.
+      Velit duis sit officia eiusmod Lorem aliqua enim laboris do dolor
+      eiusmod. Et mollit incididunt nisi consectetur esse laborum eiusmod
+      pariatur proident Lorem eiusmod et. Magna exercitation reprehenderit
+      magna aute tempor cupidatat consequat elit dolor adipisicing. Mollit
+      dolor eiusmod sunt ex incididunt cillum quis. Velit duis sit officia
+      eiusmod Lorem aliqua enim laboris do dolor eiusmod. Et mollit
+      incididunt nisi consectetur esse laborum eiusmod pariatur proident
+      Lorem eiusmod et. Magna</p>
       </OverlayModal>
     </>
   );
@@ -1401,55 +1451,56 @@ function Example() {
 
 export default Example;`}
         copyText={`import { OverlayModal } from '@components/Modal/OverlayModal';
-import { useState } from 'react';
-import Button from '@components/Button/Button';
-
-function Example() {
-  const [openModalKey, setOpenModalKey] = useState<number | null>(null);
-  const [modalSize, setModalSize] = useState<ExtraSize>("small");
-
-  const openModal = (key: number, size: ExtraSize) => {
-    setModalSize(size);
-    setOpenModalKey(key);
-  };
-
-  const closeModal = () => setOpenModalKey(null);
-
-  return (
-    <>
-      <Button onClick={() => openModal(1, "xs")}>
-        Open XS OverlayModal
-      </Button>
-      <Button onClick={() => openModal(2, "xl")}>
-        Open XL OverlayModal
-      </Button>
-
-      <OverlayModal
-        isOpen={openModalKey === 1}
-        onClose={closeModal}
-        size={modalSize}
-        title="XS Overlay Modal"
-        closeButtonText="Close"
-        showCloseIcon={true}
-      >
-        <p>This is an XS overlay modal content.</p>
-      </OverlayModal>
-
-      <OverlayModal
-        isOpen={openModalKey === 2}
-        onClose={closeModal}
-        size={modalSize}
-        title="XL Overlay Modal"
-        closeButtonText="Close"
-        showCloseIcon={true}
-      >
-        <p>This is an XL overlay modal content.</p>
-      </OverlayModal>
-    </>
-  );
-}
-
-export default Example;`}
+        import { useState } from 'react';
+        import Button from '@components/Button/Button';
+        
+        function Example() {
+          const [isModalOpen, setIsModalOpen] = useState(false);
+          const [modalSize, setModalSize] = useState<ExtraSize>(medium");
+        
+          const handleOpenModal = () => {
+            setIsModalOpen(true);
+          };
+        
+        
+          const handleCloseModal = () => {
+            setIsModalOpen(false);
+          };
+        
+          return (
+            <>
+            <Button variant="border" onClick={handleOpenModal}>
+            Open xl overlay Modal
+            </Button>
+      
+            <OverlayModal
+              isOpen={isModalOpen}
+              onClose={handleCloseModal}
+              title="XL Overlay Modal"
+              closeButtonText="Close"
+              showCloseIcon={true}
+            >
+            <p>Magna exercitation reprehenderit magna aute tempor cupidatat consequat
+            elit dolor adipisicing. Mollit dolor eiusmod sunt ex incididunt cillum
+            quis. Velit duis sit officia eiusmod Lorem aliqua enim laboris do
+            dolor eiusmod. Et mollit incididunt nisi consectetur esse laborum
+            eiusmod pariatur proident Lorem eiusmod et. Magna exercitation
+            reprehenderit magna aute tempor cupidatat consequat elit dolor
+            adipisicing. Mollit dolor eiusmod sunt ex incididunt cillum quis.
+            Velit duis sit officia eiusmod Lorem aliqua enim laboris do dolor
+            eiusmod. Et mollit incididunt nisi consectetur esse laborum eiusmod
+            pariatur proident Lorem eiusmod et. Magna exercitation reprehenderit
+            magna aute tempor cupidatat consequat elit dolor adipisicing. Mollit
+            dolor eiusmod sunt ex incididunt cillum quis. Velit duis sit officia
+            eiusmod Lorem aliqua enim laboris do dolor eiusmod. Et mollit
+            incididunt nisi consectetur esse laborum eiusmod pariatur proident
+            Lorem eiusmod et. Magna</p>
+            </OverlayModal>
+          </>
+          );
+        }
+        
+        export default Example;`}
         language="tsx"
         index={3}
         copied={copied}

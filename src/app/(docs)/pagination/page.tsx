@@ -39,11 +39,13 @@ const PaginationDoc: React.FC = () => {
       <p>
         아래는 <code>Pagination</code> 컴포넌트의 기본 사용 예제입니다:
       </p>
-      <Pagination
-        currentPage={currentPage}
-        totalPages={10}
-        onPageChange={handlePageChange}
-      />
+      <div className="my-7 space-x-3 space-y-4">
+        <Pagination
+          currentPage={currentPage}
+          totalPages={10}
+          onPageChange={handlePageChange}
+        />
+      </div>
       <CodeBox
         code={`import { Pagination } from '@components/Pagination';
 
@@ -104,7 +106,7 @@ export default Example;`}
           <code>square</code>: 사각형 버튼
         </li>
       </ul>
-      <div className="m-3">
+      <div className="my-7 space-y-4">
         <Pagination
           currentPage={currentPage}
           totalPages={10}
@@ -199,7 +201,7 @@ export default Example;`}
           <code>filled-outlined</code>: 채워진 외곽선 스타일
         </li>
       </ul>
-      <div className="m-3">
+      <div className="my-7 space-y-4">
         <Pagination
           currentPage={currentPage}
           totalPages={10}
@@ -341,62 +343,64 @@ export default Example;`}
           <code className="bg-white text-Gray">White</code>: 흰색
         </li>
       </ul>
-      <Pagination
-        styleType="filled"
-        currentPage={currentPage}
-        totalPages={10}
-        color="Basic"
-        onPageChange={handlePageChange}
-      />
-      <Pagination
-        styleType="filled"
-        currentPage={currentPage}
-        totalPages={10}
-        color="Primary"
-        onPageChange={handlePageChange}
-      />
-      <Pagination
-        styleType="filled"
-        currentPage={currentPage}
-        totalPages={10}
-        color="gray"
-        onPageChange={handlePageChange}
-      />
-      <Pagination
-        styleType="filled"
-        currentPage={currentPage}
-        totalPages={10}
-        color="Secondary"
-        onPageChange={handlePageChange}
-      />
-      <Pagination
-        styleType="filled"
-        currentPage={currentPage}
-        totalPages={10}
-        color="Success"
-        onPageChange={handlePageChange}
-      />
-      <Pagination
-        styleType="filled"
-        currentPage={currentPage}
-        totalPages={10}
-        color="Warning"
-        onPageChange={handlePageChange}
-      />
-      <Pagination
-        styleType="filled"
-        currentPage={currentPage}
-        totalPages={10}
-        color="Danger"
-        onPageChange={handlePageChange}
-      />
-      <Pagination
-        styleType="filled"
-        currentPage={currentPage}
-        totalPages={10}
-        color="White"
-        onPageChange={handlePageChange}
-      />
+      <div className="my-7 space-y-4">
+        <Pagination
+          styleType="filled"
+          currentPage={currentPage}
+          totalPages={10}
+          color="Basic"
+          onPageChange={handlePageChange}
+        />
+        <Pagination
+          styleType="filled"
+          currentPage={currentPage}
+          totalPages={10}
+          color="Primary"
+          onPageChange={handlePageChange}
+        />
+        <Pagination
+          styleType="filled"
+          currentPage={currentPage}
+          totalPages={10}
+          color="gray"
+          onPageChange={handlePageChange}
+        />
+        <Pagination
+          styleType="filled"
+          currentPage={currentPage}
+          totalPages={10}
+          color="Secondary"
+          onPageChange={handlePageChange}
+        />
+        <Pagination
+          styleType="filled"
+          currentPage={currentPage}
+          totalPages={10}
+          color="Success"
+          onPageChange={handlePageChange}
+        />
+        <Pagination
+          styleType="filled"
+          currentPage={currentPage}
+          totalPages={10}
+          color="Warning"
+          onPageChange={handlePageChange}
+        />
+        <Pagination
+          styleType="filled"
+          currentPage={currentPage}
+          totalPages={10}
+          color="Danger"
+          onPageChange={handlePageChange}
+        />
+        <Pagination
+          styleType="filled"
+          currentPage={currentPage}
+          totalPages={10}
+          color="White"
+          onPageChange={handlePageChange}
+        />
+      </div>
       <CodeBox
         code={`import { Pagination } from '@componique/react';
 

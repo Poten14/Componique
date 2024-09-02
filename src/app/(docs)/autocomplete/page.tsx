@@ -82,7 +82,7 @@ const AutocompleteDoc: React.FC = () => {
       <p>
         아래는 <code>Autocomplete</code> 컴포넌트의 기본 사용 예제입니다:
       </p>
-      <div className="m-3">
+      <div className="pace-y-4 my-7">
         <Autocomplete
           options={options}
           placeholder="Search fruits..."
@@ -168,7 +168,7 @@ export default Example;`}
           <code>borderless</code>: 외곽선이 없는 스타일
         </li>
       </ul>
-      <div className="m-3 space-y-3">
+      <div className="my-7 space-y-4">
         <Autocomplete
           options={options}
           placeholder="Outlined style"
@@ -465,13 +465,14 @@ export default Example;`}
       <p>
         아래는 <code>ButtonAutocomplete</code> 컴포넌트의 기본 사용 예제입니다:
       </p>
-      <ButtonAutocomplete
-        options={options}
-        placeholder="Search fruits..."
-        onSelect={handleSelect}
-      />
-      <p>선택된 옵션: {selectedOption}</p>
-
+      <div className="my-7 space-y-4">
+        <ButtonAutocomplete
+          options={options}
+          placeholder="Search fruits..."
+          onSelect={handleSelect}
+        />
+        <p>선택된 옵션: {selectedOption}</p>
+      </div>
       <CodeBox
         code={`import { ButtonAutocomplete } from '@components/Autocomplete/ButtonAutocomplete';
 import { useState } from 'react';
@@ -548,7 +549,7 @@ export default Example;`}
           <code>radius</code>: small, medium, large, full, none
         </li>
       </ul>
-      <div className="space-y-4">
+      <div className="my-7 space-y-4">
         <ButtonAutocomplete
           options={options}
           placeholder="Search with Basic color"
@@ -856,13 +857,14 @@ export default Example;`}
       <p>
         아래는 <code>GroupedAutocomplete</code> 컴포넌트의 기본 사용 예제입니다:
       </p>
-      <GroupedAutocomplete
-        options={options2}
-        placeholder="Search items..."
-        onSelect={handleSelect}
-      />
-      <p>선택된 옵션: {selectedOption}</p>
-
+      <div className="my-7 space-y-4">
+        <GroupedAutocomplete
+          options={options2}
+          placeholder="Search items..."
+          onSelect={handleSelect}
+        />
+        <p>선택된 옵션: {selectedOption}</p>
+      </div>
       <CodeBox
         code={`import { GroupedAutocomplete } from '@components/Autocomplete/GroupedAutocomplete';
 import { useState } from 'react';
@@ -956,7 +958,7 @@ export default Example;`}
           <code>radius</code>: none, small, medium, large, full
         </li>
       </ul>
-      <div className="mb-4 space-x-4">
+      <div className="my-7 space-x-3 space-y-4">
         <GroupedAutocomplete
           options={options2}
           placeholder="Search with thin border"
@@ -1289,15 +1291,16 @@ export default Example;`}
       <p>
         아래는 <code>LabelAutocomplete</code> 컴포넌트의 기본 사용 예제입니다:
       </p>
-      <LabelAutocomplete
-        options={options3}
-        value={value}
-        onChange={setValue}
-        onSelect={handleSelect3}
-        placeholder="Search fruits..."
-      />
-      <p>선택된 옵션: {JSON.stringify(selectedOption3)}</p>
-
+      <div className="my-7 space-y-4">
+        <LabelAutocomplete
+          options={options3}
+          value={value}
+          onChange={setValue}
+          onSelect={handleSelect3}
+          placeholder="Search fruits..."
+        />
+        <p>선택된 옵션: {JSON.stringify(selectedOption3)}</p>
+      </div>
       <CodeBox
         code={`import { LabelAutocomplete } from '@components/Autocomplete/LabelAutocomplete';
 import { useState } from 'react';
@@ -1393,7 +1396,7 @@ export default Example;`}
           <code>large</code>: 큰 크기
         </li>
       </ul>
-      <div className="m-3 space-y-4">
+      <div className="my-7 space-y-4">
         <LabelAutocomplete
           options={options3}
           value={value}
