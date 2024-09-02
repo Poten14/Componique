@@ -25,7 +25,6 @@ const ButtonDoc: React.FC = () => {
         버튼을 구현할 수 있습니다.
       </p>
       <h2 className="text-[#2D3748]">1.1. Import</h2>
-
       <CodeBox
         code={`import { Button } from '@components/Button';`}
         copyText={`import { Button } from '@components/Button';`}
@@ -34,7 +33,6 @@ const ButtonDoc: React.FC = () => {
         copied={copied}
         handleCopy={handleCopy}
       />
-
       <h2 className="text-[#2D3748]">1.2. Usage</h2>
       <p>기본 사용 예제는 아래와 같습니다:</p>
       <div style={{ marginBottom: "20px" }}>
@@ -68,7 +66,6 @@ export default Example;`}
         copied={copied}
         handleCopy={handleCopy}
       />
-
       <h2 className="pt-2 text-[#2D3748]">2. Size</h2>
       <p>
         <code>size</code> prop을 이용하여 버튼의 크기를 설정할 수 있습니다.
@@ -80,6 +77,7 @@ export default Example;`}
         <Button size="medium">Medium Button</Button>
         <Button size="large">Large Button</Button>
       </div>
+      <div className="my-7 space-y-4" />
       <CodeBox
         code={`import { Button } from '@components/Button';
 
@@ -112,7 +110,6 @@ export default Example;`}
         copied={copied}
         handleCopy={handleCopy}
       />
-
       <h2 className="pt-2 text-[#2D3748]">3. Color</h2>
       <p>
         <code>color</code> prop을 이용하여 버튼의 색상을 설정할 수 있습니다.
@@ -139,6 +136,7 @@ export default Example;`}
         <Button color="pink">Pink Button</Button>
         <Button color="basic">Basic Button</Button>
       </div>
+      <div className="my-7 space-y-4" />
       <CodeBox
         code={`import { Button } from '@components/Button';
 
@@ -191,7 +189,6 @@ export default Example;`}
         copied={copied}
         handleCopy={handleCopy}
       />
-
       <h2 className="pt-2 text-[#2D3748]">4. Radius</h2>
       <p>
         <code>radius</code> prop을 이용하여 버튼의 모서리 둥근 정도를 설정할 수
@@ -208,6 +205,7 @@ export default Example;`}
         <Button radius="none">No Radius Button</Button>
         <Button radius="full">Full Radius Button</Button>
       </div>
+      <div className="my-7 space-y-4" />
       <CodeBox
         code={`import { Button } from '@components/Button';
 
@@ -244,7 +242,6 @@ export default Example;`}
         copied={copied}
         handleCopy={handleCopy}
       />
-
       <h2 className="pt-2 text-[#2D3748]">5. Variant</h2>
       <p>
         <code>variant</code> prop을 이용하여 버튼의 스타일 변형을 설정할 수
@@ -260,6 +257,7 @@ export default Example;`}
         <Button variant="flat">Flat Button</Button>
         <Button variant="light">Light Button</Button>
       </div>
+      <div className="my-7 space-y-4" />
       <CodeBox
         code={`import { Button } from '@components/Button';
 
@@ -294,7 +292,6 @@ export default Example;`}
         copied={copied}
         handleCopy={handleCopy}
       />
-
       <h2 className="pt-2 text-[#2D3748]">6. Icon</h2>
       <p>
         <code>icon</code> prop을 이용하여 버튼에 아이콘을 추가할 수 있습니다.{" "}
@@ -329,6 +326,7 @@ export default Example;`}
           Right Large Icon Button
         </Button>
       </div>
+      <div className="my-7 space-y-4" />
       <CodeBox
         code={`import { Button } from '@components/Button';
 
@@ -391,7 +389,6 @@ export default Example;`}
         copied={copied}
         handleCopy={handleCopy}
       />
-
       <h2 className="pt-2 text-[#2D3748]">7. Disabled</h2>
       <p>
         <code>disabled</code> prop을 이용하여 버튼을 비활성화할 수 있습니다.
@@ -399,6 +396,7 @@ export default Example;`}
       <div className="space-x-4 space-y-4">
         <Button disabled>Disabled Button</Button>
       </div>
+      <div className="my-7 space-y-4" />
       <CodeBox
         code={`import { Button } from '@components/Button';
 
@@ -423,7 +421,6 @@ export default Example;`}
         copied={copied}
         handleCopy={handleCopy}
       />
-
       <h2 className="pt-2 text-[#2D3748]">8. ClassName</h2>
       <p>
         <code>className</code> prop을 사용하여 <code>Button</code> 컴포넌트의
@@ -444,7 +441,8 @@ export default Example;`}
         >
           ClassNameCustomButton
         </Button>
-      </div>
+      </div>{" "}
+      <div className="my-7 space-y-4" />
       <CodeBox
         code={`import { Button } from '@components/Button';
 
@@ -483,7 +481,6 @@ export default Example;`}
         copied={copied}
         handleCopy={handleCopy}
       />
-
       <h2 className="text-[#2D3748]">9. Full Example with Mixed Props</h2>
       <p>여러 속성을 섞어서 사용한 버튼 예제입니다.</p>
       <div className="space-x-4 space-y-4">
@@ -501,7 +498,8 @@ export default Example;`}
         >
           ClassNameCustomButton
         </Button>
-      </div>
+      </div>{" "}
+      <div className="my-7 space-y-4" />
       <CodeBox
         code={`import { Button } from '@components/Button';
 
@@ -556,7 +554,6 @@ export default Example;`}
         copied={copied}
         handleCopy={handleCopy}
       />
-
       <h2 className="pt-2 text-[#2D3748]">10. Props</h2>
       <p>
         <code>Button</code> 컴포넌트는 아래와 같은 Props를 가집니다:
