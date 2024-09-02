@@ -83,7 +83,7 @@ const ImageUpload: React.FC<ImageUploadProps> = ({
     ImageVariant = `${borderColors[color]}`;
   }
 
-  const onChangeFileHandler = (e: ChangeEvent<HTMLInputElement>) => {
+  const onChangeImageHandler = (e: ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
     if (file) {
       const reader = new FileReader();
@@ -107,7 +107,7 @@ const ImageUpload: React.FC<ImageUploadProps> = ({
       <input
         type="file"
         accept="image/*"
-        onChange={onChangeFileHandler}
+        onChange={onChangeImageHandler}
         className="hidden"
         id={id}
       />

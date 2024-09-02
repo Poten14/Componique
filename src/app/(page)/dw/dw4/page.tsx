@@ -4,7 +4,7 @@ import { useState } from "react";
 const Dw4 = () => {
   const [imageData, setImageData] = useState<string | null>(null);
 
-  const onSelectFileHandler = (data: string | null) => {
+  const onSelectImageHandler = (data: string | null) => {
     setImageData(data);
     console.log("Selected Image data =>", data);
   };
@@ -56,7 +56,7 @@ const Dw4 = () => {
         <ImageUpload text="BgColor" className="bg-red-600" shape="rectangle" />
       </div>
       <div>
-        <ImageUpload onFileSelect={onSelectFileHandler} />
+        <ImageUpload onFileSelect={onSelectImageHandler} />
       </div>
     </>
   );
