@@ -42,6 +42,15 @@ const Page = () => {
     }
   }, []);
 
+  //메인 페이지가 렌더링될때 추가 되고, 메인페이지를 떠날때 삭제되는 로직 (배경이미지 관련)
+  useEffect(() => {
+    document.body.classList.add("main-bg");
+
+    return () => {
+      document.body.classList.remove("main-bg");
+    };
+  }, []);
+
   const handleSelect = (option: string) => {
     setSelectedOption(option);
     const updatedSearches = Array.from(new Set([option, ...recentSearches])); // 중복 제거 후 최근 검색어 목록 업데이트
@@ -51,7 +60,7 @@ const Page = () => {
   };
 
   return (
-    <>
+    <div className="main-wrapper">
       <div className="mt-16 flex flex-col items-center justify-center">
         <div className="mb-8 w-full max-w-[440px]">
           <Image src="/Componique.svg" alt="logo" width={440} height={72} />
@@ -77,7 +86,7 @@ const Page = () => {
         </div>
       </div>
       <Content />
-    </>
+    </div>
   );
 };
 export default Page;
