@@ -23,7 +23,7 @@
 html {
   font-family: "Pretendard-Regular";
 }
-body {
+.main-bg {
   background-image: url("/Background.svg");
   background-size: cover; /* bg-cover */
   background-attachment: fixed; /* bg-fixed */
