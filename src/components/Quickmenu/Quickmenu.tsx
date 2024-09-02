@@ -17,7 +17,7 @@ const Quickmenu: React.FC = () => {
       return { label: menu.textContent || `menu ${index + 1}`, id };
     });
     setQuickMenu(items);
-  }, []);
+  }, [quickMenu]);
 
   const handleClick = (index: number, id: string) => {
     setActiveIndex(index);
@@ -29,10 +29,9 @@ const Quickmenu: React.FC = () => {
 
   return (
     <>
-      <div className="fixed right-0 top-1/2 w-60 justify-end text-sm">
-        <div className="pb-4">On This Page</div>
+      <div className="fixed right-2 top-[14%] w-60 justify-end overscroll-none border border-red-500 text-sm">
+        <div className="pb-2">On This Page</div>
         <div className="cursor-pointer">
-          Usage
           <ul className="pl-4">
             {quickMenu.map((item, index) => (
               <li
