@@ -24,6 +24,7 @@ import SwitchRound from "@components/Swtich/SwitchRound";
 import SwitchHorizental from "@components/Swtich/SwitchHorizental";
 import SwitchLong from "@components/Swtich/SwitchLong";
 import SwitchLabeled from "@components/Swtich/SwitchLabeled";
+import SwitchDark from "@components/Swtich/SwitchDark";
 
 // Infinite Scroll 컴포넌트 가져오기
 import InfiniteScrollBasic from "@components/InfiniteScroll/InfiniteScrollBasic";
@@ -456,6 +457,12 @@ const Page = () => {
         SwitchLabeled - 레이블 스위치
       </h1>
       <SwitchLabeled />
+      <br />
+      <br />
+      <h1 className="mb-4 text-lg font-semibold">
+        SwitchDark - 다크모드 스위치
+      </h1>
+      <SwitchDark />
       <br />
       <br />
       <h1 className="mb-4 text-lg font-semibold">
