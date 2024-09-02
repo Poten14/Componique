@@ -94,7 +94,7 @@ export default Example;`}
           <code>gray</code>: 회색 테두리 (기본값)
         </li>
       </ul>
-      <div className="my-5 flex items-center gap-4">
+      <div className="my-7 flex items-center gap-4">
         <Select
           option={["Option 1", "Option 2", "Option 3"]}
           placeholder="Select an option"
@@ -287,7 +287,7 @@ function Example() {
 
       <h2 className="text-[#2D3748]">2.2. Usage</h2>
       <p>기본 사용 예제는 아래와 같습니다:</p>
-      <div style={{ marginBottom: "20px" }}>
+      <div className="my-7">
         <SelectList option={["Item 1", "Item 2", "Item 3", "Item 4"]} />
       </div>
       <CodeBox
@@ -411,7 +411,7 @@ function Example() {
 
       <h2 className="text-[#2D3748]">3.2. Usage</h2>
       <p>기본 사용 예제는 아래와 같습니다:</p>
-      <div style={{ marginBottom: "20px" }}>
+      <div className="my-7">
         <SelectValueAdd
           option={["Option 1", "Option 2", "Option 3", "Option 4"]}
           placeholder="Select an option"

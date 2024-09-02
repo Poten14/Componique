@@ -203,7 +203,7 @@ const Sk = () => {
           isOpen={isModalOpen}
           onClose={handleCloseModal}
           title="Sample Modal"
-          size="medium"
+          size="small"
           closeButtonText="Close"
           showCloseIcon={true}
         >
