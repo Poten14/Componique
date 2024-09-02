@@ -10,7 +10,7 @@ import { RxDoubleArrowUp } from "react-icons/rx";
 const team = [
   {
     name: "Kim Jun Su    ",
-    github: "https://github.com/kimjunsu",
+    github: "https://github.com/kimjusnu",
     blog: "https://dietisdie.tistory.com/",
   },
   {
