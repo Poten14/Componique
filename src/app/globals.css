@@ -23,11 +23,22 @@
 html {
   font-family: "Pretendard-Regular";
 }
-body {
+.main-bg {
   background-image: url("/Background.svg");
   background-size: cover; /* bg-cover */
   background-attachment: fixed; /* bg-fixed */
   background-repeat: no-repeat; /* bg-no-repeat */
+}
+
+.main-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; /* 화면 전체 높이를 차지하도록 설정 */
+  text-align: center; /* 텍스트 중앙 정렬 */
+  padding: 20px;
+  box-sizing: border-box;
 }
 
 i {
