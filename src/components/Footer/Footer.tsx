@@ -1,52 +1,60 @@
 "use client";
+import Image from "next/image";
 import React from "react";
 import { FaGithub } from "react-icons/fa";
 import { PiGithubLogo } from "react-icons/pi";
 import { TbBrandBlogger } from "react-icons/tb";
 import { IoEllipsisVerticalOutline } from "react-icons/io5";
 import { FaRegArrowAltCircleUp } from "react-icons/fa";
-
+import { RxDoubleArrowUp } from "react-icons/rx";
 const team = [
   {
-    name: "Kim Jun Su",
-    github: "https://github.com/kimjunsu",
+    name: "Kim Jun Su    ",
+    github: "https://github.com/kimjusnu",
     blog: "https://dietisdie.tistory.com/",
   },
   {
-    name: "Cho Young Rae",
+    name: "Cho Young Rae ",
     github: "https://github.com/25rae25",
     blog: "https://velog.io/@niceyoungrae/posts",
   },
   {
-    name: "Im Sung Gyung",
+    name: "Im Sung Ggyung",
     github: "https://github.com/5622lsk",
     blog: "https://velog.io/@5622lsk/posts",
   },
   {
-    name: "Lee Da Won",
+    name: "Lee Da Won    ",
     github: "https://github.com/allone9425",
     blog: "https://velog.io/@dawnrose",
   },
 ];
 
 const Footer = () => {
-  // 최상단으로 스크롤하는 함수 정의
   const TopButton = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   return (
-    <footer className="mb-4">
-      <div className="text-center">
-        <hr />
-        <p className="mb-3">Built by Team POTEN</p>
+    <footer className="mb-4 flex w-full flex-col items-center">
+      <div className="flex w-full flex-col items-center text-center">
+        <hr className="mb-4 w-full border-t border-[#797979]" />
+
+        <Image
+          src="/FooterLogo.svg"
+          alt="FooterLogo"
+          width={300}
+          height={300}
+          className="mb-3"
+        />
+
         <div className="flex flex-col items-center justify-center">
           {/* 팀원 소개 */}
           <ul className="mb-4">
             {team.map((member, index) => (
-              <li key={index} className="mb-2 flex items-center">
+              <li key={index} className="mb-2 flex items-center justify-center">
                 <a
-                  className="mr-2 flex items-center"
+                  className="mr-2 flex items-center text-stone-950 hover:text-slate-700"
                   href={member.github}
                   target="_blank"
                   rel="noopener noreferrer"
@@ -58,7 +66,7 @@ const Footer = () => {
                   href={member.blog}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center"
+                  className="flex items-center text-stone-950 hover:text-slate-700"
                 >
                   <TbBrandBlogger className="mr-1" /> Blog
                 </a>
@@ -66,10 +74,9 @@ const Footer = () => {
             ))}
           </ul>
 
-          {/* 프로젝트 GitHub주소 */}
           <a
             href="https://github.com/Poten14/Componique"
-            className="mb-4 flex items-center"
+            className="mb-4 flex items-center text-stone-950 hover:text-slate-700"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -77,13 +84,11 @@ const Footer = () => {
             Project Repository on GitHub
           </a>
 
-          {/* TopButton */}
           <button onClick={TopButton} className="flex items-center">
-            <FaRegArrowAltCircleUp className="text-3xl" />
+            <RxDoubleArrowUp className="text-5xl text-[#9AC5E5]" />
           </button>
         </div>
 
-        {/* 저작권 문구 */}
         <p className="mt-4">© 2024 Team POTEN. All rights reserved.</p>
       </div>
     </footer>

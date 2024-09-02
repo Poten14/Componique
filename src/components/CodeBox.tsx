@@ -25,7 +25,6 @@ const CodeBox: React.FC<CodeBoxProps> = ({
           icon={copied[index] ? "icon-check" : undefined}
           className="copyButton"
           iconColor={copied[index] ? "green" : "white"}
-          size="small"
         >
           {copied[index] ? "Copied!" : "Copy"}
         </Button>

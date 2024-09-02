@@ -38,7 +38,7 @@ const SkeletonDocs: React.FC = () => {
         1.2. Usage
       </h2>
       <p>기본 사용 예제는 아래와 같습니다:</p>
-      <div style={{ marginBottom: "20px" }}>
+      <div className="my-7">
         <Skeleton size="medium" variants="rounded" animate={true} />
       </div>
       <CodeBox
@@ -176,7 +176,7 @@ function Example() {
 
       <h2 className="text-[#2D3748]">2.2. Usage</h2>
       <p>기본 사용 예제는 아래와 같습니다:</p>
-      <div style={{ marginBottom: "20px" }}>
+      <div className="my-7">
         <SkeletonCard width="w-2/5" />
       </div>
       <CodeBox
@@ -206,7 +206,7 @@ export default Example;`}
         등을 설정할 수 있습니다.
       </p>
 
-      <div className="mb-5 flex flex-wrap gap-4">
+      <div className="my-7 flex flex-wrap gap-4">
         <SkeletonCard width="w-1/4" />
         <SkeletonCard width="w-1/5" hasAvatar={false} />
         <SkeletonCard width="w-1/4" hasImage={false} />

@@ -47,6 +47,12 @@ i {
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-github:before {
+  content: "\e90a";
+}
+.icon-blog:before {
+  content: "\e90b";
+}
 .icon-docs2:before {
   content: "\e909";
 }
@@ -164,6 +170,7 @@ li {
   margin-top: 0;
   margin-bottom: 0;
   padding-inline-start: 0;
+  padding-left: 4px;
 }
 
 .prose :where(img):not(:where([class~="not-prose"], [class~="not-prose"] *)) {
