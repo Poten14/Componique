@@ -29,7 +29,7 @@ const Quickmenu: React.FC = () => {
 
   return (
     <>
-      <div className="fixed right-2 top-[14%] w-60 justify-end overscroll-none border border-red-500 text-sm">
+      <div className="fixed right-12 top-1/3 h-[500px] w-60 justify-end overflow-y-scroll overscroll-y-auto text-sm">
         <div className="pb-2">On This Page</div>
         <div className="cursor-pointer">
           <ul className="pl-4">
