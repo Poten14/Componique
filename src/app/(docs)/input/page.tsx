@@ -21,14 +21,14 @@ const Input: React.FC = () => {
 
   return (
     <div className="prose mb-40 max-w-[1000px] text-[#6D6D6D]">
-      <h1 className="text-[#2D3748]">Input</h1>
+      <h1 className="text-[#2D3748]">1. Input</h1>
       <p>
         <code>Input</code> 컴포넌트는 사용자 입력을 처리하기 위해 사용되는 기본
         UI 요소입니다. 크기와 변형을 조정하여 다양한 스타일을 적용할 수
         있습니다.
       </p>
 
-      <h2 className="text-[#2D3748]">Import</h2>
+      <h2 className="text-[#2D3748]">1.1. Import</h2>
       <CodeBox
         code={`import { Input } from '@componique/react';`}
         copyText={`import { Input } from '@components/Input';`}
@@ -38,7 +38,7 @@ const Input: React.FC = () => {
         handleCopy={handleCopy}
       />
 
-      <h2 className="text-[#2D3748]">Usage</h2>
+      <h2 className="text-[#2D3748]">1.2. Usage</h2>
       <p>기본 사용 예제는 아래와 같습니다:</p>
       <div style={{ marginBottom: "20px" }}>
         <Input1 placeholder="Basic usage" />
@@ -69,7 +69,7 @@ export default Example;`}
         handleCopy={handleCopy}
       />
 
-      <h2 className="text-[#2D3748]">Changing the Size of the Input</h2>
+      <h2 className="text-[#2D3748]">1.3. Changing the Size of the Input</h2>
       <p>
         <code>Input</code> 컴포넌트는 다양한 크기로 제공됩니다. 기본 크기는{" "}
         <code>medium</code>입니다:
@@ -133,7 +133,7 @@ export default Example;`}
         handleCopy={handleCopy}
       />
 
-      <h2 className="text-[#2D3748]">Props</h2>
+      <h2 className="text-[#2D3748]">1.4. Props</h2>
       <p>
         <code>Input</code> 컴포넌트는 아래와 같은 Props를 가집니다:
       </p>
@@ -210,7 +210,7 @@ export default Example;`}
         </tbody>
       </table>
 
-      <h2 className="text-[#2D3748]">Full Example</h2>
+      <h2 className="text-[#2D3748]">1.5. Full Example</h2>
       <div className="ml-4 space-y-3">
         <Input1 placeholder="Basic usage" />
         <Input1 placeholder="small size" size="small" />
@@ -249,14 +249,14 @@ export default Example;`}
         handleCopy={handleCopy}
       />
       <hr />
-      <h1 className="text-[#2D3748]">SearchInput</h1>
+      <h1 className="text-[#2D3748]">2. SearchInput</h1>
       <p>
         <code>SearchInput</code> 컴포넌트는 사용자가 검색어를 입력할 수 있도록
         해주는 기본적인 UI 요소입니다. 활성화 여부에 따라 버튼과 입력 필드가
         동적으로 변합니다.
       </p>
 
-      <h2 className="text-[#2D3748]">Import</h2>
+      <h2 className="text-[#2D3748]">2.1. Import</h2>
       <CodeBox
         code={`import { SearchInput } from '@componique/react';`}
         copyText={`import SearchInput from '@components/SearchInput/SearchInput';`}
@@ -266,7 +266,7 @@ export default Example;`}
         handleCopy={handleCopy}
       />
 
-      <h2 className="text-[#2D3748]">Usage</h2>
+      <h2 className="text-[#2D3748]">2.2. Usage</h2>
       <p>기본 사용 예제는 아래와 같습니다:</p>
       <div style={{ marginBottom: "20px" }}>
         <SearchInput placeholder="Search..." />
@@ -297,7 +297,7 @@ export default Example;`}
       />
 
       <h2 className="text-[#2D3748]">
-        Changing the Active and Inactive Colors
+        2.3. Changing the Active and Inactive Colors
       </h2>
       <p>
         <code>SearchInput</code> 컴포넌트는 활성화 및 비활성화 상태에 따른
@@ -331,7 +331,7 @@ export default Example;`}
         handleCopy={handleCopy}
       />
 
-      <h2 className="text-[#2D3748]">Changing the Width of the Input</h2>
+      <h2 className="text-[#2D3748]">2.4. Changing the Width of the Input</h2>
       <p>
         <code>SearchInput</code> 컴포넌트의 너비는 동적으로 조정 가능합니다.
         기본 너비는 <code>w-80</code>입니다.
@@ -364,7 +364,7 @@ export default Example;`}
         handleCopy={handleCopy}
       />
 
-      <h2 className="text-[#2D3748]">Props</h2>
+      <h2 className="text-[#2D3748]">2.5. Props</h2>
       <p>
         <code>SearchInput</code> 컴포넌트는 아래와 같은 Props를 가집니다:
       </p>
@@ -443,7 +443,7 @@ export default Example;`}
         </tbody>
       </table>
 
-      <h2 className="text-[#2D3748]">Full Example</h2>
+      <h2 className="text-[#2D3748]">2.6. Full Example</h2>
       <CodeBox
         code={`import SearchInput from '@components/SearchInput/SearchInput';
 
@@ -487,14 +487,14 @@ export default Example;`}
 
       <hr />
 
-      <h1 className="text-[#2D3748]">SearchInput2</h1>
+      <h1 className="text-[#2D3748]">3. SearchInput2</h1>
       <p>
         <code>SearchInput2</code> 컴포넌트는 검색 입력 필드가 포커스될 때 크기가
         동적으로 확장되는 기능을 제공합니다. 크기와 스타일을 조정하여 다양한
         스타일을 적용할 수 있습니다.
       </p>
 
-      <h2 className="text-[#2D3748]">Import</h2>
+      <h2 className="text-[#2D3748]">3.1. Import</h2>
       <CodeBox
         code={`import { SearchInput2 } from '@componique/react';`}
         copyText={`import SearchInput2 from '@components/SearchInput2/SearchInput2';`}
@@ -504,7 +504,7 @@ export default Example;`}
         handleCopy={handleCopy}
       />
 
-      <h2 className="text-[#2D3748]">Usage</h2>
+      <h2 className="text-[#2D3748]">3.2. Usage</h2>
       <p>기본 사용 예제는 아래와 같습니다:</p>
       <div className="mb-5">
         <SearchInput2 placeholder="Search..." />
@@ -534,7 +534,7 @@ export default Example;`}
         handleCopy={handleCopy}
       />
 
-      <h2 className="text-[#2D3748]">Changing the Size of the Input</h2>
+      <h2 className="text-[#2D3748]">3.3. Changing the Size of the Input</h2>
       <p>
         <code>SearchInput2</code> 컴포넌트는 다양한 크기로 제공됩니다. 기본
         크기는
@@ -589,7 +589,7 @@ export default Example;`}
         handleCopy={handleCopy}
       />
 
-      <h2 className="text-[#2D3748]">Props</h2>
+      <h2 className="text-[#2D3748]">3.4. Props</h2>
       <p>
         <code>SearchInput2</code> 컴포넌트는 아래와 같은 Props를 가집니다:
       </p>
@@ -654,7 +654,7 @@ export default Example;`}
         </tbody>
       </table>
 
-      <h2 className="text-[#2D3748]">Full Example</h2>
+      <h2 className="text-[#2D3748]">3.5. Full Example</h2>
       <CodeBox
         code={`import SearchInput2 from '@components/SearchInput2/SearchInput2';
 
@@ -710,13 +710,13 @@ export default Example;`}
         handleCopy={handleCopy}
       />
       <hr />
-      <h1 className="text-[#2D3748]">SearchInput3</h1>
+      <h1 className="text-[#2D3748]">4. SearchInput3</h1>
       <p>
         <code>SearchInput3</code> 컴포넌트는 검색 입력 필드와 버튼을 함께
         제공하는 UI 요소입니다.
       </p>
 
-      <h2 className="text-[#2D3748]">Import</h2>
+      <h2 className="text-[#2D3748]">4.1. Import</h2>
       <CodeBox
         code={`import { SearchInput3 } from '@componique/react';`}
         copyText={`import SearchInput3 from '@components/SearchInput3/SearchInput3';`}
@@ -726,7 +726,7 @@ export default Example;`}
         handleCopy={handleCopy}
       />
 
-      <h2 className="text-[#2D3748]">Usage</h2>
+      <h2 className="text-[#2D3748]">4.2. Usage</h2>
       <div style={{ marginBottom: "20px" }}>
         <SearchInput3 placeholder="Search..." />
       </div>
@@ -739,7 +739,7 @@ export default Example;`}
         handleCopy={handleCopy}
       />
 
-      <h2 className="text-[#2D3748]">Props</h2>
+      <h2 className="text-[#2D3748]">4.3. Props</h2>
       <p>크기(size)와 색상(color)를 조절할 수 있습니다.</p>
       <table>
         <thead>
@@ -778,7 +778,7 @@ export default Example;`}
         </tbody>
       </table>
 
-      <h2 className="text-[#2D3748]">Full Example</h2>
+      <h2 className="text-[#2D3748]">4.4. Full Example</h2>
       <div className="ml-4 space-y-3">
         <SearchInput3
           size="small"
@@ -829,14 +829,14 @@ export default Example;`}
         handleCopy={handleCopy}
       />
       <hr />
-      <h1 className="text-[#2D3748]">NumInput</h1>
+      <h1 className="text-[#2D3748]">5. NumInput</h1>
       <p>
         <code>NumInput</code> 컴포넌트는 숫자를 입력하거나 증감할 수 있는
         인터페이스를 제공합니다. 버튼을 사용해 숫자를 증가시키거나 감소시킬 수
         있습니다.
       </p>
 
-      <h2 className="text-[#2D3748]">Import</h2>
+      <h2 className="text-[#2D3748]">5.1. Import</h2>
       <CodeBox
         code={`import { NumInput } from '@componique/react';`}
         copyText={`import NumInput from '@components/Input/NumInput';`}
@@ -846,7 +846,7 @@ export default Example;`}
         handleCopy={handleCopy}
       />
 
-      <h2 className="text-[#2D3748]">Usage</h2>
+      <h2 className="text-[#2D3748]">5.2. Usage</h2>
       <p>기본 사용 예제는 아래와 같습니다:</p>
       <div style={{ marginBottom: "20px" }}>
         <NumInput
@@ -880,7 +880,7 @@ export default Example;`}
         handleCopy={handleCopy}
       />
 
-      <h2 className="text-[#2D3748]">Props</h2>
+      <h2 className="text-[#2D3748]">5.3. Props</h2>
       <p>
         <code>NumInput</code> 컴포넌트는 다음과 같은 props를 가집니다:
       </p>
@@ -960,7 +960,7 @@ export default Example;`}
         </tbody>
       </table>
 
-      <h2 className="text-[#2D3748]">Full Example</h2>
+      <h2 className="text-[#2D3748]">5.4. Full Example</h2>
       <div style={{ marginBottom: "20px" }}>
         <NumInput
           size="large"
@@ -1007,14 +1007,14 @@ export default FullExample;`}
         handleCopy={handleCopy}
       />
       <hr />
-      <h1 className="text-[#2D3748]">CurrencyInput</h1>
+      <h1 className="text-[#2D3748]">6. CurrencyInput</h1>
       <p>
         <code>CurrencyInput</code> 컴포넌트는 금액을 입력하거나 증감할 수 있는
         인터페이스를 제공합니다. 사용자가 입력 필드를 통해 금액을 입력하거나,
         증감 버튼을 통해 금액을 조정할 수 있습니다.
       </p>
 
-      <h2 className="text-[#2D3748]">Import</h2>
+      <h2 className="text-[#2D3748]">6.1. Import</h2>
       <CodeBox
         code={`import { CurrencyInput } from '@componique/react';`}
         copyText={`import CurrencyInput from '@components/Input/CurrencyInput';`}
@@ -1024,7 +1024,7 @@ export default FullExample;`}
         handleCopy={handleCopy}
       />
 
-      <h2 className="text-[#2D3748]">Usage</h2>
+      <h2 className="text-[#2D3748]">6.2. Usage</h2>
       <div style={{ marginBottom: "20px" }}>
         <CurrencyInput
           size="medium"
@@ -1052,7 +1052,7 @@ export default FullExample;`}
         handleCopy={handleCopy}
       />
 
-      <h2 className="text-[#2D3748]">Props</h2>
+      <h2 className="text-[#2D3748]">6.3. Props</h2>
       <p>
         <code>CurrencyInput</code> 컴포넌트는 다음과 같은 props를 가집니다:
       </p>
@@ -1132,7 +1132,7 @@ export default FullExample;`}
         </tbody>
       </table>
 
-      <h2 className="text-[#2D3748]">Full Example</h2>
+      <h2 className="text-[#2D3748]">6.4. Full Example</h2>
       <div style={{ marginBottom: "20px" }}>
         <CurrencyInput
           size="large"
@@ -1179,7 +1179,7 @@ export default FullExample;`}
         handleCopy={handleCopy}
       />
       <hr />
-      <h1 className="text-[#2D3748]">DecimalInput</h1>
+      <h1 className="text-[#2D3748]">7. DecimalInput</h1>
       <p>
         <code>DecimalInput</code> 컴포넌트는 사용자가 소수점이 포함된 숫자를
         입력하거나 증감할 수 있도록 도와주는 인터페이스를 제공합니다. 사용자는
@@ -1187,7 +1187,7 @@ export default FullExample;`}
         있습니다.
       </p>
 
-      <h2 className="text-[#2D3748]">Import</h2>
+      <h2 className="text-[#2D3748]">7.1. Import</h2>
       <CodeBox
         code={`import { DecimalInput } from '@componique/react';`}
         copyText={`import DecimalInput from '@components/Input/DecimalInput';`}
@@ -1197,7 +1197,7 @@ export default FullExample;`}
         handleCopy={handleCopy}
       />
 
-      <h2 className="text-[#2D3748]">Usage</h2>
+      <h2 className="text-[#2D3748]">7.2. Usage</h2>
       <div style={{ marginBottom: "20px" }}>
         <DecimalInput
           size="medium"
@@ -1224,7 +1224,7 @@ export default FullExample;`}
         handleCopy={handleCopy}
       />
 
-      <h2 className="text-[#2D3748]">Props</h2>
+      <h2 className="text-[#2D3748]">7.3. Props</h2>
       <p>
         <code>DecimalInput</code> 컴포넌트는 다음과 같은 props를 가집니다:
       </p>
@@ -1304,7 +1304,7 @@ export default FullExample;`}
         </tbody>
       </table>
 
-      <h2 className="text-[#2D3748]">Full Example</h2>
+      <h2 className="text-[#2D3748]">7.4. Full Example</h2>
       <div style={{ marginBottom: "20px" }}>
         <DecimalInput
           size="large"
@@ -1351,14 +1351,14 @@ export default FullExample;`}
         handleCopy={handleCopy}
       />
       <hr />
-      <h1 className="text-[#2D3748]">PinInput</h1>
+      <h1 className="text-[#2D3748]">8. PinInput</h1>
       <p>
         <code>PinInput</code> 컴포넌트는 사용자에게 PIN 코드를 입력받기 위한 UI
         요소입니다. 사용자는 각 입력 칸에 개별적으로 숫자를 입력할 수 있으며,
         숫자가 입력되면 자동으로 다음 칸으로 포커스가 이동합니다.
       </p>
 
-      <h2 className="text-[#2D3748]">Import</h2>
+      <h2 className="text-[#2D3748]">8.1. Import</h2>
       <CodeBox
         code={`import { PinInput } from '@componique/react';`}
         copyText={`import PinInput from '@components/Input/PinInput';`}
@@ -1368,7 +1368,7 @@ export default FullExample;`}
         handleCopy={handleCopy}
       />
 
-      <h2 className="text-[#2D3748]">Usage</h2>
+      <h2 className="text-[#2D3748]">8.2. Usage</h2>
       <p>기본 사용 예제는 아래와 같습니다:</p>
       <div style={{ marginBottom: "20px" }}>
         <PinInput length={4} />
@@ -1398,7 +1398,7 @@ export default Example;`}
         handleCopy={handleCopy}
       />
 
-      <h2 className="text-[#2D3748]">Customizing the PinInput</h2>
+      <h2 className="text-[#2D3748]">8.3. Customizing the PinInput</h2>
       <p>
         <code>PinInput</code> 컴포넌트는 다양한 옵션을 통해 커스터마이징 할 수
         있습니다. 예를 들어, 필드의 개수, 변형 스타일, 비활성화 상태 등을 설정할
@@ -1437,7 +1437,7 @@ export default Example;`}
         handleCopy={handleCopy}
       />
 
-      <h2 className="text-[#2D3748]">Props</h2>
+      <h2 className="text-[#2D3748]">8.4 Props</h2>
       <p>
         <code>PinInput</code> 컴포넌트는 다음과 같은 props를 가집니다:
       </p>
@@ -1526,7 +1526,7 @@ export default Example;`}
         </tbody>
       </table>
 
-      <h2 className="text-[#2D3748]">Full Example</h2>
+      <h2 className="text-[#2D3748]">8.5 Full Example</h2>
       <div style={{ marginBottom: "20px" }}>
         <PinInput
           length={4}
