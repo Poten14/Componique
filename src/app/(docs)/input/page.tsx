@@ -40,7 +40,7 @@ const Input: React.FC = () => {
 
       <h2 className="text-[#2D3748]">Usage</h2>
       <p>기본 사용 예제는 아래와 같습니다:</p>
-      <div style={{ marginBottom: "20px" }}>
+      <div className="my-7 space-y-4">
         <Input1 placeholder="Basic usage" />
       </div>
       <CodeBox
@@ -91,7 +91,7 @@ export default Example;`}
           <code>xl</code>: 아주 큰 크기
         </li>
       </ul>
-      <div className="space-y-4">
+      <div className="my-7 space-y-4">
         <Input1 placeholder="extra small size" size="xs" />
         <Input1 placeholder="small size" size="small" />
         <Input1 placeholder="medium size" size="medium" />
@@ -211,7 +211,7 @@ export default Example;`}
       </table>
 
       <h2 className="text-[#2D3748]">Full Example</h2>
-      <div className="ml-4 space-y-3">
+      <div className="my-7 space-y-4">
         <Input1 placeholder="Basic usage" />
         <Input1 placeholder="small size" size="small" />
         <Input1 placeholder="filled" variant="filled" />
@@ -303,7 +303,7 @@ export default Example;`}
         <code>SearchInput</code> 컴포넌트는 활성화 및 비활성화 상태에 따른
         색상을 커스터마이즈할 수 있습니다. 예제는 다음과 같습니다:
       </p>
-      <div style={{ marginBottom: "20px" }}>
+      <div className="my-7 space-y-4">
         <SearchInput activeColor="bg-Primary" inactiveColor="bg-gray-400" />
       </div>
       <CodeBox
@@ -336,7 +336,7 @@ export default Example;`}
         <code>SearchInput</code> 컴포넌트의 너비는 동적으로 조정 가능합니다.
         기본 너비는 <code>w-80</code>입니다.
       </p>
-      <div style={{ marginBottom: "20px" }}>
+      <div className="my-7 space-y-4">
         <SearchInput width="w-96" placeholder="Custom width..." />
       </div>
       <CodeBox
@@ -506,7 +506,7 @@ export default Example;`}
 
       <h2 className="text-[#2D3748]">Usage</h2>
       <p>기본 사용 예제는 아래와 같습니다:</p>
-      <div className="mb-5">
+      <div className="my-7 space-y-4">
         <SearchInput2 placeholder="Search..." />
       </div>
       <CodeBox
@@ -551,7 +551,7 @@ export default Example;`}
           <code>large</code>: 큰 크기
         </li>
       </ul>
-      <div className="m-4 space-y-4">
+      <div className="my-7 space-y-4">
         <SearchInput2 placeholder="small size" size="small" />
         <SearchInput2 placeholder="medium size" size="medium" />
         <SearchInput2 placeholder="large size" size="large" />
@@ -727,7 +727,7 @@ export default Example;`}
       />
 
       <h2 className="text-[#2D3748]">Usage</h2>
-      <div style={{ marginBottom: "20px" }}>
+      <div className="my-7 space-y-4">
         <SearchInput3 placeholder="Search..." />
       </div>
       <CodeBox
@@ -779,7 +779,7 @@ export default Example;`}
       </table>
 
       <h2 className="text-[#2D3748]">Full Example</h2>
-      <div className="ml-4 space-y-3">
+      <div className="my-7 space-y-4">
         <SearchInput3
           size="small"
           color="Basic"
@@ -848,7 +848,7 @@ export default Example;`}
 
       <h2 className="text-[#2D3748]">Usage</h2>
       <p>기본 사용 예제는 아래와 같습니다:</p>
-      <div style={{ marginBottom: "20px" }}>
+      <div className="my-7 space-y-4">
         <NumInput
           size="medium"
           color="Basic"
@@ -961,7 +961,7 @@ export default Example;`}
       </table>
 
       <h2 className="text-[#2D3748]">Full Example</h2>
-      <div style={{ marginBottom: "20px" }}>
+      <div className="my-7 space-y-4">
         <NumInput
           size="large"
           color="Basic"
@@ -1025,7 +1025,7 @@ export default FullExample;`}
       />
 
       <h2 className="text-[#2D3748]">Usage</h2>
-      <div style={{ marginBottom: "20px" }}>
+      <div className="my-7 space-y-4">
         <CurrencyInput
           size="medium"
           color="Primary"
@@ -1133,7 +1133,7 @@ export default FullExample;`}
       </table>
 
       <h2 className="text-[#2D3748]">Full Example</h2>
-      <div style={{ marginBottom: "20px" }}>
+      <div className="my-7 space-y-4">
         <CurrencyInput
           size="large"
           color="Basic"
@@ -1198,7 +1198,7 @@ export default FullExample;`}
       />
 
       <h2 className="text-[#2D3748]">Usage</h2>
-      <div style={{ marginBottom: "20px" }}>
+      <div className="my-7 space-y-4">
         <DecimalInput
           size="medium"
           color="Primary"
@@ -1305,7 +1305,7 @@ export default FullExample;`}
       </table>
 
       <h2 className="text-[#2D3748]">Full Example</h2>
-      <div style={{ marginBottom: "20px" }}>
+      <div className="my-7 space-y-4">
         <DecimalInput
           size="large"
           color="Basic"
@@ -1370,7 +1370,7 @@ export default FullExample;`}
 
       <h2 className="text-[#2D3748]">Usage</h2>
       <p>기본 사용 예제는 아래와 같습니다:</p>
-      <div style={{ marginBottom: "20px" }}>
+      <div className="my-7 space-y-4">
         <PinInput length={4} />
       </div>
       <CodeBox
@@ -1404,10 +1404,10 @@ export default Example;`}
         있습니다. 예를 들어, 필드의 개수, 변형 스타일, 비활성화 상태 등을 설정할
         수 있습니다:
       </p>
-      <div style={{ marginBottom: "10px" }}>
+      <div className="my-7 space-y-4">
         <PinInput length={6} variant="filled" disabled={true} />
       </div>
-      <div style={{ marginBottom: "20px" }}>
+      <div className="my-7 space-y-4">
         <PinInput customCharacter="🥳" />
       </div>
       <CodeBox
@@ -1527,7 +1527,7 @@ export default Example;`}
       </table>
 
       <h2 className="text-[#2D3748]">Full Example</h2>
-      <div style={{ marginBottom: "20px" }}>
+      <div className="my-7 space-y-4">
         <PinInput
           length={4}
           variant="filled"
