@@ -26,7 +26,6 @@ const IconDoc: React.FC = () => {
     "icon-camera",
     "icon-code",
     "icon-download",
-
     "icon-error",
     "icon-heart",
     "icon-help",
@@ -47,6 +46,8 @@ const IconDoc: React.FC = () => {
     "icon-check",
     "icon-search",
     "icon-docs2",
+    "icon-github",
+    "icon-blog",
   ];
   const router = useRouter();
   return (
@@ -112,6 +113,7 @@ export default Example;`}
         <Icon name="icon-star" size={24} />
         <Icon name="icon-star" size={32} />
       </div>
+      <div className="my-7 space-y-4" />
       <CodeBox
         code={`import Icon from '@components/Icon';
 
@@ -155,6 +157,7 @@ export default Example;`}
         <Icon name="icon-heart" color="green" />
         <Icon name="icon-heart" color="blue" />
       </div>
+      <div className="my-7 space-y-4" />
       <CodeBox
         code={`import Icon from '@components/Icon';
 
@@ -276,6 +279,7 @@ export default Example;`}
           Docs
         </Button>
       </div>
+      <div className="my-7 space-y-4" />
       <CodeBox
         code={`import { Button } from '@components/Button';
 

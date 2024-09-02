@@ -116,6 +116,7 @@ export default Example;`}
           onChange={handleCheckBoxChange("large")}
         />
       </div>
+      <div className="my-7 space-y-4" />
       <CodeBox
         code={`import { CheckBox } from '@components/CheckBox';
 
@@ -192,6 +193,7 @@ export default Example;`}
           onChange={handleCheckBoxChange("danger")}
         />
       </div>
+      <div className="my-7 space-y-4" />
       <CodeBox
         code={`import { CheckBox } from '@components/CheckBox';
 
@@ -251,6 +253,7 @@ export default Example;`}
           onChange={handleCheckBoxChange("border")}
         />
       </div>
+      <div className="my-7 space-y-4" />
       <CodeBox
         code={`import { CheckBox } from '@components/CheckBox';
 
@@ -328,6 +331,7 @@ export default Example;`}
           onChange={handleCheckBoxChange("danger")}
         />
       </div>
+      <div className="my-7 space-y-4" />
       <CodeBox
         code={`import { CheckBox } from '@components/CheckBox';
 
@@ -376,6 +380,7 @@ export default Example;`}
           disabled={true}
         />
       </div>
+      <div className="my-7 space-y-4" />
       <CodeBox
         code={`import { CheckBox } from '@components/CheckBox';
 
@@ -417,6 +422,7 @@ export default Example;`}
           onChange={handleCheckBoxChange("custom")}
         />
       </div>
+      <div className="my-7 space-y-4" />
       <CodeBox
         code={`import { CheckBox } from '@components/CheckBox';
 
