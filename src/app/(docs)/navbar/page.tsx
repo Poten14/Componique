@@ -35,7 +35,7 @@ const NavbarDocs: React.FC = () => {
 
       <h2 className="text-[#2D3748]">1.2. Usage</h2>
       <p>기본 사용 예제는 아래와 같습니다:</p>
-      <div style={{ marginBottom: "20px" }}>
+      <div className="my-7 space-y-4">
         <Navbar
           logoName="Componique"
           logoSrc={Logo}
@@ -102,7 +102,7 @@ export default Example;`}
           <code>large</code>: 큰 크기
         </li>
       </ul>
-      <div className="space-y-4">
+      <div className="my-7 space-y-4">
         <Navbar
           logoName="Componique"
           logoSrc={Logo}
@@ -206,7 +206,7 @@ export default Example;`}
           <code>red</code>: 빨간색
         </li>
       </ul>
-      <div className="space-y-4">
+      <div className="my-7 space-y-4">
         <Navbar
           logoName="Componique"
           logoSrc={Logo}

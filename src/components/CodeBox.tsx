@@ -25,12 +25,19 @@ const CodeBox: React.FC<CodeBoxProps> = ({
           icon={copied[index] ? "icon-check" : undefined}
           className="copyButton"
           iconColor={copied[index] ? "green" : "white"}
-          size="small"
         >
           {copied[index] ? "Copied!" : "Copy"}
         </Button>
       </CopyToClipboard>
-      <SyntaxHighlighter language={language}>{code}</SyntaxHighlighter>
+      <SyntaxHighlighter
+        language="javascript"
+        customStyle={{
+          backgroundColor: "#fff",
+          border: "1px solid #EFEFEF",
+        }}
+      >
+        {code}
+      </SyntaxHighlighter>
     </div>
   );
 };

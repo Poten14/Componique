@@ -69,6 +69,7 @@ const DrawerDocs = () => {
       <Button variant="border" onClick={onclickDrawerHandler(true)}>
         Drawer Open Button
       </Button>
+      <div className="my-7 space-y-4" />
       <CodeBox
         code={`"use client";
 import Drawer from "@components/Drawer/Drawer";
@@ -180,6 +181,7 @@ export default Example;
       <Button variant="border" onClick={() => setIsMenuDrawerOpen(true)}>
         Drawer Open Button
       </Button>
+      <div className="my-7 space-y-4" />
       <CodeBox
         code={`"use client";
 import Drawer from "@components/Drawer/Drawer";
@@ -283,6 +285,7 @@ export default Example;
       <Button variant="border" onClick={() => setIsLogoDrawerOpen(true)}>
         Logo Drawer
       </Button>
+      <div className="my-7 space-y-4" />
       <CodeBox
         code={`"use client";
 import Drawer from "@components/Drawer/Drawer";
@@ -471,6 +474,7 @@ export default Example;
           Bottom Drawer
         </Button>
       </div>
+      <div className="my-7 space-y-4" />
       <CodeBox
         code={`"use client";
 import Drawer from "@components/Drawer/Drawer";
@@ -715,6 +719,7 @@ export default Example;
       <Button variant="border" onClick={() => setIsGroupDrawerOpen(true)}>
         Group Drawer
       </Button>
+      <div className="my-7 space-y-4" />
       <CodeBox
         code={`"use client";
 import Drawer from "@components/Drawer/Drawer";
@@ -843,6 +848,7 @@ export default Example;`}
       <Button variant="border" onClick={() => setIsClassDrawerOpen(true)}>
         ClassName Drawer
       </Button>
+      <div className="my-7 space-y-4" />
       <CodeBox
         code={`"use client";
 import Drawer from "@components/Drawer/Drawer";
@@ -943,6 +949,7 @@ export default Example;
       <Button variant="border" onClick={() => setIsIconoDrawerOpen(true)}>
         Icon Drawer
       </Button>
+      <div className="my-7 space-y-4" />
       <CodeBox
         code={`"use client";
 import Drawer from "@components/Drawer/Drawer";

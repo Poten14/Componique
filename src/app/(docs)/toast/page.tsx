@@ -75,6 +75,7 @@ const ToastDocs: React.FC = () => {
           Toast 알림입니다.
         </Toast>
       )}
+      <div className="my-7 space-y-4" />
       <CodeBox
         code={`"use client";
 import Button from "@components/Button/Button";
@@ -159,7 +160,7 @@ export default ToastExample;
           오른쪽 하단에 표시됩니다.
         </Toast>
       )}
-
+      <div className="my-7 space-y-4" />
       <CodeBox
         code={`"use client";
 import Button from "@components/Button/Button";
@@ -246,7 +247,7 @@ export default ToastExample;
           오렌지색 알림입니다.
         </Toast>
       )}
-
+      <div className="my-7 space-y-4" />
       <CodeBox
         code={`"use client";
 import Button from "@components/Button/Button";
@@ -330,7 +331,7 @@ export default ToastExample;
           border 스타일의 알림입니다.
         </Toast>
       )}
-
+      <div className="my-7 space-y-4" />
       <CodeBox
         code={`"use client";
 import Button from "@components/Button/Button";
@@ -410,7 +411,7 @@ export default ToastExample;
           5초 후에 자동으로 닫힙니다.
         </Toast>
       )}
-
+      <div className="my-7 space-y-4" />
       <CodeBox
         code={`"use client";
 import Button from "@components/Button/Button";
@@ -498,7 +499,7 @@ export default ToastExample;
           닫기 버튼이 없는 알림입니다.
         </Toast>
       )}
-
+      <div className="my-7 space-y-4" />
       <CodeBox
         code={`"use client";
 import Button from "@components/Button/Button";
@@ -591,7 +592,7 @@ export default ToastExample;
           진행 바가 포함된 알림입니다.
         </Toast>
       )}
-
+      <div className="my-7 space-y-4" />
       <CodeBox
         code={`"use client";
 import Button from "@components/Button/Button";
@@ -675,7 +676,7 @@ export default ToastExample;
           알림입니다.
         </Toast>
       )}
-
+      <div className="my-7 space-y-4" />
       <CodeBox
         code={`"use client";
 import Button from "@components/Button/Button";
@@ -762,7 +763,7 @@ export default ToastExample;
           커스텀 스타일이 적용된 알림입니다.
         </Toast>
       )}
-
+      <div className="my-7 space-y-4" />
       <CodeBox
         code={`"use client";
 import Button from "@components/Button/Button";
@@ -1029,7 +1030,7 @@ export default ToastExample;
           ]}
         />
       )}
-
+      <div className="my-7 space-y-4" />
       <CodeBox
         code={`"use client";
 import ToastGroup from "@components/Toast/ToastGroup";

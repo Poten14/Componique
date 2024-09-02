@@ -44,9 +44,10 @@ const Page = () => {
 
   const handleSelect = (option: string) => {
     setSelectedOption(option);
-    const updatedSearches = [...recentSearches, option].slice(-5); // 최근 5개만 유지
-    setRecentSearches(updatedSearches);
-    sessionStorage.setItem("recentSearches", JSON.stringify(updatedSearches));
+    const updatedSearches = Array.from(new Set([option, ...recentSearches])); // 중복 제거 후 최근 검색어 목록 업데이트
+    const limitedSearches = updatedSearches.slice(0, 5); // 최근 5개만 유지
+    setRecentSearches(limitedSearches);
+    sessionStorage.setItem("recentSearches", JSON.stringify(limitedSearches));
   };
 
   return (

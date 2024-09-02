@@ -27,6 +27,7 @@ const ColorPickerDoc: React.FC = () => {
         미리 구성된 색상 팔레트를 사용하고싶다면 아래와 같이 사용하면 됩니다.
       </p>
       <h2 className="text-[#2D3748]">1.1. Import</h2>
+
       <CodeBox
         code={`import ColorPicker from "@components/ColorPicker/ColorPicker";`}
         copyText={`import ColorPicker from "@components/ColorPicker/ColorPicker";`}
@@ -41,6 +42,7 @@ const ColorPickerDoc: React.FC = () => {
       <div style={{ marginBottom: "20px" }}>
         <ColorPicker />
       </div>
+      <div className="my-7 space-y-4" />
       <CodeBox
         code={`import ColorPicker from "@components/ColorPicker/ColorPicker";
 
@@ -72,6 +74,7 @@ export default Example;`}
         담은 후, 색상을 선택하고 복사할 수 있도록 설계되었습니다.
       </p>
       <h2 className="text-[#2D3748]">2.1. Import</h2>
+
       <CodeBox
         code={`import ColorPickerUI from '@components/ColorPicker/ColorPickerUI';`}
         copyText={`import ColorPickerUI from '@components/ColorPicker/ColorPickerUI';`}
@@ -86,6 +89,7 @@ export default Example;`}
       <div style={{ marginBottom: "20px" }}>
         <ColorPickerUI colors={["#ff0000", "#00ff00", "#0000ff"]} />
       </div>
+      <div className="my-7 space-y-4" />
       <CodeBox
         code={`import ColorPickerUI from '@components/ColorPicker/ColorPickerUI';
 
@@ -153,6 +157,7 @@ export default Example;`}
         미리보기를 제공하며, 이를 복사할 수 있습니다.
       </p>
       <h2 className="text-[#2D3748]">3.1. Import</h2>
+      <div className="my-7 space-y-4" />
       <CodeBox
         code={`import GradientPicker from '@components/ColorPicker/GradientPicker';`}
         copyText={`import GradientPicker from '@components/ColorPicker/GradientPicker';`}
@@ -167,6 +172,7 @@ export default Example;`}
       <div style={{ marginBottom: "20px" }}>
         <GradientPicker />
       </div>
+      <div className="my-7 space-y-4" />
       <CodeBox
         code={`import GradientPicker from '@components/ColorPicker/GradientPicker';
 
@@ -250,6 +256,7 @@ export default Example;`}
       <div style={{ marginBottom: "20px" }}>
         <TwoPicker />
       </div>
+      <div className="my-7 space-y-4" />
       <CodeBox
         code={`import TwoPicker from '@components/ColorPicker/TwoPicker';
 

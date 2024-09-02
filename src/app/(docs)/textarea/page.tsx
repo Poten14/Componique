@@ -34,7 +34,7 @@ const TextareaDocs: React.FC = () => {
 
       <h2 className="text-[#2D3748]">1.2. Usage</h2>
       <p>기본 사용 예제는 아래와 같습니다:</p>
-      <div style={{ marginBottom: "20px" }}>
+      <div className="my-7">
         <Textarea
           label="Description"
           id="description"
@@ -96,7 +96,7 @@ export default Example;`}
           <code>xl</code>: 아주 큰 크기
         </li>
       </ul>
-      <div className="space-y-4">
+      <div className="my-7 space-y-4">
         <Textarea
           label="Extra Small Size"
           id="xs"
@@ -186,7 +186,7 @@ export default Example;`}
           <code>gray</code>: 회색 테두리
         </li>
       </ul>
-      <div className="space-y-4">
+      <div className="my-7 space-y-4">
         <Textarea
           label="Red Color"
           id="red"
@@ -266,7 +266,7 @@ export default Example;`}
           <code>vertical</code>: 세로 크기만 조절 가능 (기본값)
         </li>
       </ul>
-      <div className="space-y-4">
+      <div className="my-7 space-y-4">
         <Textarea
           label="No Resize"
           id="resize-none"
@@ -480,7 +480,7 @@ export default Example;`}
 
       <h2 className="text-[#2D3748]">2.2. Usage</h2>
       <p>기본 사용 예제는 아래와 같습니다:</p>
-      <div style={{ marginBottom: "20px" }}>
+      <div className="my-7 space-y-4">
         <TextareaValue
           placeholder="Type something..."
           value="Initial text"
