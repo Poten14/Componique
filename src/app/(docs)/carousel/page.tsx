@@ -35,7 +35,7 @@ const CarouselDocs: React.FC = () => {
 
       <h2 className="text-[#2D3748]">1.2. Usage</h2>
       <p>기본 사용 예제는 아래와 같습니다:</p>
-      <div style={{ marginBottom: "20px" }}>
+      <div className="my-7">
         <Carousel
           images={[
             "images/image1.svg",
@@ -71,7 +71,7 @@ export default Example;`}
         따라 슬라이드 전환을 위한 추가 설정을 쉽게 변경할 수 있습니다.
       </p>
 
-      <div className="mb-5">
+      <div className="my-7">
         <Carousel
           images={[
             "images/image1.svg",
@@ -193,7 +193,7 @@ export default Example;`}
 
       <h2 className="text-[#2D3748]">2.2. Usage</h2>
       <p>기본 사용 예제는 아래와 같습니다:</p>
-      <div style={{ marginBottom: "20px" }}>
+      <div className="my-7">
         <CarouselAutoplay
           images={[
             "images/image1.svg",
@@ -238,7 +238,7 @@ export default Example;`}
         <code>interval</code> props를 통해 이 기능을 제어할 수 있습니다.
       </p>
 
-      <div className="mb-5">
+      <div className="my-7">
         <CarouselAutoplay
           images={[
             "images/image1.svg",
@@ -395,7 +395,7 @@ export default Example;`}
 
       <h2 className="text-[#2D3748]">3.2. Usage</h2>
       <p>기본 사용 예제는 아래와 같습니다:</p>
-      <div style={{ marginBottom: "20px" }}>
+      <div className="my-7">
         <CarouselDots
           images={[
             "images/image1.svg",
@@ -440,7 +440,7 @@ export default Example;`}
         있습니다.
       </p>
 
-      <div className="mb-5">
+      <div className="mb-7">
         <CarouselDots
           images={[
             "images/image1.svg",
