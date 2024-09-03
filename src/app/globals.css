@@ -195,3 +195,26 @@ li {
   margin-bottom: 0;
   padding-inline-start: 0;
 }
+
+/* 스크롤 바 디자인*/
+::-webkit-scrollbar {
+  width: 5px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+::-webkit-scrollbar-thumb {
+  background: #aaa;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #bbb;
+}
+[data-theme="dark"] ::-webkit-scrollbar-track {
+  background: #1c2127;
+}
+[data-theme="dark"] ::-webkit-scrollbar-thumb {
+  background: #aaa;
+}
+[data-theme="dark"] ::-webkit-scrollbar-thumb:hover {
+  background: #fff;
+}
