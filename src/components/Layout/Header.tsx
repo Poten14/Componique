@@ -5,12 +5,37 @@ import UserPage from "@components/Layout/UserPage";
 import HamburgerMenu from "./HamburgerMenu";
 import Drawer from "@components/Drawer/Drawer";
 import Button from "@components/Button/Button";
+import SwitchDark from "@components/Swtich/SwitchDark";
+
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
+  const [isDarkMode, setIsDarkMode] = useState(false);
 
   useEffect(() => {
-    const onScrollHadler = () => {
+    // 다크 모드 상태 체크 함수
+    const checkDarkMode = () => {
+      const darkMode = document.documentElement.classList.contains("dark");
+      setIsDarkMode(darkMode);
+    };
+
+    checkDarkMode(); // 초기 다크 모드 상태 체크
+    window.addEventListener("storage", checkDarkMode);
+
+    const observer = new MutationObserver(checkDarkMode);
+    observer.observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ["class"],
+    });
+
+    return () => {
+      window.removeEventListener("storage", checkDarkMode);
+      observer.disconnect();
+    };
+  }, []);
+
+  useEffect(() => {
+    const onScrollHandler = () => {
       if (window.scrollY > 100) {
         setIsScrolled(true);
       } else {
@@ -18,21 +43,26 @@ const Header = () => {
       }
     };
 
-    window.addEventListener("scroll", onScrollHadler);
+    window.addEventListener("scroll", onScrollHandler);
 
     return () => {
-      window.removeEventListener("scroll", onScrollHadler);
+      window.removeEventListener("scroll", onScrollHandler);
     };
   }, []);
+
   const onclickDrawerHandler = (open: boolean) => () => {
     setIsDrawerOpen(open);
   };
+
   return (
     <header
-      className={`fixed left-0 top-0 z-10 flex h-[90px] w-full items-center justify-between transition-colors duration-300 ${isScrolled ? "bg-white shadow-md" : "bg-transparent"}`}
+      className={`fixed left-0 top-0 z-10 flex h-[90px] w-full items-center justify-between transition-colors duration-300 ${
+        isScrolled ? "bg-white shadow-md dark:bg-[#252629]" : "bg-transparent"
+      }`}
     >
       <Logo />
       <div className="flex items-center">
+        <SwitchDark />
         <UserPage />
         <Button
           className="mr-2 xl:hidden"
@@ -43,16 +73,17 @@ const Header = () => {
         </Button>
         <Drawer
           isOpen={isDrawerOpen}
-          className="text-[#3e3e3e]"
+          className="bg-white text-[#3e3e3e] dark:bg-[#252629] dark:text-white" // 다크 모드에서 텍스트 및 배경색 변경
           onClose={onclickDrawerHandler(false)}
           color="white"
-          bgColor="white"
-          logo="/componique_logo_full.svg"
+          bgColor="white" // 기본 모드에서는 white 사용
+          logo={isDarkMode ? "/LogoDark.svg" : "/componique_logo_full.svg"} // 다크 모드에 따라 로고 변경
           position="right"
           menu={[
             {
               groupName: "FORM",
-              groupNameClassName: "!text-[#9AC5E5] bg-[#f8f8f8] py-2",
+              groupNameClassName:
+                "!text-[#9AC5E5] dark:!text-[#2A6490] bg-[#f8f8f8] dark:bg-[#2A2E39] py-2",
               items: [
                 { name: "Button", path: "/button", className: "py-0" },
                 { name: "CheckBox", path: "/checkbox", className: "py-0" },
@@ -80,7 +111,8 @@ const Header = () => {
             },
             {
               groupName: "Data display",
-              groupNameClassName: "!text-[#9AC5E5] bg-[#f8f8f8] py-2",
+              groupNameClassName:
+                "!text-[#9AC5E5] dark:!text-[#2A6490] bg-[#f8f8f8] dark:bg-[#2A2E39] py-2",
               items: [
                 { name: "Card", path: "/card", className: "py-0" },
                 { name: "Carousel", path: "/carousel", className: "py-0" },
@@ -96,7 +128,8 @@ const Header = () => {
             },
             {
               groupName: "Feedback",
-              groupNameClassName: "!text-[#9AC5E5] bg-[#f8f8f8] py-2",
+              groupNameClassName:
+                "!text-[#9AC5E5] dark:!text-[#2A6490] bg-[#f8f8f8] dark:bg-[#2A2E39] py-2",
               items: [
                 { name: "Spinner", path: "/spinner", className: "py-0" },
                 { name: "Toast", path: "/toast", className: "py-0" },
@@ -106,7 +139,8 @@ const Header = () => {
             },
             {
               groupName: "Navigation",
-              groupNameClassName: "!text-[#9AC5E5] bg-[#f8f8f8] py-2",
+              groupNameClassName:
+                "!text-[#9AC5E5] dark:!text-[#2A6490] bg-[#f8f8f8] dark:bg-[#2A2E39] py-2",
               items: [
                 { name: "Pagination", path: "/pagination", className: "py-0" },
                 { name: "Drawer", path: "/drawer", className: "py-0" },

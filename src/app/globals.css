@@ -23,22 +23,22 @@
 html {
   font-family: "Pretendard-Regular";
 }
-.main-bg {
+/* 메인 페이지의 라이트 모드 배경 이미지 */
+body.main-page {
   background-image: url("/Background.svg");
-  background-size: cover; /* bg-cover */
-  background-attachment: fixed; /* bg-fixed */
-  background-repeat: no-repeat; /* bg-no-repeat */
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
 }
 
-.main-wrapper {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh; /* 화면 전체 높이를 차지하도록 설정 */
-  text-align: center; /* 텍스트 중앙 정렬 */
-  padding: 20px;
-  box-sizing: border-box;
+/* 메인 페이지의 다크 모드 배경 이미지 */
+html.dark body.main-page {
+  background-image: url("/BackgroundDark.svg");
+}
+
+/* 다크 모드에서 메인 페이지 외의 다른 페이지 배경 설정 */
+html.dark body:not(.main-page) {
+  background-color: #1c2127;
 }
 
 i {

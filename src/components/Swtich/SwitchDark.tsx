@@ -1,39 +1,59 @@
-import { useState } from "react";
-import Image from "next/image";
+"use client";
+import { useState, useEffect } from "react";
+import { FaMoon } from "react-icons/fa";
+import { BsSunFill } from "react-icons/bs";
 
 const SwitchDark = () => {
-  const [isOn, setIsOn] = useState(false);
+  const [isDarkMode, setIsDarkMode] = useState(false);
 
   const toggleSwitch = () => {
-    setIsOn(!isOn);
+    const newMode = !isDarkMode;
+    setIsDarkMode(newMode);
+    // 다크 모드 상태를 로컬 스토리지에 저장
+    localStorage.setItem("dark-mode", newMode ? "dark" : "light");
   };
 
+  useEffect(() => {
+    // 페이지 로드 시 저장된 모드 상태를 가져오기
+    const savedMode = localStorage.getItem("dark-mode");
+    if (savedMode === "dark") {
+      setIsDarkMode(true);
+    }
+  }, []);
+
+  useEffect(() => {
+    // 다크 모드에 따라 HTML 태그의 클래스 설정
+    document.documentElement.setAttribute(
+      "data-theme",
+      isDarkMode ? "dark" : "light",
+    );
+
+    if (isDarkMode) {
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+    }
+  }, [isDarkMode]);
+
   return (
-    <div className="flex items-center justify-center space-x-12">
+    <div className="mr-3 flex items-center justify-center space-x-12">
       <div
         onClick={toggleSwitch}
-        className={`flex h-7 w-14 cursor-pointer items-center rounded-full p-1 ${isOn ? `bg-[#FFFFFF]` : `bg-[#232A31]`}`}
+        className={`flex h-10 w-14 cursor-pointer items-center rounded-full p-1 ${isDarkMode ? "bg-[#232A31]" : "bg-[#FFFFFF]"}`}
       >
-        {/* 이미지 container*/}
+        {/* 아이콘 컨테이너 */}
         <div className="relative flex h-full items-center">
-          {/* 이미지 요소 */}
-          <Image
-            src="/Sun.svg"
-            alt="Sun"
-            width={20}
-            height={20}
-            className={`absolute left-1 transition-opacity duration-500 ease-in-out ${isOn ? `opacity-100` : `opacity-0`}`}
+          {/* Sun 아이콘 */}
+          <FaMoon
+            className={`absolute left-1 text-[#EDCE7B] transition-opacity duration-500 ease-in-out ${isDarkMode ? "opacity-100" : "opacity-0"}`}
           />
-          <Image
-            src="/Moon.svg"
-            alt="Moon"
-            width={20}
-            height={20}
-            className={`absolute translate-x-7 transition-opacity duration-500 ease-in-out ${isOn ? `opacity-0` : `opacity-100`}`}
+          {/* Moon 아이콘 */}
+          <BsSunFill
+            className={`absolute translate-x-7 text-[#FFECB8] transition-opacity duration-500 ease-in-out ${isDarkMode ? "opacity-0" : "opacity-100"}`}
           />
           {/* 스위치 버튼 */}
           <div
-            className={`h-5 w-5 transform rounded-full shadow-lg duration-700 ease-in-out ${isOn ? `translate-x-7` : `translate-x-1`} ${isOn ? `bg-[#9AC5E5]` : `bg-[#333742]`}`}
+            className={`h-5 w-5 transform rounded-full shadow-lg duration-700 ease-in-out ${isDarkMode ? "translate-x-7 bg-[#333742]" : "translate-x-1 bg-[#9AC5E5]"}`}
           />
         </div>
       </div>

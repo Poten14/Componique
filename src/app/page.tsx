@@ -34,6 +34,7 @@ const options = [
 const Page = () => {
   const [selectedOption, setSelectedOption] = useState<string>("");
   const [recentSearches, setRecentSearches] = useState<string[]>([]);
+  const [isDarkMode, setIsDarkMode] = useState<boolean>(false);
 
   useEffect(() => {
     const storedSearches = sessionStorage.getItem("recentSearches");
@@ -42,13 +43,33 @@ const Page = () => {
     }
   }, []);
 
-  //메인 페이지가 렌더링될때 추가 되고, 메인페이지를 떠날때 삭제되는 로직 (배경이미지 관련)
+  // 메인 페이지가 렌더링될 때 배경 이미지 클래스를 추가하고, 페이지를 떠날 때 클래스를 제거합니다.
   useEffect(() => {
-    document.body.classList.add("main-bg");
+    document.body.classList.add("main-page");
 
     return () => {
-      document.body.classList.remove("main-bg");
+      document.body.classList.remove("main-page");
     };
+  }, []);
+
+  useEffect(() => {
+    // 다크 모드 상태를 확인하고 설정
+    const checkDarkMode = () => {
+      setIsDarkMode(document.documentElement.classList.contains("dark"));
+    };
+
+    // 초기 다크 모드 상태 확인
+    checkDarkMode();
+
+    // 다크 모드 변경을 감지하는 Observer 설정
+    const observer = new MutationObserver(checkDarkMode);
+    observer.observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ["class"],
+    });
+
+    // 컴포넌트가 언마운트될 때 Observer를 정리
+    return () => observer.disconnect();
   }, []);
 
   const handleSelect = (option: string) => {
@@ -59,11 +80,14 @@ const Page = () => {
     sessionStorage.setItem("recentSearches", JSON.stringify(limitedSearches));
   };
 
+  // 다크 모드에 따라 로고 이미지 소스 결정
+  const logoSrc = isDarkMode ? "/ComponiqueDark.svg" : "/Componique.svg";
+
   return (
     <div className="main-wrapper">
       <div className="mt-16 flex flex-col items-center justify-center">
         <div className="mb-8 w-full max-w-[440px]">
-          <Image src="/Componique.svg" alt="logo" width={440} height={72} />
+          <Image src={logoSrc} alt="logo" width={440} height={72} />
         </div>
         <div className="w-full max-w-[740px]">
           <Autocomplete
@@ -89,4 +113,5 @@ const Page = () => {
     </div>
   );
 };
+
 export default Page;
