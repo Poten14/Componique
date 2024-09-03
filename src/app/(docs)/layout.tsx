@@ -10,19 +10,12 @@ export default function DocsLayout({
 }: {
   children: React.ReactNode;
 }) {
-  const quickmenuItems = [
-    { label: "Import", id: "Import" },
-    { label: "Usage", id: "Usage" },
-    { label: "Customization", id: "Customization" },
-    { label: "Props", id: "Props" },
-    { label: "Example", id: "Example" },
-  ];
   return (
     <>
       <div>
         {children}
         <div className="hidden xl:block">
-          <Quickmenu items={quickmenuItems} />
+          <Quickmenu />
         </div>
       </div>
     </>
