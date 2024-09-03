@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 
 const Quickmenu: React.FC = () => {
@@ -8,16 +9,20 @@ const Quickmenu: React.FC = () => {
     [],
   );
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
+  const pathname = usePathname();
 
   useEffect(() => {
-    const menus = Array.from(document.querySelectorAll("h1, h2"));
-    const items = menus.map((menu, index) => {
-      const id = menu.id || `menu-${index}`;
-      menu.id = id;
-      return { label: menu.textContent || `menu ${index + 1}`, id };
-    });
-    setQuickMenu(items);
-  }, []);
+    const menuPathname = () => {
+      const menus = Array.from(document.querySelectorAll("h1, h2"));
+      const items = menus.map((menu, index) => {
+        const id = menu.id || `menu-${index}`;
+        menu.id = id;
+        return { label: menu.textContent || `menu ${index + 1}`, id };
+      });
+      setQuickMenu(items);
+    };
+    menuPathname();
+  }, [pathname]);
 
   const handleClick = (index: number, id: string) => {
     setActiveIndex(index);
