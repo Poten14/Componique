@@ -17,15 +17,15 @@ const SwitchDocs: React.FC = () => {
   };
 
   return (
-    <div className="prose max-w-[1000px] p-5 text-[#6D6D6D]">
-      <div>
-        <h1 className="text-[#2D3748]">1. SwitchBasic</h1>
+    <div className="prose max-w-[1000px] space-y-7 p-5 text-[#6D6D6D] dark:text-[#dfdfdf]">
+      <div className="dark:text-white">
+        <h1 className="text-[#2D3748] dark:text-white">1. SwitchBasic</h1>
         <p>
           <code>SwitchBasic</code> 컴포넌트는 사용자가 토글할 수 있는 스위치 UI
           요소입니다. 다양한 크기로 사용할 수 있으며, 클릭 시 상태가 전환됩니다.
         </p>
 
-        <h2 className="text-[#2D3748]">1.1. Import</h2>
+        <h2 className="text-[#2D3748] dark:text-white">1.1. Import</h2>
         <CodeBox
           code={`import SwitchBasic from '@components/Switch/SwitchBasic';`}
           copyText={`import SwitchBasic from '@components/Switch/SwitchBasic';`}
@@ -35,7 +35,7 @@ const SwitchDocs: React.FC = () => {
           handleCopy={handleCopy}
         />
 
-        <h2 className="text-[#2D3748]">1.2. Usage</h2>
+        <h2 className="text-[#2D3748] dark:text-white">1.2. Usage</h2>
         <p>기본 사용 예제는 아래와 같습니다:</p>
         <div style={{ marginBottom: "20px" }}>
           <SwitchBasic />
@@ -65,7 +65,7 @@ export default Example;
           handleCopy={handleCopy}
         />
 
-        <h2 className="text-[#2D3748]">1.3. Switch Sizes</h2>
+        <h2 className="text-[#2D3748] dark:text-white">1.3. Switch Sizes</h2>
         <p>
           <code>SwitchBasic</code> 컴포넌트는 다양한 크기로 제공됩니다. 기본
           예시는 3가지 크기에서 작동하는 스위치를 보여줍니다:
@@ -81,7 +81,7 @@ export default Example;
             <strong>Large:</strong> 큰 크기의 스위치
           </li>
         </ul>
-        <div className="space-y-4">
+        <div className="space-y-7">
           <SwitchBasic />
         </div>
         <CodeBox
@@ -117,7 +117,7 @@ export default Example;
           handleCopy={handleCopy}
         />
 
-        <h2 className="text-[#2D3748]">1.4. Props</h2>
+        <h2 className="text-[#2D3748] dark:text-white">1.4. Props</h2>
         <p>
           <code>SwitchBasic</code> 컴포넌트는 아래와 같은 Props를 가집니다:
         </p>
@@ -158,7 +158,7 @@ export default Example;
           </tbody>
         </table>
 
-        <h2 className="text-[#2D3748]">1.5. Full Example</h2>
+        <h2 className="text-[#2D3748] dark:text-white">1.5. Full Example</h2>
         <CodeBox
           code={`
 import SwitchBasic from '@components/Switch/SwitchBasic';
@@ -194,15 +194,15 @@ export default Example;
       </div>
       <hr />
       {/* switch2 */}
-      <div className="">
-        <h1 className="text-[#2D3748]">2. SwitchHorizental</h1>
+      <div className="dark:text-white">
+        <h1 className="text-[#2D3748] dark:text-white">2. SwitchHorizental</h1>
         <p>
           <code>SwitchHorizental</code> 컴포넌트는 수직 방향으로 토글할 수 있는
           스위치 UI 요소입니다. 클릭 시 스위치의 상태가 위아래로 전환되며,
           다양한 크기로 제공됩니다.
         </p>
 
-        <h2 className="text-[#2D3748]">2.1. Import</h2>
+        <h2 className="text-[#2D3748] dark:text-white">2.1. Import</h2>
         <CodeBox
           code={`import SwitchHorizental from '@components/Switch/SwitchHorizental';`}
           copyText={`import SwitchHorizental from '@components/Switch/SwitchHorizental';`}
@@ -212,7 +212,7 @@ export default Example;
           handleCopy={handleCopy}
         />
 
-        <h2 className="text-[#2D3748]">2.2. Usage</h2>
+        <h2 className="text-[#2D3748] dark:text-white">2.2. Usage</h2>
         <p>기본 사용 예제는 아래와 같습니다:</p>
         <div style={{ marginBottom: "20px" }}>
           <SwitchHorizental />
@@ -242,7 +242,7 @@ export default Example;
           handleCopy={handleCopy}
         />
 
-        <h2 className="text-[#2D3748]">2.3. Switch Sizes</h2>
+        <h2 className="text-[#2D3748] dark:text-white">2.3. Switch Sizes</h2>
         <p>
           <code>SwitchHorizental</code> 컴포넌트는 다양한 크기로 제공됩니다.
           아래 예시에서는 세 가지 크기의 수직 스위치를 보여줍니다:
@@ -258,7 +258,7 @@ export default Example;
             <strong>Large:</strong> 큰 크기의 수직 스위치
           </li>
         </ul>
-        <div className="space-y-4">
+        <div className="space-y-7">
           <SwitchHorizental />
         </div>
         <CodeBox
@@ -294,7 +294,7 @@ export default Example;
           handleCopy={handleCopy}
         />
 
-        <h2 className="text-[#2D3748]">2.4. Props</h2>
+        <h2 className="text-[#2D3748] dark:text-white">2.4. Props</h2>
         <p>
           <code>SwitchHorizental</code> 컴포넌트는 아래와 같은 Props를 가집니다:
         </p>
@@ -335,7 +335,7 @@ export default Example;
           </tbody>
         </table>
 
-        <h2 className="text-[#2D3748]">2.5. Full Example</h2>
+        <h2 className="text-[#2D3748] dark:text-white">2.5. Full Example</h2>
         <CodeBox
           code={`
 import SwitchHorizental from '@components/Switch/SwitchHorizental';
@@ -371,15 +371,15 @@ export default Example;
       </div>
       <hr />
       {/* switch3 */}
-      <div className="">
-        <h1 className="text-[#2D3748]">3. SwitchLong</h1>
+      <div className="dark:text-white">
+        <h1 className="text-[#2D3748] dark:text-white">3. SwitchLong</h1>
         <p>
           <code>SwitchLong</code> 컴포넌트는 넓은 영역에서 토글할 수 있는 스위치
           UI 요소입니다. 스위치의 길이에 따라 다양한 크기로 제공되며, 클릭 시
           스위치의 상태가 좌우로 전환됩니다.
         </p>
 
-        <h2 className="text-[#2D3748]">3.1. Import</h2>
+        <h2 className="text-[#2D3748] dark:text-white">3.1. Import</h2>
         <CodeBox
           code={`import SwitchLong from '@components/Switch/SwitchLong';`}
           copyText={`import SwitchLong from '@components/Switch/SwitchLong';`}
@@ -389,7 +389,7 @@ export default Example;
           handleCopy={handleCopy}
         />
 
-        <h2 className="text-[#2D3748]">3.2. Usage</h2>
+        <h2 className="text-[#2D3748] dark:text-white">3.2. Usage</h2>
         <p>기본 사용 예제는 아래와 같습니다:</p>
         <div style={{ marginBottom: "20px" }}>
           <SwitchLong />
@@ -419,7 +419,7 @@ export default Example;
           handleCopy={handleCopy}
         />
 
-        <h2 className="text-[#2D3748]">3.3. Switch Sizes</h2>
+        <h2 className="text-[#2D3748] dark:text-white">3.3. Switch Sizes</h2>
         <p>
           <code>SwitchLong</code> 컴포넌트는 다양한 길이와 크기로 제공됩니다.
           아래 예시에서는 세 가지 크기의 긴 스위치를 보여줍니다:
@@ -435,7 +435,7 @@ export default Example;
             <strong>Large:</strong> 긴 길이의 스위치
           </li>
         </ul>
-        <div className="space-y-4">
+        <div className="space-y-7">
           <SwitchLong />
         </div>
         <CodeBox
@@ -471,7 +471,7 @@ export default Example;
           handleCopy={handleCopy}
         />
 
-        <h2 className="text-[#2D3748]">3.4. Props</h2>
+        <h2 className="text-[#2D3748] dark:text-white">3.4. Props</h2>
         <p>
           <code>SwitchLong</code> 컴포넌트는 아래와 같은 Props를 가집니다:
         </p>
@@ -512,7 +512,7 @@ export default Example;
           </tbody>
         </table>
 
-        <h2 className="text-[#2D3748]">3.5. Full Example</h2>
+        <h2 className="text-[#2D3748] dark:text-white">3.5. Full Example</h2>
         <CodeBox
           code={`
 import SwitchLong from '@components/Switch/SwitchLong';
@@ -548,15 +548,15 @@ export default Example;
       </div>
       <hr />
       {/* switch4 */}
-      <div className="">
-        <h1 className="text-[#2D3748]">4. SwitchRound</h1>
+      <div className="dark:text-white">
+        <h1 className="text-[#2D3748] dark:text-white">4. SwitchRound</h1>
         <p>
           <code>SwitchRound</code> 컴포넌트는 둥근 디자인의 토글 스위치입니다.
           클릭 시 상태가 전환되며, 상태에 따라 스위치의 위치와 색상이
           변경됩니다.
         </p>
 
-        <h2 className="text-[#2D3748]">4.1. Import</h2>
+        <h2 className="text-[#2D3748] dark:text-white">4.1. Import</h2>
         <CodeBox
           code={`import SwitchRound from '@components/Switch/SwitchRound';`}
           copyText={`import SwitchRound from '@components/Switch/SwitchRound';`}
@@ -566,7 +566,7 @@ export default Example;
           handleCopy={handleCopy}
         />
 
-        <h2 className="text-[#2D3748]">4.2. Usage</h2>
+        <h2 className="text-[#2D3748] dark:text-white">4.2. Usage</h2>
         <p>기본 사용 예제는 아래와 같습니다:</p>
         <div style={{ marginBottom: "20px" }}>
           <SwitchRound />
@@ -597,7 +597,7 @@ export default Example;
           handleCopy={handleCopy}
         />
 
-        <h2 className="text-[#2D3748]">4.3. Switch Examples</h2>
+        <h2 className="text-[#2D3748] dark:text-white">4.3. Switch Examples</h2>
         <p>
           <code>SwitchRound</code> 컴포넌트는 두 가지 방식으로 상태를 전환하는
           스위치를 제공합니다:
@@ -612,7 +612,7 @@ export default Example;
             전환되며, 스위치가 꺼집니다.
           </li>
         </ul>
-        <div className="space-y-4">
+        <div className="space-y-7">
           <SwitchRound />
         </div>
         <br />
@@ -649,7 +649,7 @@ export default Example;
           handleCopy={handleCopy}
         />
 
-        <h2 className="text-[#2D3748]">4.4. Props</h2>
+        <h2 className="text-[#2D3748] dark:text-white">4.4. Props</h2>
         <p>
           <code>SwitchRound</code> 컴포넌트는 아래와 같은 Props를 가집니다:
         </p>
@@ -690,7 +690,7 @@ export default Example;
           </tbody>
         </table>
 
-        <h2 className="text-[#2D3748]">4.5. Full Example</h2>
+        <h2 className="text-[#2D3748] dark:text-white">4.5. Full Example</h2>
         <CodeBox
           code={`
 import SwitchRound from '@components/Switch/SwitchRound';
@@ -726,15 +726,15 @@ export default Example;
       </div>
       <hr />
       {/* switch5 */}
-      <div className="">
-        <h1 className="text-[#2D3748]">5. SwitchLabeled</h1>
+      <div className="dark:text-white">
+        <h1 className="text-[#2D3748] dark:text-white">5. SwitchLabeled</h1>
         <p>
           <code>SwitchLabeled</code> 컴포넌트는 상태를 시각적으로 표시하는
           레이블이 포함된 토글 스위치입니다. 사용자가 스위치를 클릭하면 상태가
           전환되며, "ON"과 "OFF" 레이블이 상태에 따라 표시됩니다.
         </p>
 
-        <h2 className="text-[#2D3748]">5.1. Import</h2>
+        <h2 className="text-[#2D3748] dark:text-white">5.1. Import</h2>
         <CodeBox
           code={`import SwitchLabeled from '@components/Switch/SwitchLabeled';`}
           copyText={`import SwitchLabeled from '@components/Switch/SwitchLabeled';`}
@@ -744,7 +744,7 @@ export default Example;
           handleCopy={handleCopy}
         />
 
-        <h2 className="text-[#2D3748]">5.2. Usage</h2>
+        <h2 className="text-[#2D3748] dark:text-white">5.2. Usage</h2>
         <p>기본 사용 예제는 아래와 같습니다:</p>
         <div style={{ marginBottom: "20px" }}>
           <SwitchLabeled />
@@ -774,7 +774,7 @@ export default Example;
           handleCopy={handleCopy}
         />
 
-        <h2 className="text-[#2D3748]">5.3. Switch Examples</h2>
+        <h2 className="text-[#2D3748] dark:text-white">5.3. Switch Examples</h2>
         <p>
           <code>SwitchLabeled</code> 컴포넌트는 상태에 따라 "ON"과 "OFF"
           레이블이 표시되는 스위치를 제공합니다. 아래는 두 가지 예시입니다:
@@ -789,7 +789,7 @@ export default Example;
             레이블이 표시됩니다.
           </li>
         </ul>
-        <div className="space-y-4">
+        <div className="space-y-7">
           <SwitchLabeled />
         </div>
         <CodeBox
@@ -825,7 +825,7 @@ export default Example;
           handleCopy={handleCopy}
         />
 
-        <h2 className="text-[#2D3748]">5.4. Props</h2>
+        <h2 className="text-[#2D3748] dark:text-white">5.4. Props</h2>
         <p>
           <code>SwitchLabeled</code> 컴포넌트는 아래와 같은 Props를 가집니다:
         </p>
@@ -866,7 +866,7 @@ export default Example;
           </tbody>
         </table>
 
-        <h2 className="text-[#2D3748]">5.5. Full Example</h2>
+        <h2 className="text-[#2D3748] dark:text-white">5.5. Full Example</h2>
         <CodeBox
           code={`
 import SwitchLabeled from '@components/Switch/SwitchLabeled';

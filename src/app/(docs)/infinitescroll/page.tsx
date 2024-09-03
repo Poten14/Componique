@@ -41,16 +41,18 @@ const InfiniteScrollDocs: React.FC = () => {
   ];
 
   return (
-    <div className="prose max-w-[1000px] p-5 text-[#6D6D6D]">
+    <div className="prose max-w-[1000px] p-5 text-[#6D6D6D] dark:text-[#bdbdbd]">
       {/* infinitescroll1 */}
       <div>
-        <h1 className="text-[#2D3748]">1. InfiniteScrollBasic</h1>
+        <h1 className="text-[#2D3748] dark:text-white">
+          1. InfiniteScrollBasic
+        </h1>
         <p>
           <code>InfiniteScrollBasic</code> 컴포넌트는 사용자가 페이지를 스크롤할
           때마다 새로운 항목을 로드하는 기본적인 인피니티 스크롤을 제공합니다.
           아래는 이 컴포넌트를 사용하는 방법에 대한 설명입니다.
         </p>
-        <h2 className="text-[#2D3748]">1.1. Import</h2>
+        <h2 className="text-[#2D3748] dark:text-white">1.1. Import</h2>
         <CodeBox
           code={`import InfiniteScrollBasic from '@components/InfiniteScroll/InfiniteScrollBasic';`}
           copyText={`import InfiniteScrollBasic from '@components/InfiniteScroll/InfiniteScrollBasic';`}
@@ -60,7 +62,7 @@ const InfiniteScrollDocs: React.FC = () => {
           handleCopy={handleCopy}
         />
 
-        <h2 className="text-[#2D3748]">1.2. Usage</h2>
+        <h2 className="text-[#2D3748] dark:text-white">1.2. Usage</h2>
         <p>기본 사용 예제는 아래와 같습니다:</p>
         <div style={{ marginBottom: "20px" }}>
           <InfiniteScrollBasic content={content} />
@@ -100,7 +102,7 @@ export default Example;`}
           handleCopy={handleCopy}
         />
 
-        <h2 className="text-[#2D3748]">1.3. Props</h2>
+        <h2 className="text-[#2D3748] dark:text-white">1.3. Props</h2>
         <p>
           <code>InfiniteScrollBasic</code> 컴포넌트는 아래와 같은 Props를
           가집니다:
@@ -130,7 +132,7 @@ export default Example;`}
           </tbody>
         </table>
 
-        <h2 className="text-[#2D3748]">1.4. Full Example</h2>
+        <h2 className="text-[#2D3748] dark:text-white">1.4. Full Example</h2>
         <CodeBox
           code={`import InfiniteScrollBasic from '@components/InfiniteScroll/InfiniteScrollBasic';
 
@@ -167,13 +169,15 @@ export default FullExample;`}
       <hr />
       {/* infinitescroll2 */}
       <div className="">
-        <h1 className="text-[#2D3748]">2. InfiniteScrollImage</h1>
+        <h1 className="text-[#2D3748] dark:text-white">
+          2. InfiniteScrollImage
+        </h1>
         <p>
           <code>InfiniteScrollImage</code> 컴포넌트는 사용자가 페이지를 스크롤할
           때마다 새로운 이미지를 로드하는 인피니티 스크롤을 제공합니다. 이
           컴포넌트는 이미지 URL 배열을 받아 이미지를 무한히 로드할 수 있습니다.
         </p>
-        <h2 className="text-[#2D3748]">2.1. Import</h2>
+        <h2 className="text-[#2D3748] dark:text-white">2.1. Import</h2>
         <CodeBox
           code={`import InfiniteScrollImage from '@components/InfiniteScroll/InfiniteScrollImage';`}
           copyText={`import InfiniteScrollImage from '@components/InfiniteScroll/InfiniteScrollImage';`}
@@ -183,7 +187,7 @@ export default FullExample;`}
           handleCopy={handleCopy}
         />
 
-        <h2 className="text-[#2D3748]">2.2. Usage</h2>
+        <h2 className="text-[#2D3748] dark:text-white">2.2. Usage</h2>
         <p>기본 사용 예제는 아래와 같습니다:</p>
         <div style={{ marginBottom: "20px" }}>
           <InfiniteScrollImage images={images} />
@@ -225,7 +229,7 @@ export default Example;`}
           handleCopy={handleCopy}
         />
 
-        <h2 className="text-[#2D3748]">2.3. Props</h2>
+        <h2 className="text-[#2D3748] dark:text-white">2.3. Props</h2>
         <p>
           <code>InfiniteScrollImage</code> 컴포넌트는 아래와 같은 Props를
           가집니다:
@@ -255,7 +259,7 @@ export default Example;`}
           </tbody>
         </table>
 
-        <h2 className="text-[#2D3748]">2.4. Full Example</h2>
+        <h2 className="text-[#2D3748] dark:text-white">2.4. Full Example</h2>
         <CodeBox
           code={`import InfiniteScrollImage from '@components/InfiniteScroll/InfiniteScrollImage';
 
@@ -298,7 +302,9 @@ export default FullExample;`}
       <hr />
       {/* infinitescroll3 */}
       <div className="">
-        <h1 className="text-[#2D3748]">3. InfiniteScrollBlogPosts</h1>
+        <h1 className="text-[#2D3748] dark:text-white">
+          3. InfiniteScrollBlogPosts
+        </h1>
         <p>
           <code>InfiniteScrollBlogPosts</code> 컴포넌트는 외부 API에서 블로그
           포스트 데이터를 가져와 무한 스크롤을 통해 표시하는 예제입니다. 이
@@ -319,7 +325,7 @@ export default FullExample;`}
           항목으로 표시됩니다.
         </p>
 
-        <h2 className="text-[#2D3748]">3.1. Import</h2>
+        <h2 className="text-[#2D3748] dark:text-white">3.1. Import</h2>
         <CodeBox
           code={`import InfiniteScrollBlogPosts from '@components/InfiniteScroll/InfiniteScrollBlogPosts';`}
           copyText={`import InfiniteScrollBlogPosts from '@components/InfiniteScroll/InfiniteScrollBlogPosts';`}
@@ -329,7 +335,7 @@ export default FullExample;`}
           handleCopy={handleCopy}
         />
 
-        <h2 className="text-[#2D3748]">3.2. Usage</h2>
+        <h2 className="text-[#2D3748] dark:text-white">3.2. Usage</h2>
         <p>기본 사용 예제는 아래와 같습니다:</p>
         <div style={{ marginBottom: "20px" }}>
           <InfiniteScrollKoJson />
@@ -355,13 +361,13 @@ export default Example;`}
           handleCopy={handleCopy}
         />
 
-        <h2 className="text-[#2D3748]">3.3. Props</h2>
+        <h2 className="text-[#2D3748] dark:text-white">3.3. Props</h2>
         <p>
           <code>InfiniteScrollBlogPosts</code> 컴포넌트는 별도의 props를
           사용하지 않으며, 내부에서 데이터를 가져와 표시하는 기능을 수행합니다.
         </p>
 
-        <h2 className="text-[#2D3748]">3.4. Full Example</h2>
+        <h2 className="text-[#2D3748] dark:text-white">3.4. Full Example</h2>
         <CodeBox
           code={`import { useState, useEffect } from "react";
 import InfiniteScrollBasic from "./InfiniteScrollBasic";
