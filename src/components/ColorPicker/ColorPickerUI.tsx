@@ -16,7 +16,7 @@ const ColorPickerUI: React.FC<ColorPickerProps> = ({ colors }) => {
   };
   return (
     <>
-      <div className="w-72 space-y-4 rounded-lg bg-slate-100 py-9 text-center">
+      <div className="w-72 space-y-4 rounded-lg bg-slate-100 py-9 text-center dark:bg-[#2A2E39]">
         <div className="flex items-center justify-center">
           <input
             type="text"
@@ -49,7 +49,7 @@ const ColorPickerUI: React.FC<ColorPickerProps> = ({ colors }) => {
             {colors.map((item, index) => (
               <div
                 key={index}
-                className={`h-[33px] w-[33px] rounded border border-slate-200 ${selectColor === item ? "border-2 border-slate-500" : ""}`}
+                className={`h-[33px] w-[33px] rounded border border-slate-200 dark:border-slate-800 ${selectColor === item ? "border-2 border-slate-500 dark:border-slate-200" : ""}`}
                 style={{ backgroundColor: item }}
                 onClick={() => {
                   //console.log(item);
