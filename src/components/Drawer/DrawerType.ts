@@ -20,8 +20,7 @@ export type DrawerProps = {
     | "basic"
     | "white"
     | "gray"
-    | "black"
-    | "dark";
+    | "black";
   bgColor?:
     | "primary"
     | "secondary"
@@ -38,8 +37,7 @@ export type DrawerProps = {
     | "basic"
     | "white"
     | "gray"
-    | "black"
-    | "dark";
+    | "black";
   position?: "top" | "bottom" | "left" | "right";
   className?: string;
 };
