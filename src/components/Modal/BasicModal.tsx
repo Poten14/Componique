@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { ExtraSize } from "types/type";
 
 export interface ButtonProps {
@@ -6,6 +6,7 @@ export interface ButtonProps {
   variant?: "primary" | "secondary" | "danger";
   onClick?: () => void;
 }
+
 interface ModalProps {
   open: boolean;
   size?: ExtraSize | "full";
@@ -13,7 +14,7 @@ interface ModalProps {
   children?: any;
   primaryButton?: ButtonProps;
   secondaryButton?: ButtonProps;
-  showCloseIcon?: boolean; // 닫기 아이콘 표시 여부
+  showCloseIcon?: boolean;
 }
 
 const sizeClasses = {
@@ -26,9 +27,9 @@ const sizeClasses = {
 };
 
 const buttonClasses = {
-  primary: "bg-Basic text-white px-4 py-2 rounded-md",
-  secondary: "bg-gray text-white px-4 py-2 rounded-md",
-  danger: "bg-danger text-white px-4 py-2 rounded-md",
+  primary: "px-4 py-2 rounded-md",
+  secondary: "px-4 py-2 rounded-md",
+  danger: "px-4 py-2 rounded-md",
 };
 
 export const BasicModal: React.FC<ModalProps> = ({
@@ -40,6 +41,29 @@ export const BasicModal: React.FC<ModalProps> = ({
   children,
   showCloseIcon = true,
 }) => {
+  const [isDarkMode, setIsDarkMode] = useState(false);
+
+  useEffect(() => {
+    const checkDarkMode = () => {
+      const darkMode = document.documentElement.classList.contains("dark");
+      setIsDarkMode(darkMode);
+    };
+
+    checkDarkMode();
+    window.addEventListener("storage", checkDarkMode);
+
+    const observer = new MutationObserver(checkDarkMode);
+    observer.observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ["class"],
+    });
+
+    return () => {
+      window.removeEventListener("storage", checkDarkMode);
+      observer.disconnect();
+    };
+  }, []);
+
   if (!open) return null;
 
   return (
@@ -48,13 +72,18 @@ export const BasicModal: React.FC<ModalProps> = ({
       style={{ margin: 0 }}
     >
       <div
-        className={`relative rounded-lg bg-white p-6 shadow-lg ${sizeClasses[size]}`}
-        onClick={(e) => e.stopPropagation()} // 모달 내부를 클릭하면 이벤트가 div 태그에서 부모로 전파되지 않도록 막기
+        className={`relative rounded-lg p-6 shadow-lg ${sizeClasses[size]} ${
+          isDarkMode ? "bg-[#2A2E39] text-white" : "bg-white text-black"
+        }`}
+        onClick={(e) => e.stopPropagation()}
       >
-        {/* 닫기 아이콘 */}
         {showCloseIcon && (
           <button
-            className="text-gray-500 hover:text-gray-700 absolute right-2 top-2"
+            className={`absolute right-2 top-2 ${
+              isDarkMode
+                ? "text-gray-300 hover:text-gray-100"
+                : "text-gray-500 hover:text-gray-700"
+            }`}
             onClick={onClose}
           >
             &times;
@@ -65,7 +94,9 @@ export const BasicModal: React.FC<ModalProps> = ({
           {secondaryButton && (
             <button
               onClick={secondaryButton.onClick || onClose}
-              className={buttonClasses[secondaryButton.variant || "secondary"]}
+              className={`${buttonClasses.secondary} ${
+                isDarkMode ? "bg-Gray text-white" : "bg-gray text-white"
+              }`}
             >
               {secondaryButton.text}
             </button>
@@ -73,7 +104,9 @@ export const BasicModal: React.FC<ModalProps> = ({
           {primaryButton && (
             <button
               onClick={primaryButton.onClick || onClose}
-              className={buttonClasses[primaryButton.variant || "primary"]}
+              className={`${buttonClasses.primary} ${
+                isDarkMode ? "bg-Navy text-white" : "bg-Basic text-white"
+              }`}
             >
               {primaryButton.text}
             </button>
