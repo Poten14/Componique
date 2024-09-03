@@ -146,6 +146,14 @@ const SideBar = () => {
             >
               Infinite Scroll
             </li>
+            <li
+              className="cursor-pointer hover:text-Basic"
+              onClick={() => {
+                router.push("/imageupload");
+              }}
+            >
+              Image Upload
+            </li>
           </ul>
         </li>
 
