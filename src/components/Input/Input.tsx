@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { ExtraSize } from "types/type";
 
 type InputVariant = "outlined" | "filled";
@@ -22,7 +22,7 @@ const sizeClasses = {
 const variantClasses = {
   outlined: "border border-Primary bg-white",
   filled:
-    "bg-[#9AC5E5] focus:border-white text-white placeholder-white border-none",
+    "bg-[#9AC5E5] dark:bg-Navy focus:border-white text-white placeholder-white border-none",
 };
 
 const Input: React.FC<InputProps> = ({
@@ -32,10 +32,37 @@ const Input: React.FC<InputProps> = ({
   value,
   onChange,
 }) => {
+  const [isDarkMode, setIsDarkMode] = useState(false);
+
+  useEffect(() => {
+    const checkDarkMode = () => {
+      const darkMode = document.documentElement.classList.contains("dark");
+      setIsDarkMode(darkMode);
+    };
+
+    checkDarkMode(); // 초기 다크 모드 상태 체크
+    window.addEventListener("storage", checkDarkMode);
+
+    const observer = new MutationObserver(checkDarkMode);
+    observer.observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ["class"],
+    });
+
+    return () => {
+      window.removeEventListener("storage", checkDarkMode);
+      observer.disconnect();
+    };
+  }, []);
+
   return (
     <input
       type="text"
-      className={`rounded-md focus:border-Basic ${variantClasses[variant]} ${sizeClasses[size]} md:w-1/4 lg:w-2/3 xl:w-3/5`}
+      className={`rounded-md focus:border-Basic ${
+        isDarkMode
+          ? "border-Navy border bg-transparent text-white placeholder-white"
+          : variantClasses[variant]
+      } ${sizeClasses[size]} md:w-1/4 lg:w-2/3 xl:w-3/5`}
       placeholder={placeholder}
       value={value}
       onChange={onChange}

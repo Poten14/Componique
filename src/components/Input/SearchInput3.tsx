@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Size } from "types/type";
 
 type ButtonColor =
@@ -20,7 +20,7 @@ interface SearchInputProps
 const sizeClasses = {
   small: "w-[200px] h-[30px] text-sm",
   medium: "w-[450px] h-[40px] text-base",
-  large: "w-[500px] h-[50px]  text-lg",
+  large: "w-[500px] h-[50px] text-lg",
 };
 
 const colorClasses = {
@@ -42,18 +42,49 @@ const SearchInput3: React.FC<SearchInputProps> = ({
   color = "Basic",
   ...props
 }) => {
+  const [isDarkMode, setIsDarkMode] = useState(false);
+
+  useEffect(() => {
+    const checkDarkMode = () => {
+      const darkMode = document.documentElement.classList.contains("dark");
+      setIsDarkMode(darkMode);
+    };
+
+    checkDarkMode(); // 초기 다크 모드 상태 체크
+    window.addEventListener("storage", checkDarkMode);
+
+    const observer = new MutationObserver(checkDarkMode);
+    observer.observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ["class"],
+    });
+
+    return () => {
+      window.removeEventListener("storage", checkDarkMode);
+      observer.disconnect();
+    };
+  }, []);
+
   return (
-    <div className={`flex w-[400px] items-center ${sizeClasses[size]}`}>
+    <div
+      className={`flex items-center ${sizeClasses[size]} ${
+        isDarkMode ? "bg-transparent" : "bg-white"
+      }`}
+    >
       <input
         type="text"
-        className={`placeholder-gray-500 flex-grow rounded-l-md border border-gray bg-white px-4 py-2 focus:outline-none`}
+        className={`placeholder-gray-500 border-r-none flex-grow rounded-l-md border-b border-l border-t border-gray px-4 py-2 focus:outline-none ${
+          isDarkMode ? "border-Navy bg-transparent text-white" : ""
+        }`}
         placeholder={placeholder}
         value={value}
         onChange={onChange}
         {...props} // 확장된 모든 속성을 전달
       />
       <button
-        className={`rounded-r-md ${colorClasses[color]} transform px-4 py-2.5 transition-transform duration-150 ease-in-out focus:outline-none active:scale-95 active:bg-opacity-90`}
+        className={`rounded-r-md ${colorClasses[color]} transform px-4 py-2.5 transition-transform duration-150 ease-in-out focus:outline-none active:scale-95 active:bg-opacity-90 ${
+          isDarkMode ? "bg-opacity-75" : ""
+        }`}
         onClick={onButtonClick}
       >
         {buttonText}
