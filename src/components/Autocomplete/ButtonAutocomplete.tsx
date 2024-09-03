@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 type ButtonColor =
   | "Basic"
@@ -58,6 +58,28 @@ const ButtonAutocomplete: React.FC<AutocompleteProps> = ({
   const [inputValue, setInputValue] = useState("");
   const [filteredOptions, setFilteredOptions] = useState<string[]>([]);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [isDarkMode, setIsDarkMode] = useState(false);
+
+  useEffect(() => {
+    const checkDarkMode = () => {
+      const darkMode = document.documentElement.classList.contains("dark");
+      setIsDarkMode(darkMode);
+    };
+
+    checkDarkMode();
+    window.addEventListener("storage", checkDarkMode);
+
+    const observer = new MutationObserver(checkDarkMode);
+    observer.observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ["class"],
+    });
+
+    return () => {
+      window.removeEventListener("storage", checkDarkMode);
+      observer.disconnect();
+    };
+  }, []);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
@@ -85,7 +107,11 @@ const ButtonAutocomplete: React.FC<AutocompleteProps> = ({
         onFocus={() => setIsDropdownOpen(true)}
         onBlur={() => setIsDropdownOpen(false)}
         placeholder={placeholder}
-        className={`w-full ${height} border border-gray bg-transparent p-3 ${
+        className={`w-full ${height} border ${
+          isDarkMode
+            ? "border-gray-600 bg-[#2A2E39] text-white"
+            : "border-gray bg-white text-black"
+        } p-3 ${
           radius === "full" ? "rounded-full" : radiusClasses[radius]
         } focus:border-transparent focus:outline-none focus:ring-2 ${colorClasses[color]}`}
         style={{ height }}
@@ -101,14 +127,18 @@ const ButtonAutocomplete: React.FC<AutocompleteProps> = ({
       </button>
       {isDropdownOpen && (
         <ul
-          className="absolute left-0 right-0 z-10 mt-1 max-h-40 overflow-y-auto rounded-md bg-white shadow-lg"
+          className={`absolute left-0 right-0 z-10 mt-3 max-h-40 overflow-y-auto rounded-md shadow-lg ${
+            isDarkMode ? "bg-[#2A2E39] text-white" : "bg-white text-black"
+          }`}
           onMouseDown={(e) => e.preventDefault()}
         >
           {filteredOptions.length > 0 ? (
             filteredOptions.map((option, index) => (
               <li
                 key={index}
-                className="hover:bg-gray-200 m-3 cursor-pointer p-2"
+                className={`hover:bg-gray-200 m-3 cursor-pointer p-2 ${
+                  isDarkMode ? "hover:bg-gray-700" : ""
+                }`}
                 onMouseDown={(e) => e.preventDefault()}
                 onClick={() => handleOptionClick(option)}
               >
@@ -116,7 +146,13 @@ const ButtonAutocomplete: React.FC<AutocompleteProps> = ({
               </li>
             ))
           ) : (
-            <li className="text-gray-500 m-3 p-2">{noOptionsMessage}</li>
+            <li
+              className={`m-3 p-2 ${
+                isDarkMode ? "text-gray-400" : "text-gray-500"
+              }`}
+            >
+              {noOptionsMessage}
+            </li>
           )}
         </ul>
       )}
