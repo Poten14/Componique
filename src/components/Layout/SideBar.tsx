@@ -1,7 +1,10 @@
 "use client";
-import { useRouter } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
+
 const SideBar = () => {
   const router = useRouter();
+  const pathname = usePathname();
+
   return (
     <>
       <ul className="mx-4 h-full select-none overflow-y-auto dark:bg-[#252629]">
@@ -11,82 +14,82 @@ const SideBar = () => {
           </span>
           <ul className="ml-6 space-y-1">
             <li
-              className="cursor-pointer hover:text-Basic"
-              onClick={() => {
-                router.push("/button");
-              }}
+              className={`cursor-pointer hover:text-Basic ${
+                pathname === "/button" ? "text-Basic" : ""
+              }`}
+              onClick={() => router.push("/button")}
             >
               Button
             </li>
             <li
-              className="cursor-pointer hover:text-Basic"
-              onClick={() => {
-                router.push("/checkbox");
-              }}
+              className={`cursor-pointer hover:text-Basic ${
+                pathname === "/checkbox" ? "text-Basic" : ""
+              }`}
+              onClick={() => router.push("/checkbox")}
             >
               CheckBox
             </li>
             <li
-              className="cursor-pointer hover:text-Basic"
-              onClick={() => {
-                router.push("/input");
-              }}
+              className={`cursor-pointer hover:text-Basic ${
+                pathname === "/input" ? "text-Basic" : ""
+              }`}
+              onClick={() => router.push("/input")}
             >
               Input
             </li>
             <li
-              className="cursor-pointer hover:text-Basic"
-              onClick={() => {
-                router.push("/radiobutton");
-              }}
+              className={`cursor-pointer hover:text-Basic ${
+                pathname === "/radiobutton" ? "text-Basic" : ""
+              }`}
+              onClick={() => router.push("/radiobutton")}
             >
               Radio Button
             </li>
             <li
-              className="cursor-pointer hover:text-Basic"
-              onClick={() => {
-                router.push("/textarea");
-              }}
+              className={`cursor-pointer hover:text-Basic ${
+                pathname === "/textarea" ? "text-Basic" : ""
+              }`}
+              onClick={() => router.push("/textarea")}
             >
               Textarea
             </li>
             <li
-              className="cursor-pointer hover:text-Basic"
-              onClick={() => {
-                router.push("/select");
-              }}
+              className={`cursor-pointer hover:text-Basic ${
+                pathname === "/select" ? "text-Basic" : ""
+              }`}
+              onClick={() => router.push("/select")}
             >
               Select
             </li>
             <li
-              className="cursor-pointer hover:text-Basic"
-              onClick={() => {
-                router.push("/dropdown");
-              }}
+              className={`cursor-pointer hover:text-Basic ${
+                pathname === "/dropdown" ? "text-Basic" : ""
+              }`}
+              onClick={() => router.push("/dropdown")}
             >
               DropDown
             </li>
             <li
-              className="cursor-pointer hover:text-Basic"
-              onClick={() => {
-                router.push("/autocomplete");
-              }}
+              className={`cursor-pointer hover:text-Basic ${
+                pathname === "/autocomplete" ? "text-Basic" : ""
+              }`}
+              onClick={() => router.push("/autocomplete")}
             >
               AutoComplete
             </li>
             <li
-              className="cursor-pointer hover:text-Basic"
-              onClick={() => {
-                router.push("/colorpicker");
-              }}
+              className={`cursor-pointer hover:text-Basic ${
+                pathname === "/colorpicker" ? "text-Basic" : ""
+              }`}
+              onClick={() => router.push("/colorpicker")}
             >
               ColorPicker
             </li>
             <li
-              className="cursor-pointer hover:text-Basic"
-              onClick={() => {
-                router.push("/switch");
-              }}
+              className={`cursor-pointer hover:text-Basic ${
+                pathname === "/switch" ? "text-Basic" : ""
+              }`}
+              onClick={() => router.push("/switch")}
             >
               Switch
             </li>
@@ -99,58 +102,58 @@ const SideBar = () => {
           </span>
           <ul className="ml-6 space-y-1 dark:text-[#DFDFDF]">
             <li
-              className="cursor-pointer hover:text-Basic"
-              onClick={() => {
-                router.push("/card");
-              }}
+              className={`cursor-pointer hover:text-Basic ${
+                pathname === "/card" ? "text-Basic" : ""
+              }`}
+              onClick={() => router.push("/card")}
             >
               Card
             </li>
             <li
-              className="cursor-pointer hover:text-Basic"
-              onClick={() => {
-                router.push("/carousel");
-              }}
+              className={`cursor-pointer hover:text-Basic ${
+                pathname === "/carousel" ? "text-Basic" : ""
+              }`}
+              onClick={() => router.push("/carousel")}
             >
               Carousel
             </li>
             <li
-              className="cursor-pointer hover:text-Basic"
-              onClick={() => {
-                router.push("/calendar");
-              }}
+              className={`cursor-pointer hover:text-Basic ${
+                pathname === "/calendar" ? "text-Basic" : ""
+              }`}
+              onClick={() => router.push("/calendar")}
             >
               Calendar
             </li>
             <li
-              className="cursor-pointer hover:text-Basic"
-              onClick={() => {
-                router.push("/avatar");
-              }}
+              className={`cursor-pointer hover:text-Basic ${
+                pathname === "/avatar" ? "text-Basic" : ""
+              }`}
+              onClick={() => router.push("/avatar")}
             >
               Avatar
             </li>
             <li
-              className="cursor-pointer hover:text-Basic"
-              onClick={() => {
-                router.push("/icon");
-              }}
+              className={`cursor-pointer hover:text-Basic ${
+                pathname === "/icon" ? "text-Basic" : ""
+              }`}
+              onClick={() => router.push("/icon")}
             >
               Icon
             </li>
             <li
-              className="cursor-pointer hover:text-Basic"
-              onClick={() => {
-                router.push("/infinitescroll");
-              }}
+              className={`cursor-pointer hover:text-Basic ${
+                pathname === "/infinitescroll" ? "text-Basic" : ""
+              }`}
+              onClick={() => router.push("/infinitescroll")}
             >
               Infinite Scroll
             </li>
             <li
-              className="cursor-pointer hover:text-Basic"
-              onClick={() => {
-                router.push("/imageupload");
-              }}
+              className={`cursor-pointer hover:text-Basic ${
+                pathname === "/imageupload" ? "text-Basic" : ""
+              }`}
+              onClick={() => router.push("/imageupload")}
             >
               Image Upload
             </li>
@@ -163,34 +166,34 @@ const SideBar = () => {
           </span>
           <ul className="ml-6 space-y-1 dark:text-[#DFDFDF]">
             <li
-              className="cursor-pointer hover:text-Basic"
-              onClick={() => {
-                router.push("/spinner");
-              }}
+              className={`cursor-pointer hover:text-Basic ${
+                pathname === "/spinner" ? "text-Basic" : ""
+              }`}
+              onClick={() => router.push("/spinner")}
             >
               Spinner
             </li>
             <li
-              className="cursor-pointer hover:text-Basic"
-              onClick={() => {
-                router.push("/toast");
-              }}
+              className={`cursor-pointer hover:text-Basic ${
+                pathname === "/toast" ? "text-Basic" : ""
+              }`}
+              onClick={() => router.push("/toast")}
             >
               Toast
             </li>
             <li
-              className="cursor-pointer hover:text-Basic"
-              onClick={() => {
-                router.push("/skeleton");
-              }}
+              className={`cursor-pointer hover:text-Basic ${
+                pathname === "/skeleton" ? "text-Basic" : ""
+              }`}
+              onClick={() => router.push("/skeleton")}
             >
               Skeleton
             </li>
             <li
-              className="cursor-pointer hover:text-Basic"
-              onClick={() => {
-                router.push("/modal");
-              }}
+              className={`cursor-pointer hover:text-Basic ${
+                pathname === "/modal" ? "text-Basic" : ""
+              }`}
+              onClick={() => router.push("/modal")}
             >
               Modal
             </li>
@@ -203,26 +206,26 @@ const SideBar = () => {
           </span>
           <ul className="ml-6 space-y-1 dark:text-[#DFDFDF]">
             <li
-              className="cursor-pointer hover:text-Basic"
-              onClick={() => {
-                router.push("/pagination");
-              }}
+              className={`cursor-pointer hover:text-Basic ${
+                pathname === "/pagination" ? "text-Basic" : ""
+              }`}
+              onClick={() => router.push("/pagination")}
             >
               Pagination
             </li>
             <li
-              className="cursor-pointer hover:text-Basic"
-              onClick={() => {
-                router.push("/drawer");
-              }}
+              className={`cursor-pointer hover:text-Basic ${
+                pathname === "/drawer" ? "text-Basic" : ""
+              }`}
+              onClick={() => router.push("/drawer")}
             >
               Drawer
             </li>
             <li
-              className="cursor-pointer hover:text-Basic"
-              onClick={() => {
-                router.push("/navbar");
-              }}
+              className={`cursor-pointer hover:text-Basic ${
+                pathname === "/navbar" ? "text-Basic" : ""
+              }`}
+              onClick={() => router.push("/navbar")}
             >
               Navbar
             </li>
@@ -232,4 +235,5 @@ const SideBar = () => {
     </>
   );
 };
+
 export default SideBar;
