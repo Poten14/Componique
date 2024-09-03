@@ -124,6 +124,11 @@ const Header = () => {
                   path: "/infinitescroll",
                   className: "py-0",
                 },
+                {
+                  name: "Image Upload",
+                  path: "/imageupload",
+                  className: "py-0",
+                },
               ],
             },
             {
