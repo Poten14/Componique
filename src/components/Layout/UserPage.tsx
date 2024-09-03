@@ -8,9 +8,9 @@ const UserPage = () => {
   return (
     <>
       <Button
-        className="mr-4 w-[145px] text-[#555555] dark:text-white"
+        className="mr-4 w-[145px] text-[#555555] dark:bg-[#333742] dark:text-white"
         radius="full"
-        iconColor="#555555"
+        iconColor="#fff"
         icon="icon-user"
         onClick={() => {
           router.push("/");
