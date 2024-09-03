@@ -1,5 +1,4 @@
 import Quickmenu from "@components/Quickmenu/Quickmenu";
-import "../docs.css";
 
 export const metadata = {
   title: "Componique",

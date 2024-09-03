@@ -84,7 +84,7 @@ const Page = () => {
   const logoSrc = isDarkMode ? "/ComponiqueDark.svg" : "/Componique.svg";
 
   return (
-    <div className="main-wrapper">
+    <div className="main-wrapper xl:ml-[300px]">
       <div className="mt-16 flex flex-col items-center justify-center">
         <div className="mb-8 w-full max-w-[440px]">
           <Image src={logoSrc} alt="logo" width={440} height={72} />
