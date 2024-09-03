@@ -16,11 +16,34 @@ const Drawer: React.FC<DrawerProps> = ({
   position = "left",
 }) => {
   const [isDrawerOpen, setIsDrawerOpen] = useState(isOpen);
+  const [isDarkMode, setIsDarkMode] = useState(false); // 다크 모드 상태 추가
   const router = useRouter();
 
   useEffect(() => {
     setIsDrawerOpen(isOpen);
   }, [isOpen]);
+
+  useEffect(() => {
+    // 다크 모드 상태 체크 함수
+    const checkDarkMode = () => {
+      const darkMode = document.documentElement.classList.contains("dark");
+      setIsDarkMode(darkMode);
+    };
+
+    checkDarkMode(); // 초기 다크 모드 상태 체크
+    window.addEventListener("storage", checkDarkMode);
+
+    const observer = new MutationObserver(checkDarkMode);
+    observer.observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ["class"],
+    });
+
+    return () => {
+      window.removeEventListener("storage", checkDarkMode);
+      observer.disconnect();
+    };
+  }, []);
 
   const onclickCloseHandler = () => {
     setIsDrawerOpen(false);
@@ -71,10 +94,11 @@ const Drawer: React.FC<DrawerProps> = ({
     purple: "bg-purple-500",
     pink: "bg-pink-500",
     basic: "bg-Basic",
-    white: "bg-white",
-    gray: "bg-gray",
+    white: "bg-white dark:bg-[#252629]", // 다크 모드일 때 bg 변경
+    gray: "bg-gray-200",
     black: "bg-black",
-    dark: "bg-[#252629]", // 다크 모드에 대한 색상 추가
+    dark: "bg-[#252629] dark:bg-[#1B1C1E]",
+    custom: "bg-[#252629]", // 원하는 색상 추가
   };
 
   let location = "";
@@ -100,13 +124,13 @@ const Drawer: React.FC<DrawerProps> = ({
     position === "top" || position === "bottom"
       ? "h-auto w-full"
       : "h-full w-[300px]" // 기본 너비를 300px로 설정하고 필요에 따라 조정
-  } transition-transform duration-500 ease-in-out ${bgColors[bgColor]}`;
+  } transition-transform duration-500 ease-in-out bg-white dark:bg-[#252629]`;
 
   return (
     <section
-      className={`fixed left-0 top-0 z-50 h-full w-full select-none bg-black bg-opacity-50 transition-opacity duration-500 ease-in-out ${className || ""} ${
+      className={`fixed left-0 top-0 z-50 h-full w-full select-none bg-black bg-opacity-50 transition-opacity duration-500 ease-in-out ${
         isDrawerOpen ? "opacity-100" : "pointer-events-none opacity-0"
-      }`}
+      } ${className || ""}`}
       onClick={onClickBackgroundHandler}
     >
       <div
@@ -129,8 +153,8 @@ const Drawer: React.FC<DrawerProps> = ({
             className="group relative h-8 w-8 bg-transparent"
             onClick={onclickCloseHandler}
           >
-            <span className="dark:bg-dark absolute left-1/2 top-1/2 block h-1 w-full -translate-x-1/2 -translate-y-1/2 rotate-45 transform bg-white"></span>
-            <span className="dark:bg-dark absolute left-1/2 top-1/2 block h-1 w-full -translate-x-1/2 -translate-y-1/2 -rotate-45 transform bg-white"></span>
+            <span className="absolute left-1/2 top-1/2 block h-1 w-full -translate-x-1/2 -translate-y-1/2 rotate-45 transform bg-white dark:bg-[#1B1C1E]"></span>
+            <span className="absolute left-1/2 top-1/2 block h-1 w-full -translate-x-1/2 -translate-y-1/2 -rotate-45 transform bg-white dark:bg-[#1B1C1E]"></span>
           </button>
         </div>
 
@@ -140,8 +164,9 @@ const Drawer: React.FC<DrawerProps> = ({
           }`}
           onClick={onClickLogoCloseHandler}
         >
+          {/* 로고 경로를 다크 모드 상태에 따라 동적으로 변경 */}
           <img
-            src={logo}
+            src={isDarkMode ? "/LogoDark.svg" : logo}
             className={`cursor-pointer text-center ${
               position === "top" || position === "bottom"
                 ? "w-[300px]"
@@ -162,11 +187,15 @@ const Drawer: React.FC<DrawerProps> = ({
           {menu?.map((group, index) => (
             <li
               key={index}
-              className={`mb-4 ${position === "top" || position === "bottom" ? "w-full" : ""}`}
+              className={`mb-4 ${
+                position === "top" || position === "bottom" ? "w-full" : ""
+              }`}
             >
               {group.groupName && (
                 <div
-                  className={`mx-2 mb-2 rounded px-2 font-semibold text-white ${group.groupNameClassName || ""}`}
+                  className={`mx-2 mb-2 rounded px-2 font-semibold text-white dark:text-[#9AC5E5] ${
+                    group.groupNameClassName || ""
+                  }`}
                 >
                   {group.groupName}
                 </div>
@@ -179,9 +208,11 @@ const Drawer: React.FC<DrawerProps> = ({
                       position === "top" || position === "bottom"
                         ? "mx-auto mb-2 w-[90%] text-center"
                         : "mx-2"
-                    } box-border cursor-pointer overflow-hidden text-ellipsis whitespace-nowrap rounded px-5 py-2 hover:bg-gray ${
-                      color ? bgColors[color] : "bg-[#F8F8F8]"
-                    } ${color === "black" ? "text-white" : ""} ${item.className || ""}`}
+                    } hover:bg-gray-200 dark:hover:bg-gray-600 box-border cursor-pointer overflow-hidden text-ellipsis whitespace-nowrap rounded px-5 py-2 ${
+                      color ? bgColors[color] : "bg-[#F8F8F8] dark:bg-[#2A2E39]"
+                    } ${color === "black" ? "text-white" : ""} ${
+                      item.className || ""
+                    }`}
                     onClick={() => onClickMenuCloseHandler(item.path)}
                   >
                     {item.icon && (

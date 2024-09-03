@@ -73,16 +73,17 @@ const Header = () => {
         </Button>
         <Drawer
           isOpen={isDrawerOpen}
-          className="text-[#3e3e3e]"
+          className="bg-white text-[#3e3e3e] dark:bg-[#252629] dark:text-white" // 다크 모드에서 텍스트 및 배경색 변경
           onClose={onclickDrawerHandler(false)}
           color="white"
-          bgColor="white"
-          logo="/componique_logo_full.svg"
+          bgColor="white" // 기본 모드에서는 white 사용
+          logo={isDarkMode ? "/LogoDark.svg" : "/componique_logo_full.svg"} // 다크 모드에 따라 로고 변경
           position="right"
           menu={[
             {
               groupName: "FORM",
-              groupNameClassName: "!text-[#9AC5E5] bg-[#f8f8f8] py-2",
+              groupNameClassName:
+                "!text-[#9AC5E5] dark:!text-[#2A6490] bg-[#f8f8f8] dark:bg-[#2A2E39] py-2",
               items: [
                 { name: "Button", path: "/button", className: "py-0" },
                 { name: "CheckBox", path: "/checkbox", className: "py-0" },
@@ -110,7 +111,8 @@ const Header = () => {
             },
             {
               groupName: "Data display",
-              groupNameClassName: "!text-[#9AC5E5] bg-[#f8f8f8] py-2",
+              groupNameClassName:
+                "!text-[#9AC5E5] dark:!text-[#2A6490] bg-[#f8f8f8] dark:bg-[#2A2E39] py-2",
               items: [
                 { name: "Card", path: "/card", className: "py-0" },
                 { name: "Carousel", path: "/carousel", className: "py-0" },
@@ -122,25 +124,6 @@ const Header = () => {
                   path: "/infinitescroll",
                   className: "py-0",
                 },
-              ],
-            },
-            {
-              groupName: "Feedback",
-              groupNameClassName: "!text-[#9AC5E5] bg-[#f8f8f8] py-2",
-              items: [
-                { name: "Spinner", path: "/spinner", className: "py-0" },
-                { name: "Toast", path: "/toast", className: "py-0" },
-                { name: "Skeleton", path: "/skeleton", className: "py-0" },
-                { name: "Modal", path: "/modal", className: "py-0" },
-              ],
-            },
-            {
-              groupName: "Navigation",
-              groupNameClassName: "!text-[#9AC5E5] bg-[#f8f8f8] py-2",
-              items: [
-                { name: "Pagination", path: "/pagination", className: "py-0" },
-                { name: "Drawer", path: "/drawer", className: "py-0" },
-                { name: "Navbar", path: "/navbar", className: "py-0" },
               ],
             },
             {
