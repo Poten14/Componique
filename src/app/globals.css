@@ -218,3 +218,15 @@ li {
 [data-theme="dark"] ::-webkit-scrollbar-thumb:hover {
   background: #fff;
 }
+
+[data-theme="dark"] h1 {
+  color: #fff;
+}
+
+[data-theme="dark"] h2 {
+  color: #fff;
+}
+
+[data-theme="dark"] p {
+  color: #dfdfdf;
+}
