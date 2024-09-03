@@ -65,7 +65,7 @@ const Header = () => {
         <SwitchDark />
         <UserPage />
         <Button
-          className="mr-2 xl:hidden"
+          className="mr-2 dark:bg-[#333742] xl:hidden"
           radius="full"
           onClick={onclickDrawerHandler(true)}
         >
