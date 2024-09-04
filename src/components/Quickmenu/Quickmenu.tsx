@@ -8,7 +8,7 @@ const Quickmenu = () => {
   const [quickMenu, setQuickMenu] = useState<
     { label: string; id: string; tag: string }[]
   >([]);
-  const [activeIndex, setActiveIndex] = useState<number | null>(null);
+  const [activeIndex, setActiveIndex] = useState<number | null>(null); //
   const pathname = usePathname();
 
   useEffect(() => {
