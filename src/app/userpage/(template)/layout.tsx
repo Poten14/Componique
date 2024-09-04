@@ -15,10 +15,10 @@ export default function DocsLayout({
         <section className="fixed h-[calc(100%-120px)] w-[80px] bg-red-100">
           <UserPagePrevButton />
         </section>
-        <div className="ml-[85px] w-[calc(100%-340px)] bg-yellow-100">
+        <div className="ml-[85px] w-[calc(100%-440px)] bg-yellow-100">
           {children}
         </div>
-        <div className="fixed right-0 h-[calc(100%-120px)] w-[250px] overflow-y-auto bg-green-100">
+        <div className="fixed right-0 h-[calc(100%-120px)] w-[350px] overflow-y-auto bg-green-100">
           <p>오른쪽 시작</p>
           <p>오른쪽</p>
           <p>오른쪽</p>
