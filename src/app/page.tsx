@@ -89,7 +89,7 @@ const Page = () => {
         <div className="mb-8 w-full max-w-[440px]">
           <Image src={logoSrc} alt="logo" width={440} height={72} />
         </div>
-        <div className="w-full max-w-[740px]">
+        <div className="w-full max-w-[740px] dark:text-white">
           <Autocomplete
             options={options.map((option) => option.value)}
             placeholder="Search for a Components..."
@@ -101,7 +101,7 @@ const Page = () => {
             {recentSearches.map((search, index) => (
               <span
                 key={index}
-                className="rounded-full border border-Basic px-3 py-1 text-Basic"
+                className="rounded-full border border-Basic px-3 py-1 text-Basic dark:border-Navy dark:text-Navy"
               >
                 {search}
               </span>

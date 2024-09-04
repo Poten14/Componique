@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 
 interface PinInputProps {
   length?: number;
@@ -19,6 +19,28 @@ const PinInput: React.FC<PinInputProps> = ({
 }) => {
   const [values, setValues] = useState<string[]>(Array(length).fill(""));
   const inputsRef = useRef<HTMLInputElement[]>([]);
+  const [isDarkMode, setIsDarkMode] = useState(false);
+
+  useEffect(() => {
+    const checkDarkMode = () => {
+      const darkMode = document.documentElement.classList.contains("dark");
+      setIsDarkMode(darkMode);
+    };
+
+    checkDarkMode(); // 초기 다크 모드 상태 체크
+    window.addEventListener("storage", checkDarkMode);
+
+    const observer = new MutationObserver(checkDarkMode);
+    observer.observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ["class"],
+    });
+
+    return () => {
+      window.removeEventListener("storage", checkDarkMode);
+      observer.disconnect();
+    };
+  }, []);
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement>,
@@ -67,13 +89,17 @@ const PinInput: React.FC<PinInputProps> = ({
           ref={(el) => {
             if (el) inputsRef.current[index] = el;
           }}
-          className={`h-9 w-7 rounded-md border border-[#E0E0E0] text-center focus:outline-none ${
+          className={`h-9 w-7 rounded-md border text-center focus:outline-none ${
             variant === "filled"
-              ? "bg-[#E0E0E0] focus:border-Basic focus:bg-white focus:ring focus:ring-blue-200"
-              : "bg-white"
-          } focus:border-Basic focus:ring focus:ring-blue-200 ${
-            disabled ? "bg-[#E0E0E0]" : "bg-white"
-          }`}
+              ? isDarkMode
+                ? "border-Navy bg-transparent text-white focus:border-blue-500"
+                : "bg-[#E0E0E0] focus:border-Basic focus:bg-white"
+              : isDarkMode
+                ? "border-Navy bg-transparent text-white focus:border-blue-500"
+                : "border-[#E0E0E0] bg-white"
+          } ${
+            disabled ? "cursor-not-allowed bg-Navy" : ""
+          } focus:ring focus:ring-blue-200`}
         />
       ))}
     </div>

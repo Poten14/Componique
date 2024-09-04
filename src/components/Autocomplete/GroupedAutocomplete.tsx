@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
 
 interface DropDownGroupedProps {
@@ -44,6 +44,28 @@ const GroupedAutocomplete: React.FC<AutocompleteProps> = ({
   const [filteredOptions, setFilteredOptions] =
     useState<DropDownGroupedProps[]>(options);
   const [isOpen, setIsOpen] = useState(false);
+  const [isDarkMode, setIsDarkMode] = useState(false);
+
+  useEffect(() => {
+    const checkDarkMode = () => {
+      const darkMode = document.documentElement.classList.contains("dark");
+      setIsDarkMode(darkMode);
+    };
+
+    checkDarkMode();
+    window.addEventListener("storage", checkDarkMode);
+
+    const observer = new MutationObserver(checkDarkMode);
+    observer.observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ["class"],
+    });
+
+    return () => {
+      window.removeEventListener("storage", checkDarkMode);
+      observer.disconnect();
+    };
+  }, []);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
@@ -75,10 +97,16 @@ const GroupedAutocomplete: React.FC<AutocompleteProps> = ({
           type="text"
           value={inputValue}
           onChange={handleInputChange}
-          onFocus={() => setIsOpen(true)} // 포커스 시 드롭다운 열기
-          onBlur={() => setIsOpen(false)} // 포커스를 잃으면 드롭다운 닫기
+          onFocus={() => setIsOpen(true)}
+          onBlur={() => setIsOpen(false)}
           placeholder={placeholder}
-          className={`w-full p-2 pr-10 ${borderClasses[border]} ${radius === "full" ? "rounded-full" : radiusClasses[radius]} focus:border-transparent focus:outline-none focus:ring-2 focus:ring-Basic`}
+          className={`w-full p-2 pr-10 ${
+            isDarkMode
+              ? "border-gray-600 bg-[#2A2E39] text-white"
+              : "border-gray bg-white text-black"
+          } ${borderClasses[border]} ${
+            radius === "full" ? "rounded-full" : radiusClasses[radius]
+          } focus:border-transparent focus:outline-none focus:ring-2 focus:ring-Basic`}
         />
         <div className="absolute right-3 top-1/2 -translate-y-1/2 transform">
           <Image
@@ -91,18 +119,32 @@ const GroupedAutocomplete: React.FC<AutocompleteProps> = ({
       </div>
       {isOpen && (
         <ul
-          className={`absolute left-0 right-0 z-10 mt-1 max-h-60 overflow-y-auto bg-white shadow-lg ${borderClasses[border]} ${radius !== "full" ? radiusClasses[radius] : "rounded-lg"}`}
+          className={`absolute left-0 right-0 z-10 mt-1 max-h-60 overflow-y-auto shadow-lg ${
+            isDarkMode ? "bg-[#2A2E39] text-white" : "bg-white text-black"
+          } ${borderClasses[border]} ${
+            radius !== "full" ? radiusClasses[radius] : "rounded-lg"
+          }`}
         >
           {filteredOptions.length > 0 ? (
             filteredOptions.map(({ groupName, items }, index1) => (
               <li key={index1} className="p-2">
-                <div className="m-3 font-medium">{groupName}</div>
+                <div
+                  className={`m-3 font-medium ${
+                    isDarkMode ? "text-gray-300" : "text-gray-900"
+                  }`}
+                >
+                  {groupName}
+                </div>
                 <ul className="ml-4">
                   {items.map((item, index2) => (
                     <li
                       key={index2}
-                      onMouseDown={() => handleOptionClick(item)} // onClick 대신 onMouseDown 사용
-                      className="cursor-pointer border-b p-2 pl-5 font-light text-zinc-800 hover:bg-[#E8F5FF]"
+                      onMouseDown={() => handleOptionClick(item)}
+                      className={`cursor-pointer border-b p-2 pl-5 font-light ${
+                        isDarkMode
+                          ? "text-gray-400 border-gray-600 hover:bg-gray-700"
+                          : "border-zinc-200 text-zinc-800 hover:bg-[#E8F5FF]"
+                      }`}
                     >
                       {item}
                     </li>

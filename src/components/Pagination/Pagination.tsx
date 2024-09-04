@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Color } from "types/type";
 
 interface PaginationProps {
@@ -24,6 +24,29 @@ const Pagination: React.FC<PaginationProps> = ({
   showFirstLastButtons = false,
   disabled = false,
 }) => {
+  const [isDarkMode, setIsDarkMode] = useState(false);
+
+  useEffect(() => {
+    const checkDarkMode = () => {
+      const darkMode = document.documentElement.classList.contains("dark");
+      setIsDarkMode(darkMode);
+    };
+
+    checkDarkMode();
+    window.addEventListener("storage", checkDarkMode);
+
+    const observer = new MutationObserver(checkDarkMode);
+    observer.observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ["class"],
+    });
+
+    return () => {
+      window.removeEventListener("storage", checkDarkMode);
+      observer.disconnect();
+    };
+  }, []);
+
   const generatePageNumbers = () => {
     const pageNumbers = [];
     const maxVisiblePages = 5; // 한 번에 보여줄 최대 페이지 수
@@ -61,14 +84,14 @@ const Pagination: React.FC<PaginationProps> = ({
   };
 
   const colorClasses = {
-    Basic: "bg-Basic border-Basic",
-    Primary: "bg-Primary border-Primary",
-    gray: "bg-gray border-gray",
-    Secondary: "bg-Secondary border-Secondary",
-    Success: "bg-Success border-Success",
-    Warning: "bg-Warning border-Warning",
-    Danger: "bg-Danger border-Danger",
-    White: "bg-white border-white text-[#ccc]",
+    Basic: `bg-Basic border-Basic ${isDarkMode ? "text-white" : "text-black"}`,
+    Primary: `bg-Primary border-Primary ${isDarkMode ? "text-white" : "text-black"}`,
+    gray: `bg-gray border-gray ${isDarkMode ? "text-white" : "text-black"}`,
+    Secondary: `bg-Secondary border-Secondary ${isDarkMode ? "text-white" : "text-black"}`,
+    Success: `bg-Success border-Success ${isDarkMode ? "text-white" : "text-black"}`,
+    Warning: `bg-Warning border-Warning ${isDarkMode ? "text-white" : "text-black"}`,
+    Danger: `bg-Danger border-Danger ${isDarkMode ? "text-white" : "text-black"}`,
+    White: "bg-white border-white text-[#000]",
   };
 
   const baseButtonClasses = "w-10 h-10 flex items-center justify-center";
@@ -82,7 +105,9 @@ const Pagination: React.FC<PaginationProps> = ({
     >
       {showFirstLastButtons && (
         <button
-          className={`${baseButtonClasses} ${shapeClass} border-none ${currentPage === 1 ? "cursor-not-allowed text-Gray" : "text-Gray"}`}
+          className={`${baseButtonClasses} ${shapeClass} border-none ${
+            currentPage === 1 ? "cursor-not-allowed text-Gray" : "text-Gray"
+          }`}
           onClick={() => !disabled && onPageChange(1)}
           disabled={currentPage === 1 || disabled}
         >
@@ -90,7 +115,9 @@ const Pagination: React.FC<PaginationProps> = ({
         </button>
       )}
       <button
-        className={`${baseButtonClasses} ${shapeClass} border-none ${currentPage === 1 ? "cursor-not-allowed text-Gray" : "text-Gray"}`}
+        className={`${baseButtonClasses} ${shapeClass} border-none ${
+          currentPage === 1 ? "cursor-not-allowed text-Gray" : "text-Gray"
+        }`}
         onClick={() => !disabled && onPageChange(currentPage - 1)}
         disabled={currentPage === 1 || disabled}
       >
@@ -130,7 +157,11 @@ const Pagination: React.FC<PaginationProps> = ({
         </React.Fragment>
       ))}
       <button
-        className={`${baseButtonClasses} ${shapeClass} border-none ${currentPage === totalPages ? "cursor-not-allowed text-Gray" : "text-Gray"}`}
+        className={`${baseButtonClasses} ${shapeClass} border-none ${
+          currentPage === totalPages
+            ? "cursor-not-allowed text-Gray"
+            : "text-Gray"
+        }`}
         onClick={() => !disabled && onPageChange(currentPage + 1)}
         disabled={currentPage === totalPages || disabled}
       >
@@ -138,7 +169,11 @@ const Pagination: React.FC<PaginationProps> = ({
       </button>
       {showFirstLastButtons && (
         <button
-          className={`${baseButtonClasses} ${shapeClass} border-none ${currentPage === totalPages ? "cursor-not-allowed text-Gray" : "text-Gray"}`}
+          className={`${baseButtonClasses} ${shapeClass} border-none ${
+            currentPage === totalPages
+              ? "cursor-not-allowed text-Gray"
+              : "text-Gray"
+          }`}
           onClick={() => !disabled && onPageChange(totalPages)}
           disabled={currentPage === totalPages || disabled}
         >

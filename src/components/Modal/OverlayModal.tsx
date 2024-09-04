@@ -1,7 +1,6 @@
 import Button from "@components/Button/Button";
-import React, { ReactNode } from "react";
+import React, { ReactNode, useEffect, useState } from "react";
 import { createPortal } from "react-dom";
-//모달을 document.body에 렌더링하여 페이지 구조와 독립적으로 관리할 수 있게.
 import { ExtraSize } from "types/type";
 
 interface OverlayModalProps {
@@ -24,6 +23,7 @@ const SizeClass = {
   xl: "max-w-xl w-11/12 sm:w-auto",
   full: "max-w-full w-full h-full",
 };
+
 const MaxHeight = {
   xs: "calc(100vh - 650px)",
   small: "calc(100vh - 600px)",
@@ -32,6 +32,7 @@ const MaxHeight = {
   xl: "calc(100vh - 300px)",
   full: "100vh",
 };
+
 const OverlayModal: React.FC<OverlayModalProps> = ({
   isOpen,
   onClose,
@@ -43,6 +44,29 @@ const OverlayModal: React.FC<OverlayModalProps> = ({
   closeButtonText = "Close",
   showCloseIcon = true,
 }) => {
+  const [isDarkMode, setIsDarkMode] = useState(false);
+
+  useEffect(() => {
+    const checkDarkMode = () => {
+      const darkMode = document.documentElement.classList.contains("dark");
+      setIsDarkMode(darkMode);
+    };
+
+    checkDarkMode();
+    window.addEventListener("storage", checkDarkMode);
+
+    const observer = new MutationObserver(checkDarkMode);
+    observer.observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ["class"],
+    });
+
+    return () => {
+      window.removeEventListener("storage", checkDarkMode);
+      observer.disconnect();
+    };
+  }, []);
+
   if (!isOpen) return null;
 
   const handleOverlayClick = () => {
@@ -55,18 +79,31 @@ const OverlayModal: React.FC<OverlayModalProps> = ({
       onClick={handleOverlayClick}
     >
       <div
-        className={`relative transform overflow-hidden rounded-lg bg-white p-4 shadow-lg transition-all ${SizeClass[size]} ${className}`}
-        onClick={(e) => e.stopPropagation()} // 모달 내부를 클릭하면 이벤트가 div 태그에서 부모로 전파되지 않도록 막기
+        className={`relative transform overflow-hidden rounded-lg p-4 shadow-lg transition-all ${SizeClass[size]} ${className} ${
+          isDarkMode ? "bg-[#2A2E39] text-white" : "bg-white text-black"
+        }`}
+        onClick={(e) => e.stopPropagation()}
       >
         {showCloseIcon && (
           <div className="absolute right-4 top-4">
-            <button onClick={onClose} className="text-gray-500">
+            <button
+              onClick={onClose}
+              className={`${
+                isDarkMode
+                  ? "text-gray-300 hover:text-gray-100"
+                  : "text-gray-500"
+              }`}
+            >
               &times;
             </button>
           </div>
         )}
         {title && (
-          <div className="bg-gray-200 border-gray-300 px-4 py-2">
+          <div
+            className={`px-4 py-2 ${
+              isDarkMode ? "border-gray-600" : "bg-gray-200 border-gray-300"
+            }`}
+          >
             <h2 className="text-lg font-medium">{title}</h2>
           </div>
         )}
@@ -77,11 +114,16 @@ const OverlayModal: React.FC<OverlayModalProps> = ({
           {children}
         </div>
         <div className="mt-4 flex justify-end space-x-2">
-          <Button onClick={onClose}>{closeButtonText}</Button>
+          <Button
+            onClick={onClose}
+            className={`${isDarkMode ? "bg-Navy text-white" : ""}`}
+          >
+            {closeButtonText}
+          </Button>
         </div>
       </div>
     </div>,
-    document.body, // 모달을 body에 직접 렌더링
+    document.body,
   );
 };
 
