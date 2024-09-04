@@ -6,6 +6,8 @@ interface CalendarProps {
   onDateSelect?: (startDate: Date, endDate: Date) => void;
 }
 
+const daysOfWeek = ["Sun", "Mon", "Tue", "Wen", "Thu", "Fri", "Sat"];
+
 const CalendarRange = ({ onDateSelect }: CalendarProps) => {
   const [currentDate, setCurrentDate] = useState<Date>(new Date());
   const [startDate, setStartDate] = useState<Date | null>(null);
@@ -83,7 +85,7 @@ const CalendarRange = ({ onDateSelect }: CalendarProps) => {
               ? "bg-[#9AC5E5] text-white"
               : isInRange
                 ? "bg-[#9AC5E5] text-white"
-                : "bg-white hover:bg-[#99cdf5] hover:text-white"
+                : ""
           }`}
           onClick={() => handleDateClick(day)}
         >
@@ -110,11 +112,13 @@ const CalendarRange = ({ onDateSelect }: CalendarProps) => {
           </div>
           {/* 월,달,날짜 */}
           <div className="grid grid-cols-7 gap-2">
-            {["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"].map((day) => (
+            {daysOfWeek.map((day) => (
               <div key={day} className="text-center text-[#ddd]">
                 {day}
               </div>
             ))}
+          </div>
+          <div className="grid grid-cols-7 gap-2 text-center">
             {renderDays()}
           </div>
         </div>

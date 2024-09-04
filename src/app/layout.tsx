@@ -20,10 +20,10 @@ export default function RootLayout({
       <body>
         <DarkModeStatus>
           <Header />
-          <section className="fixed z-0 mt-[80px] hidden h-[calc(100%-120px)] w-[250px] bg-white xl:block dark:bg-[#252629]">
+          <section className="fixed z-0 mt-[90px] hidden h-[calc(100%-90px)] w-[250px] bg-white xl:block">
             <SideBar />
           </section>
-          <div className="flex justify-center pt-[90px] md:px-4 xl:ml-[300px]">
+          <div className="flex justify-center pt-[90px] md:px-4">
             <div className="max-w-full">{children}</div>
           </div>
           <div className="flex items-center justify-center">
