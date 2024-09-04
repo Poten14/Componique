@@ -8,7 +8,7 @@ const Quickmenu = () => {
   const [quickMenu, setQuickMenu] = useState<
     { label: string; id: string; tag: string }[]
   >([]);
-  const [activeIndex, setActiveIndex] = useState<number | null>(null); //
+  const [activeIndex, setActiveIndex] = useState<number | null>(null);
   const pathname = usePathname();
 
   useEffect(() => {
@@ -28,6 +28,23 @@ const Quickmenu = () => {
     menuPathname();
   }, [pathname]);
 
+  // Intersection observer api 스크롤 구현
+  useEffect(() => {
+    const observerCallback = (entries: IntersectionObserverEntry[]) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) {
+          //
+        }
+      });
+    };
+
+    const observerOptions = {
+      root: null,
+      rootMargin: "0px 0px -50% 0px",
+      threshold: 0.1,
+    };
+  }, []);
+
   const handleClick = (index: number, id: string) => {
     setActiveIndex(index);
     const moveMenu = document.getElementById(id);
@@ -38,7 +55,7 @@ const Quickmenu = () => {
 
   return (
     <>
-      <div className="fixed right-12 top-1/3 h-[500px] w-60 justify-end overflow-y-scroll overscroll-y-auto text-sm">
+      <div className="fixed right-10 top-1/3 h-[500px] w-60 justify-end overflow-y-scroll overscroll-y-auto text-sm">
         <div className="pb-2 dark:text-white">On This Page</div>
         <div>
           <ul className="pl-4">
