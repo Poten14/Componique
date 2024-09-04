@@ -72,13 +72,16 @@ export default Example;
         </p>
         <ul>
           <li>
-            <strong>Small:</strong> 작은 크기의 스위치
+            <strong className="dark:text-[#dfdfdf]">Small:</strong> 작은 크기의
+            스위치
           </li>
           <li>
-            <strong>Medium:</strong> 중간 크기의 스위치 (기본값)
+            <strong className="dark:text-[#dfdfdf]">Medium:</strong> 중간 크기의
+            스위치 (기본값)
           </li>
           <li>
-            <strong>Large:</strong> 큰 크기의 스위치
+            <strong className="dark:text-[#dfdfdf]">Large:</strong> 큰 크기의
+            스위치
           </li>
         </ul>
         <div className="space-y-7">
@@ -249,13 +252,16 @@ export default Example;
         </p>
         <ul>
           <li>
-            <strong>Small:</strong> 작은 크기의 수직 스위치
+            <strong className="dark:text-[#dfdfdf]">Small:</strong> 작은 크기의
+            수직 스위치
           </li>
           <li>
-            <strong>Medium:</strong> 중간 크기의 수직 스위치
+            <strong className="dark:text-[#dfdfdf]">Medium:</strong> 중간 크기의
+            수직 스위치
           </li>
           <li>
-            <strong>Large:</strong> 큰 크기의 수직 스위치
+            <strong className="dark:text-[#dfdfdf]">Large:</strong> 큰 크기의
+            수직 스위치
           </li>
         </ul>
         <div className="space-y-7">
@@ -426,13 +432,16 @@ export default Example;
         </p>
         <ul>
           <li>
-            <strong>Small:</strong> 짧은 길이의 스위치
+            <strong className="dark:text-[#dfdfdf]">Small:</strong> 짧은 길이의
+            스위치
           </li>
           <li>
-            <strong>Medium:</strong> 중간 길이의 스위치
+            <strong className="dark:text-[#dfdfdf]">Medium:</strong> 중간 길이의
+            스위치
           </li>
           <li>
-            <strong>Large:</strong> 긴 길이의 스위치
+            <strong className="dark:text-[#dfdfdf]">Large:</strong> 긴 길이의
+            스위치
           </li>
         </ul>
         <div className="space-y-7">
@@ -604,12 +613,12 @@ export default Example;
         </p>
         <ul>
           <li>
-            <strong>첫 번째 스위치:</strong> 클릭 시 오른쪽으로 이동하여 상태가
-            전환되며, 스위치가 켜집니다.
+            <strong className="dark:text-[#dfdfdf]">첫 번째 스위치:</strong>{" "}
+            클릭 시 오른쪽으로 이동하여 상태가 전환되며, 스위치가 켜집니다.
           </li>
           <li>
-            <strong>두 번째 스위치:</strong> 클릭 시 왼쪽으로 이동하여 상태가
-            전환되며, 스위치가 꺼집니다.
+            <strong className="dark:text-[#dfdfdf]">두 번째 스위치:</strong>{" "}
+            클릭 시 왼쪽으로 이동하여 상태가 전환되며, 스위치가 꺼집니다.
           </li>
         </ul>
         <div className="space-y-7">
@@ -781,12 +790,12 @@ export default Example;
         </p>
         <ul>
           <li>
-            <strong>첫 번째 스위치:</strong> 클릭 시 오른쪽으로 이동하며 "ON"
-            레이블이 표시됩니다.
+            <strong className="dark:text-[#dfdfdf]">첫 번째 스위치:</strong>{" "}
+            클릭 시 오른쪽으로 이동하며 "ON" 레이블이 표시됩니다.
           </li>
           <li>
-            <strong>두 번째 스위치:</strong> 클릭 시 왼쪽으로 이동하며 "OFF"
-            레이블이 표시됩니다.
+            <strong className="dark:text-[#dfdfdf]">두 번째 스위치:</strong>{" "}
+            클릭 시 왼쪽으로 이동하며 "OFF" 레이블이 표시됩니다.
           </li>
         </ul>
         <div className="space-y-7">
