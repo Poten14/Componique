@@ -59,11 +59,13 @@ const DropDownMutilSelect = ({
       <div className="relative inline-block w-48">
         <div
           onClick={() => toggleDropdown(0)}
-          className="border-gray-300 flex h-10 cursor-pointer items-center justify-between border-2 bg-white p-2 font-medium"
+          className="border-gray-300 flex h-10 cursor-pointer items-center justify-between border-2 bg-white p-2 font-medium dark:bg-[#2A2E39]"
         >
           <span
             className={`font-bold ${
-              selectedOptions[0].length > 0 ? "text-black" : "text-slate-600"
+              selectedOptions[0].length > 0
+                ? "text-black dark:text-white"
+                : "text-slate-600"
             }`}
           >
             {displayDefaultOption(0)}
@@ -81,7 +83,7 @@ const DropDownMutilSelect = ({
               <li
                 key={index}
                 onClick={() => handleOptionClick(item, 0)}
-                className={`border-gray-200 cursor-pointer border-b p-2 text-zinc-800 hover:bg-[#E8F5FF] ${
+                className={`border-gray-200 cursor-pointer border-b p-2 text-zinc-800 hover:bg-[#E8F5FF] dark:bg-[#2A2E39] dark:text-white dark:hover:bg-[#2A6490] ${
                   selectedOptions[0].includes(item) ? "bg-blue-100" : ""
                 }`}
               >
@@ -96,11 +98,13 @@ const DropDownMutilSelect = ({
       <div className="relative inline-block w-48">
         <div
           onClick={() => toggleDropdown(1)}
-          className="border-gray-300 flex h-10 cursor-pointer items-center justify-between rounded-lg border-2 bg-white p-2 font-medium"
+          className="border-gray-300 flex h-10 cursor-pointer items-center justify-between rounded-lg border-2 bg-white p-2 font-medium dark:bg-[#2A2E39]"
         >
           <span
             className={`font-bold ${
-              selectedOptions[1].length > 0 ? "text-black" : "text-slate-600"
+              selectedOptions[1].length > 0
+                ? "text-black dark:text-white"
+                : "text-slate-600"
             }`}
           >
             {displayDefaultOption(1)}
@@ -118,7 +122,7 @@ const DropDownMutilSelect = ({
               <li
                 key={index}
                 onClick={() => handleOptionClick(item, 1)}
-                className={`border-gray-200 cursor-pointer border-b p-2 text-zinc-800 hover:bg-[#E8F5FF] ${
+                className={`border-gray-200 cursor-pointer border-b p-2 text-zinc-800 hover:bg-[#E8F5FF] dark:bg-[#2A2E39] dark:text-white dark:hover:bg-[#2A6490] ${
                   selectedOptions[1].includes(item) ? "bg-blue-100" : ""
                 }`}
               >
@@ -133,11 +137,13 @@ const DropDownMutilSelect = ({
       <div className="relative inline-block w-48">
         <div
           onClick={() => toggleDropdown(2)}
-          className="flex h-10 cursor-pointer items-center justify-between rounded-full border-2 border-zinc-100 bg-white p-2 font-medium shadow-md"
+          className="flex h-10 cursor-pointer items-center justify-between rounded-full border-2 border-zinc-100 bg-white p-2 font-medium shadow-md dark:bg-[#2A2E39]"
         >
           <span
             className={`font-bold ${
-              selectedOptions[2].length > 0 ? "text-black" : "text-slate-600"
+              selectedOptions[2].length > 0
+                ? "text-black dark:text-white"
+                : "text-slate-600"
             }`}
           >
             {displayDefaultOption(2)}
@@ -155,7 +161,7 @@ const DropDownMutilSelect = ({
               <li
                 key={index}
                 onClick={() => handleOptionClick(item, 2)}
-                className={`cursor-pointer rounded-xl border-b border-zinc-100 p-2 text-zinc-800 hover:bg-[#E8F5FF] ${
+                className={`cursor-pointer rounded-xl border-b border-zinc-100 p-2 text-zinc-800 hover:bg-[#E8F5FF] dark:bg-[#2A2E39] dark:text-white dark:hover:bg-[#2A6490] ${
                   selectedOptions[2].includes(item) ? "bg-blue-100" : ""
                 }`}
               >
@@ -170,11 +176,13 @@ const DropDownMutilSelect = ({
       <div className="relative inline-block w-48">
         <div
           onClick={() => toggleDropdown(3)}
-          className="flex h-10 cursor-pointer items-center justify-between rounded-lg border-2 border-zinc-100 bg-white p-2 font-medium"
+          className="flex h-10 cursor-pointer items-center justify-between rounded-lg border-2 border-zinc-100 bg-white p-2 font-medium dark:bg-[#2A2E39]"
         >
           <span
             className={`font-bold ${
-              selectedOptions[3].length > 0 ? "text-black" : "text-slate-600"
+              selectedOptions[3].length > 0
+                ? "text-black dark:text-white"
+                : "text-slate-600"
             }`}
           >
             {displayDefaultOption(3)}
@@ -192,7 +200,7 @@ const DropDownMutilSelect = ({
               <li
                 key={index}
                 onClick={() => handleOptionClick(item, 3)}
-                className={`cursor-pointer border-b border-zinc-100 p-2 text-zinc-800 hover:bg-[#E8F5FF] ${
+                className={`cursor-pointer border-b border-zinc-100 p-2 text-zinc-800 hover:bg-[#E8F5FF] dark:bg-[#2A2E39] dark:text-white dark:hover:bg-[#2A6490] ${
                   selectedOptions[3].includes(item) ? "bg-blue-100" : ""
                 }`}
               >
