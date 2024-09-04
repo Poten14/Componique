@@ -35,12 +35,12 @@ const Quickmenu: React.FC = () => {
   return (
     <>
       <div className="fixed right-12 top-1/3 h-[500px] w-60 justify-end overflow-y-scroll overscroll-y-auto text-sm">
-        <div className="pb-2">On This Page</div>
+        <div className="pb-2 dark:text-white">On This Page</div>
         <div className="">
           <ul className="pl-4">
             {quickMenu.map((item, index) => (
               <li
-                className={`${activeIndex === index ? "font-bold text-[#9AC5E5]" : "text-[#4A5568] hover:text-black"} cursor-pointer py-1`}
+                className={`${activeIndex === index ? "font-bold text-[#9AC5E5]" : "text-[#4A5568] hover:text-black dark:hover:text-white"} cursor-pointer py-1`}
                 key={index}
                 onClick={() => handleClick(index, item.id)}
               >

@@ -142,7 +142,7 @@ const Yr = () => {
           name="text"
           id="text"
           size="small"
-          color="blue"
+          color="skyblue"
           rows={4}
           cols={20}
           placeholder="Write"

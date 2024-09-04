@@ -170,14 +170,14 @@ export default Example;`}
       </h2>
       <p>
         <code>Textarea</code> 컴포넌트는 다양한 색상으로 제공됩니다. 기본 색상은{" "}
-        <code>blue</code>입니다:
+        <code>skyblue</code>입니다:
       </p>
       <ul>
         <li>
           <code>red</code>: 빨간색 테두리
         </li>
         <li>
-          <code>blue</code>: 파란색 테두리 (기본값)
+          <code>skyblue</code>: 파란색 테두리 (기본값)
         </li>
         <li>
           <code>green</code>: 초록색 테두리
@@ -194,10 +194,10 @@ export default Example;`}
           placeholder="Red color"
         />
         <Textarea
-          label="Blue Color"
-          id="blue"
-          color="blue"
-          placeholder="Blue color"
+          label="Skyblue Color"
+          id="skyblue"
+          color="skyblue"
+          placeholder="Skyblue color"
         />
         <Textarea
           label="Green Color"
@@ -219,7 +219,7 @@ function Example() {
   return (
     <>
       <Textarea label="Red Color" id="red" color="red" placeholder="Red color" />
-      <Textarea label="Blue Color" id="blue" color="blue" placeholder="Blue color" />
+      <Textarea label="Skyblue Color" id="skyblue" color="skyblue" placeholder="Skyblue color" />
       <Textarea label="Green Color" id="green" color="green" placeholder="Green color" />
       <Textarea label="Gray Color" id="gray" color="gray" placeholder="Gray color" />
     </>
@@ -233,7 +233,7 @@ function Example() {
   return (
     <>
       <Textarea label="Red Color" id="red" color="red" placeholder="Red color" />
-      <Textarea label="Blue Color" id="blue" color="blue" placeholder="Blue color" />
+      <Textarea label="Skyblue Color" id="skyblue" color="skyblue" placeholder="Skyblue color" />
       <Textarea label="Green Color" id="green" color="green" placeholder="Green color" />
       <Textarea label="Gray Color" id="gray" color="gray" placeholder="Gray color" />
     </>
@@ -383,10 +383,10 @@ export default Example;`}
             </td>
             <td>Textarea 필드의 테두리 색상을 설정합니다.</td>
             <td>
-              <code>"red" | "blue" | "green" | "gray"</code>
+              <code>"red" | "skyblue" | "green" | "gray"</code>
             </td>
             <td>
-              <code>"blue"</code>
+              <code>"skyblue"</code>
             </td>
           </tr>
           <tr>
