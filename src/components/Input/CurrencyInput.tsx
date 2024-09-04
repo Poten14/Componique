@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Size } from "types/type";
 
 type Color =
@@ -59,6 +59,28 @@ const CurrencyInput: React.FC<CurrencyInputProps> = ({
   ...props
 }) => {
   const [inputValue, setInputValue] = useState(value || "0");
+  const [isDarkMode, setIsDarkMode] = useState(false);
+
+  useEffect(() => {
+    const checkDarkMode = () => {
+      const darkMode = document.documentElement.classList.contains("dark");
+      setIsDarkMode(darkMode);
+    };
+
+    checkDarkMode(); // 초기 다크 모드 상태 체크
+    window.addEventListener("storage", checkDarkMode);
+
+    const observer = new MutationObserver(checkDarkMode);
+    observer.observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ["class"],
+    });
+
+    return () => {
+      window.removeEventListener("storage", checkDarkMode);
+      observer.disconnect();
+    };
+  }, []);
 
   const incrementValue = () => {
     const parsedValue = (
@@ -73,7 +95,7 @@ const CurrencyInput: React.FC<CurrencyInputProps> = ({
     const parsedValue = (
       parseFloat(inputValue.replace(/^\$/, "")) - 0.01
     ).toFixed(2);
-    const newValue = `${parsedValue}`;
+    const newValue = `$${parsedValue}`;
     setInputValue(newValue);
     if (onValueChange) onValueChange(newValue);
   };
@@ -85,6 +107,7 @@ const CurrencyInput: React.FC<CurrencyInputProps> = ({
       if (onValueChange) onValueChange(newValue);
     }
   };
+
   const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
     if (e.key === "ArrowUp") {
       incrementValue();
@@ -95,12 +118,16 @@ const CurrencyInput: React.FC<CurrencyInputProps> = ({
 
   return (
     <div
-      className={`flex items-center bg-white ${sizeClasses[size]} rounded-xl border-2 border-gray ${colorClasses[color]} focus-within:ring-2 focus-within:ring-opacity-50`}
+      className={`flex items-center ${sizeClasses[size]} rounded-xl border-2 ${
+        isDarkMode ? "border-Navy bg-transparent" : "border-gray bg-white"
+      } ${colorClasses[color]} focus-within:ring-1 focus-within:ring-opacity-50`}
       style={{ width: width }}
     >
       <input
         type="text"
-        className="w-5 flex-grow border-none text-center focus:outline-none"
+        className={`w-5 flex-grow border-none text-center focus:outline-none ${
+          isDarkMode ? "bg-transparent text-white" : "text-black"
+        }`}
         value={inputValue}
         onChange={handleChange}
         {...props}
@@ -108,13 +135,17 @@ const CurrencyInput: React.FC<CurrencyInputProps> = ({
       />
       <div className="flex flex-col">
         <button
-          className={`mr-0.5 flex h-10 items-center justify-center rounded-t-lg ${buttonSizeClasses[size]} ${buttonColorClasses[color]}`}
+          className={`mr-0.5 flex h-10 items-center justify-center rounded-t-lg ${buttonSizeClasses[size]} ${
+            buttonColorClasses[color]
+          } ${isDarkMode ? "bg-opacity-75" : ""}`}
           onClick={incrementValue}
         >
           ▲
         </button>
         <button
-          className={`mt-0.5 flex h-10 items-center justify-center rounded-b-lg ${buttonSizeClasses[size]} ${buttonColorClasses[color]}`}
+          className={`mt-0.5 flex h-10 items-center justify-center rounded-b-lg ${buttonSizeClasses[size]} ${
+            buttonColorClasses[color]
+          } ${isDarkMode ? "bg-opacity-75" : ""}`}
           onClick={decrementValue}
         >
           ▼

@@ -19,7 +19,7 @@ const team = [
     blog: "https://velog.io/@niceyoungrae/posts",
   },
   {
-    name: "Im Sung Ggyung",
+    name: "Im Sung Gyung",
     github: "https://github.com/5622lsk",
     blog: "https://velog.io/@5622lsk/posts",
   },

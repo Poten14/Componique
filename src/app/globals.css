@@ -230,3 +230,7 @@ li {
 [data-theme="dark"] p {
   color: #dfdfdf;
 }
+
+[data-theme="dark"] th {
+  color: #dfdfdf;
+}

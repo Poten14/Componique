@@ -62,11 +62,11 @@ const Autocomplete: React.FC<AutocompleteProps> = ({
 
   return (
     <div className="relative max-w-[740px]">
-      <div className="flex h-16 items-center rounded-full bg-white px-4 shadow-lg focus-within:border-Basic focus-within:ring-2 focus-within:ring-Basic">
+      <div className="flex h-16 items-center rounded-full bg-white px-4 shadow-lg focus-within:border-Basic focus-within:ring-2 focus-within:ring-Basic dark:bg-[#333742]">
         <div className="flex items-center space-x-2">
-          <div className="h-8 w-8 rounded-full bg-[#A4C8F0]"></div>
+          <div className="h-8 w-8 rounded-full bg-[#A4C8F0] dark:bg-Navy"></div>
           {!moveCircle && (
-            <div className="h-8 w-8 rounded-full bg-[#E4C987]"></div>
+            <div className="h-8 w-8 rounded-full bg-[#E4C987] dark:bg-[#FFECB8]"></div>
           )}
         </div>
         <input
@@ -77,16 +77,18 @@ const Autocomplete: React.FC<AutocompleteProps> = ({
           onFocus={() => setIsDropdownOpen(true)}
           onBlur={() => setIsDropdownOpen(false)}
           placeholder={placeholder}
-          className="text-gray-600 placeholder-gray-400 flex-grow px-4 focus:outline-none"
+          className="text-gray-600 placeholder-gray-400 flex-grow px-4 focus:outline-none dark:bg-[#333742] dark:text-[#dfdfdf]"
         />
-        <Icon name="icon-search" size={24} />
+        <Icon name="icon-search" size={24} className="dark:bg-white" />
       </div>
       {isDropdownOpen && (
-        <ul className="absolute left-0 right-0 z-10 mt-1 max-h-60 overflow-y-auto rounded-xl bg-white shadow-lg">
+        <ul className="absolute left-0 right-0 z-10 mt-1 max-h-60 overflow-y-auto rounded-xl bg-white shadow-lg dark:bg-[#333742]">
           {moveCircle && (
             <li className="flex items-center space-x-2 p-3">
-              <div className="h-8 w-8 rounded-full bg-[#E4C987]"></div>
-              <span className="text-gray-600">{inputValue}</span>
+              <div className="h-8 w-8 rounded-full bg-[#E4C987] dark:bg-[#FFECB8]"></div>
+              <span className="text-gray-600 pl-8 dark:text-[#dfdfdf]">
+                {inputValue}
+              </span>
             </li>
           )}
           {filteredOptions.length > 0 ? (
@@ -94,13 +96,18 @@ const Autocomplete: React.FC<AutocompleteProps> = ({
               <li
                 key={index}
                 onMouseDown={() => handleOptionClick(option)}
-                className="hover:bg-gray-100 flex cursor-pointer items-center p-3"
+                className="hover:bg-gray-100 flex cursor-pointer items-center p-3 pl-12 dark:text-[#dfdfdf]"
               >
-                {option}
+                <div>
+                  <Icon name="icon-docs2" color="#626262" size={24} />
+                  <span className="ml-2">{option}</span>
+                </div>
               </li>
             ))
           ) : (
-            <li className="text-gray-600 p-3">No options found</li>
+            <li className="text-gray-600 pl-12 dark:text-[#dfdfdf]">
+              No options found
+            </li>
           )}
         </ul>
       )}

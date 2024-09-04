@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Size } from "types/type";
 
 type Color =
@@ -60,6 +60,28 @@ const NumInput: React.FC<NumInputProps> = ({
   ...props
 }) => {
   const [inputValue, setInputValue] = useState(value || "0");
+  const [isDarkMode, setIsDarkMode] = useState(false);
+
+  useEffect(() => {
+    const checkDarkMode = () => {
+      const darkMode = document.documentElement.classList.contains("dark");
+      setIsDarkMode(darkMode);
+    };
+
+    checkDarkMode(); // 초기 다크 모드 상태 체크
+    window.addEventListener("storage", checkDarkMode);
+
+    const observer = new MutationObserver(checkDarkMode);
+    observer.observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ["class"],
+    });
+
+    return () => {
+      window.removeEventListener("storage", checkDarkMode);
+      observer.disconnect();
+    };
+  }, []);
 
   const handleIncrement = () => {
     const newValue = (parseInt(inputValue, 10) + 1).toString();
@@ -89,12 +111,16 @@ const NumInput: React.FC<NumInputProps> = ({
 
   return (
     <div
-      className={`flex items-center ${sizeClasses[size]} rounded-xl border-2 border-gray ${colorClasses[color]} bg-white focus-within:ring-2 focus-within:ring-opacity-50`}
+      className={`flex items-center ${sizeClasses[size]} rounded-xl border-2 ${
+        isDarkMode ? "border-Navy bg-transparent" : "border-gray bg-white"
+      } ${colorClasses[color]} focus-within:ring-2 focus-within:ring-opacity-50`}
       style={{ width: width }}
     >
       <input
         type="text"
-        className="w-5 flex-grow border-none text-center focus:outline-none"
+        className={`w-5 flex-grow border-none text-center focus:outline-none ${
+          isDarkMode ? "bg-transparent text-white" : "text-black"
+        }`}
         value={inputValue}
         onChange={handleChange}
         {...props}
@@ -102,13 +128,17 @@ const NumInput: React.FC<NumInputProps> = ({
       />
       <div className="flex flex-col">
         <button
-          className={`mr-0.5 flex h-10 items-center justify-center rounded-t-lg ${buttonSizeClasses[size]} ${buttonColorClasses[color]}`}
+          className={`mr-0.5 flex h-10 items-center justify-center rounded-t-lg ${buttonSizeClasses[size]} ${buttonColorClasses[color]} ${
+            isDarkMode ? "bg-opacity-75" : ""
+          }`}
           onClick={handleIncrement}
         >
           ▲
         </button>
         <button
-          className={`mt-0.5 flex h-10 items-center justify-center rounded-b-lg ${buttonSizeClasses[size]} ${buttonColorClasses[color]}`}
+          className={`mt-0.5 flex h-10 items-center justify-center rounded-b-lg ${buttonSizeClasses[size]} ${buttonColorClasses[color]} ${
+            isDarkMode ? "bg-opacity-75" : ""
+          }`}
           onClick={handleDecrement}
         >
           ▼

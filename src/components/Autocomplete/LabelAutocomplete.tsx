@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import { Size } from "types/type";
+import Icon from "@components/Icon/Icon";
 
 export interface Option {
   label: string;
@@ -30,6 +31,29 @@ const LabelAutocomplete: React.FC<AutocompleteProps> = ({
   onSelect,
   placeholder = "Search...",
 }) => {
+  const [isDarkMode, setIsDarkMode] = useState(false);
+
+  useEffect(() => {
+    const checkDarkMode = () => {
+      const darkMode = document.documentElement.classList.contains("dark");
+      setIsDarkMode(darkMode);
+    };
+
+    checkDarkMode();
+    window.addEventListener("storage", checkDarkMode);
+
+    const observer = new MutationObserver(checkDarkMode);
+    observer.observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ["class"],
+    });
+
+    return () => {
+      window.removeEventListener("storage", checkDarkMode);
+      observer.disconnect();
+    };
+  }, []);
+
   const handleSelect = (event: React.ChangeEvent<HTMLInputElement>) => {
     const selectedValue = event.target.value;
     const selectedOption =
@@ -47,7 +71,9 @@ const LabelAutocomplete: React.FC<AutocompleteProps> = ({
   return (
     <div>
       <div
-        className={`flex items-center rounded-full bg-white px-4 shadow-md ${sizeClasses[size]} focus-within:border-Primary focus-within:outline-none focus-within:ring-2 focus-within:ring-blue-500`}
+        className={`flex items-center rounded-full px-4 shadow-md ${sizeClasses[size]} ${
+          isDarkMode ? "bg-[#2A2E39] text-white" : "bg-white text-black"
+        } focus-within:border-Primary focus-within:outline-none focus-within:ring-2 focus-within:ring-blue-500`}
       >
         <input
           type="text"
@@ -56,9 +82,15 @@ const LabelAutocomplete: React.FC<AutocompleteProps> = ({
           onChange={(e) => onChange(e.target.value)}
           onSelect={handleSelect}
           placeholder={placeholder}
-          className="flex-grow focus:outline-none"
+          className={`flex-grow focus:outline-none ${
+            isDarkMode ? "bg-[#2A2E39] text-white" : "bg-white text-black"
+          }`}
         />
-        <img src="/search.svg" alt="Search" className="h-5 w-5" />
+        <Icon
+          name="icon-search"
+          size={24}
+          color={isDarkMode ? "white" : "black"}
+        />
       </div>
       <datalist id="autocomplete-options">
         {options.map((option, index) =>

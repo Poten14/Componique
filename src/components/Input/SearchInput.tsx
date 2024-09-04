@@ -1,7 +1,7 @@
 "use client";
 
 import Icon from "@components/Icon/Icon";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 // 기본 HTML 속성을 확장하여 사용
 interface SearchInputProps extends React.InputHTMLAttributes<HTMLInputElement> {
@@ -21,6 +21,28 @@ const SearchInput: React.FC<SearchInputProps> = ({
 }) => {
   const [isActive, setIsActive] = useState(false);
   const [value, setValue] = useState("");
+  const [isDarkMode, setIsDarkMode] = useState(false);
+
+  useEffect(() => {
+    const checkDarkMode = () => {
+      const darkMode = document.documentElement.classList.contains("dark");
+      setIsDarkMode(darkMode);
+    };
+
+    checkDarkMode(); // 초기 다크 모드 상태 체크
+    window.addEventListener("storage", checkDarkMode);
+
+    const observer = new MutationObserver(checkDarkMode);
+    observer.observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ["class"],
+    });
+
+    return () => {
+      window.removeEventListener("storage", checkDarkMode);
+      observer.disconnect();
+    };
+  }, []);
 
   const handleSearch = () => {
     if (onSearch) {
@@ -30,9 +52,9 @@ const SearchInput: React.FC<SearchInputProps> = ({
 
   return (
     <div
-      className={`flex items-center rounded-full bg-white p-2 shadow-md transition-all duration-300 ${
+      className={`flex items-center rounded-full p-2 shadow-md transition-all duration-300 ${
         isActive ? `${width}` : "w-12"
-      }`}
+      } ${isDarkMode ? "border-Navy border bg-transparent" : "bg-white"}`}
     >
       <button
         onClick={() => setIsActive(!isActive)}
@@ -43,13 +65,15 @@ const SearchInput: React.FC<SearchInputProps> = ({
         <Icon
           name="icon-search"
           size={24}
-          color={isActive ? "white" : "black"}
+          color={isDarkMode ? "white" : isActive ? "white" : "black"}
         />
       </button>
       {isActive && (
         <input
           type="text"
-          className="ml-2 flex-grow border-none text-black outline-none"
+          className={`ml-2 flex-grow border-none outline-none ${
+            isDarkMode ? "bg-transparent text-white" : "text-black"
+          }`}
           placeholder={placeholder}
           value={value}
           onChange={(e) => setValue(e.target.value)}
