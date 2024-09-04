@@ -92,7 +92,7 @@ const PinInput: React.FC<PinInputProps> = ({
           className={`h-9 w-7 rounded-md border text-center focus:outline-none ${
             variant === "filled"
               ? isDarkMode
-                ? "border-Navy bg-transparent text-white focus:border-blue-500"
+                ? "border-Navy bg-Navy text-white focus:border-blue-500"
                 : "bg-[#E0E0E0] focus:border-Basic focus:bg-white"
               : isDarkMode
                 ? "border-Navy bg-transparent text-white focus:border-blue-500"
