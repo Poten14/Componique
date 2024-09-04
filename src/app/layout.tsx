@@ -1,6 +1,4 @@
-// app/layout.tsx
 import "./globals.css";
-import SideBar from "@components/Layout/SideBar";
 import Header from "@components/Layout/Header";
 import Footer from "@components/Footer/Footer";
 import DarkModeStatus from "@components/DarkModeStatus/DarkModeStatus";
@@ -20,11 +18,9 @@ export default function RootLayout({
       <body>
         <DarkModeStatus>
           <Header />
-          <section className="fixed z-0 mt-[80px] hidden h-[calc(100%-120px)] w-[250px] bg-white dark:bg-Dark xl:block">
-            <SideBar />
-          </section>
-          <div className="flex justify-center pt-[90px] md:px-4">
-            <div className="max-w-full">{children}</div>
+
+          <div>
+            <div>{children}</div>
           </div>
           <div className="flex items-center justify-center">
             <Footer />
