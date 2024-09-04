@@ -1027,7 +1027,7 @@ export default ColorExample;`}
           <code>RadioButtonDescription</code> 컴포넌트는 비활성화된 상태로
           설정할 수 있습니다. 이 상태에서는 사용자 입력을 받을 수 없습니다:
         </p>
-        <div className="space-y-7">
+        <div className="my-7 space-y-7">
           <RadioButtonDescription
             name="descriptionOptions"
             value="option1"
@@ -1511,7 +1511,7 @@ export default Example;`}
               <code>large</code>: 큰 크기
             </li>
           </ul>
-          <div className="space-y-7">
+          <div className="my-7 space-y-7">
             <RadioButtonInline
               name="inlineOptions"
               value="option1"
@@ -1667,7 +1667,7 @@ export default SizeExample;`}
               <code>red</code>: 빨간색
             </li>
           </ul>
-          <div className="space-y-7">
+          <div className="my-7 space-y-7">
             <RadioButtonInline
               name="inlineOptions"
               value="option1"
