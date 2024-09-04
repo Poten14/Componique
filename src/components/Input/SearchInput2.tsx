@@ -1,7 +1,7 @@
 "use client";
 
 import Icon from "@components/Icon/Icon";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Size } from "types/type";
 
 interface SearchInputProps
@@ -36,6 +36,28 @@ const SearchInput2: React.FC<SearchInputProps> = ({
   ...props // 확장된 속성들을 받기 위해 사용
 }) => {
   const [isExpanded, setIsExpanded] = useState(false);
+  const [isDarkMode, setIsDarkMode] = useState(false);
+
+  useEffect(() => {
+    const checkDarkMode = () => {
+      const darkMode = document.documentElement.classList.contains("dark");
+      setIsDarkMode(darkMode);
+    };
+
+    checkDarkMode(); // 초기 다크 모드 상태 체크
+    window.addEventListener("storage", checkDarkMode);
+
+    const observer = new MutationObserver(checkDarkMode);
+    observer.observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ["class"],
+    });
+
+    return () => {
+      window.removeEventListener("storage", checkDarkMode);
+      observer.disconnect();
+    };
+  }, []);
 
   const toggleExpand = () => {
     setIsExpanded(!isExpanded);
@@ -43,13 +65,15 @@ const SearchInput2: React.FC<SearchInputProps> = ({
 
   return (
     <div
-      className={`flex items-center rounded-full bg-white pl-2 shadow-md transition-all duration-300 ${
+      className={`flex items-center rounded-full pl-2 shadow-md transition-all duration-300 ${
         isExpanded ? expandedSizeClasses[size] : sizeClasses[size]
-      }`}
+      } ${isDarkMode ? "border-Navy border bg-transparent" : "bg-white"}`}
     >
       <input
         type="text"
-        className="text-gray-700 flex-grow pl-3 focus:outline-none"
+        className={`flex-grow pl-3 focus:outline-none ${
+          isDarkMode ? "bg-transparent text-white" : "text-gray-700"
+        }`}
         placeholder={placeholder}
         value={value}
         onChange={onChange}
@@ -58,7 +82,11 @@ const SearchInput2: React.FC<SearchInputProps> = ({
         {...props} // 추가된 속성 전달
       />
       <button className="h-full rounded-r-full pr-5 focus:outline-none">
-        <Icon name="icon-search" size={iconSizeClasses[size]} />
+        <Icon
+          name="icon-search"
+          size={iconSizeClasses[size]}
+          color={isDarkMode ? "white" : "black"} // 다크 모드에서는 아이콘 색상을 흰색으로
+        />
       </button>
     </div>
   );

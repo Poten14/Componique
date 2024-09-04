@@ -39,7 +39,7 @@ const SwitchDark = () => {
     <div className="mr-3 flex items-center justify-center space-x-12">
       <div
         onClick={toggleSwitch}
-        className={`flex h-10 w-14 cursor-pointer items-center rounded-full p-1 ${isDarkMode ? "bg-[#232A31]" : "bg-[#FFFFFF]"}`}
+        className={`flex h-10 w-14 cursor-pointer items-center rounded-full p-1 shadow-lg ${isDarkMode ? "bg-[#232A31]" : "bg-[#FFFFFF]"}`}
       >
         {/* 아이콘 컨테이너 */}
         <div className="relative flex h-full items-center">
@@ -53,7 +53,7 @@ const SwitchDark = () => {
           />
           {/* 스위치 버튼 */}
           <div
-            className={`h-5 w-5 transform rounded-full shadow-lg duration-700 ease-in-out ${isDarkMode ? "translate-x-7 bg-[#333742]" : "translate-x-1 bg-[#9AC5E5]"}`}
+            className={`h-5 w-5 transform rounded-full duration-700 ease-in-out ${isDarkMode ? "translate-x-7 bg-[#333742]" : "translate-x-1 bg-[#9AC5E5]"}`}
           />
         </div>
       </div>
