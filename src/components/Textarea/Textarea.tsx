@@ -4,7 +4,7 @@ interface TextareaProps
   extends React.TextareaHTMLAttributes<HTMLTextAreaElement> {
   label?: string;
   size?: ExtraSize;
-  color?: "red" | "blue" | "green" | "gray";
+  color?: "red" | "skyblue" | "green" | "gray";
   resize?: "none" | "both" | "horizontal" | "vertical";
 }
 
@@ -17,10 +17,10 @@ const sizeClasses = {
 };
 
 const colorClasses = {
-  red: "border-[#FF7676] focus:ring-[#FF7676]",
-  blue: "border-[#7AA7FF] focus:ring-[#7AA7FF]",
-  green: "border-[#7EEFAF] focus:ring-[#7EEFAF]",
-  gray: "border-[#DCDCDD] focus:ring-[#DCDCDD]",
+  red: "border-[#FF7676] dark:border-[#FF7676] focus:ring-[#FF7676] ",
+  skyblue: "border-[#7AA7FF] focus:ring-[#7AA7FF] ",
+  green: "border-[#7EEFAF] dark:border-[#7EEFAF] focus:ring-[#7EEFAF] ",
+  gray: "border-[#DCDCDD] dark:border-[#DCDCDD] focus:ring-[#DCDCDD] ",
 };
 
 const resizeClasses = {
@@ -33,7 +33,7 @@ const resizeClasses = {
 const Textarea: React.FC<TextareaProps> = ({
   label,
   id,
-  color = "blue",
+  color = "skyblue",
   size = "large",
   resize = "vertical",
   ...props
@@ -49,7 +49,7 @@ const Textarea: React.FC<TextareaProps> = ({
       <textarea
         id={id}
         {...props}
-        className={`text-gray-900 ${sizeClasses[size]} block rounded-lg border p-2 focus:outline-none ${colorClasses[color]} ${resizeClasses[resize]}`}
+        className={`text-gray-900 ${sizeClasses[size]} block rounded-lg border p-2 focus:outline-none dark:border-[#2A6490] dark:bg-transparent ${colorClasses[color]} ${resizeClasses[resize]}`}
       ></textarea>
     </>
   );

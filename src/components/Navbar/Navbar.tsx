@@ -19,9 +19,9 @@ const sizeClasses = {
 };
 
 const hoverColorClasses = {
-  skyblue: "hover:text-[#9AC5E5]",
-  blue: "hover:text-[#7AA7FF]",
-  red: "hover:text-[#FF7676]",
+  skyblue: "hover:text-[#9AC5E5] dark:hover:text-[#9AC5E5]",
+  blue: "hover:text-[#7AA7FF] dark:hover:text-[#7AA7FF]",
+  red: "hover:text-[#FF7676] dark:hover:text-[#FF7676]",
 };
 
 const positionClasses = {
@@ -39,12 +39,12 @@ const Navbar = ({
   links,
 }: NavbarProps) => {
   const hoverClass = hoverColorClasses[hoverColor];
-  const navClass = `cursor-pointer ${hoverClass} no-underline`;
+  const navClass = `cursor-pointer ${hoverClass} no-underline dark:text-white`;
 
   return (
     <>
       <div
-        className={`mx-auto mt-4 flex max-w-screen-lg items-center justify-between ${sizeClasses[size]} ${positionClasses[position]}`}
+        className={`mx-auto mt-4 flex max-w-screen-lg items-center justify-between dark:text-white ${sizeClasses[size]} ${positionClasses[position]}`}
       >
         <div className={`flex items-center justify-center`}>
           <Image src={logoSrc} alt="logo" width={50} height={50} />

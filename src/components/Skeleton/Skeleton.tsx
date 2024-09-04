@@ -27,7 +27,9 @@ const Skeleton = ({
   const animationClass = animate ? "animate-pulse" : "";
   return (
     <>
-      <div className={`${sizeClasses[size]} rounded-2xl border border-gray`}>
+      <div
+        className={`${sizeClasses[size]} rounded-2xl border border-gray dark:border-[#2A6490]`}
+      >
         <div className="flex flex-col p-4">
           <div
             className={`${variantsClasses[variants]} h-20 w-full ${animationClass} bg-gray`}

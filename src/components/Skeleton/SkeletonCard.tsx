@@ -20,7 +20,7 @@ const SkeletonCard: React.FC<SkeletonCardProps> = ({
   return (
     <>
       <div
-        className={`${width} ${height} ${animationClass} rounded-lg border border-gray p-4`}
+        className={`${width} ${height} ${animationClass} rounded-lg border border-gray p-4 dark:border-[#2A6490]`}
       >
         {hasImage && (
           <div

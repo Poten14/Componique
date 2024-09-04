@@ -10,10 +10,11 @@ interface SelectProps {
 }
 
 const colorClasses = {
-  red: "border-[#FF7676] focus:ring-[#FF7676]",
-  blue: "border-[#7AA7FF] focus:ring-[#7AA7FF]",
-  green: "border-[#7EEFAF] focus:ring-[#7EEFAF]",
-  gray: "border-[#DCDCDD] focus:ring-[#DCDCDD]",
+  red: "border-[#FF7676] focus:ring-[#FF7676] dark:border-[#FF7676] dark:focus:ring-[#FF7676]",
+  blue: "border-[#7AA7FF] focus:ring-[#7AA7FF] dark:border-[#7AA7FF] dark:focus:ring-[#7AA7FF] ",
+  green:
+    "border-[#7EEFAF] focus:ring-[#7EEFAF] dark:border-[#7EEFAF] dark:focus:ring-[#7EEFAF]",
+  gray: "border-[#DCDCDD] dark:border-[#DCDCDD] focus:ring-[#DCDCDD] dark:focus:ring-[#DCDCDD] ",
 };
 
 const Select = ({ option, color = "gray", placeholder }: SelectProps) => {
@@ -64,7 +65,7 @@ const Select = ({ option, color = "gray", placeholder }: SelectProps) => {
     <>
       <div className="relative w-60" ref={dropMenuRef}>
         <div
-          className={`flex h-9 w-full cursor-pointer items-center justify-between rounded-lg border ${colorClasses[color]} p-2 shadow-lg`}
+          className={`flex h-9 w-full cursor-pointer items-center justify-between rounded-lg border dark:border-[#2A6490] ${colorClasses[color]} p-2 shadow-lg`}
           onClick={handleDropDown}
         >
           <span className="text-sm font-semibold">

@@ -48,7 +48,7 @@ const SelectValueAdd = ({
   return (
     <div className="relative">
       <div
-        className="flex h-9 min-w-60 max-w-[450px] cursor-pointer items-center justify-between rounded-lg border border-gray p-2 shadow-lg"
+        className="flex h-9 min-w-60 max-w-[450px] cursor-pointer items-center justify-between rounded-lg border border-gray p-2 shadow-lg dark:border-[#2A6490]"
         onClick={handleDropDown}
         style={{ width: open ? "auto" : "fit-content" }}
       >

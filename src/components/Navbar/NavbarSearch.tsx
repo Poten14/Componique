@@ -36,7 +36,7 @@ const NavbarSearch = ({
   ...props
 }: NavbarSearchProps) => {
   return (
-    <div className="mx-auto mt-4 flex max-w-screen-lg items-center justify-between">
+    <div className="mx-auto mt-4 flex max-w-screen-lg items-center justify-between dark:text-white">
       <LogoSection />
       <div className="relative">
         <SearchInput2
