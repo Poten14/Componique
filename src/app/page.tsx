@@ -4,6 +4,7 @@ import Autocomplete from "@components/Autocomplete";
 import Image from "next/image";
 import { useState, useEffect } from "react";
 import Content from "@components/Content/page";
+import SideBar from "@components/Layout/SideBar";
 
 const options = [
   { label: "Form", value: "Button" },
@@ -84,32 +85,37 @@ const Page = () => {
   const logoSrc = isDarkMode ? "/ComponiqueDark.svg" : "/Componique.svg";
 
   return (
-    <div className="main-wrapper xl:ml-[300px]">
-      <div className="mt-16 flex flex-col items-center justify-center">
-        <div className="mb-8 w-full max-w-[440px]">
-          <Image src={logoSrc} alt="logo" width={440} height={72} />
-        </div>
-        <div className="w-full max-w-[740px] dark:text-white">
-          <Autocomplete
-            options={options.map((option) => option.value)}
-            placeholder="Search for a Components..."
-            onSelect={handleSelect}
-          />
-        </div>
-        <div className="mt-4">
-          <div className="flex flex-wrap gap-2">
-            {recentSearches.map((search, index) => (
-              <span
-                key={index}
-                className="rounded-full border border-Basic px-3 py-1 text-Basic dark:border-Navy dark:text-Navy"
-              >
-                {search}
-              </span>
-            ))}
+    <div>
+      <section className="fixed z-0 mt-[16px] hidden h-[calc(100%-120px)] w-[250px] bg-white dark:bg-Dark xl:block">
+        <SideBar />
+      </section>
+      <div className="main-wrapper xl:ml-[300px]">
+        <div className="mt-16 flex flex-col items-center justify-center">
+          <div className="mb-8 w-full max-w-[440px]">
+            <Image src={logoSrc} alt="logo" width={440} height={72} />
+          </div>
+          <div className="w-full max-w-[740px] dark:text-white">
+            <Autocomplete
+              options={options.map((option) => option.value)}
+              placeholder="Search for a Components..."
+              onSelect={handleSelect}
+            />
+          </div>
+          <div className="mt-4">
+            <div className="flex flex-wrap gap-2">
+              {recentSearches.map((search, index) => (
+                <span
+                  key={index}
+                  className="rounded-full border border-Basic px-3 py-1 text-Basic dark:border-Navy dark:text-Navy"
+                >
+                  {search}
+                </span>
+              ))}
+            </div>
           </div>
         </div>
+        <Content />
       </div>
-      <Content />
     </div>
   );
 };
