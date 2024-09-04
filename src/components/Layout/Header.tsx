@@ -120,6 +120,11 @@ const Header = () => {
                 { name: "Avatar", path: "/avatar", className: "py-0" },
                 { name: "Icon", path: "/icon", className: "py-0" },
                 {
+                  name: "Progress Bar",
+                  path: "/progressbar",
+                  className: "py-0",
+                },
+                {
                   name: "Infinite Scroll",
                   path: "/infinitescroll",
                   className: "py-0",
