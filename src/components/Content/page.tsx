@@ -106,7 +106,7 @@ const components = [
         name: "InfiniteScroll",
         src: "/InfiniteScroll.svg",
         darkSrc: "/InfiniteScrollDark.svg",
-        link: "/InfiniteScroll",
+        link: "/infiniteScroll",
       },
     ],
   },
