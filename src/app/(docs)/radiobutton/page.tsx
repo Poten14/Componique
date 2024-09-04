@@ -19,14 +19,14 @@ const RadioButton: React.FC = () => {
   };
 
   return (
-    <div className="prose max-w-[1000px] p-5 text-[#6D6D6D]">
-      <h1 className="text-[#2D3748]">1. RadioButtonBasic</h1>
+    <div className="prose max-w-[1000px] p-5 text-[#6D6D6D] dark:text-[#dfdfdf]">
+      <h1 className="text-[#2D3748] dark:text-white">1. RadioButtonBasic</h1>
       <p>
         <code>RadioButtonBasic</code> 컴포넌트는 사용자가 선택할 수 있는 라디오
         버튼을 제공합니다. 다양한 크기와 색상을 지정할 수 있으며, 비활성화
         옵션도 지원합니다.
       </p>
-      <h2 className="text-[#2D3748]">1.1. Import</h2>
+      <h2 className="text-[#2D3748] dark:text-white">1.1. Import</h2>
       {/* 카피버튼 시작 */}
       <CodeBox
         code={`import RadioButtonBasic from '@components/RadioButton/RadioButtonBasic';`}
@@ -37,9 +37,9 @@ const RadioButton: React.FC = () => {
         handleCopy={handleCopy}
       />
       {/* 카피버튼 끝 */}
-      <h2 className="text-[#2D3748]">1.2. Usage</h2>
+      <h2 className="text-[#2D3748] dark:text-white">1.2. Usage</h2>
       <p>기본 사용 예제는 아래와 같습니다:</p>
-      <div style={{ marginBottom: "20px" }}>
+      <div className="space-y-7" style={{ marginBottom: "20px" }}>
         {/* RadioButtonBasic 사용 예 */}
         <RadioButtonBasic
           name="basicOptions"
@@ -117,7 +117,7 @@ export default Example;`}
         handleCopy={handleCopy}
       />
       {/* 카피버튼 끝 */}
-      <h2 className="text-[#2D3748]">
+      <h2 className="text-[#2D3748] dark:text-white">
         1.3. Changing the Size of the Radio Button
       </h2>
       <p>
@@ -135,7 +135,7 @@ export default Example;`}
           <code>large</code>: 큰 크기
         </li>
       </ul>
-      <div className="space-y-4">
+      <div className="my-7 space-y-7">
         {/* 다양한 크기 옵션 */}
         <RadioButtonBasic
           name="basicOptions"
@@ -261,14 +261,14 @@ export default Example;`}
         handleCopy={handleCopy}
       />
       {/* 카피버튼 끝 */}
-      <h2 className="text-[#2D3748]">
+      <h2 className="text-[#2D3748] dark:text-white">
         1.4. Changing the Color of the Radio Button
       </h2>
       <p>
         <code>RadioButtonBasic</code> 컴포넌트는 다양한 색상으로 제공됩니다.
         기본 색상은 <code>sky</code>입니다:
       </p>
-      <ul>
+      <ul className="y-space-7 my-7">
         <li>
           <code>sky</code>: 하늘색
         </li>
@@ -291,7 +291,7 @@ export default Example;`}
           <code>red</code>: 빨간색
         </li>
       </ul>
-      <div className="space-y-4">
+      <div className="my-7 space-y-7">
         {/* 다양한 색상 옵션 */}
         <RadioButtonBasic
           name="basicOptions"
@@ -394,7 +394,7 @@ export default Example;`}
       />
       {/* 카피버튼 끝 */}
 
-      <h2 className="text-[#2D3748]">1.5 Props</h2>
+      <h2 className="text-[#2D3748] dark:text-white">1.5 Props</h2>
       <p>
         <code>RadioButtonBasic</code> 컴포넌트는 아래와 같은 Props를 가집니다:
       </p>
@@ -508,7 +508,7 @@ export default Example;`}
           </tr>
         </tbody>
       </table>
-      <h2 className="text-[#2D3748]">1.6. Full Example</h2>
+      <h2 className="text-[#2D3748] dark:text-white">1.6. Full Example</h2>
       {/* 카피버튼 시작 */}
       <CodeBox
         code={`
@@ -608,13 +608,15 @@ export default Example;`}
       <hr />
       {/* RadioButton2 */}
       <div className="">
-        <h1 className="text-[#2D3748]">2. RadioButtonDescription</h1>
+        <h1 className="text-[#2D3748] dark:text-white">
+          2. RadioButtonDescription
+        </h1>
         <p>
           <code>RadioButtonDescription</code> 컴포넌트는 라디오 버튼 옆에 라벨과
           설명을 추가할 수 있는 컴포넌트입니다. 다양한 크기와 색상을 지원하며,
           비활성화 옵션도 설정할 수 있습니다.
         </p>
-        <h2 className="text-[#2D3748]">2.1 Import</h2>
+        <h2 className="text-[#2D3748] dark:text-white">2.1 Import</h2>
         {/* 카피버튼 시작 */}
         <CodeBox
           code={`import RadioButtonDescription from '@components/RadioButton/RadioButtonDescription';`}
@@ -626,7 +628,7 @@ export default Example;`}
         />
         {/* 카피버튼 끝 */}
 
-        <h2 className="text-[#2D3748]">2.2. Usage</h2>
+        <h2 className="text-[#2D3748] dark:text-white">2.2. Usage</h2>
         <p>기본 사용 예제는 아래와 같습니다:</p>
         <div style={{ marginBottom: "20px" }}>
           <RadioButtonDescription
@@ -699,7 +701,7 @@ export default DescriptionExample;`}
         />
         {/* 카피버튼 끝 */}
 
-        <h2 className="text-[#2D3748]">
+        <h2 className="text-[#2D3748] dark:text-white">
           2.3. Changing the Size of the Radio Button
         </h2>
         <p>
@@ -717,7 +719,7 @@ export default DescriptionExample;`}
             <code>large</code>: 큰 크기
           </li>
         </ul>
-        <div className="space-y-4">
+        <div className="space-y-7">
           <RadioButtonDescription
             name="descriptionOptions"
             value="option1"
@@ -852,7 +854,7 @@ export default SizeExample;`}
         />
         {/* 카피버튼 끝 */}
 
-        <h2 className="text-[#2D3748]">
+        <h2 className="text-[#2D3748] dark:text-white">
           2.4. Changing the Color of the Radio Button
         </h2>
         <p>
@@ -882,7 +884,7 @@ export default SizeExample;`}
             <code>red</code>: 빨간색
           </li>
         </ul>
-        <div className="space-y-4">
+        <div className="space-y-7">
           <RadioButtonDescription
             name="descriptionOptions"
             value="option1"
@@ -1020,12 +1022,12 @@ export default ColorExample;`}
         />
         {/* 카피버튼 끝 */}
 
-        <h2 className="text-[#2D3748]">2.5. Disabled State</h2>
+        <h2 className="text-[#2D3748] dark:text-white">2.5. Disabled State</h2>
         <p>
           <code>RadioButtonDescription</code> 컴포넌트는 비활성화된 상태로
           설정할 수 있습니다. 이 상태에서는 사용자 입력을 받을 수 없습니다:
         </p>
-        <div className="space-y-4">
+        <div className="space-y-7">
           <RadioButtonDescription
             name="descriptionOptions"
             value="option1"
@@ -1099,7 +1101,7 @@ export default DisabledExample;`}
         />
         {/* 카피버튼 끝 */}
 
-        <h2 className="text-[#2D3748]">2.6. Props</h2>
+        <h2 className="text-[#2D3748] dark:text-white">2.6. Props</h2>
         <p>
           <code>RadioButtonDescription</code> 컴포넌트는 아래와 같은 Props를
           가집니다:
@@ -1226,7 +1228,7 @@ export default DisabledExample;`}
             </tr>
           </tbody>
         </table>
-        <h2 className="text-[#2D3748]">2.7. Full Example</h2>
+        <h2 className="text-[#2D3748] dark:text-white">2.7. Full Example</h2>
         {/* 카피버튼 시작 */}
         <CodeBox
           code={`
@@ -1347,13 +1349,15 @@ export default FullExample;`}
 
         {/* RadioButton3 */}
         <div className="">
-          <h1 className="text-[#2D3748]">3. RadioButtonInline</h1>
+          <h1 className="text-[#2D3748] dark:text-white">
+            3. RadioButtonInline
+          </h1>
           <p>
             <code>RadioButtonInline</code> 컴포넌트는 사용자가 선택할 수 있는
             인라인 스타일의 라디오 버튼을 제공합니다. 다양한 크기와 색상을
             지정할 수 있으며, 비활성화 옵션도 지원합니다.
           </p>
-          <h2 className="text-[#2D3748]">3.1. Import</h2>
+          <h2 className="text-[#2D3748] dark:text-white">3.1. Import</h2>
           {/* 카피버튼 시작 */}
           <CodeBox
             code={`import RadioButtonInline from '@components/RadioButton/RadioButtonInline';`}
@@ -1365,7 +1369,7 @@ export default FullExample;`}
           />
           {/* 카피버튼 끝 */}
 
-          <h2 className="text-[#2D3748]">3.2. Usage</h2>
+          <h2 className="text-[#2D3748] dark:text-white">3.2. Usage</h2>
           <p>기본 사용 예제는 아래와 같습니다:</p>
           <div style={{ marginBottom: "20px" }}>
             <RadioButtonInline
@@ -1489,7 +1493,7 @@ export default Example;`}
           />
           {/* 카피버튼 끝 */}
 
-          <h2 className="text-[#2D3748]">
+          <h2 className="text-[#2D3748] dark:text-white">
             3.3. Changing the Size of the Radio Button
           </h2>
           <p>
@@ -1507,7 +1511,7 @@ export default Example;`}
               <code>large</code>: 큰 크기
             </li>
           </ul>
-          <div className="space-y-4">
+          <div className="space-y-7">
             <RadioButtonInline
               name="inlineOptions"
               value="option1"
@@ -1633,7 +1637,7 @@ export default SizeExample;`}
           />
           {/* 카피버튼 끝 */}
 
-          <h2 className="text-[#2D3748]">
+          <h2 className="text-[#2D3748] dark:text-white">
             3.4. Changing the Color of the Radio Button
           </h2>
           <p>
@@ -1663,7 +1667,7 @@ export default SizeExample;`}
               <code>red</code>: 빨간색
             </li>
           </ul>
-          <div className="space-y-4">
+          <div className="space-y-7">
             <RadioButtonInline
               name="inlineOptions"
               value="option1"
@@ -1897,7 +1901,7 @@ export default ColorExample;`}
           />
           {/* 카피버튼 끝 */}
 
-          <h2 className="text-[#2D3748]">3.5. Props</h2>
+          <h2 className="text-[#2D3748] dark:text-white">3.5. Props</h2>
           <p>
             <code>RadioButtonInline</code> 컴포넌트는 아래와 같은 Props를
             가집니다:
@@ -2014,7 +2018,7 @@ export default ColorExample;`}
             </tbody>
           </table>
 
-          <h2 className="text-[#2D3748]">3.6. Full Example</h2>
+          <h2 className="text-[#2D3748] dark:text-white">3.6. Full Example</h2>
           {/* 카피버튼 시작 */}
           <CodeBox
             code={`
