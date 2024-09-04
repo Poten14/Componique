@@ -7,6 +7,8 @@ interface CalendarProps {
   defaultValue?: Date;
 }
 
+const daysOfWeek = ["Sun", "Mon", "Tue", "Wen", "Thu", "Fri", "Sat"];
+
 const Calendar = ({ onDateSelect, defaultValue }: CalendarProps) => {
   const [currentDate, setCurrentDate] = useState<Date>(
     defaultValue || new Date(),
@@ -59,14 +61,13 @@ const Calendar = ({ onDateSelect, defaultValue }: CalendarProps) => {
     if (onDateSelect) {
       onDateSelect(selectedDate);
     }
-    console.log("selectedDate", selectedDate);
   };
 
   // 빈칸, 날짜 추가 반복문
   const renderDays = () => {
     const days = [];
     for (let i = 0; i < startDay; i++) {
-      days.push(<div key={`empty-${i} className="p-2"`} />);
+      days.push(<div key={`empty-${i}`} className="p-2" />);
     }
 
     for (let day = 1; day <= endDay; day++) {
@@ -78,7 +79,7 @@ const Calendar = ({ onDateSelect, defaultValue }: CalendarProps) => {
       days.push(
         <div
           key={day}
-          className={`m-auto h-10 w-10 cursor-pointer rounded-full p-2 text-center text-sm ${isSelected ? "bg-[#9AC5E5] text-white" : "bg-white hover:bg-[#1976d20a]"} `}
+          className={`m-auto h-10 w-10 cursor-pointer rounded-full p-2 text-center text-sm ${isSelected ? "bg-[#9AC5E5] text-white" : ""} `}
           onClick={() => handleDateClick(day)}
         >
           {day}
@@ -87,8 +88,6 @@ const Calendar = ({ onDateSelect, defaultValue }: CalendarProps) => {
     }
     return days;
   };
-
-  const dateClass = "text-center text-[#ddd]";
 
   return (
     <>
@@ -106,13 +105,13 @@ const Calendar = ({ onDateSelect, defaultValue }: CalendarProps) => {
           </div>
           {/* 월,달,날짜 */}
           <div className="grid grid-cols-7 gap-2">
-            <div className={dateClass}>Sun</div>
-            <div className={dateClass}>Mon</div>
-            <div className={dateClass}>Tue</div>
-            <div className={dateClass}>Wed</div>
-            <div className={dateClass}>Thu</div>
-            <div className={dateClass}>Fri</div>
-            <div className={dateClass}>Sat</div>
+            {daysOfWeek.map((day) => (
+              <div key={day} className="text-center text-[#ddd]">
+                {day}
+              </div>
+            ))}
+          </div>
+          <div className="grid grid-cols-7 gap-2 text-center">
             {renderDays()}
           </div>
         </div>
