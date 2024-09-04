@@ -43,11 +43,13 @@ const DropDownBasic = ({
       <div className="relative inline-block w-48">
         <div
           onClick={() => toggleDropdown(0)}
-          className="border-gray-300 flex h-10 cursor-pointer items-center justify-between border-2 bg-white p-2 font-medium"
+          className="border-gray-300 flex h-10 cursor-pointer items-center justify-between border-2 bg-white p-2 font-medium dark:bg-[#2A2E39]"
         >
           <span
             className={`font-bold ${
-              selectedOptions[0] ? "text-black" : "text-slate-600"
+              selectedOptions[0]
+                ? "text-black dark:text-white"
+                : "text-slate-600"
             }`}
           >
             {selectedOptions[0] || placeholder}
@@ -61,12 +63,12 @@ const DropDownBasic = ({
           />
         </div>
         {isOpen === 0 && (
-          <ul className="border-gray-300 border bg-white">
+          <ul className="border bg-white dark:bg-[#2A2E39]">
             {option.map((item, index) => (
               <li
                 key={index}
                 onClick={() => handleOptionClick(item, 0)}
-                className="border-gray-200 cursor-pointer border-b p-2 text-zinc-800 hover:bg-[#E8F5FF]"
+                className="border-gray-200 cursor-pointer border-b p-2 text-zinc-800 hover:bg-[#E8F5FF] dark:text-white dark:hover:bg-[#2A6490]"
               >
                 {item}
               </li>
@@ -79,11 +81,13 @@ const DropDownBasic = ({
       <div className="relative inline-block w-48">
         <div
           onClick={() => toggleDropdown(1)}
-          className="border-gray-300 flex h-10 cursor-pointer items-center justify-between rounded-lg border-2 bg-white p-2 font-medium"
+          className="border-gray-300 flex h-10 cursor-pointer items-center justify-between rounded-lg border-2 bg-white p-2 font-medium dark:bg-[#2A2E39]"
         >
           <span
             className={`font-bold ${
-              selectedOptions[1] ? "text-black" : "text-slate-600"
+              selectedOptions[1]
+                ? "text-black dark:text-white"
+                : "text-slate-600"
             }`}
           >
             {selectedOptions[1] || placeholder}
@@ -96,12 +100,12 @@ const DropDownBasic = ({
           />
         </div>
         {isOpen === 1 && (
-          <ul className="border-gray-300 rounded-lg border bg-white">
+          <ul className="border-gray-300 rounded-lg border bg-white dark:bg-[#2A2E39]">
             {option.map((item, index) => (
               <li
                 key={index}
                 onClick={() => handleOptionClick(item, 1)}
-                className="border-gray-200 cursor-pointer border-b p-2 text-zinc-800 hover:bg-[#E8F5FF]"
+                className="border-gray-200 cursor-pointer border-b p-2 text-zinc-800 hover:bg-[#E8F5FF] dark:text-white dark:hover:bg-[#2A6490]"
               >
                 {item}
               </li>
@@ -114,11 +118,13 @@ const DropDownBasic = ({
       <div className="relative inline-block w-48">
         <div
           onClick={() => toggleDropdown(2)}
-          className="flex h-10 cursor-pointer items-center justify-between rounded-full border-2 border-zinc-100 bg-white p-2 font-medium shadow-md"
+          className="flex h-10 cursor-pointer items-center justify-between rounded-full border-2 border-zinc-100 bg-white p-2 font-medium shadow-md dark:bg-[#2A2E39]"
         >
           <span
             className={`font-bold ${
-              selectedOptions[2] ? "text-black" : "text-slate-600"
+              selectedOptions[2]
+                ? "text-black dark:text-white"
+                : "text-slate-600"
             }`}
           >
             {selectedOptions[2] || placeholder}
@@ -131,12 +137,12 @@ const DropDownBasic = ({
           />
         </div>
         {isOpen === 2 && (
-          <ul className="mt-2 rounded-xl border-2 border-zinc-100 bg-white shadow-md">
+          <ul className="mt-2 rounded-xl border-2 border-zinc-100 bg-white shadow-md dark:bg-[#2A2E39]">
             {option.map((item, index) => (
               <li
                 key={index}
                 onClick={() => handleOptionClick(item, 2)}
-                className="cursor-pointer rounded-xl border-b border-zinc-100 p-2 text-zinc-800 underline hover:bg-[#E8F5FF]"
+                className="cursor-pointer rounded-xl border-b border-zinc-100 p-2 text-zinc-800 underline hover:bg-[#E8F5FF] dark:text-white dark:hover:bg-[#2A6490]"
               >
                 {item}
               </li>
@@ -149,11 +155,13 @@ const DropDownBasic = ({
       <div className="relative inline-block w-48">
         <div
           onClick={() => toggleDropdown(3)}
-          className="flex h-10 cursor-pointer items-center justify-between rounded-lg border-2 border-zinc-100 bg-white p-2 font-medium"
+          className="flex h-10 cursor-pointer items-center justify-between rounded-lg border-2 border-zinc-100 bg-white p-2 font-medium dark:bg-[#2A2E39]"
         >
           <span
             className={`font-bold ${
-              selectedOptions[3] ? "text-black" : "text-slate-600"
+              selectedOptions[3]
+                ? "text-black dark:text-white"
+                : "text-slate-600"
             }`}
           >
             {selectedOptions[3] || placeholder}
@@ -166,12 +174,12 @@ const DropDownBasic = ({
           />
         </div>
         {isOpen === 3 && (
-          <ul className="rounded-lg border border-zinc-100 bg-white">
+          <ul className="rounded-lg border border-zinc-100 bg-white dark:bg-[#2A2E39]">
             {option.map((item, index) => (
               <li
                 key={index}
                 onClick={() => handleOptionClick(item, 3)}
-                className="cursor-pointer border-b border-zinc-100 p-2 text-zinc-800 hover:bg-[#E8F5FF]"
+                className="cursor-pointer border-b border-zinc-100 p-2 text-zinc-800 hover:bg-[#E8F5FF] dark:text-white dark:hover:bg-[#2A6490]"
               >
                 {item}
               </li>

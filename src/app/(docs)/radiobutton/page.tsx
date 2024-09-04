@@ -719,7 +719,7 @@ export default DescriptionExample;`}
             <code>large</code>: 큰 크기
           </li>
         </ul>
-        <div className="space-y-7">
+        <div className="my-7 space-y-7">
           <RadioButtonDescription
             name="descriptionOptions"
             value="option1"
@@ -884,7 +884,7 @@ export default SizeExample;`}
             <code>red</code>: 빨간색
           </li>
         </ul>
-        <div className="space-y-7">
+        <div className="my-7 space-y-7">
           <RadioButtonDescription
             name="descriptionOptions"
             value="option1"
