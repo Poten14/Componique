@@ -58,6 +58,9 @@ i {
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-comment:before {
+  content: "\e90c";
+}
 .icon-github:before {
   content: "\e90a";
 }
