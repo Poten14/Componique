@@ -13,7 +13,7 @@ interface AutocompleteProps {
 
 const variantClasses = {
   outlined: "border border-gray border-2 focus:border-none",
-  filled: "bg-gray text-gray-900 focus:bg-transparent",
+  filled: "bg-gray text-white focus:bg-transparent",
   borderless: "border-none bg-transparent",
 };
 
@@ -95,16 +95,20 @@ const Autocomplete: React.FC<AutocompleteProps> = ({
         onFocus={handleFocus}
         onBlur={handleBlur}
         placeholder={placeholder}
-        className={`w-full ${height} p-3 ${variantClasses[variant]} ${radiusClasses[radius]} focus:outline-none focus:ring-2 ${
-          isDarkMode
-            ? "bg-[#2A2E39] text-white"
-            : "border-gray bg-white text-black"
+        className={`w-full ${height} p-3 ${variantClasses[variant]} ${radiusClasses[radius]} focus:outline-none focus:ring-1 ${
+          variant === "filled" && isDarkMode
+            ? "bg-[#2A6490] text-white"
+            : variant === "filled"
+              ? "bg-gray-900 text-white"
+              : isDarkMode
+                ? "bg-[#2A2E39] text-white"
+                : "border-gray bg-white text-black"
         }`}
         style={{ height }}
       />
       {isDropdownOpen && (
         <ul
-          className={`absolute left-0 right-0 z-10 mt-1 max-h-40 overflow-y-auto rounded-md shadow-lg ${
+          className={`absolute left-0 right-0 z-10 mt-0 max-h-40 overflow-y-auto rounded-md shadow-lg ${
             isDarkMode ? "bg-[#2A2E39] text-white" : "bg-white text-black"
           }`}
         >
@@ -112,8 +116,11 @@ const Autocomplete: React.FC<AutocompleteProps> = ({
             filteredOptions.map((option, index) => (
               <li
                 key={index}
-                className={`hover:bg-gray-200 cursor-pointer p-2 pl-5 ${
-                  isDarkMode ? "hover:bg-gray-700 border-[#2A6490]" : ""
+                tabIndex={0}
+                className={`hover:bg-[#2A6490]focus:bg-blue-600 m-3 cursor-pointer p-2 ${
+                  isDarkMode
+                    ? "border-[#2A6490] hover:bg-[#2A6490] focus:bg-[#2A6490]"
+                    : ""
                 }`}
                 onClick={() => handleOptionClick(option)}
               >
