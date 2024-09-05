@@ -254,7 +254,7 @@ export default AvatarBasic;`}
 
         <h2 className="text-[#2D3748]">2.2. Usage</h2>
         <p>기본 사용 예제는 아래와 같습니다:</p>
-        <div className="my-7">
+        <div className="-scroll-my-72">
           <AvatarLabel
             src="/avatar1.svg"
             initial="CQ"
@@ -386,11 +386,11 @@ const AvatarLabel = ({
         backgroundImage: src ? \`url(\${src})\` : "",
         backgroundSize: "cover",
         backgroundPosition: "center",
-        fontSize: \`\${size * 0.2}px\`,
+        fontSize: \`\${sWize * 0.2}px\`,
       }}
     >
       {!src && initial}
-      <span>{label}</span>
+      <span>{label}</span>W
     </div>
   );
 };

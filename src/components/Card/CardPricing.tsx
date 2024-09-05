@@ -15,7 +15,7 @@ const CardPricing = ({
   buy,
 }: PricingCard) => {
   return (
-    <div className="dark:bg[#6A6868] m-4 max-w-sm rounded-xl border-2 border-Blue bg-white shadow-lg dark:text-white">
+    <div className="m-4 max-w-sm rounded-xl border-2 border-Blue bg-white shadow-lg dark:bg-[#2A2E39] dark:text-white">
       <div className="px-6 py-4">
         <div className="mb-2 text-2xl font-bold dark:text-white">{title}</div>
         <p className="text-slate-700 dark:text-white">{description}</p>
