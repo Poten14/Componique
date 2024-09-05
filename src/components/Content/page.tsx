@@ -34,7 +34,7 @@ const components = [
       {
         name: "Textarea",
         src: "/Textarea.svg",
-        darkSrc: "/TextareaDark.svg",
+        darkSrc: "/TextAreaDark.svg",
         link: "/textarea",
       },
       {
