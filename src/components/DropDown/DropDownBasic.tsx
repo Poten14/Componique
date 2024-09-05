@@ -63,7 +63,7 @@ const DropDownBasic = ({
           />
         </div>
         {isOpen === 0 && (
-          <ul className="border bg-white dark:bg-[#2A2E39]">
+          <ul className="absolute z-10 w-full border bg-white dark:bg-[#2A2E39]">
             {option.map((item, index) => (
               <li
                 key={index}
@@ -100,7 +100,7 @@ const DropDownBasic = ({
           />
         </div>
         {isOpen === 1 && (
-          <ul className="border-gray-300 rounded-lg border bg-white dark:bg-[#2A2E39]">
+          <ul className="border-gray-300 absolute z-10 w-full rounded-lg border bg-white dark:bg-[#2A2E39]">
             {option.map((item, index) => (
               <li
                 key={index}
@@ -137,7 +137,7 @@ const DropDownBasic = ({
           />
         </div>
         {isOpen === 2 && (
-          <ul className="mt-2 rounded-xl border-2 border-zinc-100 bg-white shadow-md dark:bg-[#2A2E39]">
+          <ul className="absolute z-10 mt-2 w-full rounded-xl border-2 border-zinc-100 bg-white shadow-md dark:bg-[#2A2E39]">
             {option.map((item, index) => (
               <li
                 key={index}
@@ -174,7 +174,7 @@ const DropDownBasic = ({
           />
         </div>
         {isOpen === 3 && (
-          <ul className="rounded-lg border border-zinc-100 bg-white dark:bg-[#2A2E39]">
+          <ul className="absolute z-10 w-full rounded-lg border border-zinc-100 bg-white dark:bg-[#2A2E39]">
             {option.map((item, index) => (
               <li
                 key={index}
