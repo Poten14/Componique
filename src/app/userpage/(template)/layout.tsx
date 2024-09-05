@@ -18,58 +18,7 @@ export default function DocsLayout({
         <div className="ml-[85px] w-[calc(100%-440px)] bg-yellow-100">
           {children}
         </div>
-        <div className="fixed right-0 h-[calc(100%-120px)] w-[350px] overflow-y-auto bg-green-100">
-          <p>오른쪽 시작</p>
-          <p>오른쪽</p>
-          <p>오른쪽</p>
-          <p>오른쪽</p>
-          <p>오른쪽</p>
-          <p>오른쪽</p>
-          <p>오른쪽</p>
-          <p>오른쪽</p>
-          <p>오른쪽</p>
-          <p>오른쪽</p>
-          <p>오른쪽</p>
-          <p>오른쪽</p>
-          <p>오른쪽</p>
-          <p>오른쪽</p>
-          <p>오른쪽</p>
-          <p>오른쪽</p>
-          <p>오른쪽</p>
-          <p>오른쪽</p>
-          <p>오른쪽</p>
-          <p>오른쪽</p>
-          <p>오른쪽</p>
-          <p>오른쪽</p>
-          <p>오른쪽</p>
-          <p>오른쪽</p>
-          <p>오른쪽</p>
-          <p>오른쪽</p>
-          <p>오른쪽</p>
-          <p>오른쪽</p>
-          <p>오른쪽</p>
-          <p>오른쪽</p>
-          <p>오른쪽</p>
-          <p>오른쪽</p>
-          <p>오른쪽</p>
-          <p>오른쪽</p>
-          <p>오른쪽</p>
-          <p>오른쪽</p>
-          <p>오른쪽</p>
-          <p>오른쪽</p>
-          <p>오른쪽</p>
-          <p>오른쪽</p>
-          <p>오른쪽</p>
-          <p>오른쪽</p>
-          <p>오른쪽</p>
-          <p>오른쪽</p>
-          <p>오른쪽</p>
-          <p>오른쪽</p>
-          <p>오른쪽</p>
-          <p>오른쪽</p>
-          <p>오른쪽</p>
-          <p>오른쪽 마지막</p>
-        </div>
+        <div className="fixed right-0 h-[calc(100%-120px)] w-[350px] overflow-y-auto"></div>
       </div>
     </div>
   );
