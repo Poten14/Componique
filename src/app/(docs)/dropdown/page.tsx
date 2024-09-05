@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import CodeBox from "@components/CodeBox";
 import DropDownBasic from "@components/DropDown/DropDownBasic";
-import DropDownMutilSelect from "@components/DropDown/DropDownMutilSelect";
+import DropDownBasicMultiSelect from "@components/DropDown/DropDownMutilSelect";
 import DropDownGrouped from "@components/DropDown/DropDownGrouped";
 
 const DropDownComponent: React.FC = () => {
@@ -21,10 +21,11 @@ const DropDownComponent: React.FC = () => {
         <h1 className="text-[#2D3748] dark:text-white">1. DropDownBasic</h1>
         <p>
           <code>DropDownBasic</code> 컴포넌트는 사용자가 옵션을 선택할 수 있는
-          간단한 드롭다운 메뉴를 제공합니다. 여러 가지 스타일의 드롭다운을
-          제공하며, 선택된 값은 부모 컴포넌트로 전달될 수 있습니다.
+          간단한 드롭다운 메뉴를 제공합니다. 다양한 스타일의 드롭다운을
+          지원하며, 선택된 값은 부모 컴포넌트로 전달될 수 있습니다.
         </p>
-        <h2 className="text-[#2D3748 dark:text-white">1.1. Import</h2>
+
+        <h2 className="text-[#2D3748] dark:text-white">1.1. Import</h2>
         <CodeBox
           code={`import DropDownBasic from '@components/DropDown/DropDownBasic';`}
           copyText={`import DropDownBasic from '@components/DropDown/DropDownBasic';`}
@@ -33,15 +34,36 @@ const DropDownComponent: React.FC = () => {
           copied={copied}
           handleCopy={handleCopy}
         />
+
         <h2 className="text-[#2D3748] dark:text-white">1.2. Usage</h2>
         <p>기본 사용 예제는 아래와 같습니다:</p>
-        <div style={{ marginBottom: "20px" }}>
+        <div className="m-7 flex gap-4">
           <DropDownBasic
             option={["Option 1", "Option 2", "Option 3"]}
             placeholder="Select Option"
+            type="basic"
+            onSelect={(value) => console.log("Selected:", value)}
+          />
+          <DropDownBasic
+            option={["Option 1", "Option 2", "Option 3"]}
+            placeholder="Select Option"
+            type="rounded"
+            onSelect={(value) => console.log("Selected:", value)}
+          />
+          <DropDownBasic
+            option={["Option 1", "Option 2", "Option 3"]}
+            placeholder="Select Option"
+            type="borderless-rounded"
+            onSelect={(value) => console.log("Selected:", value)}
+          />
+          <DropDownBasic
+            option={["Option 1", "Option 2", "Option 3"]}
+            placeholder="less-rounded"
+            type="basic"
             onSelect={(value) => console.log("Selected:", value)}
           />
         </div>
+
         <CodeBox
           code={`import DropDownBasic from '@components/DropDown/DropDownBasic';
 
@@ -50,6 +72,7 @@ function Example() {
     <DropDownBasic
       option={["Option 1", "Option 2", "Option 3"]}
       placeholder="Select an Option"
+      type="basic"
       onSelect={(value) => console.log("Selected:", value)}
     />
   );
@@ -63,6 +86,7 @@ function Example() {
     <DropDownBasic
       option={["Option 1", "Option 2", "Option 3"]}
       placeholder="Select an Option"
+      type="basic"
       onSelect={(value) => console.log("Selected:", value)}
     />
   );
@@ -125,6 +149,23 @@ export default Example;`}
                 <code>undefined</code>
               </td>
             </tr>
+            <tr>
+              <td>
+                <code>type</code>
+              </td>
+              <td>
+                드롭다운의 스타일을 결정합니다. ("basic", "rounded",
+                "borderless-rounded", "less-rounded")
+              </td>
+              <td>
+                <code>
+                  "basic" | "rounded" | "borderless-rounded" | "less-rounded"
+                </code>
+              </td>
+              <td>
+                <code>"basic"</code>
+              </td>
+            </tr>
           </tbody>
         </table>
 
@@ -138,11 +179,25 @@ function FullExample() {
       <DropDownBasic
         option={["Option 1", "Option 2", "Option 3"]}
         placeholder="Select Option"
+        type="basic"
         onSelect={(value) => console.log("Selected:", value)}
       />
       <DropDownBasic
         option={["Option A", "Option B", "Option C"]}
         placeholder="Choose an Option"
+        type="rounded"
+        onSelect={(value) => console.log("Selected:", value)}
+      />
+      <DropDownBasic
+        option={["Option X", "Option Y", "Option Z"]}
+        placeholder="Pick an Option"
+        type="borderless-rounded"
+        onSelect={(value) => console.log("Selected:", value)}
+      />
+      <DropDownBasic
+        option={["Option 10", "Option 20", "Option 30"]}
+        placeholder="Select one"
+        type="less-rounded"
         onSelect={(value) => console.log("Selected:", value)}
       />
     </div>
@@ -158,11 +213,25 @@ function FullExample() {
       <DropDownBasic
         option={["Option 1", "Option 2", "Option 3"]}
         placeholder="Select Option"
+        type="basic"
         onSelect={(value) => console.log("Selected:", value)}
       />
       <DropDownBasic
         option={["Option A", "Option B", "Option C"]}
         placeholder="Choose an Option"
+        type="rounded"
+        onSelect={(value) => console.log("Selected:", value)}
+      />
+      <DropDownBasic
+        option={["Option X", "Option Y", "Option Z"]}
+        placeholder="Pick an Option"
+        type="borderless-rounded"
+        onSelect={(value) => console.log("Selected:", value)}
+      />
+      <DropDownBasic
+        option={["Option 10", "Option 20", "Option 30"]}
+        placeholder="Select one"
+        type="less-rounded"
         onSelect={(value) => console.log("Selected:", value)}
       />
     </div>
@@ -178,57 +247,80 @@ export default FullExample;`}
       </div>
 
       <hr />
-
       {/* dropdown2 */}
       <div>
         <h1 className="text-[#2D3748] dark:text-white">
-          2. DropDownMutilSelect
+          2. DropDownBasicMultiSelect
         </h1>
         <p>
-          <code>DropDownMutilSelect</code> 컴포넌트는 사용자가 여러 옵션을
+          <code>DropDownBasicMultiSelect</code> 컴포넌트는 사용자가 여러 옵션을
           선택할 수 있는 멀티 셀렉트 드롭다운 메뉴를 제공합니다. 선택된 값들은
-          컴포넌트의 부모 컴포넌트로 전달됩니다.
+          컴포넌트의 부모 컴포넌트로 전달됩니다. 다양한 스타일을 지원합니다.
         </p>
+
         <h2 className="text-[#2D3748] dark:text-white">2.1. Import</h2>
         <CodeBox
-          code={`import DropDownMutilSelect from '@components/DropDown/DropDownMutilSelect';`}
-          copyText={`import DropDownMutilSelect from '@components/DropDown/DropDownMutilSelect';`}
+          code={`import DropDownBasicMultiSelect from '@components/DropDown/DropDownBasicMultiSelect';`}
+          copyText={`import DropDownBasicMultiSelect from '@components/DropDown/DropDownBasicMultiSelect';`}
           language="tsx"
           index={4}
           copied={copied}
           handleCopy={handleCopy}
         />
+
         <h2 className="text-[#2D3748] dark:text-white">2.2. Usage</h2>
         <p>기본 사용 예제는 아래와 같습니다:</p>
-        <div className="my-7">
-          <DropDownMutilSelect
+        <div className="m-7 flex gap-4">
+          <DropDownBasicMultiSelect
             option={["Option 1", "Option 2", "Option 3"]}
-            defaultOption="Select Options"
-            onSelect={(value) => console.log("Selected:", value)}
+            placeholder="Select Options"
+            type="basic"
+            onSelect={(value: string[]) => console.log("Selected:", value)}
+          />
+          <DropDownBasicMultiSelect
+            option={["Option 1", "Option 2", "Option 3"]}
+            placeholder="Select Options"
+            type="rounded"
+            onSelect={(value: string[]) => console.log("Selected:", value)}
+          />
+          <DropDownBasicMultiSelect
+            option={["Option 1", "Option 2", "Option 3"]}
+            placeholder="Select Options"
+            type="borderless-rounded"
+            onSelect={(value: string[]) => console.log("Selected:", value)}
+          />
+          <DropDownBasicMultiSelect
+            option={["Option 1", "Option 2", "Option 3"]}
+            placeholder="Select Options"
+            type="less-rounded"
+            onSelect={(value: string[]) => console.log("Selected:", value)}
           />
         </div>
+
         <CodeBox
-          code={`import DropDownMutilSelect from '@components/DropDown/DropDownMutilSelect';
+          code={`import DropDownBasicMultiSelect from '@components/DropDown/DropDownBasicMultiSelect';
 
 function Example() {
   return (
-    <DropDownMutilSelect
+    <DropDownBasicMultiSelect
       option={["Option 1", "Option 2", "Option 3"]}
-      defaultOption="Select Options"
-      onSelect={(value) => console.log("Selected:", value)}
+      placeholder="Select Options"
+      type="basic"
+      onSelect={(value: string[]) => console.log("Selected:", value)}
     />
   );
 }
 
 export default Example;`}
-          copyText={`import DropDownMutilSelect from '@components/DropDown/DropDownMutilSelect';
+          copyText={`import DropDownBasicMultiSelect from '@components/DropDown/DropDownBasicMultiSelect';
 
 function Example() {
   return (
-    <DropDownMutilSelect
+    <DropDownBasicMultiSelect
       option={["Option 1", "Option 2", "Option 3"]}
-      defaultOption="Select Options"
-      onSelect={(value) => console.log("Selected:", value)}
+      placeholder="Select Options"
+      type="basic"
+      onSelect={(value: string[]) => console.log("Selected:", value)}
     />
   );
 }
@@ -242,7 +334,7 @@ export default Example;`}
 
         <h2 className="text-[#2D3748] dark:text-white">2.3. Props</h2>
         <p>
-          <code>DropDownMutilSelect</code> 컴포넌트는 아래와 같은 Props를
+          <code>DropDownBasicMultiSelect</code> 컴포넌트는 아래와 같은 Props를
           가집니다:
         </p>
         <table>
@@ -269,14 +361,14 @@ export default Example;`}
             </tr>
             <tr>
               <td>
-                <code>defaultOption</code>
+                <code>placeholder</code>
               </td>
               <td>선택되지 않은 경우 표시되는 플레이스홀더 텍스트입니다.</td>
               <td>
                 <code>string</code>
               </td>
               <td>
-                <code>"Select Option"</code>
+                <code>"Select Options"</code>
               </td>
             </tr>
             <tr>
@@ -291,45 +383,90 @@ export default Example;`}
                 <code>undefined</code>
               </td>
             </tr>
+            <tr>
+              <td>
+                <code>type</code>
+              </td>
+              <td>
+                드롭다운의 스타일을 결정합니다. ("basic", "rounded",
+                "borderless-rounded", "less-rounded")
+              </td>
+              <td>
+                <code>
+                  "basic" | "rounded" | "borderless-rounded" | "less-rounded"
+                </code>
+              </td>
+              <td>
+                <code>"basic"</code>
+              </td>
+            </tr>
           </tbody>
         </table>
 
         <h2 className="text-[#2D3748] dark:text-white">2.4. Full Example</h2>
         <CodeBox
-          code={`import DropDownMutilSelect from '@components/DropDown/DropDownMutilSelect';
+          code={`import DropDownBasicMultiSelect from '@components/DropDown/DropDownBasicMultiSelect';
 
 function FullExample() {
   return (
     <div>
-      <DropDownMutilSelect
+      <DropDownBasicMultiSelect
         option={["Option 1", "Option 2", "Option 3"]}
-        defaultOption="Select Option"
-        onSelect={(value) => console.log("Selected:", value)}
+        placeholder="Select Options"
+        type="basic"
+        onSelect={(value: string[]) => console.log("Selected:", value)}
       />
-      <DropDownMutilSelect
+      <DropDownBasicMultiSelect
         option={["Option A", "Option B", "Option C"]}
-        defaultOption="Choose Options"
-        onSelect={(value) => console.log("Selected:", value)}
+        placeholder="Choose Options"
+        type="rounded"
+        onSelect={(value: string[]) => console.log("Selected:", value)}
+      />
+      <DropDownBasicMultiSelect
+        option={["Option X", "Option Y", "Option Z"]}
+        placeholder="Pick Options"
+        type="borderless-rounded"
+        onSelect={(value: string[]) => console.log("Selected:", value)}
+      />
+      <DropDownBasicMultiSelect
+        option={["Option 10", "Option 20", "Option 30"]}
+        placeholder="Select Multiple"
+        type="less-rounded"
+        onSelect={(value: string[]) => console.log("Selected:", value)}
       />
     </div>
   );
 }
 
 export default FullExample;`}
-          copyText={`import DropDownMutilSelect from '@components/DropDown/DropDownMutilSelect';
+          copyText={`import DropDownBasicMultiSelect from '@components/DropDown/DropDownBasicMultiSelect';
 
 function FullExample() {
   return (
     <div>
-      <DropDownMutilSelect
+      <DropDownBasicMultiSelect
         option={["Option 1", "Option 2", "Option 3"]}
-        defaultOption="Select Option"
-        onSelect={(value) => console.log("Selected:", value)}
+        placeholder="Select Options"
+        type="basic"
+        onSelect={(value: string[]) => console.log("Selected:", value)}
       />
-      <DropDownMutilSelect
+      <DropDownBasicMultiSelect
         option={["Option A", "Option B", "Option C"]}
-        defaultOption="Choose Options"
-        onSelect={(value) => console.log("Selected:", value)}
+        placeholder="Choose Options"
+        type="rounded"
+        onSelect={(value: string[]) => console.log("Selected:", value)}
+      />
+      <DropDownBasicMultiSelect
+        option={["Option X", "Option Y", "Option Z"]}
+        placeholder="Pick Options"
+        type="borderless-rounded"
+        onSelect={(value: string[]) => console.log("Selected:", value)}
+      />
+      <DropDownBasicMultiSelect
+        option={["Option 10", "Option 20", "Option 30"]}
+        placeholder="Select Multiple"
+        type="less-rounded"
+        onSelect={(value: string[]) => console.log("Selected:", value)}
       />
     </div>
   );
@@ -343,16 +480,16 @@ export default FullExample;`}
         />
       </div>
 
-      <hr />
-
       {/* dropdown3 */}
       <div>
         <h1 className="text-[#2D3748] dark:text-white">3. DropDownGrouped</h1>
         <p>
           <code>DropDownGrouped</code> 컴포넌트는 그룹화된 옵션을 선택할 수 있는
           드롭다운 메뉴를 제공합니다. 사용자는 각 그룹에서 옵션을 선택할 수
-          있으며, 선택된 값은 부모 컴포넌트로 전달될 수 있습니다.
+          있으며, 선택된 값은 부모 컴포넌트로 전달될 수 있습니다. 다양한
+          스타일을 지원합니다.
         </p>
+
         <h2 className="text-[#2D3748] dark:text-white">3.1. Import</h2>
         <CodeBox
           code={`import DropDownGrouped from '@components/DropDown/DropDownGrouped';`}
@@ -362,9 +499,10 @@ export default FullExample;`}
           copied={copied}
           handleCopy={handleCopy}
         />
+
         <h2 className="text-[#2D3748] dark:text-white">3.2. Usage</h2>
         <p>기본 사용 예제는 아래와 같습니다:</p>
-        <div className="my-7">
+        <div className="my-7 flex gap-4">
           <DropDownGrouped
             options={[
               {
@@ -376,9 +514,57 @@ export default FullExample;`}
                 items: ["Carrot", "Broccoli", "Spinach", "Potato"],
               },
             ]}
+            defaultOption="Select Option"
+            type="basic"
+            onSelect={(value) => console.log("Selected:", value)}
+          />
+          <DropDownGrouped
+            options={[
+              {
+                groupName: "Fruits",
+                items: ["Apple", "Banana", "Orange", "Grapes"],
+              },
+              {
+                groupName: "Vegetables",
+                items: ["Carrot", "Broccoli", "Spinach", "Potato"],
+              },
+            ]}
+            defaultOption="Select Option"
+            type="rounded"
+            onSelect={(value) => console.log("Selected:", value)}
+          />
+          <DropDownGrouped
+            options={[
+              {
+                groupName: "Fruits",
+                items: ["Apple", "Banana", "Orange", "Grapes"],
+              },
+              {
+                groupName: "Vegetables",
+                items: ["Carrot", "Broccoli", "Spinach", "Potato"],
+              },
+            ]}
+            defaultOption="Select Option"
+            type="borderless-rounded"
+            onSelect={(value) => console.log("Selected:", value)}
+          />
+          <DropDownGrouped
+            options={[
+              {
+                groupName: "Fruits",
+                items: ["Apple", "Banana", "Orange", "Grapes"],
+              },
+              {
+                groupName: "Vegetables",
+                items: ["Carrot", "Broccoli", "Spinach", "Potato"],
+              },
+            ]}
+            defaultOption="Select Option"
+            type="less-rounded"
             onSelect={(value) => console.log("Selected:", value)}
           />
         </div>
+
         <CodeBox
           code={`import DropDownGrouped from '@components/DropDown/DropDownGrouped';
 
@@ -390,6 +576,7 @@ function Example() {
         { groupName: "Group 2", items: ["Option 3", "Option 4"] },
       ]}
       defaultOption="Select an Option"
+      type="basic"
       onSelect={(value) => console.log("Selected:", value)}
     />
   );
@@ -406,6 +593,7 @@ function Example() {
         { groupName: "Group 2", items: ["Option 3", "Option 4"] },
       ]}
       defaultOption="Select an Option"
+      type="basic"
       onSelect={(value) => console.log("Selected:", value)}
     />
   );
@@ -468,6 +656,23 @@ export default Example;`}
                 <code>undefined</code>
               </td>
             </tr>
+            <tr>
+              <td>
+                <code>type</code>
+              </td>
+              <td>
+                드롭다운의 스타일을 결정합니다. ("basic", "rounded",
+                "borderless-rounded", "less-rounded")
+              </td>
+              <td>
+                <code>
+                  "basic" | "rounded" | "borderless-rounded" | "less-rounded"
+                </code>
+              </td>
+              <td>
+                <code>"basic"</code>
+              </td>
+            </tr>
           </tbody>
         </table>
 
@@ -484,6 +689,7 @@ function FullExample() {
           { groupName: "Group 2", items: ["Option 3", "Option 4"] },
         ]}
         defaultOption="Select Option"
+        type="basic"
         onSelect={(value) => console.log("Selected:", value)}
       />
       <DropDownGrouped
@@ -492,6 +698,25 @@ function FullExample() {
           { groupName: "Group B", items: ["Option C", "Option D"] },
         ]}
         defaultOption="Choose an Option"
+        type="rounded"
+        onSelect={(value) => console.log("Selected:", value)}
+      />
+      <DropDownGrouped
+        options={[
+          { groupName: "Group X", items: ["Option X1", "Option X2"] },
+          { groupName: "Group Y", items: ["Option Y1", "Option Y2"] },
+        ]}
+        defaultOption="Pick an Option"
+        type="borderless-rounded"
+        onSelect={(value) => console.log("Selected:", value)}
+      />
+      <DropDownGrouped
+        options={[
+          { groupName: "Group 10", items: ["Option 10A", "Option 10B"] },
+          { groupName: "Group 20", items: ["Option 20A", "Option 20B"] },
+        ]}
+        defaultOption="Select from List"
+        type="less-rounded"
         onSelect={(value) => console.log("Selected:", value)}
       />
     </div>
@@ -510,6 +735,7 @@ function FullExample() {
           { groupName: "Group 2", items: ["Option 3", "Option 4"] },
         ]}
         defaultOption="Select Option"
+        type="basic"
         onSelect={(value) => console.log("Selected:", value)}
       />
       <DropDownGrouped
@@ -518,6 +744,25 @@ function FullExample() {
           { groupName: "Group B", items: ["Option C", "Option D"] },
         ]}
         defaultOption="Choose an Option"
+        type="rounded"
+        onSelect={(value) => console.log("Selected:", value)}
+      />
+      <DropDownGrouped
+        options={[
+          { groupName: "Group X", items: ["Option X1", "Option X2"] },
+          { groupName: "Group Y", items: ["Option Y1", "Option Y2"] },
+        ]}
+        defaultOption="Pick an Option"
+        type="borderless-rounded"
+        onSelect={(value) => console.log("Selected:", value)}
+      />
+      <DropDownGrouped
+        options={[
+          { groupName: "Group 10", items: ["Option 10A", "Option 10B"] },
+          { groupName: "Group 20", items: ["Option 20A", "Option 20B"] },
+        ]}
+        defaultOption="Select from List"
+        type="less-rounded"
         onSelect={(value) => console.log("Selected:", value)}
       />
     </div>
