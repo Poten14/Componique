@@ -44,6 +44,7 @@ const ImageUploadDoc: React.FC = () => {
       <div style={{ marginBottom: "20px" }}>
         <ImageUpload />
       </div>
+      <div className="my-7 space-y-4" />
       <CodeBox
         code={`import ImageUpload from '@components/ImageUpload/Imageupload';
 
@@ -82,6 +83,7 @@ export default Example;`}
         <ImageUpload size="medium" />
         <ImageUpload size="large" />
       </div>
+      <div className="my-7 space-y-4" />
       <CodeBox
         code={`import ImageUpload from '@components/ImageUpload/Imageupload';
 
@@ -145,6 +147,7 @@ export default Example;`}
         <ImageUpload color="gray" />
         <ImageUpload color="black" />
       </div>
+      <div className="my-7 space-y-4" />
       <CodeBox
         code={`import ImageUpload from '@components/ImageUpload/Imageupload';
 
@@ -216,6 +219,7 @@ export default Example;`}
         <ImageUpload shape="rectangle" />
         <ImageUpload shape="circle" />
       </div>
+      <div className="my-7 space-y-4" />
       <CodeBox
         code={`import ImageUpload from '@components/ImageUpload/Imageupload';
 
@@ -258,7 +262,8 @@ export default Example;`}
       <div className="flex flex-wrap items-center space-x-4 space-y-4">
         <ImageUpload variant="solid" color="primary" />
         <ImageUpload variant="border" color="secondary" />
-      </div>
+      </div>{" "}
+      <div className="my-7 space-y-4" />
       <CodeBox
         code={`import ImageUpload from '@components/ImageUpload/Imageupload';
 
@@ -386,7 +391,8 @@ export default Example;`}
       <div className="flex flex-wrap items-center space-x-4 space-y-4">
         <ImageUpload text="Add Image" />
         <ImageUpload text="Upload Here" />
-      </div>
+      </div>{" "}
+      <div className="my-7 space-y-4" />
       <CodeBox
         code={`import ImageUpload from '@components/ImageUpload/Imageupload';
 
@@ -424,7 +430,8 @@ export default Example;`}
       </p>
       <div className="space-x-4 space-y-4">
         <ImageUpload className="bg-red-600 text-white" />
-      </div>
+      </div>{" "}
+      <div className="my-7 space-y-4" />
       <CodeBox
         code={`import ImageUpload from '@components/ImageUpload/Imageupload';
 
@@ -468,7 +475,8 @@ export default Example;`}
         예를 들어, 아래와 같은 방식으로 <code>onImageSelect</code>를 구현할 수
         있습니다.
       </p>
-      <ImageUpload onImageSelect={onSelectImageHandler} />
+      <ImageUpload onImageSelect={onSelectImageHandler} />{" "}
+      <div className="my-7 space-y-4" />
       <CodeBox
         code={`"use client";
 import ImageUpload from '@components/ImageUpload/Imageupload';
