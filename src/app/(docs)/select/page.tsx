@@ -62,7 +62,7 @@ function Example() {
       placeholder="Select an option"
       color="gray"
       onChange={handleSelect}
-      onClick={handleOptionClick} 
+      onClick={handleOptionClick}
     />
   );
 }
@@ -77,7 +77,7 @@ function Example() {
       placeholder="Select an option"
       color="gray"
       onChange={handleSelect}
-      onClick={handleOptionClick} 
+      onClick={handleOptionClick}
     />
   );
 }
@@ -149,14 +149,14 @@ function Example() {
         placeholder="Select an option"
         color="red"
         onChange={handleSelect}
-        onClick={handleOptionClick} 
+        onClick={handleOptionClick}
       />
       <Select
         option={["Option 1", "Option 2", "Option 3"]}
         placeholder="Select an option"
         color="blue"
         onChange={handleSelect}
-        onClick={handleOptionClick} 
+        onClick={handleOptionClick}
       />
       <Select
         option={["Option 1", "Option 2", "Option 3"]}
@@ -170,7 +170,7 @@ function Example() {
         placeholder="Select an option"
         color="gray"
         onChange={handleSelect}
-        onClick={handleOptionClick} 
+        onClick={handleOptionClick}
       />
     </>
   );
@@ -181,13 +181,13 @@ export default Example;`}
 
 function Example() {
   return (
-    <>
+    <ㅇ>
       <Select
         option={["Option 1", "Option 2", "Option 3"]}
         placeholder="Select an option"
         color="red"
         onChange={handleSelect}
-        onClick={handleOptionClick} 
+        onClick={handleOptionClick}
       />
       <Select
         option={["Option 1", "Option 2", "Option 3"]}
@@ -201,14 +201,14 @@ function Example() {
         placeholder="Select an option"
         color="green"
         onChange={handleSelect}
-        onClick={handleOptionClick} 
+        onClick={handleOptionClick}
       />
       <Select
         option={["Option 1", "Option 2", "Option 3"]}
         placeholder="Select an option"
         color="gray"
         onChange={handleSelect}
-        onClick={handleOptionClick} 
+        onClick={handleOptionClick}
       />
     </>
   );`}
@@ -307,7 +307,7 @@ function Example() {
         placeholder="Select an option"
         color="blue"
         onChange={handleSelect}
-        onClick={handleOptionClick} // onClick prop 추가
+        onClick={handleOptionClick}
       />
     </div>
   );
@@ -324,7 +324,7 @@ function Example() {
         placeholder="Select an option"
         color="blue"
         onChange={handleSelect}
-        onClick={handleOptionClick} // onClick prop 추가
+        onClick={handleOptionClick}
       />
     </div>
   );`}
@@ -343,10 +343,10 @@ function Example() {
 
       <h2 className="text-[#2D3748]">2.1. Import</h2>
       <CodeBox
-        code={`import { SelectList } from '@components/SelectList';`}
-        copyText={`import { SelectList } from '@components/SelectList';`}
+        code={`import { SelectList } from '@components/Select/SelectList';`}
+        copyText={`import { SelectList } from '@components/Select/SelectList';`}
         language="tsx"
-        index={1}
+        index={4}
         copied={copied}
         handleCopy={handleCopy}
       />
@@ -357,7 +357,7 @@ function Example() {
         <SelectList option={["Item 1", "Item 2", "Item 3", "Item 4"]} />
       </div>
       <CodeBox
-        code={`import SelectList from '@components/SelectList';
+        code={`import SelectList from '@components/Select/SelectList';
 
 function Example() {
   return (
@@ -368,7 +368,7 @@ function Example() {
 }
 
 export default Example;`}
-        copyText={`import SelectList from '@components/SelectList';
+        copyText={`import SelectList from '@components/Select/SelectList';
 
 function Example() {
   return (
@@ -380,7 +380,7 @@ function Example() {
 
 export default Example;`}
         language="tsx"
-        index={2}
+        index={5}
         copied={copied}
         handleCopy={handleCopy}
       />
@@ -413,7 +413,7 @@ export default Example;`}
           </tr>
           <tr>
             <td>
-              <code>onSelect</code>
+              <code>onChange</code>
             </td>
             <td>선택된 값이 변경될 때 호출되는 콜백 함수입니다.</td>
             <td>
@@ -423,12 +423,27 @@ export default Example;`}
               <code>undefined</code>
             </td>
           </tr>
+          <tr>
+            <td>
+              <code>className</code>
+            </td>
+            <td>
+              컴포넌트에 추가적인 스타일을 적용할 때 사용할 수 있는 클래스
+              이름입니다.
+            </td>
+            <td>
+              <code>string</code>
+            </td>
+            <td>
+              <code>""</code>
+            </td>
+          </tr>
         </tbody>
       </table>
 
       <h2 className="text-[#2D3748]">2.4. Full Example</h2>
       <CodeBox
-        code={`import SelectList from '@components/SelectList';
+        code={`import SelectList from '@components/Select/SelectList';
 
 function Example() {
   return (
@@ -441,7 +456,7 @@ function Example() {
 }
 
 export default Example;`}
-        copyText={`import SelectList from '@components/SelectList';
+        copyText={`import SelectList from '@components/Select/SelectList';
 
 function Example() {
   return (
@@ -452,7 +467,7 @@ function Example() {
     </div>
   );`}
         language="tsx"
-        index={4}
+        index={6}
         copied={copied}
         handleCopy={handleCopy}
       />
@@ -470,7 +485,7 @@ function Example() {
         code={`import { SelectValueAdd } from '@components/SelectValueAdd';`}
         copyText={`import { SelectValueAdd } from '@components/SelectValueAdd';`}
         language="tsx"
-        index={1}
+        index={3}
         copied={copied}
         handleCopy={handleCopy}
       />
@@ -481,7 +496,7 @@ function Example() {
         <SelectValueAdd
           option={["Option 1", "Option 2", "Option 3", "Option 4"]}
           placeholder="Select an option"
-          onSelect={(selectedValues) => console.log(selectedValues)}
+          onChange={(selectedValues) => console.log(selectedValues)}
         />
       </div>
       <CodeBox
@@ -492,7 +507,7 @@ function Example() {
     <SelectValueAdd
       option={["Option 1", "Option 2", "Option 3", "Option 4"]}
       placeholder="Select an option"
-      onSelect={(selectedValues) => console.log(selectedValues)}
+      onChange={(selectedValues) => console.log(selectedValues)}
     />
   );
 }
@@ -505,14 +520,14 @@ function Example() {
     <SelectValueAdd
       option={["Option 1", "Option 2", "Option 3", "Option 4"]}
       placeholder="Select an option"
-      onSelect={(selectedValues) => console.log(selectedValues)}
+      onChange={(selectedValues) => console.log(selectedValues)}
     />
   );
 }
 
 export default Example;`}
         language="tsx"
-        index={2}
+        index={4}
         copied={copied}
         handleCopy={handleCopy}
       />
@@ -547,7 +562,7 @@ export default Example;`}
             <td>
               <code>placeholder</code>
             </td>
-            <td>선택된 항목이 없을 때 표시되는 텍스트를 설정합니다.</td>
+            <td>선택되지 않았을 때 표시되는 텍스트를 설정합니다.</td>
             <td>
               <code>string</code>
             </td>
@@ -557,7 +572,7 @@ export default Example;`}
           </tr>
           <tr>
             <td>
-              <code>onSelect</code>
+              <code>onChange</code>
             </td>
             <td>선택된 값이 변경될 때 호출되는 콜백 함수입니다.</td>
             <td>
@@ -565,6 +580,21 @@ export default Example;`}
             </td>
             <td>
               <code>undefined</code>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <code>className</code>
+            </td>
+            <td>
+              컴포넌트에 추가적인 스타일을 적용할 때 사용할 수 있는 클래스
+              이름입니다.
+            </td>
+            <td>
+              <code>string</code>
+            </td>
+            <td>
+              <code>""</code>
             </td>
           </tr>
         </tbody>
@@ -580,7 +610,7 @@ function Example() {
       <SelectValueAdd
         option={["Option 1", "Option 2", "Option 3", "Option 4"]}
         placeholder="Select an option"
-        onSelect={(selectedValues) => console.log(selectedValues)}
+        onChange={(selectedValues) => console.log(selectedValues)}
       />
     </div>
   );
@@ -595,12 +625,12 @@ function Example() {
       <SelectValueAdd
         option={["Option 1", "Option 2", "Option 3", "Option 4"]}
         placeholder="Select an option"
-        onSelect={(selectedValues) => console.log(selectedValues)}
+        onChange={(selectedValues) => console.log(selectedValues)}
       />
     </div>
   );`}
         language="tsx"
-        index={4}
+        index={5}
         copied={copied}
         handleCopy={handleCopy}
       />
