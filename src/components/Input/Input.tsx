@@ -21,8 +21,12 @@ const sizeClasses = {
 
 const variantClasses = {
   outlined: "border border-Primary bg-white",
-  filled:
-    "bg-[#9AC5E5] dark:bg-Navy focus:border-white text-white placeholder-white border-none",
+  filled: "bg-[#9AC5E5] text-white placeholder-white border-none",
+};
+
+const darkModeVariantClasses = {
+  filled: "bg-Navy text-white placeholder-white border-none", // 다크 모드에서의 filled 스타일
+  outlined: "border border-Navy bg-transparent text-white placeholder-white", // 다크 모드에서의 outlined 스타일
 };
 
 const Input: React.FC<InputProps> = ({
@@ -59,9 +63,7 @@ const Input: React.FC<InputProps> = ({
     <input
       type="text"
       className={`rounded-md focus:border-Basic ${
-        isDarkMode
-          ? "border-Navy border bg-transparent text-white placeholder-white"
-          : variantClasses[variant]
+        isDarkMode ? darkModeVariantClasses[variant] : variantClasses[variant]
       } ${sizeClasses[size]} md:w-1/4 lg:w-2/3 xl:w-3/5`}
       placeholder={placeholder}
       value={value}

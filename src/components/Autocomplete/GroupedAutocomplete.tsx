@@ -142,9 +142,10 @@ const GroupedAutocomplete: React.FC<AutocompleteProps> = ({
                       onMouseDown={() => handleOptionClick(item)}
                       className={`cursor-pointer border-b p-2 pl-5 font-light ${
                         isDarkMode
-                          ? "text-gray-400 border-gray-600 hover:bg-gray-700"
-                          : "border-zinc-200 text-zinc-800 hover:bg-[#E8F5FF]"
+                          ? "text-gray-400 border-gray-600 hover:bg-[#2A6490] focus:bg-[#2A6490]" // 다크 모드 호버 & 포커스 색상
+                          : "border-zinc-200 text-zinc-800 hover:bg-[#E8F5FF] focus:bg-[#CCE5FF]" // 라이트 모드 호버 & 포커스 색상
                       }`}
+                      tabIndex={0}
                     >
                       {item}
                     </li>

@@ -719,28 +719,13 @@ export default Example;`}
           onClick={() => openModal2(1, "medium")}
           className="rounded-md bg-Basic px-4 py-2 text-white"
         >
-          Open Form Modal 1
-        </Button>
-        <Button
-          onClick={() => openModal2(2, "large")}
-          className="rounded-md bg-Basic px-4 py-2 text-white"
-        >
-          Open Form Modal 2
+          Open Form Modal
         </Button>
         <FormModal
-          open={openModalKey === 1}
+          open={openModalKey2 === 1}
           onClose={closeModal2}
           size={modalSize2}
-          title="Form Modal 1"
-          onSubmit={closeModal2}
-          firstNameLabel="First Name"
-          lastNameLabel="Last Name"
-        />
-        <FormModal
-          open={openModalKey === 2}
-          onClose={closeModal2}
-          size={modalSize2}
-          title="Form Modal 2"
+          title="Form Modal"
           onSubmit={closeModal2}
           firstNameLabel="First Name"
           lastNameLabel="Last Name"
@@ -766,28 +751,15 @@ function Example() {
   return (
     <>
       <Button onClick={() => openModal(1, "medium")}>
-        Open Form Modal 1
-      </Button>
-      <Button onClick={() => openModal(2, "large")}>
-        Open Form Modal 2
+        Open Form Modal
       </Button>
 
       <FormModal
         open={openModalKey === 1}
         onClose={closeModal}
         size={modalSize}
-        title="Form Modal 1"
-        onSubmit={(data) => console.log("Form 1 Submitted", data)}
-        firstNameLabel="First Name"
-        lastNameLabel="Last Name"
-      />
-
-      <FormModal
-        open={openModalKey === 2}
-        onClose={closeModal}
-        size={modalSize}
-        title="Form Modal 2"
-        onSubmit={(data) => console.log("Form 2 Submitted", data)}
+        title="Form Modal"
+        onSubmit={(data) => console.log("Form Submitted", data)}
         firstNameLabel="First Name"
         lastNameLabel="Last Name"
       />
@@ -797,53 +769,40 @@ function Example() {
 
 export default Example;`}
         copyText={`import { FormModal } from '@components/Modal/FormModal';
-import { useState } from 'react';
-import Button from '@components/Button/Button';
-
-function Example() {
-  const [openModalKey, setOpenModalKey] = useState<number | null>(null);
-  const [modalSize, setModalSize] = useState<ExtraSize>("medium");
-
-  const openModal = (key: number, size: ExtraSize) => {
-    setModalSize(size);
-    setOpenModalKey(key);
-  };
-
-  const closeModal = () => setOpenModalKey(null);
-
-  return (
-    <>
-      <Button onClick={() => openModal(1, "medium")}>
-        Open Form Modal 1
-      </Button>
-      <Button onClick={() => openModal(2, "large")}>
-        Open Form Modal 2
-      </Button>
-
-      <FormModal
-        open={openModalKey === 1}
-        onClose={closeModal}
-        size={modalSize}
-        title="Form Modal 1"
-        onSubmit={(data) => console.log("Form 1 Submitted", data)}
-        firstNameLabel="First Name"
-        lastNameLabel="Last Name"
-      />
-
-      <FormModal
-        open={openModalKey === 2}
-        onClose={closeModal}
-        size={modalSize}
-        title="Form Modal 2"
-        onSubmit={(data) => console.log("Form 2 Submitted", data)}
-        firstNameLabel="First Name"
-        lastNameLabel="Last Name"
-      />
-    </>
-  );
-}
-
-export default Example;`}
+        import { useState } from 'react';
+        import Button from '@components/Button/Button';
+        
+        function Example() {
+          const [openModalKey, setOpenModalKey] = useState<number | null>(null);
+          const [modalSize, setModalSize] = useState<ExtraSize>("medium");
+        
+          const openModal = (key: number, size: ExtraSize) => {
+            setModalSize(size);
+            setOpenModalKey(key);
+          };
+        
+          const closeModal = () => setOpenModalKey(null);
+        
+          return (
+            <>
+              <Button onClick={() => openModal(1, "medium")}>
+                Open Form Modal
+              </Button>
+        
+              <FormModal
+                open={openModalKey === 1}
+                onClose={closeModal}
+                size={modalSize}
+                title="Form Modal"
+                onSubmit={(data) => console.log("Form Submitted", data)}
+                firstNameLabel="First Name"
+                lastNameLabel="Last Name"
+              />
+            </>
+          );
+        }
+        
+        export default Example;`}
         language="tsx"
         index={2}
         copied={copied}
@@ -875,13 +834,14 @@ export default Example;`}
         </li>
       </ul>
       <div className="my-7 space-x-2 space-y-4">
-        <Button className="mr-3" onClick={() => openModal2(1, "xs")}>
-          Open xs FormModal
+        <Button className="mr-3" onClick={() => openModal2(2, "xs")}>
+          Open XS FormModal
         </Button>
-        <Button onClick={() => openModal2(2, "xl")}>Open xl FormModal</Button>
+        <Button onClick={() => openModal2(3, "xl")}>Open XL FormModal</Button>
       </div>
+
       <FormModal
-        open={openModalKey2 === 1}
+        open={openModalKey2 === 2}
         onClose={closeModal2}
         size={modalSize2}
         title="Form Modal XS"
@@ -890,7 +850,7 @@ export default Example;`}
         lastNameLabel="Last Name"
       />
       <FormModal
-        open={openModalKey2 === 2}
+        open={openModalKey2 === 3}
         onClose={closeModal2}
         size={modalSize2}
         title="Form Modal XL"
@@ -1337,10 +1297,10 @@ export default Example;`}
       </ul>
 
       <div className="my-7 space-x-2 space-y-4">
-        <Button onClick={() => openModal3(1, "xs")}>
+        <Button onClick={() => openModal3(2, "xs")}>
           Open XS OverlayModal
         </Button>
-        <Button onClick={() => openModal3(2, "xl")} className="ml-3">
+        <Button onClick={() => openModal3(3, "xl")} className="ml-3">
           Open XL OverlayModal
         </Button>
       </div>
