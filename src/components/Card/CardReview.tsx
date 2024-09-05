@@ -36,11 +36,17 @@ const ratingStars = (rate: number) => {
 
 const CardReview = ({ avatar, name, rate, children }: ReviewCardProps) => {
   return (
-    <div className="m-4 max-w-sm rounded-xl border-2 border-Blue bg-white shadow-lg dark:bg-[#2A2E39]">
+<<<<<<< HEAD
+    <div className="m-4 max-w-sm rounded-xl border-2 border-Blue bg-white shadow-lg dark:bg-[#2A2E39] dark:text-white">
+=======
+
+    <div className="dark:bg[#6A6868] m-4 max-w-sm rounded-xl border-2 border-Blue bg-white shadow-lg dark:text-white">
+
+>>>>>>> ec80515199345feefdda73d49f24fa04941c559d
       <div className="flex items-center px-6 py-4">
         <AvatarBasic src="/avatar1.svg" alt="퉁퉁이" size={70} />
         <div className="flex flex-col">
-          <div className="text-lg font-bold">{name}</div>
+          <div className="text-lg font-bold dark:text-white">{name}</div>
           <div className="flex">{ratingStars(rate)}</div>
         </div>
       </div>

@@ -37,7 +37,7 @@ const SwitchDocs: React.FC = () => {
 
         <h2 className="text-[#2D3748] dark:text-white">1.2. Usage</h2>
         <p>기본 사용 예제는 아래와 같습니다:</p>
-        <div style={{ marginBottom: "20px" }}>
+        <div className="my-7">
           <SwitchBasic />
         </div>
         <CodeBox
@@ -217,7 +217,7 @@ export default Example;
 
         <h2 className="text-[#2D3748] dark:text-white">2.2. Usage</h2>
         <p>기본 사용 예제는 아래와 같습니다:</p>
-        <div style={{ marginBottom: "20px" }}>
+        <div className="my-7">
           <SwitchHorizental />
         </div>
         <CodeBox
@@ -264,7 +264,7 @@ export default Example;
             수직 스위치
           </li>
         </ul>
-        <div className="space-y-7">
+        <div className="my-7 space-y-7">
           <SwitchHorizental />
         </div>
         <CodeBox
@@ -397,7 +397,7 @@ export default Example;
 
         <h2 className="text-[#2D3748] dark:text-white">3.2. Usage</h2>
         <p>기본 사용 예제는 아래와 같습니다:</p>
-        <div style={{ marginBottom: "20px" }}>
+        <div className="my-7">
           <SwitchLong />
         </div>
         <CodeBox
@@ -577,7 +577,7 @@ export default Example;
 
         <h2 className="text-[#2D3748] dark:text-white">4.2. Usage</h2>
         <p>기본 사용 예제는 아래와 같습니다:</p>
-        <div style={{ marginBottom: "20px" }}>
+        <div className="my-7">
           <SwitchRound />
         </div>
         <br />
@@ -755,7 +755,7 @@ export default Example;
 
         <h2 className="text-[#2D3748] dark:text-white">5.2. Usage</h2>
         <p>기본 사용 예제는 아래와 같습니다:</p>
-        <div style={{ marginBottom: "20px" }}>
+        <div className="my-7">
           <SwitchLabeled />
         </div>
         <CodeBox

@@ -200,7 +200,7 @@ export default FullExample;`}
         />
         <h2 className="text-[#2D3748] dark:text-white">2.2. Usage</h2>
         <p>기본 사용 예제는 아래와 같습니다:</p>
-        <div style={{ marginBottom: "20px" }}>
+        <div className="my-7">
           <DropDownMutilSelect
             option={["Option 1", "Option 2", "Option 3"]}
             defaultOption="Select Options"
@@ -364,7 +364,7 @@ export default FullExample;`}
         />
         <h2 className="text-[#2D3748] dark:text-white">3.2. Usage</h2>
         <p>기본 사용 예제는 아래와 같습니다:</p>
-        <div style={{ marginBottom: "20px" }}>
+        <div className="my-7">
           <DropDownGrouped
             options={[
               {
