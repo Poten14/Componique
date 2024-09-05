@@ -28,12 +28,17 @@ const radiusClasses = {
 };
 
 const colorClasses = {
-  Basic: "focus:ring-Basic focus:border-Basic",
-  Primary: "focus:ring-Primary focus:border-Primary",
-  Secondary: "focus:ring-Secondary focus:border-Secondary",
-  Success: "focus:ring-Success focus:border-Success",
-  Warning: "focus:ring-Warning focus:border-Warning",
-  Danger: "focus:ring-Danger focus:border-Danger",
+  Basic: "focus:ring-Basic focus:border-Basic hover:bg-Basic focus:bg-Basic",
+  Primary:
+    "focus:ring-Primary focus:border-Primary hover:bg-Primary focus:bg-Primary",
+  Secondary:
+    "focus:ring-Secondary focus:border-Secondary hover:bg-Secondary focus:bg-Secondary",
+  Success:
+    "focus:ring-Success focus:border-Success hover:bg-Success focus:bg-Success",
+  Warning:
+    "focus:ring-Warning focus:border-Warning hover:bg-Warning focus:bg-Warning",
+  Danger:
+    "focus:ring-Danger focus:border-Danger hover:bg-Danger focus:bg-Danger",
 };
 
 const buttonColorClasses = {
@@ -113,7 +118,7 @@ const ButtonAutocomplete: React.FC<AutocompleteProps> = ({
             : "border-gray bg-white text-black"
         } p-3 ${
           radius === "full" ? "rounded-full" : radiusClasses[radius]
-        } focus:border-transparent focus:outline-none focus:ring-2 ${colorClasses[color]}`}
+        } $ focus:border-transparent focus:outline-none focus:ring-2`}
         style={{ height }}
       />
       <button
@@ -136,10 +141,12 @@ const ButtonAutocomplete: React.FC<AutocompleteProps> = ({
             filteredOptions.map((option, index) => (
               <li
                 key={index}
-                className={`hover:bg-gray-200 m-3 cursor-pointer p-2 ${
-                  isDarkMode ? "hover:bg-gray-700" : ""
+                className={`m-3 cursor-pointer p-2 ${
+                  isDarkMode
+                    ? `text-gray-400 border-gray-600 ${colorClasses[color]}` // 다크 모드에서 버튼 색상에 따라 변경
+                    : `border-zinc-200 text-zinc-800 ${colorClasses[color]}` // 라이트 모드에서 버튼 색상에 따라 변경
                 }`}
-                onMouseDown={(e) => e.preventDefault()}
+                tabIndex={0}
                 onClick={() => handleOptionClick(option)}
               >
                 {option}

@@ -210,7 +210,7 @@ export default Example;`}
         </tbody>
       </table>
       <h2 className="text-[#2D3748]">1.5. Full Example</h2>
-      <div className="ml-4 space-y-3">
+      <div className="my-7 space-y-4">
         <Input1 placeholder="Basic usage" />
         <Input1 placeholder="small size" size="small" />
         <Input1 placeholder="filled" variant="filled" />
@@ -295,42 +295,7 @@ export default Example;`}
         handleCopy={handleCopy}
       />
 
-      <h2 className="text-[#2D3748]">
-        2.3. Changing the Active and Inactive Colors
-      </h2>
-      <p>
-        <code>SearchInput</code> 컴포넌트는 활성화 및 비활성화 상태에 따른
-        색상을 커스터마이즈할 수 있습니다. 예제는 다음과 같습니다:
-      </p>
-      <div className="my-7 space-y-4">
-        <SearchInput activeColor="bg-Primary" inactiveColor="bg-gray-400" />
-      </div>
-      <CodeBox
-        code={`import SearchInput from '@components/SearchInput/SearchInput';
-
-function Example() {
-  return (
-    <SearchInput activeColor="bg-Primary" inactiveColor="bg-gray-400" />
-  );
-}
-
-export default Example;`}
-        copyText={`import SearchInput from '@components/SearchInput/SearchInput';
-
-function Example() {
-  return (
-    <SearchInput activeColor="bg-Primary" inactiveColor="bg-gray-400" />
-  );
-}
-
-export default Example;`}
-        language="tsx"
-        index={7}
-        copied={copied}
-        handleCopy={handleCopy}
-      />
-
-      <h2 className="text-[#2D3748]">2.4. Changing the Width of the Input</h2>
+      <h2 className="text-[#2D3748]">2.3. Changing the Width of the Input</h2>
       <p>
         <code>SearchInput</code> 컴포넌트의 너비는 동적으로 조정 가능합니다.
         기본 너비는 <code>w-80</code>입니다.
@@ -363,7 +328,7 @@ export default Example;`}
         handleCopy={handleCopy}
       />
 
-      <h2 className="text-[#2D3748]">2.5. Props</h2>
+      <h2 className="text-[#2D3748]">2.4. Props</h2>
       <p>
         <code>SearchInput</code> 컴포넌트는 아래와 같은 Props를 가집니다:
       </p>
@@ -403,18 +368,6 @@ export default Example;`}
           </tr>
           <tr>
             <td>
-              <code>inactiveColor</code>
-            </td>
-            <td>비활성화된 상태에서 버튼의 색상을 설정합니다.</td>
-            <td>
-              <code>string</code>
-            </td>
-            <td>
-              <code>"bg-gray-300"</code>
-            </td>
-          </tr>
-          <tr>
-            <td>
               <code>width</code>
             </td>
             <td>검색 입력 필드의 너비를 설정합니다.</td>
@@ -442,7 +395,7 @@ export default Example;`}
         </tbody>
       </table>
 
-      <h2 className="text-[#2D3748]">2.6. Full Example</h2>
+      <h2 className="text-[#2D3748]">2.5. Full Example</h2>
       <CodeBox
         code={`import SearchInput from '@components/SearchInput/SearchInput';
 
@@ -454,7 +407,6 @@ function Example() {
   return (
     <div>
       <SearchInput placeholder="Search something..." onSearch={handleSearch} />
-      <SearchInput activeColor="bg-Primary" inactiveColor="bg-gray-400" />
       <SearchInput width="w-96" placeholder="Custom width..." />
     </div>
   );
@@ -471,7 +423,6 @@ function Example() {
   return (
     <div>
       <SearchInput placeholder="Search something..." onSearch={handleSearch} />
-      <SearchInput activeColor="bg-Primary" inactiveColor="bg-gray-400" />
       <SearchInput width="w-96" placeholder="Custom width..." />
     </div>
   );
@@ -726,12 +677,28 @@ export default Example;`}
       />
 
       <h2 className="text-[#2D3748]">4.2. Usage</h2>
-      <div style={{ marginBottom: "20px" }}>
+      <div className="my-7 space-y-4">
         <SearchInput3 placeholder="Search..." />
       </div>
       <CodeBox
-        code={`<SearchInput3 placeholder="Search..." />`}
-        copyText={`<SearchInput3 placeholder="Search..." />`}
+        code={`import SearchInput3 from '@components/SearchInput2/SearchInput2';
+
+  function Example() {
+    return (
+      <SearchInput3 placeholder="Search..." />
+    );
+  }
+
+export default Example;`}
+        copyText={`import SearchInput3 from '@components/SearchInput2/SearchInput2';
+
+        function Example() {
+          return (
+            <SearchInput3 placeholder="Search..." />
+          );
+        }
+      
+      export default Example;`}
         language="tsx"
         index={15}
         copied={copied}
@@ -778,7 +745,7 @@ export default Example;`}
       </table>
 
       <h2 className="text-[#2D3748]">4.4. Full Example</h2>
-      <div className="ml-4 space-y-3">
+      <div className="my-7 space-y-4">
         <SearchInput3
           size="small"
           color="Basic"
@@ -960,7 +927,7 @@ export default Example;`}
       </table>
 
       <h2 className="text-[#2D3748]">5.4. Full Example</h2>
-      <div style={{ marginBottom: "20px" }}>
+      <div className="my-7 space-y-4">
         <NumInput
           size="large"
           color="Basic"
@@ -1023,7 +990,7 @@ export default FullExample;`}
         handleCopy={handleCopy}
       />
       <h2 className="text-[#2D3748]">6.2. Usage</h2>
-      <div style={{ marginBottom: "20px" }}>
+      <div className="my-7 space-y-4">
         <CurrencyInput
           size="medium"
           color="Primary"
@@ -1131,7 +1098,7 @@ export default FullExample;`}
       </table>
 
       <h2 className="text-[#2D3748]">6.4. Full Example</h2>
-      <div style={{ marginBottom: "20px" }}>
+      <div className="my-7 space-y-4">
         <CurrencyInput
           size="large"
           color="Basic"
@@ -1196,7 +1163,7 @@ export default FullExample;`}
       />
 
       <h2 className="text-[#2D3748]">7.2. Usage</h2>
-      <div style={{ marginBottom: "20px" }}>
+      <div className="my-7 space-y-4">
         <DecimalInput
           size="medium"
           color="Primary"
@@ -1303,7 +1270,7 @@ export default FullExample;`}
       </table>
 
       <h2 className="text-[#2D3748]">7.4. Full Example</h2>
-      <div style={{ marginBottom: "20px" }}>
+      <div className="my-7 space-y-4">
         <DecimalInput
           size="large"
           color="Basic"
@@ -1525,7 +1492,7 @@ export default Example;`}
       </table>
 
       <h2 className="text-[#2D3748]">8.5 Full Example</h2>
-      <div style={{ marginBottom: "20px" }}>
+      <div className="my-7 space-y-4">
         <PinInput
           length={4}
           variant="filled"

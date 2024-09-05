@@ -3,10 +3,8 @@
 import Icon from "@components/Icon/Icon";
 import React, { useState, useEffect } from "react";
 
-// 기본 HTML 속성을 확장하여 사용
 interface SearchInputProps extends React.InputHTMLAttributes<HTMLInputElement> {
   activeColor?: string;
-  inactiveColor?: string;
   width?: string;
   onSearch?: (value: string) => void;
 }
@@ -14,10 +12,9 @@ interface SearchInputProps extends React.InputHTMLAttributes<HTMLInputElement> {
 const SearchInput: React.FC<SearchInputProps> = ({
   placeholder = "Search...",
   activeColor = "bg-Basic",
-  inactiveColor = "bg-gray-300",
   width = "w-80",
   onSearch,
-  ...props // 나머지 속성을 모두 받음
+  ...props
 }) => {
   const [isActive, setIsActive] = useState(false);
   const [value, setValue] = useState("");
@@ -29,7 +26,7 @@ const SearchInput: React.FC<SearchInputProps> = ({
       setIsDarkMode(darkMode);
     };
 
-    checkDarkMode(); // 초기 다크 모드 상태 체크
+    checkDarkMode();
     window.addEventListener("storage", checkDarkMode);
 
     const observer = new MutationObserver(checkDarkMode);
@@ -54,12 +51,12 @@ const SearchInput: React.FC<SearchInputProps> = ({
     <div
       className={`flex items-center rounded-full p-2 shadow-md transition-all duration-300 ${
         isActive ? `${width}` : "w-12"
-      } ${isDarkMode ? "border-Navy border bg-transparent" : "bg-white"}`}
+      } ${isDarkMode ? "border border-Navy bg-transparent" : "bg-white"}`}
     >
       <button
         onClick={() => setIsActive(!isActive)}
         className={`flex h-8 w-8 items-center justify-center rounded-full transition-colors duration-300 ${
-          isActive ? activeColor : inactiveColor
+          isActive ? activeColor : "bg-gray-300"
         }`}
       >
         <Icon
@@ -77,7 +74,7 @@ const SearchInput: React.FC<SearchInputProps> = ({
           placeholder={placeholder}
           value={value}
           onChange={(e) => setValue(e.target.value)}
-          {...props} // 추가된 속성 전달
+          {...props}
         />
       )}
     </div>
