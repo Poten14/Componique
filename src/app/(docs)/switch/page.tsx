@@ -84,7 +84,7 @@ export default Example;
             스위치
           </li>
         </ul>
-        <div className="space-y-7">
+        <div className="my-7 space-y-7">
           <SwitchBasic />
         </div>
         <CodeBox
@@ -444,7 +444,7 @@ export default Example;
             스위치
           </li>
         </ul>
-        <div className="space-y-7">
+        <div className="my-7 space-y-7">
           <SwitchLong />
         </div>
         <CodeBox
@@ -621,7 +621,7 @@ export default Example;
             클릭 시 왼쪽으로 이동하여 상태가 전환되며, 스위치가 꺼집니다.
           </li>
         </ul>
-        <div className="space-y-7">
+        <div className="my-7 space-y-7">
           <SwitchRound />
         </div>
         <br />
@@ -798,7 +798,7 @@ export default Example;
             클릭 시 왼쪽으로 이동하며 "OFF" 레이블이 표시됩니다.
           </li>
         </ul>
-        <div className="space-y-7">
+        <div className="my-7 space-y-7">
           <SwitchLabeled />
         </div>
         <CodeBox
