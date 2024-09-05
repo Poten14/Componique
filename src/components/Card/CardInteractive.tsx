@@ -20,7 +20,9 @@ const CardInteractive = ({ title, children }: interactiveCard) => {
   };
   return (
     <div
+
       className="dark:bg[#6A6868] m-4 max-w-sm cursor-pointer rounded-xl border-2 border-Blue bg-white shadow-lg dark:text-white"
+
       onClick={toggleExpand}
     >
       <div className="px-6 py-4">
