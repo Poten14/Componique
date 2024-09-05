@@ -5,7 +5,6 @@ import { usePathname } from "next/navigation";
 const UserPage = () => {
   const router = useRouter();
   const pathname = usePathname();
-  console.log(pathname);
   return (
     <>
       {pathname.startsWith("/userpage") ? (
