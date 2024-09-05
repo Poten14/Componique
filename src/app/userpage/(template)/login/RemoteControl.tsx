@@ -1,5 +1,6 @@
 "use client";
 
+import DropDownBasic from "@components/DropDown/DropDownBasic";
 import Select from "@components/Select/Select";
 import SelectValueAdd from "@components/Select/SelectValueAdd";
 import React from "react";
@@ -46,7 +47,7 @@ const RemoteControl: React.FC<RemoteControlProps> = ({
 
       <div className="mb-4">
         <label className="mb-2 block font-medium">버튼 색상</label>
-        <select
+        {/* <select
           value={buttonColor}
           onChange={(e) => setButtonColor(e.target.value as any)}
           className="w-full rounded-md border p-2"
@@ -55,7 +56,12 @@ const RemoteControl: React.FC<RemoteControlProps> = ({
           <option value="secondary">Secondary</option>
           <option value="success">Success</option>
           <option value="danger">Danger</option>
-        </select>
+        </select> */}
+        <Select
+          option={["primary", "secondary", "success", "danger"]}
+          onChange={(value) => setButtonColor(value as any)}
+          className="w-full text-sm"
+        />
       </div>
 
       <div className="mb-4">

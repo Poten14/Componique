@@ -69,9 +69,7 @@ const Select = ({
           className={`flex h-9 w-full cursor-pointer items-center justify-between rounded-lg border dark:border-[#2A6490] dark:bg-[#2a2e39] ${colorClasses[color]} p-2 shadow-lg`}
           onClick={handleDropDown}
         >
-          <span className="text-sm font-semibold">
-            {selectValue || placeholder}
-          </span>
+          <span>{selectValue || placeholder}</span>
           <Image
             src={open ? "/selectUp.svg" : "/selectDown.svg"}
             alt="arrow"
@@ -81,11 +79,11 @@ const Select = ({
         </div>
         {open && (
           <ul
-            className={`absolute left-0 right-0 top-full m-0 rounded-lg border bg-white p-0 dark:bg-[#2a2e39] ${colorClasses[color]} z-30 text-xs shadow-lg`}
+            className={`absolute left-0 right-0 top-full m-0 rounded-lg border bg-white p-0 dark:bg-[#2a2e39] ${colorClasses[color]} z-30 shadow-lg`}
           >
             {option.map((item, key) => (
               <li
-                className={`m-0 block w-full cursor-pointer rounded-lg py-2 pl-4 text-sm hover:bg-[#E8F5FF] dark:hover:bg-[#2A6490] dark:hover:text-white ${
+                className={`m-0 block w-full cursor-pointer rounded-lg py-2 pl-4 hover:bg-[#E8F5FF] dark:hover:bg-[#2A6490] dark:hover:text-white ${
                   selectValue === item
                     ? "bg-[#E8F5FF] dark:bg-[#2A6490] dark:text-white"
                     : ""
