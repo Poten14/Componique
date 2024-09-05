@@ -1,6 +1,6 @@
 import Icon from "@components/Icon/Icon";
 import { IconName } from "@components/Icon/Icon";
-type ButtonProps = {
+export type ButtonProps = {
   size?: "small" | "medium" | "large";
   iconSize?: "small" | "medium" | "large";
   color?:
