@@ -14,17 +14,17 @@ const AvatarBasicDocs: React.FC = () => {
   };
 
   return (
-    <div className="prose max-w-[1000px] p-5 text-[#6D6D6D]">
+    <div className="prose max-w-[1000px] p-5 text-[#6D6D6D] dark:text-[#bdbdbd]">
       {/* avatar1 */}
       <div>
-        <h1 className="text-[#2D3748]">1. AvatarBasic</h1>
+        <h1 className="text-[#2D3748] dark:text-white">1. AvatarBasic</h1>
         <p>
           <code>AvatarBasic</code> 컴포넌트는 사용자의 아바타를 표시할 수 있는
           컴포넌트입니다. 이미지 또는 사용자의 이름 이니셜을 아바타로 표시할 수
           있으며, 크기와 이니셜을 설정할 수 있습니다.
         </p>
 
-        <h2 className="text-[#2D3748]">1.1. Import</h2>
+        <h2 className="text-[#2D3748] dark:text-white">1.1. Import</h2>
         <CodeBox
           code={`import AvatarBasic from '@components/Avatar/AvatarBasic';`}
           copyText={`import AvatarBasic from '@components/Avatar/AvatarBasic';`}
@@ -34,10 +34,12 @@ const AvatarBasicDocs: React.FC = () => {
           handleCopy={handleCopy}
         />
 
-        <h2 className="text-[#2D3748]">1.2. Usage</h2>
+        <h2 className="text-[#2D3748] dark:text-white">1.2. Usage</h2>
         <p>기본 사용 예제는 아래와 같습니다:</p>
 
-        <h3 className="text-[#2D3748]">1) 이미지가 있는 경우</h3>
+        <h3 className="text-[#2D3748] dark:text-white">
+          1) 이미지가 있는 경우
+        </h3>
         <div style={{ marginBottom: "20px" }}>
           <AvatarBasic
             src="/avatar1.svg" // public 폴더에 위치한 이미지 경로
@@ -78,7 +80,9 @@ export default ExampleWithImage;`}
           handleCopy={handleCopy}
         />
 
-        <h3 className="text-[#2D3748]">2) 이미지가 없는 경우 (이니셜 사용)</h3>
+        <h3 className="text-[#2D3748] dark:text-white">
+          2) 이미지가 없는 경우 (이니셜 사용)
+        </h3>
         <div style={{ marginBottom: "20px" }}>
           <AvatarBasic initial="CQ" size={80} />
         </div>
@@ -103,7 +107,7 @@ export default ExampleWithInitial;`}
           handleCopy={handleCopy}
         />
 
-        <h2 className="text-[#2D3748]">1.3. Props</h2>
+        <h2 className="text-[#2D3748] dark:text-white">1.3. Props</h2>
         <p>
           <code>AvatarBasic</code> 컴포넌트는 아래와 같은 Props를 가집니다:
         </p>
@@ -168,7 +172,7 @@ export default ExampleWithInitial;`}
           </tbody>
         </table>
 
-        <h2 className="text-[#2D3748]">1.4. Full Example</h2>
+        <h2 className="text-[#2D3748] dark:text-white">1.4. Full Example</h2>
         <CodeBox
           code={`import { useState } from "react";
 
@@ -235,14 +239,14 @@ export default AvatarBasic;`}
       <hr />
       {/* avatar2 */}
       <div className="prose max-w-[1000px] p-5 text-[#6D6D6D]">
-        <h1 className="text-[#2D3748]">2. AvatarLabel</h1>
+        <h1 className="text-[#2D3748] dark:text-white">2. AvatarLabel</h1>
         <p>
           <code>AvatarLabel</code> 컴포넌트는 사용자의 아바타와 함께 라벨을
           표시할 수 있는 컴포넌트입니다. 이미지 또는 사용자의 이름 이니셜을
           아바타로 표시할 수 있으며, 크기와 라벨을 설정할 수 있습니다.
         </p>
 
-        <h2 className="text-[#2D3748]">2.1. Import</h2>
+        <h2 className="text-[#2D3748] dark:text-white">2.1. Import</h2>
         <CodeBox
           code={`import AvatarLabel from '@components/Avatar/AvatarLabel';`}
           copyText={`import AvatarLabel from '@components/Avatar/AvatarLabel';`}
@@ -252,7 +256,7 @@ export default AvatarBasic;`}
           handleCopy={handleCopy}
         />
 
-        <h2 className="text-[#2D3748]">2.2. Usage</h2>
+        <h2 className="text-[#2D3748] dark:text-white">2.2. Usage</h2>
         <p>기본 사용 예제는 아래와 같습니다:</p>
         <div className="-scroll-my-72">
           <AvatarLabel
@@ -283,7 +287,7 @@ export default Example;`}
           handleCopy={handleCopy}
         />
 
-        <h2 className="text-[#2D3748]">2.3. Props</h2>
+        <h2 className="text-[#2D3748] dark:text-white">2.3. Props</h2>
         <p>
           <code>AvatarLabel</code> 컴포넌트는 아래와 같은 Props를 가집니다:
         </p>
@@ -360,7 +364,7 @@ export default Example;`}
           </tbody>
         </table>
 
-        <h2 className="text-[#2D3748]">2.4. Full Example</h2>
+        <h2 className="text-[#2D3748] dark:text-white">2.4. Full Example</h2>
         <CodeBox
           code={`interface AvatarLabelProps {
   src?: string;
