@@ -85,7 +85,6 @@ const Sk = () => {
         <SearchInput
           placeholder="Search..."
           activeColor="bg-Basic"
-          inactiveColor="bg-gray-300"
           width="w-96"
         />
       </div>
