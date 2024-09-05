@@ -44,6 +44,7 @@ const ImageUploadDoc: React.FC = () => {
       <div style={{ marginBottom: "20px" }}>
         <ImageUpload />
       </div>
+      <div className="my-7 space-y-4" />
       <CodeBox
         code={`import ImageUpload from '@components/ImageUpload/Imageupload';
 
@@ -77,11 +78,12 @@ export default Example;`}
         기본 값은 <code>medium</code>이고, 가능한 값은 <code>small</code>,{" "}
         <code>medium</code>, <code>large</code> 입니다.
       </p>
-      <div className="space-x-4 space-y-4">
+      <div className="flex items-center space-x-4 space-y-4">
         <ImageUpload size="small" />
         <ImageUpload size="medium" />
         <ImageUpload size="large" />
       </div>
+      <div className="my-7 space-y-4" />
       <CodeBox
         code={`import ImageUpload from '@components/ImageUpload/Imageupload';
 
@@ -127,7 +129,7 @@ export default Example;`}
         <code>purple</code>, <code>pink</code>, <code>basic</code>,{" "}
         <code>white</code>, <code>gray</code>, <code>black</code> 입니다.
       </p>
-      <div className="space-x-4 space-y-4">
+      <div className="flex flex-wrap items-center space-x-4 space-y-4">
         <ImageUpload color="primary" />
         <ImageUpload color="secondary" />
         <ImageUpload color="success" />
@@ -145,6 +147,7 @@ export default Example;`}
         <ImageUpload color="gray" />
         <ImageUpload color="black" />
       </div>
+      <div className="my-7 space-y-4" />
       <CodeBox
         code={`import ImageUpload from '@components/ImageUpload/Imageupload';
 
@@ -212,10 +215,11 @@ export default Example;`}
         기본 값은 <code>circle</code>이고, 가능한 값은 <code>rectangle</code>,{" "}
         <code>circle</code> 입니다.
       </p>
-      <div className="space-x-4 space-y-4">
+      <div className="flex flex-wrap items-center space-x-4 space-y-4">
         <ImageUpload shape="rectangle" />
         <ImageUpload shape="circle" />
       </div>
+      <div className="my-7 space-y-4" />
       <CodeBox
         code={`import ImageUpload from '@components/ImageUpload/Imageupload';
 
@@ -255,10 +259,11 @@ export default Example;`}
         기본 값은 <code>solid</code>이고, 가능한 값은 <code>solid</code>와{" "}
         <code>border</code> 입니다.
       </p>
-      <div className="space-x-4 space-y-4">
+      <div className="flex flex-wrap items-center space-x-4 space-y-4">
         <ImageUpload variant="solid" color="primary" />
         <ImageUpload variant="border" color="secondary" />
-      </div>
+      </div>{" "}
+      <div className="my-7 space-y-4" />
       <CodeBox
         code={`import ImageUpload from '@components/ImageUpload/Imageupload';
 
@@ -299,7 +304,7 @@ export default Example;`}
         적용되고 이미지가 업로드되지 않은 상태에서 테두리 색상이 강조되서
         시각적으로 구분할 수 있습니다.
       </p>
-      <div className="space-y-4">
+      <div className="flex flex-wrap items-center space-x-4 space-y-4">
         <ImageUpload color="primary" variant="border" />
         <ImageUpload color="secondary" variant="border" />
         <ImageUpload color="success" variant="border" />
@@ -383,10 +388,11 @@ export default Example;`}
       <p>
         기본 값은 <code>+ upload</code> 입니다.
       </p>
-      <div className="space-x-4 space-y-4">
+      <div className="flex flex-wrap items-center space-x-4 space-y-4">
         <ImageUpload text="Add Image" />
         <ImageUpload text="Upload Here" />
-      </div>
+      </div>{" "}
+      <div className="my-7 space-y-4" />
       <CodeBox
         code={`import ImageUpload from '@components/ImageUpload/Imageupload';
 
@@ -424,7 +430,8 @@ export default Example;`}
       </p>
       <div className="space-x-4 space-y-4">
         <ImageUpload className="bg-red-600 text-white" />
-      </div>
+      </div>{" "}
+      <div className="my-7 space-y-4" />
       <CodeBox
         code={`import ImageUpload from '@components/ImageUpload/Imageupload';
 
@@ -468,7 +475,8 @@ export default Example;`}
         예를 들어, 아래와 같은 방식으로 <code>onImageSelect</code>를 구현할 수
         있습니다.
       </p>
-      <ImageUpload onImageSelect={onSelectImageHandler} />
+      <ImageUpload onImageSelect={onSelectImageHandler} />{" "}
+      <div className="my-7 space-y-4" />
       <CodeBox
         code={`"use client";
 import ImageUpload from '@components/ImageUpload/Imageupload';
