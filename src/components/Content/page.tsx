@@ -34,7 +34,7 @@ const components = [
       {
         name: "Textarea",
         src: "/Textarea.svg",
-        darkSrc: "/TextareaDark.svg",
+        darkSrc: "/TextAreaDark.svg", //수정금지
         link: "/textarea",
       },
       {
@@ -107,6 +107,18 @@ const components = [
         src: "/InfiniteScroll.svg",
         darkSrc: "/InfiniteScrollDark.svg",
         link: "/infinitescroll",
+      },
+      {
+        name: "ProgressBar",
+        src: "/ProgressBar.svg",
+        darkSrc: "/ProgressBarDark.svg",
+        link: "/progressbar",
+      },
+      {
+        name: "ImageUpload",
+        src: "/ImageUpload.svg",
+        darkSrc: "/ImageUploadDark.svg",
+        link: "/imageupload",
       },
     ],
   },

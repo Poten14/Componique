@@ -20,11 +20,11 @@ const CardInteractive = ({ title, children }: interactiveCard) => {
   };
   return (
     <div
-      className="m-4 max-w-sm cursor-pointer rounded-xl border-2 border-Blue bg-white shadow-lg dark:bg-[#2A2E39]"
+      className="m-4 max-w-sm cursor-pointer rounded-xl border-2 border-Blue bg-white shadow-lg dark:bg-[#2A2E39] dark:text-white"
       onClick={toggleExpand}
     >
       <div className="px-6 py-4">
-        <div className="mb-2 text-2xl font-bold">{title}</div>
+        <div className="mb-2 text-2xl font-bold dark:text-white">{title}</div>
         <div
           className={`overflow-hidden duration-500 ease-in-out ${expand ? "max-h-40" : "max-h-0"}`}
         >

@@ -39,7 +39,7 @@ const Footer = () => {
     <footer className="mb-4 flex w-full flex-col items-center">
       <div className="flex w-full flex-col items-center text-center">
         {/* 다크 모드에서 텍스트와 테두리 색상을 변경 */}
-        <hr className="mb-4 w-full border-t border-[#797979] dark:border-white" />
+        <hr className="mb-4 w-3/6 border-t border-[#bcbcbc] dark:border-[#dddddd]" />
 
         {/* 다크 모드에서 로고 이미지를 변경 */}
         <Image

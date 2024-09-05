@@ -48,10 +48,11 @@ const IconDoc: React.FC = () => {
     "icon-docs2",
     "icon-github",
     "icon-blog",
+    "icon-comment",
   ];
   const router = useRouter();
   return (
-    <div className="prose max-w-[1000px] p-5 text-[#6D6D6D]">
+    <div className="prose w-[1000px] max-w-[1000px] p-5 text-[#6D6D6D]">
       <h1 className="text-[#2D3748]">1. Icon</h1>
       <p>
         <code>Icon</code> 컴포넌트는 다양한 SVG 아이콘을 폰트로 사용하여 웹 에서

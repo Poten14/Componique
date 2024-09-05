@@ -12,7 +12,7 @@ export default function DocsLayout({
   return (
     <div className="w-full">
       <div className="flex">
-        <section className="fixed h-[calc(100%-120px)] w-[80px] bg-red-100">
+        <section className="fixed h-[calc(100%-120px)] w-[80px]">
           <UserPagePrevButton />
         </section>
         <div className="ml-[85px] w-[calc(100%-440px)] bg-yellow-100">
