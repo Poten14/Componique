@@ -44,7 +44,7 @@ const Navbar = ({
   return (
     <>
       <div
-        className={`mx-auto mt-4 flex max-w-screen-lg items-center justify-between dark:text-white ${sizeClasses[size]} ${positionClasses[position]}`}
+        className={`mx-auto mt-4 flex max-w-screen-lg items-center justify-between p-2 dark:bg-[#333742] dark:text-white ${sizeClasses[size]} ${positionClasses[position]}`}
       >
         <div className={`flex items-center justify-center`}>
           <Image src={logoSrc} alt="logo" width={50} height={50} />
