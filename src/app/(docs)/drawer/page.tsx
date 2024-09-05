@@ -3,7 +3,7 @@ import Button from "@components/Button/Button";
 import CodeBox from "@components/CodeBox";
 import Drawer from "@components/Drawer/Drawer";
 import { useState } from "react";
-
+import { useEffect } from "react";
 const DrawerDocs = () => {
   //Drawer 관련 코드
 
@@ -19,7 +19,7 @@ const DrawerDocs = () => {
   const [isLogoDrawerOpen, setIsLogoDrawerOpen] = useState(false);
   const [isIconDrawerOpen, setIsIconoDrawerOpen] = useState(false);
   const [isGroupDrawerOpen, setIsGroupDrawerOpen] = useState(false);
-
+  const [isDarkMode, setIsDarkMode] = useState(false);
   const onclickDrawerHandler = (open: boolean) => () => {
     setIsDrawerOpen(open);
   };
@@ -29,13 +29,33 @@ const DrawerDocs = () => {
     setTimeout(() => setCopied((prev) => ({ ...prev, [index]: false })), 500);
   };
 
+  useEffect(() => {
+    // 다크 모드 상태를 확인하고 설정
+    const checkDarkMode = () => {
+      setIsDarkMode(document.documentElement.classList.contains("dark"));
+    };
+
+    // 초기 다크 모드 상태 확인
+    checkDarkMode();
+
+    // 다크 모드 변경을 감지하는 Observer 설정
+    const observer = new MutationObserver(checkDarkMode);
+    observer.observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ["class"],
+    });
+
+    // 컴포넌트가 언마운트될 때 Observer를 정리
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <div className="prose max-w-[1000px] p-5 text-[#6D6D6D]">
       <h1 className="text-[#2D3748]">1. Drawer</h1>
       <p>
         <code>Drawer</code> 컴포넌트는 슬라이딩 메뉴 또는 사이드바를 구현하기
         위해 사용됩니다.
-      </p>{" "}
+      </p>
       <p>
         이 컴포넌트는 메뉴 항목, 로고, 색상, 위치 등을 사용자 정의할 수 있는
         다양한 옵션을 제공합니다.
@@ -270,7 +290,7 @@ export default Example;
         isOpen={isLogoDrawerOpen}
         className="not-prose"
         onClose={() => setIsLogoDrawerOpen(false)}
-        logo="/componique_logo_full.svg"
+        logo={isDarkMode ? "/LogoDark.svg" : "/Logo.svg"}
         menu={[
           {
             items: [
@@ -290,9 +310,25 @@ export default Example;
         code={`"use client";
 import Drawer from "@components/Drawer/Drawer";
 import Button from "@components/Button/Button";
+import { useEffect } from "react";
 import { useState } from "react";
 function Example() {
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
+  const [isDarkMode, setIsDarkMode] = useState(false);
+
+  useEffect(() => {
+    const checkDarkMode = () => {
+      setIsDarkMode(document.documentElement.classList.contains("dark"));
+    };
+    checkDarkMode();
+    const observer = new MutationObserver(checkDarkMode);
+    observer.observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ["class"],
+    });
+    return () => observer.disconnect();
+  }, []);
+
   const onclickDrawerHandler = (open: boolean) => () => {
     setIsDrawerOpen(open);
   };
@@ -300,7 +336,7 @@ function Example() {
     <>
       <Drawer
         isOpen={isDrawerOpen}
-        logo="/componique_logo_full.svg"
+      logo={isDarkMode ? "/LogoDark.svg" : "/Logo.svg"}
         onClose={onclickDrawerHandler(false)}
        menu={[
               {
@@ -329,9 +365,24 @@ export default Example;
         copyText={`"use client";
 import Drawer from "@components/Drawer/Drawer";
 import Button from "@components/Button/Button";
+import { useEffect } from "react";
 import { useState } from "react";
 function Example() {
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
+  const [isDarkMode, setIsDarkMode] = useState(false);
+  useEffect(() => {
+    const checkDarkMode = () => {
+      setIsDarkMode(document.documentElement.classList.contains("dark"));
+    };
+    checkDarkMode();
+    const observer = new MutationObserver(checkDarkMode);
+    observer.observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ["class"],
+    });
+    return () => observer.disconnect();
+  }, []);
+
   const onclickDrawerHandler = (open: boolean) => () => {
     setIsDrawerOpen(open);
   };
@@ -339,7 +390,7 @@ function Example() {
     <>
       <Drawer
         isOpen={isDrawerOpen}
-        logo="/componique_logo_full.svg" 
+      logo={isDarkMode ? "/LogoDark.svg" : "/Logo.svg"}
         onClose={onclickDrawerHandler(false)}
       menu={[
               {
@@ -596,7 +647,8 @@ export default Example;
       />
       <Button variant="border" onClick={() => setIsColorDrawerOpen(true)}>
         Color Drawer
-      </Button>
+      </Button>{" "}
+      <div className="my-7 space-y-4" />
       <CodeBox
         code={`"use client";
 import Drawer from "@components/Drawer/Drawer";

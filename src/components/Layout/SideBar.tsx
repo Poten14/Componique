@@ -15,7 +15,7 @@ const SideBar = () => {
           <ul className="ml-6 space-y-1">
             <li
               className={`cursor-pointer hover:text-Basic ${
-                pathname === "/button" ? "text-Basic" : ""
+                pathname === "/button" ? "font-bold text-Basic" : ""
               }`}
               onClick={() => router.push("/button")}
             >
@@ -23,7 +23,7 @@ const SideBar = () => {
             </li>
             <li
               className={`cursor-pointer hover:text-Basic ${
-                pathname === "/checkbox" ? "text-Basic" : ""
+                pathname === "/checkbox" ? "font-bold text-Basic" : ""
               }`}
               onClick={() => router.push("/checkbox")}
             >
@@ -31,7 +31,7 @@ const SideBar = () => {
             </li>
             <li
               className={`cursor-pointer hover:text-Basic ${
-                pathname === "/input" ? "text-Basic" : ""
+                pathname === "/input" ? "font-bold text-Basic" : ""
               }`}
               onClick={() => router.push("/input")}
             >
@@ -39,15 +39,15 @@ const SideBar = () => {
             </li>
             <li
               className={`cursor-pointer hover:text-Basic ${
-                pathname === "/radiobutton" ? "text-Basic" : ""
+                pathname === "/radiobutton" ? "font-bold text-Basic" : ""
               }`}
               onClick={() => router.push("/radiobutton")}
             >
-              Radio Button
+              RadioButton
             </li>
             <li
               className={`cursor-pointer hover:text-Basic ${
-                pathname === "/textarea" ? "text-Basic" : ""
+                pathname === "/textarea" ? "font-bold text-Basic" : ""
               }`}
               onClick={() => router.push("/textarea")}
             >
@@ -55,7 +55,7 @@ const SideBar = () => {
             </li>
             <li
               className={`cursor-pointer hover:text-Basic ${
-                pathname === "/select" ? "text-Basic" : ""
+                pathname === "/select" ? "font-bold text-Basic" : ""
               }`}
               onClick={() => router.push("/select")}
             >
@@ -63,7 +63,7 @@ const SideBar = () => {
             </li>
             <li
               className={`cursor-pointer hover:text-Basic ${
-                pathname === "/dropdown" ? "text-Basic" : ""
+                pathname === "/dropdown" ? "font-bold text-Basic" : ""
               }`}
               onClick={() => router.push("/dropdown")}
             >
@@ -71,7 +71,7 @@ const SideBar = () => {
             </li>
             <li
               className={`cursor-pointer hover:text-Basic ${
-                pathname === "/autocomplete" ? "text-Basic" : ""
+                pathname === "/autocomplete" ? "font-bold text-Basic" : ""
               }`}
               onClick={() => router.push("/autocomplete")}
             >
@@ -79,7 +79,7 @@ const SideBar = () => {
             </li>
             <li
               className={`cursor-pointer hover:text-Basic ${
-                pathname === "/colorpicker" ? "text-Basic" : ""
+                pathname === "/colorpicker" ? "font-bold text-Basic" : ""
               }`}
               onClick={() => router.push("/colorpicker")}
             >
@@ -87,7 +87,7 @@ const SideBar = () => {
             </li>
             <li
               className={`cursor-pointer hover:text-Basic ${
-                pathname === "/switch" ? "text-Basic" : ""
+                pathname === "/switch" ? "font-bold text-Basic" : ""
               }`}
               onClick={() => router.push("/switch")}
             >
@@ -103,7 +103,7 @@ const SideBar = () => {
           <ul className="ml-6 space-y-1 dark:text-[#DFDFDF]">
             <li
               className={`cursor-pointer hover:text-Basic ${
-                pathname === "/card" ? "text-Basic" : ""
+                pathname === "/card" ? "font-bold text-Basic" : ""
               }`}
               onClick={() => router.push("/card")}
             >
@@ -111,7 +111,7 @@ const SideBar = () => {
             </li>
             <li
               className={`cursor-pointer hover:text-Basic ${
-                pathname === "/carousel" ? "text-Basic" : ""
+                pathname === "/carousel" ? "font-bold text-Basic" : ""
               }`}
               onClick={() => router.push("/carousel")}
             >
@@ -119,7 +119,7 @@ const SideBar = () => {
             </li>
             <li
               className={`cursor-pointer hover:text-Basic ${
-                pathname === "/calendar" ? "text-Basic" : ""
+                pathname === "/calendar" ? "font-bold text-Basic" : ""
               }`}
               onClick={() => router.push("/calendar")}
             >
@@ -127,7 +127,7 @@ const SideBar = () => {
             </li>
             <li
               className={`cursor-pointer hover:text-Basic ${
-                pathname === "/avatar" ? "text-Basic" : ""
+                pathname === "/avatar" ? "font-bold text-Basic" : ""
               }`}
               onClick={() => router.push("/avatar")}
             >
@@ -135,7 +135,7 @@ const SideBar = () => {
             </li>
             <li
               className={`cursor-pointer hover:text-Basic ${
-                pathname === "/icon" ? "text-Basic" : ""
+                pathname === "/icon" ? "font-bold text-Basic" : ""
               }`}
               onClick={() => router.push("/icon")}
             >
@@ -143,27 +143,27 @@ const SideBar = () => {
             </li>
             <li
               className={`cursor-pointer hover:text-Basic ${
-                pathname === "/progressbar" ? "text-Basic" : ""
+                pathname === "/progressbar" ? "font-bold text-Basic" : ""
               }`}
               onClick={() => router.push("/progressbar")}
             >
-              Progress Bar
+              ProgressBar
             </li>
             <li
               className={`cursor-pointer hover:text-Basic ${
-                pathname === "/infinitescroll" ? "text-Basic" : ""
+                pathname === "/infinitescroll" ? "font-bold text-Basic" : ""
               }`}
               onClick={() => router.push("/infinitescroll")}
             >
-              Infinite Scroll
+              InfiniteScroll
             </li>
             <li
               className={`cursor-pointer hover:text-Basic ${
-                pathname === "/imageupload" ? "text-Basic" : ""
+                pathname === "/imageupload" ? "font-bold text-Basic" : ""
               }`}
               onClick={() => router.push("/imageupload")}
             >
-              Image Upload
+              ImageUpload
             </li>
           </ul>
         </li>
@@ -175,7 +175,7 @@ const SideBar = () => {
           <ul className="ml-6 space-y-1 dark:text-[#DFDFDF]">
             <li
               className={`cursor-pointer hover:text-Basic ${
-                pathname === "/spinner" ? "text-Basic" : ""
+                pathname === "/spinner" ? "font-bold text-Basic" : ""
               }`}
               onClick={() => router.push("/spinner")}
             >
@@ -183,7 +183,7 @@ const SideBar = () => {
             </li>
             <li
               className={`cursor-pointer hover:text-Basic ${
-                pathname === "/toast" ? "text-Basic" : ""
+                pathname === "/toast" ? "font-bold text-Basic" : ""
               }`}
               onClick={() => router.push("/toast")}
             >
@@ -191,7 +191,7 @@ const SideBar = () => {
             </li>
             <li
               className={`cursor-pointer hover:text-Basic ${
-                pathname === "/skeleton" ? "text-Basic" : ""
+                pathname === "/skeleton" ? "font-bold text-Basic" : ""
               }`}
               onClick={() => router.push("/skeleton")}
             >
@@ -199,7 +199,7 @@ const SideBar = () => {
             </li>
             <li
               className={`cursor-pointer hover:text-Basic ${
-                pathname === "/modal" ? "text-Basic" : ""
+                pathname === "/modal" ? "font-bold text-Basic" : ""
               }`}
               onClick={() => router.push("/modal")}
             >
@@ -215,7 +215,7 @@ const SideBar = () => {
           <ul className="ml-6 space-y-1 dark:text-[#DFDFDF]">
             <li
               className={`cursor-pointer hover:text-Basic ${
-                pathname === "/pagination" ? "text-Basic" : ""
+                pathname === "/pagination" ? "font-bold text-Basic" : ""
               }`}
               onClick={() => router.push("/pagination")}
             >
@@ -223,7 +223,7 @@ const SideBar = () => {
             </li>
             <li
               className={`cursor-pointer hover:text-Basic ${
-                pathname === "/drawer" ? "text-Basic" : ""
+                pathname === "/drawer" ? "font-bold text-Basic" : ""
               }`}
               onClick={() => router.push("/drawer")}
             >
@@ -231,7 +231,7 @@ const SideBar = () => {
             </li>
             <li
               className={`cursor-pointer hover:text-Basic ${
-                pathname === "/navbar" ? "text-Basic" : ""
+                pathname === "/navbar" ? "font-bold text-Basic" : ""
               }`}
               onClick={() => router.push("/navbar")}
             >
