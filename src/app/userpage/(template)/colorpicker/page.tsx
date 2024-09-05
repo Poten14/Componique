@@ -1,7 +1,7 @@
 "use client";
 import { useEffect } from "react";
 import TwoPicker from "@components/ColorPicker/TwoPicker";
-const colorPicker = () => {
+const ColorPickerUserPage = () => {
   const handleColorChange = (color: string) => {
     // body 배경색 변경
     document.body.style.background = color;
@@ -21,4 +21,4 @@ const colorPicker = () => {
     </div>
   );
 };
-export default colorPicker;
+export default ColorPickerUserPage;
