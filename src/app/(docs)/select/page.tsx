@@ -14,6 +14,14 @@ const SelectDocs: React.FC = () => {
     setTimeout(() => setCopied((prev) => ({ ...prev, [index]: false })), 500);
   };
 
+  const handleSelect = (value: string) => {
+    console.log("Selected option:", value);
+  };
+
+  const handleOptionClick = (value: string) => {
+    console.log("Option clicked:", value);
+  };
+
   return (
     <div className="prose max-w-[1000px] p-5 text-[#6D6D6D]">
       <h1 className="text-[#2D3748]">1. Select</h1>
@@ -40,6 +48,8 @@ const SelectDocs: React.FC = () => {
           option={["Option 1", "Option 2", "Option 3"]}
           placeholder="Select an option"
           color="gray"
+          onChange={handleSelect}
+          onClick={handleOptionClick}
         />
       </div>
       <CodeBox
@@ -51,6 +61,8 @@ function Example() {
       option={["Option 1", "Option 2", "Option 3"]}
       placeholder="Select an option"
       color="gray"
+      onChange={handleSelect}
+      onClick={handleOptionClick} 
     />
   );
 }
@@ -64,6 +76,8 @@ function Example() {
       option={["Option 1", "Option 2", "Option 3"]}
       placeholder="Select an option"
       color="gray"
+      onChange={handleSelect}
+      onClick={handleOptionClick} 
     />
   );
 }
@@ -99,21 +113,29 @@ export default Example;`}
           option={["Option 1", "Option 2", "Option 3"]}
           placeholder="Select an option"
           color="red"
+          onChange={handleSelect}
+          onClick={handleOptionClick}
         />
         <Select
           option={["Option 1", "Option 2", "Option 3"]}
           placeholder="Select an option"
           color="blue"
+          onChange={handleSelect}
+          onClick={handleOptionClick}
         />
         <Select
           option={["Option 1", "Option 2", "Option 3"]}
           placeholder="Select an option"
           color="green"
+          onChange={handleSelect}
+          onClick={handleOptionClick}
         />
         <Select
           option={["Option 1", "Option 2", "Option 3"]}
           placeholder="Select an option"
           color="gray"
+          onChange={handleSelect}
+          onClick={handleOptionClick}
         />
       </div>
       <CodeBox
@@ -126,21 +148,29 @@ function Example() {
         option={["Option 1", "Option 2", "Option 3"]}
         placeholder="Select an option"
         color="red"
+        onChange={handleSelect}
+        onClick={handleOptionClick} 
       />
       <Select
         option={["Option 1", "Option 2", "Option 3"]}
         placeholder="Select an option"
         color="blue"
+        onChange={handleSelect}
+        onClick={handleOptionClick} 
       />
       <Select
         option={["Option 1", "Option 2", "Option 3"]}
         placeholder="Select an option"
         color="green"
+        onChange={handleSelect}
+        onClick={handleOptionClick}
       />
       <Select
         option={["Option 1", "Option 2", "Option 3"]}
         placeholder="Select an option"
         color="gray"
+        onChange={handleSelect}
+        onClick={handleOptionClick} 
       />
     </>
   );
@@ -156,21 +186,29 @@ function Example() {
         option={["Option 1", "Option 2", "Option 3"]}
         placeholder="Select an option"
         color="red"
+        onChange={handleSelect}
+        onClick={handleOptionClick} 
       />
       <Select
         option={["Option 1", "Option 2", "Option 3"]}
         placeholder="Select an option"
         color="blue"
+        onChange={handleSelect}
+        onClick={handleOptionClick}
       />
       <Select
         option={["Option 1", "Option 2", "Option 3"]}
         placeholder="Select an option"
         color="green"
+        onChange={handleSelect}
+        onClick={handleOptionClick} 
       />
       <Select
         option={["Option 1", "Option 2", "Option 3"]}
         placeholder="Select an option"
         color="gray"
+        onChange={handleSelect}
+        onClick={handleOptionClick} 
       />
     </>
   );`}
@@ -230,6 +268,30 @@ function Example() {
               <code>"Select an option"</code>
             </td>
           </tr>
+          <tr>
+            <td>
+              <code>onChange</code>
+            </td>
+            <td>선택된 값이 변경될 때 호출되는 콜백 함수입니다.</td>
+            <td>
+              <code>(value: string) =&gt; void</code>
+            </td>
+            <td>
+              <code>undefined</code>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <code>onClick</code>
+            </td>
+            <td>옵션이 클릭될 때 호출되는 콜백 함수입니다.</td>
+            <td>
+              <code>(value: string) =&gt; void</code>
+            </td>
+            <td>
+              <code>undefined</code>
+            </td>
+          </tr>
         </tbody>
       </table>
 
@@ -244,6 +306,8 @@ function Example() {
         option={["Option 1", "Option 2", "Option 3"]}
         placeholder="Select an option"
         color="blue"
+        onChange={handleSelect}
+        onClick={handleOptionClick} // onClick prop 추가
       />
     </div>
   );
@@ -259,6 +323,8 @@ function Example() {
         option={["Option 1", "Option 2", "Option 3"]}
         placeholder="Select an option"
         color="blue"
+        onChange={handleSelect}
+        onClick={handleOptionClick} // onClick prop 추가
       />
     </div>
   );`}

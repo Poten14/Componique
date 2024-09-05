@@ -7,6 +7,8 @@ interface SelectProps {
   placeholder?: string;
   option: string[];
   color?: "red" | "blue" | "green" | "gray";
+  onChange?: (value: string) => void;
+  onClick?: (value: string) => void;
 }
 
 const colorClasses = {
@@ -17,7 +19,13 @@ const colorClasses = {
   gray: "border-[#DCDCDD] dark:border-[#DCDCDD] focus:ring-[#DCDCDD] dark:focus:ring-[#DCDCDD] ",
 };
 
-const Select = ({ option, color = "gray", placeholder }: SelectProps) => {
+const Select = ({
+  option,
+  color = "gray",
+  placeholder,
+  onChange,
+  onClick,
+}: SelectProps) => {
   const [selectValue, setSelectValue] = useState<string>("");
   const [open, setOpen] = useState<boolean>(false);
   const dropMenuRef = useRef<HTMLDivElement>(null);
@@ -44,6 +52,12 @@ const Select = ({ option, color = "gray", placeholder }: SelectProps) => {
   const handleOptionClick = (item: string) => {
     setSelectValue(item);
     setOpen(false);
+    if (onChange) {
+      onChange(item);
+    }
+    if (onClick) {
+      onClick(item);
+    }
   };
 
   const arrowImage = () => {
