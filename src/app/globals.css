@@ -234,3 +234,7 @@ li {
 [data-theme="dark"] th {
   color: #dfdfdf;
 }
+
+[data-theme="dark"] td {
+  color: #bdbdbd;
+}
