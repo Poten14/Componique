@@ -1,38 +1,69 @@
 import { useState } from "react";
 
-const SwitchLong = () => {
+// 크기 타입 정의
+type SizeType = "small" | "medium" | "large";
+
+interface SwitchLongProps {
+  size?: SizeType;
+  onColor?: string;
+  offColor?: string;
+}
+
+const SwitchLong = ({
+  size = "medium",
+  onColor = "bg-Basic",
+  offColor = "bg-[#9E9E9E] dark:bg-[#333742]",
+}: SwitchLongProps) => {
   const [isOn, setIsOn] = useState(false);
 
   const toggleSwitch = () => {
     setIsOn(!isOn);
   };
 
+  // 크기별 스타일을 설정합니다.
+  const sizeClasses: Record<
+    SizeType,
+    {
+      width: string;
+      height: string;
+      circleSize: string;
+      translateDistance: string;
+    }
+  > = {
+    small: {
+      width: "w-24",
+      height: "h-7",
+      circleSize: "h-5 w-12",
+      translateDistance: "translate-x-10",
+    },
+    medium: {
+      width: "w-36",
+      height: "h-9",
+      circleSize: "h-7 w-16",
+      translateDistance: "translate-x-16",
+    },
+    large: {
+      width: "w-64",
+      height: "h-16",
+      circleSize: "h-12 w-28",
+      translateDistance: "translate-x-32",
+    },
+  };
+
+  const currentSize = sizeClasses[size];
+
   return (
     <div className="flex flex-col items-center space-y-6">
       <div
         onClick={toggleSwitch}
-        className={`flex h-7 w-24 cursor-pointer items-center rounded-full p-1 ${isOn ? `bg-Basic` : `bg-[#9E9E9E] dark:bg-[#333742]`}`}
+        className={`flex ${currentSize.height} ${currentSize.width} cursor-pointer items-center rounded-full p-1 ${
+          isOn ? onColor : offColor
+        }`}
       >
         <div
-          className={`h-5 w-12 transform rounded-full bg-white shadow-lg duration-700 ease-in-out ${isOn ? `translate-x-10` : ``}`}
-        />
-      </div>
-
-      <div
-        onClick={toggleSwitch}
-        className={`flex h-9 w-36 cursor-pointer items-center rounded-full p-1 ${isOn ? `bg-Basic` : `bg-[#9E9E9E] dark:bg-[#333742]`}`}
-      >
-        <div
-          className={`h-7 w-16 transform rounded-full bg-white shadow-lg duration-700 ease-in-out ${isOn ? `translate-x-16` : ``}`}
-        />
-      </div>
-
-      <div
-        onClick={toggleSwitch}
-        className={`flex h-16 w-64 cursor-pointer items-center rounded-full p-2 ${isOn ? `bg-Basic` : `bg-[#9E9E9E] dark:bg-[#333742]`}`}
-      >
-        <div
-          className={`h-12 w-28 transform rounded-full bg-white shadow-lg duration-700 ease-in-out ${isOn ? `translate-x-32` : ``}`}
+          className={`transform rounded-full bg-white shadow-lg duration-700 ease-in-out ${currentSize.circleSize} ${
+            isOn ? currentSize.translateDistance : ""
+          }`}
         />
       </div>
     </div>
