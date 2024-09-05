@@ -34,7 +34,7 @@ const components = [
       {
         name: "Textarea",
         src: "/Textarea.svg",
-        darkSrc: "/TextAreaDark.svg",
+        darkSrc: "/TextAreaDark.svg", //수정금지
         link: "/textarea",
       },
       {
