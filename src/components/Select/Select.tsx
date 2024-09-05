@@ -9,6 +9,7 @@ interface SelectProps {
   color?: "red" | "blue" | "green" | "gray";
   onChange?: (value: string) => void;
   onClick?: (value: string) => void;
+  className?: string;
 }
 
 const colorClasses = {
@@ -25,6 +26,7 @@ const Select = ({
   placeholder,
   onChange,
   onClick,
+  className,
 }: SelectProps) => {
   const [selectValue, setSelectValue] = useState<string>("");
   const [open, setOpen] = useState<boolean>(false);
@@ -60,24 +62,9 @@ const Select = ({
     }
   };
 
-  const arrowImage = () => {
-    switch (color) {
-      case "blue":
-        return open ? "selectDown.svg" : "selectUp.svg";
-      case "red":
-        return open ? "selectDownRed.svg" : "selectUpRed.svg";
-      case "green":
-        return open ? "selectDownGreen.svg" : "selectUpGreen.svg";
-      case "gray":
-        return open ? "selectDownGray.svg" : "selectUpGray.svg";
-      default:
-        return open ? "selectDown.svg" : "selectUp.svg";
-    }
-  };
-
   return (
     <>
-      <div className="relative w-60" ref={dropMenuRef}>
+      <div className={`relative w-60 ${className}`} ref={dropMenuRef}>
         <div
           className={`flex h-9 w-full cursor-pointer items-center justify-between rounded-lg border dark:border-[#2A6490] dark:bg-[#2a2e39] ${colorClasses[color]} p-2 shadow-lg`}
           onClick={handleDropDown}
@@ -85,7 +72,12 @@ const Select = ({
           <span className="text-sm font-semibold">
             {selectValue || placeholder}
           </span>
-          <Image src={arrowImage()} alt="arrow" width={15} height={15} />
+          <Image
+            src={open ? "/selectUp.svg" : "/selectDown.svg"}
+            alt="arrow"
+            width={15}
+            height={15}
+          />
         </div>
         {open && (
           <ul

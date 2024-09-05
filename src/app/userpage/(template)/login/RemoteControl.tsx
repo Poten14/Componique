@@ -1,5 +1,7 @@
 "use client";
 
+import Select from "@components/Select/Select";
+import SelectValueAdd from "@components/Select/SelectValueAdd";
 import React from "react";
 
 interface RemoteControlProps {
@@ -68,7 +70,7 @@ const RemoteControl: React.FC<RemoteControlProps> = ({
 
       <div className="mb-4">
         <label className="mb-2 block font-medium">버튼 사이즈</label>
-        <select
+        {/* <select
           value={buttonSize}
           onChange={(e) => setButtonSize(e.target.value as any)}
           className="w-full rounded-md border p-2"
@@ -76,7 +78,13 @@ const RemoteControl: React.FC<RemoteControlProps> = ({
           <option value="small">Small</option>
           <option value="medium">Medium</option>
           <option value="large">Large</option>
-        </select>
+        </select> */}
+        <Select
+          option={["small", "medium", "large"]}
+          placeholder="Size"
+          onChange={(value) => setButtonSize(value as any)}
+          className="w-full"
+        />
       </div>
 
       <div className="mb-4">
