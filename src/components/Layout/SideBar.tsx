@@ -143,6 +143,14 @@ const SideBar = () => {
             </li>
             <li
               className={`cursor-pointer hover:text-Basic ${
+                pathname === "/progressbar" ? "text-Basic" : ""
+              }`}
+              onClick={() => router.push("/progressbar")}
+            >
+              Progress Bar
+            </li>
+            <li
+              className={`cursor-pointer hover:text-Basic ${
                 pathname === "/infinitescroll" ? "text-Basic" : ""
               }`}
               onClick={() => router.push("/infinitescroll")}
