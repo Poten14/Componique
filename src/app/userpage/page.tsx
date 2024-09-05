@@ -1,40 +1,64 @@
+"use client";
 import Link from "next/link";
-
+import { useRouter } from "next/navigation";
 const UserPage = () => {
+  const router = useRouter();
+  const templateList = [
+    {
+      title: "webtoon",
+      path: "/webtoon",
+    },
+    {
+      title: "webtoon",
+      path: "/webtoon",
+    },
+    {
+      title: "webtoon",
+      path: "/webtoon",
+    },
+    {
+      title: "webtoon",
+      path: "/webtoon",
+    },
+    {
+      title: "webtoon",
+      path: "/webtoon",
+    },
+    {
+      title: "webtoon",
+      path: "/webtoon",
+    },
+    {
+      title: "webtoon",
+      path: "/webtoon",
+    },
+    {
+      title: "webtoon",
+      path: "/webtoon",
+    },
+    {
+      title: "webtoon",
+      path: "/webtoon",
+    },
+  ];
+
   return (
     <div>
-      <h1>User Page</h1>
-      <Link href="/userpage/webtoon">
-        <p>Webtoon</p>
-      </Link>
-      <div className="w-[1000px]">
-        <div className="flex w-full flex-wrap items-center justify-around">
-          <div>
-            <img src="https://picsum.photos/230/353" alt="" />
-          </div>
-          <div>
-            <img src="https://picsum.photos/230/353" alt="" />
-          </div>
-          <div>
-            <img src="https://picsum.photos/230/353" alt="" />
-          </div>
-          <div>
-            <img src="https://picsum.photos/230/353" alt="" />
-          </div>
-          <div>
-            <img src="https://picsum.photos/230/353" alt="" />
-          </div>
-          <div>
-            <img src="https://picsum.photos/230/353" alt="" />
-          </div>
-          <div>
-            <img src="https://picsum.photos/230/353" alt="" />
-          </div>
-          <div>
-            <img src="https://picsum.photos/230/353" alt="" />
-          </div>
-        </div>
-      </div>
+      <ul className="mt-10 flex w-[1000px] flex-wrap justify-evenly">
+        {templateList.map((item, index) => (
+          <li
+            key={index}
+            className="relative mb-6 h-[460px] w-[300px] cursor-pointer rounded-lg bg-red-100"
+            onClick={() => {
+              router.push(`/userpage/${item.path}`);
+            }}
+          >
+            <p className="absolute bottom-0 w-full rounded-b-lg bg-Basic bg-opacity-70 p-2 pb-4 text-xl">
+              {item.title}
+            </p>
+          </li>
+        ))}
+      </ul>
     </div>
   );
 };
