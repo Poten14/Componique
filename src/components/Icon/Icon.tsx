@@ -36,7 +36,8 @@ export type IconName =
   | "icon-search"
   | "icon-docs2"
   | "icon-github"
-  | "icon-blog";
+  | "icon-blog"
+  | "icon-comment";
 
 type IconProps = {
   name: IconName;
