@@ -21,8 +21,11 @@ const SwitchDocs: React.FC = () => {
       <div className="dark:text-white">
         <h1 className="text-[#2D3748] dark:text-white">1. SwitchBasic</h1>
         <p>
-          <code>SwitchBasic</code> 컴포넌트는 사용자가 토글할 수 있는 스위치 UI
-          요소입니다. 다양한 크기로 사용할 수 있으며, 클릭 시 상태가 전환됩니다.
+          <code>SwitchBasic</code>, <code>SwitchHorizental</code>,{" "}
+          <code>SwitchLong</code> 컴포넌트는 사용자가 토글할 수 있는 스위치 UI
+          요소입니다. 이 컴포넌트들은 다양한 크기 옵션과 스타일을 제공합니다.
+          클릭 시 상태가 전환되며, 각각의 스위치는 props를 통해 크기와 색상을
+          커스터마이징할 수 있습니다.
         </p>
 
         <h2 className="text-[#2D3748] dark:text-white">1.1. Import</h2>
@@ -34,41 +37,75 @@ const SwitchDocs: React.FC = () => {
           copied={copied}
           handleCopy={handleCopy}
         />
+        <CodeBox
+          code={`import SwitchHorizental from '@components/Switch/SwitchHorizental';`}
+          copyText={`import SwitchHorizental from '@components/Switch/SwitchHorizental';`}
+          language="tsx"
+          index={2}
+          copied={copied}
+          handleCopy={handleCopy}
+        />
+        <CodeBox
+          code={`import SwitchLong from '@components/Switch/SwitchLong';`}
+          copyText={`import SwitchLong from '@components/Switch/SwitchLong';`}
+          language="tsx"
+          index={3}
+          copied={copied}
+          handleCopy={handleCopy}
+        />
 
         <h2 className="text-[#2D3748] dark:text-white">1.2. Usage</h2>
         <p>기본 사용 예제는 아래와 같습니다:</p>
         <div className="my-7">
           <SwitchBasic />
+          <SwitchHorizental />
+          <SwitchLong />
         </div>
         <CodeBox
           code={`
 import SwitchBasic from '@components/Switch/SwitchBasic';
+import SwitchHorizental from '@components/Switch/SwitchHorizental';
+import SwitchLong from '@components/Switch/SwitchLong';
 
 function Example() {
-  return <SwitchBasic />;
+  return (
+    <>
+      <SwitchBasic />
+      <SwitchHorizental />
+      <SwitchLong />
+    </>
+  );
 }
 
 export default Example;
 `}
           copyText={`
 import SwitchBasic from '@components/Switch/SwitchBasic';
+import SwitchHorizental from '@components/Switch/SwitchHorizental';
+import SwitchLong from '@components/Switch/SwitchLong';
 
 function Example() {
-  return <SwitchBasic />;
+  return (
+    <>
+      <SwitchBasic />
+      <SwitchHorizental />
+      <SwitchLong />
+    </>
+  );
 }
 
 export default Example;
 `}
           language="tsx"
-          index={2}
+          index={4}
           copied={copied}
           handleCopy={handleCopy}
         />
 
         <h2 className="text-[#2D3748] dark:text-white">1.3. Switch Sizes</h2>
         <p>
-          <code>SwitchBasic</code> 컴포넌트는 다양한 크기로 제공됩니다. 기본
-          예시는 3가지 크기에서 작동하는 스위치를 보여줍니다:
+          각 컴포넌트는 다양한 크기 옵션을 제공합니다. 기본적으로 3가지 크기에서
+          작동하는 스위치를 사용할 수 있습니다:
         </p>
         <ul>
           <li>
@@ -85,16 +122,38 @@ export default Example;
           </li>
         </ul>
         <div className="my-7 space-y-7">
-          <SwitchBasic />
+          <SwitchBasic size="small" />
+          <SwitchBasic size="medium" />
+          <SwitchBasic size="large" />
+
+          <SwitchHorizental size="small" />
+          <SwitchHorizental size="medium" />
+          <SwitchHorizental size="large" />
+
+          <SwitchLong size="small" />
+          <SwitchLong size="medium" />
+          <SwitchLong size="large" />
         </div>
         <CodeBox
           code={`
 import SwitchBasic from '@components/Switch/SwitchBasic';
+import SwitchHorizental from '@components/Switch/SwitchHorizental';
+import SwitchLong from '@components/Switch/SwitchLong';
 
 function Example() {
   return (
     <>
-      <SwitchBasic />
+      <SwitchBasic size="small" />
+      <SwitchBasic size="medium" />
+      <SwitchBasic size="large" />
+
+      <SwitchHorizental size="small" />
+      <SwitchHorizental size="medium" />
+      <SwitchHorizental size="large" />
+
+      <SwitchLong size="small" />
+      <SwitchLong size="medium" />
+      <SwitchLong size="large" />
     </>
   );
 }
@@ -103,11 +162,23 @@ export default Example;
 `}
           copyText={`
 import SwitchBasic from '@components/Switch/SwitchBasic';
+import SwitchHorizental from '@components/Switch/SwitchHorizental';
+import SwitchLong from '@components/Switch/SwitchLong';
 
 function Example() {
   return (
     <>
-      <SwitchBasic />
+      <SwitchBasic size="small" />
+      <SwitchBasic size="medium" />
+      <SwitchBasic size="large" />
+
+      <SwitchHorizental size="small" />
+      <SwitchHorizental size="medium" />
+      <SwitchHorizental size="large" />
+
+      <SwitchLong size="small" />
+      <SwitchLong size="medium" />
+      <SwitchLong size="large" />
     </>
   );
 }
@@ -115,15 +186,13 @@ function Example() {
 export default Example;
 `}
           language="tsx"
-          index={3}
+          index={5}
           copied={copied}
           handleCopy={handleCopy}
         />
 
         <h2 className="text-[#2D3748] dark:text-white">1.4. Props</h2>
-        <p>
-          <code>SwitchBasic</code> 컴포넌트는 아래와 같은 Props를 가집니다:
-        </p>
+        <p>각 스위치 컴포넌트는 아래와 같은 Props를 가집니다:</p>
         <table>
           <thead>
             <tr>
@@ -136,26 +205,41 @@ export default Example;
           <tbody>
             <tr>
               <td>
-                <code>isOn</code>
-              </td>
-              <td>스위치의 현재 상태입니다 (켜짐 또는 꺼짐).</td>
-              <td>
-                <code>boolean</code>
+                <code>size</code>
               </td>
               <td>
-                <code>false</code>
+                스위치의 크기를 지정합니다. "small", "medium", "large" 중 하나를
+                선택할 수 있습니다.
+              </td>
+              <td>
+                <code>'small' | 'medium' | 'large'</code>
+              </td>
+              <td>
+                <code>'medium'</code>
               </td>
             </tr>
             <tr>
               <td>
-                <code>toggleSwitch</code>
+                <code>onColor</code>
               </td>
-              <td>스위치를 토글하는 함수입니다.</td>
+              <td>스위치가 켜졌을 때의 배경색을 지정합니다.</td>
               <td>
-                <code>() =&gt; void</code>
+                <code>string</code>
               </td>
               <td>
-                <code>-</code>
+                <code>'bg-Basic'</code>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <code>offColor</code>
+              </td>
+              <td>스위치가 꺼졌을 때의 배경색을 지정합니다.</td>
+              <td>
+                <code>string</code>
+              </td>
+              <td>
+                <code>'bg-[#9E9E9E] dark:bg-[#333742]'</code>
               </td>
             </tr>
           </tbody>
@@ -165,11 +249,15 @@ export default Example;
         <CodeBox
           code={`
 import SwitchBasic from '@components/Switch/SwitchBasic';
+import SwitchHorizental from '@components/Switch/SwitchHorizental';
+import SwitchLong from '@components/Switch/SwitchLong';
 
 function Example() {
   return (
     <div>
-      <SwitchBasic />
+      <SwitchBasic size="small" onColor="bg-green-500" offColor="bg-red-500" />
+      <SwitchHorizental size="medium" />
+      <SwitchLong size="large" />
     </div>
   );
 }
@@ -178,11 +266,15 @@ export default Example;
 `}
           copyText={`
 import SwitchBasic from '@components/Switch/SwitchBasic';
+import SwitchHorizental from '@components/Switch/SwitchHorizental';
+import SwitchLong from '@components/Switch/SwitchLong';
 
 function Example() {
   return (
     <div>
-      <SwitchBasic />
+      <SwitchBasic size="small" onColor="bg-green-500" offColor="bg-red-500" />
+      <SwitchHorizental size="medium" />
+      <SwitchLong size="large" />
     </div>
   );
 }
@@ -190,7 +282,7 @@ function Example() {
 export default Example;
 `}
           language="tsx"
-          index={4}
+          index={6}
           copied={copied}
           handleCopy={handleCopy}
         />
@@ -257,7 +349,7 @@ export default Example;
           </li>
           <li>
             <strong className="dark:text-[#dfdfdf]">Medium:</strong> 중간 크기의
-            수직 스위치
+            수직 스위치 (기본값)
           </li>
           <li>
             <strong className="dark:text-[#dfdfdf]">Large:</strong> 큰 크기의
@@ -265,7 +357,9 @@ export default Example;
           </li>
         </ul>
         <div className="my-7 space-y-7">
-          <SwitchHorizental />
+          <SwitchHorizental size="small" />
+          <SwitchHorizental size="medium" />
+          <SwitchHorizental size="large" />
         </div>
         <CodeBox
           code={`
@@ -274,7 +368,9 @@ import SwitchHorizental from '@components/Switch/SwitchHorizental';
 function Example() {
   return (
     <>
-      <SwitchHorizental />
+      <SwitchHorizental size="small" />
+      <SwitchHorizental size="medium" />
+      <SwitchHorizental size="large" />
     </>
   );
 }
@@ -287,7 +383,9 @@ import SwitchHorizental from '@components/Switch/SwitchHorizental';
 function Example() {
   return (
     <>
-      <SwitchHorizental />
+      <SwitchHorizental size="small" />
+      <SwitchHorizental size="medium" />
+      <SwitchHorizental size="large" />
     </>
   );
 }
@@ -316,26 +414,38 @@ export default Example;
           <tbody>
             <tr>
               <td>
-                <code>isOn</code>
+                <code>size</code>
               </td>
-              <td>스위치의 현재 상태입니다 (켜짐 또는 꺼짐).</td>
+              <td>스위치의 크기를 설정합니다 ("small", "medium", "large").</td>
               <td>
-                <code>boolean</code>
+                <code>"small" | "medium" | "large"</code>
               </td>
               <td>
-                <code>false</code>
+                <code>"medium"</code>
               </td>
             </tr>
             <tr>
               <td>
-                <code>toggleSwitch</code>
+                <code>onColor</code>
               </td>
-              <td>스위치를 토글하는 함수입니다.</td>
+              <td>스위치가 켜졌을 때의 배경 색상입니다.</td>
               <td>
-                <code>() =&gt; void</code>
+                <code>string</code>
               </td>
               <td>
-                <code>-</code>
+                <code>"bg-Basic"</code>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <code>offColor</code>
+              </td>
+              <td>스위치가 꺼졌을 때의 배경 색상입니다.</td>
+              <td>
+                <code>string</code>
+              </td>
+              <td>
+                <code>"bg-[#9E9E9E] dark:bg-[#333742]"</code>
               </td>
             </tr>
           </tbody>
@@ -349,7 +459,9 @@ import SwitchHorizental from '@components/Switch/SwitchHorizental';
 function Example() {
   return (
     <div>
-      <SwitchHorizental />
+      <SwitchHorizental size="medium" onColor="bg-blue-500" offColor="bg-gray-300" />
+      <SwitchHorizental size="large" onColor="bg-green-500" offColor="bg-red-500" />
+      <SwitchHorizental size="small" onColor="bg-yellow-500" offColor="bg-purple-500" />
     </div>
   );
 }
@@ -362,7 +474,9 @@ import SwitchHorizental from '@components/Switch/SwitchHorizental';
 function Example() {
   return (
     <div>
-      <SwitchHorizental />
+      <SwitchHorizental size="medium" onColor="bg-blue-500" offColor="bg-gray-300" />
+      <SwitchHorizental size="large" onColor="bg-green-500" offColor="bg-red-500" />
+      <SwitchHorizental size="small" onColor="bg-yellow-500" offColor="bg-purple-500" />
     </div>
   );
 }
@@ -376,6 +490,7 @@ export default Example;
         />
       </div>
       <hr />
+
       {/* switch3 */}
       <div className="dark:text-white">
         <h1 className="text-[#2D3748] dark:text-white">3. SwitchLong</h1>
@@ -437,7 +552,7 @@ export default Example;
           </li>
           <li>
             <strong className="dark:text-[#dfdfdf]">Medium:</strong> 중간 길이의
-            스위치
+            스위치 (기본값)
           </li>
           <li>
             <strong className="dark:text-[#dfdfdf]">Large:</strong> 긴 길이의
@@ -445,7 +560,9 @@ export default Example;
           </li>
         </ul>
         <div className="my-7 space-y-7">
-          <SwitchLong />
+          <SwitchLong size="small" />
+          <SwitchLong size="medium" />
+          <SwitchLong size="large" />
         </div>
         <CodeBox
           code={`
@@ -454,7 +571,9 @@ import SwitchLong from '@components/Switch/SwitchLong';
 function Example() {
   return (
     <>
-      <SwitchLong />
+      <SwitchLong size="small" />
+      <SwitchLong size="medium" />
+      <SwitchLong size="large" />
     </>
   );
 }
@@ -467,7 +586,9 @@ import SwitchLong from '@components/Switch/SwitchLong';
 function Example() {
   return (
     <>
-      <SwitchLong />
+      <SwitchLong size="small" />
+      <SwitchLong size="medium" />
+      <SwitchLong size="large" />
     </>
   );
 }
@@ -496,26 +617,38 @@ export default Example;
           <tbody>
             <tr>
               <td>
-                <code>isOn</code>
+                <code>size</code>
               </td>
-              <td>스위치의 현재 상태입니다 (켜짐 또는 꺼짐).</td>
+              <td>스위치의 크기를 설정합니다 ("small", "medium", "large").</td>
               <td>
-                <code>boolean</code>
+                <code>"small" | "medium" | "large"</code>
               </td>
               <td>
-                <code>false</code>
+                <code>"medium"</code>
               </td>
             </tr>
             <tr>
               <td>
-                <code>toggleSwitch</code>
+                <code>onColor</code>
               </td>
-              <td>스위치를 토글하는 함수입니다.</td>
+              <td>스위치가 켜졌을 때의 배경 색상입니다.</td>
               <td>
-                <code>() =&gt; void</code>
+                <code>string</code>
               </td>
               <td>
-                <code>-</code>
+                <code>"bg-Basic"</code>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <code>offColor</code>
+              </td>
+              <td>스위치가 꺼졌을 때의 배경 색상입니다.</td>
+              <td>
+                <code>string</code>
+              </td>
+              <td>
+                <code>"bg-[#9E9E9E] dark:bg-[#333742]"</code>
               </td>
             </tr>
           </tbody>
@@ -529,7 +662,9 @@ import SwitchLong from '@components/Switch/SwitchLong';
 function Example() {
   return (
     <div>
-      <SwitchLong />
+      <SwitchLong size="medium" onColor="bg-blue-500" offColor="bg-gray-300" />
+      <SwitchLong size="large" onColor="bg-green-500" offColor="bg-red-500" />
+      <SwitchLong size="small" onColor="bg-yellow-500" offColor="bg-purple-500" />
     </div>
   );
 }
@@ -542,7 +677,9 @@ import SwitchLong from '@components/Switch/SwitchLong';
 function Example() {
   return (
     <div>
-      <SwitchLong />
+      <SwitchLong size="medium" onColor="bg-blue-500" offColor="bg-gray-300" />
+      <SwitchLong size="large" onColor="bg-green-500" offColor="bg-red-500" />
+      <SwitchLong size="small" onColor="bg-yellow-500" offColor="bg-purple-500" />
     </div>
   );
 }

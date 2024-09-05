@@ -434,7 +434,9 @@ const Page = () => {
       <br />
       <br />
       <h1 className="mb-4 text-lg font-semibold">SwitchBasic - 기본 스위치</h1>
-      <SwitchBasic />
+      <SwitchBasic size="small" />
+      <SwitchBasic size="medium" />
+      <SwitchBasic size="large" />
       <br />
       <br />
       <h1 className="mb-4 text-lg font-semibold">
@@ -446,11 +448,16 @@ const Page = () => {
       <h1 className="mb-4 text-lg font-semibold">
         SwitchHorizental - 수직 스위치
       </h1>
-      <SwitchHorizental />
+      <SwitchHorizental size="small" />
+      <SwitchHorizental size="medium" />
+      <SwitchHorizental size="large" />
+
       <br />
       <br />
       <h1 className="mb-4 text-lg font-semibold">SwitchLong - 긴 스위치</h1>
-      <SwitchLong />
+      <SwitchLong size="small" />
+      <SwitchLong size="medium" />
+      <SwitchLong size="large" />
       <br />
       <br />
       <h1 className="mb-4 text-lg font-semibold">
