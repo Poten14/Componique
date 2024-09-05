@@ -1,10 +1,15 @@
 "use client";
 import React, { useState } from "react";
-import { useRouter } from "next/navigation"; // Next.js 13+ 버전에서는 next/navigation 사용
+import { useRouter } from "next/navigation";
 import Icon from "./Icon/Icon";
 
+interface Option {
+  label: string;
+  value: string;
+}
+
 interface AutocompleteProps {
-  options: string[];
+  options: Option[]; // 라벨과 값을 가진 옵션 배열
   placeholder?: string;
   onSelect: (selectedOption: string) => void;
 }
@@ -15,7 +20,7 @@ const Autocomplete: React.FC<AutocompleteProps> = ({
   onSelect,
 }) => {
   const [inputValue, setInputValue] = useState("");
-  const [filteredOptions, setFilteredOptions] = useState<string[]>([]);
+  const [filteredOptions, setFilteredOptions] = useState<Option[]>([]);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [moveCircle, setMoveCircle] = useState(false);
 
@@ -24,41 +29,60 @@ const Autocomplete: React.FC<AutocompleteProps> = ({
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
     setInputValue(value);
-    setFilteredOptions(
-      options.filter((option) =>
-        option.toLowerCase().includes(value.toLowerCase()),
-      ),
+
+    // 입력한 값에 따라 옵션 필터링
+    const filtered = options.filter((option) =>
+      option.value.toLowerCase().includes(value.toLowerCase()),
     );
+    setFilteredOptions(filtered);
     setIsDropdownOpen(true);
     if (!moveCircle && value) {
       setMoveCircle(true); // 노란색 동그라미를 드롭다운으로 옮기기
     }
   };
 
-  const handleOptionClick = (option: string) => {
-    setInputValue(option);
-    onSelect(option);
+  const handleOptionClick = (option: Option) => {
+    setInputValue(option.value);
+    onSelect(option.value);
     setIsDropdownOpen(false);
     setMoveCircle(false); // 선택 후 다시 초기화
 
     // 선택된 옵션에 따라 해당 페이지로 이동
-    const pagePath = `/${option.toLowerCase().replace(/\s+/g, "")}`;
+    const pagePath = `/${option.value.toLowerCase().replace(/\s+/g, "")}`;
     router.push(pagePath);
   };
 
   const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
     if (e.key === "Enter") {
-      // Enter 키를 눌렀을 때 현재 입력된 값으로 이동
       const matchingOption = filteredOptions[0]; // 첫 번째 필터링된 옵션을 선택
       if (matchingOption) {
         handleOptionClick(matchingOption);
       } else if (inputValue) {
-        // 입력된 값으로도 이동 가능하도록
         const pagePath = `/${inputValue.toLowerCase().replace(/\s+/g, "")}`;
         router.push(pagePath);
       }
     }
   };
+
+  // onBlur 이벤트와 onMouseDown 이벤트가 충돌하지 않도록
+  const handleBlur = () => {
+    setTimeout(() => {
+      setIsDropdownOpen(false);
+    }, 100);
+  };
+
+  // 라벨별 옵션 그룹화 렌더링
+  const groupedOptions = filteredOptions.reduce(
+    (groups: { [label: string]: Option[] }, option: Option) => {
+      const { label } = option;
+      if (!groups[label]) {
+        groups[label] = [];
+      }
+      groups[label].push(option);
+      return groups;
+    },
+    {},
+  );
 
   return (
     <div className="relative max-w-[740px]">
@@ -75,7 +99,7 @@ const Autocomplete: React.FC<AutocompleteProps> = ({
           onChange={handleInputChange}
           onKeyDown={handleKeyDown} // 키보드 이벤트 처리 추가
           onFocus={() => setIsDropdownOpen(true)}
-          onBlur={() => setIsDropdownOpen(false)}
+          onBlur={handleBlur}
           placeholder={placeholder}
           className="text-gray-600 placeholder-gray-400 flex-grow px-4 focus:outline-none dark:bg-[#333742] dark:text-[#dfdfdf]"
         />
@@ -91,21 +115,29 @@ const Autocomplete: React.FC<AutocompleteProps> = ({
               </span>
             </li>
           )}
-          {filteredOptions.length > 0 ? (
-            filteredOptions.map((option, index) => (
-              <li
-                key={index}
-                onMouseDown={() => handleOptionClick(option)}
-                className="hover:bg-gray-100 flex cursor-pointer items-center p-3 pl-12 dark:text-[#dfdfdf]"
-              >
-                <div>
-                  <Icon name="icon-docs2" color="#626262" size={24} />
-                  <span className="ml-2">{option}</span>
-                </div>
-              </li>
-            ))
-          ) : (
-            <li className="text-gray-600 pl-12 dark:text-[#dfdfdf]">
+          {Object.entries(groupedOptions).map(([label, options]) => (
+            <li key={label}>
+              <div className="bg-gray-200 dark:bg-gray-800 p-2">
+                <strong>{label}</strong>
+              </div>
+              <ul>
+                {options.map((option, index) => (
+                  <li
+                    key={index}
+                    onMouseDown={() => handleOptionClick(option)}
+                    className="hover:bg-gray-100 flex cursor-pointer items-center p-3 pl-12 dark:text-[#dfdfdf]"
+                  >
+                    <div>
+                      <Icon name="icon-docs2" color="#626262" size={24} />
+                      <span className="ml-2">{option.value}</span>
+                    </div>
+                  </li>
+                ))}
+              </ul>
+            </li>
+          ))}
+          {filteredOptions.length === 0 && (
+            <li className="text-gray-600 pb-2 pl-12 pt-2 dark:text-[#dfdfdf]">
               No options found
             </li>
           )}
