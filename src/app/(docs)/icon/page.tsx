@@ -48,6 +48,7 @@ const IconDoc: React.FC = () => {
     "icon-docs2",
     "icon-github",
     "icon-blog",
+    "icon-comment",
   ];
   const router = useRouter();
   return (
