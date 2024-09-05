@@ -108,6 +108,18 @@ const components = [
         darkSrc: "/InfiniteScrollDark.svg",
         link: "/infinitescroll",
       },
+      {
+        name: "ProgressBar",
+        src: "/ProgressBar.svg",
+        darkSrc: "/ProgressBarDark.svg",
+        link: "/progressbar",
+      },
+      {
+        name: "ImageUpload",
+        src: "/ImageUpload.svg",
+        darkSrc: "/ImageUploadDark.svg",
+        link: "/imageupload",
+      },
     ],
   },
   {
