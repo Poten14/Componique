@@ -388,7 +388,7 @@ export default Example;`}
       <h2 className="text-[#2D3748]">1.6. Full Example</h2>
       <CodeBox
         code={`import { Navbar } from '@components/Navbar';
-            import Logo from "@/images/logo.svg";
+import Logo from "@/images/logo.svg";
             
 function Example() {
   return (
@@ -469,7 +469,6 @@ export default Example;`}
           type="search"
           size="medium"
           placeholder="Search"
-          value=""
           onChange={(e) => console.log(e.target.value)}
         />
       </div>
@@ -478,6 +477,12 @@ export default Example;`}
   
 
 function Example() {
+  const [searchTerm, setSearchTerm] = useState("");
+
+  const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setSearchTerm(e.target.value);
+  };
+
   return (
     <NavbarSearch
       name="search"
@@ -486,7 +491,7 @@ function Example() {
       type="search"
       size="medium"
       placeholder="Search"
-      value=""
+      value={searchTerm}
       onChange={(e) => console.log(e.target.value)}
     />
   );
@@ -497,6 +502,12 @@ export default Example;`}
   
 
 function Example() {
+  const [searchTerm, setSearchTerm] = useState("");
+
+  const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setSearchTerm(e.target.value);
+  };
+
   return (
     <NavbarSearch
       name="search"
@@ -505,7 +516,7 @@ function Example() {
       type="search"
       size="medium"
       placeholder="Search"
-      value=""
+      value={searchTerm}
       onChange={(e) => console.log(e.target.value)}
     />
   );
@@ -604,7 +615,7 @@ export default Example;`}
               <code>"text"</code>
             </td>
           </tr>
-          <tr>
+          {/* <tr>
             <td>
               <code>value</code>
             </td>
@@ -615,7 +626,7 @@ export default Example;`}
             <td>
               <code>""</code>
             </td>
-          </tr>
+          </tr> */}
           <tr>
             <td>
               <code>onChange</code>

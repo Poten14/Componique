@@ -22,6 +22,8 @@ const options = [
   { label: "Data display", value: "Calendar" },
   { label: "Data display", value: "Avatar" },
   { label: "Data display", value: "Icon" },
+  { label: "Data display", value: "ProgressBar" },
+  { label: "Data display", value: "ImageUpload" },
   { label: "Data display", value: "Infinite Scroll" },
   { label: "Feedback", value: "Spinner" },
   { label: "Feedback", value: "Toast(alert)" },
@@ -96,8 +98,8 @@ const Page = () => {
           </div>
           <div className="w-full max-w-[740px] dark:text-white">
             <Autocomplete
-              options={options.map((option) => option.value)}
-              placeholder="Search for a Components..."
+              options={options}
+              placeholder="Search for a Component..."
               onSelect={handleSelect}
             />
           </div>
