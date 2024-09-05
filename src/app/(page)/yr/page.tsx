@@ -34,8 +34,18 @@ const Yr = () => {
   };
 
   // Select 선택된 값 전달
-  const handleSelect = (value: string[]) => {
+  const handleSelects = (value: string) => {
     console.log("Selected option:", value);
+  };
+
+  //Select 선택된 값 전달
+  const handleSelect = (value: string) => {
+    console.log("Selected option:", value);
+  };
+
+  // Select 클릭된 값
+  const handleOptionClick = (value: string) => {
+    console.log("Option clicked:", value);
   };
 
   // carousel image
@@ -195,6 +205,8 @@ const Yr = () => {
           ]}
           placeholder="option"
           color="gray"
+          onChange={handleSelect}
+          onClick={handleOptionClick}
         />
         <Select
           option={[
@@ -208,6 +220,8 @@ const Yr = () => {
           ]}
           placeholder="option"
           color="red"
+          onChange={handleSelect}
+          onClick={handleOptionClick}
         />
         <Select
           option={[
@@ -221,6 +235,8 @@ const Yr = () => {
           ]}
           placeholder="option"
           color="blue"
+          onChange={handleSelect}
+          onClick={handleOptionClick}
         />
         <Select
           option={[
@@ -234,6 +250,8 @@ const Yr = () => {
           ]}
           placeholder="option"
           color="green"
+          onChange={handleSelect}
+          onClick={handleOptionClick}
         />
       </div>
       <div className="m-4 space-y-4">
