@@ -1,217 +1,101 @@
 import { useState } from "react";
 import Image from "next/image";
 
-interface DropDownMutilSelectProups {
+interface DropDownBasicMultiSelectProps {
   option: string[];
-  defaultOption?: string;
+  placeholder?: string;
   onSelect?: (value: string[]) => void;
+  type?: "basic" | "rounded" | "borderless-rounded" | "less-rounded"; // 추가된 prop
 }
 
-const DropDownMutilSelect = ({
+const DropDownBasicMultiSelect = ({
   option,
-  defaultOption = "Select Option",
+  placeholder = "Select Options",
   onSelect,
-}: DropDownMutilSelectProups) => {
-  const [isOpen, setIsOpen] = useState<number | null>(null);
-  const [selectedOptions, setSelectedOptions] = useState<string[][]>([
-    [],
-    [],
-    [],
-    [],
-  ]);
+  type = "basic", // 기본 스타일은 "basic"
+}: DropDownBasicMultiSelectProps) => {
+  const [isOpen, setIsOpen] = useState<boolean>(false);
+  const [selectedOptions, setSelectedOptions] = useState<string[]>([]);
 
-  const toggleDropdown = (index: number) => {
-    setIsOpen(isOpen === index ? null : index);
+  const toggleDropdown = () => {
+    setIsOpen(!isOpen);
   };
 
-  const handleOptionClick = (option: string, dropdownIndex: number) => {
-    let updatedSelectOption: string[];
+  const handleOptionClick = (selected: string) => {
+    const isSelected = selectedOptions.includes(selected);
+    const updatedOptions = isSelected
+      ? selectedOptions.filter((item) => item !== selected)
+      : [...selectedOptions, selected];
 
-    if (selectedOptions[dropdownIndex].includes(option)) {
-      updatedSelectOption = selectedOptions[dropdownIndex].filter(
-        (item) => item !== option,
-      );
-    } else {
-      updatedSelectOption = [...selectedOptions[dropdownIndex], option];
+    setSelectedOptions(updatedOptions);
+
+    if (onSelect) {
+      onSelect(updatedOptions);
     }
-
-    const updatedSelectedOptions = [...selectedOptions];
-    updatedSelectedOptions[dropdownIndex] = updatedSelectOption;
-    setSelectedOptions(updatedSelectedOptions);
-
-    if (onSelect) onSelect(updatedSelectOption);
   };
 
-  const displayDefaultOption = (dropdownIndex: number) => {
-    if (selectedOptions[dropdownIndex].length > 0) {
-      return selectedOptions[dropdownIndex].join(", ");
-    } else {
-      return defaultOption;
+  // 선택된 옵션 표시
+  const displaySelectedOptions = () => {
+    return selectedOptions.length > 0
+      ? selectedOptions.join(", ")
+      : placeholder;
+  };
+
+  // 스타일에 따른 클래스 선택
+  const getClassNames = () => {
+    switch (type) {
+      case "rounded":
+        return "rounded-lg border-gray-300 border-2 bg-white dark:bg-[#2A2E39]";
+      case "borderless-rounded":
+        return "rounded-full border-2 border-zinc-100 bg-white shadow-md dark:bg-[#2A2E39]";
+      case "less-rounded":
+        return "rounded-lg border-2 border-zinc-100 bg-white dark:bg-[#2A2E39]";
+      case "basic":
+      default:
+        return "border-gray-300 border-2 bg-white dark:bg-[#2A2E39]";
     }
   };
 
   return (
-    <div
-      className="mx-auto flex justify-between space-x-4"
-      style={{ maxWidth: "100%" }}
-    >
-      {/* 첫번째 드롭다운 - 기본 각진 스타일 */}
-      <div className="relative inline-block w-48">
-        <div
-          onClick={() => toggleDropdown(0)}
-          className="border-gray-300 flex h-10 cursor-pointer items-center justify-between border-2 bg-white p-2 font-medium dark:bg-[#2A2E39]"
+    <div className={`relative inline-block w-48 ${getClassNames()}`}>
+      <div
+        onClick={toggleDropdown}
+        className="flex h-10 cursor-pointer items-center justify-between p-2 font-medium"
+      >
+        <span
+          className={`font-bold ${
+            selectedOptions.length
+              ? "text-black dark:text-white"
+              : "text-slate-600"
+          }`}
         >
-          <span
-            className={`font-bold ${
-              selectedOptions[0].length > 0
-                ? "text-black dark:text-white"
-                : "text-slate-600"
-            }`}
-          >
-            {displayDefaultOption(0)}
-          </span>
-          <Image
-            src={isOpen === 0 ? "/dropdown1.svg" : "/dropdown2.svg"}
-            alt="dropdown"
-            width={20}
-            height={20}
-          />
-        </div>
-        {isOpen === 0 && (
-          <ul className="border-gray-300 absolute z-10 w-full border bg-white dark:bg-[#2A2E39]">
-            {option.map((item, index) => (
-              <li
-                key={index}
-                onClick={() => handleOptionClick(item, 0)}
-                className={`border-gray-200 cursor-pointer border-b p-2 text-zinc-800 hover:bg-[#E8F5FF] dark:text-white dark:hover:bg-[#2A6490] ${
-                  selectedOptions[0].includes(item) ? "bg-blue-100" : ""
-                }`}
-              >
-                {item}
-              </li>
-            ))}
-          </ul>
-        )}
-      </div>
+          {displaySelectedOptions()}
+        </span>
 
-      {/* 두번째 드롭다운 - 둥근 모서리 스타일 */}
-      <div className="relative inline-block w-48">
-        <div
-          onClick={() => toggleDropdown(1)}
-          className="border-gray-300 flex h-10 cursor-pointer items-center justify-between rounded-lg border-2 bg-white p-2 font-medium dark:bg-[#2A2E39]"
-        >
-          <span
-            className={`font-bold ${
-              selectedOptions[1].length > 0
-                ? "text-black dark:text-white"
-                : "text-slate-600"
-            }`}
-          >
-            {displayDefaultOption(1)}
-          </span>
-          <Image
-            src={isOpen === 1 ? "/dropdown1.svg" : "/dropdown2.svg"}
-            alt="dropdown"
-            width={20}
-            height={20}
-          />
-        </div>
-        {isOpen === 1 && (
-          <ul className="border-gray-300 absolute z-10 w-full rounded-lg border bg-white dark:bg-[#2A2E39]">
-            {option.map((item, index) => (
-              <li
-                key={index}
-                onClick={() => handleOptionClick(item, 1)}
-                className={`border-gray-200 cursor-pointer border-b p-2 text-zinc-800 hover:bg-[#E8F5FF] dark:text-white dark:hover:bg-[#2A6490] ${
-                  selectedOptions[1].includes(item) ? "bg-blue-100" : ""
-                }`}
-              >
-                {item}
-              </li>
-            ))}
-          </ul>
-        )}
+        <Image
+          src={isOpen ? "/dropdown1.svg" : "/dropdown2.svg"}
+          alt="dropdown"
+          width={20}
+          height={20}
+        />
       </div>
-
-      {/* 세번째 드롭다운 - border 없는 둥근 스타일 */}
-      <div className="relative inline-block w-48">
-        <div
-          onClick={() => toggleDropdown(2)}
-          className="flex h-10 cursor-pointer items-center justify-between rounded-full border-2 border-zinc-100 bg-white p-2 font-medium shadow-md dark:bg-[#2A2E39]"
-        >
-          <span
-            className={`font-bold ${
-              selectedOptions[2].length > 0
-                ? "text-black dark:text-white"
-                : "text-slate-600"
-            }`}
-          >
-            {displayDefaultOption(2)}
-          </span>
-          <Image
-            src={isOpen === 2 ? "/dropdown1.svg" : "/dropdown2.svg"}
-            alt="dropdown"
-            width={20}
-            height={20}
-          />
-        </div>
-        {isOpen === 2 && (
-          <ul className="absolute z-10 mt-2 w-full rounded-xl border-2 border-zinc-100 bg-white shadow-md dark:bg-[#2A2E39]">
-            {option.map((item, index) => (
-              <li
-                key={index}
-                onClick={() => handleOptionClick(item, 2)}
-                className={`cursor-pointer rounded-xl border-b border-zinc-100 p-2 text-zinc-800 hover:bg-[#E8F5FF] dark:text-white dark:hover:bg-[#2A6490] ${
-                  selectedOptions[2].includes(item) ? "bg-blue-100" : ""
-                }`}
-              >
-                {item}
-              </li>
-            ))}
-          </ul>
-        )}
-      </div>
-
-      {/* 네번째 드롭다운 - border 없는 덜 둥근 스타일 */}
-      <div className="relative inline-block w-48">
-        <div
-          onClick={() => toggleDropdown(3)}
-          className="flex h-10 cursor-pointer items-center justify-between rounded-lg border-2 border-zinc-100 bg-white p-2 font-medium dark:bg-[#2A2E39]"
-        >
-          <span
-            className={`font-bold ${
-              selectedOptions[3].length > 0
-                ? "text-black dark:text-white"
-                : "text-slate-600"
-            }`}
-          >
-            {displayDefaultOption(3)}
-          </span>
-          <Image
-            src={isOpen === 3 ? "/dropdown1.svg" : "/dropdown2.svg"}
-            alt="dropdown"
-            width={20}
-            height={20}
-          />
-        </div>
-        {isOpen === 3 && (
-          <ul className="absolute z-10 w-full rounded-lg border border-zinc-100 bg-white dark:bg-[#2A2E39]">
-            {option.map((item, index) => (
-              <li
-                key={index}
-                onClick={() => handleOptionClick(item, 3)}
-                className={`cursor-pointer border-b border-zinc-100 p-2 text-zinc-800 hover:bg-[#E8F5FF] dark:text-white dark:hover:bg-[#2A6490] ${
-                  selectedOptions[3].includes(item) ? "bg-blue-100" : ""
-                }`}
-              >
-                {item}
-              </li>
-            ))}
-          </ul>
-        )}
-      </div>
+      {isOpen && (
+        <ul className="absolute z-10 w-full bg-white dark:bg-[#2A2E39]">
+          {option.map((item, index) => (
+            <li
+              key={index}
+              onClick={() => handleOptionClick(item)}
+              className={`cursor-pointer p-2 text-zinc-800 hover:bg-[#E8F5FF] dark:text-white dark:hover:bg-[#2A6490] ${
+                selectedOptions.includes(item) ? "bg-blue-100" : ""
+              }`}
+            >
+              {item}
+            </li>
+          ))}
+        </ul>
+      )}
     </div>
   );
 };
 
-export default DropDownMutilSelect;
+export default DropDownBasicMultiSelect;

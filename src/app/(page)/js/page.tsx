@@ -374,6 +374,52 @@ const Page = () => {
           DropDownBasic - 기본 드롭다운
         </h1>
         <DropDownBasic
+          type="basic" // 기본 각진 스타일
+          option={[
+            "Option 1",
+            "Option 2",
+            "Option 3",
+            "Option 4",
+            "Option 5",
+            "Option 6",
+            "Option 7",
+            "Option 8",
+          ]}
+          onSelect={handleSelect}
+        />
+
+        <DropDownBasic
+          type="rounded" // 둥근 모서리 스타일
+          option={[
+            "Option 1",
+            "Option 2",
+            "Option 3",
+            "Option 4",
+            "Option 5",
+            "Option 6",
+            "Option 7",
+            "Option 8",
+          ]}
+          onSelect={handleSelect}
+        />
+
+        <DropDownBasic
+          type="borderless-rounded" // border 없는 둥근 스타일
+          option={[
+            "Option 1",
+            "Option 2",
+            "Option 3",
+            "Option 4",
+            "Option 5",
+            "Option 6",
+            "Option 7",
+            "Option 8",
+          ]}
+          onSelect={handleSelect}
+        />
+
+        <DropDownBasic
+          type="less-rounded" // border 있는 덜 둥근 스타일
           option={[
             "Option 1",
             "Option 2",
@@ -393,18 +439,27 @@ const Page = () => {
           DropDownMultiSelect - 다중 선택 드롭다운
         </h1>
         <DropDownBasicMultiSelect
-          option={[
-            "Option 1",
-            "Option 2",
-            "Option 3",
-            "Option 4",
-            "Option 5",
-            "Option 6",
-            "Option 7",
-            "Option 8",
-          ]}
-          defaultOption="Select Option"
-          onSelect={handleSelectMulti}
+          option={["Option 1", "Option 2", "Option 3", "Option 4"]}
+          type="basic" // 기본 각진 스타일
+          onSelect={(selected) => console.log("Selected:", selected)}
+        />
+
+        <DropDownBasicMultiSelect
+          option={["Option 1", "Option 2", "Option 3", "Option 4"]}
+          type="rounded" // 둥근 모서리 스타일
+          onSelect={(selected) => console.log("Selected:", selected)}
+        />
+
+        <DropDownBasicMultiSelect
+          option={["Option 1", "Option 2", "Option 3", "Option 4"]}
+          type="borderless-rounded" // border 없는 둥근 스타일
+          onSelect={(selected) => console.log("Selected:", selected)}
+        />
+
+        <DropDownBasicMultiSelect
+          option={["Option 1", "Option 2", "Option 3", "Option 4"]}
+          type="less-rounded" // border 있는 덜 둥근 스타일
+          onSelect={(selected) => console.log("Selected:", selected)}
         />
       </div>
       <br />
@@ -428,6 +483,64 @@ const Page = () => {
             items: ["Milk", "Cheese", "Butter", "Yogurt"],
           },
         ]}
+        type="basic" // 기본 각진 스타일
+        onSelect={handleSelect}
+      />
+
+      <DropDownGrouped
+        options={[
+          {
+            groupName: "Fruits",
+            items: ["Apple", "Banana", "Orange", "Grapes"],
+          },
+          {
+            groupName: "Vegetables",
+            items: ["Carrot", "Broccoli", "Spinach", "Potato"],
+          },
+          {
+            groupName: "Dairy",
+            items: ["Milk", "Cheese", "Butter", "Yogurt"],
+          },
+        ]}
+        type="rounded" // 둥근 모서리 스타일
+        onSelect={handleSelect}
+      />
+
+      <DropDownGrouped
+        options={[
+          {
+            groupName: "Fruits",
+            items: ["Apple", "Banana", "Orange", "Grapes"],
+          },
+          {
+            groupName: "Vegetables",
+            items: ["Carrot", "Broccoli", "Spinach", "Potato"],
+          },
+          {
+            groupName: "Dairy",
+            items: ["Milk", "Cheese", "Butter", "Yogurt"],
+          },
+        ]}
+        type="borderless-rounded" // border 없는 둥근 스타일
+        onSelect={handleSelect}
+      />
+
+      <DropDownGrouped
+        options={[
+          {
+            groupName: "Fruits",
+            items: ["Apple", "Banana", "Orange", "Grapes"],
+          },
+          {
+            groupName: "Vegetables",
+            items: ["Carrot", "Broccoli", "Spinach", "Potato"],
+          },
+          {
+            groupName: "Dairy",
+            items: ["Milk", "Cheese", "Butter", "Yogurt"],
+          },
+        ]}
+        type="less-rounded" // border 있는 덜 둥근 스타일
         onSelect={handleSelect}
       />
       <br />
