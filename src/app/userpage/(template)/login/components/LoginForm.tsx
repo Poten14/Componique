@@ -1,56 +1,77 @@
+// /userpage/(template)/login/components/LoginForm.tsx
 "use client";
 import React from "react";
 import Button from "@components/Button/Button";
-import Input from "@components/Input/SearchInput2";
+import Input from "@components/Input/Input";
+import { useLoginStore } from "../../../../store/useLoginStore";
 
-// LoginForm에서 사용될 Props 타입 정의
-interface LoginFormProps {
-  buttonColor:
-    | "primary"
-    | "secondary"
-    | "success"
-    | "danger"
-    | "warning"
-    | "red"
-    | "orange"
-    | "yellow"
-    | "green"
-    | "blue"
-    | "purple"
-    | "pink"
-    | "basic";
-  buttonVariant: "solid" | "border" | "flat" | "light";
-  buttonSize: "small" | "medium" | "large";
-  placeholderText: string; // 이메일 입력 필드의 placeholder
-  onSubmit: () => void; // 로그인 버튼 클릭 시 호출될 함수
-}
+const LoginForm: React.FC = () => {
+  const {
+    title,
+    buttonColor,
+    buttonSize,
+    buttonVariant,
+    buttonColor2,
+    buttonSize2,
+    buttonVariant2,
+    placeholder,
+    placeholder2,
+    inputSize,
+    inputWidth,
+  } = useLoginStore();
 
-const LoginForm: React.FC<LoginFormProps> = ({
-  buttonColor,
-  buttonVariant,
-  buttonSize,
-  placeholderText,
-  onSubmit,
-}) => {
+  const handleSubmit = () => {
+    alert("로그인 완료");
+  };
+
   return (
-    <form className="w-full max-w-sm rounded-lg bg-white p-6 shadow-md">
-      <Input placeholder={placeholderText} size="medium" />
-      <Input
-        type="password"
-        placeholder="비밀번호"
-        size="medium"
-        className="mt-4"
-      />
-      <Button
-        color={buttonColor}
-        variant={buttonVariant}
-        size={buttonSize}
-        className="mt-6 w-full"
-        onClick={onSubmit}
-      >
-        로그인
-      </Button>
-    </form>
+    <div className="flex min-h-screen items-center justify-center bg-yellow-100">
+      <div className="w-full max-w-md rounded-3xl bg-white p-10 shadow-lg">
+        <h1 className="mb-8 text-center text-2xl font-bold text-Gray">
+          {title}
+        </h1>
+        <form onSubmit={handleSubmit} className="space-y-6">
+          <div>
+            <Input
+              size={inputSize}
+              width={inputWidth}
+              variant="outlined"
+              placeholder={placeholder}
+            />
+          </div>
+          <div>
+            <Input
+              size={inputSize}
+              width={inputWidth}
+              variant="outlined"
+              placeholder={placeholder2}
+            />
+          </div>
+          <div className="mt-6">
+            <Button
+              color={buttonColor}
+              size={buttonSize}
+              variant={buttonVariant}
+              onClick={handleSubmit}
+              className="w-full text-white"
+            >
+              login
+            </Button>
+          </div>
+          <div className="mt-4 text-center">
+            <Button
+              color={buttonColor2}
+              size={buttonSize2}
+              variant={buttonVariant2}
+              className="w-full text-white"
+              onClick={() => alert("회원가입 페이지로 이동")}
+            >
+              sign up
+            </Button>
+          </div>
+        </form>
+      </div>
+    </div>
   );
 };
 
