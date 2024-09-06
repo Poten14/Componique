@@ -1,21 +1,24 @@
 "use client";
 
 import Image from "next/image";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 interface SelectValueAddProps {
   option: string[];
-  placeholder: string;
-  onSelect?: (value: string[]) => void;
+  placeholder?: string;
+  onChange?: (value: string[]) => void;
+  className?: string;
 }
 
 const SelectValueAdd = ({
   option,
-  onSelect,
+  onChange,
   placeholder = "Option 1",
+  className,
 }: SelectValueAddProps) => {
   const [selectValue, setSelectValue] = useState<string[]>([]);
   const [open, setOpen] = useState<boolean>(false);
+  const dropMenuRef = useRef<HTMLDivElement>(null);
 
   const handleDropDown = () => {
     setOpen(!open);
@@ -31,8 +34,8 @@ const SelectValueAdd = ({
     }
     setSelectValue(updatedValue);
 
-    if (onSelect) {
-      onSelect(updatedValue);
+    if (onChange) {
+      onChange(updatedValue);
     }
   };
 
@@ -40,15 +43,30 @@ const SelectValueAdd = ({
     const updatedValue = selectValue.filter((value) => value !== item);
     setSelectValue(updatedValue);
 
-    if (onSelect) {
-      onSelect(updatedValue);
+    if (onChange) {
+      onChange(updatedValue);
     }
   };
 
+  useEffect(() => {
+    const handleOutsideClose = (e: MouseEvent) => {
+      if (
+        open &&
+        dropMenuRef.current &&
+        !dropMenuRef.current.contains(e.target as Node)
+      ) {
+        setOpen(false);
+      }
+    };
+    document.addEventListener("click", handleOutsideClose);
+
+    return () => document.removeEventListener("click", handleOutsideClose);
+  }, [open]);
+
   return (
-    <div className="relative">
+    <div className={`relative ${className}`} ref={dropMenuRef}>
       <div
-        className="flex h-9 min-w-60 max-w-[450px] cursor-pointer items-center justify-between rounded-lg border border-gray p-2 shadow-lg dark:border-[#2A6490] dark:bg-[#2a2e39]"
+        className={`flex h-9 min-w-60 max-w-[450px] cursor-pointer items-center justify-between rounded-lg border border-gray p-2 shadow-lg dark:border-[#2A6490] dark:bg-[#2a2e39] ${className}`}
         onClick={handleDropDown}
         style={{ width: open ? "auto" : "fit-content" }}
       >
@@ -78,9 +96,9 @@ const SelectValueAdd = ({
           )}
         </div>
         {open ? (
-          <Image src="selectdown.svg" alt="arrow" width={15} height={15} />
+          <Image src="/selectdown.svg" alt="arrow" width={15} height={15} />
         ) : (
-          <Image src="selectup.svg" alt="arrow" width={15} height={15} />
+          <Image src="/selectup.svg" alt="arrow" width={15} height={15} />
         )}
         {open && (
           <ul className="absolute left-0 right-0 top-full z-30 min-w-60 max-w-[450px] rounded-lg border border-gray bg-white text-xs shadow-lg dark:border-[#2A6490] dark:bg-[#2a2e39]">

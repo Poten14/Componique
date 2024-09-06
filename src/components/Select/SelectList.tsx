@@ -4,22 +4,23 @@ import { useState } from "react";
 
 interface SelectListProps {
   option: string[];
-  onSelect?: (value: string) => void;
+  onChange?: (value: string) => void;
+  className?: string;
 }
 
-const SelectList = ({ option, onSelect }: SelectListProps) => {
+const SelectList = ({ option, onChange, className }: SelectListProps) => {
   const [selectValue, setSelectValue] = useState<string>("");
 
   const handleOptionClick = (item: string) => {
     setSelectValue(item);
-    if (onSelect) {
-      onSelect(item);
+    if (onChange) {
+      onChange(item);
     }
   };
 
   return (
     <>
-      <div className="w-96">
+      <div className={`w-96 ${className}`}>
         <ul className="flex cursor-pointer justify-evenly divide-x divide-gray rounded-lg border border-gray p-0 text-center dark:divide-[#2A6490] dark:border-[#2A6490] dark:bg-[#2a2e39]">
           {option.map((item, key) => (
             <li
