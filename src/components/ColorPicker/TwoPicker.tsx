@@ -4,10 +4,17 @@ import ColorPicker from "./ColorPicker";
 import GradientPicker from "./GradientPicker";
 
 type Picker = "Color" | "Gradient";
-
-const TwoPicker: React.FC = () => {
+type TwoPickerProps = {
+  onColorChange?: (color: string) => void;
+};
+const TwoPicker: React.FC<TwoPickerProps> = ({ onColorChange }) => {
   const [activePicker, setActivePicker] = useState<Picker>("Color");
 
+  const onChangeColorHandler = (color: string) => {
+    if (onColorChange) {
+      onColorChange(color); // 선택한 색상 정보를 전달
+    }
+  };
   return (
     <div className="mx-auto w-full max-w-xl select-none">
       <div className="flex items-center">
@@ -27,11 +34,11 @@ const TwoPicker: React.FC = () => {
       <div>
         {activePicker === "Color" ? (
           <div>
-            <ColorPicker />
+            <ColorPicker selectColor={onChangeColorHandler} />
           </div>
         ) : (
           <div>
-            <GradientPicker />
+            <GradientPicker selectColor={onChangeColorHandler} />
           </div>
         )}
       </div>

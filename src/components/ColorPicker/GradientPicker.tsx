@@ -2,19 +2,32 @@
 
 import Button from "@components/Button/Button";
 import Image from "next/image";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
-const GradientPicker: React.FC = () => {
+const GradientPicker: React.FC<{ selectColor?: (color: string) => void }> = ({
+  selectColor,
+}) => {
   const [colors, setColors] = useState({
     startColor: "#ffffff",
     endColor: "#000000",
   });
   const [position, setPosition] = useState("to right");
   const [msg, setMsg] = useState("");
+
+  // 그라디언트 코드
+  const gradientCode = `linear-gradient(${position}, ${colors.startColor}, ${colors.endColor})`;
+
+  useEffect(() => {
+    // 그라디언트 코드가 변경될 때마다 selectColor 콜백 호출
+    if (selectColor) {
+      selectColor(gradientCode);
+    }
+  }, [colors, position, gradientCode, selectColor]); // colors나 position이 변경될 때마다 호출
+
   const onClickCopyHandler = async (text: string) => {
     try {
       await navigator.clipboard.writeText(text);
-      setMsg("The selected color has been copied!");
+      setMsg("The selected gradient has been copied!");
       setTimeout(() => setMsg(""), 2000);
     } catch (error) {
       setMsg("Copy failed.");
@@ -35,8 +48,6 @@ const GradientPicker: React.FC = () => {
   ) => {
     setPosition(event.target.value);
   };
-
-  const gradientCode = `linear-gradient(${position}, ${colors.startColor}, ${colors.endColor})`;
 
   return (
     <div className="w-72 space-y-4 rounded-lg bg-slate-100 py-9 text-center dark:bg-[#2A2E39]">
