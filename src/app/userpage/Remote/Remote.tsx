@@ -165,6 +165,7 @@ const Remote: React.FC = () => {
               option={control.options || []}
               placeholder={control.value}
               onChange={(newValue) => control.onChange(newValue)}
+              className="w-full"
             />
           ) : (
             <input
