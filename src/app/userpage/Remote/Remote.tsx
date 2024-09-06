@@ -135,7 +135,7 @@ const Remote: React.FC = () => {
 
   return (
     <div
-      className={`remote-control mx-auto mt-20 w-full max-w-md rounded-xl p-2 shadow-lg ${
+      className={`remote-control m-auto mt-20 w-[350px] rounded-xl p-2 shadow-lg ${
         isDarkMode ? "bg-[#333742] text-[#dfdfdf]" : "bg-white"
       } max-h-[900px] overflow-y-auto`}
     >
