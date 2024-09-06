@@ -2,7 +2,9 @@
 
 import ColorPickerUI from "@components/ColorPicker/ColorPickerUI";
 
-const ColorPicker = () => {
+const ColorPicker: React.FC<{ selectColor?: (color: string) => void }> = ({
+  selectColor,
+}) => {
   return (
     <>
       <ColorPickerUI
@@ -80,6 +82,7 @@ const ColorPicker = () => {
           "#ffb6c1",
           "#ffbafd",
         ]}
+        selectColor={selectColor}
       />
     </>
   );
