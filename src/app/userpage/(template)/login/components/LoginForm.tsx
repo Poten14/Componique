@@ -25,7 +25,7 @@ const LoginForm: React.FC = () => {
   };
 
   return (
-    <div className="flex min-h-screen items-center justify-center bg-yellow-100">
+    <div className="flex items-center justify-center">
       <div className="w-full max-w-md rounded-3xl bg-white p-10 shadow-lg">
         <h1 className="mb-8 text-center text-2xl font-bold text-Gray">
           {title}

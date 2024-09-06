@@ -14,7 +14,7 @@ const ColorPickerUserPage = () => {
     };
   }, []);
   return (
-    <div className="flex justify-center pl-[270px]">
+    <div className="flex justify-center">
       <div className="my-10">
         <TwoPicker onColorChange={handleColorChange} />
       </div>
