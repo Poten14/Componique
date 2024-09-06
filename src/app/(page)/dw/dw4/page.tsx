@@ -63,6 +63,11 @@ const Dw4 = () => {
         <ImageUpload icon="icon-image" iconPosition="bottom" text="bottom" />
         <ImageUpload icon="icon-image" iconColor="blue" text="blue" />
       </div>
+      <div>
+        <ImageUpload icon="icon-camera" iconSize="small" />
+        <ImageUpload icon="icon-camera" iconSize="medium" />
+        <ImageUpload icon="icon-camera" iconSize="large" />
+      </div>
     </>
   );
 };
