@@ -57,6 +57,11 @@ const Dw4 = () => {
       </div>
       <div>
         <ImageUpload onImageSelect={onSelectImageHandler} />
+        <ImageUpload icon="icon-image" iconPosition="left" text="left" />
+        <ImageUpload icon="icon-image" iconPosition="right" text="right" />
+        <ImageUpload icon="icon-image" iconPosition="top" text="top" />
+        <ImageUpload icon="icon-image" iconPosition="bottom" text="bottom" />
+        <ImageUpload icon="icon-image" iconColor="blue" text="blue" />
       </div>
     </>
   );
