@@ -8,6 +8,7 @@ interface InputProps {
   variant?: InputVariant;
   placeholder?: string;
   value?: string;
+  width?: string;
   onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
@@ -35,6 +36,7 @@ const Input: React.FC<InputProps> = ({
   placeholder,
   value,
   onChange,
+  width = "80%",
 }) => {
   const [isDarkMode, setIsDarkMode] = useState(false);
 
@@ -68,6 +70,7 @@ const Input: React.FC<InputProps> = ({
       placeholder={placeholder}
       value={value}
       onChange={onChange}
+      style={{ width }}
     />
   );
 };

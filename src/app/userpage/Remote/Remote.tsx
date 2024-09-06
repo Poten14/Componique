@@ -1,86 +1,185 @@
-import React from "react";
-import useRemote from "../Remote/useRemote"; // 상태 관리 로직 가져오기
+"use client";
+
+import React, { useEffect, useState } from "react";
+import { useLoginStore } from "../../store/useLoginStore";
 import Select from "@components/Select/Select";
 
-const Remote = () => {
-  const { componentType, props, setProps, setComponentType } = useRemote();
+const Remote: React.FC = () => {
+  const [isDarkMode, setIsDarkMode] = useState(false);
 
-  // 컴포넌트 타입별 설정 폼을 렌더링
-  const renderControlPanel = () => {
-    switch (componentType) {
-      case "button":
-        return (
-          <div>
-            <h2>Button Settings</h2>
-            <label>
-              Color:
-              <input
-                type="color"
-                value={props.color}
-                onChange={(e) => setProps({ color: e.target.value })}
-              />
-            </label>
-            <label>
-              Size:
-              {/* <Select
-                onChange={(e) => setProps({ size: e.target.value })}
-                option={["small", "medium", "large"]}
-                placeholder="Select an Option"
-              /> */}
-              <select
-                value={props.size}
-                onChange={(e) => setProps({ size: e.target.value })}
-              >
-                <option value="small">Small</option>
-                <option value="medium">Medium</option>
-                <option value="large">Large</option>
-              </select>
-            </label>
-          </div>
-        );
-      case "input":
-        return (
-          <div>
-            <h2>Input Settings</h2>
-            <label>
-              Placeholder:
-              <input
-                type="text"
-                value={props.placeholder}
-                onChange={(e) => setProps({ placeholder: e.target.value })}
-              />
-            </label>
-            <label>
-              Disabled:
-              <input
-                type="checkbox"
-                checked={props.disabled}
-                onChange={(e) => setProps({ disabled: e.target.checked })}
-              />
-            </label>
-          </div>
-        );
-      // 필요한 경우 다른 컴포넌트 타입에 대한 설정 폼을 추가
-      default:
-        return <div>Select a component to configure</div>;
-    }
-  };
+  useEffect(() => {
+    const checkDarkMode = () => {
+      const darkMode = document.documentElement.classList.contains("dark");
+      setIsDarkMode(darkMode);
+    };
+
+    checkDarkMode(); // 초기 다크 모드 상태 체크
+    window.addEventListener("storage", checkDarkMode);
+
+    const observer = new MutationObserver(checkDarkMode);
+    observer.observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ["class"],
+    });
+
+    return () => {
+      window.removeEventListener("storage", checkDarkMode);
+      observer.disconnect();
+    };
+  }, []);
+  const {
+    title,
+    buttonColor,
+    buttonSize,
+    buttonVariant,
+    buttonColor2,
+    buttonSize2,
+    buttonVariant2,
+    placeholder,
+    placeholder2,
+    inputSize,
+    inputWidth,
+    setLoginState,
+  } = useLoginStore();
+
+  const controls = [
+    {
+      label: "Title",
+      type: "text",
+      value: title,
+      onChange: (newValue: string) => setLoginState("title", newValue),
+    },
+    {
+      label: "Button Color",
+      type: "select",
+      value: buttonColor,
+      options: ["primary", "secondary", "success", "danger"],
+      onChange: (newValue: string) => setLoginState("buttonColor", newValue),
+    },
+    {
+      label: "Button Size",
+      type: "select",
+      value: buttonSize,
+      options: ["small", "medium", "large"],
+      onChange: (newValue: string) => setLoginState("buttonSize", newValue),
+    },
+    {
+      label: "Button Variant",
+      type: "select",
+      value: buttonVariant,
+      options: ["solid", "border", "flat", "light"],
+      onChange: (newValue: string) => setLoginState("buttonVariant", newValue),
+    },
+    // 두 번째 버튼
+    {
+      label: "Button2 Color",
+      type: "select",
+      value: buttonColor2,
+      options: [
+        "primary",
+        "secondary",
+        "success",
+        "warning",
+        "danger",
+        "red",
+        "orange",
+        "yellow",
+        "green",
+        "blue",
+        "purple",
+        "pink",
+        "basic",
+      ],
+      onChange: (newValue: string) => setLoginState("buttonColor2", newValue),
+    },
+    {
+      label: "Button2 Size",
+      type: "select",
+      value: buttonSize2,
+      options: ["small", "medium", "large"],
+      onChange: (newValue: string) => setLoginState("buttonSize2", newValue),
+    },
+    {
+      label: "Button2 Variant",
+      type: "select",
+      value: buttonVariant2,
+      options: ["solid", "border", "flat", "light"],
+      onChange: (newValue: string) => setLoginState("buttonVariant2", newValue),
+    },
+    {
+      label: "Input Placeholder",
+      type: "text",
+      value: placeholder,
+      onChange: (newValue: string) => setLoginState("placeholder", newValue),
+    },
+    {
+      label: "Input Placeholder2",
+      type: "text",
+      value: placeholder2,
+      onChange: (newValue: string) => setLoginState("placeholder2", newValue),
+    },
+    {
+      label: "Input Size",
+      type: "select",
+      value: inputSize,
+      options: ["xs", "small", "medium", "large", "xl"],
+      onChange: (newValue: string) => setLoginState("inputSize", newValue),
+    },
+    {
+      label: "Input Width",
+      type: "text",
+      value: inputWidth,
+      onChange: (newValue: string) => setLoginState("inputWidth", newValue),
+    },
+  ];
 
   return (
-    <div className="remote-control">
-      <h2>Remote Control</h2>
-      <label>
-        Select Component:
-        <select
-          value={componentType}
-          onChange={(e) => setComponentType(e.target.value)}
+    <div
+      className={`remote-control mx-auto mt-20 w-full max-w-md rounded-xl p-2 shadow-lg ${
+        isDarkMode ? "bg-[#333742] text-[#dfdfdf]" : "bg-white"
+      } max-h-[900px] overflow-y-auto`}
+    >
+      <h2
+        className={`p-5 text-xl font-bold ${
+          isDarkMode ? "text-Navy" : "text-Primary"
+        }`}
+      >
+        Control Panel
+      </h2>
+      {controls.map((control, index) => (
+        <div
+          key={index}
+          className={`control-item m-3 rounded-lg p-2 shadow-md ${
+            isDarkMode ? "bg-gray-700" : "bg-gray-50"
+          }`}
         >
-          <option value="button">Button</option>
-          <option value="input">Input</option>
-          {/* 다른 컴포넌트 타입 추가 */}
-        </select>
-      </label>
-      {renderControlPanel()}
+          <label //옵션제목
+            className={`mb-2 block font-medium ${
+              isDarkMode ? "text-[#dfdfdf]" : "text-Gray"
+            }`}
+          >
+            {control.label}
+          </label>
+          {control.type === "select" ? (
+            <Select
+              option={control.options || []}
+              placeholder={control.value}
+              onChange={(newValue) => control.onChange(newValue)}
+            />
+          ) : (
+            <input
+              type="text"
+              value={control.value}
+              onChange={(e) => control.onChange(e.target.value)}
+              className={`w-full rounded-lg border p-2 focus:outline-none focus:ring-1 focus:ring-Basic ${
+                isDarkMode
+                  ? "border-gray-500 bg-[#2A2E39] text-[#dfdfdf]"
+                  : "border-gray bg-white"
+              }`}
+            />
+          )}
+        </div>
+      ))}
     </div>
   );
 };
