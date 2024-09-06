@@ -49,6 +49,24 @@ const IconDoc: React.FC = () => {
     "icon-github",
     "icon-blog",
     "icon-comment",
+    "icon-lock",
+    "icon-unlock",
+    "icon-bin",
+    "icon-clip",
+    "icon-emptyBookmark",
+    "icon-bookmark",
+    "icon-pencil",
+    "icon-pen",
+    "icon-music",
+    "icon-wifi",
+
+    "icon-sun",
+    "icon-moon",
+    "icon-play",
+    "icon-pause",
+    "icon-plus",
+    "icon-minus",
+    "icon-close",
   ];
   const router = useRouter();
   return (

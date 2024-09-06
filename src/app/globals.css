@@ -58,6 +58,57 @@ i {
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-minus:before {
+  content: "\e919";
+}
+.icon-bookmark:before {
+  content: "\e90d";
+}
+.icon-lock:before {
+  content: "\e90e";
+}
+.icon-unlock:before {
+  content: "\e90f";
+}
+.icon-bin:before {
+  content: "\e910";
+}
+.icon-clip:before {
+  content: "\e911";
+}
+.icon-moon:before {
+  content: "\e912";
+}
+.icon-emptyBookmark:before {
+  content: "\e913";
+}
+.icon-pause:before {
+  content: "\e914";
+}
+.icon-pencil:before {
+  content: "\e915";
+}
+.icon-pen:before {
+  content: "\e916";
+}
+.icon-music:before {
+  content: "\e917";
+}
+.icon-wifi:before {
+  content: "\e918";
+}
+.icon-close:before {
+  content: "\e91a";
+}
+.icon-sun:before {
+  content: "\e91b";
+}
+.icon-play:before {
+  content: "\e91c";
+}
+.icon-plus:before {
+  content: "\e91d";
+}
 .icon-comment:before {
   content: "\e90c";
 }
