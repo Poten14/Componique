@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
-import Remote from "../../Remote/Remote";
 import Profile from "./components/Profile";
+import ProfileRemote from "app/userpage/Remote/ProfileRemote";
 
 const LoginPage: React.FC = () => {
   return (
@@ -14,7 +14,7 @@ const LoginPage: React.FC = () => {
         <Profile />
       </div>
       <div className="fixed right-4 top-14">
-        <Remote />
+        <ProfileRemote />
       </div>
     </div>
   );
