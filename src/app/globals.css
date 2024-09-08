@@ -58,6 +58,12 @@ i {
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-arowUp:before {
+  content: "\e91e";
+}
+.icon-arowDown:before {
+  content: "\e91f";
+}
 .icon-minus:before {
   content: "\e919";
 }

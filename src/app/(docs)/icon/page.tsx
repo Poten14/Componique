@@ -67,6 +67,8 @@ const IconDoc: React.FC = () => {
     "icon-plus",
     "icon-minus",
     "icon-close",
+    "icon-arowUp",
+    "icon-arowDown",
   ];
   const router = useRouter();
   return (
