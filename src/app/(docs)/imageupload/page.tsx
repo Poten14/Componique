@@ -519,7 +519,192 @@ export default Example;`}
         copied={copied}
         handleCopy={handleCopy}
       />
-      <h2 className="text-[#2D3748]">10. Props</h2>
+      <h2 className="pt-2 text-[#2D3748]">10. Icon</h2>
+      <p>
+        <code>icon</code> prop을 사용하여 ImageUpload 컴포넌트의 아이콘을 설정할
+        수 있습니다.
+      </p>
+      <p>
+        기본값은 <code>"icon-plus"</code> 입니다. Icon에 대한 자세한 정보는 Icon
+        Docs를 참고 하시면 됩니다.
+      </p>
+      <div className="flex items-center space-x-4 space-y-4">
+        <ImageUpload icon="icon-plus" />
+        <ImageUpload icon="icon-image" />
+      </div>
+      <div className="my-7 space-y-4" />
+      <CodeBox
+        code={`import ImageUpload from '@components/ImageUpload/Imageupload';
+
+function Example() {
+  return (
+    <>
+      <ImageUpload icon="icon-plus" />
+      <ImageUpload icon="icon-image" />
+    </>
+  );
+}
+
+export default Example;`}
+        copyText={`import ImageUpload from '@components/ImageUpload/Imageupload';
+
+function Example() {
+  return (
+    <>
+      <ImageUpload icon="icon-plus" />
+      <ImageUpload icon="icon-image" />
+    </>
+  );
+}
+
+export default Example;`}
+        language="tsx"
+        index={10}
+        copied={copied}
+        handleCopy={handleCopy}
+      />
+      <h2 className="pt-2 text-[#2D3748]">11. Icon Size</h2>
+      <p>
+        <code>iconSize</code> prop을 사용하여 아이콘의 크기를 설정할 수
+        있습니다. 기본값은 <code>"medium"</code>이고, 가능한 값은{" "}
+        <code>"small"</code>, <code>"medium"</code>, <code>"large"</code>{" "}
+        입니다.
+      </p>
+      <div className="flex items-center space-x-4 space-y-4">
+        <ImageUpload iconSize="small" />
+        <ImageUpload iconSize="medium" />
+        <ImageUpload iconSize="large" />
+      </div>
+      <div className="my-7 space-y-4" />
+      <CodeBox
+        code={`import ImageUpload from '@components/ImageUpload/Imageupload';
+
+function Example() {
+  return (
+    <>
+      <ImageUpload iconSize="small" />
+      <ImageUpload iconSize="medium" />
+      <ImageUpload iconSize="large" />
+    </>
+  );
+}
+
+export default Example;`}
+        copyText={`import ImageUpload from '@components/ImageUpload/Imageupload';
+
+function Example() {
+  return (
+    <>
+      <ImageUpload iconSize="small" />
+      <ImageUpload iconSize="medium" />
+      <ImageUpload iconSize="large" />
+    </>
+  );
+}
+
+export default Example;`}
+        language="tsx"
+        index={11}
+        copied={copied}
+        handleCopy={handleCopy}
+      />
+      <h2 className="pt-2 text-[#2D3748]">12. Icon Color</h2>
+      <p>
+        <code>iconColor</code> prop을 사용하여 아이콘의 색상을 설정할 수
+        있습니다. 기본값은 <code>"currentColor"</code> 입니다.
+      </p>
+      <div className="flex items-center space-x-4 space-y-4">
+        <ImageUpload iconColor="red" />
+        <ImageUpload iconColor="blue" />
+      </div>
+      <div className="my-7 space-y-4" />
+      <CodeBox
+        code={`import ImageUpload from '@components/ImageUpload/Imageupload';
+
+function Example() {
+  return (
+    <>
+      <ImageUpload iconColor="red" />
+      <ImageUpload iconColor="blue" />
+    </>
+  );
+}
+
+export default Example;`}
+        copyText={`import ImageUpload from '@components/ImageUpload/Imageupload';
+
+function Example() {
+  return (
+    <>
+      <ImageUpload iconColor="red" />
+      <ImageUpload iconColor="blue" />
+    </>
+  );
+}
+
+export default Example;`}
+        language="tsx"
+        index={12}
+        copied={copied}
+        handleCopy={handleCopy}
+      />
+      <h2 className="pt-2 text-[#2D3748]">13. Icon Position</h2>
+      <p>
+        <code>iconPosition</code> prop을 사용하여 아이콘의 위치를 설정할 수
+        있습니다.
+      </p>
+      <p>
+        아이콘 위치는 text prop이 있을 때, <code>text의 왼쪽(left)</code>,{" "}
+        <code>오른쪽(right)</code>,<code>위쪽(top)</code>,
+        <code>아래쪽(bottom)</code>에 위치합니다.
+      </p>
+      <p>
+        text가 없는 경우 아이콘은 자동으로 컴포넌트의 정가운데에 배치됩니다.
+        기본값은 <code>top</code>입니다.
+      </p>
+      <p>아래 예시는 icon-image 아이콘을 포함한 예시입니다.</p>
+      <div className="flex items-center space-x-4 space-y-4">
+        <ImageUpload icon="icon-image" iconPosition="left" text="left" />
+        <ImageUpload icon="icon-image" iconPosition="right" text="right" />
+        <ImageUpload icon="icon-image" iconPosition="top" text="top" />
+        <ImageUpload icon="icon-image" iconPosition="bottom" text="bottom" />
+      </div>
+      <div className="my-7 space-y-4" />
+      <CodeBox
+        code={`import ImageUpload from '@components/ImageUpload/Imageupload';
+
+function Example() {
+  return (
+    <>
+        <ImageUpload icon="icon-image" iconPosition="left" text="left" />
+        <ImageUpload icon="icon-image" iconPosition="right" text="right" />
+        <ImageUpload icon="icon-image" iconPosition="top" text="top" />
+        <ImageUpload icon="icon-image" iconPosition="bottom" text="bottom" />
+    </>
+  );
+}
+
+export default Example;`}
+        copyText={`import ImageUpload from '@components/ImageUpload/Imageupload';
+
+function Example() {
+  return (
+    <>
+        <ImageUpload icon="icon-image" iconPosition="left" text="left" />
+        <ImageUpload icon="icon-image" iconPosition="right" text="right" />
+        <ImageUpload icon="icon-image" iconPosition="top" text="top" />
+        <ImageUpload icon="icon-image" iconPosition="bottom" text="bottom" />
+    </>
+  );
+}
+
+export default Example;`}
+        language="tsx"
+        index={13}
+        copied={copied}
+        handleCopy={handleCopy}
+      />
+      <h2 className="pt-2 text-[#2D3748]">14. Props</h2>
       <p>
         <code>ImageUpload</code> 컴포넌트는 아래와 같은 Props를 가집니다:
       </p>
@@ -533,6 +718,7 @@ export default Example;`}
           </tr>
         </thead>
         <tbody>
+          {/* 기존 Props들 */}
           <tr>
             <td>
               <code>shape</code>
@@ -589,12 +775,15 @@ export default Example;`}
             <td>
               <code>text</code>
             </td>
-            <td>ImageUpload 컴포넌트에 표시할 텍스트를 설정합니다.</td>
+            <td>
+              ImageUpload 컴포넌트에 표시할 텍스트를 설정합니다. 설정하지 않으면
+              기본적으로 아이콘만 표시됩니다.
+            </td>
             <td>
               <code>string</code>
             </td>
             <td>
-              <code>"+ Upload"</code>
+              <code>""</code>
             </td>
           </tr>
           <tr>
@@ -619,6 +808,56 @@ export default Example;`}
             </td>
             <td>
               <code>undefined</code>
+            </td>
+          </tr>
+
+          {/* 새로 추가된 Props들 */}
+          <tr>
+            <td>
+              <code>icon</code>
+            </td>
+            <td>ImageUpload 컴포넌트에 사용할 아이콘을 설정합니다.</td>
+            <td>
+              <code>IconName</code>
+            </td>
+            <td>
+              <code>"icon-plus"</code>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <code>iconSize</code>
+            </td>
+            <td>아이콘의 크기를 설정합니다.</td>
+            <td>
+              <code>"small" | "medium" | "large"</code>
+            </td>
+            <td>
+              <code>"medium"</code>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <code>iconColor</code>
+            </td>
+            <td>아이콘의 색상을 설정합니다.</td>
+            <td>
+              <code>string</code>
+            </td>
+            <td>
+              <code>"currentColor"</code>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <code>iconPosition</code>
+            </td>
+            <td>아이콘의 위치를 설정합니다.</td>
+            <td>
+              <code>"left" | "right" | "top" | "bottom"</code>
+            </td>
+            <td>
+              <code>"top"</code>
             </td>
           </tr>
         </tbody>
