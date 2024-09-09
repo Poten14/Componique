@@ -26,7 +26,7 @@ const ImageUpload: React.FC<ImageUploadProps> = ({
   text,
   variant = "solid",
   className,
-  icon = "icon-image",
+  icon = "icon-plus",
   iconSize = "medium",
   iconColor = "currentColor",
   iconPosition = "top",
