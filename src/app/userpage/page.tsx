@@ -41,6 +41,10 @@ const UserPage = () => {
       title: "TodoList",
       path: "/todolist",
     },
+    {
+      title: "CustomerService",
+      path: "/customerservice",
+    },
   ];
 
   return (

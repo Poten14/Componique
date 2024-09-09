@@ -37,7 +37,26 @@ export type IconName =
   | "icon-docs2"
   | "icon-github"
   | "icon-blog"
-  | "icon-comment";
+  | "icon-comment"
+  | "icon-lock"
+  | "icon-unlock"
+  | "icon-bin"
+  | "icon-clip"
+  | "icon-emptyBookmark"
+  | "icon-bookmark"
+  | "icon-pencil"
+  | "icon-pen"
+  | "icon-music"
+  | "icon-wifi"
+  | "icon-minus"
+  | "icon-close"
+  | "icon-sun"
+  | "icon-moon"
+  | "icon-play"
+  | "icon-pause"
+  | "icon-plus"
+  | "icon-arowUp"
+  | "icon-arowDown";
 
 type IconProps = {
   name: IconName;

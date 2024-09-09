@@ -3,6 +3,9 @@ import React, { useState, ChangeEvent } from "react";
 import { Color16, Size } from "types/type";
 import { v4 as uuidv4 } from "uuid";
 import { useEffect } from "react";
+import { IconName } from "@components/Icon/Icon";
+import Image from "next/image";
+import Icon from "@components/Icon/Icon";
 type ImageUploadProps = {
   shape?: "rectangle" | "circle";
   size?: Size;
@@ -10,6 +13,10 @@ type ImageUploadProps = {
   text?: string;
   variant?: "solid" | "border";
   className?: string;
+  icon?: IconName;
+  iconSize?: "small" | "medium" | "large";
+  iconColor?: string;
+  iconPosition?: "left" | "right" | "top" | "bottom";
   onImageSelect?: (data: string | null) => void;
 };
 
@@ -17,9 +24,13 @@ const ImageUpload: React.FC<ImageUploadProps> = ({
   shape = "circle",
   size = "medium",
   color = "basic",
-  text = "+ Upload",
+  text,
   variant = "solid",
   className,
+  icon = "icon-plus",
+  iconSize = "medium",
+  iconColor = "currentColor",
+  iconPosition = "top",
   onImageSelect,
 }) => {
   const [previewImage, setPreviewImage] = useState<string | null>(null);
@@ -102,6 +113,17 @@ const ImageUpload: React.FC<ImageUploadProps> = ({
     }
   };
 
+  const imageuploadIconSIze =
+    iconSize === "small" ? 16 : iconSize === "medium" ? 24 : 32;
+
+  const imageUploadIconPosition =
+    iconPosition === "top"
+      ? "flex-col"
+      : iconPosition === "bottom"
+        ? "flex-col-reverse"
+        : iconPosition === "left"
+          ? "flex-row"
+          : "flex-row-reverse";
   return (
     <>
       <input
@@ -116,14 +138,24 @@ const ImageUpload: React.FC<ImageUploadProps> = ({
         className={`relative inline-block cursor-pointer text-center ${shape === "rectangle" ? "rounded-lg" : "rounded-full"} ${ImageUploadSize} ${ImageVariant} ${className || ""}`}
       >
         {previewImage ? (
-          <img
+          <Image
             src={previewImage}
             alt="Preview"
+            fill
             className={`flex h-full w-full object-cover ${shape === "rectangle" ? "rounded-lg" : "rounded-full"}`}
           />
         ) : (
-          <div className="flex h-full w-full items-center justify-center">
-            <div className="align-middle">{text}</div>
+          <div
+            className={`flex h-full w-full items-center justify-center ${imageUploadIconPosition}`}
+          >
+            {icon && (
+              <Icon name={icon} size={imageuploadIconSIze} color={iconColor} />
+            )}
+            {text && (
+              <span className="max-w-full whitespace-normal break-words">
+                {text}
+              </span>
+            )}
           </div>
         )}
       </label>
