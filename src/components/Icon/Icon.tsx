@@ -54,7 +54,9 @@ export type IconName =
   | "icon-moon"
   | "icon-play"
   | "icon-pause"
-  | "icon-plus";
+  | "icon-plus"
+  | "icon-arowUp"
+  | "icon-arowDown";
 
 type IconProps = {
   name: IconName;
