@@ -10,7 +10,7 @@ const SnsForm: React.FC = () => {
       <div className="w-full rounded-lg border border-gray shadow-md">
         <div className="flex w-full items-center p-2">
           <AvatarBasic src="/images/avatar1.svg" alt="User Avatar" size={42} />
-          <span className="ml-2 font-bold">Componique</span>
+          <span className="ml-2 font-bold dark:text-white">Componique</span>
         </div>
         <CarouselDots
           images={[
@@ -24,7 +24,7 @@ const SnsForm: React.FC = () => {
           <Icon name="icon-search" />
           <Icon name="icon-share" />
         </div>
-        <div className="w-full px-4 py-1">
+        <div className="w-full px-4 py-1 dark:text-white">
           <div>
             <span className="mr-1 font-bold">Componique</span>
             집에 가고싶다...
