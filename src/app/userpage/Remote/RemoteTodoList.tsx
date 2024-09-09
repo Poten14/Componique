@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import { useTodoListStore } from "../../store/useTodoListStore";
+import { useTodoListStore } from "app/store/useTodoListStore";
 import Select from "@components/Select/Select";
 
 const TodoListRemote: React.FC = () => {
@@ -27,44 +27,52 @@ const TodoListRemote: React.FC = () => {
       observer.disconnect();
     };
   }, []);
-
   const {
-    textareaWidth,
-    textareaSize,
-    checkBoxSize,
-    checkBoxColor,
-    checkBoxVariant,
-    placeholder,
+    addButtonColor,
+    addButtonSize,
+    addButtonVariant,
+    deleteButtonColor,
+    deleteButtonSize,
+    deleteButtonVariant,
+    todoList1,
+    todoList2,
+    todoList3,
+    todoList4,
+    inputSize,
+    inputWidth,
     setTodoListState,
   } = useTodoListStore();
 
   const controls = [
     {
-      label: "Textarea Width",
-      type: "text",
-      value: textareaWidth,
+      label: "AddButton Color",
+      type: "select",
+      value: addButtonColor,
+      options: ["primary", "secondary", "success", "danger"],
       onChange: (newValue: string) =>
-        setTodoListState("textareaWidth", newValue),
+        setTodoListState("addButtonColor", newValue),
     },
     {
-      label: "Textarea Size",
+      label: "AddButton Size",
       type: "select",
-      options: ["xs", "small", "medium", "large", "xl"],
-      value: textareaSize,
-      onChange: (newValue: string) =>
-        setTodoListState("textareaSize", newValue),
-    },
-    {
-      label: "Checkbox Size",
-      type: "select",
+      value: addButtonSize,
       options: ["small", "medium", "large"],
-      value: checkBoxSize,
       onChange: (newValue: string) =>
-        setTodoListState("checkBoxSize", newValue),
+        setTodoListState("addButtonSize", newValue),
     },
     {
-      label: "Checkbox Color",
+      label: "AddButton Variant",
       type: "select",
+      value: addButtonVariant,
+      options: ["solid", "border", "flat", "light"],
+      onChange: (newValue: string) =>
+        setTodoListState("addButtonVariant", newValue),
+    },
+    // 두 번째 버튼
+    {
+      label: "deleteButton Color",
+      type: "select",
+      value: deleteButtonColor,
       options: [
         "primary",
         "secondary",
@@ -79,33 +87,68 @@ const TodoListRemote: React.FC = () => {
         "purple",
         "pink",
         "basic",
-        "white",
-        "gray",
-        "black",
       ],
-      value: checkBoxColor,
       onChange: (newValue: string) =>
-        setTodoListState("checkBoxColor", newValue),
+        setTodoListState("deleteButtonColor", newValue),
     },
     {
-      label: "Checkbox Variant",
+      label: "Button2 Size",
       type: "select",
-      options: ["solid", "border"],
-      value: checkBoxVariant,
+      value: deleteButtonSize,
+      options: ["small", "medium", "large"],
       onChange: (newValue: string) =>
-        setTodoListState("checkBoxVariant", newValue),
+        setTodoListState("deleteButtonSize", newValue),
     },
     {
-      label: "Placeholder",
+      label: "Button2 Variant",
+      type: "select",
+      value: deleteButtonVariant,
+      options: ["solid", "border", "flat", "light"],
+      onChange: (newValue: string) =>
+        setTodoListState("deleteButtonVariant", newValue),
+    },
+    {
+      label: "TodoList1 Placeholder",
       type: "text",
-      value: placeholder,
-      onChange: (newValue: string) => setTodoListState("placeholder", newValue),
+      value: todoList1,
+      onChange: (newValue: string) => setTodoListState("todoList1", newValue),
+    },
+    {
+      label: "TodoList2 Placeholder",
+      type: "text",
+      value: todoList2,
+      onChange: (newValue: string) => setTodoListState("todoList2", newValue),
+    },
+    {
+      label: "TodoList3 Placeholder",
+      type: "text",
+      value: todoList3,
+      onChange: (newValue: string) => setTodoListState("todoList3", newValue),
+    },
+    {
+      label: "TodoList4 Placeholder",
+      type: "text",
+      value: todoList4,
+      onChange: (newValue: string) => setTodoListState("todoList4", newValue),
+    },
+    {
+      label: "Input Size",
+      type: "select",
+      value: inputSize,
+      options: ["xs", "small", "medium", "large", "xl"],
+      onChange: (newValue: string) => setTodoListState("inputSize", newValue),
+    },
+    {
+      label: "Input Width",
+      type: "text",
+      value: inputWidth,
+      onChange: (newValue: string) => setTodoListState("inputWidth", newValue),
     },
   ];
 
   return (
     <div
-      className={`remote-control mx-auto mt-20 w-[350px] rounded-xl p-2 shadow-lg ${
+      className={`remote-control m-auto mt-20 w-[350px] rounded-xl p-2 shadow-lg ${
         isDarkMode ? "bg-[#333742] text-[#dfdfdf]" : "bg-white"
       } max-h-[900px] overflow-y-auto`}
     >
@@ -123,7 +166,7 @@ const TodoListRemote: React.FC = () => {
             isDarkMode ? "bg-gray-700" : "bg-gray-50"
           }`}
         >
-          <label // 옵션 제목
+          <label //옵션제목
             className={`mb-2 block font-medium ${
               isDarkMode ? "text-[#dfdfdf]" : "text-Gray"
             }`}

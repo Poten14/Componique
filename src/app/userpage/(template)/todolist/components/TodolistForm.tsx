@@ -1,35 +1,141 @@
 "use client";
 
+import Button from "@components/Button/Button";
+import Input from "@components/Input/Input";
 import { useTodoListStore } from "../../../../store/useTodoListStore";
-import Textarea from "@components/Textarea/Textarea";
-import CheckBox from "@components/CheckBox/CheckBox";
 
 const TodoListForm: React.FC = () => {
   const {
-    textareaSize,
-    textareaWidth,
-    textResize,
-    checkBoxColor,
-    checkBoxSize,
-    checkBoxVariant,
-    placeholder,
+    addButtonColor,
+    addButtonSize,
+    addButtonVariant,
+    deleteButtonColor,
+    deleteButtonSize,
+    deleteButtonVariant,
+    todoList1,
+    todoList2,
+    todoList3,
+    todoList4,
+    inputSize,
+    inputWidth,
   } = useTodoListStore();
 
   return (
-    <div className="flex min-h-screen items-center justify-center bg-yellow-100">
-      <div className="w-full max-w-md rounded-3xl bg-white p-10 shadow-lg">
-        <div className="grid w-full grid-cols-[auto_1fr] items-center gap-x-2">
-          <Textarea
-            size={textareaSize}
-            width={textareaWidth}
-            resize={textResize}
-            placeholder={placeholder}
-          />
-          <CheckBox
-            size={checkBoxSize}
-            color={checkBoxColor}
-            variant={checkBoxVariant}
-          />
+    <div className="flex h-1/2 items-center justify-center">
+      <div className="w-full rounded-3xl bg-white p-10 shadow-lg">
+        <div className="space-y-6">
+          <div className="flex justify-between space-x-2">
+            <Input
+              size={inputSize}
+              width={inputWidth}
+              variant="outlined"
+              placeholder={todoList1}
+            />
+            <div className="flex space-x-1">
+              <Button
+                color={addButtonColor}
+                size={addButtonSize}
+                variant={addButtonVariant}
+                className="text-white"
+                onClick={() => alert("일정을 추가했습니다")}
+              >
+                Add
+              </Button>
+              <Button
+                color={deleteButtonColor}
+                size={deleteButtonSize}
+                variant={deleteButtonVariant}
+                className="text-white"
+                onClick={() => alert("일정을 삭제했습니다")}
+              >
+                Delete
+              </Button>
+            </div>
+          </div>
+          <div className="flex space-x-2">
+            <Input
+              size={inputSize}
+              width={inputWidth}
+              variant="outlined"
+              placeholder={todoList2}
+            />
+            <div className="flex space-x-1">
+              <Button
+                color={addButtonColor}
+                size={addButtonSize}
+                variant={addButtonVariant}
+                className="text-white"
+                onClick={() => alert("일정을 추가했습니다")}
+              >
+                Add
+              </Button>
+              <Button
+                color={deleteButtonColor}
+                size={deleteButtonSize}
+                variant={deleteButtonVariant}
+                className="text-white"
+                onClick={() => alert("일정을 삭제했습니다")}
+              >
+                Delete
+              </Button>
+            </div>
+          </div>
+          <div className="flex space-x-2">
+            <Input
+              size={inputSize}
+              width={inputWidth}
+              variant="outlined"
+              placeholder={todoList3}
+            />
+            <div className="flex space-x-1">
+              <Button
+                color={addButtonColor}
+                size={addButtonSize}
+                variant={addButtonVariant}
+                className="text-white"
+                onClick={() => alert("일정을 추가했습니다")}
+              >
+                Add
+              </Button>
+              <Button
+                color={deleteButtonColor}
+                size={deleteButtonSize}
+                variant={deleteButtonVariant}
+                className="text-white"
+                onClick={() => alert("일정을 삭제했습니다")}
+              >
+                Delete
+              </Button>
+            </div>
+          </div>
+          <div className="flex space-x-2">
+            <Input
+              size={inputSize}
+              width={inputWidth}
+              variant="outlined"
+              placeholder={todoList4}
+            />
+            <div className="flex space-x-1">
+              <Button
+                color={addButtonColor}
+                size={addButtonSize}
+                variant={addButtonVariant}
+                className="text-white"
+                onClick={() => alert("일정을 추가했습니다")}
+              >
+                Add
+              </Button>
+              <Button
+                color={deleteButtonColor}
+                size={deleteButtonSize}
+                variant={deleteButtonVariant}
+                className="text-white"
+                onClick={() => alert("일정을 삭제했습니다")}
+              >
+                Delete
+              </Button>
+            </div>
+          </div>
         </div>
       </div>
     </div>

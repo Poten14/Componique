@@ -4,7 +4,7 @@ import create from "zustand";
 type ExtraSize = "xs" | "small" | "medium" | "large" | "xl";
 
 // Zustand를 사용하여 상태 관리
-interface TodoListState {
+interface LoginState {
   title: string;
   buttonColor:
     | "primary"
@@ -42,13 +42,13 @@ interface TodoListState {
   placeholder2: string;
   inputSize: ExtraSize;
   inputWidth: string;
-  setTodoListState: (
-    key: keyof Omit<TodoListState, "setLoginState">,
+  setLoginState: (
+    key: keyof Omit<LoginState, "setLoginState">,
     value: string,
   ) => void;
 }
 
-export const useLoginStore = create<TodoListState>((set) => ({
+export const useLoginStore = create<LoginState>((set) => ({
   title: "Componique",
   buttonColor: "primary",
   buttonSize: "medium",
@@ -60,7 +60,7 @@ export const useLoginStore = create<TodoListState>((set) => ({
   placeholder2: "비밀번호를 입력하세요",
   inputSize: "medium",
   inputWidth: "100%",
-  setTodoListState: (key, value) =>
+  setLoginState: (key, value) =>
     set((state) => ({
       ...state,
       [key]: value,
