@@ -374,7 +374,7 @@ export default Example;`}
               <code>"xs" | "small" | "medium" | "large" | "xl"</code>
             </td>
             <td>
-              <code>"xl"</code>
+              <code>"large"</code>
             </td>
           </tr>
           <tr>
@@ -399,6 +399,18 @@ export default Example;`}
             </td>
             <td>
               <code>"vertical"</code>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <code>className</code>
+            </td>
+            <td>Textarea 필드에 추가적인 CSS 클래스를 적용합니다.</td>
+            <td>
+              <code>string</code>
+            </td>
+            <td>
+              <code>-</code>
             </td>
           </tr>
           <tr>
@@ -430,6 +442,7 @@ function Example() {
         color="gray" 
         resize="none" 
         placeholder="Enter your text here" 
+        className="mt-4"
       />
     </div>
   );
@@ -448,6 +461,7 @@ function Example() {
         color="gray" 
         resize="none" 
         placeholder="Enter your text here" 
+        className="mt-4"
       />
     </div>
   );
