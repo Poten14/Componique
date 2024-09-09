@@ -4,6 +4,7 @@ import { Color16, Size } from "types/type";
 import { v4 as uuidv4 } from "uuid";
 import { useEffect } from "react";
 import { IconName } from "@components/Icon/Icon";
+import Image from "next/image";
 import Icon from "@components/Icon/Icon";
 type ImageUploadProps = {
   shape?: "rectangle" | "circle";
@@ -137,9 +138,10 @@ const ImageUpload: React.FC<ImageUploadProps> = ({
         className={`relative inline-block cursor-pointer text-center ${shape === "rectangle" ? "rounded-lg" : "rounded-full"} ${ImageUploadSize} ${ImageVariant} ${className || ""}`}
       >
         {previewImage ? (
-          <img
+          <Image
             src={previewImage}
             alt="Preview"
+            fill
             className={`flex h-full w-full object-cover ${shape === "rectangle" ? "rounded-lg" : "rounded-full"}`}
           />
         ) : (
