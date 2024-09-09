@@ -69,7 +69,7 @@ const CustomerServiceRemote: React.FC = () => {
     setServiceState("numberType", newType);
   };
 
-  // "제품 세부 정보" 관련 핸들러
+  // "서비스 항목 선택" 관련 핸들러
   const handleServiceItemChange = (newItem: string) => {
     setServiceState("serviceItem", newItem);
   };
@@ -133,17 +133,6 @@ const CustomerServiceRemote: React.FC = () => {
     <div className="remote-control m-auto mt-20 max-h-[900px] w-[350px] overflow-y-auto rounded-xl bg-white p-2 shadow-lg">
       <h2 className="p-5 text-xl font-bold text-Primary">고객 서비스 제어판</h2>
 
-      {/* 번호 유형 */}
-      <div className="control-item bg-gray-50 m-3 rounded-lg p-2 shadow-md">
-        <label className="mb-2 block font-medium text-Gray">번호 유형</label>
-        <Select
-          option={dropDownOption1}
-          placeholder={numberType}
-          onChange={handleNumberTypeChange}
-          className="w-full"
-        />
-      </div>
-
       {/* 번호 유형-스타일 */}
       <div className="control-item bg-gray-50 m-3 rounded-lg p-2 shadow-md">
         <label className="mb-2 block font-medium text-Gray">
@@ -196,23 +185,10 @@ const CustomerServiceRemote: React.FC = () => {
         />
       </div>
 
-      {/* 제품 세부 정보 */}
+      {/* 서비스 항목 선택-스타일 */}
       <div className="control-item bg-gray-50 m-3 rounded-lg p-2 shadow-md">
         <label className="mb-2 block font-medium text-Gray">
-          제품 세부 정보
-        </label>
-        <Select
-          option={dropDownOption2.flatMap((group) => group.items)}
-          placeholder={serviceItem}
-          onChange={handleServiceItemChange}
-          className="w-full"
-        />
-      </div>
-
-      {/* 제품 세부 정보-스타일 */}
-      <div className="control-item bg-gray-50 m-3 rounded-lg p-2 shadow-md">
-        <label className="mb-2 block font-medium text-Gray">
-          제품 세부 정보-스타일
+          서비스 항목 선택-스타일
         </label>
         <Select
           option={["basic", "rounded", "borderless-rounded", "less-rounded"]}
