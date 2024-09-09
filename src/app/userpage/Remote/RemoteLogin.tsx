@@ -134,53 +134,72 @@ const RemoteLogin: React.FC = () => {
   ];
 
   return (
-    <div
-      className={`remote-control m-auto mt-20 w-[350px] rounded-xl p-2 shadow-lg ${
-        isDarkMode ? "bg-[#333742] text-[#dfdfdf]" : "bg-white"
-      } max-h-[1000px] overflow-y-auto`}
-    >
-      <h2
-        className={`p-5 text-xl font-bold ${
-          isDarkMode ? "text-Navy" : "text-Primary"
-        }`}
+    <div className="relative">
+      {/* 하늘색 배경 박스 추가 */}
+      <div
+        className={`absolute left-0 z-10 m-auto w-[350px] rounded-2xl bg-[#D8EAF8] p-5 shadow-xl dark:bg-Navy`}
       >
-        Control Panel
-      </h2>
-      {controls.map((control, index) => (
-        <div
-          key={index}
-          className={`control-item m-3 rounded-lg p-2 shadow-md ${
-            isDarkMode ? "bg-gray-700" : "bg-gray-50"
-          }`}
-        >
-          <label //옵션제목
-            className={`mb-2 block font-medium ${
-              isDarkMode ? "text-[#dfdfdf]" : "text-Gray"
+        <h2 className="text-2xl font-bold text-[#ffffff] dark:text-[#dfdfdf]">
+          Control Panel
+        </h2>
+        <input
+          type="text"
+          className="mt-2 w-full rounded bg-[#BBD9F0] dark:bg-[#102B3F] dark:text-[#ffffff]"
+          placeholder="   customizing your template"
+          disabled
+        />
+        <input
+          className={`mt-2 h-2 w-full rounded bg-[#BBD9F0] dark:bg-[#102B3F]`}
+          disabled
+        />
+        <input
+          className={`mt-2 h-2 w-full rounded bg-[#BBD9F0] dark:bg-[#102B3F]`}
+          disabled
+        />
+      </div>
+
+      {/* Control 패널 */}
+      <div
+        className={`remote-control relative top-36 m-auto mt-10 w-[350px] rounded-xl p-2 shadow-2xl ${
+          isDarkMode ? "bg-[#333742] text-[#dfdfdf]" : "bg-white"
+        } max-h-[1000px] overflow-y-auto`}
+      >
+        {controls.map((control, index) => (
+          <div
+            key={index}
+            className={`control-item m-3 rounded-lg p-2 shadow-md ${
+              isDarkMode ? "bg-gray-700" : "bg-gray-50"
             }`}
           >
-            {control.label}
-          </label>
-          {control.type === "select" ? (
-            <Select
-              option={control.options || []}
-              placeholder={control.value}
-              onChange={(newValue) => control.onChange(newValue)}
-              className="w-full"
-            />
-          ) : (
-            <input
-              type="text"
-              value={control.value}
-              onChange={(e) => control.onChange(e.target.value)}
-              className={`w-full rounded-lg border p-2 focus:outline-none focus:ring-1 focus:ring-Basic ${
-                isDarkMode
-                  ? "border-gray-500 bg-[#2A2E39] text-[#dfdfdf]"
-                  : "border-gray bg-white"
+            <label
+              className={`mb-2 block font-medium ${
+                isDarkMode ? "text-[#dfdfdf]" : "text-Gray"
               }`}
-            />
-          )}
-        </div>
-      ))}
+            >
+              {control.label}
+            </label>
+            {control.type === "select" ? (
+              <Select
+                option={control.options || []}
+                placeholder={control.value}
+                onChange={(newValue) => control.onChange(newValue)}
+                className="w-full"
+              />
+            ) : (
+              <input
+                type="text"
+                value={control.value}
+                onChange={(e) => control.onChange(e.target.value)}
+                className={`w-full rounded-lg border p-2 focus:outline-none focus:ring-1 focus:ring-Basic ${
+                  isDarkMode
+                    ? "border-gray-500 bg-[#2A2E39] text-[#dfdfdf]"
+                    : "border-gray bg-white"
+                }`}
+              />
+            )}
+          </div>
+        ))}
+      </div>
     </div>
   );
 };
