@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import Profile from "./components/Profile";
-import ProfileRemote from "app/userpage/Remote/ProfileRemote";
+import ProfileRemote from "app/userpage/Remote/RemoteProfile";
 
 const LoginPage: React.FC = () => {
   return (
