@@ -1,10 +1,10 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
-import { useLoginStore } from "../../store/useLoginStore";
+import React from "react";
+import { useProfileStore } from "app/store/useProfileStore";
 import Select from "@components/Select/Select";
-
-const Remote: React.FC = () => {
+import { useEffect, useState } from "react";
+const ProfileRemote: React.FC = () => {
   const [isDarkMode, setIsDarkMode] = useState(false);
 
   useEffect(() => {
@@ -28,53 +28,41 @@ const Remote: React.FC = () => {
     };
   }, []);
   const {
-    title,
-    buttonColor,
-    buttonSize,
-    buttonVariant,
-    buttonColor2,
-    buttonSize2,
-    buttonVariant2,
+    shape,
+    size,
+    color,
+    variant,
+    text,
+    iconSize,
+    iconColor,
+    iconPosition,
+    nickname,
     placeholder,
-    placeholder2,
-    inputSize,
-    inputWidth,
-    setLoginState,
-  } = useLoginStore();
+    location,
+    job,
+    email,
+    setProfileState,
+  } = useProfileStore();
 
   const controls = [
     {
-      label: "Title",
-      type: "text",
-      value: title,
-      onChange: (newValue: string) => setLoginState("title", newValue),
+      label: "이미지 업로드-모양",
+      type: "select",
+      value: shape,
+      options: ["rectangle", "circle"],
+      onChange: (newValue: string) => setProfileState("shape", newValue),
     },
     {
-      label: "Button Color",
+      label: "이미지 업로드-크기",
       type: "select",
-      value: buttonColor,
-      options: ["primary", "secondary", "success", "danger"],
-      onChange: (newValue: string) => setLoginState("buttonColor", newValue),
-    },
-    {
-      label: "Button Size",
-      type: "select",
-      value: buttonSize,
+      value: size,
       options: ["small", "medium", "large"],
-      onChange: (newValue: string) => setLoginState("buttonSize", newValue),
+      onChange: (newValue: string) => setProfileState("size", newValue),
     },
     {
-      label: "Button Variant",
+      label: "이미지 업로드-색상",
       type: "select",
-      value: buttonVariant,
-      options: ["solid", "border", "flat", "light"],
-      onChange: (newValue: string) => setLoginState("buttonVariant", newValue),
-    },
-    // 두 번째 버튼
-    {
-      label: "Button2 Color",
-      type: "select",
-      value: buttonColor2,
+      value: color,
       options: [
         "primary",
         "secondary",
@@ -89,47 +77,74 @@ const Remote: React.FC = () => {
         "purple",
         "pink",
         "basic",
+        "white",
+        "gray",
+        "black",
       ],
-      onChange: (newValue: string) => setLoginState("buttonColor2", newValue),
+      onChange: (newValue: string) => setProfileState("color", newValue),
     },
     {
-      label: "Button2 Size",
+      label: "이미지 업로드-스타일",
       type: "select",
-      value: buttonSize2,
+      value: variant,
+      options: ["solid", "border"],
+      onChange: (newValue: string) => setProfileState("variant", newValue),
+    },
+    {
+      label: "이미지 업로드-텍스트",
+      type: "text",
+      value: text,
+      onChange: (newValue: string) => setProfileState("text", newValue),
+    },
+    {
+      label: "이미지 업로드-아이콘 사이즈",
+      type: "select",
+      value: iconSize,
       options: ["small", "medium", "large"],
-      onChange: (newValue: string) => setLoginState("buttonSize2", newValue),
+      onChange: (newValue: string) => setProfileState("iconSize", newValue),
     },
     {
-      label: "Button2 Variant",
+      label: "이미지 업로드-아이콘 색상 / ex: #fff or red",
+      type: "text",
+      value: iconColor,
+      onChange: (newValue: string) => setProfileState("iconColor", newValue),
+    },
+    {
+      label: "이미지 업로드-아이콘 위치",
       type: "select",
-      value: buttonVariant2,
-      options: ["solid", "border", "flat", "light"],
-      onChange: (newValue: string) => setLoginState("buttonVariant2", newValue),
+      value: iconPosition,
+      options: ["left", "right", "top", "bottom"],
+      onChange: (newValue: string) => setProfileState("iconPosition", newValue),
     },
     {
-      label: "Input Placeholder",
+      label: "이름",
+      type: "text",
+      value: nickname,
+      onChange: (newValue: string) => setProfileState("nickname", newValue),
+    },
+    {
+      label: "자기소개",
       type: "text",
       value: placeholder,
-      onChange: (newValue: string) => setLoginState("placeholder", newValue),
+      onChange: (newValue: string) => setProfileState("placeholder", newValue),
     },
     {
-      label: "Input Placeholder2",
+      label: "직업",
       type: "text",
-      value: placeholder2,
-      onChange: (newValue: string) => setLoginState("placeholder2", newValue),
+      value: job,
+      onChange: (newValue: string) => setProfileState("job", newValue),
     },
     {
-      label: "Input Size",
-      type: "select",
-      value: inputSize,
-      options: ["xs", "small", "medium", "large", "xl"],
-      onChange: (newValue: string) => setLoginState("inputSize", newValue),
-    },
-    {
-      label: "Input Width",
+      label: "지역",
       type: "text",
-      value: inputWidth,
-      onChange: (newValue: string) => setLoginState("inputWidth", newValue),
+      value: location,
+      onChange: (newValue: string) => setProfileState("location", newValue),
+    },
+    {
+      label: "메일",
+      type: "text",
+      value: email,
+      onChange: (newValue: string) => setProfileState("email", newValue),
     },
   ];
 
@@ -185,4 +200,4 @@ const Remote: React.FC = () => {
   );
 };
 
-export default Remote;
+export default ProfileRemote;

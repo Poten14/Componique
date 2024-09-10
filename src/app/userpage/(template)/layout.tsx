@@ -11,15 +11,10 @@ export default function DocsLayout({
 }) {
   return (
     <div className="w-full">
-      <div className="flex">
-        <section className="fixed h-[calc(100%-120px)] w-[80px]">
-          <UserPagePrevButton />
-        </section>
-        <div className="ml-[85px] w-[calc(100%-440px)] bg-yellow-100">
-          {children}
-        </div>
-        <div className="fixed right-0 h-[calc(100%-120px)] w-[350px] overflow-y-auto"></div>
-      </div>
+      <section className="fixed left-3 top-28 h-[calc(100%-120px)]">
+        <UserPagePrevButton />
+      </section>
+      <div className="w-full bg-yellow-200">{children}</div>
     </div>
   );
 }
