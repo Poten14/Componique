@@ -4,7 +4,7 @@ import React, { useEffect, useState } from "react";
 import { useLoginStore } from "../../store/useLoginStore";
 import Select from "@components/Select/Select";
 
-const Remote: React.FC = () => {
+const RemoteLogin: React.FC = () => {
   const [isDarkMode, setIsDarkMode] = useState(false);
 
   useEffect(() => {
@@ -137,7 +137,7 @@ const Remote: React.FC = () => {
     <div
       className={`remote-control m-auto mt-20 w-[350px] rounded-xl p-2 shadow-lg ${
         isDarkMode ? "bg-[#333742] text-[#dfdfdf]" : "bg-white"
-      } max-h-[900px] overflow-y-auto`}
+      } max-h-[1000px] overflow-y-auto`}
     >
       <h2
         className={`p-5 text-xl font-bold ${
@@ -185,4 +185,4 @@ const Remote: React.FC = () => {
   );
 };
 
-export default Remote;
+export default RemoteLogin;
