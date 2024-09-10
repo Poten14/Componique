@@ -51,7 +51,6 @@ const Survey = () => {
         <p className="mb-2 mt-[-4px] text-sm text-Gray">* 중복 선택 가능</p>
         <CheckBox
           description="프로젝트 개발"
-          color="primary"
           onChange={(e) =>
             //여러 체크박스 중 어떤 것을 선택하거나 해제했는지 파악하기 위해 뒤에 해당하는 값을 넣음
             onChangeCheckboxHandler(e.target.checked, "프로젝트 개발")
@@ -59,21 +58,18 @@ const Survey = () => {
         />
         <CheckBox
           description="성능 향상"
-          color="primary"
           onChange={(e) =>
             onChangeCheckboxHandler(e.target.checked, "성능 향상")
           }
         />
         <CheckBox
           description="시간 절약"
-          color="primary"
           onChange={(e) =>
             onChangeCheckboxHandler(e.target.checked, "시간 절약")
           }
         />
         <CheckBox
           description="UI/UX 개선"
-          color="primary"
           onChange={(e) =>
             onChangeCheckboxHandler(e.target.checked, "UI/UX 개선")
           }
