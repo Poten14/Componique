@@ -145,7 +145,7 @@ const UserPage = () => {
               alt={item.title}
               width={300}
               height={406}
-              className="rounded-xl border border-Basic dark:border-white"
+              className="rounded-xl border border-Basic dark:border-[#2A6490]"
             />
             <div className="relative flex w-full items-center bg-white pl-3 pt-1 dark:bg-[#1c2127]">
               <p className="mr-2 h-2 w-2 rounded-full bg-Basic"></p>

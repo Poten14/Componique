@@ -2,6 +2,7 @@
 <rect width="319" height="273" rx="12" fill="#333742"/>
 <rect x="19" y="83" width="282" height="29" rx="5" fill="#2A2E39"/>
 <rect x="19" y="117" width="282" height="29" rx="5" fill="#2A2E39"/>
-<rect x="59" y="179" width="87" height="29" rx="5" fill="#2A2E39"/>
-<rect x="169" y="176" width="88" height="29" rx="5" fill="#2A2E39"/>
+<rect x="19" y="201" width="87" height="29" rx="5" fill="#2A2E39"/>
+<rect x="116" y="201" width="88" height="29" rx="5" fill="#2A2E39"/>
+<rect x="214" y="201" width="87" height="29" rx="5" fill="#2A2E39"/>
 </svg>
