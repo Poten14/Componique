@@ -71,7 +71,7 @@ const Select = ({
         >
           <span>{selectValue || placeholder}</span>
           <Image
-            src={open ? "/selectUp.svg" : "/selectDown.svg"}
+            src={open ? "/selectup.svg" : "/selectdown.svg"}
             alt="arrow"
             width={15}
             height={15}
