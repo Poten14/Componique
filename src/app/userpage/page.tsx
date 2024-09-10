@@ -115,7 +115,7 @@ const UserPage = () => {
       image: "/userTodolist.svg",
       imageDark: "/userTodolistDark.svg",
       component: ["Button"],
-      description: "todolist에 대한 설명을 적는 곳입니다.",
+      description: "할일목록을 추가 및 삭제를 할수있는 폼입니다",
     },
     {
       title: "CustomerService",
