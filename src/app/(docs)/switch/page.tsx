@@ -21,10 +21,9 @@ const SwitchDocs: React.FC = () => {
       <div className="dark:text-white">
         <h1 className="text-[#2D3748] dark:text-white">1. SwitchBasic</h1>
         <p>
-          <code>SwitchBasic</code>, <code>SwitchHorizental</code>,{" "}
-          <code>SwitchLong</code> 컴포넌트는 사용자가 토글할 수 있는 스위치 UI
-          요소입니다. 이 컴포넌트들은 다양한 크기 옵션과 스타일을 제공합니다.
-          클릭 시 상태가 전환되며, 각각의 스위치는 props를 통해 크기와 색상을
+          <code>SwitchBasic</code> 컴포넌트는 사용자가 토글할 수 있는 기본적인
+          스위치 UI 요소입니다. 다양한 크기 옵션과 색상 스타일을 제공하며, 클릭
+          시 상태가 전환됩니다. 이 컴포넌트는 props를 통해 크기와 색상을
           커스터마이징할 수 있습니다.
         </p>
 
@@ -37,42 +36,20 @@ const SwitchDocs: React.FC = () => {
           copied={copied}
           handleCopy={handleCopy}
         />
-        <CodeBox
-          code={`import SwitchHorizental from '@components/Switch/SwitchHorizental';`}
-          copyText={`import SwitchHorizental from '@components/Switch/SwitchHorizental';`}
-          language="tsx"
-          index={2}
-          copied={copied}
-          handleCopy={handleCopy}
-        />
-        <CodeBox
-          code={`import SwitchLong from '@components/Switch/SwitchLong';`}
-          copyText={`import SwitchLong from '@components/Switch/SwitchLong';`}
-          language="tsx"
-          index={3}
-          copied={copied}
-          handleCopy={handleCopy}
-        />
 
         <h2 className="text-[#2D3748] dark:text-white">1.2. Usage</h2>
         <p>기본 사용 예제는 아래와 같습니다:</p>
         <div className="my-7">
           <SwitchBasic />
-          <SwitchHorizental />
-          <SwitchLong />
         </div>
         <CodeBox
           code={`
 import SwitchBasic from '@components/Switch/SwitchBasic';
-import SwitchHorizental from '@components/Switch/SwitchHorizental';
-import SwitchLong from '@components/Switch/SwitchLong';
 
 function Example() {
   return (
     <>
       <SwitchBasic />
-      <SwitchHorizental />
-      <SwitchLong />
     </>
   );
 }
@@ -81,15 +58,11 @@ export default Example;
 `}
           copyText={`
 import SwitchBasic from '@components/Switch/SwitchBasic';
-import SwitchHorizental from '@components/Switch/SwitchHorizental';
-import SwitchLong from '@components/Switch/SwitchLong';
 
 function Example() {
   return (
     <>
       <SwitchBasic />
-      <SwitchHorizental />
-      <SwitchLong />
     </>
   );
 }
@@ -97,15 +70,15 @@ function Example() {
 export default Example;
 `}
           language="tsx"
-          index={4}
+          index={2}
           copied={copied}
           handleCopy={handleCopy}
         />
 
         <h2 className="text-[#2D3748] dark:text-white">1.3. Switch Sizes</h2>
         <p>
-          각 컴포넌트는 다양한 크기 옵션을 제공합니다. 기본적으로 3가지 크기에서
-          작동하는 스위치를 사용할 수 있습니다:
+          <code>SwitchBasic</code> 컴포넌트는 다양한 크기 옵션을 제공합니다.
+          기본적으로 3가지 크기에서 작동하는 스위치를 사용할 수 있습니다:
         </p>
         <ul>
           <li>
@@ -125,20 +98,10 @@ export default Example;
           <SwitchBasic size="small" />
           <SwitchBasic size="medium" />
           <SwitchBasic size="large" />
-
-          <SwitchHorizental size="small" />
-          <SwitchHorizental size="medium" />
-          <SwitchHorizental size="large" />
-
-          <SwitchLong size="small" />
-          <SwitchLong size="medium" />
-          <SwitchLong size="large" />
         </div>
         <CodeBox
           code={`
 import SwitchBasic from '@components/Switch/SwitchBasic';
-import SwitchHorizental from '@components/Switch/SwitchHorizental';
-import SwitchLong from '@components/Switch/SwitchLong';
 
 function Example() {
   return (
@@ -146,14 +109,6 @@ function Example() {
       <SwitchBasic size="small" />
       <SwitchBasic size="medium" />
       <SwitchBasic size="large" />
-
-      <SwitchHorizental size="small" />
-      <SwitchHorizental size="medium" />
-      <SwitchHorizental size="large" />
-
-      <SwitchLong size="small" />
-      <SwitchLong size="medium" />
-      <SwitchLong size="large" />
     </>
   );
 }
@@ -162,8 +117,6 @@ export default Example;
 `}
           copyText={`
 import SwitchBasic from '@components/Switch/SwitchBasic';
-import SwitchHorizental from '@components/Switch/SwitchHorizental';
-import SwitchLong from '@components/Switch/SwitchLong';
 
 function Example() {
   return (
@@ -171,14 +124,6 @@ function Example() {
       <SwitchBasic size="small" />
       <SwitchBasic size="medium" />
       <SwitchBasic size="large" />
-
-      <SwitchHorizental size="small" />
-      <SwitchHorizental size="medium" />
-      <SwitchHorizental size="large" />
-
-      <SwitchLong size="small" />
-      <SwitchLong size="medium" />
-      <SwitchLong size="large" />
     </>
   );
 }
@@ -186,13 +131,15 @@ function Example() {
 export default Example;
 `}
           language="tsx"
-          index={5}
+          index={3}
           copied={copied}
           handleCopy={handleCopy}
         />
 
         <h2 className="text-[#2D3748] dark:text-white">1.4. Props</h2>
-        <p>각 스위치 컴포넌트는 아래와 같은 Props를 가집니다:</p>
+        <p>
+          <code>SwitchBasic</code> 컴포넌트는 아래와 같은 Props를 가집니다:
+        </p>
         <table>
           <thead>
             <tr>
@@ -248,46 +195,157 @@ export default Example;
         <h2 className="text-[#2D3748] dark:text-white">1.5. Full Example</h2>
         <CodeBox
           code={`
-import SwitchBasic from '@components/Switch/SwitchBasic';
-import SwitchHorizental from '@components/Switch/SwitchHorizental';
-import SwitchLong from '@components/Switch/SwitchLong';
+// SwitchBasic.tsx
+import { useState } from "react";
 
-function Example() {
-  return (
-    <div>
-      <SwitchBasic size="small" onColor="bg-green-500" offColor="bg-red-500" />
-      <SwitchHorizental size="medium" />
-      <SwitchLong size="large" />
-    </div>
-  );
+// 크기 타입 정의
+type SizeType = "small" | "medium" | "large";
+
+interface SwitchBasicProps {
+  size?: SizeType;
+  onColor?: string;
+  offColor?: string;
 }
 
-export default Example;
+const SwitchBasic = ({
+  size = "medium",
+  onColor = "bg-Basic",
+  offColor = "bg-[#9E9E9E] dark:bg-[#333742]",
+}: SwitchBasicProps) => {
+  const [isOn, setIsOn] = useState(false);
+
+  const toggleSwitch = () => {
+    setIsOn(!isOn);
+  };
+
+  // 크기별 스타일을 설정합니다.
+  const sizeClasses: Record<
+    SizeType,
+    {
+      width: string;
+      height: string;
+      circleSize: string;
+      translateDistance: string;
+    }
+  > = {
+    small: {
+      width: "w-14",
+      height: "h-7",
+      circleSize: "h-5 w-5",
+      translateDistance: "translate-x-7",
+    },
+    medium: {
+      width: "w-20",
+      height: "h-10",
+      circleSize: "h-7 w-7",
+      translateDistance: "translate-x-11",
+    },
+    large: {
+      width: "w-36",
+      height: "h-16",
+      circleSize: "h-12 w-12",
+      translateDistance: "translate-x-20",
+    },
+  };
+
+  const currentSize = sizeClasses[size];
+
+  return (
+    <div className="flex items-center justify-center space-x-12">
+      <div
+        onClick={toggleSwitch}
+        className={\`flex \${currentSize.height} \${currentSize.width} cursor-pointer items-center rounded-full p-1 \${isOn ? onColor : offColor}\`}
+      >
+        <div
+          className={\`transform rounded-full bg-white shadow-lg duration-700 ease-in-out \${currentSize.circleSize} \${isOn ? currentSize.translateDistance : ""}\`}
+        />
+      </div>
+    </div>
+  );
+};
+
+export default SwitchBasic;
 `}
           copyText={`
-import SwitchBasic from '@components/Switch/SwitchBasic';
-import SwitchHorizental from '@components/Switch/SwitchHorizental';
-import SwitchLong from '@components/Switch/SwitchLong';
+// SwitchBasic.tsx
+import { useState } from "react";
 
-function Example() {
-  return (
-    <div>
-      <SwitchBasic size="small" onColor="bg-green-500" offColor="bg-red-500" />
-      <SwitchHorizental size="medium" />
-      <SwitchLong size="large" />
-    </div>
-  );
+// 크기 타입 정의
+type SizeType = "small" | "medium" | "large";
+
+interface SwitchBasicProps {
+  size?: SizeType;
+  onColor?: string;
+  offColor?: string;
 }
 
-export default Example;
+const SwitchBasic = ({
+  size = "medium",
+  onColor = "bg-Basic",
+  offColor = "bg-[#9E9E9E] dark:bg-[#333742]",
+}: SwitchBasicProps) => {
+  const [isOn, setIsOn] = useState(false);
+
+  const toggleSwitch = () => {
+    setIsOn(!isOn);
+  };
+
+  // 크기별 스타일을 설정합니다.
+  const sizeClasses: Record<
+    SizeType,
+    {
+      width: string;
+      height: string;
+      circleSize: string;
+      translateDistance: string;
+    }
+  > = {
+    small: {
+      width: "w-14",
+      height: "h-7",
+      circleSize: "h-5 w-5",
+      translateDistance: "translate-x-7",
+    },
+    medium: {
+      width: "w-20",
+      height: "h-10",
+      circleSize: "h-7 w-7",
+      translateDistance: "translate-x-11",
+    },
+    large: {
+      width: "w-36",
+      height: "h-16",
+      circleSize: "h-12 w-12",
+      translateDistance: "translate-x-20",
+    },
+  };
+
+  const currentSize = sizeClasses[size];
+
+  return (
+    <div className="flex items-center justify-center space-x-12">
+      <div
+        onClick={toggleSwitch}
+        className={\`flex \${currentSize.height} \${currentSize.width} cursor-pointer items-center rounded-full p-1 \${isOn ? onColor : offColor}\`}
+      >
+        <div
+          className={\`transform rounded-full bg-white shadow-lg duration-700 ease-in-out \${currentSize.circleSize} \${isOn ? currentSize.translateDistance : ""}\`}
+        />
+      </div>
+    </div>
+  );
+};
+
+export default SwitchBasic;
 `}
           language="tsx"
-          index={6}
+          index={4}
           copied={copied}
           handleCopy={handleCopy}
         />
       </div>
       <hr />
+
       {/* switch2 */}
       <div className="dark:text-white">
         <h1 className="text-[#2D3748] dark:text-white">2. SwitchHorizental</h1>
@@ -454,6 +512,82 @@ export default Example;
         <h2 className="text-[#2D3748] dark:text-white">2.5. Full Example</h2>
         <CodeBox
           code={`
+// SwitchHorizental.tsx
+import { useState } from "react";
+
+// 크기 타입 정의
+type SizeType = "small" | "medium" | "large";
+
+interface SwitchHorizentalProps {
+  size?: SizeType;
+  onColor?: string;
+  offColor?: string;
+}
+
+const SwitchHorizental = ({
+  size = "medium",
+  onColor = "bg-Basic",
+  offColor = "bg-[#9E9E9E] dark:bg-[#333742]",
+}: SwitchHorizentalProps) => {
+  const [isOn, setIsOn] = useState(false);
+
+  const toggleSwitch = () => {
+    setIsOn(!isOn);
+  };
+
+  // 크기별 스타일을 설정합니다.
+  const sizeClasses: Record<
+    SizeType,
+    {
+      width: string;
+      height: string;
+      circleSize: string;
+      translateDistance: string;
+      initialOffset: string;
+    }
+  > = {
+    small: {
+      width: "w-7",
+      height: "h-16",
+      circleSize: "h-5 w-5",
+      translateDistance: "translate-y-5",
+      initialOffset: "-translate-y-4",
+    },
+    medium: {
+      width: "w-9",
+      height: "h-24",
+      circleSize: "h-8 w-8",
+      translateDistance: "translate-y-7",
+      initialOffset: "-translate-y-7",
+    },
+    large: {
+      width: "w-12",
+      height: "h-32",
+      circleSize: "h-10 w-10",
+      translateDistance: "translate-y-10",
+      initialOffset: "-translate-y-10",
+    },
+  };
+
+  const currentSize = sizeClasses[size];
+
+  return (
+    <div className="flex items-center justify-center space-x-12">
+      <div
+        onClick={toggleSwitch}
+        className={\`flex \${currentSize.height} \${currentSize.width} cursor-pointer items-center justify-center rounded-full p-1 \${isOn ? onColor : offColor}\`}
+      >
+        <div
+          className={\`transform rounded-full bg-white shadow-lg duration-700 ease-in-out \${currentSize.circleSize} \${isOn ? currentSize.translateDistance : currentSize.initialOffset}\`}
+        />
+      </div>
+    </div>
+  );
+};
+
+export default SwitchHorizental;
+
+// Example.tsx
 import SwitchHorizental from '@components/Switch/SwitchHorizental';
 
 function Example() {
@@ -469,6 +603,82 @@ function Example() {
 export default Example;
 `}
           copyText={`
+// SwitchHorizental.tsx
+import { useState } from "react";
+
+// 크기 타입 정의
+type SizeType = "small" | "medium" | "large";
+
+interface SwitchHorizentalProps {
+  size?: SizeType;
+  onColor?: string;
+  offColor?: string;
+}
+
+const SwitchHorizental = ({
+  size = "medium",
+  onColor = "bg-Basic",
+  offColor = "bg-[#9E9E9E] dark:bg-[#333742]",
+}: SwitchHorizentalProps) => {
+  const [isOn, setIsOn] = useState(false);
+
+  const toggleSwitch = () => {
+    setIsOn(!isOn);
+  };
+
+  // 크기별 스타일을 설정합니다.
+  const sizeClasses: Record<
+    SizeType,
+    {
+      width: string;
+      height: string;
+      circleSize: string;
+      translateDistance: string;
+      initialOffset: string;
+    }
+  > = {
+    small: {
+      width: "w-7",
+      height: "h-16",
+      circleSize: "h-5 w-5",
+      translateDistance: "translate-y-5",
+      initialOffset: "-translate-y-4",
+    },
+    medium: {
+      width: "w-9",
+      height: "h-24",
+      circleSize: "h-8 w-8",
+      translateDistance: "translate-y-7",
+      initialOffset: "-translate-y-7",
+    },
+    large: {
+      width: "w-12",
+      height: "h-32",
+      circleSize: "h-10 w-10",
+      translateDistance: "translate-y-10",
+      initialOffset: "-translate-y-10",
+    },
+  };
+
+  const currentSize = sizeClasses[size];
+
+  return (
+    <div className="flex items-center justify-center space-x-12">
+      <div
+        onClick={toggleSwitch}
+        className={\`flex \${currentSize.height} \${currentSize.width} cursor-pointer items-center justify-center rounded-full p-1 \${isOn ? onColor : offColor}\`}
+      >
+        <div
+          className={\`transform rounded-full bg-white shadow-lg duration-700 ease-in-out \${currentSize.circleSize} \${isOn ? currentSize.translateDistance : currentSize.initialOffset}\`}
+        />
+      </div>
+    </div>
+  );
+};
+
+export default SwitchHorizental;
+
+// Example.tsx
 import SwitchHorizental from '@components/Switch/SwitchHorizental';
 
 function Example() {
@@ -657,6 +867,78 @@ export default Example;
         <h2 className="text-[#2D3748] dark:text-white">3.5. Full Example</h2>
         <CodeBox
           code={`
+// SwitchLong.tsx
+import { useState } from "react";
+
+// 크기 타입 정의
+type SizeType = "small" | "medium" | "large";
+
+interface SwitchLongProps {
+  size?: SizeType;
+  onColor?: string;
+  offColor?: string;
+}
+
+const SwitchLong = ({
+  size = "medium",
+  onColor = "bg-Basic",
+  offColor = "bg-[#9E9E9E] dark:bg-[#333742]",
+}: SwitchLongProps) => {
+  const [isOn, setIsOn] = useState(false);
+
+  const toggleSwitch = () => {
+    setIsOn(!isOn);
+  };
+
+  // 크기별 스타일을 설정합니다.
+  const sizeClasses: Record<
+    SizeType,
+    {
+      width: string;
+      height: string;
+      circleSize: string;
+      translateDistance: string;
+    }
+  > = {
+    small: {
+      width: "w-24",
+      height: "h-7",
+      circleSize: "h-5 w-12",
+      translateDistance: "translate-x-10",
+    },
+    medium: {
+      width: "w-36",
+      height: "h-9",
+      circleSize: "h-7 w-16",
+      translateDistance: "translate-x-16",
+    },
+    large: {
+      width: "w-64",
+      height: "h-16",
+      circleSize: "h-12 w-28",
+      translateDistance: "translate-x-32",
+    },
+  };
+
+  const currentSize = sizeClasses[size];
+
+  return (
+    <div className="flex flex-col items-center space-y-6">
+      <div
+        onClick={toggleSwitch}
+        className={\`flex \${currentSize.height} \${currentSize.width} cursor-pointer items-center rounded-full p-1 \${isOn ? onColor : offColor}\`}
+      >
+        <div
+          className={\`transform rounded-full bg-white shadow-lg duration-700 ease-in-out \${currentSize.circleSize} \${isOn ? currentSize.translateDistance : ""}\`}
+        />
+      </div>
+    </div>
+  );
+};
+
+export default SwitchLong;
+
+// Example.tsx
 import SwitchLong from '@components/Switch/SwitchLong';
 
 function Example() {
@@ -672,6 +954,78 @@ function Example() {
 export default Example;
 `}
           copyText={`
+// SwitchLong.tsx
+import { useState } from "react";
+
+// 크기 타입 정의
+type SizeType = "small" | "medium" | "large";
+
+interface SwitchLongProps {
+  size?: SizeType;
+  onColor?: string;
+  offColor?: string;
+}
+
+const SwitchLong = ({
+  size = "medium",
+  onColor = "bg-Basic",
+  offColor = "bg-[#9E9E9E] dark:bg-[#333742]",
+}: SwitchLongProps) => {
+  const [isOn, setIsOn] = useState(false);
+
+  const toggleSwitch = () => {
+    setIsOn(!isOn);
+  };
+
+  // 크기별 스타일을 설정합니다.
+  const sizeClasses: Record<
+    SizeType,
+    {
+      width: string;
+      height: string;
+      circleSize: string;
+      translateDistance: string;
+    }
+  > = {
+    small: {
+      width: "w-24",
+      height: "h-7",
+      circleSize: "h-5 w-12",
+      translateDistance: "translate-x-10",
+    },
+    medium: {
+      width: "w-36",
+      height: "h-9",
+      circleSize: "h-7 w-16",
+      translateDistance: "translate-x-16",
+    },
+    large: {
+      width: "w-64",
+      height: "h-16",
+      circleSize: "h-12 w-28",
+      translateDistance: "translate-x-32",
+    },
+  };
+
+  const currentSize = sizeClasses[size];
+
+  return (
+    <div className="flex flex-col items-center space-y-6">
+      <div
+        onClick={toggleSwitch}
+        className={\`flex \${currentSize.height} \${currentSize.width} cursor-pointer items-center rounded-full p-1 \${isOn ? onColor : offColor}\`}
+      >
+        <div
+          className={\`transform rounded-full bg-white shadow-lg duration-700 ease-in-out \${currentSize.circleSize} \${isOn ? currentSize.translateDistance : ""}\`}
+        />
+      </div>
+    </div>
+  );
+};
+
+export default SwitchLong;
+
+// Example.tsx
 import SwitchLong from '@components/Switch/SwitchLong';
 
 function Example() {
@@ -693,6 +1047,7 @@ export default Example;
         />
       </div>
       <hr />
+
       {/* switch4 */}
       <div className="dark:text-white">
         <h1 className="text-[#2D3748] dark:text-white">4. SwitchRound</h1>
@@ -717,7 +1072,6 @@ export default Example;
         <div className="my-7">
           <SwitchRound />
         </div>
-        <br />
         <CodeBox
           code={`
 import SwitchRound from '@components/Switch/SwitchRound';
@@ -761,7 +1115,6 @@ export default Example;
         <div className="my-7 space-y-7">
           <SwitchRound />
         </div>
-        <br />
         <CodeBox
           code={`
 import SwitchRound from '@components/Switch/SwitchRound';
@@ -839,6 +1192,42 @@ export default Example;
         <h2 className="text-[#2D3748] dark:text-white">4.5. Full Example</h2>
         <CodeBox
           code={`
+// SwitchRound.tsx
+import { useState } from "react";
+
+const SwitchRound = () => {
+  const [isOn, setIsOn] = useState(false);
+
+  const toggleSwitch = () => {
+    setIsOn(!isOn);
+  };
+  
+  return (
+    <div>
+      <div
+        onClick={toggleSwitch}
+        className="relative h-3 w-32 cursor-pointer rounded-full bg-[#DDDDDD] dark:bg-[#333742]"
+      >
+        <div
+          className={\`absolute top-1/2 h-8 w-8 -translate-y-1/2 transform rounded-full shadow-lg duration-700 ease-in-out \${isOn ? "translate-x-24 bg-Basic" : "bg-[#BCBCBC]"}\`}
+        />
+      </div>
+      <br />
+      <div
+        onClick={toggleSwitch}
+        className="relative h-3 w-32 cursor-pointer rounded-full bg-[#DDDDDD] dark:bg-[#333742]"
+      >
+        <div
+          className={\`absolute top-1/2 h-8 w-8 -translate-y-1/2 transform rounded-full shadow-lg duration-700 ease-in-out \${!isOn ? "translate-x-24 bg-Basic" : "bg-[#BCBCBC]"}\`}
+        />
+      </div>
+    </div>
+  );
+};
+
+export default SwitchRound;
+
+// Example.tsx
 import SwitchRound from '@components/Switch/SwitchRound';
 
 function Example() {
@@ -852,6 +1241,42 @@ function Example() {
 export default Example;
 `}
           copyText={`
+// SwitchRound.tsx
+import { useState } from "react";
+
+const SwitchRound = () => {
+  const [isOn, setIsOn] = useState(false);
+
+  const toggleSwitch = () => {
+    setIsOn(!isOn);
+  };
+  
+  return (
+    <div>
+      <div
+        onClick={toggleSwitch}
+        className="relative h-3 w-32 cursor-pointer rounded-full bg-[#DDDDDD] dark:bg-[#333742]"
+      >
+        <div
+          className={\`absolute top-1/2 h-8 w-8 -translate-y-1/2 transform rounded-full shadow-lg duration-700 ease-in-out \${isOn ? "translate-x-24 bg-Basic" : "bg-[#BCBCBC]"}\`}
+        />
+      </div>
+      <br />
+      <div
+        onClick={toggleSwitch}
+        className="relative h-3 w-32 cursor-pointer rounded-full bg-[#DDDDDD] dark:bg-[#333742]"
+      >
+        <div
+          className={\`absolute top-1/2 h-8 w-8 -translate-y-1/2 transform rounded-full shadow-lg duration-700 ease-in-out \${!isOn ? "translate-x-24 bg-Basic" : "bg-[#BCBCBC]"}\`}
+        />
+      </div>
+    </div>
+  );
+};
+
+export default SwitchRound;
+
+// Example.tsx
 import SwitchRound from '@components/Switch/SwitchRound';
 
 function Example() {
@@ -871,6 +1296,7 @@ export default Example;
         />
       </div>
       <hr />
+
       {/* switch5 */}
       <div className="dark:text-white">
         <h1 className="text-[#2D3748] dark:text-white">5. SwitchLabeled</h1>
@@ -1015,6 +1441,46 @@ export default Example;
         <h2 className="text-[#2D3748] dark:text-white">5.5. Full Example</h2>
         <CodeBox
           code={`
+// SwitchLabeled.tsx
+import { useState } from "react";
+
+const SwitchLabeled = () => {
+  const [isOn, setIsOn] = useState(false);
+
+  const toggleSwitch = () => {
+    setIsOn(!isOn);
+  };
+
+  return (
+    <div>
+      <div
+        onClick={toggleSwitch}
+        className="relative flex h-14 w-24 cursor-pointer items-center justify-between rounded-xl bg-[#DDDDDD] px-1 dark:bg-[#333742]"
+      >
+        <p
+          className={\`flex h-12 w-12 transform items-center justify-center rounded-xl text-center text-2xl font-bold text-white shadow-lg duration-700 ease-in-out \${isOn ? "translate-x-10 bg-Basic" : "bg-[#302f2f]"}\`}
+        >
+          {isOn ? "ON" : "OFF"}
+        </p>
+      </div>
+      <br />
+      <div
+        onClick={toggleSwitch}
+        className="relative flex h-14 w-24 cursor-pointer items-center justify-between rounded-xl bg-[#DDDDDD] px-1 dark:bg-[#333742]"
+      >
+        <p
+          className={\`flex h-12 w-12 transform items-center justify-center rounded-xl text-center text-2xl font-bold text-white shadow-lg duration-700 ease-in-out \${!isOn ? "translate-x-10 bg-Basic" : "bg-[#302f2f]"}\`}
+        >
+          {isOn ? "OFF" : "ON"}
+        </p>
+      </div>
+    </div>
+  );
+};
+
+export default SwitchLabeled;
+
+// Example.tsx
 import SwitchLabeled from '@components/Switch/SwitchLabeled';
 
 function Example() {
@@ -1028,6 +1494,46 @@ function Example() {
 export default Example;
 `}
           copyText={`
+// SwitchLabeled.tsx
+import { useState } from "react";
+
+const SwitchLabeled = () => {
+  const [isOn, setIsOn] = useState(false);
+
+  const toggleSwitch = () => {
+    setIsOn(!isOn);
+  };
+
+  return (
+    <div>
+      <div
+        onClick={toggleSwitch}
+        className="relative flex h-14 w-24 cursor-pointer items-center justify-between rounded-xl bg-[#DDDDDD] px-1 dark:bg-[#333742]"
+      >
+        <p
+          className={\`flex h-12 w-12 transform items-center justify-center rounded-xl text-center text-2xl font-bold text-white shadow-lg duration-700 ease-in-out \${isOn ? "translate-x-10 bg-Basic" : "bg-[#302f2f]"}\`}
+        >
+          {isOn ? "ON" : "OFF"}
+        </p>
+      </div>
+      <br />
+      <div
+        onClick={toggleSwitch}
+        className="relative flex h-14 w-24 cursor-pointer items-center justify-between rounded-xl bg-[#DDDDDD] px-1 dark:bg-[#333742]"
+      >
+        <p
+          className={\`flex h-12 w-12 transform items-center justify-center rounded-xl text-center text-2xl font-bold text-white shadow-lg duration-700 ease-in-out \${!isOn ? "translate-x-10 bg-Basic" : "bg-[#302f2f]"}\`}
+        >
+          {isOn ? "OFF" : "ON"}
+        </p>
+      </div>
+    </div>
+  );
+};
+
+export default SwitchLabeled;
+
+// Example.tsx
 import SwitchLabeled from '@components/Switch/SwitchLabeled';
 
 function Example() {
