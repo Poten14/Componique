@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
-import ProfileRemote from "app/userpage/Remote/RemoteProfile";
 import Survey from "./components/Survey";
+import SurveyRemote from "app/userpage/Remote/RemoteSurvey";
 
 const SurveyPage: React.FC = () => {
   return (
@@ -14,7 +14,7 @@ const SurveyPage: React.FC = () => {
         <Survey />
       </div>
       <div className="fixed right-4 top-14">
-        <ProfileRemote />
+        <SurveyRemote />
       </div>
     </div>
   );
