@@ -2,7 +2,7 @@
 "use client";
 import React from "react";
 import CustomerServiceForm from "./components/customerserviceform";
-import CustomerServiceRemote from "app/userpage/Remote/CustomerServiceRemote";
+import CustomerServiceRemote from "app/userpage/Remote/RemoteCustomerService";
 
 const CustomerServicePage: React.FC = () => {
   return (

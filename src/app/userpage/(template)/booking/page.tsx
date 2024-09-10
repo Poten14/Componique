@@ -1,7 +1,7 @@
 "use client";
 
 import Calendarform from "./components/calendarform";
-import CalendarRemote from "app/userpage/Remote/CalendarRemote";
+import CalendarRemote from "app/userpage/Remote/RemoteCalendar";
 
 const page = () => {
   return (
