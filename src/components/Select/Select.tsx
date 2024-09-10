@@ -5,8 +5,8 @@ import Image from "next/image";
 
 interface SelectProps {
   placeholder?: string;
-  option: string[];
   color?: "red" | "blue" | "green" | "gray";
+  option: string[];
   onChange?: (value: string) => void;
   onClick?: (value: string) => void;
   className?: string;
@@ -71,7 +71,7 @@ const Select = ({
         >
           <span>{selectValue || placeholder}</span>
           <Image
-            src={open ? "/selectup.svg" : "/selectdown.svg"}
+            src={open ? "/selectUp.svg" : "/selectDown.svg"}
             alt="arrow"
             width={15}
             height={15}
