@@ -38,7 +38,7 @@ const Profile = () => {
         option={["65 Post", "65 Follower", "65 Follow "]}
         className="rounded-lg bg-Basic text-white"
       />
-      <p className="text-md w-[120px] rounded-full bg-[#eee] p-1 text-center font-bold">
+      <p className="text-md w-[120px] rounded-full bg-[#eee] p-1 text-center font-bold dark:bg-Navy">
         {nickname}
       </p>
 
