@@ -145,22 +145,14 @@ const RemoteLogin: React.FC = () => {
         <input
           type="text"
           className="mt-2 w-full rounded bg-[#BBD9F0] dark:bg-[#102B3F] dark:text-[#ffffff]"
-          placeholder="   customizing your template"
-          disabled
-        />
-        <input
-          className={`mt-2 h-2 w-full rounded bg-[#BBD9F0] dark:bg-[#102B3F]`}
-          disabled
-        />
-        <input
-          className={`mt-2 h-2 w-full rounded bg-[#BBD9F0] dark:bg-[#102B3F]`}
+          placeholder="   customizing your template!"
           disabled
         />
       </div>
 
       {/* Control 패널 */}
       <div
-        className={`remote-control relative top-36 m-auto mt-10 w-[350px] rounded-xl p-2 shadow-2xl ${
+        className={`remote-control relative top-20 m-auto mt-10 w-[350px] rounded-xl p-2 shadow-2xl ${
           isDarkMode ? "bg-[#333742] text-[#dfdfdf]" : "bg-white"
         } max-h-[800px] overflow-y-auto`}
       >

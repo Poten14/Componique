@@ -152,7 +152,7 @@ const RemoteShopping: React.FC = () => {
     <div className="relative">
       {/* 하늘색 배경 박스 추가 */}
       <div
-        className={`absolute left-0 z-10 m-auto w-[350px] rounded-2xl bg-[#D8EAF8] p-5 shadow-xl dark:bg-Navy`}
+        className={`absolute left-0 top-24 z-10 m-auto w-[350px] rounded-2xl bg-[#D8EAF8] p-5 shadow-xl dark:bg-Navy`}
       >
         <h2 className="text-2xl font-bold text-[#ffffff] dark:text-[#dfdfdf]">
           Control Panel
@@ -160,15 +160,7 @@ const RemoteShopping: React.FC = () => {
         <input
           type="text"
           className="mt-2 w-full rounded bg-[#BBD9F0] dark:bg-[#102B3F] dark:text-[#ffffff]"
-          placeholder="   customizing your template"
-          disabled
-        />
-        <input
-          className={`mt-2 h-2 w-full rounded bg-[#BBD9F0] dark:bg-[#102B3F]`}
-          disabled
-        />
-        <input
-          className={`mt-2 h-2 w-full rounded bg-[#BBD9F0] dark:bg-[#102B3F]`}
+          placeholder="   customizing your template!"
           disabled
         />
       </div>
