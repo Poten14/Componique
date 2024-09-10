@@ -162,7 +162,7 @@ const RemoteLogin: React.FC = () => {
       <div
         className={`remote-control relative top-36 m-auto mt-10 w-[350px] rounded-xl p-2 shadow-2xl ${
           isDarkMode ? "bg-[#333742] text-[#dfdfdf]" : "bg-white"
-        } max-h-[1000px] overflow-y-auto`}
+        } max-h-[800px] overflow-y-auto`}
       >
         {controls.map((control, index) => (
           <div
