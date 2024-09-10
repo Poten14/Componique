@@ -1,7 +1,7 @@
 // /userpage/(template)/login/page.tsx
 "use client";
 import React from "react";
-import Remote from "../../Remote/Remote";
+import RemoteLogin from "../../Remote/RemoteLogin";
 import LoginForm from "./components/LoginForm";
 
 const LoginPage: React.FC = () => {
@@ -15,7 +15,7 @@ const LoginPage: React.FC = () => {
         <LoginForm />
       </div>
       <div className="fixed right-4 top-14">
-        <Remote />
+        <RemoteLogin />
       </div>
     </div>
   );
