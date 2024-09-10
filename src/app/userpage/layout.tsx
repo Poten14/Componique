@@ -1,3 +1,4 @@
+import UserPageLogoText from "@components/Layout/UserPageLogoText";
 import Image from "next/image";
 export const metadata = {
   title: "Componique",
@@ -11,14 +12,8 @@ export default function DocsLayout({
 }) {
   return (
     <>
-      <div>
-        <Image
-          src="/Componique.svg"
-          alt="로고 텍스트"
-          width={350}
-          className="fixed left-1/2 top-5 z-[999] -translate-x-1/2"
-          height={54}
-        />
+      <div className="select-none">
+        <UserPageLogoText />
         <div className="flex justify-center pt-[80px]">{children}</div>
       </div>
     </>
