@@ -6,6 +6,7 @@ import { PiGithubLogo } from "react-icons/pi";
 import { TbBrandBlogger } from "react-icons/tb";
 import { IoEllipsisVerticalOutline } from "react-icons/io5";
 import { RxDoubleArrowUp } from "react-icons/rx";
+import Icon from "@components/Icon/Icon";
 
 const team = [
   {
@@ -68,7 +69,8 @@ const Footer = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <PiGithubLogo className="mr-1" /> {member.name}
+                  <Icon name="icon-github" />
+                  {member.name}
                 </a>
                 <IoEllipsisVerticalOutline className="mx-2 dark:text-white" />
                 <a
@@ -77,7 +79,8 @@ const Footer = () => {
                   rel="noopener noreferrer"
                   className="flex items-center text-stone-950 hover:text-slate-700 dark:text-[#DFDFDF]"
                 >
-                  <TbBrandBlogger className="mr-1" /> Blog
+                  <Icon name="icon-blog" />
+                  Blog
                 </a>
               </li>
             ))}
