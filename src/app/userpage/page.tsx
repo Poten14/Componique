@@ -151,14 +151,14 @@ const UserPage = () => {
               <p className="mr-2 h-2 w-2 rounded-full bg-Basic"></p>
               <p className="z-5 text-xl"> {item.title}</p>
               <article
-                className={`text-md absolute bottom-[33px] left-0 z-0 w-full overflow-hidden rounded-b-xl bg-gradient-to-b from-transparent to-black/60 p-3 transition-transform duration-300 ease-out dark:from-transparent dark:to-white/60 ${hoverNumber === index ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"}`}
+                className={`text-md absolute bottom-[33px] left-0 z-0 w-full overflow-hidden rounded-b-xl bg-gradient-to-b from-transparent to-blue-400/60 p-3 transition-transform duration-300 ease-out dark:from-transparent dark:to-white/60 ${hoverNumber === index ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"}`}
               >
                 <p className="dark:text-gray">{item.description}</p>
                 <div className="mt-2 flex w-full flex-wrap justify-center text-center">
                   {item.component.map((component, componentIndex) => (
                     <p
                       key={componentIndex}
-                      className="m-1 rounded-full border border-Basic bg-[#ECD9A5] p-1 px-2 text-sm font-bold text-white dark:text-Navy"
+                      className="m-1 rounded-full border border-Basic p-1 px-2 text-sm font-bold text-white dark:text-Navy"
                     >
                       {component}
                     </p>
