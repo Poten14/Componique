@@ -1,4 +1,3 @@
-import { Size } from "types/type";
 import create from "zustand";
 
 type ExtraSize = "xs" | "small" | "medium" | "large" | "xl";
@@ -79,6 +78,7 @@ export const useLoginStore = create<LoginState>((set) => ({
   inputWidth: "100%",
   checkboxSize: "medium",
   checkboxColor: "basic",
+  checkboxVariant: "border",
   description: "로그인 상태 유지",
   setLoginState: (key, value) =>
     set((state) => ({
