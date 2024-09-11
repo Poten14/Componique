@@ -46,21 +46,21 @@ const ProfileRemote: React.FC = () => {
 
   const controls = [
     {
-      label: "이미지 업로드-모양",
+      label: "ImageUpload 모양",
       type: "select",
       value: shape,
       options: ["rectangle", "circle"],
       onChange: (newValue: string) => setProfileState("shape", newValue),
     },
     {
-      label: "이미지 업로드-크기",
+      label: "ImageUpload 크기",
       type: "select",
       value: size,
       options: ["small", "medium", "large"],
       onChange: (newValue: string) => setProfileState("size", newValue),
     },
     {
-      label: "이미지 업로드-색상",
+      label: "ImageUpload 색상",
       type: "select",
       value: color,
       options: [
@@ -84,33 +84,33 @@ const ProfileRemote: React.FC = () => {
       onChange: (newValue: string) => setProfileState("color", newValue),
     },
     {
-      label: "이미지 업로드-스타일",
+      label: "ImageUpload 스타일",
       type: "select",
       value: variant,
       options: ["solid", "border"],
       onChange: (newValue: string) => setProfileState("variant", newValue),
     },
     {
-      label: "이미지 업로드-텍스트",
+      label: "ImageUpload 텍스트",
       type: "text",
       value: text,
       onChange: (newValue: string) => setProfileState("text", newValue),
     },
     {
-      label: "이미지 업로드-아이콘 사이즈",
+      label: "ImageUpload 아이콘 크기",
       type: "select",
       value: iconSize,
       options: ["small", "medium", "large"],
       onChange: (newValue: string) => setProfileState("iconSize", newValue),
     },
     {
-      label: "이미지 업로드-아이콘 색상 / ex: #fff or red",
+      label: "ImageUpload 아이콘 색상 / ex: #fff or red",
       type: "text",
       value: iconColor,
       onChange: (newValue: string) => setProfileState("iconColor", newValue),
     },
     {
-      label: "이미지 업로드-아이콘 위치",
+      label: "ImageUpload 아이콘 위치",
       type: "select",
       value: iconPosition,
       options: ["left", "right", "top", "bottom"],

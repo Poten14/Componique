@@ -136,7 +136,7 @@ const CustomerServiceRemote: React.FC = () => {
         className={`relative z-10 m-auto mb-4 w-[350px] rounded-2xl bg-[#D8EAF8] p-5 shadow-xl dark:bg-Navy`}
       >
         <h2 className="text-2xl font-bold text-[#ffffff] dark:text-[#dfdfdf]">
-          고객 서비스 제어판
+          Control Panel
         </h2>
         <input
           type="text"
@@ -222,7 +222,7 @@ const CustomerServiceRemote: React.FC = () => {
 
         {/* 제목 입력 */}
         <div className="control-item bg-gray-50 m-3 rounded-lg p-2 shadow-md">
-          <label className="mb-2 block font-medium text-Gray">제목 입력</label>
+          <label className="mb-2 block font-medium text-Gray">Input 입력</label>
           <Input
             size={inputSize2}
             variant={inputVariant2}
@@ -235,9 +235,7 @@ const CustomerServiceRemote: React.FC = () => {
 
         {/* 제목-사이즈 선택 드롭다운 */}
         <div className="control-item m-3 rounded-lg p-2 shadow-md">
-          <label className="mb-2 block font-medium text-Gray">
-            제목-사이즈
-          </label>
+          <label className="mb-2 block font-medium text-Gray">Input 크기</label>
           <Select
             option={["xs", "small", "medium", "large", "xl"]}
             placeholder={inputSize2}
@@ -249,7 +247,7 @@ const CustomerServiceRemote: React.FC = () => {
         {/* 제목-채우기 선택 드롭다운 */}
         <div className="control-item m-3 rounded-lg p-2 shadow-md">
           <label className="mb-2 block font-medium text-Gray">
-            제목-채우기
+            Input 스타일
           </label>
           <Select
             option={["outlined", "filled"]}
@@ -262,7 +260,7 @@ const CustomerServiceRemote: React.FC = () => {
         {/* 상세 내용 입력 */}
         <div className="control-item bg-gray-50 m-3 rounded-lg p-2 shadow-md">
           <label className="mb-2 block font-medium text-Gray">
-            상세 내용 입력
+            상세내용 입력
           </label>
           <Textarea
             size={detailSize}
@@ -277,7 +275,7 @@ const CustomerServiceRemote: React.FC = () => {
         {/* 상세 내용-사이즈 선택 드롭다운 */}
         <div className="control-item m-3 rounded-lg p-2 shadow-md">
           <label className="mb-2 block font-medium text-Gray">
-            상세 내용-사이즈
+            상세내용 크기
           </label>
           <Select
             option={["xs", "small", "medium", "large", "xl"]}
@@ -290,7 +288,7 @@ const CustomerServiceRemote: React.FC = () => {
         {/* 상세 내용-색상 선택 드롭다운 */}
         <div className="control-item m-3 rounded-lg p-2 shadow-md">
           <label className="mb-2 block font-medium text-Gray">
-            상세 내용-색상
+            상세내용 색상
           </label>
           <Select
             option={["red", "skyblue", "green", "gray"]}
@@ -303,7 +301,7 @@ const CustomerServiceRemote: React.FC = () => {
         {/* 상세 내용-크기 조절 여부 선택 드롭다운 */}
         <div className="control-item m-3 rounded-lg p-2 shadow-md">
           <label className="mb-2 block font-medium text-Gray">
-            상세 내용-크기 조절
+            상세내용 크기
           </label>
           <Select
             option={["none", "both", "horizontal", "vertical"]}
@@ -316,7 +314,7 @@ const CustomerServiceRemote: React.FC = () => {
         {/* 이미지 업로드 관련 선택 */}
         <div className="control-item bg-gray-50 m-3 rounded-lg p-2 shadow-md">
           <label className="mb-2 block font-medium text-Gray">
-            이미지 업로드
+            ImageUpload
           </label>
           <ImageUpload
             size={imageUploadSize}
@@ -327,7 +325,7 @@ const CustomerServiceRemote: React.FC = () => {
           />
         </div>
 
-        {/* 이미지 업로드-사이즈 선택 */}
+        {/* ImageUpload 사이즈 */}
         <div className="control-item m-3 rounded-lg p-2 shadow-md">
           <label className="mb-2 block font-medium text-Gray">
             이미지 업로드-사이즈
@@ -340,7 +338,7 @@ const CustomerServiceRemote: React.FC = () => {
           />
         </div>
 
-        {/* 이미지 업로드-색상 선택 */}
+        {/* ImageUpload 색상 */}
         <div className="control-item m-3 rounded-lg p-2 shadow-md">
           <label className="mb-2 block font-medium text-Gray">
             이미지 업로드-색상

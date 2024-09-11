@@ -108,7 +108,7 @@ const RemoteShopping: React.FC = () => {
         setShoppingState("totalPages", parseInt(newValue, 10)),
     },
     {
-      label: "버튼 모양",
+      label: "Pagination 모양",
       type: "select",
       value: paginationVariant,
       options: ["circle", "square"],

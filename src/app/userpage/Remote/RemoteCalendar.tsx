@@ -65,7 +65,7 @@ const CalendarRemote: React.FC = () => {
 
   return (
     <div className="remote-control m-auto mt-20 max-h-[900px] w-[350px] overflow-y-auto rounded-xl bg-white p-2 shadow-lg">
-      <h2 className="text-primary p-5 text-xl font-bold">캘린더 제어판</h2>
+      <h2 className="text-primary p-5 text-xl font-bold">Calendar 제어판</h2>
 
       {/* 좌석 등급 선택 */}
       <div className="control-item m-3 rounded-lg p-2 shadow-md">
@@ -82,7 +82,7 @@ const CalendarRemote: React.FC = () => {
       {/* 스피너 모양 선택 */}
       <div className="control-item m-3 rounded-lg p-2 shadow-md">
         <label className="text-gray-600 mb-2 block font-medium">
-          스피너 모양 선택
+          Spinner 모양
         </label>
         <Select
           option={["Basic", "Square", "Bars"]}
@@ -94,7 +94,7 @@ const CalendarRemote: React.FC = () => {
       {/* Autocomplete 옵션 설정 */}
       <div className="control-item m-3 rounded-lg p-2 shadow-md">
         <label className="text-gray-600 mb-2 block font-medium">
-          Autocomplete 옵션 설정
+          Autocomplete 옵션
         </label>
         <Select
           option={["Option 1, Option 2", "Option 3, Option 4"]}
@@ -106,7 +106,7 @@ const CalendarRemote: React.FC = () => {
       {/* Autocomplete Placeholder 설정 */}
       <div className="control-item m-3 rounded-lg p-2 shadow-md">
         <label className="text-gray-600 mb-2 block font-medium">
-          Autocomplete Placeholder 설정
+          Autocomplete 문구
         </label>
         <Select
           option={["Search for Components", "Enter your text"]}
@@ -118,7 +118,7 @@ const CalendarRemote: React.FC = () => {
       {/* 스피너 시작/중지 선택 */}
       <div className="control-item m-3 rounded-lg p-2 shadow-md">
         <label className="text-gray-600 mb-2 block font-medium">
-          스피너 설정
+          Spinner 설정
         </label>
         <Select
           option={["스피너 시작", "스피너 중지"]}
@@ -130,7 +130,7 @@ const CalendarRemote: React.FC = () => {
       {/* 버튼 활성화/비활성화 선택 */}
       <div className="control-item m-3 rounded-lg p-2 shadow-md">
         <label className="text-gray-600 mb-2 block font-medium">
-          버튼 활성화/비활성화
+          Button 활성화/비활성화
         </label>
         <Select
           option={["버튼 활성화", "버튼 비활성화"]}
@@ -142,7 +142,7 @@ const CalendarRemote: React.FC = () => {
       {/* 토스트 표시/숨기기 선택 */}
       <div className="control-item m-3 rounded-lg p-2 shadow-md">
         <label className="text-gray-600 mb-2 block font-medium">
-          토스트 설정
+          Toast 설정
         </label>
         <Select
           option={["토스트 표시", "토스트 숨기기"]}
