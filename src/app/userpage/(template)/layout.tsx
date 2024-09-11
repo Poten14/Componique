@@ -14,7 +14,7 @@ export default function DocsLayout({
       <section className="fixed left-3 top-28 h-[calc(100%-120px)]">
         <UserPagePrevButton />
       </section>
-      <div className="w-full bg-yellow-200">{children}</div>
+      <div className="w-full">{children}</div>
     </div>
   );
 }
