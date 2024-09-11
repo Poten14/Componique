@@ -1,7 +1,7 @@
 import TodoListForm from "./components/TodolistForm";
 import RemoteTodoList from "../../Remote/RemoteTodoList";
 
-const LoginPage: React.FC = () => {
+const TodoListPage = () => {
   return (
     <div className="flex justify-between">
       <div className="w-[calc(100%-350px)] p-6 pb-24 pl-[80px]">
@@ -18,4 +18,4 @@ const LoginPage: React.FC = () => {
   );
 };
 
-export default LoginPage;
+export default TodoListPage;
