@@ -1,26 +1,37 @@
-<svg width="300" height="407" viewBox="0 0 300 407" fill="none" xmlns="http://www.w3.org/2000/svg">
-<rect width="300" height="406.875" rx="12" fill="white"/>
-<rect x="19.6875" y="20.625" width="265.312" height="30" rx="7" fill="#F6F6F6"/>
-<rect x="47.8125" y="76.875" width="48.75" height="71.25" rx="7" fill="#F6F6F6"/>
-<rect x="48.75" y="172.5" width="48.75" height="71.25" rx="7" fill="#F6F6F6"/>
-<rect x="20.625" y="319.688" width="123.75" height="71.25" rx="7" fill="#F6F6F6"/>
-<rect x="155.625" y="319.688" width="123.75" height="4.6875" rx="2.34375" fill="#F6F6F6"/>
-<rect x="155.625" y="332.812" width="123.75" height="4.6875" rx="2.34375" fill="#F6F6F6"/>
-<rect x="155.625" y="345" width="100.312" height="4.6875" rx="2.34375" fill="#F6F6F6"/>
-<rect x="155.625" y="76.875" width="48.75" height="71.25" rx="7" fill="#F6F6F6"/>
-<rect x="156.562" y="172.5" width="48.75" height="71.25" rx="7" fill="#F6F6F6"/>
-<rect x="102.188" y="76.875" width="47.8125" height="71.25" rx="7" fill="#F6F6F6"/>
-<rect x="103.125" y="172.5" width="47.8125" height="71.25" rx="7" fill="#F6F6F6"/>
-<rect x="210" y="76.875" width="48.75" height="71.25" rx="7" fill="#F6F6F6"/>
-<rect x="210.938" y="172.5" width="48.75" height="71.25" rx="7" fill="#F6F6F6"/>
-<path d="M42.6562 258.75L30 271.406L42.6562 284.062" stroke="#D9D9D9" stroke-width="2" stroke-linecap="round"/>
-<path d="M262.969 284.062L275.625 271.406L262.969 258.75" stroke="#D9D9D9" stroke-width="2" stroke-linecap="round"/>
-<circle cx="70.7812" cy="271.875" r="4.6875" fill="#D9D9D9"/>
-<circle cx="98.9062" cy="271.875" r="4.6875" fill="#D9D9D9"/>
-<circle cx="127.031" cy="271.875" r="4.6875" fill="#9AC5E5"/>
-<circle cx="155.156" cy="271.875" r="4.6875" fill="#D9D9D9"/>
-<circle cx="187.5" cy="272.344" r="2.34375" fill="#D9D9D9"/>
-<circle cx="195" cy="272.344" r="2.34375" fill="#D9D9D9"/>
-<circle cx="202.5" cy="272.344" r="2.34375" fill="#D9D9D9"/>
-<circle cx="234.844" cy="271.875" r="4.6875" fill="#D9D9D9"/>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 26.5.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 339 405" style="enable-background:new 0 0 339 405;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#FFFFFF;}
+	.st1{fill:#F6F6F6;}
+	.st2{fill:none;stroke:#D9D9D9;stroke-width:2;stroke-linecap:round;}
+	.st3{fill:#D9D9D9;}
+	.st4{fill:#9AC5E5;}
+</style>
+<g>
+	<path class="st0" d="M22,10h295c6.6,0,12,5.4,12,12v361c0,6.6-5.4,12-12,12H22c-6.6,0-12-5.4-12-12V22C10,15.4,15.4,10,22,10z"/>
+</g>
+<path class="st0" d="M14.3,0h310.3c7,0,12.6,5.7,12.6,12.6v379.8c0,7-5.7,12.6-12.6,12.6H14.3c-7,0-12.6-5.7-12.6-12.6V12.6
+	C1.7,5.7,7.4,0,14.3,0z"/>
+<path class="st1" d="M51,55h60c3.9,0,7,3.1,7,7v62c0,3.9-3.1,7-7,7H51c-3.9,0-7-3.1-7-7V62C44,58.1,47.1,55,51,55z"/>
+<path class="st1" d="M140,55h60c3.9,0,7,3.1,7,7v62c0,3.9-3.1,7-7,7h-60c-3.9,0-7-3.1-7-7V62C133,58.1,136.1,55,140,55z"/>
+<path class="st1" d="M228,55h60c3.9,0,7,3.1,7,7v62c0,3.9-3.1,7-7,7h-60c-3.9,0-7-3.1-7-7V62C221,58.1,224.1,55,228,55z"/>
+<path class="st1" d="M51,146h60c3.9,0,7,3.1,7,7v62c0,3.9-3.1,7-7,7H51c-3.9,0-7-3.1-7-7v-62C44,149.1,47.1,146,51,146z"/>
+<path class="st1" d="M140,146h60c3.9,0,7,3.1,7,7v62c0,3.9-3.1,7-7,7h-60c-3.9,0-7-3.1-7-7v-62C133,149.1,136.1,146,140,146z"/>
+<path class="st1" d="M228,146h60c3.9,0,7,3.1,7,7v62c0,3.9-3.1,7-7,7h-60c-3.9,0-7-3.1-7-7v-62C221,149.1,224.1,146,228,146z"/>
+<path class="st1" d="M51,316h43c3.9,0,7,3.1,7,7v22c0,3.9-3.1,7-7,7H51c-3.9,0-7-3.1-7-7v-22C44,319.1,47.1,316,51,316z"/>
+<path class="st1" d="M116,316h43c3.9,0,7,3.1,7,7v22c0,3.9-3.1,7-7,7h-43c-3.9,0-7-3.1-7-7v-22C109,319.1,112.1,316,116,316z"/>
+<path class="st1" d="M180,316h43c3.9,0,7,3.1,7,7v22c0,3.9-3.1,7-7,7h-43c-3.9,0-7-3.1-7-7v-22C173,319.1,176.1,316,180,316z"/>
+<path class="st1" d="M245,316h43c3.9,0,7,3.1,7,7v22c0,3.9-3.1,7-7,7h-43c-3.9,0-7-3.1-7-7v-22C238,319.1,241.1,316,245,316z"/>
+<path class="st2" d="M56.5,256L43,269.5L56.5,283"/>
+<path class="st2" d="M291.5,283l13.5-13.5L291.5,256"/>
+<circle class="st3" cx="86.5" cy="270" r="5"/>
+<circle class="st3" cx="116.5" cy="270" r="5"/>
+<circle class="st4" cx="146.5" cy="270" r="5"/>
+<circle class="st3" cx="176.5" cy="270" r="5"/>
+<circle class="st3" cx="211" cy="270.5" r="2.5"/>
+<circle class="st3" cx="219" cy="270.5" r="2.5"/>
+<circle class="st3" cx="227" cy="270.5" r="2.5"/>
+<circle class="st3" cx="261.5" cy="270" r="5"/>
 </svg>
