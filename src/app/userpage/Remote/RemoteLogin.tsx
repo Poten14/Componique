@@ -80,7 +80,7 @@ const RemoteLogin: React.FC = () => {
     },
     //체크박스
     {
-      label: "Chckbox 크기",
+      label: "Checkbox 크기",
       type: "select",
       value: checkboxSize,
       options: ["small", "medium", "large"],
