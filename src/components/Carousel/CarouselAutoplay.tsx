@@ -55,6 +55,7 @@ const CarouselAutoplay = ({
                   alt={`image-${index}`}
                   width={720}
                   height={500}
+                  unoptimized
                   className="block w-full"
                 />
               </li>
