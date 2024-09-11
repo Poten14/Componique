@@ -153,8 +153,8 @@ export const useServiceStore = create<ServiceState>((set) => ({
       items: ["배송 상태", "반품 및 교환"],
     },
   ],
-  dropDownType1: "basic", // 기본 DropDown 타입 설정
-  dropDownType2: "basic", // 기본 DropDown 타입 설정
+  dropDownType1: "borderless-rounded", // 기본 DropDown 타입 설정
+  dropDownType2: "borderless-rounded", // 기본 DropDown 타입 설정
   detailSize: "large", // 기본 Textarea 크기
   detailColor: "skyblue", // 기본 Textarea 색상
   detailResize: "vertical", // 기본 Textarea 크기 조절 여부
