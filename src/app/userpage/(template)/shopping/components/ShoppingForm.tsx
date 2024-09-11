@@ -118,7 +118,7 @@ const ShoppingForm: React.FC = () => {
   };
 
   return (
-    <div className="container mx-auto mt-20 border border-gray bg-white p-6">
+    <div className="container mx-auto mt-20 border border-gray bg-white p-6 dark:bg-Dark">
       {/* Navbar 컴포넌트 */}
       <Navbar
         logoSrc={logoSrc}

@@ -4,6 +4,7 @@ import React from "react";
 import Button from "@components/Button/Button";
 import Input from "@components/Input/Input";
 import { useLoginStore } from "../../../../store/useLoginStore";
+import CheckBox from "@components/CheckBox/CheckBox";
 
 const LoginForm: React.FC = () => {
   const {
@@ -18,6 +19,10 @@ const LoginForm: React.FC = () => {
     placeholder2,
     inputSize,
     inputWidth,
+    checkboxSize,
+    checkboxColor,
+    checkboxVariant,
+    description,
   } = useLoginStore();
 
   const handleSubmit = () => {
@@ -45,6 +50,14 @@ const LoginForm: React.FC = () => {
               width={inputWidth}
               variant="outlined"
               placeholder={placeholder2}
+            />
+          </div>
+          <div className="flex text-Gray">
+            <CheckBox
+              boxSize={checkboxSize}
+              color={checkboxColor}
+              variant="border"
+              description="로그인 상태 유지"
             />
           </div>
           <div className="mt-6">
