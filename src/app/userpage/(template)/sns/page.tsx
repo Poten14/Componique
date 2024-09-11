@@ -8,7 +8,7 @@ const page = () => {
         <h1 className="mb-10 ml-[70px] pb-4 text-2xl font-bold">SNS 페이지</h1>
         <SnsForm />
       </div>
-      <div className="w-1/4 p-4">
+      <div className="fixed right-4 top-14">
         <RemoteSns />
       </div>
     </div>
