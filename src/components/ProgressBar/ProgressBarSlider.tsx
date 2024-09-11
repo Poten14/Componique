@@ -23,9 +23,9 @@ const ProgressBarSlider = ({
   };
 
   return (
-    <div className="w-10/12">
+    <div className="w-full">
       <div className="flex items-center">
-        <div className="h-4 w-10/12 rounded-full bg-[#D9D9D9]">
+        <div className="h-4 w-full rounded-full bg-[#D9D9D9]">
           <div
             className="h-4 rounded-full bg-Basic transition-all"
             style={{ width: `${progressBar}%` }}
