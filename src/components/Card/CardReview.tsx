@@ -44,7 +44,7 @@ const CardReview = ({ avatar, name, rate, children }: ReviewCardProps) => {
           <div className="flex">{ratingStars(rate)}</div>
         </div>
       </div>
-      <div className="px-6 pb-4 text-slate-700">{children}</div>
+      <div className="px-6 pb-4 text-slate-700 dark:text-gray">{children}</div>
     </div>
   );
 };

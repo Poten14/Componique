@@ -31,8 +31,8 @@ const LoginForm: React.FC = () => {
 
   return (
     <div className="flex items-center justify-center">
-      <div className="w-full max-w-md rounded-3xl bg-white p-10 shadow-lg">
-        <h1 className="mb-8 text-center text-2xl font-bold text-Gray">
+      <div className="w-full max-w-md rounded-3xl bg-white p-10 shadow-lg dark:bg-[#333742]">
+        <h1 className="mb-8 text-center text-2xl font-bold text-Gray dark:text-gray">
           {title}
         </h1>
         <form onSubmit={handleSubmit} className="space-y-6">
