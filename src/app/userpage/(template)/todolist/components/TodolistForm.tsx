@@ -3,6 +3,7 @@
 import Button from "@components/Button/Button";
 import Input from "@components/Input/Input";
 import { useTodoListStore } from "../../../../store/useTodoListStore";
+import CheckBox from "@components/CheckBox/CheckBox";
 
 const TodoListForm: React.FC = () => {
   const {
@@ -12,6 +13,8 @@ const TodoListForm: React.FC = () => {
     deleteButtonColor,
     deleteButtonSize,
     deleteButtonVariant,
+    checkBoxColor,
+    checkBoxVariant,
     todoList1,
     todoList2,
     todoList3,
@@ -24,7 +27,7 @@ const TodoListForm: React.FC = () => {
     <div className="flex h-1/2 items-center justify-center">
       <div className="w-full rounded-3xl bg-white p-10 shadow-lg">
         <div className="space-y-6">
-          <div className="flex justify-between space-x-2">
+          <div className="flex space-x-2">
             <Input
               size={inputSize}
               width={inputWidth}
@@ -60,15 +63,11 @@ const TodoListForm: React.FC = () => {
               placeholder={todoList2}
             />
             <div className="flex space-x-1">
-              <Button
-                color={addButtonColor}
-                size={addButtonSize}
-                variant={addButtonVariant}
-                className="text-white"
-                onClick={() => alert("일정을 추가했습니다")}
-              >
-                Add
-              </Button>
+              <CheckBox
+                className="p-5"
+                color={checkBoxColor}
+                variant={checkBoxVariant}
+              />
               <Button
                 color={deleteButtonColor}
                 size={deleteButtonSize}
@@ -88,15 +87,11 @@ const TodoListForm: React.FC = () => {
               placeholder={todoList3}
             />
             <div className="flex space-x-1">
-              <Button
-                color={addButtonColor}
-                size={addButtonSize}
-                variant={addButtonVariant}
-                className="text-white"
-                onClick={() => alert("일정을 추가했습니다")}
-              >
-                Add
-              </Button>
+              <CheckBox
+                className="p-5"
+                color={checkBoxColor}
+                variant={checkBoxVariant}
+              />
               <Button
                 color={deleteButtonColor}
                 size={deleteButtonSize}
@@ -116,15 +111,11 @@ const TodoListForm: React.FC = () => {
               placeholder={todoList4}
             />
             <div className="flex space-x-1">
-              <Button
-                color={addButtonColor}
-                size={addButtonSize}
-                variant={addButtonVariant}
-                className="text-white"
-                onClick={() => alert("일정을 추가했습니다")}
-              >
-                Add
-              </Button>
+              <CheckBox
+                className="p-5"
+                color={checkBoxColor}
+                variant={checkBoxVariant}
+              />
               <Button
                 color={deleteButtonColor}
                 size={deleteButtonSize}

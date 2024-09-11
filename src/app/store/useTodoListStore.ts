@@ -5,38 +5,14 @@ type ExtraSize = "xs" | "small" | "medium" | "large" | "xl";
 
 // Zustand를 사용하여 상태 관리
 interface TodoListState {
-  addButtonColor:
-    | "primary"
-    | "secondary"
-    | "success"
-    | "warning"
-    | "danger"
-    | "red"
-    | "orange"
-    | "yellow"
-    | "green"
-    | "blue"
-    | "purple"
-    | "pink"
-    | "basic";
+  addButtonColor: "primary" | "secondary" | "success" | "warning" | "danger";
   addButtonSize: "small" | "medium" | "large";
   addButtonVariant: "solid" | "border" | "flat" | "light";
-  deleteButtonColor:
-    | "primary"
-    | "secondary"
-    | "success"
-    | "warning"
-    | "danger"
-    | "red"
-    | "orange"
-    | "yellow"
-    | "green"
-    | "blue"
-    | "purple"
-    | "pink"
-    | "basic";
+  deleteButtonColor: "primary" | "secondary" | "success" | "warning" | "danger";
   deleteButtonSize: "small" | "medium" | "large";
   deleteButtonVariant: "solid" | "border" | "flat" | "light";
+  checkBoxColor: "primary" | "secondary" | "success" | "warning" | "danger";
+  checkBoxVariant: "solid" | "border";
   todoList1: string;
   todoList2: string;
   todoList3: string;
@@ -56,10 +32,12 @@ export const useTodoListStore = create<TodoListState>((set) => ({
   deleteButtonColor: "danger",
   deleteButtonSize: "medium",
   deleteButtonVariant: "solid",
-  todoList1: "to do list 1",
-  todoList2: "to do list 2",
-  todoList3: "to do list 3",
-  todoList4: "to do list 4",
+  checkBoxColor: "primary",
+  checkBoxVariant: "border",
+  todoList1: "항목 1번",
+  todoList2: "항목 2번",
+  todoList3: "항목 3번",
+  todoList4: "항목 4번",
   inputSize: "medium",
   inputWidth: "100%",
   setTodoListState: (key, value) =>
