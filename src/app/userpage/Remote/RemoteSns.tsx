@@ -103,10 +103,10 @@ const SnsRemote: React.FC = () => {
   ];
 
   return (
-    <div className="relative">
+    <div className="relative shadow-xl">
       {/* 하늘색 배경 박스 추가 */}
       <div
-        className={`absolute left-0 z-10 m-auto w-[350px] rounded-2xl bg-[#D8EAF8] p-5 shadow-xl dark:bg-Navy`}
+        className={`absolute left-0 top-2 z-10 m-auto w-[350px] rounded-t-2xl bg-[#D8EAF8] p-5 dark:bg-Navy`}
       >
         <h2 className="text-2xl font-bold text-[#ffffff] dark:text-[#dfdfdf]">
           Control Panel
@@ -117,21 +117,13 @@ const SnsRemote: React.FC = () => {
           placeholder="   customizing your template"
           disabled
         />
-        <input
-          className={`mt-2 h-2 w-full rounded bg-[#BBD9F0] dark:bg-[#102B3F]`}
-          disabled
-        />
-        <input
-          className={`mt-2 h-2 w-full rounded bg-[#BBD9F0] dark:bg-[#102B3F]`}
-          disabled
-        />
       </div>
 
       {/* Control 패널 */}
       <div
-        className={`remote-control relative top-36 m-auto mt-10 w-[350px] rounded-xl p-2 shadow-2xl ${
+        className={`remote-control top-26 relative m-auto mt-10 w-[350px] rounded-xl p-2 shadow-xl ${
           isDarkMode ? "bg-[#333742] text-[#dfdfdf]" : "bg-white"
-        } max-h-[1000px] overflow-y-auto`}
+        } max-h-[calc(100vh-220px)] overflow-y-auto`}
       >
         {controls.map((control, index) => (
           <div
