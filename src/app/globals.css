@@ -58,6 +58,12 @@ i {
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-heart:before {
+  content: "\e920";
+}
+.icon-emptyHeart:before {
+  content: "\e921";
+}
 .icon-arowUp:before {
   content: "\e91e";
 }
@@ -180,9 +186,6 @@ i {
 }
 .icon-error:before {
   content: "\e96c";
-}
-.icon-heart:before {
-  content: "\e96d";
 }
 .icon-help:before {
   content: "\e96e";

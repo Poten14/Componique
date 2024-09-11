@@ -59,7 +59,6 @@ const IconDoc: React.FC = () => {
     "icon-pen",
     "icon-music",
     "icon-wifi",
-
     "icon-sun",
     "icon-moon",
     "icon-play",
@@ -69,6 +68,8 @@ const IconDoc: React.FC = () => {
     "icon-close",
     "icon-arowUp",
     "icon-arowDown",
+    "icon-emptyHeart",
+    "icon-heart",
   ];
   const router = useRouter();
   return (

@@ -56,7 +56,8 @@ export type IconName =
   | "icon-pause"
   | "icon-plus"
   | "icon-arowUp"
-  | "icon-arowDown";
+  | "icon-arowDown"
+  | "icon-emptyHeart";
 
 type IconProps = {
   name: IconName;
