@@ -3,7 +3,7 @@ import React from "react";
 import Profile from "./components/Profile";
 import ProfileRemote from "app/userpage/Remote/RemoteProfile";
 
-const LoginPage: React.FC = () => {
+const ProfilePage: React.FC = () => {
   return (
     <div className="flex justify-between">
       <div className="w-full p-6 pb-24">
@@ -20,4 +20,4 @@ const LoginPage: React.FC = () => {
   );
 };
 
-export default LoginPage;
+export default ProfilePage;
