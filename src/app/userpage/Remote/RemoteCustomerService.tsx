@@ -130,345 +130,372 @@ const CustomerServiceRemote: React.FC = () => {
   };
 
   return (
-    <div className="remote-control m-auto mt-20 max-h-[900px] w-[350px] overflow-y-auto rounded-xl bg-white p-2 shadow-lg">
-      <h2 className="p-5 text-xl font-bold text-Primary">고객 서비스 제어판</h2>
-
-      {/* 번호 유형-스타일 */}
-      <div className="control-item bg-gray-50 m-3 rounded-lg p-2 shadow-md">
-        <label className="mb-2 block font-medium text-Gray">
-          번호 유형-스타일
-        </label>
-        <Select
-          option={["basic", "rounded", "borderless-rounded", "less-rounded"]}
-          placeholder={dropDownType1}
-          onChange={handleDropDownType1Change}
-          className="w-full"
+    <div className="relative">
+      {/* 하늘색 배경 박스 추가 */}
+      <div
+        className={`relative z-10 m-auto mb-4 w-[350px] rounded-2xl bg-[#D8EAF8] p-5 shadow-xl dark:bg-Navy`}
+      >
+        <h2 className="text-2xl font-bold text-[#ffffff] dark:text-[#dfdfdf]">
+          고객 서비스 제어판
+        </h2>
+        <input
+          type="text"
+          className="mt-2 w-full rounded bg-[#BBD9F0] dark:bg-[#102B3F] dark:text-[#ffffff]"
+          placeholder="   customizing your template"
+          disabled
+        />
+        <input
+          className={`mt-2 h-2 w-full rounded bg-[#BBD9F0] dark:bg-[#102B3F]`}
+          disabled
+        />
+        <input
+          className={`mt-2 h-2 w-full rounded bg-[#BBD9F0] dark:bg-[#102B3F]`}
+          disabled
         />
       </div>
 
-      {/* 전화번호 */}
-      <div className="control-item bg-gray-50 m-3 rounded-lg p-2 shadow-md">
-        <label className="mb-2 block font-medium text-Gray">전화번호</label>
-        <Input
-          size={inputSize1}
-          variant={inputVariant1}
-          placeholder="전화번호"
-          value={phoneNumber}
-          onChange={(e) => setServiceState("phoneNumber", e.target.value)}
-          width="100%"
-        />
-      </div>
+      <div className="remote-control m-auto max-h-[900px] w-[350px] overflow-y-auto rounded-xl bg-white p-2 shadow-lg">
+        {/* 번호 유형-스타일 */}
+        <div className="control-item bg-gray-50 m-3 rounded-lg p-2 shadow-md">
+          <label className="mb-2 block font-medium text-Gray">
+            번호 유형-스타일
+          </label>
+          <Select
+            option={["basic", "rounded", "borderless-rounded", "less-rounded"]}
+            placeholder={dropDownType1}
+            onChange={handleDropDownType1Change}
+            className="w-full"
+          />
+        </div>
 
-      {/* 전화번호-사이즈 선택 드롭다운 */}
-      <div className="control-item m-3 rounded-lg p-2 shadow-md">
-        <label className="mb-2 block font-medium text-Gray">
-          전화번호-사이즈
-        </label>
-        <Select
-          option={["xs", "small", "medium", "large", "xl"]}
-          placeholder={inputSize1}
-          onChange={handleSizeChange1}
-          className="w-full"
-        />
-      </div>
+        {/* 전화번호 */}
+        <div className="control-item bg-gray-50 m-3 rounded-lg p-2 shadow-md">
+          <label className="mb-2 block font-medium text-Gray">전화번호</label>
+          <Input
+            size={inputSize1}
+            variant={inputVariant1}
+            placeholder="전화번호"
+            value={phoneNumber}
+            onChange={(e) => setServiceState("phoneNumber", e.target.value)}
+            width="100%"
+          />
+        </div>
 
-      {/* 전화번호-채우기 선택 드롭다운 */}
-      <div className="control-item m-3 rounded-lg p-2 shadow-md">
-        <label className="mb-2 block font-medium text-Gray">
-          전화번호-채우기
-        </label>
-        <Select
-          option={["outlined", "filled"]}
-          placeholder={inputVariant1}
-          onChange={handleVariantChange1}
-          className="w-full"
-        />
-      </div>
+        {/* 전화번호-사이즈 선택 드롭다운 */}
+        <div className="control-item m-3 rounded-lg p-2 shadow-md">
+          <label className="mb-2 block font-medium text-Gray">
+            전화번호-사이즈
+          </label>
+          <Select
+            option={["xs", "small", "medium", "large", "xl"]}
+            placeholder={inputSize1}
+            onChange={handleSizeChange1}
+            className="w-full"
+          />
+        </div>
 
-      {/* 서비스 항목 선택-스타일 */}
-      <div className="control-item bg-gray-50 m-3 rounded-lg p-2 shadow-md">
-        <label className="mb-2 block font-medium text-Gray">
-          서비스 항목 선택-스타일
-        </label>
-        <Select
-          option={["basic", "rounded", "borderless-rounded", "less-rounded"]}
-          placeholder={dropDownType2}
-          onChange={handleDropDownType2Change}
-          className="w-full"
-        />
-      </div>
+        {/* 전화번호-채우기 선택 드롭다운 */}
+        <div className="control-item m-3 rounded-lg p-2 shadow-md">
+          <label className="mb-2 block font-medium text-Gray">
+            전화번호-채우기
+          </label>
+          <Select
+            option={["outlined", "filled"]}
+            placeholder={inputVariant1}
+            onChange={handleVariantChange1}
+            className="w-full"
+          />
+        </div>
 
-      {/* 제목 입력 */}
-      <div className="control-item bg-gray-50 m-3 rounded-lg p-2 shadow-md">
-        <label className="mb-2 block font-medium text-Gray">제목 입력</label>
-        <Input
-          size={inputSize2}
-          variant={inputVariant2}
-          placeholder="제목"
-          value={title}
-          onChange={(e) => setServiceState("title", e.target.value)}
-          width="100%"
-        />
-      </div>
+        {/* 서비스 항목 선택-스타일 */}
+        <div className="control-item bg-gray-50 m-3 rounded-lg p-2 shadow-md">
+          <label className="mb-2 block font-medium text-Gray">
+            서비스 항목 선택-스타일
+          </label>
+          <Select
+            option={["basic", "rounded", "borderless-rounded", "less-rounded"]}
+            placeholder={dropDownType2}
+            onChange={handleDropDownType2Change}
+            className="w-full"
+          />
+        </div>
 
-      {/* 제목-사이즈 선택 드롭다운 */}
-      <div className="control-item m-3 rounded-lg p-2 shadow-md">
-        <label className="mb-2 block font-medium text-Gray">제목-사이즈</label>
-        <Select
-          option={["xs", "small", "medium", "large", "xl"]}
-          placeholder={inputSize2}
-          onChange={handleSizeChange2}
-          className="w-full"
-        />
-      </div>
+        {/* 제목 입력 */}
+        <div className="control-item bg-gray-50 m-3 rounded-lg p-2 shadow-md">
+          <label className="mb-2 block font-medium text-Gray">제목 입력</label>
+          <Input
+            size={inputSize2}
+            variant={inputVariant2}
+            placeholder="제목"
+            value={title}
+            onChange={(e) => setServiceState("title", e.target.value)}
+            width="100%"
+          />
+        </div>
 
-      {/* 제목-채우기 선택 드롭다운 */}
-      <div className="control-item m-3 rounded-lg p-2 shadow-md">
-        <label className="mb-2 block font-medium text-Gray">제목-채우기</label>
-        <Select
-          option={["outlined", "filled"]}
-          placeholder={inputVariant2}
-          onChange={handleVariantChange2}
-          className="w-full"
-        />
-      </div>
+        {/* 제목-사이즈 선택 드롭다운 */}
+        <div className="control-item m-3 rounded-lg p-2 shadow-md">
+          <label className="mb-2 block font-medium text-Gray">
+            제목-사이즈
+          </label>
+          <Select
+            option={["xs", "small", "medium", "large", "xl"]}
+            placeholder={inputSize2}
+            onChange={handleSizeChange2}
+            className="w-full"
+          />
+        </div>
 
-      {/* 상세 내용 입력 */}
-      <div className="control-item bg-gray-50 m-3 rounded-lg p-2 shadow-md">
-        <label className="mb-2 block font-medium text-Gray">
-          상세 내용 입력
-        </label>
-        <Textarea
-          size={detailSize}
-          color={detailColor}
-          resize={detailResize}
-          placeholder="상세 내용을 입력하세요"
-          value={details}
-          onChange={(e) => setServiceState("details", e.target.value)}
-        />
-      </div>
+        {/* 제목-채우기 선택 드롭다운 */}
+        <div className="control-item m-3 rounded-lg p-2 shadow-md">
+          <label className="mb-2 block font-medium text-Gray">
+            제목-채우기
+          </label>
+          <Select
+            option={["outlined", "filled"]}
+            placeholder={inputVariant2}
+            onChange={handleVariantChange2}
+            className="w-full"
+          />
+        </div>
 
-      {/* 상세 내용-사이즈 선택 드롭다운 */}
-      <div className="control-item m-3 rounded-lg p-2 shadow-md">
-        <label className="mb-2 block font-medium text-Gray">
-          상세 내용-사이즈
-        </label>
-        <Select
-          option={["xs", "small", "medium", "large", "xl"]}
-          placeholder={detailSize}
-          onChange={handleDetailSizeChange}
-          className="w-full"
-        />
-      </div>
+        {/* 상세 내용 입력 */}
+        <div className="control-item bg-gray-50 m-3 rounded-lg p-2 shadow-md">
+          <label className="mb-2 block font-medium text-Gray">
+            상세 내용 입력
+          </label>
+          <Textarea
+            size={detailSize}
+            color={detailColor}
+            resize={detailResize}
+            placeholder="상세 내용을 입력하세요"
+            value={details}
+            onChange={(e) => setServiceState("details", e.target.value)}
+          />
+        </div>
 
-      {/* 상세 내용-색상 선택 드롭다운 */}
-      <div className="control-item m-3 rounded-lg p-2 shadow-md">
-        <label className="mb-2 block font-medium text-Gray">
-          상세 내용-색상
-        </label>
-        <Select
-          option={["red", "skyblue", "green", "gray"]}
-          placeholder={detailColor}
-          onChange={handleDetailColorChange}
-          className="w-full"
-        />
-      </div>
+        {/* 상세 내용-사이즈 선택 드롭다운 */}
+        <div className="control-item m-3 rounded-lg p-2 shadow-md">
+          <label className="mb-2 block font-medium text-Gray">
+            상세 내용-사이즈
+          </label>
+          <Select
+            option={["xs", "small", "medium", "large", "xl"]}
+            placeholder={detailSize}
+            onChange={handleDetailSizeChange}
+            className="w-full"
+          />
+        </div>
 
-      {/* 상세 내용-크기 조절 여부 선택 드롭다운 */}
-      <div className="control-item m-3 rounded-lg p-2 shadow-md">
-        <label className="mb-2 block font-medium text-Gray">
-          상세 내용-크기 조절
-        </label>
-        <Select
-          option={["none", "both", "horizontal", "vertical"]}
-          placeholder={detailResize}
-          onChange={handleDetailResizeChange}
-          className="w-full"
-        />
-      </div>
+        {/* 상세 내용-색상 선택 드롭다운 */}
+        <div className="control-item m-3 rounded-lg p-2 shadow-md">
+          <label className="mb-2 block font-medium text-Gray">
+            상세 내용-색상
+          </label>
+          <Select
+            option={["red", "skyblue", "green", "gray"]}
+            placeholder={detailColor}
+            onChange={handleDetailColorChange}
+            className="w-full"
+          />
+        </div>
 
-      {/* 이미지 업로드 관련 선택 */}
-      <div className="control-item bg-gray-50 m-3 rounded-lg p-2 shadow-md">
-        <label className="mb-2 block font-medium text-Gray">
-          이미지 업로드
-        </label>
-        <ImageUpload
-          size={imageUploadSize}
-          color={imageUploadColor}
-          shape={imageUploadShape}
-          variant={imageUploadVariant}
-          onImageSelect={onImageSelect}
-        />
-      </div>
+        {/* 상세 내용-크기 조절 여부 선택 드롭다운 */}
+        <div className="control-item m-3 rounded-lg p-2 shadow-md">
+          <label className="mb-2 block font-medium text-Gray">
+            상세 내용-크기 조절
+          </label>
+          <Select
+            option={["none", "both", "horizontal", "vertical"]}
+            placeholder={detailResize}
+            onChange={handleDetailResizeChange}
+            className="w-full"
+          />
+        </div>
 
-      {/* 이미지 업로드-사이즈 선택 */}
-      <div className="control-item m-3 rounded-lg p-2 shadow-md">
-        <label className="mb-2 block font-medium text-Gray">
-          이미지 업로드-사이즈
-        </label>
-        <Select
-          option={["small", "medium", "large"]}
-          placeholder={imageUploadSize}
-          onChange={handleImageUploadSizeChange}
-          className="w-full"
-        />
-      </div>
+        {/* 이미지 업로드 관련 선택 */}
+        <div className="control-item bg-gray-50 m-3 rounded-lg p-2 shadow-md">
+          <label className="mb-2 block font-medium text-Gray">
+            이미지 업로드
+          </label>
+          <ImageUpload
+            size={imageUploadSize}
+            color={imageUploadColor}
+            shape={imageUploadShape}
+            variant={imageUploadVariant}
+            onImageSelect={onImageSelect}
+          />
+        </div>
 
-      {/* 이미지 업로드-색상 선택 */}
-      <div className="control-item m-3 rounded-lg p-2 shadow-md">
-        <label className="mb-2 block font-medium text-Gray">
-          이미지 업로드-색상
-        </label>
-        <Select
-          option={[
-            "basic",
-            "primary",
-            "secondary",
-            "success",
-            "warning",
-            "danger",
-            "red",
-            "orange",
-            "yellow",
-            "green",
-            "blue",
-            "purple",
-            "pink",
-            "white",
-            "gray",
-            "black",
-          ]}
-          placeholder={imageUploadColor}
-          onChange={handleImageUploadColorChange}
-          className="w-full"
-        />
-      </div>
+        {/* 이미지 업로드-사이즈 선택 */}
+        <div className="control-item m-3 rounded-lg p-2 shadow-md">
+          <label className="mb-2 block font-medium text-Gray">
+            이미지 업로드-사이즈
+          </label>
+          <Select
+            option={["small", "medium", "large"]}
+            placeholder={imageUploadSize}
+            onChange={handleImageUploadSizeChange}
+            className="w-full"
+          />
+        </div>
 
-      {/* 이미지 업로드-모양 선택 */}
-      <div className="control-item m-3 rounded-lg p-2 shadow-md">
-        <label className="mb-2 block font-medium text-Gray">
-          이미지 업로드-모양
-        </label>
-        <Select
-          option={["rectangle", "circle"]}
-          placeholder={imageUploadShape}
-          onChange={handleImageUploadShapeChange}
-          className="w-full"
-        />
-      </div>
+        {/* 이미지 업로드-색상 선택 */}
+        <div className="control-item m-3 rounded-lg p-2 shadow-md">
+          <label className="mb-2 block font-medium text-Gray">
+            이미지 업로드-색상
+          </label>
+          <Select
+            option={[
+              "basic",
+              "primary",
+              "secondary",
+              "success",
+              "warning",
+              "danger",
+              "red",
+              "orange",
+              "yellow",
+              "green",
+              "blue",
+              "purple",
+              "pink",
+              "white",
+              "gray",
+              "black",
+            ]}
+            placeholder={imageUploadColor}
+            onChange={handleImageUploadColorChange}
+            className="w-full"
+          />
+        </div>
 
-      {/* 이미지 업로드-스타일 선택 */}
-      <div className="control-item m-3 rounded-lg p-2 shadow-md">
-        <label className="mb-2 block font-medium text-Gray">
-          이미지 업로드-스타일
-        </label>
-        <Select
-          option={["solid", "border"]}
-          placeholder={imageUploadVariant}
-          onChange={handleImageUploadVariantChange}
-          className="w-full"
-        />
-      </div>
+        {/* 이미지 업로드-모양 선택 */}
+        <div className="control-item m-3 rounded-lg p-2 shadow-md">
+          <label className="mb-2 block font-medium text-Gray">
+            이미지 업로드-모양
+          </label>
+          <Select
+            option={["rectangle", "circle"]}
+            placeholder={imageUploadShape}
+            onChange={handleImageUploadShapeChange}
+            className="w-full"
+          />
+        </div>
 
-      {/* 버튼 관련 선택 */}
-      <div className="control-item m-3 rounded-lg p-2 shadow-md">
-        <label className="mb-2 block font-medium text-Gray">
-          Cancel-버튼 색상
-        </label>
-        <Select
-          option={[
-            "primary",
-            "secondary",
-            "success",
-            "warning",
-            "danger",
-            "red",
-            "orange",
-            "yellow",
-            "green",
-            "blue",
-            "purple",
-            "pink",
-            "basic",
-          ]}
-          placeholder={buttonColor1}
-          onChange={handleButtonColorChange1}
-          className="w-full"
-        />
-      </div>
+        {/* 이미지 업로드-스타일 선택 */}
+        <div className="control-item m-3 rounded-lg p-2 shadow-md">
+          <label className="mb-2 block font-medium text-Gray">
+            이미지 업로드-스타일
+          </label>
+          <Select
+            option={["solid", "border"]}
+            placeholder={imageUploadVariant}
+            onChange={handleImageUploadVariantChange}
+            className="w-full"
+          />
+        </div>
 
-      <div className="control-item m-3 rounded-lg p-2 shadow-md">
-        <label className="mb-2 block font-medium text-Gray">
-          Cancel-버튼 크기
-        </label>
-        <Select
-          option={["small", "medium", "large"]}
-          placeholder={buttonSize1}
-          onChange={handleButtonSizeChange1}
-          className="w-full"
-        />
-      </div>
+        {/* 버튼 관련 선택 */}
+        <div className="control-item m-3 rounded-lg p-2 shadow-md">
+          <label className="mb-2 block font-medium text-Gray">
+            Cancel-버튼 색상
+          </label>
+          <Select
+            option={[
+              "primary",
+              "secondary",
+              "success",
+              "warning",
+              "danger",
+              "red",
+              "orange",
+              "yellow",
+              "green",
+              "blue",
+              "purple",
+              "pink",
+              "basic",
+            ]}
+            placeholder={buttonColor1}
+            onChange={handleButtonColorChange1}
+            className="w-full"
+          />
+        </div>
 
-      <div className="control-item m-3 rounded-lg p-2 shadow-md">
-        <label className="mb-2 block font-medium text-Gray">
-          Cancel-버튼 스타일
-        </label>
-        <Select
-          option={["solid", "border", "flat", "light"]}
-          placeholder={buttonVariant1}
-          onChange={handleButtonVariantChange1}
-          className="w-full"
-        />
-      </div>
+        <div className="control-item m-3 rounded-lg p-2 shadow-md">
+          <label className="mb-2 block font-medium text-Gray">
+            Cancel-버튼 크기
+          </label>
+          <Select
+            option={["small", "medium", "large"]}
+            placeholder={buttonSize1}
+            onChange={handleButtonSizeChange1}
+            className="w-full"
+          />
+        </div>
 
-      <div className="control-item m-3 rounded-lg p-2 shadow-md">
-        <label className="mb-2 block font-medium text-Gray">
-          Submit-버튼 색상
-        </label>
-        <Select
-          option={[
-            "primary",
-            "secondary",
-            "success",
-            "warning",
-            "danger",
-            "red",
-            "orange",
-            "yellow",
-            "green",
-            "blue",
-            "purple",
-            "pink",
-            "basic",
-          ]}
-          placeholder={buttonColor2}
-          onChange={handleButtonColorChange2}
-          className="w-full"
-        />
-      </div>
+        <div className="control-item m-3 rounded-lg p-2 shadow-md">
+          <label className="mb-2 block font-medium text-Gray">
+            Cancel-버튼 스타일
+          </label>
+          <Select
+            option={["solid", "border", "flat", "light"]}
+            placeholder={buttonVariant1}
+            onChange={handleButtonVariantChange1}
+            className="w-full"
+          />
+        </div>
 
-      <div className="control-item m-3 rounded-lg p-2 shadow-md">
-        <label className="mb-2 block font-medium text-Gray">
-          Submit-버튼 크기
-        </label>
-        <Select
-          option={["small", "medium", "large"]}
-          placeholder={buttonSize2}
-          onChange={handleButtonSizeChange2}
-          className="w-full"
-        />
-      </div>
+        <div className="control-item m-3 rounded-lg p-2 shadow-md">
+          <label className="mb-2 block font-medium text-Gray">
+            Submit-버튼 색상
+          </label>
+          <Select
+            option={[
+              "primary",
+              "secondary",
+              "success",
+              "warning",
+              "danger",
+              "red",
+              "orange",
+              "yellow",
+              "green",
+              "blue",
+              "purple",
+              "pink",
+              "basic",
+            ]}
+            placeholder={buttonColor2}
+            onChange={handleButtonColorChange2}
+            className="w-full"
+          />
+        </div>
 
-      <div className="control-item m-3 rounded-lg p-2 shadow-md">
-        <label className="mb-2 block font-medium text-Gray">
-          Submit-버튼 스타일
-        </label>
-        <Select
-          option={["solid", "border", "flat", "light"]}
-          placeholder={buttonVariant2}
-          onChange={handleButtonVariantChange2}
-          className="w-full"
-        />
+        <div className="control-item m-3 rounded-lg p-2 shadow-md">
+          <label className="mb-2 block font-medium text-Gray">
+            Submit-버튼 크기
+          </label>
+          <Select
+            option={["small", "medium", "large"]}
+            placeholder={buttonSize2}
+            onChange={handleButtonSizeChange2}
+            className="w-full"
+          />
+        </div>
+
+        <div className="control-item m-3 rounded-lg p-2 shadow-md">
+          <label className="mb-2 block font-medium text-Gray">
+            Submit-버튼 스타일
+          </label>
+          <Select
+            option={["solid", "border", "flat", "light"]}
+            placeholder={buttonVariant2}
+            onChange={handleButtonVariantChange2}
+            className="w-full"
+          />
+        </div>
       </div>
     </div>
   );
