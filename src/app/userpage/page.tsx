@@ -115,7 +115,7 @@ const UserPage = () => {
       image: "/userTodolist.svg",
       imageDark: "/userTodolistDark.svg",
       component: ["Button"],
-      description: "todolist에 대한 설명을 적는 곳입니다.",
+      description: "할일목록을 추가 및 삭제를 할수있는 폼입니다",
     },
     {
       title: "CustomerService",
@@ -145,13 +145,13 @@ const UserPage = () => {
               alt={item.title}
               width={300}
               height={406}
-              className="rounded-xl border border-Basic dark:border-white"
+              className="rounded-xl border border-Basic dark:border-[#2A6490]"
             />
             <div className="relative flex w-full items-center bg-white pl-3 pt-1 dark:bg-[#1c2127]">
               <p className="mr-2 h-2 w-2 rounded-full bg-Basic"></p>
               <p className="z-5 text-xl"> {item.title}</p>
               <article
-                className={`text-md absolute bottom-[28px] left-0 z-0 w-full overflow-hidden rounded-b-xl bg-gradient-to-b from-transparent to-black/60 p-3 transition-transform duration-300 ease-out dark:from-transparent dark:to-white/60 ${hoverNumber === index ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"}`}
+                className={`text-md absolute bottom-[33px] left-0 z-0 w-full overflow-hidden rounded-b-xl bg-gradient-to-b from-transparent to-black/60 p-3 transition-transform duration-300 ease-out dark:from-transparent dark:to-white/60 ${hoverNumber === index ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"}`}
               >
                 <p className="dark:text-gray">{item.description}</p>
                 <div className="mt-2 flex w-full flex-wrap justify-center text-center">
