@@ -34,6 +34,8 @@ const TodoListRemote: React.FC = () => {
     deleteButtonColor,
     deleteButtonSize,
     deleteButtonVariant,
+    checkBoxColor,
+    checkBoxVariant,
     todoList1,
     todoList2,
     todoList3,
@@ -45,7 +47,7 @@ const TodoListRemote: React.FC = () => {
 
   const controls = [
     {
-      label: "AddButton Color",
+      label: "Add버튼 색상",
       type: "select",
       value: addButtonColor,
       options: ["primary", "secondary", "success", "danger"],
@@ -53,7 +55,7 @@ const TodoListRemote: React.FC = () => {
         setTodoListState("addButtonColor", newValue),
     },
     {
-      label: "AddButton Size",
+      label: "Add버튼 크기",
       type: "select",
       value: addButtonSize,
       options: ["small", "medium", "large"],
@@ -61,38 +63,23 @@ const TodoListRemote: React.FC = () => {
         setTodoListState("addButtonSize", newValue),
     },
     {
-      label: "AddButton Variant",
+      label: "Add버튼 변형",
       type: "select",
       value: addButtonVariant,
       options: ["solid", "border", "flat", "light"],
       onChange: (newValue: string) =>
         setTodoListState("addButtonVariant", newValue),
     },
-    // 두 번째 버튼
     {
-      label: "deleteButton Color",
+      label: "Delete버튼 색상",
       type: "select",
       value: deleteButtonColor,
-      options: [
-        "primary",
-        "secondary",
-        "success",
-        "warning",
-        "danger",
-        "red",
-        "orange",
-        "yellow",
-        "green",
-        "blue",
-        "purple",
-        "pink",
-        "basic",
-      ],
+      options: ["primary", "secondary", "success", "warning", "danger"],
       onChange: (newValue: string) =>
         setTodoListState("deleteButtonColor", newValue),
     },
     {
-      label: "Button2 Size",
+      label: "Delete버튼 크기",
       type: "select",
       value: deleteButtonSize,
       options: ["small", "medium", "large"],
@@ -100,7 +87,7 @@ const TodoListRemote: React.FC = () => {
         setTodoListState("deleteButtonSize", newValue),
     },
     {
-      label: "Button2 Variant",
+      label: "Delete버튼 변형",
       type: "select",
       value: deleteButtonVariant,
       options: ["solid", "border", "flat", "light"],
@@ -108,38 +95,54 @@ const TodoListRemote: React.FC = () => {
         setTodoListState("deleteButtonVariant", newValue),
     },
     {
-      label: "TodoList1 Placeholder",
+      label: "CheckBox버튼 색상",
+      type: "select",
+      value: checkBoxColor,
+      options: ["primary", "secondary", "success", "danger"],
+      onChange: (newValue: string) =>
+        setTodoListState("checkBoxColor", newValue),
+    },
+    {
+      label: "CheckBox버튼 변형",
+      type: "select",
+      value: checkBoxVariant,
+      options: ["solid", "border"],
+      onChange: (newValue: string) =>
+        setTodoListState("checkBoxVariant", newValue),
+    },
+    {
+      label: "항목 1번",
       type: "text",
       value: todoList1,
       onChange: (newValue: string) => setTodoListState("todoList1", newValue),
     },
     {
-      label: "TodoList2 Placeholder",
+      label: "항목 2번",
       type: "text",
       value: todoList2,
       onChange: (newValue: string) => setTodoListState("todoList2", newValue),
     },
     {
-      label: "TodoList3 Placeholder",
+      label: "항목 3번",
       type: "text",
       value: todoList3,
       onChange: (newValue: string) => setTodoListState("todoList3", newValue),
     },
     {
-      label: "TodoList4 Placeholder",
+      label: "항목 3번",
       type: "text",
       value: todoList4,
       onChange: (newValue: string) => setTodoListState("todoList4", newValue),
     },
     {
-      label: "Input Size",
+      label: "항목 크기",
       type: "select",
       value: inputSize,
       options: ["xs", "small", "medium", "large", "xl"],
       onChange: (newValue: string) => setTodoListState("inputSize", newValue),
     },
     {
-      label: "Input Width",
+      label: "항목 넓이",
       type: "text",
       value: inputWidth,
       onChange: (newValue: string) => setTodoListState("inputWidth", newValue),
