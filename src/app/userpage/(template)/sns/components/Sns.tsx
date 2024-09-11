@@ -29,9 +29,9 @@ const SnsPage = () => {
   return (
     <>
       <div className="h-[670px] overflow-y-scroll">
-        <div className="m-auto w-[25%] rounded-lg border border-gray bg-white pb-5 shadow-md">
+        <div className="m-auto w-[25%] rounded-lg border border-gray bg-white pb-5 shadow-md dark:bg-[#333742] dark:text-white">
           <div className="flex w-full items-center p-2">
-            <ImageUpload size={size} icon="icon-user" />
+            <ImageUpload size={size} icon="icon-user" color="gray" />
             <span className="ml-2 font-bold">{nickname}</span>
           </div>
           <CarouselDots
@@ -57,7 +57,7 @@ const SnsPage = () => {
             </div>
           </div>
         </div>
-        <div className="m-auto mt-5 w-[25%] rounded-lg border border-gray bg-white pb-5 shadow-md">
+        <div className="m-auto mt-5 w-[25%] rounded-lg border border-gray bg-white pb-5 shadow-md dark:bg-[#333742] dark:text-white">
           <div className="flex w-full items-center p-2">
             <AvatarBasic src="/images/boomco.jpg" size={60} />
             <span className="ml-2 font-bold">Boomco Labs</span>
@@ -89,7 +89,7 @@ const SnsPage = () => {
             </div>
           </div>
         </div>
-        <div className="m-auto mt-5 w-[25%] rounded-lg border border-gray bg-white pb-5 shadow-md">
+        <div className="m-auto mt-5 w-[25%] rounded-lg border border-gray bg-white pb-5 shadow-md dark:bg-[#333742] dark:text-white">
           <div className="flex w-full items-center p-2">
             <AvatarBasic src="/images/sniper.png" size={60} />
             <span className="ml-2 font-bold">Sniperfactory</span>
