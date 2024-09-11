@@ -24,7 +24,7 @@ const TodoListForm: React.FC = () => {
   } = useTodoListStore();
 
   return (
-    <div className="flex h-1/2 items-center justify-center">
+    <div className="flex items-center justify-center">
       <div className="w-full rounded-3xl bg-white p-10 shadow-lg">
         <div className="space-y-6">
           <div className="flex space-x-2">
