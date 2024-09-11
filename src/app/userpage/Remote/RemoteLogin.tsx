@@ -39,6 +39,10 @@ const RemoteLogin: React.FC = () => {
     placeholder2,
     inputSize,
     inputWidth,
+    checkboxSize,
+    checkboxColor,
+    checkboxVariant,
+    description,
     setLoginState,
   } = useLoginStore();
 
@@ -48,63 +52,6 @@ const RemoteLogin: React.FC = () => {
       type: "text",
       value: title,
       onChange: (newValue: string) => setLoginState("title", newValue),
-    },
-    {
-      label: "Button Color",
-      type: "select",
-      value: buttonColor,
-      options: ["primary", "secondary", "success", "danger"],
-      onChange: (newValue: string) => setLoginState("buttonColor", newValue),
-    },
-    {
-      label: "Button Size",
-      type: "select",
-      value: buttonSize,
-      options: ["small", "medium", "large"],
-      onChange: (newValue: string) => setLoginState("buttonSize", newValue),
-    },
-    {
-      label: "Button Variant",
-      type: "select",
-      value: buttonVariant,
-      options: ["solid", "border", "flat", "light"],
-      onChange: (newValue: string) => setLoginState("buttonVariant", newValue),
-    },
-    // 두 번째 버튼
-    {
-      label: "Button2 Color",
-      type: "select",
-      value: buttonColor2,
-      options: [
-        "primary",
-        "secondary",
-        "success",
-        "warning",
-        "danger",
-        "red",
-        "orange",
-        "yellow",
-        "green",
-        "blue",
-        "purple",
-        "pink",
-        "basic",
-      ],
-      onChange: (newValue: string) => setLoginState("buttonColor2", newValue),
-    },
-    {
-      label: "Button2 Size",
-      type: "select",
-      value: buttonSize2,
-      options: ["small", "medium", "large"],
-      onChange: (newValue: string) => setLoginState("buttonSize2", newValue),
-    },
-    {
-      label: "Button2 Variant",
-      type: "select",
-      value: buttonVariant2,
-      options: ["solid", "border", "flat", "light"],
-      onChange: (newValue: string) => setLoginState("buttonVariant2", newValue),
     },
     {
       label: "Input Placeholder",
@@ -131,6 +78,106 @@ const RemoteLogin: React.FC = () => {
       value: inputWidth,
       onChange: (newValue: string) => setLoginState("inputWidth", newValue),
     },
+    //체크박스
+    {
+      label: "Chckbox 크기",
+      type: "select",
+      value: checkboxSize,
+      options: ["small", "medium", "large"],
+      onChange: (newValue: string) => setLoginState("checkboxSize", newValue),
+    },
+    {
+      label: "Checkbox 스타일",
+      type: "select",
+      value: checkboxVariant,
+      options: ["solid", "border"],
+      onChange: (newValue: string) =>
+        setLoginState("checkboxVariant", newValue),
+    },
+    {
+      label: "Checkbox 색상",
+      type: "select",
+      value: checkboxColor,
+      options: [
+        "primary",
+        "secondary",
+        "success",
+        "warning",
+        "danger",
+        "red",
+        "orange",
+        "yellow",
+        "green",
+        "blue",
+        "purple",
+        "pink",
+        "basic",
+      ],
+      onChange: (newValue: string) => setLoginState("checkboxColor", newValue),
+    },
+    {
+      label: "Checkbox 설명",
+      type: "text",
+      value: description,
+      onChange: (newValue: string) => setLoginState("description", newValue),
+    },
+    {
+      label: "Button 색상",
+      type: "select",
+      value: buttonColor,
+      options: ["primary", "secondary", "success", "danger"],
+      onChange: (newValue: string) => setLoginState("buttonColor", newValue),
+    },
+    {
+      label: "Button 크기",
+      type: "select",
+      value: buttonSize,
+      options: ["small", "medium", "large"],
+      onChange: (newValue: string) => setLoginState("buttonSize", newValue),
+    },
+    {
+      label: "Button 스타일",
+      type: "select",
+      value: buttonVariant,
+      options: ["solid", "border", "flat", "light"],
+      onChange: (newValue: string) => setLoginState("buttonVariant", newValue),
+    },
+    // 두 번째 버튼
+    {
+      label: "Button2 색상",
+      type: "select",
+      value: buttonColor2,
+      options: [
+        "primary",
+        "secondary",
+        "success",
+        "warning",
+        "danger",
+        "red",
+        "orange",
+        "yellow",
+        "green",
+        "blue",
+        "purple",
+        "pink",
+        "basic",
+      ],
+      onChange: (newValue: string) => setLoginState("buttonColor2", newValue),
+    },
+    {
+      label: "Button2 크기",
+      type: "select",
+      value: buttonSize2,
+      options: ["small", "medium", "large"],
+      onChange: (newValue: string) => setLoginState("buttonSize2", newValue),
+    },
+    {
+      label: "Button2 스타일",
+      type: "select",
+      value: buttonVariant2,
+      options: ["solid", "border", "flat", "light"],
+      onChange: (newValue: string) => setLoginState("buttonVariant2", newValue),
+    },
   ];
 
   return (
@@ -145,24 +192,16 @@ const RemoteLogin: React.FC = () => {
         <input
           type="text"
           className="mt-2 w-full rounded bg-[#BBD9F0] dark:bg-[#102B3F] dark:text-[#ffffff]"
-          placeholder="   customizing your template"
-          disabled
-        />
-        <input
-          className={`mt-2 h-2 w-full rounded bg-[#BBD9F0] dark:bg-[#102B3F]`}
-          disabled
-        />
-        <input
-          className={`mt-2 h-2 w-full rounded bg-[#BBD9F0] dark:bg-[#102B3F]`}
+          placeholder="   customizing your template!"
           disabled
         />
       </div>
 
       {/* Control 패널 */}
       <div
-        className={`remote-control relative top-36 m-auto mt-10 w-[350px] rounded-xl p-2 shadow-2xl ${
+        className={`remote-control relative top-20 m-auto mt-10 w-[350px] rounded-xl p-2 shadow-2xl ${
           isDarkMode ? "bg-[#333742] text-[#dfdfdf]" : "bg-white"
-        } max-h-[1000px] overflow-y-auto`}
+        } max-h-[800px] overflow-y-auto`}
       >
         {controls.map((control, index) => (
           <div
