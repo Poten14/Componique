@@ -67,6 +67,9 @@ const config: Config = {
       animation2: {
         bounce: "bounce 1.2s infinite ease-in-out",
       },
+      spacing: {
+        26: "6.5rem", // w-26 top-26 등등 픽셀 값
+      },
       extend: {
         copyButton: {
           "@apply absolute right-0 top-0 mr-1 mt-1 rounded bg-Basic px-8 py-2 text-white transform active:scale-95 active:bg-[#679DC3] focus:outline-none focus:ring-2 focus:ring-[#679DC3]":
