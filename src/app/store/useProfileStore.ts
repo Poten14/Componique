@@ -40,8 +40,8 @@ interface ProfileState {
 export const useProfileStore = create<ProfileState>((set) => ({
   shape: "circle",
   size: "medium",
-  color: "basic",
-  variant: "solid",
+  color: "gray",
+  variant: "border",
   text: "",
   iconSize: "large",
   iconColor: "currentColor",
