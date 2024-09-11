@@ -163,9 +163,6 @@ const CustomerServiceForm: React.FC = () => {
             value={title}
             onChange={(e) => setServiceState("title", e.target.value)}
             width="100%"
-            className={
-              isDarkMode ? "dark:bg-[#2A2E39] dark:text-[#dfdfdf]" : ""
-            }
           />
           <Textarea
             size={detailSize}

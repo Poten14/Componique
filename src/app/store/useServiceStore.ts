@@ -155,7 +155,7 @@ export const useServiceStore = create<ServiceState>((set) => ({
   ],
   dropDownType1: "borderless-rounded", // 기본 DropDown 타입 설정
   dropDownType2: "borderless-rounded", // 기본 DropDown 타입 설정
-  detailSize: "large", // 기본 Textarea 크기
+  detailSize: "xl", // 기본 Textarea 크기
   detailColor: "skyblue", // 기본 Textarea 색상
   detailResize: "vertical", // 기본 Textarea 크기 조절 여부
   imageUploadSize: "medium", // 기본 ImageUpload 크기
