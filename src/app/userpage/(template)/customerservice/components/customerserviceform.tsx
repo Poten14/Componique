@@ -1,4 +1,5 @@
 "use client";
+
 import React, { useState, useEffect } from "react";
 import DropDownBasic from "@components/DropDown/DropDownBasic";
 import DropDownGrouped from "@components/DropDown/DropDownGrouped";
@@ -46,9 +47,27 @@ const CustomerServiceForm: React.FC = () => {
 
   const [showToast, setShowToast] = useState(false);
   const [toastMessage, setToastMessage] = useState("");
+  const [isDarkMode, setIsDarkMode] = useState(false);
 
   useEffect(() => {
-    // 상태 변화 감지 및 처리 로직
+    const checkDarkMode = () => {
+      const darkMode = document.documentElement.classList.contains("dark");
+      setIsDarkMode(darkMode);
+    };
+
+    checkDarkMode();
+    window.addEventListener("storage", checkDarkMode);
+
+    const observer = new MutationObserver(checkDarkMode);
+    observer.observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ["class"],
+    });
+
+    return () => {
+      window.removeEventListener("storage", checkDarkMode);
+      observer.disconnect();
+    };
   }, [
     numberType,
     phoneNumber,
@@ -79,7 +98,6 @@ const CustomerServiceForm: React.FC = () => {
     setServiceState("attachment", data);
   };
 
-  // 상세 내용 필드의 속성 상태를 제어하는 핸들러
   const handleDetailSizeChange = (newSize: string) => {
     setServiceState("detailSize", newSize as any);
   };
@@ -94,12 +112,22 @@ const CustomerServiceForm: React.FC = () => {
 
   return (
     <div className="flex items-center justify-center">
-      <div className="w-full max-w-lg rounded-3xl bg-white p-10 shadow-lg">
-        <h1 className="mb-8 text-center text-2xl font-bold text-Gray">
+      <div
+        className={`w-full max-w-lg rounded-3xl p-10 shadow-lg ${
+          isDarkMode ? "bg-[#333742] text-[#dfdfdf]" : "bg-white"
+        }`}
+      >
+        <h1
+          className={`mb-8 text-center text-2xl font-bold ${
+            isDarkMode ? "text-[#dfdfdf]" : "text-Gray"
+          }`}
+        >
           고객 서비스
         </h1>
         <form onSubmit={handleSubmit} className="space-y-6">
-          <h1>🧑🏻‍💼 문의 유형을 선택하세요:</h1>
+          <h1 className={isDarkMode ? "text-[#dfdfdf]" : ""}>
+            🧑🏻‍💼 문의 유형을 선택하세요:
+          </h1>
           <div className="flex">
             <DropDownBasic
               option={dropDownOption1}
@@ -125,13 +153,19 @@ const CustomerServiceForm: React.FC = () => {
             />
           </div>
           <hr />
-          <h1>🧑🏻‍💻 문의 내용을 작성해주세요.</h1>
+          <h1 className={isDarkMode ? "text-[#dfdfdf]" : ""}>
+            🧑🏻‍💻 문의 내용을 작성해주세요.
+          </h1>
           <Input
             size={inputSize2}
             variant={inputVariant2}
             placeholder="제목 입력"
             value={title}
             onChange={(e) => setServiceState("title", e.target.value)}
+            width="100%"
+            className={
+              isDarkMode ? "dark:bg-[#2A2E39] dark:text-[#dfdfdf]" : ""
+            }
           />
           <Textarea
             size={detailSize}
@@ -140,8 +174,13 @@ const CustomerServiceForm: React.FC = () => {
             placeholder="상세 내용 입력"
             value={details}
             onChange={(e) => setServiceState("details", e.target.value)}
+            className={
+              isDarkMode ? "dark:bg-[#2A2E39] dark:text-[#dfdfdf]" : ""
+            }
           />
-          <h1>🛠️ 이미지 업로드</h1>
+          <h1 className={isDarkMode ? "text-[#dfdfdf]" : ""}>
+            🛠️ 이미지 업로드
+          </h1>
           <ImageUpload
             size={imageUploadSize}
             color={imageUploadColor}
@@ -149,6 +188,9 @@ const CustomerServiceForm: React.FC = () => {
             variant={imageUploadVariant}
             onImageSelect={handleImageSelect}
             text="+ 업로드"
+            className={
+              isDarkMode ? "dark:bg-[#2A2E39] dark:text-[#dfdfdf]" : ""
+            }
           />
           <hr />
           <div className="mt-6 flex">
@@ -157,7 +199,9 @@ const CustomerServiceForm: React.FC = () => {
               size={buttonSize1}
               variant={buttonVariant1}
               type="button"
-              className="mr-6 w-full text-white"
+              className={`mr-6 w-full text-white ${
+                isDarkMode ? "bg-[#444B58]" : ""
+              }`}
             >
               취소
             </Button>
@@ -166,7 +210,9 @@ const CustomerServiceForm: React.FC = () => {
               size={buttonSize2}
               variant={buttonVariant2}
               type="submit"
-              className="w-full text-white"
+              className={`w-full text-white ${
+                isDarkMode ? "bg-[#444B58]" : ""
+              }`}
             >
               제출
             </Button>
