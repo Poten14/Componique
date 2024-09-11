@@ -54,7 +54,7 @@ const SnsRemote: React.FC = () => {
       onChange: (newValue: string) => setSnsState("content", newValue),
     },
     {
-      label: "프로필 이미지 업로드-크기",
+      label: "Avarta 크기",
       type: "select",
       value: size,
       options: ["small", "medium", "large"],
@@ -87,7 +87,7 @@ const SnsRemote: React.FC = () => {
         setSnsState("autoplay", JSON.parse(newValue)),
     },
     {
-      label: "페이지네이션 점",
+      label: "Dots 모양",
       type: "select",
       value: showDots ? "true" : "false",
       options: ["true", "false"],
