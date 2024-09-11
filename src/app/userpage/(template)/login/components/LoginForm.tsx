@@ -56,8 +56,8 @@ const LoginForm: React.FC = () => {
             <CheckBox
               boxSize={checkboxSize}
               color={checkboxColor}
-              variant="border"
-              description="로그인 상태 유지"
+              variant={checkboxVariant}
+              description={description}
             />
           </div>
           <div className="mt-6">
