@@ -1,22 +1,32 @@
-import create from "zustand";
+import { create } from "zustand";
 
 // Zustand를 사용하여 상태 관리
 interface SnsState {
-  name: string;
-  textarea: string;
-  avatar: string;
-  image: string[];
+  nickname: string;
+  content: string;
+  size: "small" | "medium" | "large";
+  imageSrc1: string;
+  imageSrc2: string;
+  imageSrc3: string;
+  showDots: boolean;
+  autoplay: boolean;
+  interval: number;
   setSnsState: (
-    key: keyof Omit<SnsState, "setLoginState">,
-    value: string,
+    key: keyof Omit<SnsState, "setSnsState">,
+    value: string | boolean | number,
   ) => void;
 }
 
 export const useSnsStore = create<SnsState>((set) => ({
-  name: "Componique",
-  textarea: "집에 가고싶다...",
-  avatar: "",
-  image: ["123", "123"],
+  nickname: "Componique",
+  content: "바닷가에서...",
+  size: "small",
+  imageSrc1: "/images/IfSc1.svg",
+  imageSrc2: "/images/IfSc5.svg",
+  imageSrc3: "/images/IfSc3.svg",
+  showDots: true,
+  autoplay: true,
+  interval: 3000,
   setSnsState: (key, value) =>
     set((state) => ({
       ...state,

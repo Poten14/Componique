@@ -37,7 +37,8 @@ const Carousel = ({ images }: CarouselProps) => {
                   alt={`image-${index}`}
                   width={720}
                   height={500}
-                  className="block w-full"
+                  unoptimized
+                  className="block h-auto w-full"
                 />
               </li>
             ))}
