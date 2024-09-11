@@ -118,7 +118,7 @@ const ShoppingForm: React.FC = () => {
   };
 
   return (
-    <div className="container mx-auto mt-20 border border-gray bg-white p-6 dark:bg-Dark">
+    <div className="container mx-auto mt-20 border border-gray bg-white p-6 dark:bg-[#333742]">
       {/* Navbar 컴포넌트 */}
       <Navbar
         logoSrc={logoSrc}
@@ -172,7 +172,7 @@ const ShoppingForm: React.FC = () => {
 
       {/* 리뷰 섹션 */}
       <div className="my-16">
-        <h2 className="mb-8 text-center text-3xl font-bold text-Gray">
+        <h2 className="mb-8 text-center text-3xl font-bold dark:text-gray">
           {title2}
         </h2>
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
