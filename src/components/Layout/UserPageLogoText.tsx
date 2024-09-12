@@ -34,7 +34,7 @@ const UserPageLogoText = () => {
         className="fixed left-1/2 top-5 z-[999] -translate-x-1/2 cursor-pointer"
         height={54}
         onClick={() => {
-          router.push("/userpage");
+          router.push("/userpage/sns");
         }}
       />
     </>
