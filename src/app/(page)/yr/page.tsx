@@ -17,6 +17,8 @@ import CarouselAutoplay from "@components/Carousel/CarouselAutoplay";
 import CarouselDots from "@components/Carousel/CarouselDots";
 import { useState } from "react";
 import BreadCrumb from "@components/BreadCrumb/BreadCrumb";
+import BreadCrumbSlash from "@components/BreadCrumb/BreadCrumbSlash";
+import BreadCrumbDropdown from "@components/BreadCrumb/BreadCrumbDropdown";
 
 const Yr = () => {
   // navbar links
@@ -25,6 +27,20 @@ const Yr = () => {
     { name: "About", href: "/about" },
     { name: "Project", href: "/project" },
     { name: "Contact", href: "/contact" },
+  ];
+
+  const breadcrumbItems = [
+    { label: "Ant Design", href: "/" },
+    { label: "Component", href: "/components" },
+    {
+      label: "General",
+      dropdownItems: [
+        { label: "General", href: "/general" },
+        { label: "Layout", href: "/layout" },
+        { label: "Navigation", href: "/navigation" },
+      ],
+    },
+    { label: "Button", href: "/button" },
   ];
 
   // Textarea value
@@ -99,6 +115,28 @@ const Yr = () => {
           items={[
             { href: "/", children: "Home" },
             { href: "/docs", children: "Docs" },
+            { children: "Breadcrumb" },
+          ]}
+        />
+        <BreadCrumbSlash
+          items={[
+            { href: "/", children: "Home" },
+            { href: "/docs", children: "Docs" },
+            { children: "Breadcrumb" },
+          ]}
+        />
+        <BreadCrumbDropdown
+          items={[
+            { href: "/", children: "Home" },
+            { href: "/docs", children: "Docs" },
+            {
+              children: "Components",
+              dropdownItems: [
+                { label: "Home", href: "/" },
+                { label: "Breadcrumb", href: "/components/breadcrumb" },
+                { label: "UserPage", href: "/userpage" },
+              ],
+            },
             { children: "Breadcrumb" },
           ]}
         />
