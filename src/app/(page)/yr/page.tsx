@@ -16,6 +16,7 @@ import Carousel from "@components/Carousel/Carousel";
 import CarouselAutoplay from "@components/Carousel/CarouselAutoplay";
 import CarouselDots from "@components/Carousel/CarouselDots";
 import { useState } from "react";
+import BreadCrumb from "@components/BreadCrumb/BreadCrumb";
 
 const Yr = () => {
   // navbar links
@@ -91,6 +92,15 @@ const Yr = () => {
           type="search"
           size="medium"
           placeholder="Search"
+        />
+      </div>
+      <div className="m-4 space-y-4">
+        <BreadCrumb
+          items={[
+            { href: "/", children: "Home" },
+            { href: "/docs", children: "Docs" },
+            { children: "Breadcrumb" },
+          ]}
         />
       </div>
       {/* textarea 연습 */}
