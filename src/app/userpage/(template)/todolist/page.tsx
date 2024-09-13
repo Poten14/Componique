@@ -4,7 +4,7 @@ import RemoteTodoList from "../../Remote/RemoteTodoList";
 const TodoListPage = () => {
   return (
     <div className="flex justify-between">
-      <div className="mt-10 w-full p-6 pb-24 pl-[80px]">
+      <div className="mt-10 w-full p-6 pb-24">
         <TodoListForm />
       </div>
       <div className="fixed right-4 top-14">
