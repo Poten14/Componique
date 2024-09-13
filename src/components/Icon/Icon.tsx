@@ -55,9 +55,19 @@ export type IconName =
   | "icon-play"
   | "icon-pause"
   | "icon-plus"
-  | "icon-arowUp"
-  | "icon-arowDown"
-  | "icon-emptyHeart";
+  | "icon-arrowUp"
+  | "icon-arrowDown"
+  | "icon-emptyHeart"
+  | "icon-next"
+  | "icon-prev"
+  | "icon-up"
+  | "icon-down"
+  | "icon-github2"
+  | "icon-facebook"
+  | "icon-twitter"
+  | "icon-linkedin"
+  | "icon-line"
+  | "icon-instagram";
 
 type IconProps = {
   name: IconName;
