@@ -1,11 +1,137 @@
 "use client";
 
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useSurveyStore } from "app/store/useSurveyStore";
-import { useEffect, useState } from "react";
 import Select from "@components/Select/Select";
+import Button from "@components/Button/Button";
+import BasicModal from "@components/Modal/BasicModal";
+import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
+import { vscDarkPlus } from "react-syntax-highlighter/dist/esm/styles/prism";
+import Icon from "@components/Icon/Icon";
+
+const previewSurveyFormCode = (store: any) => {
+  return `
+  import React, { useState } from 'react';
+  import CheckBox from '@components/CheckBox/CheckBox';
+  import RadioButtonBasic from '@components/RadioButton/RadioButtonBasic';
+  import Button from '@components/Button/Button';
+
+  const Survey = () => {
+    const [basicSelectedValue, setBasicSelectedValue] = useState("");
+    const [selectCheckbox, setSelectCheckbox] = useState<string[]>([]);
+
+    const handleBasicChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+      setBasicSelectedValue(event.target.value);
+    };
+
+    const onChangeCheckboxHandler = (isChecked: boolean, description: string) => {
+      if (isChecked) {
+        setSelectCheckbox([...selectCheckbox, description]);
+      } else {
+        setSelectCheckbox(selectCheckbox.filter((item) => item !== description));
+      }
+    };
+
+    return (
+      <div className="grid place-items-center gap-y-6">
+        <div className="grid place-items-center gap-y-6 rounded-lg bg-white p-8 shadow-lg">
+          <div className="w-[470px] rounded-lg border border-[#9AC5E5] p-4">
+            <h2 className="mb-2 text-lg">${store.title1}</h2>
+            <p className="mb-2 mt-[-4px] text-sm">${store.description1}</p>
+            <div className="space-y-2">
+              <CheckBox
+                color="${store.checkboxColor}"
+                description="${store.checkboxText1}"
+                variant="${store.checkboxVariant}"
+                boxSize="${store.checkboxSize}"
+                onChange={(e) => onChangeCheckboxHandler(e.target.checked, '${store.checkboxText1}')}
+              />
+              <CheckBox
+                color="${store.checkboxColor}"
+                description="${store.checkboxText2}"
+                variant="${store.checkboxVariant}"
+                boxSize="${store.checkboxSize}"
+                onChange={(e) => onChangeCheckboxHandler(e.target.checked, '${store.checkboxText2}')}
+              />
+              <CheckBox
+                color="${store.checkboxColor}"
+                description="${store.checkboxText3}"
+                variant="${store.checkboxVariant}"
+                boxSize="${store.checkboxSize}"
+                onChange={(e) => onChangeCheckboxHandler(e.target.checked, '${store.checkboxText3}')}
+              />
+              <CheckBox
+                color="${store.checkboxColor}"
+                description="${store.checkboxText4}"
+                variant="${store.checkboxVariant}"
+                boxSize="${store.checkboxSize}"
+                onChange={(e) => onChangeCheckboxHandler(e.target.checked, '${store.checkboxText4}')}
+              />
+            </div>
+          </div>
+          <div className="w-[470px] rounded-lg border border-[#9AC5E5] p-4 leading-7">
+            <h2 className="mb-2 text-lg">${store.title2}</h2>
+            <p className="mb-2 mt-[-4px] text-sm">${store.description2}</p>
+            <div>
+              <RadioButtonBasic
+                name="basicOptions"
+                value="option1"
+                label="${store.radioLabel1}"
+                size="${store.radiobuttonSize}"
+                color="${store.radiobuttonColor}"
+              />
+              <RadioButtonBasic
+                name="basicOptions"
+                value="option2"
+                label="${store.radioLabel2}"
+                size="${store.radiobuttonSize}"
+                color="${store.radiobuttonColor}"
+              />
+              <RadioButtonBasic
+                name="basicOptions"
+                value="option3"
+                label="${store.radioLabel3}"
+                size="${store.radiobuttonSize}"
+                color="${store.radiobuttonColor}"
+              />
+              <RadioButtonBasic
+                name="basicOptions"
+                value="option4"
+                label="${store.radioLabel4}"
+                size="${store.radiobuttonSize}"
+                color="${store.radiobuttonColor}"
+              />
+              <RadioButtonBasic
+                name="basicOptions"
+                value="option5"
+                label="${store.radioLabel5}"
+                size="${store.radiobuttonSize}"
+                color="${store.radiobuttonColor}"
+              />
+            </div>
+          </div>
+          <div className="flex w-[470px] justify-end">
+            <Button className="mr-2 w-[75px]" color="danger">
+              ${store.cancelButton}
+            </Button>
+            <Button className="w-[75px]" color="primary">
+              ${store.submitButton}
+            </Button>
+          </div>
+        </div>
+      </div>
+    );
+  };
+
+  export default Survey;
+  `;
+};
+
 const SurveyRemote: React.FC = () => {
   const [isDarkMode, setIsDarkMode] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [copied, setCopied] = useState(false);
+  const surveyStore = useSurveyStore();
 
   useEffect(() => {
     const checkDarkMode = () => {
@@ -13,7 +139,7 @@ const SurveyRemote: React.FC = () => {
       setIsDarkMode(darkMode);
     };
 
-    checkDarkMode(); // 초기 다크 모드 상태 체크
+    checkDarkMode();
     window.addEventListener("storage", checkDarkMode);
 
     const observer = new MutationObserver(checkDarkMode);
@@ -27,6 +153,7 @@ const SurveyRemote: React.FC = () => {
       observer.disconnect();
     };
   }, []);
+
   const {
     title1,
     description1,
@@ -51,6 +178,12 @@ const SurveyRemote: React.FC = () => {
     setSurveyState,
   } = useSurveyStore();
 
+  const handleCopy = () => {
+    const code = previewSurveyFormCode(surveyStore);
+    navigator.clipboard.writeText(code);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  };
   const controls = [
     {
       label: "설문조사1-제목",
@@ -202,24 +335,73 @@ const SurveyRemote: React.FC = () => {
 
   return (
     <div className="relative shadow-xl">
-      {/* 하늘색 배경 박스 추가 */}
-      <div
-        className={`absolute left-0 top-2 z-10 m-auto w-[350px] rounded-t-2xl bg-[#D8EAF8] p-5 dark:bg-Navy`}
-      >
-        <h2 className="text-2xl font-bold text-[#ffffff] dark:text-[#dfdfdf]">
-          Control Panel
-        </h2>
+      <div className="absolute left-0 top-2 z-10 m-auto w-[350px] rounded-t-2xl bg-[#D8EAF8] p-5 dark:bg-[#102B3F]">
+        <div className="flex justify-between">
+          <h2 className="text-2xl font-bold text-[#ffffff] dark:text-[#dfdfdf]">
+            Control Panel
+          </h2>
+          <Button
+            iconPosition="left"
+            iconSize="large"
+            onClick={() => setIsModalOpen(true)}
+            className="dark:bg-[#2A6490] dark:focus:bg-[#1D4767]"
+          >
+            <Icon name="icon-docs" color="white" />
+            Code
+          </Button>
+        </div>
         <input
           type="text"
-          className="mt-2 w-full rounded bg-[#BBD9F0] dark:bg-[#102B3F] dark:text-[#ffffff]"
+          className="mt-2 w-full rounded bg-[#BBD9F0] dark:bg-[#2B4456] dark:text-[#ffffff]"
           placeholder="   customizing your template"
           disabled
         />
+        <BasicModal
+          open={isModalOpen}
+          onClose={() => setIsModalOpen(false)}
+          showCloseIcon={true}
+          className="custom-modal"
+        >
+          <SyntaxHighlighter
+            language="tsx"
+            style={isDarkMode ? vscDarkPlus : undefined}
+            customStyle={{
+              backgroundColor: isDarkMode ? "#2A2E39" : "#F8F8F8",
+              padding: "0.5rem",
+              borderRadius: "0.5rem",
+              fontSize: "0.7rem",
+              maxHeight: "570px",
+              overflowY: "auto",
+              whiteSpace: "pre-wrap",
+              wordWrap: "break-word",
+              overflowWrap: "break-word",
+            }}
+          >
+            {previewSurveyFormCode(surveyStore)}
+          </SyntaxHighlighter>
+          <Button
+            onClick={handleCopy}
+            icon={copied ? "icon-check" : undefined}
+            className="copyButton m-10 dark:bg-[#2A6490]"
+            iconColor={copied ? "green" : "white"}
+          >
+            {copied ? "Copied!" : "Copy Code"}
+          </Button>
+          <div className="mb-2 text-right">
+            <Button
+              variant="border"
+              onClick={() => setIsModalOpen(false)}
+              className="dark:text-gray-300 text-sm text-gray dark:border-gray"
+            >
+              close
+            </Button>
+          </div>
+        </BasicModal>
       </div>
 
       {/* Control 패널 */}
       <div
-        className={`remote-control top-26 relative m-auto mt-10 w-[350px] rounded-xl p-2 shadow-xl ${
+        className={`remote-control relative top-26 m-auto mt-10 w-[350px] rounded-xl p-2 shadow-xl ${
           isDarkMode ? "bg-[#333742] text-[#dfdfdf]" : "bg-white"
         } max-h-[calc(100vh-220px)] overflow-y-auto`}
       >
