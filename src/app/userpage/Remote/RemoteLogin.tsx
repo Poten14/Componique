@@ -3,9 +3,87 @@
 import React, { useEffect, useState } from "react";
 import { useLoginStore } from "../../store/useLoginStore";
 import Select from "@components/Select/Select";
+import Button from "@components/Button/Button";
+import BasicModal from "@components/Modal/BasicModal";
+import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
+import { CopyToClipboard } from "react-copy-to-clipboard";
+
+const generateLoginFormCode = (store: any) => {
+  return `
+  import React from 'react';
+  import Button from '@components/Button/Button';
+  import Input from '@components/Input/Input';
+  import CheckBox from '@components/CheckBox/CheckBox';
+  
+  const LoginForm = () => {
+    const handleSubmit = () => {
+      alert("로그인 완료");
+    };
+    
+    return (
+      <div className="flex items-center justify-center">
+        <div className="w-full max-w-md rounded-3xl bg-white p-10 shadow-lg dark:bg-[#333742]">
+          <h1 className="mb-8 text-center text-2xl font-bold">${store.title}</h1>
+          <form onSubmit={handleSubmit} className="space-y-6">
+            <div>
+              <Input
+                size="${store.inputSize}"
+                width="${store.inputWidth}"
+                variant="outlined"
+                placeholder="${store.placeholder}"
+              />
+            </div>
+            <div>
+              <Input
+                size="${store.inputSize}"
+                width="${store.inputWidth}"
+                variant="outlined"
+                placeholder="${store.placeholder2}"
+              />
+            </div>
+            <div className="flex">
+              <CheckBox
+                boxSize="${store.checkboxSize}"
+                color="${store.checkboxColor}"
+                variant="${store.checkboxVariant}"
+                description="${store.description}"
+              />
+            </div>
+            <div className="mt-6">
+              <Button
+                color="${store.buttonColor}"
+                size="${store.buttonSize}"
+                variant="${store.buttonVariant}"
+                className="w-full"
+              >
+                login
+              </Button>
+            </div>
+            <div className="mt-4 text-center">
+              <Button
+                color="${store.buttonColor2}"
+                size="${store.buttonSize2}"
+                variant="${store.buttonVariant2}"
+                className="w-full"
+              >
+                sign up
+              </Button>
+            </div>
+          </form>
+        </div>
+      </div>
+    );
+  };
+
+  export default LoginForm;
+  `;
+};
 
 const RemoteLogin: React.FC = () => {
   const [isDarkMode, setIsDarkMode] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [copied, setCopied] = useState(false); // 복사 상태
+  const loginStore = useLoginStore(); // 상태 관리 값 가져오기
 
   useEffect(() => {
     const checkDarkMode = () => {
@@ -27,6 +105,13 @@ const RemoteLogin: React.FC = () => {
       observer.disconnect();
     };
   }, []);
+
+  const handleCopy = () => {
+    const code = generateLoginFormCode(loginStore);
+    navigator.clipboard.writeText(code);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  };
   const {
     title,
     buttonColor,
@@ -195,11 +280,28 @@ const RemoteLogin: React.FC = () => {
           placeholder="   customizing your template"
           disabled
         />
+        <Button
+          variant="border"
+          color="warning"
+          onClick={() => setIsModalOpen(true)}
+        >
+          Code Preview
+        </Button>
+        <BasicModal
+          open={isModalOpen}
+          onClose={() => setIsModalOpen(false)}
+          showCloseIcon={true}
+        >
+          <Button onClick={handleCopy}>
+            {copied ? "Copied!" : "Copy Code"}
+          </Button>
+          <code>{generateLoginFormCode(loginStore)}</code>
+        </BasicModal>
       </div>
 
       {/* Control 패널 */}
       <div
-        className={`remote-control top-26 relative m-auto mt-10 w-[350px] rounded-xl p-2 shadow-xl ${
+        className={`remote-control relative top-26 m-auto mt-10 w-[350px] rounded-xl p-2 shadow-xl ${
           isDarkMode ? "bg-[#333742] text-[#dfdfdf]" : "bg-white"
         } max-h-[calc(100vh-220px)] overflow-y-auto`}
       >
