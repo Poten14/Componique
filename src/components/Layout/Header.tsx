@@ -203,7 +203,7 @@ const Header = () => {
                 { name: "Pagination", path: "/pagination", className: "py-0" },
                 { name: "Drawer", path: "/drawer", className: "py-0" },
                 { name: "Navbar", path: "/navbar", className: "py-0" },
-                { name: "Breacrumb", path: "/breacrumb", className: "py-0" },
+                { name: "BreadCrumb", path: "/breadcrumb", className: "py-0" },
               ],
             },
           ]}
