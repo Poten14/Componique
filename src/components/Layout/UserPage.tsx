@@ -26,7 +26,7 @@ const UserPage = () => {
           iconColor="#fff"
           icon="icon-user"
           onClick={() => {
-            router.push("/userpage");
+            router.push("/userpage/sns");
           }}
         >
           User Page

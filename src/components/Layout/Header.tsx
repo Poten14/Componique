@@ -6,12 +6,12 @@ import HamburgerMenu from "./HamburgerMenu";
 import Drawer from "@components/Drawer/Drawer";
 import Button from "@components/Button/Button";
 import SwitchDark from "@components/Swtich/SwitchDark";
-
+import { usePathname } from "next/navigation";
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
   const [isDarkMode, setIsDarkMode] = useState(false);
-
+  const pathname = usePathname();
   useEffect(() => {
     // 다크 모드 상태 체크 함수
     const checkDarkMode = () => {
@@ -64,13 +64,18 @@ const Header = () => {
       <div className="flex items-center">
         <SwitchDark />
         <UserPage />
-        <Button
-          className="mr-2 dark:bg-[#333742] xl:hidden"
-          radius="full"
-          onClick={onclickDrawerHandler(true)}
-        >
-          <HamburgerMenu />
-        </Button>
+        {pathname.startsWith("/userpage") ? (
+          ""
+        ) : (
+          <Button
+            className="mr-2 dark:bg-[#333742] xl:hidden"
+            radius="full"
+            onClick={onclickDrawerHandler(true)}
+          >
+            <HamburgerMenu />
+          </Button>
+        )}
+
         <Drawer
           isOpen={isDrawerOpen}
           className="bg-white text-[#3e3e3e] dark:bg-[#252629] dark:text-white" // 다크 모드에서 텍스트 및 배경색 변경
