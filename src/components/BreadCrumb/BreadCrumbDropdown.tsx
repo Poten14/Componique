@@ -2,6 +2,7 @@
 
 import { useState, useRef, useEffect } from "react";
 import { useRouter } from "next/navigation";
+import Icon from "@components/Icon/Icon";
 
 interface DropdownItem {
   label: string;
@@ -72,21 +73,7 @@ const BreadCrumbDropdown = ({ items }: BreadCrumbProps) => {
                   onClick={() => handleDropdownToggle(index)}
                 >
                   {item.children}
-                  {item.dropdownItems && (
-                    <svg
-                      width="15"
-                      height="11"
-                      viewBox="0 0 18 11"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                      className="mx-1"
-                    >
-                      <path
-                        d="M8.25939 10.1837C8.65625 10.6211 9.34375 10.6211 9.74061 10.1837L17.0094 2.17193C17.5924 1.52932 17.1364 0.5 16.2688 0.5H1.73122C0.863552 0.5 0.407592 1.52933 0.990605 2.17193L8.25939 10.1837Z"
-                        fill="#000"
-                      />
-                    </svg>
-                  )}
+                  {item.dropdownItems && <Icon name="icon-down" color="gray" />}
                 </div>
                 {dropdownOpen &&
                   activeDropdown === index &&
@@ -106,19 +93,7 @@ const BreadCrumbDropdown = ({ items }: BreadCrumbProps) => {
                   )}
               </div>
             )}
-            {index < items.length - 1 && (
-              <svg
-                className="h-5 w-5 dark:text-white"
-                viewBox="0 0 20 20"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  fillRule="evenodd"
-                  d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
-                  clipRule="evenodd"
-                ></path>
-              </svg>
-            )}
+            {index < items.length - 1 && <Icon name="icon-next" color="gray" />}
           </li>
         ))}
       </ul>

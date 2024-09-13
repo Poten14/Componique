@@ -1,3 +1,5 @@
+import Icon from "@components/Icon/Icon";
+
 interface BreadCrumbProp {
   href?: string;
   className?: string;
@@ -6,38 +8,45 @@ interface BreadCrumbProp {
 
 interface BreadCrumbProps {
   items: BreadCrumbProp[];
+  hoverColor?: "black" | "skyblue" | "blue" | "red";
+  activeColor?: "black" | "skyblue" | "blue" | "red";
 }
 
-const BreadCrumb = ({ items }: BreadCrumbProps) => {
+const hoverColorClasses = {
+  black: "hover:text-black dark:hover:text-white",
+  skyblue: "hover:text-[#9AC5E5] dark:hover:text-[#9AC5E5]",
+  blue: "hover:text-[#7AA7FF] dark:hover:text-[#7AA7FF]",
+  red: "hover:text-[#FF7676] dark:hover:text-[#FF7676]",
+};
+
+const activeColorClasses = {
+  black: "text-black dark:text-white",
+  skyblue: "text-[#9AC5E5] dark:text-[#9AC5E5]",
+  blue: "text-[#7AA7FF] dark:text-[#7AA7FF]",
+  red: "text-[#FF7676] dark:text-[#FF7676]",
+};
+
+const BreadCrumb = ({
+  items,
+  hoverColor = "black",
+  activeColor = "black",
+}: BreadCrumbProps) => {
   return (
     <div className="flex">
       <div className="inline-flex items-center space-x-1">
         {items.map((item, index) => (
           <div key={index} className="inline-flex items-center">
-            {index !== 0 && (
-              <svg
-                className="h-5 w-5 text-black"
-                fill="currentColor"
-                viewBox="0 0 20 20"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  fillRule="evenodd"
-                  d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
-                  clipRule="evenodd"
-                ></path>
-              </svg>
-            )}
+            {index !== 0 && <Icon name="icon-next" color="gray" />}
             {item.href ? (
               <a
                 href={item.href}
-                className={`text-md font-medium text-gray hover:text-black dark:text-gray dark:hover:text-white ${item.className}`}
+                className={`text-md font-medium dark:text-gray ${hoverColorClasses[hoverColor]} ${item.className}`}
               >
                 {item.children}
               </a>
             ) : (
               <span
-                className={`text-md font-medium text-black hover:text-black dark:text-gray dark:hover:text-white ${item.className}`}
+                className={`text-md font-medium ${activeColorClasses[activeColor]} ${item.className}`}
                 aria-current="page"
               >
                 {item.children}
