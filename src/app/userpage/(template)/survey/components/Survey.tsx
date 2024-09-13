@@ -62,112 +62,116 @@ const Survey = () => {
   };
   return (
     <div className="grid place-items-center gap-y-6">
-      <div className="w-[600px]">
-        <ProgressBarBasic
-          percent={progressBarPercent()}
-          showPercent
-          completed
-        />
-      </div>
-      <div className="w-[600px] rounded-lg border border-[#9AC5E5] p-4">
-        <h2 className="mb-2 text-xl">{title1}</h2>
-        <p className="mb-2 mt-[-4px] text-sm text-Gray">{description1}</p>
-        <div className="space-y-2">
-          <CheckBox
-            color={checkboxColor}
-            description={checkboxText1}
-            variant={checkboxVariant}
-            boxSize={checkboxSize}
-            onChange={(e) =>
-              //여러 체크박스 중 어떤 것을 선택하거나 해제했는지 파악하기 위해 뒤에 해당하는 값을 넣음
-              onChangeCheckboxHandler(e.target.checked, checkboxText1)
-            }
-          />
-          <CheckBox
-            color={checkboxColor}
-            description={checkboxText2}
-            boxSize={checkboxSize}
-            variant={checkboxVariant}
-            onChange={(e) =>
-              onChangeCheckboxHandler(e.target.checked, checkboxText2)
-            }
-          />
-          <CheckBox
-            color={checkboxColor}
-            description={checkboxText3}
-            boxSize={checkboxSize}
-            variant={checkboxVariant}
-            onChange={(e) =>
-              onChangeCheckboxHandler(e.target.checked, checkboxText3)
-            }
-          />
-          <CheckBox
-            color={checkboxColor}
-            description={checkboxText4}
-            boxSize={checkboxSize}
-            variant={checkboxVariant}
-            onChange={(e) =>
-              onChangeCheckboxHandler(e.target.checked, checkboxText4)
-            }
+      <div className="grid place-items-center gap-y-6 rounded-lg bg-white p-8 shadow-lg dark:bg-[#333742]">
+        <div className="w-[600px] dark:text-white">
+          <ProgressBarBasic
+            percent={progressBarPercent()}
+            showPercent
+            completed
           />
         </div>
-      </div>
-      <div className="w-[600px] rounded-lg border border-[#9AC5E5] p-4 leading-7">
-        <h2 className="mb-2 text-xl">{title2}</h2>
-        <p className="mb-2 mt-[-4px] text-sm text-Gray">{description2}</p>
-        <RadioButtonBasic
-          name="basicOptions"
-          value="option1"
-          checked={basicSelectedValue === "option1"}
-          onChange={handleBasicChange}
-          label={radioLabel1}
-          size={radiobuttonSize}
-          color={radiobuttonColor}
-        />
-        <RadioButtonBasic
-          name="basicOptions"
-          value="option2"
-          checked={basicSelectedValue === "option2"}
-          onChange={handleBasicChange}
-          label={radioLabel2}
-          size={radiobuttonSize}
-          color={radiobuttonColor}
-        />
-        <RadioButtonBasic
-          name="basicOptions"
-          value="option3"
-          checked={basicSelectedValue === "option3"}
-          onChange={handleBasicChange}
-          label={radioLabel3}
-          size={radiobuttonSize}
-          color={radiobuttonColor}
-        />
-        <RadioButtonBasic
-          name="basicOptions"
-          value="option4"
-          checked={basicSelectedValue === "option4"}
-          onChange={handleBasicChange}
-          label={radioLabel4}
-          color={radiobuttonColor}
-          size={radiobuttonSize}
-        />
-        <RadioButtonBasic
-          name="basicOptions"
-          value="option5"
-          checked={basicSelectedValue === "option5"}
-          onChange={handleBasicChange}
-          label={radioLabel5}
-          color={radiobuttonColor}
-          size={radiobuttonSize}
-        />
-      </div>
-      <div className="flex w-[600px] justify-end">
-        <Button className="mr-2 w-[75px]" color="danger">
-          {cancelButton}
-        </Button>
-        <Button className="w-[75px]" color="primary">
-          {submitButton}
-        </Button>
+        <div className="w-[600px] rounded-lg border border-[#9AC5E5] p-4">
+          <h2 className="mb-2 text-xl">{title1}</h2>
+          <p className="mb-2 mt-[-4px] text-sm text-Gray">{description1}</p>
+          <div className="space-y-2 dark:text-white">
+            <CheckBox
+              color={checkboxColor}
+              description={checkboxText1}
+              variant={checkboxVariant}
+              boxSize={checkboxSize}
+              onChange={(e) =>
+                //여러 체크박스 중 어떤 것을 선택하거나 해제했는지 파악하기 위해 뒤에 해당하는 값을 넣음
+                onChangeCheckboxHandler(e.target.checked, checkboxText1)
+              }
+            />
+            <CheckBox
+              color={checkboxColor}
+              description={checkboxText2}
+              boxSize={checkboxSize}
+              variant={checkboxVariant}
+              onChange={(e) =>
+                onChangeCheckboxHandler(e.target.checked, checkboxText2)
+              }
+            />
+            <CheckBox
+              color={checkboxColor}
+              description={checkboxText3}
+              boxSize={checkboxSize}
+              variant={checkboxVariant}
+              onChange={(e) =>
+                onChangeCheckboxHandler(e.target.checked, checkboxText3)
+              }
+            />
+            <CheckBox
+              color={checkboxColor}
+              description={checkboxText4}
+              boxSize={checkboxSize}
+              variant={checkboxVariant}
+              onChange={(e) =>
+                onChangeCheckboxHandler(e.target.checked, checkboxText4)
+              }
+            />
+          </div>
+        </div>
+        <div className="w-[600px] rounded-lg border border-[#9AC5E5] p-4 leading-7">
+          <h2 className="mb-2 text-xl">{title2}</h2>
+          <p className="mb-2 mt-[-4px] text-sm text-Gray">{description2}</p>
+          <div className="dark:text-white">
+            <RadioButtonBasic
+              name="basicOptions"
+              value="option1"
+              checked={basicSelectedValue === "option1"}
+              onChange={handleBasicChange}
+              label={radioLabel1}
+              size={radiobuttonSize}
+              color={radiobuttonColor}
+            />
+            <RadioButtonBasic
+              name="basicOptions"
+              value="option2"
+              checked={basicSelectedValue === "option2"}
+              onChange={handleBasicChange}
+              label={radioLabel2}
+              size={radiobuttonSize}
+              color={radiobuttonColor}
+            />
+            <RadioButtonBasic
+              name="basicOptions"
+              value="option3"
+              checked={basicSelectedValue === "option3"}
+              onChange={handleBasicChange}
+              label={radioLabel3}
+              size={radiobuttonSize}
+              color={radiobuttonColor}
+            />
+            <RadioButtonBasic
+              name="basicOptions"
+              value="option4"
+              checked={basicSelectedValue === "option4"}
+              onChange={handleBasicChange}
+              label={radioLabel4}
+              color={radiobuttonColor}
+              size={radiobuttonSize}
+            />
+            <RadioButtonBasic
+              name="basicOptions"
+              value="option5"
+              checked={basicSelectedValue === "option5"}
+              onChange={handleBasicChange}
+              label={radioLabel5}
+              color={radiobuttonColor}
+              size={radiobuttonSize}
+            />
+          </div>
+        </div>
+        <div className="flex w-[600px] justify-end">
+          <Button className="mr-2 w-[75px]" color="danger">
+            {cancelButton}
+          </Button>
+          <Button className="w-[75px]" color="primary">
+            {submitButton}
+          </Button>
+        </div>
       </div>
     </div>
   );
