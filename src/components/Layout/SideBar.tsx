@@ -310,11 +310,11 @@ const SideBar = () => {
             </li>
             <li
               className={`cursor-pointer hover:text-Basic ${
-                pathname === "/breacrumb" ? "font-bold text-Basic" : ""
+                pathname === "/breadcrumb" ? "font-bold text-Basic" : ""
               }`}
               onClick={() => router.push("/breacrumb")}
             >
-              Breacrumb
+              Breadcrumb
             </li>
           </ul>
         </li>
