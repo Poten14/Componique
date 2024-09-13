@@ -82,7 +82,7 @@ const previewLoginFormCode = (store: any) => {
 
 const RemoteLogin: React.FC = () => {
   const [isDarkMode, setIsDarkMode] = useState(false);
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false); //@
   const [copied, setCopied] = useState(false); // @
   const loginStore = useLoginStore(); //@
 
