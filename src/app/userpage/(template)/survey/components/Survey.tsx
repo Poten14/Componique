@@ -63,15 +63,15 @@ const Survey = () => {
   return (
     <div className="grid place-items-center gap-y-6">
       <div className="grid place-items-center gap-y-6 rounded-lg bg-white p-8 shadow-lg dark:bg-[#333742]">
-        <div className="w-[600px] dark:text-white">
+        <div className="w-[470px] dark:text-white">
           <ProgressBarBasic
             percent={progressBarPercent()}
             showPercent
             completed
           />
         </div>
-        <div className="w-[600px] rounded-lg border border-[#9AC5E5] p-4">
-          <h2 className="mb-2 text-xl">{title1}</h2>
+        <div className="w-[470px] rounded-lg border border-[#9AC5E5] p-4">
+          <h2 className="mb-2 text-lg">{title1}</h2>
           <p className="mb-2 mt-[-4px] text-sm text-Gray">{description1}</p>
           <div className="space-y-2 dark:text-white">
             <CheckBox
@@ -113,8 +113,8 @@ const Survey = () => {
             />
           </div>
         </div>
-        <div className="w-[600px] rounded-lg border border-[#9AC5E5] p-4 leading-7">
-          <h2 className="mb-2 text-xl">{title2}</h2>
+        <div className="w-[470px] rounded-lg border border-[#9AC5E5] p-4 leading-7">
+          <h2 className="mb-2 text-lg">{title2}</h2>
           <p className="mb-2 mt-[-4px] text-sm text-Gray">{description2}</p>
           <div className="dark:text-white">
             <RadioButtonBasic
@@ -164,7 +164,7 @@ const Survey = () => {
             />
           </div>
         </div>
-        <div className="flex w-[600px] justify-end">
+        <div className="flex w-[470px] justify-end">
           <Button className="mr-2 w-[75px]" color="danger">
             {cancelButton}
           </Button>

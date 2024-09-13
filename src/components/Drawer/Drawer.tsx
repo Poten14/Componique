@@ -99,7 +99,7 @@ const Drawer: React.FC<DrawerProps> = ({
 
   return (
     <section
-      className={`fixed left-0 top-0 z-50 h-full w-full select-none !bg-black !bg-opacity-50 transition-opacity duration-500 ease-in-out ${className || ""} ${
+      className={`fixed left-0 top-0 z-[999] h-full w-full select-none !bg-black !bg-opacity-50 transition-opacity duration-500 ease-in-out ${className || ""} ${
         isDrawerOpen ? "opacity-100" : "pointer-events-none opacity-0"
       }`}
       onClick={onClickBackgroundHandler}
