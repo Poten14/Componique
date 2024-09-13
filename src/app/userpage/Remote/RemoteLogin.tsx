@@ -5,10 +5,11 @@ import { useLoginStore } from "../../store/useLoginStore";
 import Select from "@components/Select/Select";
 import Button from "@components/Button/Button";
 import BasicModal from "@components/Modal/BasicModal";
-import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
-import { CopyToClipboard } from "react-copy-to-clipboard";
+import { Prism as SyntaxHighlighter } from "react-syntax-highlighter"; //@
+import { vscDarkPlus } from "react-syntax-highlighter/dist/esm/styles/prism"; //@
+import Icon from "@components/Icon/Icon";
 
-const generateLoginFormCode = (store: any) => {
+const previewLoginFormCode = (store: any) => {
   return `
   import React from 'react';
   import Button from '@components/Button/Button';
@@ -17,7 +18,7 @@ const generateLoginFormCode = (store: any) => {
   
   const LoginForm = () => {
     const handleSubmit = () => {
-      alert("로그인 완료");
+      alert("success!");
     };
     
     return (
@@ -82,8 +83,8 @@ const generateLoginFormCode = (store: any) => {
 const RemoteLogin: React.FC = () => {
   const [isDarkMode, setIsDarkMode] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [copied, setCopied] = useState(false); // 복사 상태
-  const loginStore = useLoginStore(); // 상태 관리 값 가져오기
+  const [copied, setCopied] = useState(false); // @
+  const loginStore = useLoginStore(); //@
 
   useEffect(() => {
     const checkDarkMode = () => {
@@ -91,7 +92,7 @@ const RemoteLogin: React.FC = () => {
       setIsDarkMode(darkMode);
     };
 
-    checkDarkMode(); // 초기 다크 모드 상태 체크
+    checkDarkMode();
     window.addEventListener("storage", checkDarkMode);
 
     const observer = new MutationObserver(checkDarkMode);
@@ -106,8 +107,9 @@ const RemoteLogin: React.FC = () => {
     };
   }, []);
 
+  //@
   const handleCopy = () => {
-    const code = generateLoginFormCode(loginStore);
+    const code = previewLoginFormCode(loginStore);
     navigator.clipboard.writeText(code);
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
@@ -269,33 +271,70 @@ const RemoteLogin: React.FC = () => {
     <div className="relative shadow-xl">
       {/* 하늘색 배경 박스 추가 */}
       <div
-        className={`absolute left-0 top-2 z-10 m-auto w-[350px] rounded-t-2xl bg-[#D8EAF8] p-5 dark:bg-Navy`}
+        className={`absolute left-0 top-2 z-10 m-auto w-[350px] rounded-t-2xl bg-[#D8EAF8] p-5 dark:bg-[#102B3F]`}
       >
-        <h2 className="text-2xl font-bold text-[#ffffff] dark:text-[#dfdfdf]">
-          Control Panel
-        </h2>
+        <div className="flex">
+          <h2 className="text-2xl font-bold text-[#ffffff] dark:text-[#dfdfdf]">
+            Control Panel
+          </h2>
+
+          <Button
+            iconPosition="left"
+            iconSize="large"
+            onClick={() => setIsModalOpen(true)}
+            className="ml-20 dark:bg-[#2A6490] dark:focus:bg-[#1D4767]"
+          >
+            <Icon name="icon-docs" color="white" />
+            Code
+          </Button>
+        </div>
         <input
           type="text"
-          className="mt-2 w-full rounded bg-[#BBD9F0] dark:bg-[#102B3F] dark:text-[#ffffff]"
+          className="mt-2 w-full rounded bg-[#BBD9F0] dark:bg-[#2B4456] dark:text-[#ffffff]"
           placeholder="   customizing your template"
           disabled
         />
-        <Button
-          variant="border"
-          color="warning"
-          onClick={() => setIsModalOpen(true)}
-        >
-          Code Preview
-        </Button>
         <BasicModal
           open={isModalOpen}
           onClose={() => setIsModalOpen(false)}
           showCloseIcon={true}
+          className="custom-modal"
         >
-          <Button onClick={handleCopy}>
+          <SyntaxHighlighter
+            language="tsx"
+            style={isDarkMode ? vscDarkPlus : undefined}
+            customStyle={{
+              backgroundColor: isDarkMode ? "#2A2E39" : "#F8F8F8",
+              padding: "0.5rem",
+              borderRadius: "0.5rem",
+              fontSize: "0.7rem",
+              maxHeight: "570px",
+              overflowY: "auto",
+              whiteSpace: "pre-wrap",
+              wordWrap: "break-word",
+              overflowWrap: "break-word",
+            }}
+          >
+            {previewLoginFormCode(loginStore)}
+          </SyntaxHighlighter>
+          <Button
+            onClick={handleCopy}
+            icon={copied ? "icon-check" : undefined}
+            className="copyButton m-10 dark:bg-[#2A6490]"
+            iconColor={copied ? "green" : "white"}
+          >
             {copied ? "Copied!" : "Copy Code"}
           </Button>
-          <code>{generateLoginFormCode(loginStore)}</code>
+          {/* 닫기 버튼 */}
+          <div className="mb-2 text-right">
+            <Button
+              variant="border"
+              onClick={() => setIsModalOpen(false)}
+              className="dark:text-gray-300 text-sm text-gray dark:border-gray"
+            >
+              close
+            </Button>
+          </div>
         </BasicModal>
       </div>
 
