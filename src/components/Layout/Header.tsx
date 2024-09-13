@@ -86,6 +86,23 @@ const Header = () => {
           position="right"
           menu={[
             {
+              groupName: "Getting Started",
+              groupNameClassName:
+                "!text-[#9AC5E5] dark:!text-[#2A6490] bg-[#f8f8f8] dark:bg-[#2A2E39] py-2",
+              items: [
+                {
+                  name: "Introduction",
+                  path: "/introduction",
+                  className: "py-0",
+                },
+                {
+                  name: "Installation",
+                  path: "/installation",
+                  className: "py-0",
+                },
+              ],
+            },
+            {
               groupName: "FORM",
               groupNameClassName:
                 "!text-[#9AC5E5] dark:!text-[#2A6490] bg-[#f8f8f8] dark:bg-[#2A2E39] py-2",
@@ -115,7 +132,7 @@ const Header = () => {
               ],
             },
             {
-              groupName: "Data display",
+              groupName: "Data Display",
               groupNameClassName:
                 "!text-[#9AC5E5] dark:!text-[#2A6490] bg-[#f8f8f8] dark:bg-[#2A2E39] py-2",
               items: [
