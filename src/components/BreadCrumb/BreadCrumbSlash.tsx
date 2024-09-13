@@ -38,7 +38,7 @@ const BreadCrumbSlash = ({
             {item.href ? (
               <a
                 href={item.href}
-                className={`text-md font-medium dark:text-gray ${hoverColorClasses[hoverColor]} ${item.className}`}
+                className={`text-md font-medium text-gray dark:text-gray ${hoverColorClasses[hoverColor]} ${item.className}`}
               >
                 {item.children}
               </a>
