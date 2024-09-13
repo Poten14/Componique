@@ -43,7 +43,7 @@ const Profile = () => {
           {nickname}
         </p>
 
-        <div className="grid w-[500px] justify-items-center gap-y-4 rounded-lg border border-Basic bg-white p-6 !text-[#6c6c6c] dark:bg-[#333742]">
+        <div className="grid w-[400px] justify-items-center gap-y-4 rounded-lg border border-Basic bg-white p-6 !text-[#6c6c6c] dark:bg-[#333742]">
           <div className="grid w-full grid-cols-[auto_1fr] items-center gap-x-2">
             <Icon name="icon-comment" />
             <Input size="small" placeholder={placeholder} width="100%" />

@@ -7,7 +7,7 @@ import LoginForm from "./components/LoginForm";
 const LoginPage: React.FC = () => {
   return (
     <div className="flex justify-between">
-      <div className="w-full p-6 pb-24">
+      <div className="mt-10 w-full p-6 pb-24">
         <LoginForm />
       </div>
       <div className="fixed right-4 top-14">
