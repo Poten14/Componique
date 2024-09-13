@@ -94,7 +94,7 @@ const Header = () => {
                 { name: "CheckBox", path: "/checkbox", className: "py-0" },
                 { name: "Input", path: "/input", className: "py-0" },
                 {
-                  name: "Radio Button",
+                  name: "RadioButton",
                   path: "/radiobutton",
                   className: "py-0",
                 },
@@ -125,18 +125,43 @@ const Header = () => {
                 { name: "Avatar", path: "/avatar", className: "py-0" },
                 { name: "Icon", path: "/icon", className: "py-0" },
                 {
-                  name: "Progress Bar",
+                  name: "ProgressBar",
                   path: "/progressbar",
                   className: "py-0",
                 },
                 {
-                  name: "Infinite Scroll",
+                  name: "InfiniteScroll",
                   path: "/infinitescroll",
                   className: "py-0",
                 },
                 {
-                  name: "Image Upload",
+                  name: "ImageUpload",
                   path: "/imageupload",
+                  className: "py-0",
+                },
+                {
+                  name: "Badge",
+                  path: "/badge",
+                  className: "py-0",
+                },
+                {
+                  name: "Tooltip",
+                  path: "/tooltip",
+                  className: "py-0",
+                },
+                {
+                  name: "Rating",
+                  path: "/rating",
+                  className: "py-0",
+                },
+                {
+                  name: "Map",
+                  path: "/map",
+                  className: "py-0",
+                },
+                {
+                  name: "DataTable",
+                  path: "/datatable",
                   className: "py-0",
                 },
               ],
@@ -150,6 +175,7 @@ const Header = () => {
                 { name: "Toast", path: "/toast", className: "py-0" },
                 { name: "Skeleton", path: "/skeleton", className: "py-0" },
                 { name: "Modal", path: "/modal", className: "py-0" },
+                { name: "FormValidation", path: "/modal", className: "py-0" },
               ],
             },
             {
@@ -160,6 +186,7 @@ const Header = () => {
                 { name: "Pagination", path: "/pagination", className: "py-0" },
                 { name: "Drawer", path: "/drawer", className: "py-0" },
                 { name: "Navbar", path: "/navbar", className: "py-0" },
+                { name: "Breacrumb", path: "/breacrumb", className: "py-0" },
               ],
             },
           ]}
