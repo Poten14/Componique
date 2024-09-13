@@ -160,7 +160,7 @@ export default Example;
         />
 
         {/* TooltipIcon Section */}
-        <h2 className="text-[#2D3748] dark:text-white">2. TooltipIcon</h2>
+        <h1 className="text-[#2D3748] dark:text-white">2. TooltipIcon</h1>
         <p>
           <code>TooltipIcon</code> 컴포넌트는 아이콘과 함께 툴팁을 표시하는 컴포넌트입니다. 마우스를 아이콘 위에 올리면 아이콘에 대한 추가 정보를 제공합니다.
         </p>
