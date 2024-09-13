@@ -66,10 +66,20 @@ const IconDoc: React.FC = () => {
     "icon-plus",
     "icon-minus",
     "icon-close",
-    "icon-arowUp",
-    "icon-arowDown",
+    "icon-arrowUp",
+    "icon-arrowDown",
     "icon-emptyHeart",
     "icon-heart",
+    "icon-next",
+    "icon-prev",
+    "icon-up",
+    "icon-down",
+    "icon-github2",
+    "icon-facebook",
+    "icon-twitter",
+    "icon-linkedin",
+    "icon-line",
+    "icon-instagram",
   ];
   const router = useRouter();
   return (

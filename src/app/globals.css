@@ -58,17 +58,47 @@ i {
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-twitter:before {
+  content: "\e929";
+}
+.icon-linkedin:before {
+  content: "\e926";
+}
+.icon-instagram:before {
+  content: "\e927";
+}
+.icon-facebook:before {
+  content: "\e928";
+}
+.icon-line:before {
+  content: "\e92b";
+}
+.icon-github2:before {
+  content: "\e92c";
+}
+.icon-arrowUp:before {
+  content: "\e91e";
+}
+.icon-arrowDown:before {
+  content: "\e91f";
+}
+.icon-up:before {
+  content: "\e922";
+}
+.icon-down:before {
+  content: "\e923";
+}
+.icon-prev:before {
+  content: "\e924";
+}
+.icon-next:before {
+  content: "\e925";
+}
 .icon-heart:before {
   content: "\e920";
 }
 .icon-emptyHeart:before {
   content: "\e921";
-}
-.icon-arowUp:before {
-  content: "\e91e";
-}
-.icon-arowDown:before {
-  content: "\e91f";
 }
 .icon-minus:before {
   content: "\e919";
