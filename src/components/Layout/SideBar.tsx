@@ -165,6 +165,46 @@ const SideBar = () => {
             >
               ImageUpload
             </li>
+            <li
+              className={`cursor-pointer hover:text-Basic ${
+                pathname === "/badge" ? "font-bold text-Basic" : ""
+              }`}
+              onClick={() => router.push("/badge")}
+            >
+              Badge
+            </li>
+            <li
+              className={`cursor-pointer hover:text-Basic ${
+                pathname === "/tooltip" ? "font-bold text-Basic" : ""
+              }`}
+              onClick={() => router.push("/tooltip")}
+            >
+              Tooltip
+            </li>
+            <li
+              className={`cursor-pointer hover:text-Basic ${
+                pathname === "/rating" ? "font-bold text-Basic" : ""
+              }`}
+              onClick={() => router.push("/rating")}
+            >
+              Rating
+            </li>
+            <li
+              className={`cursor-pointer hover:text-Basic ${
+                pathname === "/map" ? "font-bold text-Basic" : ""
+              }`}
+              onClick={() => router.push("/map")}
+            >
+              Map
+            </li>
+            <li
+              className={`cursor-pointer hover:text-Basic ${
+                pathname === "/datatable" ? "font-bold text-Basic" : ""
+              }`}
+              onClick={() => router.push("/datatable")}
+            >
+              DataTable
+            </li>
           </ul>
         </li>
 
@@ -205,6 +245,14 @@ const SideBar = () => {
             >
               Modal
             </li>
+            <li
+              className={`cursor-pointer hover:text-Basic ${
+                pathname === "/formvalidation" ? "font-bold text-Basic" : ""
+              }`}
+              onClick={() => router.push("/formvalidation")}
+            >
+              FormValidation
+            </li>
           </ul>
         </li>
 
@@ -236,6 +284,14 @@ const SideBar = () => {
               onClick={() => router.push("/navbar")}
             >
               Navbar
+            </li>
+            <li
+              className={`cursor-pointer hover:text-Basic ${
+                pathname === "/breacrumb" ? "font-bold text-Basic" : ""
+              }`}
+              onClick={() => router.push("/breacrumb")}
+            >
+              Breacrumb
             </li>
           </ul>
         </li>
