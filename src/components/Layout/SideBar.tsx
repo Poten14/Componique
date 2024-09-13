@@ -10,6 +10,29 @@ const SideBar = () => {
       <ul className="mx-4 h-full select-none overflow-y-auto dark:bg-[#252629]">
         <li className="text-[#3e3e3e] dark:text-[#DFDFDF]">
           <span className="my-2 block rounded bg-[#f8f8f8] py-2 pl-4 text-[#9AC5E5] dark:bg-[#2A2E39] dark:text-[#2A6490]">
+            Getting Started
+          </span>
+          <ul className="ml-6 space-y-1">
+            <li
+              className={`cursor-pointer hover:text-Basic ${
+                pathname === "/introduction" ? "font-bold text-Basic" : ""
+              }`}
+              onClick={() => router.push("/introduction")}
+            >
+              Introduction
+            </li>
+            <li
+              className={`cursor-pointer hover:text-Basic ${
+                pathname === "/installation" ? "font-bold text-Basic" : ""
+              }`}
+              onClick={() => router.push("/installation")}
+            >
+              Installation
+            </li>
+          </ul>
+        </li>
+        <li className="text-[#3e3e3e] dark:text-[#DFDFDF]">
+          <span className="my-2 block rounded bg-[#f8f8f8] py-2 pl-4 text-[#9AC5E5] dark:bg-[#2A2E39] dark:text-[#2A6490]">
             FORM
           </span>
           <ul className="ml-6 space-y-1">
@@ -98,7 +121,7 @@ const SideBar = () => {
 
         <li>
           <span className="my-2 block rounded bg-[#f8f8f8] py-2 pl-4 text-[#9AC5E5] dark:bg-[#2A2E39] dark:text-[#2A6490]">
-            Data display
+            Data Display
           </span>
           <ul className="ml-6 space-y-1 dark:text-[#DFDFDF]">
             <li
