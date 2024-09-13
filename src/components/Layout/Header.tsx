@@ -10,6 +10,7 @@ import { usePathname } from "next/navigation";
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
+  const [isDrawer2Open, setIsDrawer2Open] = useState(false);
   const [isDarkMode, setIsDarkMode] = useState(false);
   const pathname = usePathname();
   useEffect(() => {
@@ -53,6 +54,9 @@ const Header = () => {
   const onclickDrawerHandler = (open: boolean) => () => {
     setIsDrawerOpen(open);
   };
+  const onclickDrawerHandler2 = (open: boolean) => () => {
+    setIsDrawer2Open(open);
+  };
 
   return (
     <header
@@ -60,7 +64,20 @@ const Header = () => {
         isScrolled ? "bg-white shadow-md dark:bg-[#252629]" : "bg-transparent"
       }`}
     >
-      <Logo />
+      <div className="flex items-center justify-between">
+        {pathname.startsWith("/userpage") ? (
+          <Button
+            className="ml-4 mr-2 dark:bg-[#333742] xl:hidden"
+            radius="full"
+            onClick={onclickDrawerHandler2(true)}
+          >
+            <HamburgerMenu />
+          </Button>
+        ) : (
+          ""
+        )}
+        <Logo />
+      </div>
       <div className="flex items-center">
         <SwitchDark />
         <UserPage />
@@ -75,7 +92,28 @@ const Header = () => {
             <HamburgerMenu />
           </Button>
         )}
-
+        <Drawer
+          className="!text-[#9AC5E5] dark:bg-[#252629] dark:text-white"
+          isOpen={isDrawer2Open}
+          onClose={onclickDrawerHandler2(false)}
+          color="white"
+          bgColor="white"
+          logo={isDarkMode ? "/LogoDark.svg" : "/componique_logo_full.svg"}
+          menu={[
+            {
+              items: [
+                { name: "SNS", path: "/userpage/sns" },
+                { name: "Profile", path: "/userpage/profile" },
+                { name: "Survey", path: "/userpage/survey" },
+                { name: "ColorPicker", path: "/userpage/colorpicker" },
+                { name: "Shopping", path: "/userpage/shopping" },
+                { name: "Login", path: "/userpage/login" },
+                { name: "TodoList", path: "/userpage/todolist" },
+                { name: "CustomerService", path: "/userpage/customerservice" },
+              ],
+            },
+          ]}
+        />
         <Drawer
           isOpen={isDrawerOpen}
           className="bg-white text-[#3e3e3e] dark:bg-[#252629] dark:text-white" // 다크 모드에서 텍스트 및 배경색 변경

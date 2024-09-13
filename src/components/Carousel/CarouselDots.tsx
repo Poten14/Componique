@@ -80,7 +80,7 @@ const CarouselDots = ({
           )}
           <button
             type="button"
-            className="group absolute start-0 top-0 z-30 flex h-full cursor-pointer items-center justify-center px-4 focus:outline-none"
+            className="group absolute start-0 top-0 z-20 flex h-full cursor-pointer items-center justify-center px-4 focus:outline-none"
             onClick={handlePrev}
           >
             <span className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-white/30 group-hover:bg-white/50 group-focus:outline-none group-focus:ring-4 group-focus:ring-white">
@@ -101,7 +101,7 @@ const CarouselDots = ({
           </button>
           <button
             type="button"
-            className="group absolute end-0 top-0 z-30 flex h-full cursor-pointer items-center justify-center px-4 focus:outline-none"
+            className="group absolute end-0 top-0 z-20 flex h-full cursor-pointer items-center justify-center px-4 focus:outline-none"
             onClick={handleNext}
           >
             <span className="dark:bg-gray-800/30 dark:group-hover:bg-gray-800/60 dark:group-focus:ring-gray-800/70 inline-flex h-10 w-10 items-center justify-center rounded-full bg-white/30 group-hover:bg-white/50 group-focus:outline-none group-focus:ring-4 group-focus:ring-white">

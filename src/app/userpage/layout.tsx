@@ -16,10 +16,10 @@ export default function DocsLayout({
         <UserPageLogoText />
         <div className="flex justify-center pt-[80px]">
           <div className="w-full">
-            <section className="fixed left-4 top-26 h-[calc(100%-120px)] w-[230px] rounded-l-2xl bg-[#D8EAF8] shadow-lg dark:bg-[#353F4A]">
+            <section className="fixed left-4 top-26 hidden h-[calc(100%-120px)] w-[230px] rounded-l-2xl bg-[#D8EAF8] shadow-lg dark:bg-[#353F4A] xl:block">
               <UserPageLeftSidebar />
             </section>
-            <div className="w-full">{children}</div>
+            <div className="w-[calc(100%-350px)] xl:w-full">{children}</div>
           </div>
         </div>
       </div>
