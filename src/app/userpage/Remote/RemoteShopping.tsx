@@ -146,61 +146,60 @@ const RemoteShopping: React.FC = () => {
       onChange: (newValue: string) => setShoppingState("logoSrc", newValue),
     },
     {
-      label: "Logo 이름",
+      label: "Logo Name",
       type: "text",
       value: logoName,
       onChange: (newValue: string) => setShoppingState("logoName", newValue),
     },
     {
-      label: "Navbar 클릭 색상",
+      label: "Navbar Hover-Color",
       type: "select",
       value: hoverColor,
       options: ["skyblue", "blue", "red"],
       onChange: (newValue: string) => setShoppingState("hoverColor", newValue),
     },
     {
-      label: "Navbar 위치",
+      label: "Navbar-Position",
       type: "select",
       value: position,
       options: ["sticky", "relative", "static"],
       onChange: (newValue: string) => setShoppingState("position", newValue),
     },
     {
-      label: "Navbar 크기",
+      label: "Navbar-Size",
       type: "select",
       value: size,
       options: ["small", "medium", "large"],
       onChange: (newValue: string) => setShoppingState("size", newValue),
     },
     {
-      label: "제목",
+      label: "Title",
       type: "text",
       value: title,
       onChange: (newValue: string) => setShoppingState("title", newValue),
     },
-
     {
-      label: "설명",
+      label: "Subtitle",
       type: "text",
       value: subtitle,
       onChange: (newValue: string) => setShoppingState("subtitle", newValue),
     },
     {
-      label: "현재 페이지",
+      label: "Current-Page",
       type: "text",
       value: String(currentPage),
       onChange: (newValue: string) =>
         setShoppingState("currentPage", parseInt(newValue, 10)),
     },
     {
-      label: "전체 페이지 수",
+      label: "Total Pages",
       type: "text",
       value: String(totalPages),
       onChange: (newValue: string) =>
         setShoppingState("totalPages", parseInt(newValue, 10)),
     },
     {
-      label: "Pagination 모양",
+      label: "Pagination-Shape",
       type: "select",
       value: paginationVariant,
       options: ["circle", "square"],
@@ -208,7 +207,7 @@ const RemoteShopping: React.FC = () => {
         setShoppingState("paginationVariant", newValue),
     },
     {
-      label: "Pagination 스타일",
+      label: "Pagination-Style",
       type: "select",
       value: paginationStyleType,
       options: ["filled", "outlined", "outlined-focused", "filled-outlined"],
@@ -216,7 +215,7 @@ const RemoteShopping: React.FC = () => {
         setShoppingState("paginationStyleType", newValue),
     },
     {
-      label: "Pagination 색상",
+      label: "Pagination-Color",
       type: "select",
       value: paginationColor,
       options: [
@@ -233,7 +232,7 @@ const RemoteShopping: React.FC = () => {
         setShoppingState("paginationColor", newValue),
     },
     {
-      label: "부제목",
+      label: "Secondary-Title",
       type: "text",
       value: title2,
       onChange: (newValue: string) => setShoppingState("title2", newValue),

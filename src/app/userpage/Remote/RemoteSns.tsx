@@ -91,44 +91,44 @@ const SnsRemote: React.FC = () => {
 
   const controls = [
     {
-      label: "아이디",
+      label: "Username",
       type: "text",
       value: nickname,
       onChange: (newValue: string) => setSnsState("nickname", newValue),
     },
     {
-      label: "문구 작성",
+      label: "Write Content",
       type: "text",
       value: content,
       onChange: (newValue: string) => setSnsState("content", newValue),
     },
     {
-      label: "Avarta 크기",
+      label: "Avatar-Size",
       type: "select",
       value: size,
       options: ["small", "medium", "large"],
       onChange: (newValue: string) => setSnsState("size", newValue),
     },
     {
-      label: "슬라이드 이미지 첫번째",
+      label: "Slide Image 1",
       type: "text",
       value: imageSrc1,
       onChange: (newValue: string) => setSnsState("imageSrc1", newValue),
     },
     {
-      label: "슬라이드 이미지 두번째",
+      label: "Slide Image 2",
       type: "text",
       value: imageSrc2,
       onChange: (newValue: string) => setSnsState("imageSrc2", newValue),
     },
     {
-      label: "슬라이드 이미지 세번째",
+      label: "Slide Image 3",
       type: "text",
       value: imageSrc3,
       onChange: (newValue: string) => setSnsState("imageSrc3", newValue),
     },
     {
-      label: "자동 재생",
+      label: "Autoplay",
       type: "select",
       value: autoplay ? "true" : "false",
       options: ["true", "false"],
@@ -136,7 +136,7 @@ const SnsRemote: React.FC = () => {
         setSnsState("autoplay", JSON.parse(newValue)),
     },
     {
-      label: "Dots 모양",
+      label: "Dots Display",
       type: "select",
       value: showDots ? "true" : "false",
       options: ["true", "false"],
@@ -144,7 +144,7 @@ const SnsRemote: React.FC = () => {
         setSnsState("showDots", JSON.parse(newValue)),
     },
     {
-      label: "슬라이드 전환 시간",
+      label: "Slide Transition Time",
       type: "string",
       value: interval,
       onChange: (newValue: string) => setSnsState("interval", newValue),

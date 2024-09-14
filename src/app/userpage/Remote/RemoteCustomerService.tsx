@@ -162,7 +162,7 @@ const CustomerServiceRemote: React.FC = () => {
 
   const controls = [
     {
-      label: "번호 유형-스타일",
+      label: "Number Type - Style",
       type: "select",
       value: dropDownType1,
       options: ["basic", "rounded", "borderless-rounded", "less-rounded"],
@@ -170,23 +170,23 @@ const CustomerServiceRemote: React.FC = () => {
         setServiceState("dropDownType1", newValue),
     },
     {
-      label: "전화번호",
+      label: "Phone Number",
       type: "input",
       value: phoneNumber,
       size: inputSize1,
       variant: inputVariant1,
-      placeholder: "전화번호",
+      placeholder: "Phone Number",
       onChange: (newValue: string) => setServiceState("phoneNumber", newValue),
     },
     {
-      label: "전화번호-사이즈",
+      label: "Phone Number - Size",
       type: "select",
       value: inputSize1,
       options: ["xs", "small", "medium", "large", "xl"],
       onChange: (newValue: string) => setServiceState("inputSize1", newValue),
     },
     {
-      label: "전화번호-채우기",
+      label: "Phone Number - Fill",
       type: "select",
       value: inputVariant1,
       options: ["outlined", "filled"],
@@ -194,7 +194,7 @@ const CustomerServiceRemote: React.FC = () => {
         setServiceState("inputVariant1", newValue),
     },
     {
-      label: "서비스 항목 선택-스타일",
+      label: "Service Item - Style",
       type: "select",
       value: dropDownType2,
       options: ["basic", "rounded", "borderless-rounded", "less-rounded"],
@@ -202,23 +202,23 @@ const CustomerServiceRemote: React.FC = () => {
         setServiceState("dropDownType2", newValue),
     },
     {
-      label: "제목 입력",
+      label: "Enter Title",
       type: "input",
       value: title,
       size: inputSize2,
       variant: inputVariant2,
-      placeholder: "제목",
+      placeholder: "Title",
       onChange: (newValue: string) => setServiceState("title", newValue),
     },
     {
-      label: "제목-사이즈",
+      label: "Title - Size",
       type: "select",
       value: inputSize2,
       options: ["xs", "small", "medium", "large", "xl"],
       onChange: (newValue: string) => setServiceState("inputSize2", newValue),
     },
     {
-      label: "제목-채우기",
+      label: "Title - Fill",
       type: "select",
       value: inputVariant2,
       options: ["outlined", "filled"],
@@ -226,38 +226,38 @@ const CustomerServiceRemote: React.FC = () => {
         setServiceState("inputVariant2", newValue),
     },
     {
-      label: "상세 내용 입력",
+      label: "Enter Detailed Description",
       type: "textarea",
       value: details,
       size: detailSize,
       color: detailColor,
       resize: detailResize,
-      placeholder: "상세 내용을 입력하세요",
+      placeholder: "Enter Detailed Description",
       onChange: (newValue: string) => setServiceState("details", newValue),
     },
     {
-      label: "상세 내용-사이즈",
+      label: "Description - Size",
       type: "select",
       value: detailSize,
       options: ["xs", "small", "medium", "large", "xl"],
       onChange: (newValue: string) => setServiceState("detailSize", newValue),
     },
     {
-      label: "상세 내용-색상",
+      label: "Description - Color",
       type: "select",
       value: detailColor,
       options: ["red", "skyblue", "green", "gray"],
       onChange: (newValue: string) => setServiceState("detailColor", newValue),
     },
     {
-      label: "상세 내용-크기 조절",
+      label: "Description - Resize",
       type: "select",
       value: detailResize,
       options: ["none", "both", "horizontal", "vertical"],
       onChange: (newValue: string) => setServiceState("detailResize", newValue),
     },
     {
-      label: "이미지 업로드",
+      label: "Image Upload",
       type: "imageUpload",
       size: imageUploadSize,
       color: imageUploadColor,
@@ -266,7 +266,7 @@ const CustomerServiceRemote: React.FC = () => {
       onImageSelect: onImageSelect,
     },
     {
-      label: "이미지 업로드-사이즈",
+      label: "Image Upload - Size",
       type: "select",
       value: imageUploadSize,
       options: ["small", "medium", "large"],
@@ -274,7 +274,7 @@ const CustomerServiceRemote: React.FC = () => {
         setServiceState("imageUploadSize", newValue),
     },
     {
-      label: "이미지 업로드-색상",
+      label: "Image Upload - Color",
       type: "select",
       value: imageUploadColor,
       options: [
@@ -299,7 +299,7 @@ const CustomerServiceRemote: React.FC = () => {
         setServiceState("imageUploadColor", newValue),
     },
     {
-      label: "이미지 업로드-모양",
+      label: "Image Upload - Shape",
       type: "select",
       value: imageUploadShape,
       options: ["rectangle", "circle"],
@@ -307,7 +307,7 @@ const CustomerServiceRemote: React.FC = () => {
         setServiceState("imageUploadShape", newValue),
     },
     {
-      label: "이미지 업로드-스타일",
+      label: "Image Upload - Style",
       type: "select",
       value: imageUploadVariant,
       options: ["solid", "border"],
@@ -315,7 +315,7 @@ const CustomerServiceRemote: React.FC = () => {
         setServiceState("imageUploadVariant", newValue),
     },
     {
-      label: "Cancel-버튼 색상",
+      label: "Cancel Button - Color",
       type: "select",
       value: buttonColor1,
       options: [
@@ -336,14 +336,14 @@ const CustomerServiceRemote: React.FC = () => {
       onChange: (newValue: string) => setServiceState("buttonColor1", newValue),
     },
     {
-      label: "Cancel-버튼 크기",
+      label: "Cancel Button - Size",
       type: "select",
       value: buttonSize1,
       options: ["small", "medium", "large"],
       onChange: (newValue: string) => setServiceState("buttonSize1", newValue),
     },
     {
-      label: "Cancel-버튼 스타일",
+      label: "Cancel Button - Style",
       type: "select",
       value: buttonVariant1,
       options: ["solid", "border", "flat", "light"],
@@ -351,7 +351,7 @@ const CustomerServiceRemote: React.FC = () => {
         setServiceState("buttonVariant1", newValue),
     },
     {
-      label: "Submit-버튼 색상",
+      label: "Submit Button - Color",
       type: "select",
       value: buttonColor2,
       options: [
@@ -372,14 +372,14 @@ const CustomerServiceRemote: React.FC = () => {
       onChange: (newValue: string) => setServiceState("buttonColor2", newValue),
     },
     {
-      label: "Submit-버튼 크기",
+      label: "Submit Button - Size",
       type: "select",
       value: buttonSize2,
       options: ["small", "medium", "large"],
       onChange: (newValue: string) => setServiceState("buttonSize2", newValue),
     },
     {
-      label: "Submit-버튼 스타일",
+      label: "Submit Button - Style",
       type: "select",
       value: buttonVariant2,
       options: ["solid", "border", "flat", "light"],

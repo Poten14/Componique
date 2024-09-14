@@ -177,7 +177,7 @@ const TodoListRemote: React.FC = () => {
 
   const controls = [
     {
-      label: "Add Button 색상",
+      label: "Add Button-Color",
       type: "select",
       value: addButtonColor,
       options: ["primary", "secondary", "success", "danger"],
@@ -185,7 +185,7 @@ const TodoListRemote: React.FC = () => {
         setTodoListState("addButtonColor", newValue),
     },
     {
-      label: "Add Button 크기",
+      label: "Add Button-Size",
       type: "select",
       value: addButtonSize,
       options: ["small", "medium", "large"],
@@ -193,7 +193,7 @@ const TodoListRemote: React.FC = () => {
         setTodoListState("addButtonSize", newValue),
     },
     {
-      label: "Add Button 스타일",
+      label: "Add Button-Style",
       type: "select",
       value: addButtonVariant,
       options: ["solid", "border", "flat", "light"],
@@ -201,7 +201,7 @@ const TodoListRemote: React.FC = () => {
         setTodoListState("addButtonVariant", newValue),
     },
     {
-      label: "Delete Button 색상",
+      label: "Delete Button-Color",
       type: "select",
       value: deleteButtonColor,
       options: ["primary", "secondary", "success", "warning", "danger"],
@@ -209,7 +209,7 @@ const TodoListRemote: React.FC = () => {
         setTodoListState("deleteButtonColor", newValue),
     },
     {
-      label: "Delete Button 크기",
+      label: "Delete Button-Size",
       type: "select",
       value: deleteButtonSize,
       options: ["small", "medium", "large"],
@@ -217,7 +217,7 @@ const TodoListRemote: React.FC = () => {
         setTodoListState("deleteButtonSize", newValue),
     },
     {
-      label: "Delete Button 스타일",
+      label: "Delete Button-Style",
       type: "select",
       value: deleteButtonVariant,
       options: ["solid", "border", "flat", "light"],
@@ -225,7 +225,7 @@ const TodoListRemote: React.FC = () => {
         setTodoListState("deleteButtonVariant", newValue),
     },
     {
-      label: "CheckBox 색상",
+      label: "CheckBox-Color",
       type: "select",
       value: checkBoxColor,
       options: ["primary", "secondary", "success", "danger"],
@@ -233,7 +233,7 @@ const TodoListRemote: React.FC = () => {
         setTodoListState("checkBoxColor", newValue),
     },
     {
-      label: "CheckBox 스타일",
+      label: "CheckBox-Style",
       type: "select",
       value: checkBoxVariant,
       options: ["solid", "border"],
@@ -241,13 +241,13 @@ const TodoListRemote: React.FC = () => {
         setTodoListState("checkBoxVariant", newValue),
     },
     {
-      label: "Input 1",
+      label: "Input-1",
       type: "text",
       value: todoList1,
       onChange: (newValue: string) => setTodoListState("todoList1", newValue),
     },
     {
-      label: "Input 2",
+      label: "Input-2",
       type: "text",
       value: todoList2,
       onChange: (newValue: string) => setTodoListState("todoList2", newValue),
@@ -259,26 +259,25 @@ const TodoListRemote: React.FC = () => {
       onChange: (newValue: string) => setTodoListState("todoList3", newValue),
     },
     {
-      label: "Input 4",
+      label: "Input-4",
       type: "text",
       value: todoList4,
       onChange: (newValue: string) => setTodoListState("todoList4", newValue),
     },
     {
-      label: "Input 크기",
+      label: "Input-Size",
       type: "select",
       value: inputSize,
       options: ["xs", "small", "medium", "large", "xl"],
       onChange: (newValue: string) => setTodoListState("inputSize", newValue),
     },
     {
-      label: "Input 길이",
+      label: "Input-Width",
       type: "text",
       value: inputWidth,
       onChange: (newValue: string) => setTodoListState("inputWidth", newValue),
     },
   ];
-
   const handleCopy = () => {
     const code = previewTodoListFormCode(todoListStore);
     navigator.clipboard.writeText(code);

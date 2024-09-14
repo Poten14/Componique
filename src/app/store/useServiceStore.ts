@@ -133,24 +133,24 @@ export const useServiceStore = create<ServiceState>((set) => ({
   dropDownOption1: ["02", "010", "011", "014", "019"],
   dropDownOption2: [
     {
-      groupName: "기술 지원",
-      items: ["소프트웨어 문제", "하드웨어 문제", "네트워크 연결"],
+      groupName: "Technical Support",
+      items: ["Software Issues", "Hardware Issues", "Network Connectivity"],
     },
     {
-      groupName: "고객 서비스",
-      items: ["계정 관리", "청구 및 결제", "주문 상태"],
+      groupName: "Customer Service",
+      items: ["Account Management", "Billing & Payment", "Order Status"],
     },
     {
-      groupName: "제품 정보",
-      items: ["제품 세부 정보", "보증 정보"],
+      groupName: "Product Information",
+      items: ["Product Details", "Warranty Information"],
     },
     {
-      groupName: "피드백 및 제안",
-      items: ["서비스 피드백", "제품 개선 제안"],
+      groupName: "Feedback & Suggestions",
+      items: ["Service Feedback", "Product Improvement Suggestions"],
     },
     {
-      groupName: "배송 및 배송 문제",
-      items: ["배송 상태", "반품 및 교환"],
+      groupName: "Shipping & Delivery Issues",
+      items: ["Shipping Status", "Returns & Exchanges"],
     },
   ],
   dropDownType1: "borderless-rounded", // 기본 DropDown 타입 설정

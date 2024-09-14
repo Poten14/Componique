@@ -109,7 +109,6 @@ const CustomerServiceForm: React.FC = () => {
   const handleDetailResizeChange = (newResize: string) => {
     setServiceState("detailResize", newResize as any);
   };
-
   return (
     <div className="flex items-center justify-center">
       <div
@@ -122,16 +121,16 @@ const CustomerServiceForm: React.FC = () => {
             isDarkMode ? "text-[#dfdfdf]" : "text-Gray"
           }`}
         >
-          고객 서비스
+          Customer Service
         </h1>
         <form onSubmit={handleSubmit} className="space-y-6">
           <h1 className={isDarkMode ? "text-[#dfdfdf]" : ""}>
-            🧑🏻‍💼 문의 유형을 선택하세요:
+            🧑🏻‍💼 Select your inquiry type:
           </h1>
           <div className="flex">
             <DropDownBasic
               option={dropDownOption1}
-              placeholder="번호 유형 선택"
+              placeholder="Number Type"
               onSelect={(value) => setServiceState("numberType", value)}
               type={dropDownType1}
             />
@@ -139,7 +138,7 @@ const CustomerServiceForm: React.FC = () => {
             <Input
               size={inputSize1}
               variant={inputVariant1}
-              placeholder="전화번호"
+              placeholder="Phone Number"
               value={phoneNumber}
               onChange={(e) => setServiceState("phoneNumber", e.target.value)}
             />
@@ -147,19 +146,19 @@ const CustomerServiceForm: React.FC = () => {
           <div className="flex w-full">
             <DropDownGrouped
               options={dropDownOption2}
-              defaultOption="서비스 항목 선택"
+              defaultOption="Service Item"
               onSelect={(value) => setServiceState("serviceItem", value)}
               type={dropDownType2}
             />
           </div>
           <hr />
           <h1 className={isDarkMode ? "text-[#dfdfdf]" : ""}>
-            🧑🏻‍💻 문의 내용을 작성해주세요.
+            🧑🏻‍💻 Please provide details of your inquiry:
           </h1>
           <Input
             size={inputSize2}
             variant={inputVariant2}
-            placeholder="제목 입력"
+            placeholder="Enter Subject"
             value={title}
             onChange={(e) => setServiceState("title", e.target.value)}
             width="100%"
@@ -168,7 +167,7 @@ const CustomerServiceForm: React.FC = () => {
             size={detailSize}
             color={detailColor}
             resize={detailResize}
-            placeholder="상세 내용 입력"
+            placeholder="Enter Detailed Description"
             value={details}
             onChange={(e) => setServiceState("details", e.target.value)}
             className={
@@ -176,7 +175,7 @@ const CustomerServiceForm: React.FC = () => {
             }
           />
           <h1 className={isDarkMode ? "text-[#dfdfdf]" : ""}>
-            🛠️ 이미지 업로드
+            🛠️ Image Upload
           </h1>
           <ImageUpload
             size={imageUploadSize}
@@ -184,7 +183,7 @@ const CustomerServiceForm: React.FC = () => {
             shape={imageUploadShape}
             variant={imageUploadVariant}
             onImageSelect={handleImageSelect}
-            text="+ 업로드"
+            text="+ Upload"
             className={
               isDarkMode ? "dark:bg-[#2A2E39] dark:text-[#dfdfdf]" : ""
             }
@@ -200,7 +199,7 @@ const CustomerServiceForm: React.FC = () => {
                 isDarkMode ? "bg-[#444B58]" : ""
               }`}
             >
-              취소
+              Cancel
             </Button>
             <Button
               color={buttonColor2}
@@ -211,7 +210,7 @@ const CustomerServiceForm: React.FC = () => {
                 isDarkMode ? "bg-[#444B58]" : ""
               }`}
             >
-              제출
+              Submit
             </Button>
           </div>
         </form>
@@ -219,7 +218,7 @@ const CustomerServiceForm: React.FC = () => {
           <Toast
             isOpen={showToast}
             onClose={() => setShowToast(false)}
-            color={toastMessage.includes("성공") ? "success" : "danger"}
+            color={toastMessage.includes("success") ? "success" : "danger"}
           >
             {toastMessage}
           </Toast>

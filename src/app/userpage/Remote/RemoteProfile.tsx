@@ -114,21 +114,21 @@ const ProfileRemote: React.FC = () => {
 
   const controls = [
     {
-      label: "ImageUpload 모양",
+      label: "ImageUpload-Shape",
       type: "select",
       value: shape,
       options: ["rectangle", "circle"],
       onChange: (newValue: string) => setProfileState("shape", newValue),
     },
     {
-      label: "ImageUpload 크기",
+      label: "ImageUpload-Size",
       type: "select",
       value: size,
       options: ["small", "medium", "large"],
       onChange: (newValue: string) => setProfileState("size", newValue),
     },
     {
-      label: "ImageUpload 색상",
+      label: "ImageUpload-Color",
       type: "select",
       value: color,
       options: [
@@ -152,70 +152,69 @@ const ProfileRemote: React.FC = () => {
       onChange: (newValue: string) => setProfileState("color", newValue),
     },
     {
-      label: "ImageUpload 스타일",
+      label: "ImageUpload-Style",
       type: "select",
       value: variant,
       options: ["solid", "border"],
       onChange: (newValue: string) => setProfileState("variant", newValue),
     },
     {
-      label: "ImageUpload 텍스트",
+      label: "ImageUpload-Text",
       type: "text",
       value: text,
       onChange: (newValue: string) => setProfileState("text", newValue),
     },
     {
-      label: "ImageUpload 아이콘 크기",
+      label: "ImageUpload-Icon Size",
       type: "select",
       value: iconSize,
       options: ["small", "medium", "large"],
       onChange: (newValue: string) => setProfileState("iconSize", newValue),
     },
     {
-      label: "ImageUpload 아이콘 색상",
+      label: "ImageUpload-Icon Color",
       type: "text",
       value: iconColor,
       onChange: (newValue: string) => setProfileState("iconColor", newValue),
     },
     {
-      label: "ImageUpload 아이콘 위치",
+      label: "ImageUpload-Icon Position",
       type: "select",
       value: iconPosition,
       options: ["left", "right", "top", "bottom"],
       onChange: (newValue: string) => setProfileState("iconPosition", newValue),
     },
     {
-      label: "이름",
+      label: "Name",
       type: "text",
       value: nickname,
       onChange: (newValue: string) => setProfileState("nickname", newValue),
     },
     {
-      label: "자기소개",
+      label: "Bio",
       type: "text",
       value: placeholder,
       onChange: (newValue: string) => setProfileState("placeholder", newValue),
     },
     {
-      label: "직업",
+      label: "Job",
       type: "text",
       value: job,
       onChange: (newValue: string) => setProfileState("job", newValue),
     },
     {
-      label: "지역",
+      label: "Location",
       type: "text",
       value: location,
       onChange: (newValue: string) => setProfileState("location", newValue),
     },
     {
-      label: "메일",
+      label: "Email",
       type: "text",
       value: email,
       onChange: (newValue: string) => setProfileState("email", newValue),
     },
   ];
-
   return (
     <div className="relative shadow-xl">
       <div

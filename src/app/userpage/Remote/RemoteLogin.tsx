@@ -141,40 +141,40 @@ const RemoteLogin: React.FC = () => {
       onChange: (newValue: string) => setLoginState("title", newValue),
     },
     {
-      label: "Input1 텍스트",
+      label: "Input1-Text",
       type: "text",
       value: placeholder,
       onChange: (newValue: string) => setLoginState("placeholder", newValue),
     },
     {
-      label: "Input2 텍스트 ",
+      label: "Input2-Text",
       type: "text",
       value: placeholder2,
       onChange: (newValue: string) => setLoginState("placeholder2", newValue),
     },
     {
-      label: "Input 크기",
+      label: "Input-Size",
       type: "select",
       value: inputSize,
       options: ["xs", "small", "medium", "large", "xl"],
       onChange: (newValue: string) => setLoginState("inputSize", newValue),
     },
     {
-      label: "Input 길이",
+      label: "Input-Width",
       type: "text",
       value: inputWidth,
       onChange: (newValue: string) => setLoginState("inputWidth", newValue),
     },
-    //체크박스
+    // Checkbox
     {
-      label: "Checkbox 크기",
+      label: "Checkbox-Size",
       type: "select",
       value: checkboxSize,
       options: ["small", "medium", "large"],
       onChange: (newValue: string) => setLoginState("checkboxSize", newValue),
     },
     {
-      label: "Checkbox 스타일",
+      label: "Checkbox-Style",
       type: "select",
       value: checkboxVariant,
       options: ["solid", "border"],
@@ -182,7 +182,7 @@ const RemoteLogin: React.FC = () => {
         setLoginState("checkboxVariant", newValue),
     },
     {
-      label: "Checkbox 색상",
+      label: "Checkbox-Color",
       type: "select",
       value: checkboxColor,
       options: [
@@ -203,35 +203,36 @@ const RemoteLogin: React.FC = () => {
       onChange: (newValue: string) => setLoginState("checkboxColor", newValue),
     },
     {
-      label: "Checkbox 텍스트",
+      label: "Checkbox-Text",
       type: "text",
       value: description,
       onChange: (newValue: string) => setLoginState("description", newValue),
     },
+    // Button
     {
-      label: "Button 색상",
+      label: "Button-Color",
       type: "select",
       value: buttonColor,
       options: ["primary", "secondary", "success", "danger"],
       onChange: (newValue: string) => setLoginState("buttonColor", newValue),
     },
     {
-      label: "Button 크기",
+      label: "Button-Size",
       type: "select",
       value: buttonSize,
       options: ["small", "medium", "large"],
       onChange: (newValue: string) => setLoginState("buttonSize", newValue),
     },
     {
-      label: "Button 스타일",
+      label: "Button-Style",
       type: "select",
       value: buttonVariant,
       options: ["solid", "border", "flat", "light"],
       onChange: (newValue: string) => setLoginState("buttonVariant", newValue),
     },
-    // 두 번째 버튼
+    // Second Button
     {
-      label: "Button2 색상",
+      label: "Button2-Color",
       type: "select",
       value: buttonColor2,
       options: [
@@ -252,14 +253,14 @@ const RemoteLogin: React.FC = () => {
       onChange: (newValue: string) => setLoginState("buttonColor2", newValue),
     },
     {
-      label: "Button2 크기",
+      label: "Button2-Size",
       type: "select",
       value: buttonSize2,
       options: ["small", "medium", "large"],
       onChange: (newValue: string) => setLoginState("buttonSize2", newValue),
     },
     {
-      label: "Button2 스타일",
+      label: "Button2-Style",
       type: "select",
       value: buttonVariant2,
       options: ["solid", "border", "flat", "light"],
