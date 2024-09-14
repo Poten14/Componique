@@ -5,7 +5,8 @@ import BadgeBasic from "@components/Badge/BadgeBasic";
 import BadgeIcon from "@components/Badge/BadgeIcon";
 import BadgeCounter from "@components/Badge/BadgeCounter";
 import BadgeDot from "@components/Badge/BadgeDot";
-
+import RatingStar from "@components/Rating/RatingStar";
+import RatingNumSlider from "@components/Rating/RatingNumSlider";
 const page = () => {
   return (
     <div className="mt-40 ml-16">
@@ -25,7 +26,10 @@ const page = () => {
       <h1>Dot Badge입니다/</h1>
       <BadgeDot />
       <hr />
-   
+      <h1>Star Rating입니다.</h1>
+      <RatingStar stars={3}/>
+      <h1>NumSlider Rating입니다.</h1>
+      <RatingNumSlider />
     </div>
   );
 };
