@@ -27,7 +27,7 @@ const SpinnerDoc: React.FC = () => {
   };
 
   return (
-    <div className="prose mb-40 max-w-[1000px] text-[#6D6D6D]">
+    <div className="prose mb-40 max-w-[850px] text-[#6D6D6D]">
       <h1 className="text-[#2D3748]">1. Spinner</h1>
       <p>
         <code>Spinner</code> 컴포넌트는 로딩 상태를 시각적으로 나타내기 위해

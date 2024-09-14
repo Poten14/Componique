@@ -72,14 +72,14 @@ export const useLoginStore = create<LoginState>((set) => ({
   buttonColor2: "secondary",
   buttonSize2: "medium",
   buttonVariant2: "border",
-  placeholder: "아이디를 입력하세요",
-  placeholder2: "비밀번호를 입력하세요",
+  placeholder: "Enter your username",
+  placeholder2: "Enter your password",
   inputSize: "medium",
   inputWidth: "100%",
   checkboxSize: "medium",
   checkboxColor: "basic",
   checkboxVariant: "border",
-  description: "로그인 상태 유지",
+  description: "Keep logged in",
   setLoginState: (key, value) =>
     set((state) => ({
       ...state,

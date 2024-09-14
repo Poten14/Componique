@@ -15,6 +15,7 @@ interface ModalProps {
   primaryButton?: ButtonProps;
   secondaryButton?: ButtonProps;
   showCloseIcon?: boolean;
+  className?: string;
 }
 
 const sizeClasses = {
@@ -40,6 +41,7 @@ export const BasicModal: React.FC<ModalProps> = ({
   secondaryButton,
   children,
   showCloseIcon = true,
+  className,
 }) => {
   const [isDarkMode, setIsDarkMode] = useState(false);
 
@@ -72,10 +74,17 @@ export const BasicModal: React.FC<ModalProps> = ({
       style={{ margin: 0 }}
     >
       <div
-        className={`relative rounded-lg p-6 shadow-lg ${sizeClasses[size]} ${
+        className={`relative overflow-auto rounded-lg p-6 shadow-lg ${className || ""} ${sizeClasses[size]} ${
           isDarkMode ? "bg-[#2A2E39] text-white" : "bg-white text-black"
         }`}
         onClick={(e) => e.stopPropagation()}
+        style={{
+          maxHeight: "90vh", // 모달의 최대 높이를 설정하여 화면 밖으로 넘어가지 않게 함
+          maxWidth: "90vw", // 모달의 최대 너비를 설정하여 가로 스크롤 방지
+          whiteSpace: "pre-wrap", // 가로 스크롤 방지
+          wordWrap: "break-word", // 단어 잘라서 줄바꿈
+          overflowWrap: "break-word", // 가로 스크롤 방지
+        }}
       >
         {showCloseIcon && (
           <button

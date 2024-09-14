@@ -17,7 +17,7 @@ const SwitchDocs: React.FC = () => {
   };
 
   return (
-    <div className="prose max-w-[1000px] space-y-7 p-5 text-[#6D6D6D] dark:text-[#dfdfdf]">
+    <div className="prose max-w-[850px] space-y-7 p-5 text-[#6D6D6D] dark:text-[#dfdfdf]">
       <div className="dark:text-white">
         <h1 className="text-[#2D3748] dark:text-white">1. SwitchBasic</h1>
         <p>

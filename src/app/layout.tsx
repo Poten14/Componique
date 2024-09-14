@@ -22,7 +22,7 @@ export default function RootLayout({
           <div>
             <div>{children}</div>
           </div>
-          <div className="flex items-center justify-center">
+          <div className="mt-80 flex items-center justify-center">
             <Footer />
           </div>
         </DarkModeStatus>

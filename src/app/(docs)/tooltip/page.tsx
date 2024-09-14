@@ -15,11 +15,13 @@ const TooltipDocs: React.FC = () => {
   };
 
   return (
-    <div className="prose max-w-[1000px] space-y-7 p-5 text-[#6D6D6D] dark:text-[#dfdfdf]">
+    <div className="prose max-w-[850px] space-y-7 p-5 text-[#6D6D6D] dark:text-[#dfdfdf]">
       <div className="dark:text-white">
         <h1 className="text-[#2D3748] dark:text-white">1. Tooltip</h1>
         <p>
-          <code>Tooltip</code> 컴포넌트는 사용자가 마우스를 요소 위에 올렸을 때 추가적인 정보를 제공하는 UI 요소입니다. 위치, 내용, 스타일을 손쉽게 커스터마이징할 수 있습니다.
+          <code>Tooltip</code> 컴포넌트는 사용자가 마우스를 요소 위에 올렸을 때
+          추가적인 정보를 제공하는 UI 요소입니다. 위치, 내용, 스타일을 손쉽게
+          커스터마이징할 수 있습니다.
         </p>
 
         <h2 className="text-[#2D3748] dark:text-white">1.1. Import</h2>
@@ -72,22 +74,29 @@ export default Example;
           handleCopy={handleCopy}
         />
 
-        <h2 className="text-[#2D3748] dark:text-white">1.3. Tooltip Positions</h2>
+        <h2 className="text-[#2D3748] dark:text-white">
+          1.3. Tooltip Positions
+        </h2>
         <p>
-          <code>Tooltip</code> 컴포넌트는 툴팁의 위치를 설정할 수 있는 다양한 옵션을 제공합니다:
+          <code>Tooltip</code> 컴포넌트는 툴팁의 위치를 설정할 수 있는 다양한
+          옵션을 제공합니다:
         </p>
         <ul>
           <li>
-            <strong className="dark:text-[#dfdfdf]">Top:</strong> 요소의 위쪽에 툴팁을 표시합니다.
+            <strong className="dark:text-[#dfdfdf]">Top:</strong> 요소의 위쪽에
+            툴팁을 표시합니다.
           </li>
           <li>
-            <strong className="dark:text-[#dfdfdf]">Bottom:</strong> 요소의 아래쪽에 툴팁을 표시합니다.
+            <strong className="dark:text-[#dfdfdf]">Bottom:</strong> 요소의
+            아래쪽에 툴팁을 표시합니다.
           </li>
           <li>
-            <strong className="dark:text-[#dfdfdf]">Left:</strong> 요소의 왼쪽에 툴팁을 표시합니다.
+            <strong className="dark:text-[#dfdfdf]">Left:</strong> 요소의 왼쪽에
+            툴팁을 표시합니다.
           </li>
           <li>
-            <strong className="dark:text-[#dfdfdf]">Right:</strong> 요소의 오른쪽에 툴팁을 표시합니다.
+            <strong className="dark:text-[#dfdfdf]">Right:</strong> 요소의
+            오른쪽에 툴팁을 표시합니다.
           </li>
         </ul>
         <div className="my-7 space-y-7">
@@ -162,7 +171,9 @@ export default Example;
         {/* TooltipIcon Section */}
         <h1 className="text-[#2D3748] dark:text-white">2. TooltipIcon</h1>
         <p>
-          <code>TooltipIcon</code> 컴포넌트는 아이콘과 함께 툴팁을 표시하는 컴포넌트입니다. 마우스를 아이콘 위에 올리면 아이콘에 대한 추가 정보를 제공합니다.
+          <code>TooltipIcon</code> 컴포넌트는 아이콘과 함께 툴팁을 표시하는
+          컴포넌트입니다. 마우스를 아이콘 위에 올리면 아이콘에 대한 추가 정보를
+          제공합니다.
         </p>
 
         <h2 className="text-[#2D3748] dark:text-white">2.1. Import</h2>

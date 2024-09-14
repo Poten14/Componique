@@ -43,7 +43,7 @@ const ToastDocs: React.FC = () => {
   };
 
   return (
-    <div className="prose max-w-[1000px] p-5 text-[#6D6D6D]">
+    <div className="prose max-w-[850px] p-5 text-[#6D6D6D]">
       <h1 className="text-[#2D3748]">1. Toast</h1>
       <p>
         <code>Toast</code> 컴포넌트는 사용자에게 알림 메시지를 표시할 때

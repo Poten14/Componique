@@ -14,7 +14,7 @@ const TextareaDocs: React.FC = () => {
   };
 
   return (
-    <div className="prose max-w-[1000px] p-5 text-[#6D6D6D]">
+    <div className="prose max-w-[850px] p-5 text-[#6D6D6D]">
       <h1 className="text-[#2D3748]">1. Textarea</h1>
       <p>
         <code>Textarea</code> 컴포넌트는 사용자가 긴 텍스트를 입력할 수 있도록

@@ -15,7 +15,7 @@ const NavbarDocs: React.FC = () => {
   };
 
   return (
-    <div className="prose max-w-[1000px] p-5 text-[#6D6D6D]">
+    <div className="prose max-w-[850px] p-5 text-[#6D6D6D]">
       <h1 className="text-[#2D3748]">1. Navbar</h1>
       <p>
         <code>Navbar</code> 컴포넌트는 웹 사이트의 상단에 위치하여 사용자에게

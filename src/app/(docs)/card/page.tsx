@@ -16,8 +16,13 @@ const BadgeDocs: React.FC = () => {
   };
 
   return (
+<<<<<<< HEAD
     <div className="prose max-w-[1000px] p-5 text-[#6D6D6D] dark:text-[#bdbdbd]">
       {/* BadgeBasic Section */}
+=======
+    <div className="prose max-w-[850px] p-5 text-[#6D6D6D] dark:text-[#bdbdbd]">
+      {/* Card1 */}
+>>>>>>> eb4f680303e3bfaf60295ed10126f4c479135c5c
       <div>
         <h1 className="text-[#2D3748] dark:text-white">1. BadgeBasic</h1>
         <p>
