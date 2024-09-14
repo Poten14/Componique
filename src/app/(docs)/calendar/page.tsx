@@ -14,7 +14,7 @@ const CalendarDocs: React.FC = () => {
   };
 
   return (
-    <div className="prose max-w-[1000px] p-5 text-[#6D6D6D]">
+    <div className="prose max-w-[850px] p-5 text-[#6D6D6D]">
       <h1 className="text-[#2D3748]">1. Calendar</h1>
       <p>
         <code>Calendar</code> 컴포넌트는 날짜를 선택할 수 있는 인터랙티브한

@@ -41,7 +41,7 @@ const InfiniteScrollDocs: React.FC = () => {
   ];
 
   return (
-    <div className="prose max-w-[1000px] p-5 text-[#6D6D6D] dark:text-[#bdbdbd]">
+    <div className="prose max-w-[850px] p-5 text-[#6D6D6D] dark:text-[#bdbdbd]">
       {/* infinitescroll1 */}
       <div>
         <h1 className="text-[#2D3748] dark:text-white">

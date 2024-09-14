@@ -50,7 +50,7 @@ const DrawerDocs = () => {
   }, []);
 
   return (
-    <div className="prose max-w-[1000px] p-5 text-[#6D6D6D]">
+    <div className="prose max-w-[850px] p-5 text-[#6D6D6D]">
       <h1 className="text-[#2D3748]">1. Drawer</h1>
       <p>
         <code>Drawer</code> 컴포넌트는 슬라이딩 메뉴 또는 사이드바를 구현하기
