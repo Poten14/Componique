@@ -18,7 +18,7 @@ const PaginationDoc: React.FC = () => {
   };
 
   return (
-    <div className="prose mb-40 max-w-[1000px] text-[#6D6D6D]">
+    <div className="prose mb-40 max-w-[850px] text-[#6D6D6D]">
       <h1 className="text-[#2D3748]">1. Pagination</h1>
       <p>
         <code>Pagination</code> 컴포넌트는 페이지 번호를 표시하고 페이지 이동을

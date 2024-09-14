@@ -14,7 +14,7 @@ const SkeletonDocs: React.FC = () => {
   };
 
   return (
-    <div className="prose max-w-[1000px] p-5 text-[#6D6D6D]">
+    <div className="prose max-w-[850px] p-5 text-[#6D6D6D]">
       <h1 className="text-[#2D3748]">1. Skeleton</h1>
       <p>
         <code>Skeleton</code> 컴포넌트는 로딩 상태에서 사용자에게 시각적인

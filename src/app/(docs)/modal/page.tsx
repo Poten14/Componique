@@ -57,7 +57,7 @@ const ModalDoc: React.FC = () => {
   const closeModal3 = () => setOpenModalKey3(null);
 
   return (
-    <div className="prose mb-40 max-w-[1000px] text-[#6D6D6D]">
+    <div className="prose mb-40 max-w-[850px] text-[#6D6D6D]">
       <h1 className="text-[#2D3748]">1. Modal</h1>
       <p>
         <code>Modal</code> 컴포넌트는 사용자가 인터페이스와 상호작용하는 동안
