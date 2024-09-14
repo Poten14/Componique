@@ -331,3 +331,8 @@ li {
 [data-theme="dark"] td {
   color: #bdbdbd;
 }
+
+/* breadcrump docs a 태그 css 때문에 수정 */
+a {
+  text-decoration: none !important;
+}

@@ -29,20 +29,6 @@ const Yr = () => {
     { name: "Contact", href: "/contact" },
   ];
 
-  const breadcrumbItems = [
-    { label: "Ant Design", href: "/" },
-    { label: "Component", href: "/components" },
-    {
-      label: "General",
-      dropdownItems: [
-        { label: "General", href: "/general" },
-        { label: "Layout", href: "/layout" },
-        { label: "Navigation", href: "/navigation" },
-      ],
-    },
-    { label: "Button", href: "/button" },
-  ];
-
   // Textarea value
   const [text, setText] = useState("");
 

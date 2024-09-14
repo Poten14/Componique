@@ -312,7 +312,7 @@ const SideBar = () => {
               className={`cursor-pointer hover:text-Basic ${
                 pathname === "/breadcrumb" ? "font-bold text-Basic" : ""
               }`}
-              onClick={() => router.push("/breacrumb")}
+              onClick={() => router.push("/breadcrumb")}
             >
               Breadcrumb
             </li>
