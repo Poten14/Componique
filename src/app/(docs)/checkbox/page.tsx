@@ -35,7 +35,7 @@ const CheckBoxDoc: React.FC = () => {
     };
 
   return (
-    <div className="prose max-w-[1000px] p-5 text-[#6D6D6D]">
+    <div className="prose max-w-[850px] p-5 text-[#6D6D6D]">
       <h1 className="text-[#2D3748]">1. CheckBox</h1>
       <p>
         <code>CheckBox</code> 컴포넌트는 사용자가 선택할 수 있는 체크박스를

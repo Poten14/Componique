@@ -15,7 +15,7 @@ const CarouselDocs: React.FC = () => {
   };
 
   return (
-    <div className="prose max-w-[1000px] p-5 text-[#6D6D6D]">
+    <div className="prose max-w-[850px] p-5 text-[#6D6D6D]">
       <h1 className="text-[#2D3748]">1. Carousel</h1>
       <p>
         <code>Carousel</code> 컴포넌트는 여러 이미지를 슬라이드 방식으로

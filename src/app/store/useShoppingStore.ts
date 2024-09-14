@@ -35,8 +35,8 @@ interface ShoppingState {
 }
 
 export const useShoppingStore = create<ShoppingState>((set) => ({
-  title: "Pricing",
-  subtitle: "원하는 상품을 찾아보세요",
+  title: "Explore Our Pricing Plans",
+  subtitle: "Discover the perfect product tailored to your needs.",
   title2: "Customer Reviews",
   placeholder: "Search products...",
   currentPage: 1,

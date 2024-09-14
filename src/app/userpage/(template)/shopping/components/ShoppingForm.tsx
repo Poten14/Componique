@@ -3,9 +3,10 @@
 import CardPricing from "@components/Card/CardPricing";
 import CardReview from "@components/Card/CardReview";
 import Pagination from "@components/Pagination/Pagination";
-import Navbar from "@components/Navbar/Navbar"; // 새로운 Navbar 컴포넌트로 대체
+import Navbar from "@components/Navbar/Navbar";
 import { useShoppingStore } from "app/store/useShoppingStore";
-import React from "react";
+import React, { useState } from "react";
+import SelectValueAdd from "@components/Select/SelectValueAdd";
 
 interface Product {
   title: string;
@@ -13,6 +14,7 @@ interface Product {
   price: string;
   features: string[];
   buy: string;
+  category: string;
 }
 
 const ShoppingForm: React.FC = () => {
@@ -35,80 +37,96 @@ const ShoppingForm: React.FC = () => {
     setShoppingState,
   } = useShoppingStore();
 
+  const [selectedOption, setSelectedOption] = useState<string>("");
+
   const products: Product[] = [
     {
       title: "Product 1",
-      description: "최고의 상품입니다.",
+      description: "This is the best product.",
       price: "$10",
       features: ["Feature 1", "Feature 2", "Feature 3"],
-      buy: "구매하기",
+      buy: "Buy Now",
+      category: "Option 1",
     },
     {
       title: "Product 2",
-      description: "추천하는 상품입니다.",
+      description: "This is a highly recommended product.",
       price: "$20",
       features: ["Feature A", "Feature B", "Feature C"],
-      buy: "구매하기",
+      buy: "Buy Now",
+      category: "Option 2",
     },
     {
       title: "Product 3",
-      description: "인기 상품입니다.",
+      description: "This is a popular product.",
       price: "$30",
       features: ["Benefit 1", "Benefit 2", "Benefit 3"],
-      buy: "구매하기",
+      buy: "Buy Now",
+      category: "Option 1",
     },
     {
       title: "Product 4",
-      description: "유명한 상품입니다.",
+      description: "This is a famous product.",
       price: "$40",
       features: ["Feature X", "Feature Y", "Feature Z"],
-      buy: "구매하기",
+      buy: "Buy Now",
+      category: "Option 3",
     },
     {
       title: "Product 5",
-      description: "할인 중인 상품입니다.",
+      description: "This product is on sale.",
       price: "$50",
       features: ["Benefit 1", "Benefit 2", "Benefit 3"],
-      buy: "구매하기",
+      buy: "Buy Now",
+      category: "Option 2",
     },
     {
       title: "Product 6",
-      description: "강력 추천 상품입니다.",
+      description: "This product is highly recommended.",
       price: "$60",
       features: ["Feature A", "Feature B", "Feature C"],
-      buy: "구매하기",
+      buy: "Buy Now",
+      category: "Option 4",
     },
     {
       title: "Product 7",
-      description: "할인 중인 상품입니다.",
+      description: "This product is on sale.",
       price: "$50",
       features: ["Benefit 1", "Benefit 2", "Benefit 3"],
-      buy: "구매하기",
+      buy: "Buy Now",
+      category: "Option 3",
     },
     {
       title: "Product 8",
-      description: "강력 추천 상품입니다.",
+      description: "This product is highly recommended.",
       price: "$60",
       features: ["Feature A", "Feature B", "Feature C"],
-      buy: "구매하기",
+      buy: "Buy Now",
+      category: "Option 1",
     },
     {
       title: "Product 9",
-      description: "할인 중인 상품입니다.",
+      description: "This product is on sale.",
       price: "$50",
       features: ["Benefit 1", "Benefit 2", "Benefit 3"],
-      buy: "구매하기",
+      buy: "Buy Now",
+      category: "Option 4",
     },
     {
       title: "Product 10",
-      description: "강력 추천 상품입니다.",
+      description: "This product is highly recommended.",
       price: "$60",
       features: ["Feature A", "Feature B", "Feature C"],
-      buy: "구매하기",
+      buy: "Buy Now",
+      category: "Option 2",
     },
   ];
 
-  const currentProducts = products.slice(
+  const filteredProducts = selectedOption
+    ? products.filter((product) => product.category === selectedOption)
+    : products;
+
+  const currentProducts = filteredProducts.slice(
     (currentPage - 1) * productsPerPage,
     currentPage * productsPerPage,
   );
@@ -118,8 +136,8 @@ const ShoppingForm: React.FC = () => {
   };
 
   return (
-    <div className="container mx-auto mt-20 border border-gray bg-white p-6 dark:bg-[#333742]">
-      {/* Navbar 컴포넌트 */}
+    <div className="container mx-auto mt-20 rounded-lg bg-white p-6 shadow-lg dark:bg-[#333742]">
+      {/* Navbar Component */}
       <Navbar
         logoSrc={logoSrc}
         logoName={logoName}
@@ -133,13 +151,20 @@ const ShoppingForm: React.FC = () => {
         ]}
       />
 
-      {/* 헤더 섹션 */}
+      {/* Header Section */}
       <header className="mb-10 text-center">
         <h1 className="m-8 text-4xl font-bold text-Gray">{title}</h1>
         <p className="text-lg text-Gray">{subtitle}</p>
       </header>
 
-      {/* 상품 카드 섹션 */}
+      {/* Select Section */}
+      <SelectValueAdd
+        option={["Option 1", "Option 2", "Option 3", "Option 4"]}
+        placeholder="Select an option"
+        onChange={(selectedValues) => setSelectedOption(selectedValues[0])}
+      />
+
+      {/* Product Cards Section */}
       <div className="my-8 grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
         {currentProducts.map((product, index) => (
           <div
@@ -157,11 +182,11 @@ const ShoppingForm: React.FC = () => {
         ))}
       </div>
 
-      {/* 페이지네이션 */}
+      {/* Pagination */}
       <div className="my-10 flex justify-center">
         <Pagination
           currentPage={currentPage}
-          totalPages={totalPages}
+          totalPages={Math.ceil(filteredProducts.length / productsPerPage)}
           variant={paginationVariant}
           styleType={paginationStyleType}
           color={paginationColor}
@@ -170,23 +195,23 @@ const ShoppingForm: React.FC = () => {
         />
       </div>
 
-      {/* 리뷰 섹션 */}
+      {/* Review Section */}
       <div className="my-16">
         <h2 className="mb-8 text-center text-3xl font-bold dark:text-gray">
           {title2}
         </h2>
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
           <CardReview avatar="/avatar1.svg" name="User1" rate={5}>
-            이 상품 정말 좋아요!
+            This product is amazing!
           </CardReview>
           <CardReview avatar="/avatar2.svg" name="User2" rate={4}>
-            가격 대비 훌륭합니다.
+            Great value for the price.
           </CardReview>
           <CardReview avatar="/avatar3.svg" name="User3" rate={4}>
-            가격 대비 매우 좋습니다.
+            Very good for the price.
           </CardReview>
           <CardReview avatar="/avatar4.svg" name="User4" rate={5}>
-            최고의 선택이었어요!
+            Best choice I've made!
           </CardReview>
         </div>
       </div>

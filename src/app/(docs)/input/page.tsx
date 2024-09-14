@@ -20,7 +20,7 @@ const Input: React.FC = () => {
   };
 
   return (
-    <div className="prose mb-40 max-w-[1000px] text-[#6D6D6D]">
+    <div className="prose mb-40 max-w-[850px] text-[#6D6D6D]">
       <h1 className="text-[#2D3748]">1. Input</h1>
       <p>
         <code>Input</code> 컴포넌트는 사용자 입력을 처리하기 위해 사용되는 기본
