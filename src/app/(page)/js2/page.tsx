@@ -8,15 +8,19 @@ import BadgeDot from "@components/Badge/BadgeDot";
 import RatingStar from "@components/Rating/RatingStar";
 import RatingNumSlider from "@components/Rating/RatingNumSlider";
 import RatingFeel from "@components/Rating/RatingFeel";
+import ValidationEmail from "@components/Validation/ValidationEmail";
+import ValidationID from "@components/Validation/ValidationID";
+import ValidationPW from "@components/Validation/ValidationPW";
+import ValidationPhone from "@components/Validation/ValidationPhone";
+import ValidationPWConfirm from "@components/Validation/ValidationPWConfirm";
 const page = () => {
   return (
-    <div className="mt-40 ml-16">
-      
+    <div className="ml-16 mt-40">
       <h1>기본 Tooltip입니다.</h1>
       <TooltipBasic />
       <br />
       <h1>아이콘 Tooltip입니다.</h1>
-      <TooltipIcon/>
+      <TooltipIcon />
       <hr />
       <h1>기본 Badge입니다/</h1>
       <BadgeBasic />
@@ -28,11 +32,27 @@ const page = () => {
       <BadgeDot />
       <hr />
       <h1>Star Rating입니다.</h1>
-      <RatingStar stars={3}/>
+      <RatingStar stars={3} />
       <h1>NumSlider Rating입니다.</h1>
       <RatingNumSlider />
       <h1>Rating Feel입니다.</h1>
       <RatingFeel />
+      <hr />
+      <br />
+      <h1>Email Validation입니다.</h1>
+      <ValidationEmail />
+      <br />
+      <h1>ID Validation입니다.</h1>
+      <ValidationID />
+      <br />
+      <h1>PW Validation입니다.</h1>
+      <ValidationPW />
+      <br />
+      <h1>2차 PW Validation입니다.</h1>
+      <ValidationPWConfirm />
+      <br />
+      <h1>Phone Validation입니다.</h1>
+      <ValidationPhone />
     </div>
   );
 };
