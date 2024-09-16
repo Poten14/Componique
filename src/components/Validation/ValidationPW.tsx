@@ -26,9 +26,13 @@ const ValidationPW = () => {
         value={PW}
         onChange={handleChange}
         placeholder="비밀번호를 입력하세요."
-        className="text-balack border-2 border-black dark:border-[#cdcdcd] dark:text-white"
+        className="text-balack border-2 border-black dark:border-[#cdcdcd] dark:text-black"
       />
-      {error && <p className="text-sm text-red-500">{error}</p>}
+      {error && (
+        <p className="absolute z-10 text-sm text-red-500 dark:text-red-500">
+          {error}
+        </p>
+      )}
     </div>
   );
 };

@@ -47,10 +47,14 @@ const ValidationPWConfirm = () => {
           value={confirmPW}
           onChange={handleChangeConfirmPW}
           placeholder="비밀번호를 다시 입력하세요."
-          className="mt-2 border-2 border-black text-black dark:border-[#cdcdcd] dark:text-white"
+          className="mt-2 border-2 border-black text-black dark:border-[#cdcdcd] dark:text-black"
         />
         {/* 비밀번호 확인 오류 메시지 */}
-        {confirmError && <p className="text-sm text-red-500">{confirmError}</p>}
+        {confirmError && (
+          <p className="absolute z-10 text-sm text-red-500 dark:text-red-500">
+            {confirmError}
+          </p>
+        )}
       </div>
     </div>
   );

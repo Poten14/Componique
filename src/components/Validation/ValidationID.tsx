@@ -23,9 +23,13 @@ const ValidationID = () => {
         value={ID}
         onChange={handleChange}
         placeholder="아이디를 입력해 주세요."
-        className="border-2 border-black text-black dark:border-[#cdcdcd] dark:text-white"
+        className="border-2 border-black text-black dark:border-[#cdcdcd] dark:text-black"
       />
-      {error && <p className="text-sm text-red-500">{error}</p>}
+      {error && (
+        <p className="absolute z-10 text-sm text-red-500 dark:text-red-500">
+          {error}
+        </p>
+      )}
     </div>
   );
 };

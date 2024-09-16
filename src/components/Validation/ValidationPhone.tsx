@@ -21,11 +21,15 @@ const ValidationPhone = () => {
       <input
         type="text"
         placeholder="핸드폰 번호를 입력해주세요."
-        className="text-balack border-2 border-black dark:border-[#cdcdcd] dark:text-white"
+        className="text-balack border-2 border-black dark:border-[#cdcdcd] dark:text-black"
         onChange={handleChange}
         value={phone}
       />
-      {error && <p className="text-sm text-red-500">{error}</p>}
+      {error && (
+        <p className="absolute z-10 text-sm text-red-500 dark:text-red-500">
+          {error}
+        </p>
+      )}
     </div>
   );
 };

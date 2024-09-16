@@ -23,9 +23,13 @@ const ValidationEmail = () => {
         value={email}
         onChange={handleChange}
         placeholder="이메일을 입력하세요."
-        className="text-balack border-2 border-black dark:border-[#cdcdcd] dark:text-white"
+        className="text-balack border-2 border-black dark:border-[#cdcdcd] dark:text-black"
       />
-      {error && <p className="text-sm text-red-500">{error}</p>}
+      {error && (
+        <p className="relative z-10 text-sm text-red-500 dark:text-red-500">
+          {error}
+        </p>
+      )}
     </div>
   );
 };
