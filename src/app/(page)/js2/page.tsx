@@ -15,6 +15,7 @@ import ValidationPhone from "@components/Validation/ValidationPhone";
 import ValidationPWConfirm from "@components/Validation/ValidationPWConfirm";
 import DataTableBasic from "@components/DataTable/DataTableBasic";
 import DynamicMap from "@components/Map/DynamicMap";
+import DynamicMapPosition from "@components/Map/DynamicMapPosition";
 const page = () => {
   return (
     <div className="ml-16 mt-40">
@@ -23,7 +24,9 @@ const page = () => {
       <br />
       <h1>아이콘 Tooltip입니다.</h1>
       <TooltipIcon />
+      <br />
       <hr />
+      <br />
       <h1>기본 Badge입니다/</h1>
       <BadgeBasic />
       <h1>Icon Badge입니다/</h1>
@@ -32,6 +35,7 @@ const page = () => {
       <BadgeCounter />
       <h1>Dot Badge입니다/</h1>
       <BadgeDot />
+      <br />
       <hr />
       <h1>Star Rating입니다.</h1>
       <RatingStar stars={3} />
@@ -98,6 +102,36 @@ const page = () => {
       <br />
       <h1>Basic Map입니다.</h1>
       <DynamicMap />
+      <h1>Position Map입니다.</h1>
+      <DynamicMapPosition
+        markers={[
+          {
+            latitude: 37.5665,
+            longitude: 126.978,
+            showPosition: "서울, 대한민국",
+          },
+          {
+            latitude: 35.1796,
+            longitude: 129.0756,
+            showPosition: "부산, 대한민국",
+          },
+          {
+            latitude: 35.1595,
+            longitude: 126.8526,
+            showPosition: "광주, 대한민국",
+          },
+          {
+            latitude: 37.4563,
+            longitude: 126.7052,
+            showPosition: "인천, 대한민국",
+          },
+          {
+            latitude: 36.3504,
+            longitude: 127.3845,
+            showPosition: "대전, 대한민국",
+          },
+        ]}
+      />
     </div>
   );
 };
