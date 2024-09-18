@@ -16,17 +16,14 @@ const BadgeDocs: React.FC = () => {
   };
 
   return (
-<<<<<<< HEAD
-    <div className="prose max-w-[1000px] p-5 text-[#6D6D6D] dark:text-[#bdbdbd]">
-      {/* BadgeBasic Section */}
-=======
     <div className="prose max-w-[850px] p-5 text-[#6D6D6D] dark:text-[#bdbdbd]">
       {/* Card1 */}
->>>>>>> eb4f680303e3bfaf60295ed10126f4c479135c5c
+
       <div>
         <h1 className="text-[#2D3748] dark:text-white">1. BadgeBasic</h1>
         <p>
-          <code>BadgeBasic</code> 컴포넌트는 기본 텍스트 배지를 제공하며, 텍스트와 색상을 커스터마이징할 수 있습니다.
+          <code>BadgeBasic</code> 컴포넌트는 기본 텍스트 배지를 제공하며,
+          텍스트와 색상을 커스터마이징할 수 있습니다.
         </p>
         <h2 className="text-[#2D3748] dark:text-white">1.1. Import</h2>
         <CodeBox
@@ -160,7 +157,8 @@ export default FullExample;`}
       <div>
         <h1 className="text-[#2D3748] dark:text-white">2. BadgeCounter</h1>
         <p>
-          <code>BadgeCounter</code> 컴포넌트는 숫자를 강조하여 알림 수나 메시지 수를 표시할 때 유용합니다.
+          <code>BadgeCounter</code> 컴포넌트는 숫자를 강조하여 알림 수나 메시지
+          수를 표시할 때 유용합니다.
         </p>
         <h2 className="text-[#2D3748] dark:text-white">2.1. Import</h2>
         <CodeBox
@@ -207,7 +205,8 @@ export default BadgeCounter;`}
       <div>
         <h1 className="text-[#2D3748] dark:text-white">3. BadgeDot</h1>
         <p>
-          <code>BadgeDot</code> 컴포넌트는 작은 점 형태로 알림이나 상태를 간단하게 표시할 때 사용됩니다.
+          <code>BadgeDot</code> 컴포넌트는 작은 점 형태로 알림이나 상태를
+          간단하게 표시할 때 사용됩니다.
         </p>
         <h2 className="text-[#2D3748] dark:text-white">3.1. Import</h2>
         <CodeBox
@@ -250,7 +249,8 @@ export default BadgeDot;`}
       <div>
         <h1 className="text-[#2D3748] dark:text-white">4. BadgeIcon</h1>
         <p>
-          <code>BadgeIcon</code> 컴포넌트는 텍스트와 아이콘을 함께 표시하여 정보를 직관적으로 제공합니다.
+          <code>BadgeIcon</code> 컴포넌트는 텍스트와 아이콘을 함께 표시하여
+          정보를 직관적으로 제공합니다.
         </p>
         <h2 className="text-[#2D3748] dark:text-white">4.1. Import</h2>
         <CodeBox

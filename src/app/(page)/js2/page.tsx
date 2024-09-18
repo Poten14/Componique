@@ -14,6 +14,7 @@ import ValidationPW from "@components/Validation/ValidationPW";
 import ValidationPhone from "@components/Validation/ValidationPhone";
 import ValidationPWConfirm from "@components/Validation/ValidationPWConfirm";
 import DataTableBasic from "@components/DataTable/DataTableBasic";
+import DynamicMap from "@components/Map/DynamicMap";
 const page = () => {
   return (
     <div className="ml-16 mt-40">
@@ -93,6 +94,10 @@ const page = () => {
         thColor="Blue"
         tdColor="Success"
       />
+      <hr />
+      <br />
+      <h1>Basic Map입니다.</h1>
+      <DynamicMap />
     </div>
   );
 };
