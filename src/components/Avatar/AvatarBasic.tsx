@@ -15,7 +15,7 @@ const AvatarBasic = ({ src, alt, initial, size = 100 }: AvatarBasicProps) => {
         height: `${size}px`,
         backgroundImage: src ? `url(${src})` : "",
         backgroundSize: "cover",
-        backgroundPosition: "center",
+        backgroundPosition: "c++4enter",
         fontSize: `${size * 0.2}px`,
       }}
     >
