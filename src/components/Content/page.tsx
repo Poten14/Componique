@@ -210,8 +210,8 @@ const components = [
       },
       {
         name: "breadcrumb",
-        src: "/BreadCrumb.svg",
-        darkSrc: "/BreadCrumbDark.svg",
+        src: "/Breadcrumb.svg",
+        darkSrc: "/BreadcrumbDark.svg",
         link: "/breadcrumb",
       },
     ],
