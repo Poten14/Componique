@@ -1,7 +1,7 @@
 "use client";
 
 import CodeBox from "@components/CodeBox";
-import { useState } from "react";
+import React, { useState } from "react";
 
 const IntroducePage: React.FC = () => {
   const [copied, setCopied] = useState<{ [key: number]: boolean }>({});
