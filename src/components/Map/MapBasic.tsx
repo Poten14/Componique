@@ -21,16 +21,18 @@ const zoom = 10; // 기본 줌 레벨
 
 const MapBasic: React.FC = () => {
   return (
-    <MapContainer
-      center={center}
-      zoom={zoom}
-      style={{ height: "400px", width: "100%" }}
-    >
-      <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
-      <Marker position={center} icon={customIcon}>
-        <Popup>서울, 대한민국</Popup>
-      </Marker>
-    </MapContainer>
+    <div className="relative z-10">
+      <MapContainer
+        center={center}
+        zoom={zoom}
+        style={{ height: "400px", width: "100%" }}
+      >
+        <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
+        <Marker position={center} icon={customIcon}>
+          <Popup>서울, 대한민국</Popup>
+        </Marker>
+      </MapContainer>
+    </div>
   );
 };
 
