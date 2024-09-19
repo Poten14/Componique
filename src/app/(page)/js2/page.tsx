@@ -5,6 +5,7 @@ import BadgeBasic from "@components/Badge/BadgeBasic";
 import BadgeIcon from "@components/Badge/BadgeIcon";
 import BadgeCounter from "@components/Badge/BadgeCounter";
 import BadgeDot from "@components/Badge/BadgeDot";
+
 import RatingStar from "@components/Rating/RatingStar";
 import RatingNumSlider from "@components/Rating/RatingNumSlider";
 import RatingFeel from "@components/Rating/RatingFeel";
@@ -13,6 +14,7 @@ import ValidationID from "@components/Validation/ValidationID";
 import ValidationPW from "@components/Validation/ValidationPW";
 import ValidationPhone from "@components/Validation/ValidationPhone";
 import ValidationPWConfirm from "@components/Validation/ValidationPWConfirm";
+
 const page = () => {
   return (
     <div className="ml-16 mt-40">
@@ -53,6 +55,7 @@ const page = () => {
       <br />
       <h1>Phone Validation입니다.</h1>
       <ValidationPhone />
+
     </div>
   );
 };
