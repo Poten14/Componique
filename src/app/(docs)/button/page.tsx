@@ -14,7 +14,7 @@ const ButtonDoc: React.FC = () => {
   };
 
   return (
-    <div className="prose max-w-[1000px] p-5 text-[#6D6D6D]">
+    <div className="prose max-w-[850px] p-5 text-[#6D6D6D]">
       <h1 className="text-[#2D3748]">1. Button</h1>
       <p>
         <code>Button</code> 컴포넌트는 클릭 가능한 버튼을 생성하기 위해

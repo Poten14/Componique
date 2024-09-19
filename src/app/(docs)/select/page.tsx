@@ -23,7 +23,7 @@ const SelectDocs: React.FC = () => {
   };
 
   return (
-    <div className="prose max-w-[1000px] p-5 text-[#6D6D6D]">
+    <div className="prose max-w-[850px] p-5 text-[#6D6D6D]">
       <h1 className="text-[#2D3748]">1. Select</h1>
       <p>
         <code>Select</code> 컴포넌트는 사용자가 여러 옵션 중 하나를 선택할 수

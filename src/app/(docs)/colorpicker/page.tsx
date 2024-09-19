@@ -17,7 +17,7 @@ const ColorPickerDoc: React.FC = () => {
   };
 
   return (
-    <div className="prose max-w-[1000px] p-5 text-[#6D6D6D]">
+    <div className="prose max-w-[850px] p-5 text-[#6D6D6D]">
       <h1 className="text-[#2D3748]">1. ColorPicker - 기본</h1>
       <p>
         <code>ColorPicker</code> 컴포넌트는 사용자가 색상을 선택하고 복사할 수
