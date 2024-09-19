@@ -1,7 +1,7 @@
 {
-  "name": "code",
+  "name": "componique",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -41,5 +41,26 @@
     "prettier-plugin-tailwindcss": "^0.6.5",
     "tailwindcss": "^3.4.1",
     "typescript": "^5"
-  }
+  },
+  "description": "- 다양한 UI 컴포넌트 제공\r - 컴포넌트 문서화 및 사용 예시 제공\r - 직접 체헙 해볼수 있는 커스터마이징 패널이 포함된 템플릿 페이지 제공\r - NPM 배포",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Poten14/Componique.git"
+  },
+  "keywords": [
+    "ui",
+    "component",
+    "library",
+    "typescript",
+    "tailwindcss",
+    "react",
+    "frontend"
+  ],
+  "author": "Poten",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Poten14/Componique/issues"
+  },
+  "homepage": "https://github.com/Poten14/Componique#readme"
 }
