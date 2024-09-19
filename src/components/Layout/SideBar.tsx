@@ -21,14 +21,6 @@ const SideBar = () => {
             >
               Introduction
             </li>
-            <li
-              className={`cursor-pointer hover:text-Basic ${
-                pathname === "/installation" ? "font-bold text-Basic" : ""
-              }`}
-              onClick={() => router.push("/installation")}
-            >
-              Installation
-            </li>
           </ul>
         </li>
         <li className="text-[#3e3e3e] dark:text-[#DFDFDF]">
