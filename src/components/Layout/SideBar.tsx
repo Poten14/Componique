@@ -272,7 +272,7 @@ const SideBar = () => {
               className={`cursor-pointer hover:text-Basic ${
                 pathname === "/formvalidation" ? "font-bold text-Basic" : ""
               }`}
-              onClick={() => router.push("/formvalidation")}
+              onClick={() => router.push("/validation")}
             >
               FormValidation
             </li>
