@@ -9,8 +9,11 @@
 ## 주요 기능
 - 다양한 UI 컴포넌트 제공
 - 컴포넌트 문서화 및 사용 예시 제공
-- 직접 체헙 해볼수 있는 커스터마이징 패널이 포함된 템플릿 페이지 제공
+- 직접 체험 해볼수 있는 커스터마이징 패널이 포함된 템플릿 페이지 제공
 - NPM 배포
+  
+## NPM
+https://www.npmjs.com/package/componique
 
 ## 배포 사이트
 https://www.componique.com
