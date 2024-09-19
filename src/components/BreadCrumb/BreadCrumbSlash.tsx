@@ -6,22 +6,22 @@ interface BreadCrumbProp {
 
 interface BreadCrumbProps {
   items: BreadCrumbProp[];
-  hoverColor?: "black" | "skyblue" | "blue" | "red";
-  activeColor?: "black" | "skyblue" | "blue" | "red";
+  hoverColor?: "black" | "Basic" | "Primary" | "Danegr";
+  activeColor?: "black" | "Basic" | "Primary" | "Danegr";
 }
 
 const hoverColorClasses = {
   black: "hover:text-black dark:hover:text-white",
-  skyblue: "hover:text-[#9AC5E5] dark:hover:text-[#9AC5E5]",
-  blue: "hover:text-[#7AA7FF] dark:hover:text-[#7AA7FF]",
-  red: "hover:text-[#FF7676] dark:hover:text-[#FF7676]",
+  Basic: "hover:text-[#9AC5E5] dark:hover:text-[#9AC5E5]",
+  Primary: "hover:text-[#7AA7FF] dark:hover:text-[#7AA7FF]",
+  Danegr: "hover:text-[#FF7676] dark:hover:text-[#FF7676]",
 };
 
 const activeColorClasses = {
   black: "text-black dark:text-white",
-  skyblue: "text-[#9AC5E5] dark:text-[#9AC5E5]",
-  blue: "text-[#7AA7FF] dark:text-[#7AA7FF]",
-  red: "text-[#FF7676] dark:text-[#FF7676]",
+  Basic: "text-[#9AC5E5] dark:text-[#9AC5E5]",
+  Primary: "text-[#7AA7FF] dark:text-[#7AA7FF]",
+  Danegr: "text-[#FF7676] dark:text-[#FF7676]",
 };
 
 const BreadCrumbSlash = ({

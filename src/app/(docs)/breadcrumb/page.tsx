@@ -52,7 +52,7 @@ function Example() {
   return (
     <BreadCrumb
       items={[
-        { href: "/", children: "Home" },
+        { href: "", children: "Home" },
         { href: "/docs", children: "Docs" },
         { children: "Breadcrumb" },
       ]}
@@ -95,8 +95,8 @@ export default Example;`}
             { href: "/docs", children: "Docs" },
             { children: "Breadcrumb" },
           ]}
-          hoverColor="red"
-          activeColor="red"
+          hoverColor="Basic"
+          activeColor="Basic"
         />
       </div>
 
@@ -111,8 +111,8 @@ function Example() {
         { href: "/docs", children: "Docs" },
         { children: "Breadcrumb" },
       ]}
-      hoverColor="blue"
-      activeColor="red"
+      hoverColor="Basic"
+      activeColor="Basic"
     />
   );
 }
@@ -128,8 +128,8 @@ function Example() {
         { href: "/docs", children: "Docs" },
         { children: "Breadcrumb" },
       ]}
-      hoverColor="blue"
-      activeColor="red"
+      hoverColor="Basic"
+      activeColor="Basic"
     />
   );
 }
@@ -173,7 +173,7 @@ export default Example;`}
             </td>
             <td>링크에 마우스를 올렸을 때의 색상을 설정합니다.</td>
             <td>
-              <code>"black" | "skyblue" | "blue" | "red"</code>
+              <code>"black" | "Basic" | "Primary" | "Danger"</code>
             </td>
             <td>
               <code>"black"</code>
@@ -185,7 +185,7 @@ export default Example;`}
             </td>
             <td>활성화된 링크의 색상을 설정합니다.</td>
             <td>
-              <code>"black" | "skyblue" | "blue" | "red"</code>
+              <code>"black" | "Basic" | "Primary" | "Danger"</code>
             </td>
             <td>
               <code>"black"</code>
@@ -207,8 +207,8 @@ function Example() {
           { href: "/docs", children: "Docs" },
           { children: "Breadcrumb" },
         ]}
-        hoverColor="skyblue"
-        activeColor="red"
+        hoverColor="Basic"
+        activeColor="Danger"
       />
     </div>
   );
@@ -226,8 +226,8 @@ function Example() {
           { href: "/docs", children: "Docs" },
           { children: "Breadcrumb" },
         ]}
-        hoverColor="skyblue"
-        activeColor="red"
+        hoverColor="Basic"
+        activeColor="Danger"
       />
     </div>
   );
@@ -320,8 +320,8 @@ export default Example;`}
             { href: "/docs", children: "Docs" },
             { children: "Breadcrumb" },
           ]}
-          hoverColor="skyblue"
-          activeColor="red"
+          hoverColor="Basic"
+          activeColor="Basic"
         />
       </div>
 
@@ -336,8 +336,8 @@ function Example() {
         { href: "/docs", children: "Docs" },
         { children: "Breadcrumb" },
       ]}
-      hoverColor="skyblue"
-      activeColor="red"
+      hoverColor="Basic"
+      activeColor="Basic"
     />
   );
 }
@@ -353,8 +353,8 @@ function Example() {
         { href: "/docs", children: "Docs" },
         { children: "Breadcrumb" },
       ]}
-      hoverColor="skyblue"
-      activeColor="red"
+      hoverColor="Basic"
+      activeColor="Basic"
     />
   );
 }
@@ -398,7 +398,7 @@ export default Example;`}
             </td>
             <td>링크에 마우스를 올렸을 때의 색상을 설정합니다.</td>
             <td>
-              <code>"black" | "skyblue" | "blue" | "red"</code>
+              <code>"black" | "Basic" | "Primary" | "Danger"</code>
             </td>
             <td>
               <code>"black"</code>
@@ -410,7 +410,7 @@ export default Example;`}
             </td>
             <td>활성화된 링크의 색상을 설정합니다.</td>
             <td>
-              <code>"black" | "skyblue" | "blue" | "red"</code>
+              <code>"black" | "Basic" | "Primary" | "Danger"</code>
             </td>
             <td>
               <code>"black"</code>
@@ -432,8 +432,8 @@ function Example() {
           { href: "/docs", children: "Docs" },
           { children: "Breadcrumb" },
         ]}
-        hoverColor="blue"
-        activeColor="red"
+        hoverColor="Primary"
+        activeColor="Danger"
       />
     </div>
   );
@@ -451,8 +451,8 @@ function Example() {
           { href: "/docs", children: "Docs" },
           { children: "Breadcrumb" },
         ]}
-        hoverColor="blue"
-        activeColor="red"
+        hoverColor="Primary"
+        activeColor="Danger"
       />
     </div>
   );
