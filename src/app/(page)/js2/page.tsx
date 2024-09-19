@@ -5,6 +5,7 @@ import BadgeBasic from "@components/Badge/BadgeBasic";
 import BadgeIcon from "@components/Badge/BadgeIcon";
 import BadgeCounter from "@components/Badge/BadgeCounter";
 import BadgeDot from "@components/Badge/BadgeDot";
+
 import RatingStar from "@components/Rating/RatingStar";
 import RatingNumSlider from "@components/Rating/RatingNumSlider";
 import RatingFeel from "@components/Rating/RatingFeel";
@@ -15,6 +16,7 @@ import ValidationPhone from "@components/Validation/ValidationPhone";
 import ValidationPWConfirm from "@components/Validation/ValidationPWConfirm";
 import DataTableBasic from "@components/DataTable/DataTableBasic";
 import DynamicMap from "@components/Map/DynamicMap";
+
 const page = () => {
   return (
     <div className="ml-16 mt-40">
@@ -55,6 +57,7 @@ const page = () => {
       <br />
       <h1>Phone Validation입니다.</h1>
       <ValidationPhone />
+
       <hr />
       <br />
       <h1>Basic DataTable입니다.</h1>
@@ -98,6 +101,7 @@ const page = () => {
       <br />
       <h1>Basic Map입니다.</h1>
       <DynamicMap />
+
     </div>
   );
 };
