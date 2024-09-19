@@ -213,6 +213,7 @@ const components = [
         src: "/BreadCrumb.svg",
         darkSrc: "/BreadCrumbDark.svg",
         link: "/breadcrumb",
+        // 이거 왜자꾸 바뀌지
       },
     ],
   },
