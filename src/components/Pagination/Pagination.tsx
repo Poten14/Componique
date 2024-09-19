@@ -91,7 +91,7 @@ const Pagination: React.FC<PaginationProps> = ({
     Success: `bg-Success border-Success ${isDarkMode ? "text-white" : "text-black"}`,
     Warning: `bg-Warning border-Warning ${isDarkMode ? "text-white" : "text-black"}`,
     Danger: `bg-Danger border-Danger ${isDarkMode ? "text-white" : "text-black"}`,
-    White: "bg-white border-white text-[#000]",
+    White: "bg-white !border-Gray !text-[#000]",
   };
 
   const baseButtonClasses = "w-10 h-10 flex items-center justify-center";

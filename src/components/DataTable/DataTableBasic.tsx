@@ -1,6 +1,7 @@
 interface DataTableBasicProp {
   data: Array<{ [key: string]: string | number }>;
   thColor?:
+    | "White"
     | "Blue"
     | "Gray"
     | "Purple"
@@ -10,6 +11,7 @@ interface DataTableBasicProp {
     | "Dark"
     | "Navy";
   tdColor?:
+    | "White"
     | "Basic"
     | "Primary"
     | "Gray"
@@ -21,13 +23,14 @@ interface DataTableBasicProp {
 
 const DataTableBasic = ({
   data,
-  thColor = "Blue",
-  tdColor = "Primary",
+  thColor = "White",
+  tdColor = "White",
 }: DataTableBasicProp) => {
   const col = data.length > 0 ? Object.keys(data[0]) : [];
 
   // Tailwind 색상 매핑 객체 (다크 모드 포함)
   const colorClassMap: { [key: string]: string } = {
+    White: "bg-white dark:bg-gray-300", // White 색상 추가
     Blue: "bg-Blue dark:bg-blue-900",
     Gray: "bg-Gray dark:bg-gray-700",
     Purple: "bg-Purple dark:bg-purple-800",
@@ -52,8 +55,8 @@ const DataTableBasic = ({
             {/* 제목 */}
             {col.map((header) => (
               <th
-                className={`border-2 px-4 py-2 text-center font-bold dark:text-white ${
-                  colorClassMap[thColor] || "bg-Blue"
+                className={`border px-4 py-2 text-center font-bold dark:text-white ${
+                  colorClassMap[thColor] || "bg-white"
                 }`}
                 key={header}
               >
@@ -68,8 +71,8 @@ const DataTableBasic = ({
             <tr key={index}>
               {col.map((content) => (
                 <td
-                  className={`border-2 px-4 py-2 text-center dark:text-white ${
-                    colorClassMap[tdColor] || "bg-Basic"
+                  className={`border px-4 py-2 text-center dark:text-white ${
+                    colorClassMap[tdColor] || "bg-white"
                   }`}
                   key={content}
                 >

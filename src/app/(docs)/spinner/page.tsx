@@ -433,7 +433,7 @@ export default Example;`}
           <code>xl</code>: 아주 큰 크기
         </li>
       </ul>
-      <div className="my-7 space-x-3 space-y-4">
+      <div className="my-7 space-y-4">
         <BarsSpinner size="xs" />
         <BarsSpinner size="small" />
         <BarsSpinner size="medium" />
@@ -649,7 +649,7 @@ export default Example;`}
         {/* <SquareSpinner /> */}
         아래는 <code>SquareSpinner</code> 컴포넌트의 기본 사용 예제입니다:
       </p>
-      <div className="my-7 space-x-3 space-y-4">
+      <div className="my-7 space-y-4">
         <SquareSpinner />
       </div>
       <CodeBox
@@ -697,7 +697,7 @@ export default Example;`}
           <code>xl</code>: 아주 큰 크기
         </li>
       </ul>
-      <div className="my-7 space-x-3 space-y-4">
+      <div className="my-7 space-y-4">
         <SquareSpinner size="xs" />
         <SquareSpinner size="small" />
         <SquareSpinner size="medium" />
@@ -835,7 +835,7 @@ export default Example;`}
           <code>fast</code>: 빠른 속도
         </li>
       </ul>
-      <div className="my-7 space-x-3 space-y-4">
+      <div className="my-7 space-y-4">
         <SquareSpinner speed="slow" />
         <SquareSpinner speed="medium" />
         <SquareSpinner speed="fast" />
@@ -1023,7 +1023,7 @@ export default Example;`}
           <code>large</code>: 큰 크기
         </li>
       </ul>
-      <div className="my-7 space-x-3 space-y-4">
+      <div className="my-7 space-y-4">
         <PacManSpinner size="small" />
         <PacManSpinner size="medium" />
         <PacManSpinner size="large" />
@@ -1155,7 +1155,7 @@ export default Example;`}
           <code>fast</code>: 빠른 속도
         </li>
       </ul>
-      <div className="my-7 space-x-3 space-y-4">
+      <div className="my-7 space-y-4">
         <PacManSpinner speed="slow" />
         <PacManSpinner speed="medium" />
         <PacManSpinner speed="fast" />

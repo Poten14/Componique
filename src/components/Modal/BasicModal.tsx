@@ -19,12 +19,12 @@ interface ModalProps {
 }
 
 const sizeClasses = {
-  xs: "max-w-xs",
-  small: "max-w-sm",
-  medium: "max-w-md",
-  large: "max-w-lg",
-  xl: "max-w-xl",
-  full: "max-w-full w-full h-full",
+  xs: "w-64 h-auto",
+  small: "w-80 h-auto",
+  medium: "w-96 h-auto",
+  large: "w-[32rem] h-auto",
+  xl: "w-[40rem] h-auto",
+  full: "w-full h-full max-w-full max-h-full",
 };
 
 const buttonClasses = {
@@ -79,8 +79,10 @@ export const BasicModal: React.FC<ModalProps> = ({
         }`}
         onClick={(e) => e.stopPropagation()}
         style={{
-          maxHeight: "90vh", // 모달의 최대 높이를 설정하여 화면 밖으로 넘어가지 않게 함
-          maxWidth: "90vw", // 모달의 최대 너비를 설정하여 가로 스크롤 방지
+          maxHeight: size === "full" ? "100vh" : "90vh", // full일 경우 100vh, 아니면 최대 90vh
+          maxWidth: size === "full" ? "100vw" : "90vw", // full일 경우 100vw, 아니면 최대 90vw
+          width: size === "full" ? "100%" : "", // full일 경우 100%
+          height: size === "full" ? "100%" : "", // full일 경우 100%
           whiteSpace: "pre-wrap", // 가로 스크롤 방지
           wordWrap: "break-word", // 단어 잘라서 줄바꿈
           overflowWrap: "break-word", // 가로 스크롤 방지

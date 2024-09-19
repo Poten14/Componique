@@ -87,9 +87,9 @@ const ModalDoc: React.FC = () => {
           Open Basic Modal
         </button>
       </div>
-      <BasicModal open={isOpen} onClose={closeModal} showCloseIcon={true}>
+      {/* <BasicModal open={isOpen} onClose={closeModal} showCloseIcon={true}>
         <p>This is a basic modal content.</p>
-      </BasicModal>
+      </BasicModal> */}
 
       <CodeBox
         code={`import { BasicModal } from '@components/Modal/BasicModal';
