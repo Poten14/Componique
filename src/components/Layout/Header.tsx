@@ -230,7 +230,11 @@ const Header = () => {
                 { name: "Toast", path: "/toast", className: "py-0" },
                 { name: "Skeleton", path: "/skeleton", className: "py-0" },
                 { name: "Modal", path: "/modal", className: "py-0" },
-                { name: "FormValidation", path: "/modal", className: "py-0" },
+                {
+                  name: "FormValidation",
+                  path: "/validation",
+                  className: "py-0",
+                },
               ],
             },
             {
