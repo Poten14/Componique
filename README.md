@@ -13,7 +13,8 @@
 - NPM 배포
 
 ## 배포 사이트
-https://componique.vercel.app/
+https://www.componique.com
+https://componique.vercel.app
 
 ## 아키텍처
 ![Architecture](https://github.com/user-attachments/assets/b0576a19-a3ba-48a2-89c9-36ad042a8b95)
