@@ -25,13 +25,20 @@ const options = [
   { label: "Data display", value: "ProgressBar" },
   { label: "Data display", value: "ImageUpload" },
   { label: "Data display", value: "Infinite Scroll" },
+  { label: "Data display", value: "Badge" },
+  { label: "Data display", value: "Tooltip" },
+  { label: "Data display", value: "Rating" },
+  { label: "Data display", value: "Map" },
+  { label: "Data display", value: "DataTable" },
   { label: "Feedback", value: "Spinner" },
   { label: "Feedback", value: "Toast(alert)" },
   { label: "Feedback", value: "Skeleton" },
   { label: "Feedback", value: "Modal" },
+  { label: "Feedback", value: "Form Validation" },
   { label: "Navigation", value: "Pagination" },
   { label: "Navigation", value: "Drawer" },
   { label: "Navigation", value: "Navbar" },
+  { label: "Navigation", value: "Breadcrumb" },
 ];
 
 const Page = () => {
