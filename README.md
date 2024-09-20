@@ -34,5 +34,6 @@ https://componique.vercel.app
 ![image](https://github.com/user-attachments/assets/e2474b40-d1a4-4649-b1c0-ad31b075e125)
 
 (Tablet Docs Example)
-![image](https://github.com/user-attachments/assets/9bf4d656-2582-4a15-aebe-48faef223212)
+![image](https://github.com/user-attachments/assets/9e82d433-5480-4aca-b645-fc97bc59d113)
+
 
