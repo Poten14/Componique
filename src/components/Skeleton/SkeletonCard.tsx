@@ -56,7 +56,7 @@ const SkeletonCard: React.FC<SkeletonCardProps> = ({
             </svg>
             <div>
               <div className="mb-2 h-2.5 w-2/5 rounded-lg bg-gray"></div>
-              <div className="h-2 w-48 rounded-lg bg-gray"></div>
+              <div className="h-2 w-28 rounded-lg bg-gray"></div>
             </div>
           </div>
         )}
