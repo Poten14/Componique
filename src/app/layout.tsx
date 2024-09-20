@@ -15,6 +15,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="ko">
+      <head>
+        <meta
+          name="google-site-verification"
+          content="b_AwjVpFGRsC_D3vMWGMDRUq7iCrzZtKE2riNEA40vo"
+        />
+      </head>
       <body>
         <DarkModeStatus>
           <Header />
