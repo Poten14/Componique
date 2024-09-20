@@ -46,7 +46,7 @@ export const useShoppingStore = create<ShoppingState>((set) => ({
   paginationColor: "Basic",
 
   // Navbar 기본 값
-  logoSrc: "/logo.svg",
+  logoSrc: "/Logo.svg",
   logoName: "My Shop",
   size: "large",
   hoverColor: "blue",
