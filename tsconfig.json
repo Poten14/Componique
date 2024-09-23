@@ -1,18 +1,22 @@
 {
   "compilerOptions": {
-    "baseUrl": "./src",
+    "declaration": true,
+    "incremental": true,
+    "composite": true, // 프로젝트를 컴포지트로 만듦
+    "emitDeclarationOnly": true, // JS 파일은 생성하지 않고 타입 선언 파일만 생성
+    "target": "ESNext",
+    "module": "esnext",
+    "moduleResolution": "bundler",
+    "jsx": "preserve", // JSX 처리 방식
+    "strict": true, // 엄격한 타입 검사
+    "outDir": "./dist", // 결과물이 저장될 폴더
+    "baseUrl": "./src", // 기본 경로 설정
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,
-    "strict": true,
-    "noEmit": true,
     "esModuleInterop": true,
-    "module": "esnext",
-    "moduleResolution": "bundler",
     "resolveJsonModule": true,
-    "isolatedModules": true,
-    "jsx": "preserve",
-    "incremental": true,
+    "noEmit": false,
     "plugins": [
       {
         "name": "next"
@@ -23,7 +27,8 @@
       "@components/*": ["components/*"], // src/components 폴더
       "@page/*": ["page/*"],
       "mdx/types": ["node_modules/@types/mdx"]
-    }
+    },
+    "isolatedModules": true
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
   "exclude": ["node_modules"]
