@@ -5,7 +5,7 @@ import { FaMapMarkerAlt } from "react-icons/fa";
 import "leaflet/dist/leaflet.css";
 import L from "leaflet";
 
-interface MapPositionProps {
+export interface MapPositionProps {
   latitude: number;
   longitude: number;
   showPosition: string;
