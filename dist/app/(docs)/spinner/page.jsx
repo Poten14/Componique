@@ -33,7 +33,7 @@ const BasicSpinner_1 = __importDefault(require("@components/Spinner/BasicSpinner
 const BarsSpinner_1 = __importDefault(require("@components/Spinner/BarsSpinner"));
 const SquareSpinner_1 = __importDefault(require("@components/Spinner/SquareSpinner"));
 const PacManSpinner_1 = __importDefault(require("@components/Spinner/PacManSpinner"));
-const _FullScreenSpinner_1 = __importDefault(require("@components/Spinner/ FullScreenSpinner"));
+const FullScreenSpinner_1 = __importDefault(require("@components/Spinner/FullScreenSpinner"));
 const Button_1 = __importDefault(require("@components/Button/Button"));
 const SpinnerDoc = () => {
     const [copied, setCopied] = (0, react_1.useState)({});
@@ -1157,7 +1157,7 @@ export default Example;`} language="tsx" index={6} copied={copied} handleCopy={h
         <Button_1.default onClick={() => showLoader("spinner1")} variant="flat">
           Show Basic spinner
         </Button_1.default>
-        <_FullScreenSpinner_1.default spinning={spinning["spinner1"]} shape="Basic"/>
+        <FullScreenSpinner_1.default spinning={spinning["spinner1"]} shape="Basic"/>
       </div>
       <CodeBox_1.default code={`import { FullScreenSpinner } from '@componique/react';
 import { Button } from "@componique/react";
@@ -1231,11 +1231,11 @@ export default Example;`} language="tsx" index={2} copied={copied} handleCopy={h
         <Button_1.default onClick={() => showLoader("spinner2")}>
           Show Square spinner
         </Button_1.default>
-        <_FullScreenSpinner_1.default spinning={spinning["spinner2"]} shape="Square"/>
+        <FullScreenSpinner_1.default spinning={spinning["spinner2"]} shape="Square"/>
         <Button_1.default onClick={() => showLoader("spinner3")} variant="border">
           Show Bars spinner
         </Button_1.default>
-        <_FullScreenSpinner_1.default spinning={spinning["spinner3"]} shape="Bars"/>
+        <FullScreenSpinner_1.default spinning={spinning["spinner3"]} shape="Bars"/>
       </div>
       <CodeBox_1.default code={`import { FullScreenSpinner } from '@componique/react';
 import { Button } from "@componique/react";

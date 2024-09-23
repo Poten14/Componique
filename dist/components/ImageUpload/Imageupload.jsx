@@ -31,7 +31,7 @@ const react_1 = __importStar(require("react"));
 const uuid_1 = require("uuid");
 const react_2 = require("react");
 const image_1 = __importDefault(require("next/image"));
-const Icon_1 = __importDefault(require("@components/Icon/Icon"));
+const Icon_1 = __importDefault(require("../Icon/Icon"));
 const ImageUpload = ({ shape = "circle", size = "medium", color = "basic", text, variant = "solid", className, icon = "icon-plus", iconSize = "medium", iconColor = "currentColor", iconPosition = "top", onImageSelect, }) => {
     const [previewImage, setPreviewImage] = (0, react_1.useState)(null);
     const [id, setId] = (0, react_1.useState)("");

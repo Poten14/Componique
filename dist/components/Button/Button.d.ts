@@ -1,4 +1,4 @@
-import { IconName } from "@components/Icon/Icon";
+import { IconName } from "../Icon/Icon";
 export type ButtonProps = {
     size?: "small" | "medium" | "large";
     iconSize?: "small" | "medium" | "large";

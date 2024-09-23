@@ -6,7 +6,7 @@ import { PiGithubLogo } from "react-icons/pi";
 import { TbBrandBlogger } from "react-icons/tb";
 import { IoEllipsisVerticalOutline } from "react-icons/io5";
 import { RxDoubleArrowUp } from "react-icons/rx";
-import Icon from "@components/Icon/Icon";
+import Icon from "../Icon/Icon";
 
 const team = [
   {

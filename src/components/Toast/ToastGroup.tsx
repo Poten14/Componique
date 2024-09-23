@@ -1,6 +1,6 @@
 "use client";
 
-import Toast from "@components/Toast/Toast";
+import Toast from "../Toast/Toast";
 import { useState, useEffect } from "react";
 import { ToastProps } from "./ToastType";
 import { useRouter } from "next/navigation";

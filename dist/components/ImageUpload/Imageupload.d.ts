@@ -1,6 +1,6 @@
 import React from "react";
 import { Color16, Size } from "types/type";
-import { IconName } from "@components/Icon/Icon";
+import { IconName } from "../Icon/Icon";
 type ImageUploadProps = {
     shape?: "rectangle" | "circle";
     size?: Size;

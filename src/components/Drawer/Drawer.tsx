@@ -1,7 +1,7 @@
 "use client";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
-import Icon from "@components/Icon/Icon";
+import Icon from "../Icon/Icon";
 
 import type { DrawerProps } from "./DrawerType";
 

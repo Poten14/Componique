@@ -4,7 +4,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const react_1 = require("react");
-const BasicSpinner_1 = __importDefault(require("@components/Spinner/BasicSpinner"));
+const BasicSpinner_1 = __importDefault(require("../Spinner/BasicSpinner"));
 const image_1 = __importDefault(require("next/image"));
 const InfiniteScrollImage = ({ images }) => {
     const [items, setItems] = (0, react_1.useState)([]);

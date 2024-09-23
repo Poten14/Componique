@@ -27,7 +27,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const react_1 = __importStar(require("react"));
-const Icon_1 = __importDefault(require("@components/Icon/Icon"));
+const Icon_1 = __importDefault(require("../Icon/Icon"));
 const sizeClasses = {
     small: "w-60 h-10 text-sm",
     medium: "w-80 h-10 text-base",

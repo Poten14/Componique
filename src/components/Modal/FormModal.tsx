@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { ExtraSize } from "types/type";
-import Button from "@components/Button/Button";
+import Button from "../Button/Button";
 
 interface FormModalProps {
   open: boolean;

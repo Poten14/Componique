@@ -4,7 +4,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const ColorPickerUI_1 = __importDefault(require("@components/ColorPicker/ColorPickerUI"));
+const ColorPickerUI_1 = __importDefault(require("../ColorPicker/ColorPickerUI"));
 const ColorPicker = ({ selectColor, }) => {
     return (<>
       <ColorPickerUI_1.default colors={[

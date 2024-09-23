@@ -27,7 +27,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const Icon_1 = __importDefault(require("@components/Icon/Icon"));
+const Icon_1 = __importDefault(require("../Icon/Icon"));
 const react_1 = __importStar(require("react"));
 const sizeClasses = {
     small: "w-[200px] h-[30px] text-sm",
@@ -68,7 +68,7 @@ const SearchInput2 = ({ size = "medium", placeholder, value, onChange, ...props 
     const toggleExpand = () => {
         setIsExpanded(!isExpanded);
     };
-    return (<div className={`flex items-center rounded-full pl-2 shadow-md transition-all duration-300 ${isExpanded ? expandedSizeClasses[size] : sizeClasses[size]} ${isDarkMode ? "border-Navy border bg-transparent" : "bg-white"}`}>
+    return (<div className={`flex items-center rounded-full pl-2 shadow-md transition-all duration-300 ${isExpanded ? expandedSizeClasses[size] : sizeClasses[size]} ${isDarkMode ? "border border-Navy bg-transparent" : "bg-white"}`}>
       <input type="text" className={`flex-grow pl-3 focus:outline-none ${isDarkMode ? "bg-transparent text-white" : "text-gray-700"}`} placeholder={placeholder} value={value} onChange={onChange} onFocus={toggleExpand} // 인풋 필드에 포커스가 있을 때 확장
      onBlur={toggleExpand} // 포커스가 벗어날 때 다시 축소
      {...props} // 추가된 속성 전달

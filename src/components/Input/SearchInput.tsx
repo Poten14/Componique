@@ -1,6 +1,6 @@
 "use client";
 
-import Icon from "@components/Icon/Icon";
+import Icon from "../Icon/Icon";
 import React, { useState, useEffect } from "react";
 
 interface SearchInputProps extends React.InputHTMLAttributes<HTMLInputElement> {

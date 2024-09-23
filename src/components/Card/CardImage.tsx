@@ -1,4 +1,4 @@
-import AvatarBasic from "@components/Avatar/AvatarBasic";
+import AvatarBasic from "../Avatar/AvatarBasic";
 
 interface imageCard {
   title: string;

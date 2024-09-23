@@ -1,5 +1,5 @@
 import { useState, useRef, useCallback, useEffect } from "react";
-import BasicSpinner from "@components/Spinner/BasicSpinner";
+import BasicSpinner from "../Spinner/BasicSpinner";
 
 interface InfiniteScrollBasicProps {
   id: number;

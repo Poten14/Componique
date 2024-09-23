@@ -1,4 +1,4 @@
-import Icon from "@components/Icon/Icon";
+import Icon from "../Icon/Icon";
 
 interface BreadCrumbProp {
   href?: string;

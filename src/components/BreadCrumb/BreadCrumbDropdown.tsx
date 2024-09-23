@@ -2,7 +2,7 @@
 
 import { useState, useRef, useEffect } from "react";
 import { useRouter } from "next/navigation";
-import Icon from "@components/Icon/Icon";
+import Icon from "../Icon/Icon";
 
 interface DropdownItem {
   label: string;

@@ -6,7 +6,7 @@ import Spinner from "@components/Spinner/BasicSpinner";
 import BarsSpinner from "@components/Spinner/BarsSpinner";
 import SquareSpinner from "@components/Spinner/SquareSpinner";
 import PacManSpinner from "@components/Spinner/PacManSpinner";
-import FullScreenSpinner from "@components/Spinner/ FullScreenSpinner";
+import FullScreenSpinner from "@components/Spinner/FullScreenSpinner";
 import Button from "@components/Button/Button";
 
 const SpinnerDoc: React.FC = () => {

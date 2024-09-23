@@ -27,7 +27,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const react_1 = __importStar(require("react"));
-const Button_1 = __importDefault(require("@components/Button/Button"));
+const Button_1 = __importDefault(require("../Button/Button"));
 const sizeClasses = {
     xs: "max-w-xs w-full",
     small: "max-w-sm w-full",

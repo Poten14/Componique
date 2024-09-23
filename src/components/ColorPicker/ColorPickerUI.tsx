@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 import { ColorPickerProps } from "./ColorPickerType";
-import Button from "@components/Button/Button";
+import Button from "../Button/Button";
 const ColorPickerUI: React.FC<ColorPickerProps> = ({ colors, selectColor }) => {
   const [selectedColor, setSelectedColor] = useState<string>("#ffffff");
   const [msg, setMsg] = useState("");
