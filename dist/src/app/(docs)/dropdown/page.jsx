@@ -1,11 +1,39 @@
+"use strict";
 "use client";
-import React, { useState } from "react";
-import CodeBox from "@components/CodeBox";
-import DropDownBasic from "@components/DropDown/DropDownBasic";
-import DropDownBasicMultiSelect from "@components/DropDown/DropDownMutilSelect";
-import DropDownGrouped from "@components/DropDown/DropDownGrouped";
+var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    var desc = Object.getOwnPropertyDescriptor(m, k);
+    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
+      desc = { enumerable: true, get: function() { return m[k]; } };
+    }
+    Object.defineProperty(o, k2, desc);
+}) : (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    o[k2] = m[k];
+}));
+var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {
+    Object.defineProperty(o, "default", { enumerable: true, value: v });
+}) : function(o, v) {
+    o["default"] = v;
+});
+var __importStar = (this && this.__importStar) || function (mod) {
+    if (mod && mod.__esModule) return mod;
+    var result = {};
+    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
+    __setModuleDefault(result, mod);
+    return result;
+};
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+const react_1 = __importStar(require("react"));
+const CodeBox_1 = __importDefault(require("@components/CodeBox"));
+const DropDownBasic_1 = __importDefault(require("@components/DropDown/DropDownBasic"));
+const DropDownMutilSelect_1 = __importDefault(require("@components/DropDown/DropDownMutilSelect"));
+const DropDownGrouped_1 = __importDefault(require("@components/DropDown/DropDownGrouped"));
 const DropDownComponent = () => {
-    const [copied, setCopied] = useState({});
+    const [copied, setCopied] = (0, react_1.useState)({});
     const handleCopy = (index) => {
         setCopied((prev) => ({ ...prev, [index]: true }));
         setTimeout(() => setCopied((prev) => ({ ...prev, [index]: false })), 500);
@@ -21,18 +49,18 @@ const DropDownComponent = () => {
         </p>
 
         <h2 className="text-[#2D3748] dark:text-white">1.1. Import</h2>
-        <CodeBox code={`import DropDownBasic from '@components/DropDown/DropDownBasic';`} copyText={`import DropDownBasic from '@components/DropDown/DropDownBasic';`} language="tsx" index={1} copied={copied} handleCopy={handleCopy}/>
+        <CodeBox_1.default code={`import DropDownBasic from '@components/DropDown/DropDownBasic';`} copyText={`import DropDownBasic from '@components/DropDown/DropDownBasic';`} language="tsx" index={1} copied={copied} handleCopy={handleCopy}/>
 
         <h2 className="text-[#2D3748] dark:text-white">1.2. Usage</h2>
         <p>기본 사용 예제는 아래와 같습니다:</p>
         <div className="m-7 flex gap-4">
-          <DropDownBasic option={["Option 1", "Option 2", "Option 3"]} placeholder="Select Option" type="basic" onSelect={(value) => console.log("Selected:", value)}/>
-          <DropDownBasic option={["Option 1", "Option 2", "Option 3"]} placeholder="Select Option" type="rounded" onSelect={(value) => console.log("Selected:", value)}/>
-          <DropDownBasic option={["Option 1", "Option 2", "Option 3"]} placeholder="Select Option" type="borderless-rounded" onSelect={(value) => console.log("Selected:", value)}/>
-          <DropDownBasic option={["Option 1", "Option 2", "Option 3"]} placeholder="less-rounded" type="basic" onSelect={(value) => console.log("Selected:", value)}/>
+          <DropDownBasic_1.default option={["Option 1", "Option 2", "Option 3"]} placeholder="Select Option" type="basic" onSelect={(value) => console.log("Selected:", value)}/>
+          <DropDownBasic_1.default option={["Option 1", "Option 2", "Option 3"]} placeholder="Select Option" type="rounded" onSelect={(value) => console.log("Selected:", value)}/>
+          <DropDownBasic_1.default option={["Option 1", "Option 2", "Option 3"]} placeholder="Select Option" type="borderless-rounded" onSelect={(value) => console.log("Selected:", value)}/>
+          <DropDownBasic_1.default option={["Option 1", "Option 2", "Option 3"]} placeholder="less-rounded" type="basic" onSelect={(value) => console.log("Selected:", value)}/>
         </div>
 
-        <CodeBox code={`import DropDownBasic from '@components/DropDown/DropDownBasic';
+        <CodeBox_1.default code={`import DropDownBasic from '@components/DropDown/DropDownBasic';
 
 function Example() {
   return (
@@ -131,7 +159,7 @@ export default Example;`} language="tsx" index={2} copied={copied} handleCopy={h
         </table>
 
         <h2 className="text-[#2D3748] dark:text-white">1.4. Full Example</h2>
-        <CodeBox code={`import DropDownBasic from '@components/DropDown/DropDownBasic';
+        <CodeBox_1.default code={`import DropDownBasic from '@components/DropDown/DropDownBasic';
 
 function FullExample() {
   return (
@@ -213,18 +241,18 @@ export default FullExample;`} language="tsx" index={3} copied={copied} handleCop
         </p>
 
         <h2 className="text-[#2D3748] dark:text-white">2.1. Import</h2>
-        <CodeBox code={`import DropDownBasicMultiSelect from '@components/DropDown/DropDownBasicMultiSelect';`} copyText={`import DropDownBasicMultiSelect from '@components/DropDown/DropDownBasicMultiSelect';`} language="tsx" index={4} copied={copied} handleCopy={handleCopy}/>
+        <CodeBox_1.default code={`import DropDownBasicMultiSelect from '@components/DropDown/DropDownBasicMultiSelect';`} copyText={`import DropDownBasicMultiSelect from '@components/DropDown/DropDownBasicMultiSelect';`} language="tsx" index={4} copied={copied} handleCopy={handleCopy}/>
 
         <h2 className="text-[#2D3748] dark:text-white">2.2. Usage</h2>
         <p>기본 사용 예제는 아래와 같습니다:</p>
         <div className="m-7 flex gap-4">
-          <DropDownBasicMultiSelect option={["Option 1", "Option 2", "Option 3"]} placeholder="Select Options" type="basic" onSelect={(value) => console.log("Selected:", value)}/>
-          <DropDownBasicMultiSelect option={["Option 1", "Option 2", "Option 3"]} placeholder="Select Options" type="rounded" onSelect={(value) => console.log("Selected:", value)}/>
-          <DropDownBasicMultiSelect option={["Option 1", "Option 2", "Option 3"]} placeholder="Select Options" type="borderless-rounded" onSelect={(value) => console.log("Selected:", value)}/>
-          <DropDownBasicMultiSelect option={["Option 1", "Option 2", "Option 3"]} placeholder="Select Options" type="less-rounded" onSelect={(value) => console.log("Selected:", value)}/>
+          <DropDownMutilSelect_1.default option={["Option 1", "Option 2", "Option 3"]} placeholder="Select Options" type="basic" onSelect={(value) => console.log("Selected:", value)}/>
+          <DropDownMutilSelect_1.default option={["Option 1", "Option 2", "Option 3"]} placeholder="Select Options" type="rounded" onSelect={(value) => console.log("Selected:", value)}/>
+          <DropDownMutilSelect_1.default option={["Option 1", "Option 2", "Option 3"]} placeholder="Select Options" type="borderless-rounded" onSelect={(value) => console.log("Selected:", value)}/>
+          <DropDownMutilSelect_1.default option={["Option 1", "Option 2", "Option 3"]} placeholder="Select Options" type="less-rounded" onSelect={(value) => console.log("Selected:", value)}/>
         </div>
 
-        <CodeBox code={`import DropDownBasicMultiSelect from '@components/DropDown/DropDownBasicMultiSelect';
+        <CodeBox_1.default code={`import DropDownBasicMultiSelect from '@components/DropDown/DropDownBasicMultiSelect';
 
 function Example() {
   return (
@@ -324,7 +352,7 @@ export default Example;`} language="tsx" index={5} copied={copied} handleCopy={h
         </table>
 
         <h2 className="text-[#2D3748] dark:text-white">2.4. Full Example</h2>
-        <CodeBox code={`import DropDownBasicMultiSelect from '@components/DropDown/DropDownBasicMultiSelect';
+        <CodeBox_1.default code={`import DropDownBasicMultiSelect from '@components/DropDown/DropDownBasicMultiSelect';
 
 function FullExample() {
   return (
@@ -404,12 +432,12 @@ export default FullExample;`} language="tsx" index={6} copied={copied} handleCop
         </p>
 
         <h2 className="text-[#2D3748] dark:text-white">3.1. Import</h2>
-        <CodeBox code={`import DropDownGrouped from '@components/DropDown/DropDownGrouped';`} copyText={`import DropDownGrouped from '@components/DropDown/DropDownGrouped';`} language="tsx" index={7} copied={copied} handleCopy={handleCopy}/>
+        <CodeBox_1.default code={`import DropDownGrouped from '@components/DropDown/DropDownGrouped';`} copyText={`import DropDownGrouped from '@components/DropDown/DropDownGrouped';`} language="tsx" index={7} copied={copied} handleCopy={handleCopy}/>
 
         <h2 className="text-[#2D3748] dark:text-white">3.2. Usage</h2>
         <p>기본 사용 예제는 아래와 같습니다:</p>
         <div className="my-7 flex gap-4">
-          <DropDownGrouped options={[
+          <DropDownGrouped_1.default options={[
             {
                 groupName: "Fruits",
                 items: ["Apple", "Banana", "Orange", "Grapes"],
@@ -419,7 +447,7 @@ export default FullExample;`} language="tsx" index={6} copied={copied} handleCop
                 items: ["Carrot", "Broccoli", "Spinach", "Potato"],
             },
         ]} defaultOption="Select Option" type="basic" onSelect={(value) => console.log("Selected:", value)}/>
-          <DropDownGrouped options={[
+          <DropDownGrouped_1.default options={[
             {
                 groupName: "Fruits",
                 items: ["Apple", "Banana", "Orange", "Grapes"],
@@ -429,7 +457,7 @@ export default FullExample;`} language="tsx" index={6} copied={copied} handleCop
                 items: ["Carrot", "Broccoli", "Spinach", "Potato"],
             },
         ]} defaultOption="Select Option" type="rounded" onSelect={(value) => console.log("Selected:", value)}/>
-          <DropDownGrouped options={[
+          <DropDownGrouped_1.default options={[
             {
                 groupName: "Fruits",
                 items: ["Apple", "Banana", "Orange", "Grapes"],
@@ -439,7 +467,7 @@ export default FullExample;`} language="tsx" index={6} copied={copied} handleCop
                 items: ["Carrot", "Broccoli", "Spinach", "Potato"],
             },
         ]} defaultOption="Select Option" type="borderless-rounded" onSelect={(value) => console.log("Selected:", value)}/>
-          <DropDownGrouped options={[
+          <DropDownGrouped_1.default options={[
             {
                 groupName: "Fruits",
                 items: ["Apple", "Banana", "Orange", "Grapes"],
@@ -451,7 +479,7 @@ export default FullExample;`} language="tsx" index={6} copied={copied} handleCop
         ]} defaultOption="Select Option" type="less-rounded" onSelect={(value) => console.log("Selected:", value)}/>
         </div>
 
-        <CodeBox code={`import DropDownGrouped from '@components/DropDown/DropDownGrouped';
+        <CodeBox_1.default code={`import DropDownGrouped from '@components/DropDown/DropDownGrouped';
 
 function Example() {
   return (
@@ -556,7 +584,7 @@ export default Example;`} language="tsx" index={8} copied={copied} handleCopy={h
         </table>
 
         <h2 className="text-[#2D3748] dark:text-white">3.4. Full Example</h2>
-        <CodeBox code={`import DropDownGrouped from '@components/DropDown/DropDownGrouped';
+        <CodeBox_1.default code={`import DropDownGrouped from '@components/DropDown/DropDownGrouped';
 
 function FullExample() {
   return (
@@ -650,4 +678,4 @@ export default FullExample;`} language="tsx" index={9} copied={copied} handleCop
       </div>
     </div>);
 };
-export default DropDownComponent;
+exports.default = DropDownComponent;

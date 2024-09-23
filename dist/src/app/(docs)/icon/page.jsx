@@ -1,11 +1,39 @@
+"use strict";
 "use client";
-import { useRouter } from "next/navigation";
-import React, { useState } from "react";
-import Icon from "@components/Icon/Icon";
-import CodeBox from "@components/CodeBox";
-import Button from "@components/Button/Button";
+var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    var desc = Object.getOwnPropertyDescriptor(m, k);
+    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
+      desc = { enumerable: true, get: function() { return m[k]; } };
+    }
+    Object.defineProperty(o, k2, desc);
+}) : (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    o[k2] = m[k];
+}));
+var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {
+    Object.defineProperty(o, "default", { enumerable: true, value: v });
+}) : function(o, v) {
+    o["default"] = v;
+});
+var __importStar = (this && this.__importStar) || function (mod) {
+    if (mod && mod.__esModule) return mod;
+    var result = {};
+    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
+    __setModuleDefault(result, mod);
+    return result;
+};
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+const navigation_1 = require("next/navigation");
+const react_1 = __importStar(require("react"));
+const Icon_1 = __importDefault(require("@components/Icon/Icon"));
+const CodeBox_1 = __importDefault(require("@components/CodeBox"));
+const Button_1 = __importDefault(require("@components/Button/Button"));
 const IconDoc = () => {
-    const [copied, setCopied] = useState({});
+    const [copied, setCopied] = (0, react_1.useState)({});
     const handleCopy = (index) => {
         setCopied((prev) => ({ ...prev, [index]: true }));
         setTimeout(() => setCopied((prev) => ({ ...prev, [index]: false })), 500);
@@ -79,7 +107,7 @@ const IconDoc = () => {
         "icon-line",
         "icon-instagram",
     ];
-    const router = useRouter();
+    const router = (0, navigation_1.useRouter)();
     return (<div className="prose w-[850px] max-w-[1000px] p-5 text-[#6D6D6D]">
       <h1 className="text-[#2D3748]">1. Icon</h1>
       <p>
@@ -93,14 +121,14 @@ const IconDoc = () => {
 
       <h2 className="text-[#2D3748]">1.1. Import</h2>
 
-      <CodeBox code={`import Icon from '@components/Icon';`} copyText={`import Icon from '@components/Icon';`} language="tsx" index={1} copied={copied} handleCopy={handleCopy}/>
+      <CodeBox_1.default code={`import Icon from '@components/Icon';`} copyText={`import Icon from '@components/Icon';`} language="tsx" index={1} copied={copied} handleCopy={handleCopy}/>
 
       <h2 className="text-[#2D3748]">1.2. Usage</h2>
       <p>기본 사용 예제는 아래와 같습니다:</p>
       <div style={{ marginBottom: "20px" }}>
-        <Icon name="icon-home"/>
+        <Icon_1.default name="icon-home"/>
       </div>
-      <CodeBox code={`import Icon from '@components/Icon';
+      <CodeBox_1.default code={`import Icon from '@components/Icon';
 
 function Example() {
   return (
@@ -124,12 +152,12 @@ export default Example;`} language="tsx" index={2} copied={copied} handleCopy={h
         기본값은 <code>16</code>입니다.
       </p>
       <div className="space-x-4 space-y-4">
-        <Icon name="icon-star" size={16}/>
-        <Icon name="icon-star" size={24}/>
-        <Icon name="icon-star" size={32}/>
+        <Icon_1.default name="icon-star" size={16}/>
+        <Icon_1.default name="icon-star" size={24}/>
+        <Icon_1.default name="icon-star" size={32}/>
       </div>
       <div className="my-7 space-y-4"/>
-      <CodeBox code={`import Icon from '@components/Icon';
+      <CodeBox_1.default code={`import Icon from '@components/Icon';
 
 function Example() {
   return (
@@ -161,12 +189,12 @@ export default Example;`} language="tsx" index={3} copied={copied} handleCopy={h
         기본값은 <code>currentColor</code>입니다.
       </p>
       <div className="space-x-4 space-y-4">
-        <Icon name="icon-heart" color="red"/>
-        <Icon name="icon-heart" color="green"/>
-        <Icon name="icon-heart" color="blue"/>
+        <Icon_1.default name="icon-heart" color="red"/>
+        <Icon_1.default name="icon-heart" color="green"/>
+        <Icon_1.default name="icon-heart" color="blue"/>
       </div>
       <div className="my-7 space-y-4"/>
-      <CodeBox code={`import Icon from '@components/Icon';
+      <CodeBox_1.default code={`import Icon from '@components/Icon';
 
 function Example() {
   return (
@@ -196,7 +224,7 @@ export default Example;`} language="tsx" index={4} copied={copied} handleCopy={h
       <p>아래는 모든 아이콘을 표시한 예제입니다.</p>
       <div className="grid grid-cols-4 gap-4">
         {iconNames.map((iconName) => (<div key={iconName} className="flex items-center space-x-2">
-            <Icon name={iconName} size={24}/>
+            <Icon_1.default name={iconName} size={24}/>
             <span>{iconName}</span>
           </div>))}
       </div>
@@ -266,15 +294,15 @@ export default Example;`} language="tsx" index={4} copied={copied} handleCopy={h
       <h2 className="text-[#2D3748]">6. Example with Button</h2>
       <p>아이콘을 포함한 버튼의 예제입니다:</p>
       <div className="space-x-4 space-y-4">
-        <Button icon="icon-home" color="secondary" iconSize="small" size="small">
+        <Button_1.default icon="icon-home" color="secondary" iconSize="small" size="small">
           Home small
-        </Button>
-        <Button icon="icon-docs" color="warning" iconSize="medium">
+        </Button_1.default>
+        <Button_1.default icon="icon-docs" color="warning" iconSize="medium">
           Docs
-        </Button>
+        </Button_1.default>
       </div>
       <div className="my-7 space-y-4"/>
-      <CodeBox code={`import { Button } from '@components/Button';
+      <CodeBox_1.default code={`import { Button } from '@components/Button';
 
 function Example() {
   return (
@@ -319,11 +347,11 @@ export default Example;`} language="tsx" index={3} copied={copied} handleCopy={h
       <p>
         Button 컴포넌트에 대한 자세한 설명은 아래의 버튼을 클릭하면 이동합니다.
       </p>
-      <Button onClick={() => {
+      <Button_1.default onClick={() => {
             router.push("/button");
         }}>
         Button Docs로 이동
-      </Button>
+      </Button_1.default>
     </div>);
 };
-export default IconDoc;
+exports.default = IconDoc;

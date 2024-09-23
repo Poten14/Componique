@@ -1,14 +1,16 @@
+"use strict";
 "use client";
-import { useEffect, useState } from "react";
+Object.defineProperty(exports, "__esModule", { value: true });
+const react_1 = require("react");
 const DarkModeStatus = ({ children }) => {
-    const [darkMode, setDarkMode] = useState(false);
-    useEffect(() => {
+    const [darkMode, setDarkMode] = (0, react_1.useState)(false);
+    (0, react_1.useEffect)(() => {
         const saveMode = localStorage.getItem("mode");
         if (saveMode === "dark") {
             setDarkMode(true);
         }
     }, []);
-    useEffect(() => {
+    (0, react_1.useEffect)(() => {
         if (darkMode) {
             document.documentElement.classList.add("dark");
         }
@@ -26,4 +28,4 @@ const DarkModeStatus = ({ children }) => {
       {children}
     </div>);
 };
-export default DarkModeStatus;
+exports.default = DarkModeStatus;

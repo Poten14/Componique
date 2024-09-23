@@ -1,15 +1,43 @@
+"use strict";
 "use client";
-import React, { useState } from "react";
-import CodeBox from "@components/CodeBox";
-import Autocomplete from "@components/Autocomplete/Autocomplete";
-import ButtonAutocomplete from "@components/Autocomplete/ButtonAutocomplete";
-import GroupedAutocomplete from "@components/Autocomplete/GroupedAutocomplete";
-import LabelAutocomplete from "@components/Autocomplete/LabelAutocomplete";
+var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    var desc = Object.getOwnPropertyDescriptor(m, k);
+    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
+      desc = { enumerable: true, get: function() { return m[k]; } };
+    }
+    Object.defineProperty(o, k2, desc);
+}) : (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    o[k2] = m[k];
+}));
+var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {
+    Object.defineProperty(o, "default", { enumerable: true, value: v });
+}) : function(o, v) {
+    o["default"] = v;
+});
+var __importStar = (this && this.__importStar) || function (mod) {
+    if (mod && mod.__esModule) return mod;
+    var result = {};
+    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
+    __setModuleDefault(result, mod);
+    return result;
+};
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+const react_1 = __importStar(require("react"));
+const CodeBox_1 = __importDefault(require("@components/CodeBox"));
+const Autocomplete_1 = __importDefault(require("@components/Autocomplete/Autocomplete"));
+const ButtonAutocomplete_1 = __importDefault(require("@components/Autocomplete/ButtonAutocomplete"));
+const GroupedAutocomplete_1 = __importDefault(require("@components/Autocomplete/GroupedAutocomplete"));
+const LabelAutocomplete_1 = __importDefault(require("@components/Autocomplete/LabelAutocomplete"));
 const AutocompleteDoc = () => {
-    const [copied, setCopied] = useState({});
-    const [selectedOption, setSelectedOption] = useState(null);
-    const [value, setValue] = useState("");
-    const [selectedOption3, setSelectedOption3] = useState(null);
+    const [copied, setCopied] = (0, react_1.useState)({});
+    const [selectedOption, setSelectedOption] = (0, react_1.useState)(null);
+    const [value, setValue] = (0, react_1.useState)("");
+    const [selectedOption3, setSelectedOption3] = (0, react_1.useState)(null);
     const handleCopy = (index) => {
         setCopied((prev) => ({ ...prev, [index]: true }));
         setTimeout(() => setCopied((prev) => ({ ...prev, [index]: false })), 500);
@@ -56,18 +84,18 @@ const AutocompleteDoc = () => {
         모양을 지원합니다.
       </p>
       <h2 className="text-[#2D3748]"> 1.1. Import</h2>
-      <CodeBox code={`import { Autocomplete } from '@componique/react';`} copyText={`import { Autocomplete } from '@components/Autocomplete/Autocomplete';`} language="tsx" index={1} copied={copied} handleCopy={handleCopy}/>
+      <CodeBox_1.default code={`import { Autocomplete } from '@componique/react';`} copyText={`import { Autocomplete } from '@components/Autocomplete/Autocomplete';`} language="tsx" index={1} copied={copied} handleCopy={handleCopy}/>
 
       <h2 className="text-[#2D3748]">1.2. Usage</h2>
       <p>
         아래는 <code>Autocomplete</code> 컴포넌트의 기본 사용 예제입니다:
       </p>
       <div className="pace-y-4 my-7">
-        <Autocomplete options={options} placeholder="Search fruits..." onSelect={handleSelect}/>
+        <Autocomplete_1.default options={options} placeholder="Search fruits..." onSelect={handleSelect}/>
       </div>
       <p>선택된 옵션: {selectedOption}</p>
 
-      <CodeBox code={`import { Autocomplete } from '@components/Autocomplete/Autocomplete';
+      <CodeBox_1.default code={`import { Autocomplete } from '@components/Autocomplete/Autocomplete';
 import { useState } from 'react';
 
 function Example() {
@@ -138,12 +166,12 @@ export default Example;`} language="tsx" index={2} copied={copied} handleCopy={h
         </li>
       </ul>
       <div className="my-7 space-y-4">
-        <Autocomplete options={options} placeholder="Outlined style" variant="outlined" onSelect={handleSelect}/>
-        <Autocomplete options={options} placeholder="Filled style" variant="filled" onSelect={handleSelect}/>
-        <Autocomplete options={options} placeholder="Borderless style" variant="borderless" onSelect={handleSelect}/>
+        <Autocomplete_1.default options={options} placeholder="Outlined style" variant="outlined" onSelect={handleSelect}/>
+        <Autocomplete_1.default options={options} placeholder="Filled style" variant="filled" onSelect={handleSelect}/>
+        <Autocomplete_1.default options={options} placeholder="Borderless style" variant="borderless" onSelect={handleSelect}/>
       </div>
 
-      <CodeBox code={`import { Autocomplete } from '@components/Autocomplete/Autocomplete';
+      <CodeBox_1.default code={`import { Autocomplete } from '@components/Autocomplete/Autocomplete';
 
 function Example() {
   const [selectedOption, setSelectedOption] = useState<string | null>(null);
@@ -327,7 +355,7 @@ export default Example;`} language="tsx" index={3} copied={copied} handleCopy={h
       </table>
 
       <h2 className="text-[#2D3748]">1.5. Full Example</h2>
-      <CodeBox code={`import { Autocomplete } from '@components/Autocomplete/Autocomplete';
+      <CodeBox_1.default code={`import { Autocomplete } from '@components/Autocomplete/Autocomplete';
 import { useState } from 'react';
 
 function Example() {
@@ -392,17 +420,17 @@ export default Example;`} language="tsx" index={5} copied={copied} handleCopy={h
         형태입니다. 다양한 스타일과 색상을 지원합니다.
       </p>
       <h2 className="text-[#2D3748]"> 2.1. Import</h2>
-      <CodeBox code={`import { ButtonAutocomplete } from '@componique/react';`} copyText={`import { ButtonAutocomplete } from '@components/Autocomplete/ButtonAutocomplete';`} language="tsx" index={1} copied={copied} handleCopy={handleCopy}/>
+      <CodeBox_1.default code={`import { ButtonAutocomplete } from '@componique/react';`} copyText={`import { ButtonAutocomplete } from '@components/Autocomplete/ButtonAutocomplete';`} language="tsx" index={1} copied={copied} handleCopy={handleCopy}/>
 
       <h2 className="text-[#2D3748]">2.2. Usage</h2>
       <p>
         아래는 <code>ButtonAutocomplete</code> 컴포넌트의 기본 사용 예제입니다:
       </p>
       <div className="my-7 space-y-4">
-        <ButtonAutocomplete options={options} placeholder="Search fruits..." onSelect={handleSelect}/>
+        <ButtonAutocomplete_1.default options={options} placeholder="Search fruits..." onSelect={handleSelect}/>
         <p>선택된 옵션: {selectedOption}</p>
       </div>
-      <CodeBox code={`import { ButtonAutocomplete } from '@components/Autocomplete/ButtonAutocomplete';
+      <CodeBox_1.default code={`import { ButtonAutocomplete } from '@components/Autocomplete/ButtonAutocomplete';
 import { useState } from 'react';
 
 function Example() {
@@ -472,11 +500,11 @@ export default Example;`} language="tsx" index={2} copied={copied} handleCopy={h
         </li>
       </ul>
       <div className="my-7 space-y-4">
-        <ButtonAutocomplete options={options} placeholder="Search with Basic color" color="Basic" radius="medium" onSelect={handleSelect}/>
-        <ButtonAutocomplete options={options} placeholder="Search with Primary color" color="Primary" radius="large" onSelect={handleSelect}/>
-        <ButtonAutocomplete options={options} placeholder="Search with Danger color" color="Danger" radius="full" onSelect={handleSelect}/>
+        <ButtonAutocomplete_1.default options={options} placeholder="Search with Basic color" color="Basic" radius="medium" onSelect={handleSelect}/>
+        <ButtonAutocomplete_1.default options={options} placeholder="Search with Primary color" color="Primary" radius="large" onSelect={handleSelect}/>
+        <ButtonAutocomplete_1.default options={options} placeholder="Search with Danger color" color="Danger" radius="full" onSelect={handleSelect}/>
       </div>
-      <CodeBox code={`import { ButtonAutocomplete } from '@components/Autocomplete/ButtonAutocomplete';
+      <CodeBox_1.default code={`import { ButtonAutocomplete } from '@components/Autocomplete/ButtonAutocomplete';
 
 function Example() {
   const [selectedOption, setSelectedOption] = useState<string | null>(null);
@@ -669,7 +697,7 @@ export default Example;`} language="tsx" index={3} copied={copied} handleCopy={h
       </table>
 
       <h2 className="text-[#2D3748]">2.5. Full Example</h2>
-      <CodeBox code={`import { ButtonAutocomplete } from '@components/Autocomplete/ButtonAutocomplete';
+      <CodeBox_1.default code={`import { ButtonAutocomplete } from '@components/Autocomplete/ButtonAutocomplete';
 import { useState } from 'react';
 
 function Example() {
@@ -734,17 +762,17 @@ export default Example;`} language="tsx" index={5} copied={copied} handleCopy={h
         실시간으로 필터링하며, 그룹별로 정렬하여 표시합니다.
       </p>
       <h2 className="text-[#2D3748]"> 3.1. Import</h2>
-      <CodeBox code={`import { GroupedAutocomplete } from '@componique/react';`} copyText={`import { GroupedAutocomplete } from '@components/Autocomplete/GroupedAutocomplete';`} language="tsx" index={1} copied={copied} handleCopy={handleCopy}/>
+      <CodeBox_1.default code={`import { GroupedAutocomplete } from '@componique/react';`} copyText={`import { GroupedAutocomplete } from '@components/Autocomplete/GroupedAutocomplete';`} language="tsx" index={1} copied={copied} handleCopy={handleCopy}/>
 
       <h2 className="text-[#2D3748]">3.2. Usage</h2>
       <p>
         아래는 <code>GroupedAutocomplete</code> 컴포넌트의 기본 사용 예제입니다:
       </p>
       <div className="my-7 space-y-4">
-        <GroupedAutocomplete options={options2} placeholder="Search items..." onSelect={handleSelect}/>
+        <GroupedAutocomplete_1.default options={options2} placeholder="Search items..." onSelect={handleSelect}/>
         <p>선택된 옵션: {selectedOption}</p>
       </div>
-      <CodeBox code={`import { GroupedAutocomplete } from '@components/Autocomplete/GroupedAutocomplete';
+      <CodeBox_1.default code={`import { GroupedAutocomplete } from '@components/Autocomplete/GroupedAutocomplete';
 import { useState } from 'react';
 
 function Example() {
@@ -831,11 +859,11 @@ export default Example;`} language="tsx" index={2} copied={copied} handleCopy={h
         </li>
       </ul>
       <div className="my-7 space-x-3 space-y-4">
-        <GroupedAutocomplete options={options2} placeholder="Search with thin border" border="thin" radius="small" onSelect={handleSelect}/>
-        <GroupedAutocomplete options={options2} placeholder="Search with thick border" border="thick" radius="large" onSelect={handleSelect}/>
-        <GroupedAutocomplete options={options2} placeholder="Search with no border" border="none" radius="full" onSelect={handleSelect}/>
+        <GroupedAutocomplete_1.default options={options2} placeholder="Search with thin border" border="thin" radius="small" onSelect={handleSelect}/>
+        <GroupedAutocomplete_1.default options={options2} placeholder="Search with thick border" border="thick" radius="large" onSelect={handleSelect}/>
+        <GroupedAutocomplete_1.default options={options2} placeholder="Search with no border" border="none" radius="full" onSelect={handleSelect}/>
       </div>
-      <CodeBox code={`import { GroupedAutocomplete } from '@components/Autocomplete/GroupedAutocomplete';
+      <CodeBox_1.default code={`import { GroupedAutocomplete } from '@components/Autocomplete/GroupedAutocomplete';
 
 function Example() {
   const [selectedOption, setSelectedOption] = useState<string | null>(null);
@@ -1035,7 +1063,7 @@ export default Example;`} language="tsx" index={3} copied={copied} handleCopy={h
       </table>
 
       <h2 className="text-[#2D3748]">3.5. Full Example</h2>
-      <CodeBox code={`import { GroupedAutocomplete } from '@components/Autocomplete/GroupedAutocomplete';
+      <CodeBox_1.default code={`import { GroupedAutocomplete } from '@components/Autocomplete/GroupedAutocomplete';
 import { useState } from 'react';
 
 function Example() {
@@ -1118,17 +1146,17 @@ export default Example;`} language="tsx" index={5} copied={copied} handleCopy={h
         문자열 또는 라벨-값 쌍의 형태로 제공될 수 있습니다.
       </p>
       <h2 className="text-[#2D3748]"> 4.1. Import</h2>
-      <CodeBox code={`import { LabelAutocomplete } from '@componique/react';`} copyText={`import { LabelAutocomplete } from '@components/Autocomplete/LabelAutocomplete';`} language="tsx" index={1} copied={copied} handleCopy={handleCopy}/>
+      <CodeBox_1.default code={`import { LabelAutocomplete } from '@componique/react';`} copyText={`import { LabelAutocomplete } from '@components/Autocomplete/LabelAutocomplete';`} language="tsx" index={1} copied={copied} handleCopy={handleCopy}/>
 
       <h2 className="text-[#2D3748]">4.2. Usage</h2>
       <p>
         아래는 <code>LabelAutocomplete</code> 컴포넌트의 기본 사용 예제입니다:
       </p>
       <div className="my-7 space-y-4">
-        <LabelAutocomplete options={options3} value={value} onChange={setValue} onSelect={handleSelect3} placeholder="Search fruits..."/>
+        <LabelAutocomplete_1.default options={options3} value={value} onChange={setValue} onSelect={handleSelect3} placeholder="Search fruits..."/>
         <p>선택된 옵션: {JSON.stringify(selectedOption3)}</p>
       </div>
-      <CodeBox code={`import { LabelAutocomplete } from '@components/Autocomplete/LabelAutocomplete';
+      <CodeBox_1.default code={`import { LabelAutocomplete } from '@components/Autocomplete/LabelAutocomplete';
 import { useState } from 'react';
 
 function Example() {
@@ -1217,11 +1245,11 @@ export default Example;`} language="tsx" index={2} copied={copied} handleCopy={h
         </li>
       </ul>
       <div className="my-7 space-y-4">
-        <LabelAutocomplete options={options3} value={value} onChange={setValue} onSelect={handleSelect3} size="small" placeholder="Search (small)..."/>
-        <LabelAutocomplete options={options3} value={value} onChange={setValue} onSelect={handleSelect3} size="medium" placeholder="Search (medium)..."/>
-        <LabelAutocomplete options={options3} value={value} onChange={setValue} onSelect={handleSelect3} size="large" placeholder="Search (large)..."/>
+        <LabelAutocomplete_1.default options={options3} value={value} onChange={setValue} onSelect={handleSelect3} size="small" placeholder="Search (small)..."/>
+        <LabelAutocomplete_1.default options={options3} value={value} onChange={setValue} onSelect={handleSelect3} size="medium" placeholder="Search (medium)..."/>
+        <LabelAutocomplete_1.default options={options3} value={value} onChange={setValue} onSelect={handleSelect3} size="large" placeholder="Search (large)..."/>
       </div>
-      <CodeBox code={`import { LabelAutocomplete } from '@components/Autocomplete/LabelAutocomplete';
+      <CodeBox_1.default code={`import { LabelAutocomplete } from '@components/Autocomplete/LabelAutocomplete';
 import { useState } from 'react';
 
 function Example() {
@@ -1392,7 +1420,7 @@ export default Example;`} language="tsx" index={3} copied={copied} handleCopy={h
       </table>
 
       <h2 className="text-[#2D3748]">4.5. Full Example</h2>
-      <CodeBox code={`import { LabelAutocomplete } from '@components/Autocomplete/LabelAutocomplete';
+      <CodeBox_1.default code={`import { LabelAutocomplete } from '@components/Autocomplete/LabelAutocomplete';
 import { useState } from 'react';
 
 function Example() {
@@ -1463,4 +1491,4 @@ function Example() {
 export default Example;`} language="tsx" index={4} copied={copied} handleCopy={handleCopy}/>
     </div>);
 };
-export default AutocompleteDoc;
+exports.default = AutocompleteDoc;

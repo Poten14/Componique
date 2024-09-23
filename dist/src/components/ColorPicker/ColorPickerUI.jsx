@@ -1,9 +1,14 @@
+"use strict";
 "use client";
-import { useState } from "react";
-import Button from "@components/Button/Button";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+const react_1 = require("react");
+const Button_1 = __importDefault(require("@components/Button/Button"));
 const ColorPickerUI = ({ colors, selectColor }) => {
-    const [selectedColor, setSelectedColor] = useState("#ffffff");
-    const [msg, setMsg] = useState("");
+    const [selectedColor, setSelectedColor] = (0, react_1.useState)("#ffffff");
+    const [msg, setMsg] = (0, react_1.useState)("");
     const onClickCopyHandler = async (text) => {
         try {
             await navigator.clipboard.writeText(text);
@@ -24,11 +29,11 @@ const ColorPickerUI = ({ colors, selectColor }) => {
       <div className="w-72 space-y-4 rounded-lg bg-slate-100 py-9 text-center dark:bg-[#2A2E39]">
         <div className="flex items-center justify-center">
           <input type="text" value={selectedColor} className="mr-2 w-24 px-2 py-1 text-center text-xl outline-none" readOnly/>
-          <Button radius="small" onClick={() => {
+          <Button_1.default radius="small" onClick={() => {
             onClickCopyHandler(selectedColor);
         }}>
             Copy
-          </Button>
+          </Button_1.default>
         </div>
         <p className="text-sm">{msg}</p>
         <div>
@@ -46,4 +51,4 @@ const ColorPickerUI = ({ colors, selectColor }) => {
       </div>
     </>);
 };
-export default ColorPickerUI;
+exports.default = ColorPickerUI;

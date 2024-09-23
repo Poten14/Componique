@@ -1,13 +1,41 @@
+"use strict";
 "use client";
-import React, { useState } from "react";
-import CodeBox from "@components/CodeBox";
-import ValidationEmail from "@components/Validation/ValidationEmail";
-import ValidationID from "@components/Validation/ValidationID";
-import ValidationPW from "@components/Validation/ValidationPW";
-import ValidationPWConfirm from "@components/Validation/ValidationPWConfirm";
-import ValidationPhone from "@components/Validation/ValidationPhone";
+var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    var desc = Object.getOwnPropertyDescriptor(m, k);
+    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
+      desc = { enumerable: true, get: function() { return m[k]; } };
+    }
+    Object.defineProperty(o, k2, desc);
+}) : (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    o[k2] = m[k];
+}));
+var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {
+    Object.defineProperty(o, "default", { enumerable: true, value: v });
+}) : function(o, v) {
+    o["default"] = v;
+});
+var __importStar = (this && this.__importStar) || function (mod) {
+    if (mod && mod.__esModule) return mod;
+    var result = {};
+    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
+    __setModuleDefault(result, mod);
+    return result;
+};
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+const react_1 = __importStar(require("react"));
+const CodeBox_1 = __importDefault(require("@components/CodeBox"));
+const ValidationEmail_1 = __importDefault(require("@components/Validation/ValidationEmail"));
+const ValidationID_1 = __importDefault(require("@components/Validation/ValidationID"));
+const ValidationPW_1 = __importDefault(require("@components/Validation/ValidationPW"));
+const ValidationPWConfirm_1 = __importDefault(require("@components/Validation/ValidationPWConfirm"));
+const ValidationPhone_1 = __importDefault(require("@components/Validation/ValidationPhone"));
 const ValidationComponent = () => {
-    const [copied, setCopied] = useState({});
+    const [copied, setCopied] = (0, react_1.useState)({});
     const handleCopy = (index) => {
         setCopied((prev) => ({ ...prev, [index]: true }));
         setTimeout(() => setCopied((prev) => ({ ...prev, [index]: false })), 500);
@@ -23,16 +51,16 @@ const ValidationComponent = () => {
         </p>
 
         <h2 className="text-[#2D3748] dark:text-white">1.1. Import</h2>
-        <CodeBox code={`import ValidationEmail from '@components/Validation/ValidationEmail';`} copyText={`import ValidationEmail from '@components/Validation/ValidationEmail';`} language="tsx" index={1} copied={copied} handleCopy={handleCopy}/>
+        <CodeBox_1.default code={`import ValidationEmail from '@components/Validation/ValidationEmail';`} copyText={`import ValidationEmail from '@components/Validation/ValidationEmail';`} language="tsx" index={1} copied={copied} handleCopy={handleCopy}/>
 
         <h2 className="text-[#2D3748] dark:text-white">1.2. Usage</h2>
         <p>기본 사용 예제는 아래와 같습니다:</p>
         <div className="m-7 flex gap-4">
-          <ValidationEmail />
+          <ValidationEmail_1.default />
         </div>
         <br />
 
-        <CodeBox code={`import ValidationEmail from '@components/Validation/ValidationEmail';
+        <CodeBox_1.default code={`import ValidationEmail from '@components/Validation/ValidationEmail';
 
 function Example() {
   return (
@@ -58,7 +86,7 @@ export default Example;`} language="tsx" index={2} copied={copied} handleCopy={h
         <h2 className="text-[#2D3748] dark:text-white">
           1.4. 유효성 검사 함수 설명
         </h2>
-        <CodeBox code={`const validateEmail = (Email: string) => {
+        <CodeBox_1.default code={`const validateEmail = (Email: string) => {
   const emailType = /^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/; // 이메일 형식 정규식
   return emailType.test(Email);
 };`} copyText={`const validateEmail = (Email: string) => {
@@ -92,7 +120,7 @@ export default Example;`} language="tsx" index={2} copied={copied} handleCopy={h
         </ul>
 
         <h2 className="text-[#2D3748] dark:text-white">1.5. Full Example</h2>
-        <CodeBox code={`
+        <CodeBox_1.default code={`
 // ValidationEmail.tsx
 "use client";
 import { useState } from "react";
@@ -180,16 +208,16 @@ export default ValidationEmail;`} language="tsx" index={4} copied={copied} handl
         </p>
 
         <h2 className="text-[#2D3748] dark:text-white">2.1. Import</h2>
-        <CodeBox code={`import ValidationID from '@components/Validation/ValidationID';`} copyText={`import ValidationID from '@components/Validation/ValidationID';`} language="tsx" index={5} copied={copied} handleCopy={handleCopy}/>
+        <CodeBox_1.default code={`import ValidationID from '@components/Validation/ValidationID';`} copyText={`import ValidationID from '@components/Validation/ValidationID';`} language="tsx" index={5} copied={copied} handleCopy={handleCopy}/>
 
         <h2 className="text-[#2D3748] dark:text-white">2.2. Usage</h2>
         <p>기본 사용 예제는 아래와 같습니다:</p>
         <div className="m-7 flex gap-4">
-          <ValidationID />
+          <ValidationID_1.default />
         </div>
         <br />
 
-        <CodeBox code={`import ValidationID from '@components/Validation/ValidationID';
+        <CodeBox_1.default code={`import ValidationID from '@components/Validation/ValidationID';
 
 function Example() {
   return (
@@ -215,7 +243,7 @@ export default Example;`} language="tsx" index={6} copied={copied} handleCopy={h
         <h2 className="text-[#2D3748] dark:text-white">
           2.4. 유효성 검사 함수 설명
         </h2>
-        <CodeBox code={`const validateID = (ID: string) => {
+        <CodeBox_1.default code={`const validateID = (ID: string) => {
   const IDType = /^[a-zA-Z0-9]{4,12}$/; // ID 형식 정규식
   return IDType.test(ID);
 };`} copyText={`const validateID = (ID: string) => {
@@ -235,7 +263,7 @@ export default Example;`} language="tsx" index={6} copied={copied} handleCopy={h
         </ul>
 
         <h2 className="text-[#2D3748] dark:text-white">2.5. Full Example</h2>
-        <CodeBox code={`
+        <CodeBox_1.default code={`
 // ValidationID.tsx
 "use client";
 import { useState } from "react";
@@ -323,16 +351,16 @@ export default ValidationID;`} language="tsx" index={8} copied={copied} handleCo
         </p>
 
         <h2 className="text-[#2D3748] dark:text-white">3.1. Import</h2>
-        <CodeBox code={`import ValidationPW from '@components/Validation/ValidationPW';`} copyText={`import ValidationPW from '@components/Validation/ValidationPW';`} language="tsx" index={9} copied={copied} handleCopy={handleCopy}/>
+        <CodeBox_1.default code={`import ValidationPW from '@components/Validation/ValidationPW';`} copyText={`import ValidationPW from '@components/Validation/ValidationPW';`} language="tsx" index={9} copied={copied} handleCopy={handleCopy}/>
 
         <h2 className="text-[#2D3748] dark:text-white">3.2. Usage</h2>
         <p>기본 사용 예제는 아래와 같습니다:</p>
         <div className="m-7 flex gap-4">
-          <ValidationPW />
+          <ValidationPW_1.default />
         </div>
         <br />
 
-        <CodeBox code={`import ValidationPW from '@components/Validation/ValidationPW';
+        <CodeBox_1.default code={`import ValidationPW from '@components/Validation/ValidationPW';
 
 function Example() {
   return (
@@ -358,7 +386,7 @@ export default Example;`} language="tsx" index={10} copied={copied} handleCopy={
         <h2 className="text-[#2D3748] dark:text-white">
           3.4. 유효성 검사 함수 설명
         </h2>
-        <CodeBox code={`const validatePW = (PW: string) => {
+        <CodeBox_1.default code={`const validatePW = (PW: string) => {
   const PWType = /^(?=.*\\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=]).{8,}$/; // 비밀번호 형식 정규식
   return PWType.test(PW);
 };`} copyText={`const validatePW = (PW: string) => {
@@ -390,7 +418,7 @@ export default Example;`} language="tsx" index={10} copied={copied} handleCopy={
         </ul>
 
         <h2 className="text-[#2D3748] dark:text-white">3.5. Full Example</h2>
-        <CodeBox code={`
+        <CodeBox_1.default code={`
 // ValidationPW.tsx
 "use client";
 import { useState } from "react";
@@ -488,16 +516,16 @@ export default ValidationPW;`} language="tsx" index={12} copied={copied} handleC
         </p>
 
         <h2 className="text-[#2D3748] dark:text-white">4.1. Import</h2>
-        <CodeBox code={`import ValidationPWConfirm from '@components/Validation/ValidationPWConfirm';`} copyText={`import ValidationPWConfirm from '@components/Validation/ValidationPWConfirm';`} language="tsx" index={13} copied={copied} handleCopy={handleCopy}/>
+        <CodeBox_1.default code={`import ValidationPWConfirm from '@components/Validation/ValidationPWConfirm';`} copyText={`import ValidationPWConfirm from '@components/Validation/ValidationPWConfirm';`} language="tsx" index={13} copied={copied} handleCopy={handleCopy}/>
 
         <h2 className="text-[#2D3748] dark:text-white">4.2. Usage</h2>
         <p>기본 사용 예제는 아래와 같습니다:</p>
         <div className="m-7 flex gap-4">
-          <ValidationPWConfirm />
+          <ValidationPWConfirm_1.default />
         </div>
         <br />
 
-        <CodeBox code={`import ValidationPWConfirm from '@components/Validation/ValidationPWConfirm';
+        <CodeBox_1.default code={`import ValidationPWConfirm from '@components/Validation/ValidationPWConfirm';
 
 function Example() {
   return (
@@ -523,7 +551,7 @@ export default Example;`} language="tsx" index={14} copied={copied} handleCopy={
         <h2 className="text-[#2D3748] dark:text-white">
           4.4. 유효성 검사 함수 설명
         </h2>
-        <CodeBox code={`const validatePWConfirm = (pw: string, confirmPW: string) => {
+        <CodeBox_1.default code={`const validatePWConfirm = (pw: string, confirmPW: string) => {
   return pw === confirmPW; // 비밀번호 일치 확인
 };`} copyText={`const validatePWConfirm = (pw: string, confirmPW: string) => {
   return pw === confirmPW; // 비밀번호 일치 확인
@@ -532,7 +560,7 @@ export default Example;`} language="tsx" index={14} copied={copied} handleCopy={
         <p>이 함수는 두 개의 비밀번호가 일치하는지 확인합니다.</p>
 
         <h2 className="text-[#2D3748] dark:text-white">4.5. Full Example</h2>
-        <CodeBox code={`
+        <CodeBox_1.default code={`
 // ValidationPWConfirm.tsx
 "use client";
 import { useState } from "react";
@@ -670,16 +698,16 @@ export default ValidationPWConfirm;`} language="tsx" index={16} copied={copied} 
         </p>
 
         <h2 className="text-[#2D3748] dark:text-white">5.1. Import</h2>
-        <CodeBox code={`import ValidationPhone from '@components/Validation/ValidationPhone';`} copyText={`import ValidationPhone from '@components/Validation/ValidationPhone';`} language="tsx" index={17} copied={copied} handleCopy={handleCopy}/>
+        <CodeBox_1.default code={`import ValidationPhone from '@components/Validation/ValidationPhone';`} copyText={`import ValidationPhone from '@components/Validation/ValidationPhone';`} language="tsx" index={17} copied={copied} handleCopy={handleCopy}/>
 
         <h2 className="text-[#2D3748] dark:text-white">5.2. Usage</h2>
         <p>기본 사용 예제는 아래와 같습니다:</p>
         <div className="m-7 flex gap-4">
-          <ValidationPhone />
+          <ValidationPhone_1.default />
         </div>
         <br />
 
-        <CodeBox code={`import ValidationPhone from '@components/Validation/ValidationPhone';
+        <CodeBox_1.default code={`import ValidationPhone from '@components/Validation/ValidationPhone';
 
 function Example() {
   return (
@@ -705,7 +733,7 @@ export default Example;`} language="tsx" index={18} copied={copied} handleCopy={
         <h2 className="text-[#2D3748] dark:text-white">
           5.4. 유효성 검사 함수 설명
         </h2>
-        <CodeBox code={`const validatePhone = (phone: string) => {
+        <CodeBox_1.default code={`const validatePhone = (phone: string) => {
   const phoneType = /^\\d{10,11}$/; // 핸드폰 번호 형식 정규식
   return phoneType.test(phone);
 };`} copyText={`const validatePhone = (phone: string) => {
@@ -725,7 +753,7 @@ export default Example;`} language="tsx" index={18} copied={copied} handleCopy={
         </ul>
 
         <h2 className="text-[#2D3748] dark:text-white">5.5. Full Example</h2>
-        <CodeBox code={`
+        <CodeBox_1.default code={`
 // ValidationPhone.tsx
 "use client";
 import { useState } from "react";
@@ -803,4 +831,4 @@ export default ValidationPhone;`} language="tsx" index={20} copied={copied} hand
       </div>
     </div>);
 };
-export default ValidationComponent;
+exports.default = ValidationComponent;

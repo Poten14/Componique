@@ -1,6 +1,11 @@
-import { useState, useEffect } from "react";
-import Image from "next/image";
-import Link from "next/link";
+"use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+const react_1 = require("react");
+const image_1 = __importDefault(require("next/image"));
+const link_1 = __importDefault(require("next/link"));
 // 이미지 객체에 다크 모드용 경로 추가
 const components = [
     {
@@ -218,8 +223,8 @@ const components = [
     },
 ];
 const Page = () => {
-    const [isDarkMode, setIsDarkMode] = useState(false);
-    useEffect(() => {
+    const [isDarkMode, setIsDarkMode] = (0, react_1.useState)(false);
+    (0, react_1.useEffect)(() => {
         const checkDarkMode = () => {
             const darkMode = document.documentElement.classList.contains("dark");
             setIsDarkMode(darkMode);
@@ -247,12 +252,12 @@ const Page = () => {
           <div className="grid grid-cols-4 gap-4">
             {category.images.map((image) => {
                 const imageSrc = isDarkMode ? image.darkSrc : image.src;
-                return (<Link href={image.link} key={image.name} className="transform transition-transform duration-200 hover:scale-110">
-                  <Image src={imageSrc} alt={image.name} width={300} height={212}/>
-                </Link>);
+                return (<link_1.default href={image.link} key={image.name} className="transform transition-transform duration-200 hover:scale-110">
+                  <image_1.default src={imageSrc} alt={image.name} width={300} height={212}/>
+                </link_1.default>);
             })}
           </div>
         </div>))}
     </div>);
 };
-export default Page;
+exports.default = Page;

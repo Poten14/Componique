@@ -1,15 +1,43 @@
+"use strict";
 "use client";
-import CardPricing from "@components/Card/CardPricing";
-import CardReview from "@components/Card/CardReview";
-import Pagination from "@components/Pagination/Pagination";
-import Navbar from "@components/Navbar/Navbar";
-import { useShoppingStore } from "app/store/useShoppingStore";
-import React, { useState } from "react";
-import SelectValueAdd from "@components/Select/SelectValueAdd";
+var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    var desc = Object.getOwnPropertyDescriptor(m, k);
+    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
+      desc = { enumerable: true, get: function() { return m[k]; } };
+    }
+    Object.defineProperty(o, k2, desc);
+}) : (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    o[k2] = m[k];
+}));
+var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {
+    Object.defineProperty(o, "default", { enumerable: true, value: v });
+}) : function(o, v) {
+    o["default"] = v;
+});
+var __importStar = (this && this.__importStar) || function (mod) {
+    if (mod && mod.__esModule) return mod;
+    var result = {};
+    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
+    __setModuleDefault(result, mod);
+    return result;
+};
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+const CardPricing_1 = __importDefault(require("@components/Card/CardPricing"));
+const CardReview_1 = __importDefault(require("@components/Card/CardReview"));
+const Pagination_1 = __importDefault(require("@components/Pagination/Pagination"));
+const Navbar_1 = __importDefault(require("@components/Navbar/Navbar"));
+const useShoppingStore_1 = require("app/store/useShoppingStore");
+const react_1 = __importStar(require("react"));
+const SelectValueAdd_1 = __importDefault(require("@components/Select/SelectValueAdd"));
 const ShoppingForm = () => {
     const productsPerPage = 6;
-    const { title, subtitle, title2, currentPage, totalPages, paginationVariant, paginationStyleType, paginationColor, logoSrc, logoName, size, hoverColor, position, setShoppingState, } = useShoppingStore();
-    const [selectedOption, setSelectedOption] = useState("");
+    const { title, subtitle, title2, currentPage, totalPages, paginationVariant, paginationStyleType, paginationColor, logoSrc, logoName, size, hoverColor, position, setShoppingState, } = (0, useShoppingStore_1.useShoppingStore)();
+    const [selectedOption, setSelectedOption] = (0, react_1.useState)("");
     const products = [
         {
             title: "Product 1",
@@ -101,7 +129,7 @@ const ShoppingForm = () => {
     };
     return (<div className="container mx-auto mt-20 rounded-lg bg-white p-6 shadow-lg dark:bg-[#333742]">
       {/* Navbar Component */}
-      <Navbar logoSrc={logoSrc} logoName={logoName} size={size} hoverColor={hoverColor} position={position} links={[
+      <Navbar_1.default logoSrc={logoSrc} logoName={logoName} size={size} hoverColor={hoverColor} position={position} links={[
             { name: "Home", href: "/userpage/shopping" },
             { name: "Products", href: "/userpage/shopping" },
             { name: "Contact", href: "/userpage/shopping" },
@@ -114,18 +142,18 @@ const ShoppingForm = () => {
       </header>
 
       {/* Select Section */}
-      <SelectValueAdd option={["Option 1", "Option 2", "Option 3", "Option 4"]} placeholder="Select an option" onChange={(selectedValues) => setSelectedOption(selectedValues[0])}/>
+      <SelectValueAdd_1.default option={["Option 1", "Option 2", "Option 3", "Option 4"]} placeholder="Select an option" onChange={(selectedValues) => setSelectedOption(selectedValues[0])}/>
 
       {/* Product Cards Section */}
       <div className="my-8 grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
         {currentProducts.map((product, index) => (<div key={index} className="w-70 transform transition-transform duration-300 hover:scale-105">
-            <CardPricing title={product.title} description={product.description} price={product.price} features={product.features} buy={product.buy}/>
+            <CardPricing_1.default title={product.title} description={product.description} price={product.price} features={product.features} buy={product.buy}/>
           </div>))}
       </div>
 
       {/* Pagination */}
       <div className="my-10 flex justify-center">
-        <Pagination currentPage={currentPage} totalPages={Math.ceil(filteredProducts.length / productsPerPage)} variant={paginationVariant} styleType={paginationStyleType} color={paginationColor} onPageChange={handlePageChange} showFirstLastButtons={true}/>
+        <Pagination_1.default currentPage={currentPage} totalPages={Math.ceil(filteredProducts.length / productsPerPage)} variant={paginationVariant} styleType={paginationStyleType} color={paginationColor} onPageChange={handlePageChange} showFirstLastButtons={true}/>
       </div>
 
       {/* Review Section */}
@@ -134,20 +162,20 @@ const ShoppingForm = () => {
           {title2}
         </h2>
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          <CardReview avatar="/avatar1.svg" name="User1" rate={5}>
+          <CardReview_1.default avatar="/avatar1.svg" name="User1" rate={5}>
             This product is amazing!
-          </CardReview>
-          <CardReview avatar="/avatar2.svg" name="User2" rate={4}>
+          </CardReview_1.default>
+          <CardReview_1.default avatar="/avatar2.svg" name="User2" rate={4}>
             Great value for the price.
-          </CardReview>
-          <CardReview avatar="/avatar3.svg" name="User3" rate={4}>
+          </CardReview_1.default>
+          <CardReview_1.default avatar="/avatar3.svg" name="User3" rate={4}>
             Very good for the price.
-          </CardReview>
-          <CardReview avatar="/avatar4.svg" name="User4" rate={5}>
+          </CardReview_1.default>
+          <CardReview_1.default avatar="/avatar4.svg" name="User4" rate={5}>
             Best choice I've made!
-          </CardReview>
+          </CardReview_1.default>
         </div>
       </div>
     </div>);
 };
-export default ShoppingForm;
+exports.default = ShoppingForm;

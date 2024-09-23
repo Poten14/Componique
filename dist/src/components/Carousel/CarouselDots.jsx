@@ -1,9 +1,14 @@
+"use strict";
 "use client";
-import Image from "next/image";
-import { useState, useEffect } from "react";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+const image_1 = __importDefault(require("next/image"));
+const react_1 = require("react");
 const CarouselDots = ({ images, showDots = true, autoplay = false, interval = 2000, }) => {
-    const [currentSlide, setCurrentSlide] = useState(0);
-    useEffect(() => {
+    const [currentSlide, setCurrentSlide] = (0, react_1.useState)(0);
+    (0, react_1.useEffect)(() => {
         if (autoplay) {
             const timer = setInterval(() => {
                 setCurrentSlide((prevSlide) => prevSlide === images.length - 1 ? 0 : prevSlide + 1);
@@ -25,7 +30,7 @@ const CarouselDots = ({ images, showDots = true, autoplay = false, interval = 20
         <div className="relative m-auto h-96 overflow-hidden rounded-lg">
           <ul className="flex transition-transform duration-300 ease-in-out" style={{ transform: `translateX(-${currentSlide * 100}%)` }}>
             {images.map((image, index) => (<li key={index} className="min-w-full">
-                <Image src={image} alt={`image-${index}`} width={720} height={500} unoptimized className="block w-full"/>
+                <image_1.default src={image} alt={`image-${index}`} width={720} height={500} unoptimized className="block w-full"/>
               </li>))}
           </ul>
           {showDots && (<div className="absolute bottom-4 left-1/2 flex -translate-x-1/2 transform space-x-2">
@@ -53,4 +58,4 @@ const CarouselDots = ({ images, showDots = true, autoplay = false, interval = 20
       </div>
     </>);
 };
-export default CarouselDots;
+exports.default = CarouselDots;

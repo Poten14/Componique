@@ -1,4 +1,6 @@
+"use strict";
 "use client";
+Object.defineProperty(exports, "__esModule", { value: true });
 const sizeClasses = {
     small: "w-[200px]",
     medium: "w-[300px]",
@@ -23,4 +25,4 @@ const Skeleton = ({ size = "small", variants = "rectangular", animate = true, })
       </div>
     </>);
 };
-export default Skeleton;
+exports.default = Skeleton;

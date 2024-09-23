@@ -1,4 +1,9 @@
-import React from "react";
+"use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+const react_1 = __importDefault(require("react"));
 const sizeClasses = {
     small: "w-12 h-12",
     medium: "w-16 h-16",
@@ -29,4 +34,4 @@ const PacManSpinner = ({ size = "small", color = "Basic", speed = "medium", }) =
             borderWidth: borderWidths[size],
         }}></div>);
 };
-export default PacManSpinner;
+exports.default = PacManSpinner;

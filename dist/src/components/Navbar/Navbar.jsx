@@ -1,5 +1,10 @@
-import Image from "next/image";
-import Link from "next/link";
+"use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+const image_1 = __importDefault(require("next/image"));
+const link_1 = __importDefault(require("next/link"));
 const sizeClasses = {
     small: "text-xs",
     medium: "text-lg",
@@ -21,17 +26,17 @@ const Navbar = ({ size = "small", hoverColor = "blue", position = "static", logo
     return (<>
       <div className={`mx-auto mt-4 flex max-w-screen-lg items-center justify-between p-2 dark:bg-[#333742] dark:text-white ${sizeClasses[size]} ${positionClasses[position]}`}>
         <div className={`flex items-center justify-center`}>
-          <Image src={logoSrc} alt="logo" width={60} height={40} unoptimized/>
+          <image_1.default src={logoSrc} alt="logo" width={60} height={40} unoptimized/>
           <div className={`ml-2 cursor-pointer font-semibold ${sizeClasses[size]}`}>
             {logoName}
           </div>
         </div>
         <div className="flex justify-between gap-8">
-          {links.map((link) => (<Link key={link.name} href={link.href} className={navClass}>
+          {links.map((link) => (<link_1.default key={link.name} href={link.href} className={navClass}>
               {link.name}
-            </Link>))}
+            </link_1.default>))}
         </div>
       </div>
     </>);
 };
-export default Navbar;
+exports.default = Navbar;

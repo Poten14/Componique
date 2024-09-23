@@ -1,16 +1,21 @@
+"use strict";
 "use client";
-import Input1 from "@components/Input/Input";
-import SearchInput from "@components/Input/SearchInput";
-import SearchInput2 from "@components/Input/SearchInput2";
-import SearchInput3 from "@components/Input/SearchInput3";
-import NumInput from "@components/Input/NumInput";
-import CurrencyInput from "@components/Input/CurrencyInput";
-import DecimalInput from "@components/Input/DecimalInput";
-import PinInput from "@components/Input/PinInput";
-import CodeBox from "@components/CodeBox";
-import { useState } from "react";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+const Input_1 = __importDefault(require("@components/Input/Input"));
+const SearchInput_1 = __importDefault(require("@components/Input/SearchInput"));
+const SearchInput2_1 = __importDefault(require("@components/Input/SearchInput2"));
+const SearchInput3_1 = __importDefault(require("@components/Input/SearchInput3"));
+const NumInput_1 = __importDefault(require("@components/Input/NumInput"));
+const CurrencyInput_1 = __importDefault(require("@components/Input/CurrencyInput"));
+const DecimalInput_1 = __importDefault(require("@components/Input/DecimalInput"));
+const PinInput_1 = __importDefault(require("@components/Input/PinInput"));
+const CodeBox_1 = __importDefault(require("@components/CodeBox"));
+const react_1 = require("react");
 const Input = () => {
-    const [copied, setCopied] = useState({});
+    const [copied, setCopied] = (0, react_1.useState)({});
     const handleCopy = (index) => {
         setCopied((prev) => ({ ...prev, [index]: true }));
         setTimeout(() => setCopied((prev) => ({ ...prev, [index]: false })), 500);
@@ -24,14 +29,14 @@ const Input = () => {
       </p>
 
       <h2 className="text-[#2D3748]">1.1. Import</h2>
-      <CodeBox code={`import { Input } from '@componique/react';`} copyText={`import { Input } from '@components/Input';`} language="tsx" index={1} copied={copied} handleCopy={handleCopy}/>
+      <CodeBox_1.default code={`import { Input } from '@componique/react';`} copyText={`import { Input } from '@components/Input';`} language="tsx" index={1} copied={copied} handleCopy={handleCopy}/>
 
       <h2 className="text-[#2D3748]">1.2. Usage</h2>
       <p>기본 사용 예제는 아래와 같습니다:</p>
       <div className="my-7 space-y-4">
-        <Input1 placeholder="Basic usage"/>
+        <Input_1.default placeholder="Basic usage"/>
       </div>
-      <CodeBox code={`import { Input } from '@components/Input';
+      <CodeBox_1.default code={`import { Input } from '@components/Input';
 
 function Example() {
   return (
@@ -73,13 +78,13 @@ export default Example;`} language="tsx" index={2} copied={copied} handleCopy={h
         </li>
       </ul>
       <div className="my-7 space-y-4">
-        <Input1 placeholder="extra small size" size="xs"/>
-        <Input1 placeholder="small size" size="small"/>
-        <Input1 placeholder="medium size" size="medium"/>
-        <Input1 placeholder="large size" size="large"/>
-        <Input1 placeholder="extra large size" size="xl"/>
+        <Input_1.default placeholder="extra small size" size="xs"/>
+        <Input_1.default placeholder="small size" size="small"/>
+        <Input_1.default placeholder="medium size" size="medium"/>
+        <Input_1.default placeholder="large size" size="large"/>
+        <Input_1.default placeholder="extra large size" size="xl"/>
       </div>
-      <CodeBox code={`import { Input } from '@components/Input';
+      <CodeBox_1.default code={`import { Input } from '@components/Input';
 
 function Example() {
   return (
@@ -185,11 +190,11 @@ export default Example;`} language="tsx" index={3} copied={copied} handleCopy={h
       </table>
       <h2 className="text-[#2D3748]">1.5. Full Example</h2>
       <div className="my-7 space-y-4">
-        <Input1 placeholder="Basic usage"/>
-        <Input1 placeholder="small size" size="small"/>
-        <Input1 placeholder="filled" variant="filled"/>
+        <Input_1.default placeholder="Basic usage"/>
+        <Input_1.default placeholder="small size" size="small"/>
+        <Input_1.default placeholder="filled" variant="filled"/>
       </div>
-      <CodeBox code={`import { Input } from '@components/Input';
+      <CodeBox_1.default code={`import { Input } from '@components/Input';
 
 function Example() {
   return (
@@ -223,14 +228,14 @@ export default Example;`} language="tsx" index={4} copied={copied} handleCopy={h
       </p>
 
       <h2 className="text-[#2D3748]">2.1. Import</h2>
-      <CodeBox code={`import { SearchInput } from '@componique/react';`} copyText={`import SearchInput from '@components/SearchInput/SearchInput';`} language="tsx" index={5} copied={copied} handleCopy={handleCopy}/>
+      <CodeBox_1.default code={`import { SearchInput } from '@componique/react';`} copyText={`import SearchInput from '@components/SearchInput/SearchInput';`} language="tsx" index={5} copied={copied} handleCopy={handleCopy}/>
 
       <h2 className="text-[#2D3748]">2.2. Usage</h2>
       <p>기본 사용 예제는 아래와 같습니다:</p>
       <div style={{ marginBottom: "20px" }}>
-        <SearchInput placeholder="Search..."/>
+        <SearchInput_1.default placeholder="Search..."/>
       </div>
-      <CodeBox code={`import SearchInput from '@components/SearchInput/SearchInput';
+      <CodeBox_1.default code={`import SearchInput from '@components/SearchInput/SearchInput';
 
 function Example() {
   return (
@@ -254,9 +259,9 @@ export default Example;`} language="tsx" index={6} copied={copied} handleCopy={h
         기본 너비는 <code>w-80</code>입니다.
       </p>
       <div className="my-7 space-y-4">
-        <SearchInput width="w-96" placeholder="Custom width..."/>
+        <SearchInput_1.default width="w-96" placeholder="Custom width..."/>
       </div>
-      <CodeBox code={`import SearchInput from '@components/SearchInput/SearchInput';
+      <CodeBox_1.default code={`import SearchInput from '@components/SearchInput/SearchInput';
 
 function Example() {
   return (
@@ -342,7 +347,7 @@ export default Example;`} language="tsx" index={8} copied={copied} handleCopy={h
       </table>
 
       <h2 className="text-[#2D3748]">2.5. Full Example</h2>
-      <CodeBox code={`import SearchInput from '@components/SearchInput/SearchInput';
+      <CodeBox_1.default code={`import SearchInput from '@components/SearchInput/SearchInput';
 
 function Example() {
   const handleSearch = (value: string) => {
@@ -384,14 +389,14 @@ export default Example;`} language="tsx" index={9} copied={copied} handleCopy={h
       </p>
 
       <h2 className="text-[#2D3748]">3.1. Import</h2>
-      <CodeBox code={`import { SearchInput2 } from '@componique/react';`} copyText={`import SearchInput2 from '@components/SearchInput2/SearchInput2';`} language="tsx" index={10} copied={copied} handleCopy={handleCopy}/>
+      <CodeBox_1.default code={`import { SearchInput2 } from '@componique/react';`} copyText={`import SearchInput2 from '@components/SearchInput2/SearchInput2';`} language="tsx" index={10} copied={copied} handleCopy={handleCopy}/>
 
       <h2 className="text-[#2D3748]">3.2. Usage</h2>
       <p>기본 사용 예제는 아래와 같습니다:</p>
       <div className="my-7 space-y-4">
-        <SearchInput2 placeholder="Search..."/>
+        <SearchInput2_1.default placeholder="Search..."/>
       </div>
-      <CodeBox code={`import SearchInput2 from '@components/SearchInput2/SearchInput2';
+      <CodeBox_1.default code={`import SearchInput2 from '@components/SearchInput2/SearchInput2';
 
 function Example() {
   return (
@@ -427,11 +432,11 @@ export default Example;`} language="tsx" index={11} copied={copied} handleCopy={
         </li>
       </ul>
       <div className="my-7 space-y-4">
-        <SearchInput2 placeholder="small size" size="small"/>
-        <SearchInput2 placeholder="medium size" size="medium"/>
-        <SearchInput2 placeholder="large size" size="large"/>
+        <SearchInput2_1.default placeholder="small size" size="small"/>
+        <SearchInput2_1.default placeholder="medium size" size="medium"/>
+        <SearchInput2_1.default placeholder="large size" size="large"/>
       </div>
-      <CodeBox code={`import SearchInput2 from '@components/SearchInput2/SearchInput2';
+      <CodeBox_1.default code={`import SearchInput2 from '@components/SearchInput2/SearchInput2';
 
 function Example() {
   return (
@@ -523,7 +528,7 @@ export default Example;`} language="tsx" index={12} copied={copied} handleCopy={
       </table>
 
       <h2 className="text-[#2D3748]">3.5. Full Example</h2>
-      <CodeBox code={`import SearchInput2 from '@components/SearchInput2/SearchInput2';
+      <CodeBox_1.default code={`import SearchInput2 from '@components/SearchInput2/SearchInput2';
 
 function Example() {
   const [searchTerm, setSearchTerm] = useState("");
@@ -578,13 +583,13 @@ export default Example;`} language="tsx" index={13} copied={copied} handleCopy={
       </p>
 
       <h2 className="text-[#2D3748]">4.1. Import</h2>
-      <CodeBox code={`import { SearchInput3 } from '@componique/react';`} copyText={`import SearchInput3 from '@components/SearchInput3/SearchInput3';`} language="tsx" index={14} copied={copied} handleCopy={handleCopy}/>
+      <CodeBox_1.default code={`import { SearchInput3 } from '@componique/react';`} copyText={`import SearchInput3 from '@components/SearchInput3/SearchInput3';`} language="tsx" index={14} copied={copied} handleCopy={handleCopy}/>
 
       <h2 className="text-[#2D3748]">4.2. Usage</h2>
       <div className="my-7 space-y-4">
-        <SearchInput3 placeholder="Search..."/>
+        <SearchInput3_1.default placeholder="Search..."/>
       </div>
-      <CodeBox code={`import SearchInput3 from '@components/SearchInput2/SearchInput2';
+      <CodeBox_1.default code={`import SearchInput3 from '@components/SearchInput2/SearchInput2';
 
   function Example() {
     return (
@@ -643,11 +648,11 @@ export default Example;`} copyText={`import SearchInput3 from '@components/Searc
 
       <h2 className="text-[#2D3748]">4.4. Full Example</h2>
       <div className="my-7 space-y-4">
-        <SearchInput3 size="small" color="Basic" placeholder="Small Search..."/>
-        <SearchInput3 size="medium" color="Primary" placeholder="Medium Search..."/>
-        <SearchInput3 size="large" color="Danger" placeholder="Large Search..."/>
+        <SearchInput3_1.default size="small" color="Basic" placeholder="Small Search..."/>
+        <SearchInput3_1.default size="medium" color="Primary" placeholder="Medium Search..."/>
+        <SearchInput3_1.default size="large" color="Danger" placeholder="Large Search..."/>
       </div>
-      <CodeBox code={`import SearchInput3 from '@components/SearchInput3/SearchInput3';
+      <CodeBox_1.default code={`import SearchInput3 from '@components/SearchInput3/SearchInput3';
 
 function Example() {
   return (
@@ -681,14 +686,14 @@ export default Example;`} language="tsx" index={16} copied={copied} handleCopy={
       </p>
 
       <h2 className="text-[#2D3748]">5.1. Import</h2>
-      <CodeBox code={`import { NumInput } from '@componique/react';`} copyText={`import NumInput from '@components/Input/NumInput';`} language="tsx" index={17} copied={copied} handleCopy={handleCopy}/>
+      <CodeBox_1.default code={`import { NumInput } from '@componique/react';`} copyText={`import NumInput from '@components/Input/NumInput';`} language="tsx" index={17} copied={copied} handleCopy={handleCopy}/>
 
       <h2 className="text-[#2D3748]">5.2. Usage</h2>
       <p>기본 사용 예제는 아래와 같습니다:</p>
       <div className="my-7 space-y-4">
-        <NumInput size="medium" color="Basic" onValueChange={(value) => console.log("New value:", value)}/>
+        <NumInput_1.default size="medium" color="Basic" onValueChange={(value) => console.log("New value:", value)}/>
       </div>
-      <CodeBox code={`import NumInput from '@components/Input/NumInput';
+      <CodeBox_1.default code={`import NumInput from '@components/Input/NumInput';
 
 function Example() {
   return (
@@ -788,9 +793,9 @@ export default Example;`} language="tsx" index={18} copied={copied} handleCopy={
 
       <h2 className="text-[#2D3748]">5.4. Full Example</h2>
       <div className="my-7 space-y-4">
-        <NumInput size="large" color="Basic" value="5" width="250px" onValueChange={(value) => console.log("Updated value:", value)}/>
+        <NumInput_1.default size="large" color="Basic" value="5" width="250px" onValueChange={(value) => console.log("Updated value:", value)}/>
       </div>
-      <CodeBox code={`import NumInput from '@components/Input/NumInput';
+      <CodeBox_1.default code={`import NumInput from '@components/Input/NumInput';
 
 function FullExample() {
   return (
@@ -828,12 +833,12 @@ export default FullExample;`} language="tsx" index={19} copied={copied} handleCo
       </p>
 
       <h2 className="text-[#2D3748]">6.1. Import</h2>
-      <CodeBox code={`import { CurrencyInput } from '@componique/react';`} copyText={`import CurrencyInput from '@components/Input/CurrencyInput';`} language="tsx" index={20} copied={copied} handleCopy={handleCopy}/>
+      <CodeBox_1.default code={`import { CurrencyInput } from '@componique/react';`} copyText={`import CurrencyInput from '@components/Input/CurrencyInput';`} language="tsx" index={20} copied={copied} handleCopy={handleCopy}/>
       <h2 className="text-[#2D3748]">6.2. Usage</h2>
       <div className="my-7 space-y-4">
-        <CurrencyInput size="medium" color="Primary" value="$10.00" onValueChange={(value) => console.log("New value:", value)}/>
+        <CurrencyInput_1.default size="medium" color="Primary" value="$10.00" onValueChange={(value) => console.log("New value:", value)}/>
       </div>
-      <CodeBox code={`<CurrencyInput
+      <CodeBox_1.default code={`<CurrencyInput
   size="medium"
   color="Primary"
   value="$10.00"
@@ -927,9 +932,9 @@ export default FullExample;`} language="tsx" index={19} copied={copied} handleCo
 
       <h2 className="text-[#2D3748]">6.4. Full Example</h2>
       <div className="my-7 space-y-4">
-        <CurrencyInput size="large" color="Basic" value="$50.00" width="300px" onValueChange={(value) => console.log("Updated value:", value)}/>
+        <CurrencyInput_1.default size="large" color="Basic" value="$50.00" width="300px" onValueChange={(value) => console.log("Updated value:", value)}/>
       </div>
-      <CodeBox code={`import CurrencyInput from '@components/Input/CurrencyInput';
+      <CodeBox_1.default code={`import CurrencyInput from '@components/Input/CurrencyInput';
 
 function FullExample() {
   return (
@@ -968,13 +973,13 @@ export default FullExample;`} language="tsx" index={22} copied={copied} handleCo
       </p>
 
       <h2 className="text-[#2D3748]">7.1. Import</h2>
-      <CodeBox code={`import { DecimalInput } from '@componique/react';`} copyText={`import DecimalInput from '@components/Input/DecimalInput';`} language="tsx" index={23} copied={copied} handleCopy={handleCopy}/>
+      <CodeBox_1.default code={`import { DecimalInput } from '@componique/react';`} copyText={`import DecimalInput from '@components/Input/DecimalInput';`} language="tsx" index={23} copied={copied} handleCopy={handleCopy}/>
 
       <h2 className="text-[#2D3748]">7.2. Usage</h2>
       <div className="my-7 space-y-4">
-        <DecimalInput size="medium" color="Primary" onValueChange={(value) => console.log("New value:", value)}/>
+        <DecimalInput_1.default size="medium" color="Primary" onValueChange={(value) => console.log("New value:", value)}/>
       </div>
-      <CodeBox code={`<DecimalInput
+      <CodeBox_1.default code={`<DecimalInput
   size="medium"
   color="Primary"
   value="10.00"
@@ -1068,9 +1073,9 @@ export default FullExample;`} language="tsx" index={22} copied={copied} handleCo
 
       <h2 className="text-[#2D3748]">7.4. Full Example</h2>
       <div className="my-7 space-y-4">
-        <DecimalInput size="large" color="Basic" value="50.00" width="300px" onValueChange={(value) => console.log("Updated value:", value)}/>
+        <DecimalInput_1.default size="large" color="Basic" value="50.00" width="300px" onValueChange={(value) => console.log("Updated value:", value)}/>
       </div>
-      <CodeBox code={`import DecimalInput from '@components/Input/DecimalInput';
+      <CodeBox_1.default code={`import DecimalInput from '@components/Input/DecimalInput';
 
 function FullExample() {
   return (
@@ -1108,14 +1113,14 @@ export default FullExample;`} language="tsx" index={25} copied={copied} handleCo
       </p>
 
       <h2 className="text-[#2D3748]">8.1. Import</h2>
-      <CodeBox code={`import { PinInput } from '@componique/react';`} copyText={`import PinInput from '@components/Input/PinInput';`} language="tsx" index={26} copied={copied} handleCopy={handleCopy}/>
+      <CodeBox_1.default code={`import { PinInput } from '@componique/react';`} copyText={`import PinInput from '@components/Input/PinInput';`} language="tsx" index={26} copied={copied} handleCopy={handleCopy}/>
 
       <h2 className="text-[#2D3748]">8.2. Usage</h2>
       <p>기본 사용 예제는 아래와 같습니다:</p>
       <div className="my-7 space-y-4">
-        <PinInput length={4}/>
+        <PinInput_1.default length={4}/>
       </div>
-      <CodeBox code={`import PinInput from '@components/Input/PinInput';
+      <CodeBox_1.default code={`import PinInput from '@components/Input/PinInput';
 
 function Example() {
   return (
@@ -1140,12 +1145,12 @@ export default Example;`} language="tsx" index={27} copied={copied} handleCopy={
         수 있습니다:
       </p>
       <div className="my-7 space-y-4">
-        <PinInput length={6} variant="filled" disabled={true}/>
+        <PinInput_1.default length={6} variant="filled" disabled={true}/>
       </div>
       <div className="my-7 space-y-4">
-        <PinInput customCharacter="🥳"/>
+        <PinInput_1.default customCharacter="🥳"/>
       </div>
-      <CodeBox code={`import PinInput from '@components/Input/PinInput';
+      <CodeBox_1.default code={`import PinInput from '@components/Input/PinInput';
 
 function Example() {
   return (
@@ -1256,9 +1261,9 @@ export default Example;`} language="tsx" index={28} copied={copied} handleCopy={
 
       <h2 className="text-[#2D3748]">8.5 Full Example</h2>
       <div className="my-7 space-y-4">
-        <PinInput length={4} variant="filled" formatter={(value) => value.toUpperCase()} onChange={(value) => console.log("Updated PIN:", value)}/>
+        <PinInput_1.default length={4} variant="filled" formatter={(value) => value.toUpperCase()} onChange={(value) => console.log("Updated PIN:", value)}/>
       </div>
-      <CodeBox code={`import PinInput from '@components/Input/PinInput';
+      <CodeBox_1.default code={`import PinInput from '@components/Input/PinInput';
 
 function FullExample() {
   return (
@@ -1287,4 +1292,4 @@ function FullExample() {
 export default FullExample;`} language="tsx" index={29} copied={copied} handleCopy={handleCopy}/>
     </div>);
 };
-export default Input;
+exports.default = Input;

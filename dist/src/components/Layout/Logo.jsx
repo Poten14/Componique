@@ -1,11 +1,16 @@
+"use strict";
 "use client";
-import Image from "next/image";
-import { useState, useEffect } from "react";
-import { useRouter } from "next/navigation";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+const image_1 = __importDefault(require("next/image"));
+const react_1 = require("react");
+const navigation_1 = require("next/navigation");
 const Logo = () => {
-    const router = useRouter();
-    const [isDarkMode, setIsDarkMode] = useState(false);
-    useEffect(() => {
+    const router = (0, navigation_1.useRouter)();
+    const [isDarkMode, setIsDarkMode] = (0, react_1.useState)(false);
+    (0, react_1.useEffect)(() => {
         const checkDarkMode = () => {
             setIsDarkMode(document.documentElement.classList.contains("dark"));
         };
@@ -26,7 +31,7 @@ const Logo = () => {
     return (<div className="ml-4 cursor-pointer" onClick={() => {
             router.push("/");
         }}>
-      <Image src={logoSrc} alt="logo" width={206} height={70}/>
+      <image_1.default src={logoSrc} alt="logo" width={206} height={70}/>
     </div>);
 };
-export default Logo;
+exports.default = Logo;

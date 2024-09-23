@@ -1,19 +1,47 @@
+"use strict";
 "use client";
-import React, { useState } from "react";
-import CodeBox from "@components/CodeBox";
-import BasicModal from "@components/Modal/BasicModal";
-import Button from "@components/Button/Button";
-import FormModal from "@components/Modal/FormModal";
-import OverlayModal from "@components/Modal/OverlayModal";
+var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    var desc = Object.getOwnPropertyDescriptor(m, k);
+    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
+      desc = { enumerable: true, get: function() { return m[k]; } };
+    }
+    Object.defineProperty(o, k2, desc);
+}) : (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    o[k2] = m[k];
+}));
+var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {
+    Object.defineProperty(o, "default", { enumerable: true, value: v });
+}) : function(o, v) {
+    o["default"] = v;
+});
+var __importStar = (this && this.__importStar) || function (mod) {
+    if (mod && mod.__esModule) return mod;
+    var result = {};
+    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
+    __setModuleDefault(result, mod);
+    return result;
+};
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+const react_1 = __importStar(require("react"));
+const CodeBox_1 = __importDefault(require("@components/CodeBox"));
+const BasicModal_1 = __importDefault(require("@components/Modal/BasicModal"));
+const Button_1 = __importDefault(require("@components/Button/Button"));
+const FormModal_1 = __importDefault(require("@components/Modal/FormModal"));
+const OverlayModal_1 = __importDefault(require("@components/Modal/OverlayModal"));
 const ModalDoc = () => {
-    const [copied, setCopied] = useState({});
-    const [isOpen, setIsOpen] = useState(false); //모달
-    const [modalSize, setModalSize] = useState("medium");
-    const [openModalKey, setOpenModalKey] = useState(null);
-    const [modalSize2, setModalSize2] = useState("medium");
-    const [openModalKey2, setOpenModalKey2] = useState(null);
-    const [openModalKey3, setOpenModalKey3] = useState(null);
-    const [modalSize3, setModalSize3] = useState("small");
+    const [copied, setCopied] = (0, react_1.useState)({});
+    const [isOpen, setIsOpen] = (0, react_1.useState)(false); //모달
+    const [modalSize, setModalSize] = (0, react_1.useState)("medium");
+    const [openModalKey, setOpenModalKey] = (0, react_1.useState)(null);
+    const [modalSize2, setModalSize2] = (0, react_1.useState)("medium");
+    const [openModalKey2, setOpenModalKey2] = (0, react_1.useState)(null);
+    const [openModalKey3, setOpenModalKey3] = (0, react_1.useState)(null);
+    const [modalSize3, setModalSize3] = (0, react_1.useState)("small");
     const handleCopy = (index) => {
         setCopied((prev) => ({ ...prev, [index]: true }));
         setTimeout(() => setCopied((prev) => ({ ...prev, [index]: false })), 500);
@@ -52,7 +80,7 @@ const ModalDoc = () => {
         버튼 옵션을 지원합니다.
       </p>
       <h2 className="text-[#2D3748]"> 1.1. Import</h2>
-      <CodeBox code={`import { BasicModal } from '@componique/react';`} copyText={`import { BasicModal } from '@components/Modal/BasicModal';`} language="tsx" index={1} copied={copied} handleCopy={handleCopy}/>
+      <CodeBox_1.default code={`import { BasicModal } from '@componique/react';`} copyText={`import { BasicModal } from '@components/Modal/BasicModal';`} language="tsx" index={1} copied={copied} handleCopy={handleCopy}/>
 
       <h2 className="text-[#2D3748]">1.2. Usage</h2>
       <p>
@@ -68,7 +96,7 @@ const ModalDoc = () => {
           <p>This is a basic modal content.</p>
         </BasicModal> */}
 
-      <CodeBox code={`import { BasicModal } from '@components/Modal/BasicModal';
+      <CodeBox_1.default code={`import { BasicModal } from '@components/Modal/BasicModal';
 import { useState } from 'react';
 
 function Example() {
@@ -141,11 +169,11 @@ export default Example;`} copyText={`import { BasicModal } from '@components/Mod
       </ul>
 
       <div className="my-7 space-x-2 space-y-4">
-        {sizes.map((size) => (<Button key={size} onClick={() => openModal(size)}>
+        {sizes.map((size) => (<Button_1.default key={size} onClick={() => openModal(size)}>
             {`Open ${size} Modal`}
-          </Button>))}
+          </Button_1.default>))}
       </div>
-      <BasicModal open={isOpen} size={modalSize} onClose={closeModal} primaryButton={{
+      <BasicModal_1.default open={isOpen} size={modalSize} onClose={closeModal} primaryButton={{
             text: "Okay",
             variant: "primary",
             onClick: closeModal,
@@ -162,8 +190,8 @@ export default Example;`} copyText={`import { BasicModal } from '@components/Mod
           dolor eiusmod. Et mollit incididunt nisi consectetur esse laborum
           eiusmod pariatur proident Lorem eiusmod et.
         </p>
-      </BasicModal>
-      <CodeBox code={`import { BasicModal } from '@components/Modal/BasicModal';
+      </BasicModal_1.default>
+      <CodeBox_1.default code={`import { BasicModal } from '@components/Modal/BasicModal';
         import { useState } from 'react';
         
         function Example() {
@@ -439,7 +467,7 @@ export default Example;`} copyText={`import { BasicModal } from '@components/Mod
         >
           <p>모달 컴포넌트는 기본적으로 primary와 secondary 버튼을 지원합니다:</p>
         </BasicModal> */}
-      <CodeBox code={`import { BasicModal } from '@components/Modal/BasicModal';
+      <CodeBox_1.default code={`import { BasicModal } from '@components/Modal/BasicModal';
 import { useState } from 'react';
 
 function Example() {
@@ -581,7 +609,7 @@ export default Example;`} language="tsx" index={4} copied={copied} handleCopy={h
       </table>
 
       <h2 className="text-[#2D3748]">1.6. Full Example</h2>
-      <CodeBox code={`import { BasicModal } from '@components/Modal/BasicModal';
+      <CodeBox_1.default code={`import { BasicModal } from '@components/Modal/BasicModal';
 import { useState } from 'react';
 
 function Example() {
@@ -641,20 +669,20 @@ export default Example;`} language="tsx" index={5} copied={copied} handleCopy={h
         포함한 모달입니다. 다양한 크기와 버튼 옵션을 지원합니다.
       </p>
       <h2 className="text-[#2D3748]"> 2.1. Import</h2>
-      <CodeBox code={`import { FormModal } from '@componique/react';`} copyText={`import { FormModal } from '@components/Modal/FormModal';`} language="tsx" index={1} copied={copied} handleCopy={handleCopy}/>
+      <CodeBox_1.default code={`import { FormModal } from '@componique/react';`} copyText={`import { FormModal } from '@components/Modal/FormModal';`} language="tsx" index={1} copied={copied} handleCopy={handleCopy}/>
 
       <h2 className="text-[#2D3748]">2.2. Usage</h2>
       <p>
         아래는 <code>FormModal</code> 컴포넌트의 기본 사용 예제입니다:
       </p>
       <div className="my-7 space-x-2 space-y-4">
-        <Button onClick={() => openModal2(1, "medium")} className="rounded-md bg-Basic px-4 py-2 text-white">
+        <Button_1.default onClick={() => openModal2(1, "medium")} className="rounded-md bg-Basic px-4 py-2 text-white">
           Open Form Modal
-        </Button>
-        <FormModal open={openModalKey2 === 1} onClose={closeModal2} size={modalSize2} title="Form Modal" onSubmit={closeModal2} firstNameLabel="First Name" lastNameLabel="Last Name"/>
+        </Button_1.default>
+        <FormModal_1.default open={openModalKey2 === 1} onClose={closeModal2} size={modalSize2} title="Form Modal" onSubmit={closeModal2} firstNameLabel="First Name" lastNameLabel="Last Name"/>
       </div>
 
-      <CodeBox code={`import { FormModal } from '@components/Modal/FormModal';
+      <CodeBox_1.default code={`import { FormModal } from '@components/Modal/FormModal';
 import { useState } from 'react';
 import Button from '@components/Button/Button';
 
@@ -749,16 +777,16 @@ export default Example;`} copyText={`import { FormModal } from '@components/Moda
         </li>
       </ul>
       <div className="my-7 space-x-2 space-y-4">
-        <Button className="mr-3" onClick={() => openModal2(2, "xs")}>
+        <Button_1.default className="mr-3" onClick={() => openModal2(2, "xs")}>
           Open XS FormModal
-        </Button>
-        <Button onClick={() => openModal2(3, "xl")}>Open XL FormModal</Button>
+        </Button_1.default>
+        <Button_1.default onClick={() => openModal2(3, "xl")}>Open XL FormModal</Button_1.default>
       </div>
 
-      <FormModal open={openModalKey2 === 2} onClose={closeModal2} size={modalSize2} title="Form Modal XS" onSubmit={closeModal2} firstNameLabel="First Name" lastNameLabel="Last Name"/>
-      <FormModal open={openModalKey2 === 3} onClose={closeModal2} size={modalSize2} title="Form Modal XL" onSubmit={closeModal2} firstNameLabel="First Name" lastNameLabel="Last Name"/>
+      <FormModal_1.default open={openModalKey2 === 2} onClose={closeModal2} size={modalSize2} title="Form Modal XS" onSubmit={closeModal2} firstNameLabel="First Name" lastNameLabel="Last Name"/>
+      <FormModal_1.default open={openModalKey2 === 3} onClose={closeModal2} size={modalSize2} title="Form Modal XL" onSubmit={closeModal2} firstNameLabel="First Name" lastNameLabel="Last Name"/>
 
-      <CodeBox code={`import { FormModal } from '@components/Modal/FormModal';
+      <CodeBox_1.default code={`import { FormModal } from '@components/Modal/FormModal';
 import { useState } from 'react';
 import Button from '@components/Button/Button';
 
@@ -939,7 +967,7 @@ export default Example;`} language="tsx" index={3} copied={copied} handleCopy={h
       </table>
 
       <h2 className="text-[#2D3748]">2.5. Full Example</h2>
-      <CodeBox code={`import { FormModal } from '@components/Modal/FormModal';
+      <CodeBox_1.default code={`import { FormModal } from '@components/Modal/FormModal';
 import { useState } from 'react';
 import Button from '@components/Button/Button';
 
@@ -1041,22 +1069,22 @@ export default Example;`} language="tsx" index={5} copied={copied} handleCopy={h
         오버레이 모달입니다. 다양한 크기와 버튼 옵션을 지원합니다.
       </p>
       <h2 className="text-[#2D3748]"> 3.1. Import</h2>
-      <CodeBox code={`import { OverlayModal } from '@componique/react';`} copyText={`import { OverlayModal } from '@components/Modal/OverlayModal';`} language="tsx" index={1} copied={copied} handleCopy={handleCopy}/>
+      <CodeBox_1.default code={`import { OverlayModal } from '@componique/react';`} copyText={`import { OverlayModal } from '@components/Modal/OverlayModal';`} language="tsx" index={1} copied={copied} handleCopy={handleCopy}/>
 
       <h2 className="text-[#2D3748]">3.2. Usage</h2>
       <p>
         아래는 <code>OverlayModal</code> 컴포넌트의 기본 사용 예제입니다:
       </p>
       <div className="my-7 space-x-2 space-y-4">
-        <Button onClick={() => openModal3(1, "small")} className="mr-3 rounded-md bg-Basic px-4 py-2 text-white">
+        <Button_1.default onClick={() => openModal3(1, "small")} className="mr-3 rounded-md bg-Basic px-4 py-2 text-white">
           Open Overlay Modal
-        </Button>
+        </Button_1.default>
       </div>
-      <OverlayModal isOpen={openModalKey3 === 1} onClose={closeModal3} title="Overlay Modal" closeButtonText="Close" showCloseIcon={true}>
+      <OverlayModal_1.default isOpen={openModalKey3 === 1} onClose={closeModal3} title="Overlay Modal" closeButtonText="Close" showCloseIcon={true}>
         <p>This is basic overlay modal content.</p>
-      </OverlayModal>
+      </OverlayModal_1.default>
 
-      <CodeBox code={`import { OverlayModal } from '@components/Modal/OverlayModal';
+      <CodeBox_1.default code={`import { OverlayModal } from '@components/Modal/OverlayModal';
 import { useState } from 'react';
 import Button from '@components/Button/Button';
 
@@ -1159,15 +1187,15 @@ export default Example;`} copyText={`import { OverlayModal } from '@components/M
       </ul>
 
       <div className="my-7 space-x-2 space-y-4">
-        <Button onClick={() => openModal3(2, "xs")}>
+        <Button_1.default onClick={() => openModal3(2, "xs")}>
           Open XS OverlayModal
-        </Button>
-        <Button onClick={() => openModal3(3, "xl")} className="ml-3">
+        </Button_1.default>
+        <Button_1.default onClick={() => openModal3(3, "xl")} className="ml-3">
           Open XL OverlayModal
-        </Button>
+        </Button_1.default>
       </div>
 
-      <OverlayModal isOpen={openModalKey3 === 2} onClose={closeModal3} size="xs" title="XS Overlay Modal" closeButtonText="Close" showCloseIcon={true}>
+      <OverlayModal_1.default isOpen={openModalKey3 === 2} onClose={closeModal3} size="xs" title="XS Overlay Modal" closeButtonText="Close" showCloseIcon={true}>
         <p>
           Magna exercitation reprehenderit magna aute tempor cupidatat consequat
           elit dolor adipisicing. Mollit dolor eiusmod sunt ex incididunt cillum
@@ -1185,8 +1213,8 @@ export default Example;`} copyText={`import { OverlayModal } from '@components/M
           incididunt nisi consectetur esse laborum eiusmod pariatur proident
           Lorem eiusmod et. Magna
         </p>
-      </OverlayModal>
-      <OverlayModal isOpen={openModalKey3 === 3} onClose={closeModal3} size="xl" title="XL Overlay Modal" closeButtonText="Close" showCloseIcon={true}>
+      </OverlayModal_1.default>
+      <OverlayModal_1.default isOpen={openModalKey3 === 3} onClose={closeModal3} size="xl" title="XL Overlay Modal" closeButtonText="Close" showCloseIcon={true}>
         <p>
           Magna exercitation reprehenderit magna aute tempor cupidatat consequat
           elit dolor adipisicing. Mollit dolor eiusmod sunt ex incididunt cillum
@@ -1204,9 +1232,9 @@ export default Example;`} copyText={`import { OverlayModal } from '@components/M
           incididunt nisi consectetur esse laborum eiusmod pariatur proident
           Lorem eiusmod et. Magna
         </p>
-      </OverlayModal>
+      </OverlayModal_1.default>
 
-      <CodeBox code={`import { OverlayModal } from '@components/Modal/OverlayModal';
+      <CodeBox_1.default code={`import { OverlayModal } from '@components/Modal/OverlayModal';
 import { useState } from 'react';
 import Button from '@components/Button/Button';
 
@@ -1424,7 +1452,7 @@ export default Example;`} copyText={`import { OverlayModal } from '@components/M
       </table>
 
       <h2 className="text-[#2D3748]">3.5. Full Example</h2>
-      <CodeBox code={`import { OverlayModal } from '@components/Modal/OverlayModal';
+      <CodeBox_1.default code={`import { OverlayModal } from '@components/Modal/OverlayModal';
 import { useState } from 'react';
 import Button from '@components/Button/Button';
 
@@ -1525,4 +1553,4 @@ function Example() {
 export default Example;`} language="tsx" index={5} copied={copied} handleCopy={handleCopy}/>
     </div>);
 };
-export default ModalDoc;
+exports.default = ModalDoc;

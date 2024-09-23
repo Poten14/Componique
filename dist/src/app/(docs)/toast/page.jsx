@@ -1,22 +1,50 @@
+"use strict";
 "use client";
-import React, { useState } from "react";
-import Button from "@components/Button/Button";
-import Toast from "@components/Toast/Toast";
-import CodeBox from "@components/CodeBox";
-import ToastGroup from "@components/Toast/ToastGroup";
+var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    var desc = Object.getOwnPropertyDescriptor(m, k);
+    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
+      desc = { enumerable: true, get: function() { return m[k]; } };
+    }
+    Object.defineProperty(o, k2, desc);
+}) : (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    o[k2] = m[k];
+}));
+var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {
+    Object.defineProperty(o, "default", { enumerable: true, value: v });
+}) : function(o, v) {
+    o["default"] = v;
+});
+var __importStar = (this && this.__importStar) || function (mod) {
+    if (mod && mod.__esModule) return mod;
+    var result = {};
+    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
+    __setModuleDefault(result, mod);
+    return result;
+};
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+const react_1 = __importStar(require("react"));
+const Button_1 = __importDefault(require("@components/Button/Button"));
+const Toast_1 = __importDefault(require("@components/Toast/Toast"));
+const CodeBox_1 = __importDefault(require("@components/CodeBox"));
+const ToastGroup_1 = __importDefault(require("@components/Toast/ToastGroup"));
 const ToastDocs = () => {
-    const [copied, setCopied] = useState({});
-    const [isToastOpen, setIsToastOpen] = useState(false);
-    const [isPositionToastOpen, setIsPositionToastOpen] = useState(false);
-    const [isColorToastOpen, setIsColorToastOpen] = useState(false);
-    const [isVariantToastOpen, setIsVariantToastOpen] = useState(false);
-    const [isProgressToastOpen, setIsProgressToastOpen] = useState(false);
-    const [isTimeToastOpen, setIsTimeToastOpen] = useState(false);
-    const [isClassNameToastOpen, setIsClassNameToastOpen] = useState(false);
-    const [isTimeProgressToastOpen, setIsTimeProgressToastOpen] = useState(false);
-    const [isCloseButtonToastOpen, setIsCloseButtonToastOpen] = useState(false);
-    const [isToastGroupOpen, setIsToastGroupOpen] = useState(false);
-    const [showToastGroup, setShowToastGroup] = useState(false);
+    const [copied, setCopied] = (0, react_1.useState)({});
+    const [isToastOpen, setIsToastOpen] = (0, react_1.useState)(false);
+    const [isPositionToastOpen, setIsPositionToastOpen] = (0, react_1.useState)(false);
+    const [isColorToastOpen, setIsColorToastOpen] = (0, react_1.useState)(false);
+    const [isVariantToastOpen, setIsVariantToastOpen] = (0, react_1.useState)(false);
+    const [isProgressToastOpen, setIsProgressToastOpen] = (0, react_1.useState)(false);
+    const [isTimeToastOpen, setIsTimeToastOpen] = (0, react_1.useState)(false);
+    const [isClassNameToastOpen, setIsClassNameToastOpen] = (0, react_1.useState)(false);
+    const [isTimeProgressToastOpen, setIsTimeProgressToastOpen] = (0, react_1.useState)(false);
+    const [isCloseButtonToastOpen, setIsCloseButtonToastOpen] = (0, react_1.useState)(false);
+    const [isToastGroupOpen, setIsToastGroupOpen] = (0, react_1.useState)(false);
+    const [showToastGroup, setShowToastGroup] = (0, react_1.useState)(false);
     const handleCopy = (index) => {
         setCopied((prev) => ({ ...prev, [index]: true }));
         setTimeout(() => setCopied((prev) => ({ ...prev, [index]: false })), 500);
@@ -41,20 +69,20 @@ const ToastDocs = () => {
         닫기 버튼을 포함할 수 있습니다.
       </p>
       <h2 className="text-[#2D3748]">1.1. Import</h2>
-      <CodeBox code={`import Toast from "@components/Toast/Toast";`} copyText={`import Toast from "@components/Toast/Toast";`} language="tsx" index={1} copied={copied} handleCopy={handleCopy}/>
+      <CodeBox_1.default code={`import Toast from "@components/Toast/Toast";`} copyText={`import Toast from "@components/Toast/Toast";`} language="tsx" index={1} copied={copied} handleCopy={handleCopy}/>
 
       <h2 className="text-[#2D3748]">1.2. Usage</h2>
       <p>기본 사용 예제는 아래와 같습니다:</p>
       <p>아래 예제에서는 버튼을 클릭하면 Toast가 렌더링됩니다.</p>
-      <Button onClick={onclickToastHandler(setIsToastOpen, true)}>
+      <Button_1.default onClick={onclickToastHandler(setIsToastOpen, true)}>
         Toast Open Button
-      </Button>
+      </Button_1.default>
 
-      {isToastOpen && (<Toast isOpen={isToastOpen} onClose={onclickToastHandler(setIsToastOpen, false)}>
+      {isToastOpen && (<Toast_1.default isOpen={isToastOpen} onClose={onclickToastHandler(setIsToastOpen, false)}>
           Toast 알림입니다.
-        </Toast>)}
+        </Toast_1.default>)}
       <div className="my-7 space-y-4"/>
-      <CodeBox code={`"use client";
+      <CodeBox_1.default code={`"use client";
 import Button from "@components/Button/Button";
 import Toast from "@components/Toast/Toast";
 import { useState } from "react";
@@ -114,15 +142,15 @@ export default ToastExample;
         <code>right</code> 입니다.
       </p>
 
-      <Button variant="border" color="primary" onClick={onclickToastHandler(setIsPositionToastOpen, true)}>
+      <Button_1.default variant="border" color="primary" onClick={onclickToastHandler(setIsPositionToastOpen, true)}>
         Position Toast Button
-      </Button>
+      </Button_1.default>
 
-      {isPositionToastOpen && (<Toast isOpen={isPositionToastOpen} onClose={onclickToastHandler(setIsPositionToastOpen, false)} position="rightBottom">
+      {isPositionToastOpen && (<Toast_1.default isOpen={isPositionToastOpen} onClose={onclickToastHandler(setIsPositionToastOpen, false)} position="rightBottom">
           오른쪽 하단에 표시됩니다.
-        </Toast>)}
+        </Toast_1.default>)}
       <div className="my-7 space-y-4"/>
-      <CodeBox code={`"use client";
+      <CodeBox_1.default code={`"use client";
 import Button from "@components/Button/Button";
 import Toast from "@components/Toast/Toast";
 import { useState } from "react";
@@ -185,14 +213,14 @@ export default ToastExample;
         <code>purple</code>, <code>pink</code>, <code>basic</code>,{" "}
         <code>white</code>, <code>gray</code>, <code>black</code> 입니다.
       </p>
-      <Button variant="border" color="orange" onClick={onclickToastHandler(setIsColorToastOpen, true)}>
+      <Button_1.default variant="border" color="orange" onClick={onclickToastHandler(setIsColorToastOpen, true)}>
         Color Toast Button
-      </Button>
-      {isColorToastOpen && (<Toast isOpen={isColorToastOpen} onClose={onclickToastHandler(setIsColorToastOpen, false)} color="orange">
+      </Button_1.default>
+      {isColorToastOpen && (<Toast_1.default isOpen={isColorToastOpen} onClose={onclickToastHandler(setIsColorToastOpen, false)} color="orange">
           오렌지색 알림입니다.
-        </Toast>)}
+        </Toast_1.default>)}
       <div className="my-7 space-y-4"/>
-      <CodeBox code={`"use client";
+      <CodeBox_1.default code={`"use client";
 import Button from "@components/Button/Button";
 import Toast from "@components/Toast/Toast";
 import { useState } from "react";
@@ -252,15 +280,15 @@ export default ToastExample;
         <code>border</code> 입니다.
       </p>
 
-      <Button variant="border" onClick={onclickToastHandler(setIsVariantToastOpen, true)}>
+      <Button_1.default variant="border" onClick={onclickToastHandler(setIsVariantToastOpen, true)}>
         Variant Toast Button
-      </Button>
+      </Button_1.default>
 
-      {isVariantToastOpen && (<Toast isOpen={isVariantToastOpen} onClose={onclickToastHandler(setIsVariantToastOpen, false)} variant="border">
+      {isVariantToastOpen && (<Toast_1.default isOpen={isVariantToastOpen} onClose={onclickToastHandler(setIsVariantToastOpen, false)} variant="border">
           border 스타일의 알림입니다.
-        </Toast>)}
+        </Toast_1.default>)}
       <div className="my-7 space-y-4"/>
-      <CodeBox code={`"use client";
+      <CodeBox_1.default code={`"use client";
 import Button from "@components/Button/Button";
 import Toast from "@components/Toast/Toast";
 import { useState } from "react";
@@ -315,15 +343,15 @@ export default ToastExample;
         <code>time</code> prop을 이용하여 Toast가 자동으로 닫히기 전까지의
         시간을 설정할 수 있습니다. 시간은 초 단위로 설정합니다.
       </p>
-      <Button variant="border" color="success" onClick={onclickToastHandler(setIsTimeToastOpen, true)}>
+      <Button_1.default variant="border" color="success" onClick={onclickToastHandler(setIsTimeToastOpen, true)}>
         Time Toast Button
-      </Button>
+      </Button_1.default>
 
-      {isTimeToastOpen && (<Toast isOpen={isTimeToastOpen} onClose={onclickToastHandler(setIsTimeToastOpen, false)} time="5">
+      {isTimeToastOpen && (<Toast_1.default isOpen={isTimeToastOpen} onClose={onclickToastHandler(setIsTimeToastOpen, false)} time="5">
           5초 후에 자동으로 닫힙니다.
-        </Toast>)}
+        </Toast_1.default>)}
       <div className="my-7 space-y-4"/>
-      <CodeBox code={`"use client";
+      <CodeBox_1.default code={`"use client";
 import Button from "@components/Button/Button";
 import Toast from "@components/Toast/Toast";
 import { useState } from "react";
@@ -384,15 +412,15 @@ export default ToastExample;
         닫을수 없으니 꼭 Time을 추가하시길 권장합니다.
       </p>
 
-      <Button variant="border" color="secondary" onClick={onclickToastHandler(setIsCloseButtonToastOpen, true)}>
+      <Button_1.default variant="border" color="secondary" onClick={onclickToastHandler(setIsCloseButtonToastOpen, true)}>
         Close Button Toast Button
-      </Button>
+      </Button_1.default>
 
-      {isCloseButtonToastOpen && (<Toast isOpen={isCloseButtonToastOpen} time="5" onClose={onclickToastHandler(setIsCloseButtonToastOpen, false)} isClose={true} color="secondary">
+      {isCloseButtonToastOpen && (<Toast_1.default isOpen={isCloseButtonToastOpen} time="5" onClose={onclickToastHandler(setIsCloseButtonToastOpen, false)} isClose={true} color="secondary">
           닫기 버튼이 없는 알림입니다.
-        </Toast>)}
+        </Toast_1.default>)}
       <div className="my-7 space-y-4"/>
-      <CodeBox code={`"use client";
+      <CodeBox_1.default code={`"use client";
 import Button from "@components/Button/Button";
 import Toast from "@components/Toast/Toast";
 import { useState } from "react";
@@ -460,15 +488,15 @@ export default ToastExample;
         않는 한 닫히지 않습니다.{" "}
       </p>
 
-      <Button variant="border" color="danger" onClick={onclickToastHandler(setIsProgressToastOpen, true)}>
+      <Button_1.default variant="border" color="danger" onClick={onclickToastHandler(setIsProgressToastOpen, true)}>
         Progress Toast Button
-      </Button>
+      </Button_1.default>
 
-      {isProgressToastOpen && (<Toast isOpen={isProgressToastOpen} onClose={onclickToastHandler(setIsProgressToastOpen, false)} isProgress={true}>
+      {isProgressToastOpen && (<Toast_1.default isOpen={isProgressToastOpen} onClose={onclickToastHandler(setIsProgressToastOpen, false)} isProgress={true}>
           진행 바가 포함된 알림입니다.
-        </Toast>)}
+        </Toast_1.default>)}
       <div className="my-7 space-y-4"/>
-      <CodeBox code={`"use client";
+      <CodeBox_1.default code={`"use client";
 import Button from "@components/Button/Button";
 import Toast from "@components/Toast/Toast";
 import { useState } from "react";
@@ -523,16 +551,16 @@ export default ToastExample;
         경험을 향상시키는 Toast를 만들수 있습니다.
       </p>
 
-      <Button variant="border" color="secondary" onClick={onclickToastHandler(setIsTimeProgressToastOpen, true)}>
+      <Button_1.default variant="border" color="secondary" onClick={onclickToastHandler(setIsTimeProgressToastOpen, true)}>
         Time + Progress Toast Button
-      </Button>
+      </Button_1.default>
 
-      {isTimeProgressToastOpen && (<Toast isOpen={isTimeProgressToastOpen} onClose={onclickToastHandler(setIsTimeProgressToastOpen, false)} isProgress={true} color="secondary" time="5" variant="border">
+      {isTimeProgressToastOpen && (<Toast_1.default isOpen={isTimeProgressToastOpen} onClose={onclickToastHandler(setIsTimeProgressToastOpen, false)} isProgress={true} color="secondary" time="5" variant="border">
           진행 바가 포함된 5초후에 사라지는 border 스타일의 Secondary 컬러의
           알림입니다.
-        </Toast>)}
+        </Toast_1.default>)}
       <div className="my-7 space-y-4"/>
-      <CodeBox code={`"use client";
+      <CodeBox_1.default code={`"use client";
 import Button from "@components/Button/Button";
 import Toast from "@components/Toast/Toast";
 import { useState } from "react";
@@ -594,15 +622,15 @@ export default ToastExample;
         있습니다.
       </p>
 
-      <Button variant="border" color="secondary" onClick={onclickToastHandler(setIsClassNameToastOpen, true)}>
+      <Button_1.default variant="border" color="secondary" onClick={onclickToastHandler(setIsClassNameToastOpen, true)}>
         ClassName Toast Button
-      </Button>
+      </Button_1.default>
 
-      {isClassNameToastOpen && (<Toast isOpen={isClassNameToastOpen} onClose={onclickToastHandler(setIsClassNameToastOpen, false)} className="rounded-lg bg-indigo-500 p-5 text-white">
+      {isClassNameToastOpen && (<Toast_1.default isOpen={isClassNameToastOpen} onClose={onclickToastHandler(setIsClassNameToastOpen, false)} className="rounded-lg bg-indigo-500 p-5 text-white">
           커스텀 스타일이 적용된 알림입니다.
-        </Toast>)}
+        </Toast_1.default>)}
       <div className="my-7 space-y-4"/>
-      <CodeBox code={`"use client";
+      <CodeBox_1.default code={`"use client";
 import Button from "@components/Button/Button";
 import Toast from "@components/Toast/Toast";
 import { useState } from "react";
@@ -804,7 +832,7 @@ export default ToastExample;
         알림 메시지를 시간차로 표시할 수 있습니다.
       </p>
       <h2 className="text-[#2D3748]">1.1. Import</h2>
-      <CodeBox code={`import ToastGroup from "@components/Toast/ToastGroup";`} copyText={`import ToastGroup from "@components/Toast/ToastGroup";`} language="tsx" index={1} copied={copied} handleCopy={handleCopy}/>
+      <CodeBox_1.default code={`import ToastGroup from "@components/Toast/ToastGroup";`} copyText={`import ToastGroup from "@components/Toast/ToastGroup";`} language="tsx" index={1} copied={copied} handleCopy={handleCopy}/>
 
       <h2 className="text-[#2D3748]">1.2. Usage</h2>
       <p>기본 사용 예제는 아래와 같습니다:</p>
@@ -812,9 +840,9 @@ export default ToastExample;
         아래 예제에서는 다양한 옵션을 가진 여러 개의 Toast가 순차적으로
         표시됩니다.
       </p>
-      <Button onClick={handleClick}>Toast Group Open Button</Button>
+      <Button_1.default onClick={handleClick}>Toast Group Open Button</Button_1.default>
 
-      {isToastGroupOpen && (<ToastGroup position="rightTop" 
+      {isToastGroupOpen && (<ToastGroup_1.default position="rightTop" 
         //모든 Toast가 닫혔을 때 호출되는 함수 전달
         onAllClosed={allToastsCloseHandler} toasts={[
                 {
@@ -850,7 +878,7 @@ export default ToastExample;
                 },
             ]}/>)}
       <div className="my-7 space-y-4"/>
-      <CodeBox code={`"use client";
+      <CodeBox_1.default code={`"use client";
 import ToastGroup from "@components/Toast/ToastGroup";
 import { useState } from "react";
 const ToastGroupExample = () => {
@@ -1027,4 +1055,4 @@ export default ToastGroupExample;
       </table>
     </div>);
 };
-export default ToastDocs;
+exports.default = ToastDocs;

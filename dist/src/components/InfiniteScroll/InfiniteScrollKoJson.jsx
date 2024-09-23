@@ -1,8 +1,13 @@
-import { useState, useEffect } from "react";
-import InfiniteScrollBasic from "./InfiniteScrollBasic";
+"use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+const react_1 = require("react");
+const InfiniteScrollBasic_1 = __importDefault(require("./InfiniteScrollBasic"));
 const InfiniteScrollKoJson = () => {
-    const [content, setContent] = useState([]);
-    useEffect(() => {
+    const [content, setContent] = (0, react_1.useState)([]);
+    (0, react_1.useEffect)(() => {
         const fetchBlogPosts = async () => {
             try {
                 const response = await fetch("https://koreanjson.com/posts/1");
@@ -25,7 +30,7 @@ const InfiniteScrollKoJson = () => {
     }, []);
     return (<div>
       {/* content가 비어있을 때 로딩 표시 추가 */}
-      {content.length > 0 ? (<InfiniteScrollBasic content={content}/>) : (<p>Loading...</p>)}
+      {content.length > 0 ? (<InfiniteScrollBasic_1.default content={content}/>) : (<p>Loading...</p>)}
     </div>);
 };
-export default InfiniteScrollKoJson;
+exports.default = InfiniteScrollKoJson;

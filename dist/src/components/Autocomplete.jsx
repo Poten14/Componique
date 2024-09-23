@@ -1,13 +1,41 @@
+"use strict";
 "use client";
-import React, { useState } from "react";
-import { useRouter } from "next/navigation";
-import Icon from "./Icon/Icon";
+var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    var desc = Object.getOwnPropertyDescriptor(m, k);
+    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
+      desc = { enumerable: true, get: function() { return m[k]; } };
+    }
+    Object.defineProperty(o, k2, desc);
+}) : (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    o[k2] = m[k];
+}));
+var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {
+    Object.defineProperty(o, "default", { enumerable: true, value: v });
+}) : function(o, v) {
+    o["default"] = v;
+});
+var __importStar = (this && this.__importStar) || function (mod) {
+    if (mod && mod.__esModule) return mod;
+    var result = {};
+    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
+    __setModuleDefault(result, mod);
+    return result;
+};
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+const react_1 = __importStar(require("react"));
+const navigation_1 = require("next/navigation");
+const Icon_1 = __importDefault(require("./Icon/Icon"));
 const Autocomplete = ({ options, placeholder = "Search for Components", onSelect, }) => {
-    const [inputValue, setInputValue] = useState("");
-    const [filteredOptions, setFilteredOptions] = useState([]);
-    const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-    const [moveCircle, setMoveCircle] = useState(false);
-    const router = useRouter();
+    const [inputValue, setInputValue] = (0, react_1.useState)("");
+    const [filteredOptions, setFilteredOptions] = (0, react_1.useState)([]);
+    const [isDropdownOpen, setIsDropdownOpen] = (0, react_1.useState)(false);
+    const [moveCircle, setMoveCircle] = (0, react_1.useState)(false);
+    const router = (0, navigation_1.useRouter)();
     const handleInputChange = (e) => {
         const value = e.target.value;
         setInputValue(value);
@@ -63,7 +91,7 @@ const Autocomplete = ({ options, placeholder = "Search for Components", onSelect
         </div>
         <input type="text" value={inputValue} onChange={handleInputChange} onKeyDown={handleKeyDown} // 키보드 이벤트 처리 추가
      onFocus={() => setIsDropdownOpen(true)} onBlur={handleBlur} placeholder={placeholder} className="text-gray-600 placeholder-gray-400 flex-grow px-4 focus:outline-none dark:bg-[#333742] dark:text-[#dfdfdf]"/>
-        <Icon name="icon-search" size={24} className="dark:bg-white"/>
+        <Icon_1.default name="icon-search" size={24} className="dark:bg-white"/>
       </div>
       {isDropdownOpen && (<ul className="absolute left-0 right-0 z-10 mt-1 max-h-60 overflow-y-auto rounded-xl bg-white shadow-lg dark:bg-[#333742]">
           {moveCircle && (<li className="flex items-center space-x-2 p-3">
@@ -79,7 +107,7 @@ const Autocomplete = ({ options, placeholder = "Search for Components", onSelect
               <ul>
                 {options.map((option, index) => (<li key={index} onMouseDown={() => handleOptionClick(option)} className="hover:bg-gray-100 flex cursor-pointer items-center p-3 pl-12 dark:text-[#dfdfdf]">
                     <div>
-                      <Icon name="icon-docs2" color="#626262" size={24}/>
+                      <Icon_1.default name="icon-docs2" color="#626262" size={24}/>
                       <span className="ml-2">{option.value}</span>
                     </div>
                   </li>))}
@@ -91,4 +119,4 @@ const Autocomplete = ({ options, placeholder = "Search for Components", onSelect
         </ul>)}
     </div>);
 };
-export default Autocomplete;
+exports.default = Autocomplete;

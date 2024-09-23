@@ -1,10 +1,38 @@
+"use strict";
 "use client";
-import React, { useState } from "react";
-import AvatarBasic from "@components/Avatar/AvatarBasic";
-import AvatarLabel from "@components/Avatar/AvatarLabel";
-import CodeBox from "@components/CodeBox";
+var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    var desc = Object.getOwnPropertyDescriptor(m, k);
+    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
+      desc = { enumerable: true, get: function() { return m[k]; } };
+    }
+    Object.defineProperty(o, k2, desc);
+}) : (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    o[k2] = m[k];
+}));
+var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {
+    Object.defineProperty(o, "default", { enumerable: true, value: v });
+}) : function(o, v) {
+    o["default"] = v;
+});
+var __importStar = (this && this.__importStar) || function (mod) {
+    if (mod && mod.__esModule) return mod;
+    var result = {};
+    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
+    __setModuleDefault(result, mod);
+    return result;
+};
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+const react_1 = __importStar(require("react"));
+const AvatarBasic_1 = __importDefault(require("@components/Avatar/AvatarBasic"));
+const AvatarLabel_1 = __importDefault(require("@components/Avatar/AvatarLabel"));
+const CodeBox_1 = __importDefault(require("@components/CodeBox"));
 const AvatarBasicDocs = () => {
-    const [copied, setCopied] = useState({});
+    const [copied, setCopied] = (0, react_1.useState)({});
     const handleCopy = (index) => {
         setCopied((prev) => ({ ...prev, [index]: true }));
         setTimeout(() => setCopied((prev) => ({ ...prev, [index]: false })), 500);
@@ -20,7 +48,7 @@ const AvatarBasicDocs = () => {
         </p>
 
         <h2 className="text-[#2D3748] dark:text-white">1.1. Import</h2>
-        <CodeBox code={`import AvatarBasic from '@components/Avatar/AvatarBasic';`} copyText={`import AvatarBasic from '@components/Avatar/AvatarBasic';`} language="tsx" index={0} copied={copied} handleCopy={handleCopy}/>
+        <CodeBox_1.default code={`import AvatarBasic from '@components/Avatar/AvatarBasic';`} copyText={`import AvatarBasic from '@components/Avatar/AvatarBasic';`} language="tsx" index={0} copied={copied} handleCopy={handleCopy}/>
 
         <h2 className="text-[#2D3748] dark:text-white">1.2. Usage</h2>
         <p>기본 사용 예제는 아래와 같습니다:</p>
@@ -29,10 +57,10 @@ const AvatarBasicDocs = () => {
           1) 이미지가 있는 경우
         </h3>
         <div style={{ marginBottom: "20px" }}>
-          <AvatarBasic src="/avatar1.svg" // public 폴더에 위치한 이미지 경로
+          <AvatarBasic_1.default src="/avatar1.svg" // public 폴더에 위치한 이미지 경로
      alt="User Avatar" size={80}/>
         </div>
-        <CodeBox code={`import AvatarBasic from '@components/Avatar/AvatarBasic';
+        <CodeBox_1.default code={`import AvatarBasic from '@components/Avatar/AvatarBasic';
 
 function ExampleWithImage() {
   return (
@@ -62,9 +90,9 @@ export default ExampleWithImage;`} language="tsx" index={1} copied={copied} hand
           2) 이미지가 없는 경우 (이니셜 사용)
         </h3>
         <div style={{ marginBottom: "20px" }}>
-          <AvatarBasic initial="CQ" size={80}/>
+          <AvatarBasic_1.default initial="CQ" size={80}/>
         </div>
-        <CodeBox code={`import AvatarBasic from '@components/Avatar/AvatarBasic';
+        <CodeBox_1.default code={`import AvatarBasic from '@components/Avatar/AvatarBasic';
 
 function ExampleWithInitial() {
   return <AvatarBasic initial="JD" size={80} />;
@@ -144,7 +172,7 @@ export default ExampleWithInitial;`} language="tsx" index={2} copied={copied} ha
         </table>
 
         <h2 className="text-[#2D3748] dark:text-white">1.4. Full Example</h2>
-        <CodeBox code={`import { useState } from "react";
+        <CodeBox_1.default code={`import { useState } from "react";
 
 interface AvatarBasicProps {
   src?: string;
@@ -211,14 +239,14 @@ export default AvatarBasic;`} language="tsx" index={3} copied={copied} handleCop
         </p>
 
         <h2 className="text-[#2D3748] dark:text-white">2.1. Import</h2>
-        <CodeBox code={`import AvatarLabel from '@components/Avatar/AvatarLabel';`} copyText={`import AvatarLabel from '@components/Avatar/AvatarLabel';`} language="tsx" index={0} copied={copied} handleCopy={handleCopy}/>
+        <CodeBox_1.default code={`import AvatarLabel from '@components/Avatar/AvatarLabel';`} copyText={`import AvatarLabel from '@components/Avatar/AvatarLabel';`} language="tsx" index={0} copied={copied} handleCopy={handleCopy}/>
 
         <h2 className="text-[#2D3748] dark:text-white">2.2. Usage</h2>
         <p>기본 사용 예제는 아래와 같습니다:</p>
         <div className="-scroll-my-72">
-          <AvatarLabel src="/avatar1.svg" initial="CQ" size={80} label="Com_Que"/>
+          <AvatarLabel_1.default src="/avatar1.svg" initial="CQ" size={80} label="Com_Que"/>
         </div>
-        <CodeBox code={`import AvatarLabel from '@components/Avatar/AvatarLabel';
+        <CodeBox_1.default code={`import AvatarLabel from '@components/Avatar/AvatarLabel';
 
 function Example() {
   return <AvatarLabel initial="JD" size={80} label="John Doe" />;
@@ -310,7 +338,7 @@ export default Example;`} language="tsx" index={1} copied={copied} handleCopy={h
         </table>
 
         <h2 className="text-[#2D3748] dark:text-white">2.4. Full Example</h2>
-        <CodeBox code={`interface AvatarLabelProps {
+        <CodeBox_1.default code={`interface AvatarLabelProps {
   src?: string;
   alt?: string;
   initial?: string;
@@ -380,4 +408,4 @@ export default AvatarLabel;`} language="tsx" index={2} copied={copied} handleCop
       </div>
     </div>);
 };
-export default AvatarBasicDocs;
+exports.default = AvatarBasicDocs;

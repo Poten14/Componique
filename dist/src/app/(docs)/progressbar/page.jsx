@@ -1,11 +1,39 @@
+"use strict";
 "use client";
-import React, { useState } from "react";
-import ProgressBarBasic from "@components/ProgressBar/ProgressBarBasic";
-import ProgressBarCircle from "@components/ProgressBar/ProgressBarCircle";
-import ProgressBarSlider from "@components/ProgressBar/ProgressBarSlider";
-import CodeBox from "@components/CodeBox";
+var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    var desc = Object.getOwnPropertyDescriptor(m, k);
+    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
+      desc = { enumerable: true, get: function() { return m[k]; } };
+    }
+    Object.defineProperty(o, k2, desc);
+}) : (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    o[k2] = m[k];
+}));
+var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {
+    Object.defineProperty(o, "default", { enumerable: true, value: v });
+}) : function(o, v) {
+    o["default"] = v;
+});
+var __importStar = (this && this.__importStar) || function (mod) {
+    if (mod && mod.__esModule) return mod;
+    var result = {};
+    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
+    __setModuleDefault(result, mod);
+    return result;
+};
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+const react_1 = __importStar(require("react"));
+const ProgressBarBasic_1 = __importDefault(require("@components/ProgressBar/ProgressBarBasic"));
+const ProgressBarCircle_1 = __importDefault(require("@components/ProgressBar/ProgressBarCircle"));
+const ProgressBarSlider_1 = __importDefault(require("@components/ProgressBar/ProgressBarSlider"));
+const CodeBox_1 = __importDefault(require("@components/CodeBox"));
 const ProgressBarBasicDocs = () => {
-    const [copied, setCopied] = useState({});
+    const [copied, setCopied] = (0, react_1.useState)({});
     const handleCopy = (index) => {
         setCopied((prev) => ({ ...prev, [index]: true }));
         setTimeout(() => setCopied((prev) => ({ ...prev, [index]: false })), 500);
@@ -22,14 +50,14 @@ const ProgressBarBasicDocs = () => {
         </p>
 
         <h2 className="text-[#2D3748] dark:text-white">1.1. Import</h2>
-        <CodeBox code={`import ProgressBarBasic from '@components/ProgressBar/ProgressBarBasic';`} copyText={`import ProgressBarBasic from '@components/ProgressBar/ProgressBarBasic';`} language="tsx" index={0} copied={copied} handleCopy={handleCopy}/>
+        <CodeBox_1.default code={`import ProgressBarBasic from '@components/ProgressBar/ProgressBarBasic';`} copyText={`import ProgressBarBasic from '@components/ProgressBar/ProgressBarBasic';`} language="tsx" index={0} copied={copied} handleCopy={handleCopy}/>
 
         <h2 className="text-[#2D3748] dark:text-white">1.2. Usage</h2>
         <p>기본 사용 예제는 아래와 같습니다:</p>
         <div style={{ marginBottom: "20px" }}>
-          <ProgressBarBasic percent={70} showPercent completed/>
+          <ProgressBarBasic_1.default percent={70} showPercent completed/>
         </div>
-        <CodeBox code={`import ProgressBarBasic from '@components/ProgressBar/ProgressBarBasic';
+        <CodeBox_1.default code={`import ProgressBarBasic from '@components/ProgressBar/ProgressBarBasic';
 
 function Example() {
   return <ProgressBarBasic percent={70} showPercent completed />;
@@ -97,7 +125,7 @@ export default Example;`} language="tsx" index={1} copied={copied} handleCopy={h
         </table>
 
         <h2 className="text-[#2D3748] dark:text-white">1.4. Full Example</h2>
-        <CodeBox code={`import { useState, useEffect } from "react";
+        <CodeBox_1.default code={`import { useState, useEffect } from "react";
 
 interface ProgressBarBasicProps {
   percent: number;
@@ -175,14 +203,14 @@ export default ProgressBarBasic;`} language="tsx" index={2} copied={copied} hand
         </p>
 
         <h2 className="text-[#2D3748] dark:text-white">2.1. Import</h2>
-        <CodeBox code={`import ProgressBarCircle from '@components/ProgressBar/ProgressBarCircle';`} copyText={`import ProgressBarCircle from '@components/ProgressBar/ProgressBarCircle';`} language="tsx" index={0} copied={copied} handleCopy={handleCopy}/>
+        <CodeBox_1.default code={`import ProgressBarCircle from '@components/ProgressBar/ProgressBarCircle';`} copyText={`import ProgressBarCircle from '@components/ProgressBar/ProgressBarCircle';`} language="tsx" index={0} copied={copied} handleCopy={handleCopy}/>
 
         <h2 className="text-[#2D3748] dark:text-white">2.2. Usage</h2>
         <p>기본 사용 예제는 아래와 같습니다:</p>
         <div style={{ marginBottom: "20px" }}>
-          <ProgressBarCircle percent={75} showPercent={true} completed={false}/>
+          <ProgressBarCircle_1.default percent={75} showPercent={true} completed={false}/>
         </div>
-        <CodeBox code={`import ProgressBarCircle from '@components/ProgressBar/ProgressBarCircle';
+        <CodeBox_1.default code={`import ProgressBarCircle from '@components/ProgressBar/ProgressBarCircle';
 
 function Example() {
   return <ProgressBarCircle percent={75} showPercent={true} completed={false} />;
@@ -254,7 +282,7 @@ export default Example;`} language="tsx" index={1} copied={copied} handleCopy={h
         </table>
 
         <h2 className="text-[#2D3748] dark:text-white">2.4. Full Example</h2>
-        <CodeBox code={`import { useState, useEffect } from "react";
+        <CodeBox_1.default code={`import { useState, useEffect } from "react";
 
 interface ProgressBarCircleProps {
   percent: number;
@@ -374,14 +402,14 @@ export default ProgressBarCircle;`} language="tsx" index={2} copied={copied} han
         </p>
 
         <h2 className="text-[#2D3748] dark:text-white">3.1. Import</h2>
-        <CodeBox code={`import ProgressBarSlider from '@components/ProgressBar/ProgressBarSlider';`} copyText={`import ProgressBarSlider from '@components/ProgressBar/ProgressBarSlider';`} language="tsx" index={0} copied={copied} handleCopy={handleCopy}/>
+        <CodeBox_1.default code={`import ProgressBarSlider from '@components/ProgressBar/ProgressBarSlider';`} copyText={`import ProgressBarSlider from '@components/ProgressBar/ProgressBarSlider';`} language="tsx" index={0} copied={copied} handleCopy={handleCopy}/>
 
         <h2 className="text-[#2D3748] dark:text-white">3.2. Usage</h2>
         <p>기본 사용 예제는 아래와 같습니다:</p>
         <div style={{ marginBottom: "20px" }}>
-          <ProgressBarSlider percent={50} showPercent={true} completed={true}/>
+          <ProgressBarSlider_1.default percent={50} showPercent={true} completed={true}/>
         </div>
-        <CodeBox code={`import ProgressBarSlider from '@components/ProgressBar/ProgressBarSlider';
+        <CodeBox_1.default code={`import ProgressBarSlider from '@components/ProgressBar/ProgressBarSlider';
 
 function Example() {
   return <ProgressBarSlider percent={50} showPercent={true} completed={true} />;
@@ -450,7 +478,7 @@ export default Example;`} language="tsx" index={1} copied={copied} handleCopy={h
         </table>
 
         <h2 className="text-[#2D3748] dark:text-white">3.4. Full Example</h2>
-        <CodeBox code={`import { useState, useEffect } from "react";
+        <CodeBox_1.default code={`import { useState, useEffect } from "react";
 
 interface ProgressBarSliderProps {
   percent: number;
@@ -550,4 +578,4 @@ export default ProgressBarSlider;`} language="tsx" index={2} copied={copied} han
       </div>
     </div>);
 };
-export default ProgressBarBasicDocs;
+exports.default = ProgressBarBasicDocs;

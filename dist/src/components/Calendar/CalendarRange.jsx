@@ -1,10 +1,12 @@
+"use strict";
 "use client";
-import { useState } from "react";
+Object.defineProperty(exports, "__esModule", { value: true });
+const react_1 = require("react");
 const daysOfWeek = ["Sun", "Mon", "Tue", "Wen", "Thu", "Fri", "Sat"];
 const CalendarRange = ({ onDateSelect }) => {
-    const [currentDate, setCurrentDate] = useState(new Date());
-    const [startDate, setStartDate] = useState(null);
-    const [endDate, setEndDate] = useState(null);
+    const [currentDate, setCurrentDate] = (0, react_1.useState)(new Date());
+    const [startDate, setStartDate] = (0, react_1.useState)(null);
+    const [endDate, setEndDate] = (0, react_1.useState)(null);
     const year = currentDate.getFullYear();
     const month = currentDate.getMonth();
     // 현재 달의 첫 날
@@ -93,4 +95,4 @@ const CalendarRange = ({ onDateSelect }) => {
       </div>
     </>);
 };
-export default CalendarRange;
+exports.default = CalendarRange;

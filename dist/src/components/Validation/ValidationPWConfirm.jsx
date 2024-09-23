@@ -1,10 +1,12 @@
+"use strict";
 "use client";
-import { useState } from "react";
+Object.defineProperty(exports, "__esModule", { value: true });
+const react_1 = require("react");
 const ValidationPWConfirm = () => {
-    const [PW, setPW] = useState("");
-    const [error, setError] = useState("");
-    const [confirmPW, setConfirmPW] = useState("");
-    const [confirmError, setConfirmError] = useState("");
+    const [PW, setPW] = (0, react_1.useState)("");
+    const [error, setError] = (0, react_1.useState)("");
+    const [confirmPW, setConfirmPW] = (0, react_1.useState)("");
+    const [confirmError, setConfirmError] = (0, react_1.useState)("");
     const validatePW = (PW) => {
         const PWType = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=]).{8,}$/;
         return PWType.test(PW);
@@ -36,4 +38,4 @@ const ValidationPWConfirm = () => {
       </div>
     </div>);
 };
-export default ValidationPWConfirm;
+exports.default = ValidationPWConfirm;

@@ -1,12 +1,17 @@
+"use strict";
 "use client";
-import { useState, useRef, useEffect } from "react";
-import { useRouter } from "next/navigation";
-import Icon from "@components/Icon/Icon";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+const react_1 = require("react");
+const navigation_1 = require("next/navigation");
+const Icon_1 = __importDefault(require("@components/Icon/Icon"));
 const BreadCrumbDropdown = ({ items }) => {
-    const [dropdownOpen, setDropdownOpen] = useState(false);
-    const [activeDropdown, setActiveDropdown] = useState(null);
-    const router = useRouter();
-    const dropdownRef = useRef(null);
+    const [dropdownOpen, setDropdownOpen] = (0, react_1.useState)(false);
+    const [activeDropdown, setActiveDropdown] = (0, react_1.useState)(null);
+    const router = (0, navigation_1.useRouter)();
+    const dropdownRef = (0, react_1.useRef)(null);
     const handleDropdownToggle = (index) => {
         setDropdownOpen(!dropdownOpen);
         setActiveDropdown(index);
@@ -14,7 +19,7 @@ const BreadCrumbDropdown = ({ items }) => {
     const handleItemClick = (href) => {
         router.push(href);
     };
-    useEffect(() => {
+    (0, react_1.useEffect)(() => {
         const handleOutsideClose = (e) => {
             if (dropdownOpen &&
                 dropdownRef.current &&
@@ -35,7 +40,7 @@ const BreadCrumbDropdown = ({ items }) => {
               </a>) : (<div className="relative" ref={dropdownRef}>
                 <div className="flex cursor-pointer items-center text-gray hover:text-black dark:hover:text-white" onClick={() => handleDropdownToggle(index)}>
                   {item.children}
-                  {item.dropdownItems && <Icon name="icon-down" color="gray"/>}
+                  {item.dropdownItems && <Icon_1.default name="icon-down" color="gray"/>}
                 </div>
                 {dropdownOpen &&
                     activeDropdown === index &&
@@ -45,9 +50,9 @@ const BreadCrumbDropdown = ({ items }) => {
                         </a>))}
                     </div>)}
               </div>)}
-            {index < items.length - 1 && <Icon name="icon-next" color="gray"/>}
+            {index < items.length - 1 && <Icon_1.default name="icon-next" color="gray"/>}
           </li>))}
       </ul>
     </div>);
 };
-export default BreadCrumbDropdown;
+exports.default = BreadCrumbDropdown;

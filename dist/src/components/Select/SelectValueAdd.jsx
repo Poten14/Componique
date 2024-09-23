@@ -1,10 +1,15 @@
+"use strict";
 "use client";
-import Image from "next/image";
-import { useEffect, useRef, useState } from "react";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+const image_1 = __importDefault(require("next/image"));
+const react_1 = require("react");
 const SelectValueAdd = ({ option, onChange, placeholder = "Option 1", className, }) => {
-    const [selectValue, setSelectValue] = useState([]);
-    const [open, setOpen] = useState(false);
-    const dropMenuRef = useRef(null);
+    const [selectValue, setSelectValue] = (0, react_1.useState)([]);
+    const [open, setOpen] = (0, react_1.useState)(false);
+    const dropMenuRef = (0, react_1.useRef)(null);
     const handleDropDown = () => {
         setOpen(!open);
     };
@@ -28,7 +33,7 @@ const SelectValueAdd = ({ option, onChange, placeholder = "Option 1", className,
             onChange(updatedValue);
         }
     };
-    useEffect(() => {
+    (0, react_1.useEffect)(() => {
         const handleOutsideClose = (e) => {
             if (open &&
                 dropMenuRef.current &&
@@ -54,7 +59,7 @@ const SelectValueAdd = ({ option, onChange, placeholder = "Option 1", className,
               {placeholder}
             </span>)}
         </div>
-        {open ? (<Image src="/selectdown.svg" alt="arrow" width={15} height={15}/>) : (<Image src="/selectup.svg" alt="arrow" width={15} height={15}/>)}
+        {open ? (<image_1.default src="/selectdown.svg" alt="arrow" width={15} height={15}/>) : (<image_1.default src="/selectup.svg" alt="arrow" width={15} height={15}/>)}
         {open && (<ul className="absolute left-0 right-0 top-full z-30 min-w-60 max-w-[450px] rounded-lg border border-gray bg-white text-xs shadow-lg dark:border-[#2A6490] dark:bg-[#2a2e39]">
             {option.map((item, key) => (<li className={`block w-full cursor-pointer rounded-lg py-2 pl-4 text-sm hover:bg-[#E8F5FF] dark:text-[#ffffff] dark:hover:bg-[#2A6490] dark:hover:text-white ${selectValue.includes(item)
                     ? "bg-[#E8F5FF] dark:bg-[#2a6490] dark:text-white"
@@ -65,4 +70,4 @@ const SelectValueAdd = ({ option, onChange, placeholder = "Option 1", className,
       </div>
     </div>);
 };
-export default SelectValueAdd;
+exports.default = SelectValueAdd;

@@ -1,5 +1,10 @@
+"use strict";
 "use client";
-import React from "react";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+const react_1 = __importDefault(require("react"));
 const RadioButtonBasic = ({ name, value, checked, onChange, disabled = false, size = "medium", color = "bg-[#9AC5E5]", label, }) => {
     let sizeStyle = "w-4 h-4";
     if (size === "small") {
@@ -23,4 +28,4 @@ const RadioButtonBasic = ({ name, value, checked, onChange, disabled = false, si
       {label && <span className="ml-2">{label}</span>}
     </label>);
 };
-export default RadioButtonBasic;
+exports.default = RadioButtonBasic;

@@ -1,3 +1,5 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 const Badge = ({ type = 'basic', content, icon, color = 'bg-blue-500', textColor = 'text-white' }) => {
     switch (type) {
         case 'icon':
@@ -19,4 +21,4 @@ const Badge = ({ type = 'basic', content, icon, color = 'bg-blue-500', textColor
         </span>);
     }
 };
-export default Badge;
+exports.default = Badge;

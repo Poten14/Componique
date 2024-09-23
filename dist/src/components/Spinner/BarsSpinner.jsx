@@ -1,4 +1,9 @@
-import React from "react";
+"use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+const react_1 = __importDefault(require("react"));
 const sizeClasses = {
     xs: "h-8 w-3",
     small: "h-10 w-10",
@@ -23,4 +28,4 @@ const BarsSpinner = ({ size = "medium", color = "Basic", }) => {
             }}></div>))}
     </div>);
 };
-export default BarsSpinner;
+exports.default = BarsSpinner;

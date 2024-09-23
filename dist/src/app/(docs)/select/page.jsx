@@ -1,11 +1,39 @@
+"use strict";
 "use client";
-import React, { useState } from "react";
-import Select from "@components/Select/Select";
-import CodeBox from "@components/CodeBox";
-import SelectList from "@components/Select/SelectList";
-import SelectValueAdd from "@components/Select/SelectValueAdd";
+var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    var desc = Object.getOwnPropertyDescriptor(m, k);
+    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
+      desc = { enumerable: true, get: function() { return m[k]; } };
+    }
+    Object.defineProperty(o, k2, desc);
+}) : (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    o[k2] = m[k];
+}));
+var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {
+    Object.defineProperty(o, "default", { enumerable: true, value: v });
+}) : function(o, v) {
+    o["default"] = v;
+});
+var __importStar = (this && this.__importStar) || function (mod) {
+    if (mod && mod.__esModule) return mod;
+    var result = {};
+    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
+    __setModuleDefault(result, mod);
+    return result;
+};
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+const react_1 = __importStar(require("react"));
+const Select_1 = __importDefault(require("@components/Select/Select"));
+const CodeBox_1 = __importDefault(require("@components/CodeBox"));
+const SelectList_1 = __importDefault(require("@components/Select/SelectList"));
+const SelectValueAdd_1 = __importDefault(require("@components/Select/SelectValueAdd"));
 const SelectDocs = () => {
-    const [copied, setCopied] = useState({});
+    const [copied, setCopied] = (0, react_1.useState)({});
     const handleCopy = (index) => {
         setCopied((prev) => ({ ...prev, [index]: true }));
         setTimeout(() => setCopied((prev) => ({ ...prev, [index]: false })), 500);
@@ -25,14 +53,14 @@ const SelectDocs = () => {
       </p>
 
       <h2 className="text-[#2D3748]">1.1. Import</h2>
-      <CodeBox code={`import { Select } from '@components/Select';`} copyText={`import { Select } from '@components/Select';`} language="tsx" index={1} copied={copied} handleCopy={handleCopy}/>
+      <CodeBox_1.default code={`import { Select } from '@components/Select';`} copyText={`import { Select } from '@components/Select';`} language="tsx" index={1} copied={copied} handleCopy={handleCopy}/>
 
       <h2 className="text-[#2D3748]">1.2. Usage</h2>
       <p>기본 사용 예제는 아래와 같습니다:</p>
       <div className="my-7">
-        <Select option={["Option 1", "Option 2", "Option 3"]} placeholder="Select an option" color="gray" onChange={handleSelect} onClick={handleOptionClick}/>
+        <Select_1.default option={["Option 1", "Option 2", "Option 3"]} placeholder="Select an option" color="gray" onChange={handleSelect} onClick={handleOptionClick}/>
       </div>
-      <CodeBox code={`import Select from '@components/Select';
+      <CodeBox_1.default code={`import Select from '@components/Select';
 
 function Example() {
   return (
@@ -82,12 +110,12 @@ export default Example;`} language="tsx" index={2} copied={copied} handleCopy={h
         </li>
       </ul>
       <div className="my-7 flex items-center gap-4">
-        <Select option={["Option 1", "Option 2", "Option 3"]} placeholder="Select an option" color="red" onChange={handleSelect} onClick={handleOptionClick}/>
-        <Select option={["Option 1", "Option 2", "Option 3"]} placeholder="Select an option" color="blue" onChange={handleSelect} onClick={handleOptionClick}/>
-        <Select option={["Option 1", "Option 2", "Option 3"]} placeholder="Select an option" color="green" onChange={handleSelect} onClick={handleOptionClick}/>
-        <Select option={["Option 1", "Option 2", "Option 3"]} placeholder="Select an option" color="gray" onChange={handleSelect} onClick={handleOptionClick}/>
+        <Select_1.default option={["Option 1", "Option 2", "Option 3"]} placeholder="Select an option" color="red" onChange={handleSelect} onClick={handleOptionClick}/>
+        <Select_1.default option={["Option 1", "Option 2", "Option 3"]} placeholder="Select an option" color="blue" onChange={handleSelect} onClick={handleOptionClick}/>
+        <Select_1.default option={["Option 1", "Option 2", "Option 3"]} placeholder="Select an option" color="green" onChange={handleSelect} onClick={handleOptionClick}/>
+        <Select_1.default option={["Option 1", "Option 2", "Option 3"]} placeholder="Select an option" color="gray" onChange={handleSelect} onClick={handleOptionClick}/>
       </div>
-      <CodeBox code={`import Select from '@components/Select';
+      <CodeBox_1.default code={`import Select from '@components/Select';
 
 function Example() {
   return (
@@ -238,7 +266,7 @@ function Example() {
       </table>
 
       <h2 className="text-[#2D3748]">1.5. Full Example</h2>
-      <CodeBox code={`import Select from '@components/Select';
+      <CodeBox_1.default code={`import Select from '@components/Select';
 
 function Example() {
   return (
@@ -277,14 +305,14 @@ function Example() {
       </p>
 
       <h2 className="text-[#2D3748]">2.1. Import</h2>
-      <CodeBox code={`import { SelectList } from '@components/Select/SelectList';`} copyText={`import { SelectList } from '@components/Select/SelectList';`} language="tsx" index={4} copied={copied} handleCopy={handleCopy}/>
+      <CodeBox_1.default code={`import { SelectList } from '@components/Select/SelectList';`} copyText={`import { SelectList } from '@components/Select/SelectList';`} language="tsx" index={4} copied={copied} handleCopy={handleCopy}/>
 
       <h2 className="text-[#2D3748]">2.2. Usage</h2>
       <p>기본 사용 예제는 아래와 같습니다:</p>
       <div className="my-7">
-        <SelectList option={["Item 1", "Item 2", "Item 3", "Item 4"]}/>
+        <SelectList_1.default option={["Item 1", "Item 2", "Item 3", "Item 4"]}/>
       </div>
-      <CodeBox code={`import SelectList from '@components/Select/SelectList';
+      <CodeBox_1.default code={`import SelectList from '@components/Select/SelectList';
 
 function Example() {
   return (
@@ -363,7 +391,7 @@ export default Example;`} language="tsx" index={5} copied={copied} handleCopy={h
       </table>
 
       <h2 className="text-[#2D3748]">2.4. Full Example</h2>
-      <CodeBox code={`import SelectList from '@components/Select/SelectList';
+      <CodeBox_1.default code={`import SelectList from '@components/Select/SelectList';
 
 function Example() {
   return (
@@ -395,14 +423,14 @@ function Example() {
       </p>
 
       <h2 className="text-[#2D3748]">3.1. Import</h2>
-      <CodeBox code={`import { SelectValueAdd } from '@components/SelectValueAdd';`} copyText={`import { SelectValueAdd } from '@components/SelectValueAdd';`} language="tsx" index={3} copied={copied} handleCopy={handleCopy}/>
+      <CodeBox_1.default code={`import { SelectValueAdd } from '@components/SelectValueAdd';`} copyText={`import { SelectValueAdd } from '@components/SelectValueAdd';`} language="tsx" index={3} copied={copied} handleCopy={handleCopy}/>
 
       <h2 className="text-[#2D3748]">3.2. Usage</h2>
       <p>기본 사용 예제는 아래와 같습니다:</p>
       <div className="my-7">
-        <SelectValueAdd option={["Option 1", "Option 2", "Option 3", "Option 4"]} placeholder="Select an option" onChange={(selectedValues) => console.log(selectedValues)}/>
+        <SelectValueAdd_1.default option={["Option 1", "Option 2", "Option 3", "Option 4"]} placeholder="Select an option" onChange={(selectedValues) => console.log(selectedValues)}/>
       </div>
-      <CodeBox code={`import SelectValueAdd from '@components/SelectValueAdd';
+      <CodeBox_1.default code={`import SelectValueAdd from '@components/SelectValueAdd';
 
 function Example() {
   return (
@@ -497,7 +525,7 @@ export default Example;`} language="tsx" index={4} copied={copied} handleCopy={h
       </table>
 
       <h2 className="text-[#2D3748]">3.4. Full Example</h2>
-      <CodeBox code={`import SelectValueAdd from '@components/SelectValueAdd';
+      <CodeBox_1.default code={`import SelectValueAdd from '@components/SelectValueAdd';
 
 function Example() {
   return (
@@ -525,4 +553,4 @@ function Example() {
   );`} language="tsx" index={5} copied={copied} handleCopy={handleCopy}/>
     </div>);
 };
-export default SelectDocs;
+exports.default = SelectDocs;

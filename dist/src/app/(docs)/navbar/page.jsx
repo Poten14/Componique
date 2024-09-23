@@ -1,11 +1,39 @@
+"use strict";
 "use client";
-import React, { useState } from "react";
-import Logo from "../../../../public/images/logo.svg";
-import Navbar from "@components/Navbar/Navbar";
-import NavbarSearch from "@components/Navbar/NavbarSearch";
-import CodeBox from "@components/CodeBox";
+var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    var desc = Object.getOwnPropertyDescriptor(m, k);
+    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
+      desc = { enumerable: true, get: function() { return m[k]; } };
+    }
+    Object.defineProperty(o, k2, desc);
+}) : (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    o[k2] = m[k];
+}));
+var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {
+    Object.defineProperty(o, "default", { enumerable: true, value: v });
+}) : function(o, v) {
+    o["default"] = v;
+});
+var __importStar = (this && this.__importStar) || function (mod) {
+    if (mod && mod.__esModule) return mod;
+    var result = {};
+    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
+    __setModuleDefault(result, mod);
+    return result;
+};
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+const react_1 = __importStar(require("react"));
+const logo_svg_1 = __importDefault(require("../../../../public/images/logo.svg"));
+const Navbar_1 = __importDefault(require("@components/Navbar/Navbar"));
+const NavbarSearch_1 = __importDefault(require("@components/Navbar/NavbarSearch"));
+const CodeBox_1 = __importDefault(require("@components/CodeBox"));
 const NavbarDocs = () => {
-    const [copied, setCopied] = useState({});
+    const [copied, setCopied] = (0, react_1.useState)({});
     const handleCopy = (index) => {
         setCopied((prev) => ({ ...prev, [index]: true }));
         setTimeout(() => setCopied((prev) => ({ ...prev, [index]: false })), 500);
@@ -19,19 +47,19 @@ const NavbarDocs = () => {
       </p>
 
       <h2 className="text-[#2D3748]">1.1. Import</h2>
-      <CodeBox code={`import { Navbar } from '@components/Navbar';`} copyText={`import { Navbar } from '@components/Navbar';`} language="tsx" index={1} copied={copied} handleCopy={() => handleCopy(1)}/>
+      <CodeBox_1.default code={`import { Navbar } from '@components/Navbar';`} copyText={`import { Navbar } from '@components/Navbar';`} language="tsx" index={1} copied={copied} handleCopy={() => handleCopy(1)}/>
 
       <h2 className="text-[#2D3748]">1.2. Usage</h2>
       <p>기본 사용 예제는 아래와 같습니다:</p>
       <div className="my-7 space-y-4">
-        <Navbar logoName="Componique" logoSrc={Logo} links={[
+        <Navbar_1.default logoName="Componique" logoSrc={logo_svg_1.default} links={[
             { name: "Home", href: "/" },
             { name: "About", href: "/about" },
             { name: "Projects", href: "/projects" },
             { name: "Contact", href: "/contact" },
         ]}/>
       </div>
-      <CodeBox code={`import { Navbar } from '@components/Navbar';
+      <CodeBox_1.default code={`import { Navbar } from '@components/Navbar';
 function Example() {
   return (
     <Navbar
@@ -80,26 +108,26 @@ export default Example;`} language="tsx" index={2} copied={copied} handleCopy={(
         </li>
       </ul>
       <div className="my-7 space-y-4">
-        <Navbar logoName="Componique" logoSrc={Logo} size="small" links={[
+        <Navbar_1.default logoName="Componique" logoSrc={logo_svg_1.default} size="small" links={[
             { name: "Home", href: "/" },
             { name: "About", href: "/about" },
             { name: "Projects", href: "/projects" },
             { name: "Contact", href: "/contact" },
         ]}/>
-        <Navbar logoName="Componique" logoSrc={Logo} size="medium" links={[
+        <Navbar_1.default logoName="Componique" logoSrc={logo_svg_1.default} size="medium" links={[
             { name: "Home", href: "/" },
             { name: "About", href: "/about" },
             { name: "Projects", href: "/projects" },
             { name: "Contact", href: "/contact" },
         ]}/>
-        <Navbar logoName="Componique" logoSrc={Logo} size="large" links={[
+        <Navbar_1.default logoName="Componique" logoSrc={logo_svg_1.default} size="large" links={[
             { name: "Home", href: "/" },
             { name: "About", href: "/about" },
             { name: "Projects", href: "/projects" },
             { name: "Contact", href: "/contact" },
         ]}/>
       </div>
-      <CodeBox code={`import { Navbar } from '@components/Navbar';
+      <CodeBox_1.default code={`import { Navbar } from '@components/Navbar';
 function Example() {
   return (
     <>
@@ -162,26 +190,26 @@ export default Example;`} language="tsx" index={3} copied={copied} handleCopy={(
         </li>
       </ul>
       <div className="my-7 space-y-4">
-        <Navbar logoName="Componique" logoSrc={Logo} hoverColor="skyblue" links={[
+        <Navbar_1.default logoName="Componique" logoSrc={logo_svg_1.default} hoverColor="skyblue" links={[
             { name: "Home", href: "/" },
             { name: "About", href: "/about" },
             { name: "Projects", href: "/projects" },
             { name: "Contact", href: "/contact" },
         ]}/>
-        <Navbar logoName="Componique" logoSrc={Logo} hoverColor="blue" links={[
+        <Navbar_1.default logoName="Componique" logoSrc={logo_svg_1.default} hoverColor="blue" links={[
             { name: "Home", href: "/" },
             { name: "About", href: "/about" },
             { name: "Projects", href: "/projects" },
             { name: "Contact", href: "/contact" },
         ]}/>
-        <Navbar logoName="Componique" logoSrc={Logo} hoverColor="red" links={[
+        <Navbar_1.default logoName="Componique" logoSrc={logo_svg_1.default} hoverColor="red" links={[
             { name: "Home", href: "/" },
             { name: "About", href: "/about" },
             { name: "Projects", href: "/projects" },
             { name: "Contact", href: "/contact" },
         ]}/>
       </div>
-      <CodeBox code={`import { Navbar } from '@components/Navbar';
+      <CodeBox_1.default code={`import { Navbar } from '@components/Navbar';
 function Example() {
   return (
     <>
@@ -319,7 +347,7 @@ export default Example;`} language="tsx" index={4} copied={copied} handleCopy={(
       </table>
 
       <h2 className="text-[#2D3748]">1.6. Full Example</h2>
-      <CodeBox code={`import { Navbar } from '@components/Navbar';
+      <CodeBox_1.default code={`import { Navbar } from '@components/Navbar';
 import Logo from "@/images/logo.svg";
             
 function Example() {
@@ -376,14 +404,14 @@ export default Example;`} language="tsx" index={5} copied={copied} handleCopy={(
       </p>
 
       <h2 className="text-[#2D3748]">2.1. Import</h2>
-      <CodeBox code={`import NavbarSearch from '@components/NavbarSearch/NavbarSearch';`} copyText={`import NavbarSearch from '@components/NavbarSearch/NavbarSearch';`} language="tsx" index={6} copied={copied} handleCopy={() => handleCopy(6)}/>
+      <CodeBox_1.default code={`import NavbarSearch from '@components/NavbarSearch/NavbarSearch';`} copyText={`import NavbarSearch from '@components/NavbarSearch/NavbarSearch';`} language="tsx" index={6} copied={copied} handleCopy={() => handleCopy(6)}/>
 
       <h2 className="text-[#2D3748]">2.2. Usage</h2>
       <p>기본 사용 예제는 아래와 같습니다:</p>
       <div style={{ marginBottom: "20px" }}>
-        <NavbarSearch name="search" id="searchInput" maxLength={8} type="search" size="medium" placeholder="Search" onChange={(e) => console.log(e.target.value)}/>
+        <NavbarSearch_1.default name="search" id="searchInput" maxLength={8} type="search" size="medium" placeholder="Search" onChange={(e) => console.log(e.target.value)}/>
       </div>
-      <CodeBox code={`import NavbarSearch from '@components/NavbarSearch/NavbarSearch';
+      <CodeBox_1.default code={`import NavbarSearch from '@components/NavbarSearch/NavbarSearch';
   
 
 function Example() {
@@ -547,7 +575,7 @@ export default Example;`} language="tsx" index={7} copied={copied} handleCopy={(
       </table>
 
       <h2 className="text-[#2D3748]">2.4. Full Example</h2>
-      <CodeBox code={`import NavbarSearch from '@components/NavbarSearch/NavbarSearch';
+      <CodeBox_1.default code={`import NavbarSearch from '@components/NavbarSearch/NavbarSearch';
 
 function Example() {
   return (
@@ -584,4 +612,4 @@ function Example() {
 export default Example;`} language="tsx" index={8} copied={copied} handleCopy={() => handleCopy(8)}/>
     </div>);
 };
-export default NavbarDocs;
+exports.default = NavbarDocs;

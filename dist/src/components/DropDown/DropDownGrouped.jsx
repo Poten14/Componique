@@ -1,9 +1,14 @@
-import { useState } from "react";
-import Image from "next/image";
+"use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+const react_1 = require("react");
+const image_1 = __importDefault(require("next/image"));
 const DropDownGrouped = ({ options, defaultOption = "Select Option", onSelect, type = "basic", // 기본 스타일은 "basic"
  }) => {
-    const [isOpen, setIsOpen] = useState(false);
-    const [selectedOption, setSelectedOption] = useState("");
+    const [isOpen, setIsOpen] = (0, react_1.useState)(false);
+    const [selectedOption, setSelectedOption] = (0, react_1.useState)("");
     const toggleDropdown = () => {
         setIsOpen(!isOpen);
     };
@@ -33,7 +38,7 @@ const DropDownGrouped = ({ options, defaultOption = "Select Option", onSelect, t
         <span className={`font-bold ${selectedOption ? "text-black dark:text-white" : "text-slate-600"}`}>
           {selectedOption || defaultOption}
         </span>
-        <Image src={isOpen ? "/dropdown1.svg" : "/dropdown2.svg"} alt="dropdown" width={20} height={20}/>
+        <image_1.default src={isOpen ? "/dropdown1.svg" : "/dropdown2.svg"} alt="dropdown" width={20} height={20}/>
       </div>
       {isOpen && (<ul className="absolute z-10 w-full bg-white dark:bg-[#2A2E39]">
           {options.map(({ groupName, items }, index1) => (<li key={index1} className="p-2">
@@ -49,4 +54,4 @@ const DropDownGrouped = ({ options, defaultOption = "Select Option", onSelect, t
         </ul>)}
     </div>);
 };
-export default DropDownGrouped;
+exports.default = DropDownGrouped;

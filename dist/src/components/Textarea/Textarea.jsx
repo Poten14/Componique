@@ -1,3 +1,5 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 const sizeClasses = {
     xs: "w-1/4 text-xs",
     small: "w-1/3 text-sm",
@@ -25,4 +27,4 @@ const Textarea = ({ label, id, color = "skyblue", size = "large", resize = "vert
       <textarea id={id} {...props} className={`text-gray-900 ${sizeClasses[size]} block rounded-lg border p-2 focus:outline-none dark:border-[#2A6490] dark:bg-transparent ${colorClasses[color]} ${resizeClasses[resize]} ${className}`}></textarea>
     </>);
 };
-export default Textarea;
+exports.default = Textarea;

@@ -1,7 +1,9 @@
+"use strict";
 "use client";
-import { useState } from "react";
+Object.defineProperty(exports, "__esModule", { value: true });
+const react_1 = require("react");
 const TextareaValue = ({ ...props }) => {
-    const [textvalue, setTextValue] = useState("");
+    const [textvalue, setTextValue] = (0, react_1.useState)("");
     const handleChange = (e) => {
         setTextValue(e.target.value);
     };
@@ -10,4 +12,4 @@ const TextareaValue = ({ ...props }) => {
       <p className="text-default-500 text-small">Textarea value: {textvalue}</p>
     </>);
 };
-export default TextareaValue;
+exports.default = TextareaValue;

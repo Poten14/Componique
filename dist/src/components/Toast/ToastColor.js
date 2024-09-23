@@ -1,4 +1,7 @@
-export const bgColors = {
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.borderColors = exports.bgColors = void 0;
+exports.bgColors = {
     primary: "bg-Primary",
     secondary: "bg-Secondary",
     success: "bg-Success",
@@ -16,7 +19,7 @@ export const bgColors = {
     gray: "bg-gray",
     black: "bg-black",
 };
-export const borderColors = {
+exports.borderColors = {
     primary: "border-Primary !border-2 !bg-white dark:!bg-[#333742]",
     secondary: "border-Secondary !border-2 !bg-white dark:!bg-[#333742]",
     success: "border-Success !border-2 !bg-white dark:!bg-[#333742]",

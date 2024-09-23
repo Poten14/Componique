@@ -1,9 +1,14 @@
+"use strict";
 "use client";
-import Autocomplete from "@components/Autocomplete";
-import Image from "next/image";
-import { useState, useEffect } from "react";
-import Content from "@components/Content/page";
-import SideBar from "@components/Layout/SideBar";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+const Autocomplete_1 = __importDefault(require("@components/Autocomplete"));
+const image_1 = __importDefault(require("next/image"));
+const react_1 = require("react");
+const page_1 = __importDefault(require("@components/Content/page"));
+const SideBar_1 = __importDefault(require("@components/Layout/SideBar"));
 const options = [
     { label: "Form", value: "Button" },
     { label: "Form", value: "Input" },
@@ -39,23 +44,23 @@ const options = [
     { label: "Navigation", value: "Breadcrumb" },
 ];
 const Page = () => {
-    const [selectedOption, setSelectedOption] = useState("");
-    const [recentSearches, setRecentSearches] = useState([]);
-    const [isDarkMode, setIsDarkMode] = useState(false);
-    useEffect(() => {
+    const [selectedOption, setSelectedOption] = (0, react_1.useState)("");
+    const [recentSearches, setRecentSearches] = (0, react_1.useState)([]);
+    const [isDarkMode, setIsDarkMode] = (0, react_1.useState)(false);
+    (0, react_1.useEffect)(() => {
         const storedSearches = sessionStorage.getItem("recentSearches");
         if (storedSearches) {
             setRecentSearches(JSON.parse(storedSearches));
         }
     }, []);
     // 메인 페이지가 렌더링될 때 배경 이미지 클래스를 추가하고, 페이지를 떠날 때 클래스를 제거합니다.
-    useEffect(() => {
+    (0, react_1.useEffect)(() => {
         document.body.classList.add("main-page");
         return () => {
             document.body.classList.remove("main-page");
         };
     }, []);
-    useEffect(() => {
+    (0, react_1.useEffect)(() => {
         // 다크 모드 상태를 확인하고 설정
         const checkDarkMode = () => {
             setIsDarkMode(document.documentElement.classList.contains("dark"));
@@ -82,15 +87,15 @@ const Page = () => {
     const logoSrc = isDarkMode ? "/ComponiqueDark.svg" : "/Componique.svg";
     return (<div>
       <section className="fixed z-0 mt-[16px] hidden h-[calc(100%-120px)] w-[250px] bg-white dark:bg-Dark xl:block">
-        <SideBar />
+        <SideBar_1.default />
       </section>
       <div className="main-wrapper xl:ml-[300px]">
         <div className="mt-16 flex flex-col items-center justify-center">
           <div className="mb-8 w-full max-w-[440px]">
-            <Image src={logoSrc} alt="logo" width={440} height={72}/>
+            <image_1.default src={logoSrc} alt="logo" width={440} height={72}/>
           </div>
           <div className="w-full max-w-[740px] dark:text-white">
-            <Autocomplete options={options} placeholder="Search for a Component..." onSelect={handleSelect}/>
+            <Autocomplete_1.default options={options} placeholder="Search for a Component..." onSelect={handleSelect}/>
           </div>
           <div className="mt-4">
             <div className="flex flex-wrap gap-2">
@@ -100,8 +105,8 @@ const Page = () => {
             </div>
           </div>
         </div>
-        <Content />
+        <page_1.default />
       </div>
     </div>);
 };
-export default Page;
+exports.default = Page;

@@ -1,11 +1,39 @@
+"use strict";
 'use client';
-import React, { useState } from 'react';
-import RatingStar from '@components/Rating/RatingStar';
-import RatingNumSlider from '@components/Rating/RatingNumSlider';
-import RatingFeel from '@components/Rating/RatingFeel';
-import CodeBox from '@components/CodeBox';
+var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    var desc = Object.getOwnPropertyDescriptor(m, k);
+    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
+      desc = { enumerable: true, get: function() { return m[k]; } };
+    }
+    Object.defineProperty(o, k2, desc);
+}) : (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    o[k2] = m[k];
+}));
+var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {
+    Object.defineProperty(o, "default", { enumerable: true, value: v });
+}) : function(o, v) {
+    o["default"] = v;
+});
+var __importStar = (this && this.__importStar) || function (mod) {
+    if (mod && mod.__esModule) return mod;
+    var result = {};
+    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
+    __setModuleDefault(result, mod);
+    return result;
+};
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+const react_1 = __importStar(require("react"));
+const RatingStar_1 = __importDefault(require("@components/Rating/RatingStar"));
+const RatingNumSlider_1 = __importDefault(require("@components/Rating/RatingNumSlider"));
+const RatingFeel_1 = __importDefault(require("@components/Rating/RatingFeel"));
+const CodeBox_1 = __importDefault(require("@components/CodeBox"));
 const RatingDocs = () => {
-    const [copied, setCopied] = useState({});
+    const [copied, setCopied] = (0, react_1.useState)({});
     const handleCopy = (index) => {
         setCopied((prev) => ({ ...prev, [index]: true }));
         setTimeout(() => setCopied((prev) => ({ ...prev, [index]: false })), 500);
@@ -21,14 +49,14 @@ const RatingDocs = () => {
         </p>
 
         <h2 className="text-[#2D3748] dark:text-white">1.1. Import</h2>
-        <CodeBox code={`import RatingStar from './components/RatingStar';`} copyText={`import RatingStar from './components/RatingStar';`} language="tsx" index={1} copied={copied} handleCopy={handleCopy}/>
+        <CodeBox_1.default code={`import RatingStar from './components/RatingStar';`} copyText={`import RatingStar from './components/RatingStar';`} language="tsx" index={1} copied={copied} handleCopy={handleCopy}/>
 
         <h2 className="text-[#2D3748] dark:text-white">1.2. Usage</h2>
         <p>기본 사용 예제는 아래와 같습니다:</p>
         <div className="my-7">
-          <RatingStar />
+          <RatingStar_1.default />
         </div>
-        <CodeBox code={`import RatingStar from './components/RatingStar';
+        <CodeBox_1.default code={`import RatingStar from './components/RatingStar';
 
 function Example() {
   return <RatingStar />;
@@ -95,14 +123,14 @@ export default Example;
         </p>
 
         <h2 className="text-[#2D3748] dark:text-white">2.1. Import</h2>
-        <CodeBox code={`import RatingNumSlider from './components/RatingNumSlider';`} copyText={`import RatingNumSlider from './components/RatingNumSlider';`} language="tsx" index={3} copied={copied} handleCopy={handleCopy}/>
+        <CodeBox_1.default code={`import RatingNumSlider from './components/RatingNumSlider';`} copyText={`import RatingNumSlider from './components/RatingNumSlider';`} language="tsx" index={3} copied={copied} handleCopy={handleCopy}/>
 
         <h2 className="text-[#2D3748] dark:text-white">2.2. Usage</h2>
         <p>기본 사용 예제는 아래와 같습니다:</p>
         <div className="my-7">
-          <RatingNumSlider />
+          <RatingNumSlider_1.default />
         </div>
-        <CodeBox code={`import RatingNumSlider from './components/RatingNumSlider';
+        <CodeBox_1.default code={`import RatingNumSlider from './components/RatingNumSlider';
 
 function Example() {
   return <RatingNumSlider />;
@@ -193,14 +221,14 @@ export default Example;
         </p>
 
         <h2 className="text-[#2D3748] dark:text-white">3.1. Import</h2>
-        <CodeBox code={`import RatingFeel from './components/RatingFeel';`} copyText={`import RatingFeel from './components/RatingFeel';`} language="tsx" index={5} copied={copied} handleCopy={handleCopy}/>
+        <CodeBox_1.default code={`import RatingFeel from './components/RatingFeel';`} copyText={`import RatingFeel from './components/RatingFeel';`} language="tsx" index={5} copied={copied} handleCopy={handleCopy}/>
 
         <h2 className="text-[#2D3748] dark:text-white">3.2. Usage</h2>
         <p>기본 사용 예제는 아래와 같습니다:</p>
         <div className="my-7">
-          <RatingFeel />
+          <RatingFeel_1.default />
         </div>
-        <CodeBox code={`import RatingFeel from './components/RatingFeel';
+        <CodeBox_1.default code={`import RatingFeel from './components/RatingFeel';
 
 function Example() {
   return <RatingFeel />;
@@ -247,4 +275,4 @@ export default Example;
       </div>
     </div>);
 };
-export default RatingDocs;
+exports.default = RatingDocs;

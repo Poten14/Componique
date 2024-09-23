@@ -1,13 +1,18 @@
-import { useState, useRef, useCallback, useEffect } from "react";
-import BasicSpinner from "@components/Spinner/BasicSpinner";
+"use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+const react_1 = require("react");
+const BasicSpinner_1 = __importDefault(require("@components/Spinner/BasicSpinner"));
 const InfiniteScrollBasic = ({ content }) => {
-    const [items, setItems] = useState([]); // txt파일을 문장별로 저장
-    const [page, setPage] = useState(1); // 현재 로드된 페이지 번호 저장
-    const [isLoading, setIsLoading] = useState(false); // 데이터를 로드중인지, 초기는 로드X
-    const [hasMore, setHasMore] = useState(true); // 추가로 로드할 내용이 있으면 true로 변경
-    const loader = useRef(null); // 렌더링될때 새로운 문장을 로드하도록 설정
+    const [items, setItems] = (0, react_1.useState)([]); // txt파일을 문장별로 저장
+    const [page, setPage] = (0, react_1.useState)(1); // 현재 로드된 페이지 번호 저장
+    const [isLoading, setIsLoading] = (0, react_1.useState)(false); // 데이터를 로드중인지, 초기는 로드X
+    const [hasMore, setHasMore] = (0, react_1.useState)(true); // 추가로 로드할 내용이 있으면 true로 변경
+    const loader = (0, react_1.useRef)(null); // 렌더링될때 새로운 문장을 로드하도록 설정
     const itemsPerPage = 1; // 문장별로 나누고 1문장씩 보여주기
-    const loadMoreItems = useCallback(() => {
+    const loadMoreItems = (0, react_1.useCallback)(() => {
         if (isLoading || !hasMore)
             return; // 로딩중이거나 더 로드할 데이터가 없을시 return
         setIsLoading(true); // 데이터 로드 중임을 표시
@@ -30,7 +35,7 @@ const InfiniteScrollBasic = ({ content }) => {
             setIsLoading(false);
         }, 200);
     }, [page, content, isLoading, hasMore]);
-    useEffect(() => {
+    (0, react_1.useEffect)(() => {
         const options = {
             root: null, // 관찰 기준요소 설정
             rootMargin: "20px", // 20픽셀 남으면 렌더링 시작
@@ -58,9 +63,9 @@ const InfiniteScrollBasic = ({ content }) => {
           </li>))}
       </ul>
       <div ref={loader} className="py-10 text-center">
-        {isLoading && hasMore ? (<BasicSpinner /> // 로딩 중일 때 스피너 표시
+        {isLoading && hasMore ? (<BasicSpinner_1.default /> // 로딩 중일 때 스피너 표시
         ) : hasMore ? ("Scroll down to load more") : ("No more items to load")}
       </div>
     </div>);
 };
-export default InfiniteScrollBasic;
+exports.default = InfiniteScrollBasic;

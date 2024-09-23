@@ -1,7 +1,9 @@
+"use strict";
 "use client";
-import { useState } from "react";
+Object.defineProperty(exports, "__esModule", { value: true });
+const react_1 = require("react");
 const RatingNumSlider = ({ min = 1, max = 10, step = 1, onRatingChange, }) => {
-    const [rating, setRating] = useState(0);
+    const [rating, setRating] = (0, react_1.useState)(0);
     const handleChange = (e) => {
         const value = Number(e.target.value);
         setRating(value);
@@ -45,4 +47,4 @@ const RatingNumSlider = ({ min = 1, max = 10, step = 1, onRatingChange, }) => {
       `}</style>
     </div>);
 };
-export default RatingNumSlider;
+exports.default = RatingNumSlider;

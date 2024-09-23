@@ -1,11 +1,16 @@
-import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
-import { CopyToClipboard } from "react-copy-to-clipboard";
-import Button from "./Button/Button";
-import { vscDarkPlus, } from "react-syntax-highlighter/dist/esm/styles/prism";
-import { useEffect, useState } from "react";
+"use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+const react_syntax_highlighter_1 = require("react-syntax-highlighter");
+const react_copy_to_clipboard_1 = require("react-copy-to-clipboard");
+const Button_1 = __importDefault(require("./Button/Button"));
+const prism_1 = require("react-syntax-highlighter/dist/esm/styles/prism");
+const react_1 = require("react");
 const CodeBox = ({ code, copyText, language, index, copied, handleCopy, }) => {
-    const [isDarkMode, setIsDarkMode] = useState(false); // 다크 모드 상태 추가
-    useEffect(() => {
+    const [isDarkMode, setIsDarkMode] = (0, react_1.useState)(false); // 다크 모드 상태 추가
+    (0, react_1.useEffect)(() => {
         // 다크 모드 상태 체크 함수
         const checkDarkMode = () => {
             const darkMode = document.documentElement.classList.contains("dark");
@@ -24,12 +29,12 @@ const CodeBox = ({ code, copyText, language, index, copied, handleCopy, }) => {
         };
     }, []);
     return (<div className="relative">
-      <CopyToClipboard text={copyText} onCopy={() => handleCopy(index)}>
-        <Button icon={copied[index] ? "icon-check" : undefined} className="copyButton dark:bg-[#2A6490]" iconColor={copied[index] ? "green" : "white"}>
+      <react_copy_to_clipboard_1.CopyToClipboard text={copyText} onCopy={() => handleCopy(index)}>
+        <Button_1.default icon={copied[index] ? "icon-check" : undefined} className="copyButton dark:bg-[#2A6490]" iconColor={copied[index] ? "green" : "white"}>
           {copied[index] ? "Copied!" : "Copy"}
-        </Button>
-      </CopyToClipboard>
-      <SyntaxHighlighter language={language} style={isDarkMode ? vscDarkPlus : undefined} customStyle={isDarkMode
+        </Button_1.default>
+      </react_copy_to_clipboard_1.CopyToClipboard>
+      <react_syntax_highlighter_1.Prism language={language} style={isDarkMode ? prism_1.vscDarkPlus : undefined} customStyle={isDarkMode
             ? { backgroundColor: "#2A2E39" }
             : {
                 backgroundColor: "#F8F8F8",
@@ -37,7 +42,7 @@ const CodeBox = ({ code, copyText, language, index, copied, handleCopy, }) => {
                 borderRadius: "0.5rem",
             }}>
         {code}
-      </SyntaxHighlighter>
+      </react_syntax_highlighter_1.Prism>
     </div>);
 };
-export default CodeBox;
+exports.default = CodeBox;

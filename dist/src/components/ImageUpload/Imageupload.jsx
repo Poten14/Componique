@@ -1,15 +1,43 @@
+"use strict";
 "use client";
-import React, { useState } from "react";
-import { v4 as uuidv4 } from "uuid";
-import { useEffect } from "react";
-import Image from "next/image";
-import Icon from "@components/Icon/Icon";
+var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    var desc = Object.getOwnPropertyDescriptor(m, k);
+    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
+      desc = { enumerable: true, get: function() { return m[k]; } };
+    }
+    Object.defineProperty(o, k2, desc);
+}) : (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    o[k2] = m[k];
+}));
+var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {
+    Object.defineProperty(o, "default", { enumerable: true, value: v });
+}) : function(o, v) {
+    o["default"] = v;
+});
+var __importStar = (this && this.__importStar) || function (mod) {
+    if (mod && mod.__esModule) return mod;
+    var result = {};
+    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
+    __setModuleDefault(result, mod);
+    return result;
+};
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+const react_1 = __importStar(require("react"));
+const uuid_1 = require("uuid");
+const react_2 = require("react");
+const image_1 = __importDefault(require("next/image"));
+const Icon_1 = __importDefault(require("@components/Icon/Icon"));
 const ImageUpload = ({ shape = "circle", size = "medium", color = "basic", text, variant = "solid", className, icon = "icon-plus", iconSize = "medium", iconColor = "currentColor", iconPosition = "top", onImageSelect, }) => {
-    const [previewImage, setPreviewImage] = useState(null);
-    const [id, setId] = useState("");
+    const [previewImage, setPreviewImage] = (0, react_1.useState)(null);
+    const [id, setId] = (0, react_1.useState)("");
     // previewImage가 변경될 때마다 ID 재생성
-    useEffect(() => {
-        setId(uuidv4());
+    (0, react_2.useEffect)(() => {
+        setId((0, uuid_1.v4)());
     }, [previewImage]);
     const ImageUploadSize = size === "small"
         ? "w-16  h-16"
@@ -89,8 +117,8 @@ const ImageUpload = ({ shape = "circle", size = "medium", color = "basic", text,
     return (<>
       <input type="file" accept="image/*" onChange={onChangeImageHandler} className="hidden" id={id}/>
       <label htmlFor={id} className={`relative inline-block cursor-pointer text-center ${shape === "rectangle" ? "rounded-lg" : "rounded-full"} ${ImageUploadSize} ${ImageVariant} ${className || ""}`}>
-        {previewImage ? (<Image src={previewImage} alt="Preview" fill className={`flex h-full w-full object-cover ${shape === "rectangle" ? "rounded-lg" : "rounded-full"}`}/>) : (<div className={`flex h-full w-full items-center justify-center ${imageUploadIconPosition}`}>
-            {icon && (<Icon name={icon} size={imageuploadIconSIze} color={iconColor}/>)}
+        {previewImage ? (<image_1.default src={previewImage} alt="Preview" fill className={`flex h-full w-full object-cover ${shape === "rectangle" ? "rounded-lg" : "rounded-full"}`}/>) : (<div className={`flex h-full w-full items-center justify-center ${imageUploadIconPosition}`}>
+            {icon && (<Icon_1.default name={icon} size={imageuploadIconSIze} color={iconColor}/>)}
             {text && (<span className="max-w-full whitespace-normal break-words">
                 {text}
               </span>)}
@@ -98,4 +126,4 @@ const ImageUpload = ({ shape = "circle", size = "medium", color = "basic", text,
       </label>
     </>);
 };
-export default ImageUpload;
+exports.default = ImageUpload;

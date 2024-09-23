@@ -1,15 +1,43 @@
+"use strict";
 "use client";
-import React, { useState } from "react";
-import CodeBox from "@components/CodeBox";
-import Spinner from "@components/Spinner/BasicSpinner";
-import BarsSpinner from "@components/Spinner/BarsSpinner";
-import SquareSpinner from "@components/Spinner/SquareSpinner";
-import PacManSpinner from "@components/Spinner/PacManSpinner";
-import FullScreenSpinner from "@components/Spinner/ FullScreenSpinner";
-import Button from "@components/Button/Button";
+var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    var desc = Object.getOwnPropertyDescriptor(m, k);
+    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
+      desc = { enumerable: true, get: function() { return m[k]; } };
+    }
+    Object.defineProperty(o, k2, desc);
+}) : (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    o[k2] = m[k];
+}));
+var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {
+    Object.defineProperty(o, "default", { enumerable: true, value: v });
+}) : function(o, v) {
+    o["default"] = v;
+});
+var __importStar = (this && this.__importStar) || function (mod) {
+    if (mod && mod.__esModule) return mod;
+    var result = {};
+    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
+    __setModuleDefault(result, mod);
+    return result;
+};
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+const react_1 = __importStar(require("react"));
+const CodeBox_1 = __importDefault(require("@components/CodeBox"));
+const BasicSpinner_1 = __importDefault(require("@components/Spinner/BasicSpinner"));
+const BarsSpinner_1 = __importDefault(require("@components/Spinner/BarsSpinner"));
+const SquareSpinner_1 = __importDefault(require("@components/Spinner/SquareSpinner"));
+const PacManSpinner_1 = __importDefault(require("@components/Spinner/PacManSpinner"));
+const _FullScreenSpinner_1 = __importDefault(require("@components/Spinner/ FullScreenSpinner"));
+const Button_1 = __importDefault(require("@components/Button/Button"));
 const SpinnerDoc = () => {
-    const [copied, setCopied] = useState({});
-    const [spinning, setSpinning] = useState({});
+    const [copied, setCopied] = (0, react_1.useState)({});
+    const [spinning, setSpinning] = (0, react_1.useState)({});
     const handleCopy = (index) => {
         setCopied((prev) => ({ ...prev, [index]: true }));
         setTimeout(() => setCopied((prev) => ({ ...prev, [index]: false })), 500);
@@ -29,16 +57,16 @@ const SpinnerDoc = () => {
       </p>
 
       <h2 className="text-[#2D3748]"> 1.1. Import</h2>
-      <CodeBox code={`import { Spinner } from '@componique/react';`} copyText={`import { Spinner } from '@components/Spinner';`} language="tsx" index={1} copied={copied} handleCopy={handleCopy}/>
+      <CodeBox_1.default code={`import { Spinner } from '@componique/react';`} copyText={`import { Spinner } from '@components/Spinner';`} language="tsx" index={1} copied={copied} handleCopy={handleCopy}/>
 
       <h2 className="text-[#2D3748]">1.2. Usage</h2>
       <p>
         아래는 <code>Spinner</code> 컴포넌트의 기본 사용 예제입니다:
       </p>
       <div className="my-7 space-y-4">
-        <Spinner />
+        <BasicSpinner_1.default />
       </div>
-      <CodeBox code={`import { Spinner } from '@components/Spinner';
+      <CodeBox_1.default code={`import { Spinner } from '@components/Spinner';
 
 function Example() {
   return <Spinner />;
@@ -75,13 +103,13 @@ export default Example;`} language="tsx" index={2} copied={copied} handleCopy={h
         </li>
       </ul>
       <div className="my-7 space-x-3 space-y-4">
-        <Spinner size="xs"/>
-        <Spinner size="small"/>
-        <Spinner size="medium"/>
-        <Spinner size="large"/>
-        <Spinner size="xl"/>
+        <BasicSpinner_1.default size="xs"/>
+        <BasicSpinner_1.default size="small"/>
+        <BasicSpinner_1.default size="medium"/>
+        <BasicSpinner_1.default size="large"/>
+        <BasicSpinner_1.default size="xl"/>
       </div>
-      <CodeBox code={`import { Spinner } from '@components/Spinner';
+      <CodeBox_1.default code={`import { Spinner } from '@components/Spinner';
 
 function Example() {
   return (
@@ -143,16 +171,16 @@ export default Example;`} language="tsx" index={3} copied={copied} handleCopy={h
         </li>
       </ul>
       <div className="my-7 space-x-3 space-y-4">
-        <Spinner color="Basic"/>
-        <Spinner color="Primary"/>
-        <Spinner color="gray"/>
-        <Spinner color="Secondary"/>
-        <Spinner color="Success"/>
-        <Spinner color="Warning"/>
-        <Spinner color="Danger"/>
-        <Spinner color="White"/>
+        <BasicSpinner_1.default color="Basic"/>
+        <BasicSpinner_1.default color="Primary"/>
+        <BasicSpinner_1.default color="gray"/>
+        <BasicSpinner_1.default color="Secondary"/>
+        <BasicSpinner_1.default color="Success"/>
+        <BasicSpinner_1.default color="Warning"/>
+        <BasicSpinner_1.default color="Danger"/>
+        <BasicSpinner_1.default color="White"/>
       </div>
-      <CodeBox code={`import { Spinner } from '@components/Spinner';
+      <CodeBox_1.default code={`import { Spinner } from '@components/Spinner';
 
 function Example() {
   return (
@@ -205,12 +233,12 @@ export default Example;`} language="tsx" index={4} copied={copied} handleCopy={h
         </li>
       </ul>
       <div className="my-7 space-x-3 space-y-4">
-        <Spinner speed="slow"/>
-        <Spinner speed="medium"/>
-        <Spinner speed="fast"/>
+        <BasicSpinner_1.default speed="slow"/>
+        <BasicSpinner_1.default speed="medium"/>
+        <BasicSpinner_1.default speed="fast"/>
       </div>
 
-      <CodeBox code={`import { Spinner } from '@components/Spinner';
+      <CodeBox_1.default code={`import { Spinner } from '@components/Spinner';
 
 function Example() {
   return (
@@ -293,7 +321,7 @@ export default Example;`} language="tsx" index={5} copied={copied} handleCopy={h
       </table>
 
       <h2 className="text-[#2D3748]">1.7. Full Example</h2>
-      <CodeBox code={`import { Spinner } from '@components/Spinner';
+      <CodeBox_1.default code={`import { Spinner } from '@components/Spinner';
 
 function Example() {
   return (
@@ -322,7 +350,7 @@ export default Example;`} language="tsx" index={6} copied={copied} handleCopy={h
       </p>
 
       <h2 className="text-[#2D3748]">2.1. Import</h2>
-      <CodeBox code={`import { BarsSpinner } from '@componique/react';`} copyText={`import { BarsSpinner } from '@components/Spinners/BarsSpinner';`} language="tsx" index={1} copied={copied} handleCopy={handleCopy}/>
+      <CodeBox_1.default code={`import { BarsSpinner } from '@componique/react';`} copyText={`import { BarsSpinner } from '@components/Spinners/BarsSpinner';`} language="tsx" index={1} copied={copied} handleCopy={handleCopy}/>
 
       <h2 className="text-[#2D3748]">2.2. Usage</h2>
       <p>
@@ -330,9 +358,9 @@ export default Example;`} language="tsx" index={6} copied={copied} handleCopy={h
         아래는 <code>BarsSpinner</code> 컴포넌트의 기본 사용 예제입니다:
       </p>
       <div className="my-7 space-x-3 space-y-4">
-        <BarsSpinner />
+        <BarsSpinner_1.default />
       </div>
-      <CodeBox code={`import { BarsSpinner } from '@components/Spinners/BarsSpinner';
+      <CodeBox_1.default code={`import { BarsSpinner } from '@components/Spinners/BarsSpinner';
 
 function Example() {
   return <BarsSpinner />;
@@ -371,13 +399,13 @@ export default Example;`} language="tsx" index={2} copied={copied} handleCopy={h
         </li>
       </ul>
       <div className="my-7 space-y-4">
-        <BarsSpinner size="xs"/>
-        <BarsSpinner size="small"/>
-        <BarsSpinner size="medium"/>
-        <BarsSpinner size="large"/>
-        <BarsSpinner size="xl"/>
+        <BarsSpinner_1.default size="xs"/>
+        <BarsSpinner_1.default size="small"/>
+        <BarsSpinner_1.default size="medium"/>
+        <BarsSpinner_1.default size="large"/>
+        <BarsSpinner_1.default size="xl"/>
       </div>
-      <CodeBox code={`import { BarsSpinner } from '@components/Spinners/BarsSpinner';
+      <CodeBox_1.default code={`import { BarsSpinner } from '@components/Spinners/BarsSpinner';
 
 function Example() {
   return (
@@ -440,7 +468,7 @@ export default Example;`} language="tsx" index={3} copied={copied} handleCopy={h
           <code className="bg-white text-Gray">White</code>: 흰색
         </li>
       </ul>
-      <CodeBox code={`import { BarsSpinner } from '@components/Spinners/BarsSpinner';
+      <CodeBox_1.default code={`import { BarsSpinner } from '@components/Spinners/BarsSpinner';
 
 function Example() {
   return (
@@ -521,7 +549,7 @@ export default Example;`} language="tsx" index={4} copied={copied} handleCopy={h
       </table>
 
       <h2 className="text-[#2D3748]">2.6. Full Example</h2>
-      <CodeBox code={`import { BarsSpinner } from '@components/Spinners/BarsSpinner';
+      <CodeBox_1.default code={`import { BarsSpinner } from '@components/Spinners/BarsSpinner';
 
 function Example() {
   return (
@@ -551,7 +579,7 @@ export default Example;`} language="tsx" index={5} copied={copied} handleCopy={h
       </p>
 
       <h2 className="text-[#2D3748]">3.1. Import</h2>
-      <CodeBox code={`import { SquareSpinner } from '@componique/react';`} copyText={`import { SquareSpinner } from '@components/Spinners/SquareSpinner';`} language="tsx" index={1} copied={copied} handleCopy={handleCopy}/>
+      <CodeBox_1.default code={`import { SquareSpinner } from '@componique/react';`} copyText={`import { SquareSpinner } from '@components/Spinners/SquareSpinner';`} language="tsx" index={1} copied={copied} handleCopy={handleCopy}/>
 
       <h2 className="text-[#2D3748]">3.2. Usage</h2>
       <p>
@@ -559,9 +587,9 @@ export default Example;`} language="tsx" index={5} copied={copied} handleCopy={h
         아래는 <code>SquareSpinner</code> 컴포넌트의 기본 사용 예제입니다:
       </p>
       <div className="my-7 space-y-4">
-        <SquareSpinner />
+        <SquareSpinner_1.default />
       </div>
-      <CodeBox code={`import { SquareSpinner } from '@components/Spinners/SquareSpinner';
+      <CodeBox_1.default code={`import { SquareSpinner } from '@components/Spinners/SquareSpinner';
 
 function Example() {
   return <SquareSpinner />;
@@ -600,13 +628,13 @@ export default Example;`} language="tsx" index={2} copied={copied} handleCopy={h
         </li>
       </ul>
       <div className="my-7 space-y-4">
-        <SquareSpinner size="xs"/>
-        <SquareSpinner size="small"/>
-        <SquareSpinner size="medium"/>
-        <SquareSpinner size="large"/>
-        <SquareSpinner size="xl"/>
+        <SquareSpinner_1.default size="xs"/>
+        <SquareSpinner_1.default size="small"/>
+        <SquareSpinner_1.default size="medium"/>
+        <SquareSpinner_1.default size="large"/>
+        <SquareSpinner_1.default size="xl"/>
       </div>
-      <CodeBox code={`import { SquareSpinner } from '@components/Spinners/SquareSpinner';
+      <CodeBox_1.default code={`import { SquareSpinner } from '@components/Spinners/SquareSpinner';
 
 function Example() {
   return (
@@ -669,7 +697,7 @@ export default Example;`} language="tsx" index={3} copied={copied} handleCopy={h
           <code className="bg-white text-Gray">White</code>: 흰색
         </li>
       </ul>
-      <CodeBox code={`import { SquareSpinner } from '@components/Spinners/SquareSpinner';
+      <CodeBox_1.default code={`import { SquareSpinner } from '@components/Spinners/SquareSpinner';
 
 function Example() {
   return (
@@ -724,11 +752,11 @@ export default Example;`} language="tsx" index={4} copied={copied} handleCopy={h
         </li>
       </ul>
       <div className="my-7 space-y-4">
-        <SquareSpinner speed="slow"/>
-        <SquareSpinner speed="medium"/>
-        <SquareSpinner speed="fast"/>
+        <SquareSpinner_1.default speed="slow"/>
+        <SquareSpinner_1.default speed="medium"/>
+        <SquareSpinner_1.default speed="fast"/>
       </div>
-      <CodeBox code={`import { SquareSpinner } from '@components/Spinners/SquareSpinner';
+      <CodeBox_1.default code={`import { SquareSpinner } from '@components/Spinners/SquareSpinner';
 
 function Example() {
   return (
@@ -811,7 +839,7 @@ export default Example;`} language="tsx" index={5} copied={copied} handleCopy={h
       </table>
 
       <h2 className="text-[#2D3748]">3.7. Full Example</h2>
-      <CodeBox code={`import { SquareSpinner } from '@components/Spinners/SquareSpinner';
+      <CodeBox_1.default code={`import { SquareSpinner } from '@components/Spinners/SquareSpinner';
 
 function Example() {
   return (
@@ -841,7 +869,7 @@ export default Example;`} language="tsx" index={6} copied={copied} handleCopy={h
       </p>
 
       <h2 className="text-[#2D3748]">4.1. Import</h2>
-      <CodeBox code={`import { PacManSpinner } from '@componique/react';`} copyText={`import { PacManSpinner } from '@components/Spinners/PacManSpinner';`} language="tsx" index={1} copied={copied} handleCopy={handleCopy}/>
+      <CodeBox_1.default code={`import { PacManSpinner } from '@componique/react';`} copyText={`import { PacManSpinner } from '@components/Spinners/PacManSpinner';`} language="tsx" index={1} copied={copied} handleCopy={handleCopy}/>
 
       <h2 className="text-[#2D3748]">4.2. Usage</h2>
       <p>
@@ -849,9 +877,9 @@ export default Example;`} language="tsx" index={6} copied={copied} handleCopy={h
         아래는 <code>PacManSpinner</code> 컴포넌트의 기본 사용 예제입니다:
       </p>
       <div className="my-7 space-y-4">
-        <PacManSpinner />
+        <PacManSpinner_1.default />
       </div>
-      <CodeBox code={`import { PacManSpinner } from '@components/Spinners/PacManSpinner';
+      <CodeBox_1.default code={`import { PacManSpinner } from '@components/Spinners/PacManSpinner';
 
 function Example() {
   return <PacManSpinner />;
@@ -884,11 +912,11 @@ export default Example;`} language="tsx" index={2} copied={copied} handleCopy={h
         </li>
       </ul>
       <div className="my-7 space-y-4">
-        <PacManSpinner size="small"/>
-        <PacManSpinner size="medium"/>
-        <PacManSpinner size="large"/>
+        <PacManSpinner_1.default size="small"/>
+        <PacManSpinner_1.default size="medium"/>
+        <PacManSpinner_1.default size="large"/>
       </div>
-      <CodeBox code={`import { PacManSpinner } from '@components/Spinners/PacManSpinner';
+      <CodeBox_1.default code={`import { PacManSpinner } from '@components/Spinners/PacManSpinner';
 
 function Example() {
   return (
@@ -947,7 +975,7 @@ export default Example;`} language="tsx" index={3} copied={copied} handleCopy={h
           <code className="bg-white text-Gray">White</code>: 흰색
         </li>
       </ul>
-      <CodeBox code={`import { PacManSpinner } from '@components/Spinners/PacManSpinner';
+      <CodeBox_1.default code={`import { PacManSpinner } from '@components/Spinners/PacManSpinner';
 
 function Example() {
   return (
@@ -1002,11 +1030,11 @@ export default Example;`} language="tsx" index={4} copied={copied} handleCopy={h
         </li>
       </ul>
       <div className="my-7 space-y-4">
-        <PacManSpinner speed="slow"/>
-        <PacManSpinner speed="medium"/>
-        <PacManSpinner speed="fast"/>
+        <PacManSpinner_1.default speed="slow"/>
+        <PacManSpinner_1.default speed="medium"/>
+        <PacManSpinner_1.default speed="fast"/>
       </div>
-      <CodeBox code={`import { PacManSpinner } from '@components/Spinners/PacManSpinner';
+      <CodeBox_1.default code={`import { PacManSpinner } from '@components/Spinners/PacManSpinner';
 
 function Example() {
   return (
@@ -1089,7 +1117,7 @@ export default Example;`} language="tsx" index={5} copied={copied} handleCopy={h
       </table>
 
       <h2 className="text-[#2D3748]">4.7. Full Example</h2>
-      <CodeBox code={`import { PacManSpinner } from '@components/Spinners/PacManSpinner';
+      <CodeBox_1.default code={`import { PacManSpinner } from '@components/Spinners/PacManSpinner';
 
 function Example() {
   return (
@@ -1119,19 +1147,19 @@ export default Example;`} language="tsx" index={6} copied={copied} handleCopy={h
       </p>
 
       <h2 className="text-[#2D3748]">5.1. Import</h2>
-      <CodeBox code={`import { FullScreenSpinner } from '@componique/react';`} copyText={`import FullScreenSpinner from '@components/Spinners/FullScreenSpinner';`} language="tsx" index={1} copied={copied} handleCopy={handleCopy}/>
+      <CodeBox_1.default code={`import { FullScreenSpinner } from '@componique/react';`} copyText={`import FullScreenSpinner from '@components/Spinners/FullScreenSpinner';`} language="tsx" index={1} copied={copied} handleCopy={handleCopy}/>
 
       <h2 className="text-[#2D3748]">5.2. Usage</h2>
       <p>
         아래는 <code>FullScreenSpinner</code> 컴포넌트의 기본 사용 예제입니다:
       </p>
       <div className="my-7 space-x-3 space-y-4">
-        <Button onClick={() => showLoader("spinner1")} variant="flat">
+        <Button_1.default onClick={() => showLoader("spinner1")} variant="flat">
           Show Basic spinner
-        </Button>
-        <FullScreenSpinner spinning={spinning["spinner1"]} shape="Basic"/>
+        </Button_1.default>
+        <_FullScreenSpinner_1.default spinning={spinning["spinner1"]} shape="Basic"/>
       </div>
-      <CodeBox code={`import { FullScreenSpinner } from '@componique/react';
+      <CodeBox_1.default code={`import { FullScreenSpinner } from '@componique/react';
 import { Button } from "@componique/react";
 
 function Example() {
@@ -1200,16 +1228,16 @@ export default Example;`} language="tsx" index={2} copied={copied} handleCopy={h
         </li>
       </ul>
       <div className="my-7 space-x-3 space-y-4">
-        <Button onClick={() => showLoader("spinner2")}>
+        <Button_1.default onClick={() => showLoader("spinner2")}>
           Show Square spinner
-        </Button>
-        <FullScreenSpinner spinning={spinning["spinner2"]} shape="Square"/>
-        <Button onClick={() => showLoader("spinner3")} variant="border">
+        </Button_1.default>
+        <_FullScreenSpinner_1.default spinning={spinning["spinner2"]} shape="Square"/>
+        <Button_1.default onClick={() => showLoader("spinner3")} variant="border">
           Show Bars spinner
-        </Button>
-        <FullScreenSpinner spinning={spinning["spinner3"]} shape="Bars"/>
+        </Button_1.default>
+        <_FullScreenSpinner_1.default spinning={spinning["spinner3"]} shape="Bars"/>
       </div>
-      <CodeBox code={`import { FullScreenSpinner } from '@componique/react';
+      <CodeBox_1.default code={`import { FullScreenSpinner } from '@componique/react';
 import { Button } from "@componique/react";
 
 function Example() {
@@ -1309,7 +1337,7 @@ export default Example;`} language="tsx" index={3} copied={copied} handleCopy={h
       </table>
 
       <h2 className="text-[#2D3748]">5.5. Full Example</h2>
-      <CodeBox code={`import { FullScreenSpinner } from '@componique/react';
+      <CodeBox_1.default code={`import { FullScreenSpinner } from '@componique/react';
         import { Button } from "@componique/react";
                 
           function Example() {
@@ -1358,4 +1386,4 @@ import { Button } from "@componique/react";
 export default Example;`} language="tsx" index={4} copied={copied} handleCopy={handleCopy}/>
     </div>);
 };
-export default SpinnerDoc;
+exports.default = SpinnerDoc;

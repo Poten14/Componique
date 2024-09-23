@@ -1,9 +1,37 @@
+"use strict";
 "use client";
-import React, { useState } from "react";
-import Button from "@components/Button/Button";
-import CodeBox from "@components/CodeBox";
+var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    var desc = Object.getOwnPropertyDescriptor(m, k);
+    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
+      desc = { enumerable: true, get: function() { return m[k]; } };
+    }
+    Object.defineProperty(o, k2, desc);
+}) : (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    o[k2] = m[k];
+}));
+var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {
+    Object.defineProperty(o, "default", { enumerable: true, value: v });
+}) : function(o, v) {
+    o["default"] = v;
+});
+var __importStar = (this && this.__importStar) || function (mod) {
+    if (mod && mod.__esModule) return mod;
+    var result = {};
+    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
+    __setModuleDefault(result, mod);
+    return result;
+};
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+const react_1 = __importStar(require("react"));
+const Button_1 = __importDefault(require("@components/Button/Button"));
+const CodeBox_1 = __importDefault(require("@components/CodeBox"));
 const ButtonDoc = () => {
-    const [copied, setCopied] = useState({});
+    const [copied, setCopied] = (0, react_1.useState)({});
     const handleCopy = (index) => {
         setCopied((prev) => ({ ...prev, [index]: true }));
         setTimeout(() => setCopied((prev) => ({ ...prev, [index]: false })), 500);
@@ -19,13 +47,13 @@ const ButtonDoc = () => {
         버튼을 구현할 수 있습니다.
       </p>
       <h2 className="text-[#2D3748]">1.1. Import</h2>
-      <CodeBox code={`import { Button } from '@components/Button';`} copyText={`import { Button } from '@components/Button';`} language="tsx" index={1} copied={copied} handleCopy={handleCopy}/>
+      <CodeBox_1.default code={`import { Button } from '@components/Button';`} copyText={`import { Button } from '@components/Button';`} language="tsx" index={1} copied={copied} handleCopy={handleCopy}/>
       <h2 className="text-[#2D3748]">1.2. Usage</h2>
       <p>기본 사용 예제는 아래와 같습니다:</p>
       <div style={{ marginBottom: "20px" }}>
-        <Button>Button</Button>
+        <Button_1.default>Button</Button_1.default>
       </div>
-      <CodeBox code={`import { Button } from '@components/Button';
+      <CodeBox_1.default code={`import { Button } from '@components/Button';
 
 function Example() {
   return (
@@ -53,12 +81,12 @@ export default Example;`} language="tsx" index={2} copied={copied} handleCopy={h
         입니다.
       </p>
       <div className="space-x-4 space-y-4">
-        <Button size="small">Small Button</Button>
-        <Button size="medium">Medium Button</Button>
-        <Button size="large">Large Button</Button>
+        <Button_1.default size="small">Small Button</Button_1.default>
+        <Button_1.default size="medium">Medium Button</Button_1.default>
+        <Button_1.default size="large">Large Button</Button_1.default>
       </div>
       <div className="my-7 space-y-4"/>
-      <CodeBox code={`import { Button } from '@components/Button';
+      <CodeBox_1.default code={`import { Button } from '@components/Button';
 
 function Example() {
   return (
@@ -95,22 +123,22 @@ export default Example;`} language="tsx" index={3} copied={copied} handleCopy={h
         <code>pink</code>, <code>basic</code> 입니다.
       </p>
       <div className="space-x-4 space-y-4">
-        <Button>Primary Button</Button>
-        <Button color="secondary">Secondary Button</Button>
-        <Button color="success">Success Button</Button>
-        <Button color="warning">Warning Button</Button>
-        <Button color="danger">Danger Button</Button>
-        <Button color="red">Red Button</Button>
-        <Button color="orange">Orange Button</Button>
-        <Button color="yellow">Yellow Button</Button>
-        <Button color="green">Green Button</Button>
-        <Button color="blue">Blue Button</Button>
-        <Button color="purple">Purple Button</Button>
-        <Button color="pink">Pink Button</Button>
-        <Button color="basic">Basic Button</Button>
+        <Button_1.default>Primary Button</Button_1.default>
+        <Button_1.default color="secondary">Secondary Button</Button_1.default>
+        <Button_1.default color="success">Success Button</Button_1.default>
+        <Button_1.default color="warning">Warning Button</Button_1.default>
+        <Button_1.default color="danger">Danger Button</Button_1.default>
+        <Button_1.default color="red">Red Button</Button_1.default>
+        <Button_1.default color="orange">Orange Button</Button_1.default>
+        <Button_1.default color="yellow">Yellow Button</Button_1.default>
+        <Button_1.default color="green">Green Button</Button_1.default>
+        <Button_1.default color="blue">Blue Button</Button_1.default>
+        <Button_1.default color="purple">Purple Button</Button_1.default>
+        <Button_1.default color="pink">Pink Button</Button_1.default>
+        <Button_1.default color="basic">Basic Button</Button_1.default>
       </div>
       <div className="my-7 space-y-4"/>
-      <CodeBox code={`import { Button } from '@components/Button';
+      <CodeBox_1.default code={`import { Button } from '@components/Button';
 
 function Example() {
   return (
@@ -165,14 +193,14 @@ export default Example;`} language="tsx" index={4} copied={copied} handleCopy={h
         <code>none</code>, <code>full</code> 입니다.
       </p>
       <div className="space-x-4 space-y-4">
-        <Button radius="small">Small Radius Button</Button>
-        <Button radius="medium">Medium Radius Button</Button>
-        <Button radius="large">Large Radius Button</Button>
-        <Button radius="none">No Radius Button</Button>
-        <Button radius="full">Full Radius Button</Button>
+        <Button_1.default radius="small">Small Radius Button</Button_1.default>
+        <Button_1.default radius="medium">Medium Radius Button</Button_1.default>
+        <Button_1.default radius="large">Large Radius Button</Button_1.default>
+        <Button_1.default radius="none">No Radius Button</Button_1.default>
+        <Button_1.default radius="full">Full Radius Button</Button_1.default>
       </div>
       <div className="my-7 space-y-4"/>
-      <CodeBox code={`import { Button } from '@components/Button';
+      <CodeBox_1.default code={`import { Button } from '@components/Button';
 
 function Example() {
   return (
@@ -211,13 +239,13 @@ export default Example;`} language="tsx" index={5} copied={copied} handleCopy={h
         <code>light</code> 입니다.
       </p>
       <div className="space-x-4 space-y-4">
-        <Button variant="solid">Solid Button</Button>
-        <Button variant="border">Border Button</Button>
-        <Button variant="flat">Flat Button</Button>
-        <Button variant="light">Light Button</Button>
+        <Button_1.default variant="solid">Solid Button</Button_1.default>
+        <Button_1.default variant="border">Border Button</Button_1.default>
+        <Button_1.default variant="flat">Flat Button</Button_1.default>
+        <Button_1.default variant="light">Light Button</Button_1.default>
       </div>
       <div className="my-7 space-y-4"/>
-      <CodeBox code={`import { Button } from '@components/Button';
+      <CodeBox_1.default code={`import { Button } from '@components/Button';
 
 function Example() {
   return (
@@ -259,27 +287,27 @@ export default Example;`} language="tsx" index={6} copied={copied} handleCopy={h
       </p>
       <p> Icon에 대한 자세한 정보는 Icon Docs를 참고 하시면 됩니다.</p>
       <div className="space-x-4 space-y-4">
-        <Button icon="icon-home" iconPosition="left" iconSize="small">
+        <Button_1.default icon="icon-home" iconPosition="left" iconSize="small">
           Left Small Icon Button
-        </Button>
-        <Button icon="icon-home" iconPosition="left" iconSize="medium">
+        </Button_1.default>
+        <Button_1.default icon="icon-home" iconPosition="left" iconSize="medium">
           Left Medium Icon Button
-        </Button>
-        <Button icon="icon-home" iconPosition="left" iconSize="large">
+        </Button_1.default>
+        <Button_1.default icon="icon-home" iconPosition="left" iconSize="large">
           Left Large Icon Button
-        </Button>
-        <Button icon="icon-home" iconPosition="right" iconSize="small">
+        </Button_1.default>
+        <Button_1.default icon="icon-home" iconPosition="right" iconSize="small">
           Right Small Icon Button
-        </Button>
-        <Button icon="icon-home" iconPosition="right" iconSize="medium">
+        </Button_1.default>
+        <Button_1.default icon="icon-home" iconPosition="right" iconSize="medium">
           Right Medium Icon Button
-        </Button>
-        <Button icon="icon-home" iconPosition="right" iconSize="large">
+        </Button_1.default>
+        <Button_1.default icon="icon-home" iconPosition="right" iconSize="large">
           Right Large Icon Button
-        </Button>
+        </Button_1.default>
       </div>
       <div className="my-7 space-y-4"/>
-      <CodeBox code={`import { Button } from '@components/Button';
+      <CodeBox_1.default code={`import { Button } from '@components/Button';
 
 function Example() {
   return (
@@ -339,10 +367,10 @@ export default Example;`} language="tsx" index={7} copied={copied} handleCopy={h
         <code>disabled</code> prop을 이용하여 버튼을 비활성화할 수 있습니다.
       </p>
       <div className="space-x-4 space-y-4">
-        <Button disabled>Disabled Button</Button>
+        <Button_1.default disabled>Disabled Button</Button_1.default>
       </div>
       <div className="my-7 space-y-4"/>
-      <CodeBox code={`import { Button } from '@components/Button';
+      <CodeBox_1.default code={`import { Button } from '@components/Button';
 
 function Example() {
   return (
@@ -371,12 +399,12 @@ export default Example;`} language="tsx" index={8} copied={copied} handleCopy={h
         !text-xl 처럼 사용해야 합니다.)
       </p>
       <div className="space-x-4 space-y-4">
-        <Button variant="border" color="warning" radius="none" className="w-[500px] !bg-red-200 !text-blue-600">
+        <Button_1.default variant="border" color="warning" radius="none" className="w-[500px] !bg-red-200 !text-blue-600">
           ClassNameCustomButton
-        </Button>
+        </Button_1.default>
       </div>{" "}
       <div className="my-7 space-y-4"/>
-      <CodeBox code={`import { Button } from '@components/Button';
+      <CodeBox_1.default code={`import { Button } from '@components/Button';
 
 function Example() {
   return (
@@ -410,18 +438,18 @@ export default Example;`} language="tsx" index={9} copied={copied} handleCopy={h
       <h2 className="text-[#2D3748]">9. Full Example with Mixed Props</h2>
       <p>여러 속성을 섞어서 사용한 버튼 예제입니다.</p>
       <div className="space-x-4 space-y-4">
-        <Button variant="border" color="purple" radius="full">
+        <Button_1.default variant="border" color="purple" radius="full">
           Border Purple Full Button
-        </Button>
-        <Button variant="light" color="warning" radius="none">
+        </Button_1.default>
+        <Button_1.default variant="light" color="warning" radius="none">
           Light Warning None Button
-        </Button>
-        <Button variant="border" color="warning" radius="none" className="w-[500px] !bg-red-200 !text-blue-600">
+        </Button_1.default>
+        <Button_1.default variant="border" color="warning" radius="none" className="w-[500px] !bg-red-200 !text-blue-600">
           ClassNameCustomButton
-        </Button>
+        </Button_1.default>
       </div>{" "}
       <div className="my-7 space-y-4"/>
-      <CodeBox code={`import { Button } from '@components/Button';
+      <CodeBox_1.default code={`import { Button } from '@components/Button';
 
 function Example() {
   return (
@@ -612,4 +640,4 @@ export default Example;`} language="tsx" index={10} copied={copied} handleCopy={
       </table>
     </div>);
 };
-export default ButtonDoc;
+exports.default = ButtonDoc;

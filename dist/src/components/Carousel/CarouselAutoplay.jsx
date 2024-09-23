@@ -1,9 +1,14 @@
+"use strict";
 "use client";
-import Image from "next/image";
-import { useEffect, useState } from "react";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+const image_1 = __importDefault(require("next/image"));
+const react_1 = require("react");
 const CarouselAutoplay = ({ images, autoplay = false, interval = 2000, }) => {
-    const [currentSlide, setCurrentSlide] = useState(0);
-    useEffect(() => {
+    const [currentSlide, setCurrentSlide] = (0, react_1.useState)(0);
+    (0, react_1.useEffect)(() => {
         if (autoplay) {
             const timer = setInterval(() => {
                 setCurrentSlide((prevSlide) => prevSlide === images.length - 1 ? 0 : prevSlide + 1);
@@ -22,7 +27,7 @@ const CarouselAutoplay = ({ images, autoplay = false, interval = 2000, }) => {
         <div className="relative m-auto h-96 w-9/12 overflow-hidden rounded-lg">
           <ul className="flex transition-transform duration-300 ease-in-out" style={{ transform: `translateX(-${currentSlide * 100}%)` }}>
             {images.map((image, index) => (<li key={index} className="min-w-full">
-                <Image src={image} alt={`image-${index}`} width={720} height={500} unoptimized className="block w-full"/>
+                <image_1.default src={image} alt={`image-${index}`} width={720} height={500} unoptimized className="block w-full"/>
               </li>))}
           </ul>
           <button type="button" className="group absolute start-0 top-0 z-30 flex h-full cursor-pointer items-center justify-center px-4 focus:outline-none" onClick={handlePrev}>
@@ -47,4 +52,4 @@ const CarouselAutoplay = ({ images, autoplay = false, interval = 2000, }) => {
       </div>
     </>);
 };
-export default CarouselAutoplay;
+exports.default = CarouselAutoplay;

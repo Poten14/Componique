@@ -1,8 +1,10 @@
+"use strict";
 "use client";
-import { useState } from "react";
+Object.defineProperty(exports, "__esModule", { value: true });
+const react_1 = require("react");
 const ValidationPhone = () => {
-    const [phone, setPhone] = useState("");
-    const [error, setError] = useState("");
+    const [phone, setPhone] = (0, react_1.useState)("");
+    const [error, setError] = (0, react_1.useState)("");
     const validatePhone = (phone) => {
         const phoneType = /^\d{10,11}$/;
         return phoneType.test(phone);
@@ -19,4 +21,4 @@ const ValidationPhone = () => {
         </p>)}
     </div>);
 };
-export default ValidationPhone;
+exports.default = ValidationPhone;

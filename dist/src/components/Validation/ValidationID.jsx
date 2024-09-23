@@ -1,8 +1,10 @@
+"use strict";
 "use client";
-import { useState } from "react";
+Object.defineProperty(exports, "__esModule", { value: true });
+const react_1 = require("react");
 const ValidationID = () => {
-    const [ID, setID] = useState("");
-    const [error, setError] = useState("");
+    const [ID, setID] = (0, react_1.useState)("");
+    const [error, setError] = (0, react_1.useState)("");
     const validateID = (ID) => {
         const IDType = /^[a-zA-Z0-9]{4,12}$/;
         return IDType.test(ID);
@@ -19,4 +21,4 @@ const ValidationID = () => {
         </p>)}
     </div>);
 };
-export default ValidationID;
+exports.default = ValidationID;

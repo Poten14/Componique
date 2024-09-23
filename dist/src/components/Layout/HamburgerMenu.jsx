@@ -1,3 +1,5 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 const HamburgerMenu = () => {
     return (<>
       <div className="flex h-5 w-7 flex-col justify-around">
@@ -7,4 +9,4 @@ const HamburgerMenu = () => {
       </div>
     </>);
 };
-export default HamburgerMenu;
+exports.default = HamburgerMenu;

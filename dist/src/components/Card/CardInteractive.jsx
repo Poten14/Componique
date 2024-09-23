@@ -1,9 +1,11 @@
+"use strict";
 "use client";
-import { useState } from "react";
+Object.defineProperty(exports, "__esModule", { value: true });
+const react_1 = require("react");
 // interactive 컴포넌트 생성
 const CardInteractive = ({ title, children }) => {
     // 카드 추가설명의 초기상태 설정
-    const [expand, setExpand] = useState(false);
+    const [expand, setExpand] = (0, react_1.useState)(false);
     // 카드확장 토글
     const toggleExpand = () => {
         setExpand(!expand);
@@ -17,4 +19,4 @@ const CardInteractive = ({ title, children }) => {
       </div>
     </div>);
 };
-export default CardInteractive;
+exports.default = CardInteractive;

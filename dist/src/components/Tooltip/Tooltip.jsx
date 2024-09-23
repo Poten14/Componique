@@ -1,6 +1,11 @@
+"use strict";
 'use client';
-import React from "react";
-import { useState } from "react";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+const react_1 = __importDefault(require("react"));
+const react_2 = require("react");
 const getPosition = (position) => {
     switch (position) {
         case "top":
@@ -16,7 +21,7 @@ const getPosition = (position) => {
     }
 };
 const Tooltip = ({ content, children, position = "top", }) => {
-    const [show, setShow] = useState(false);
+    const [show, setShow] = (0, react_2.useState)(false);
     const handleMouseEnter = () => setShow(true);
     const handleMouseLeave = () => setShow(false);
     return (<div className="relative inline-block" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
@@ -26,4 +31,4 @@ const Tooltip = ({ content, children, position = "top", }) => {
         </div>)}
     </div>);
 };
-export default Tooltip;
+exports.default = Tooltip;

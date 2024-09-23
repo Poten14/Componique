@@ -1,17 +1,19 @@
+"use strict";
 "use client";
-import { useRouter } from "next/navigation";
-import { useState } from "react";
-import { useEffect } from "react";
-import { ToastPosition } from "./ToastPosition";
-import { bgColors, borderColors } from "./ToastColor";
+Object.defineProperty(exports, "__esModule", { value: true });
+const navigation_1 = require("next/navigation");
+const react_1 = require("react");
+const react_2 = require("react");
+const ToastPosition_1 = require("./ToastPosition");
+const ToastColor_1 = require("./ToastColor");
 const Toast = ({ children, isOpen = true, onClose, color = "basic", size = "medium", position = "leftBottom", text = "left", variant = "solid", isClose = false, isProgress = false, className, time, path, ...rest }) => {
-    const [isToastOpen, setIsToastOpen] = useState(isOpen);
-    const [progress, setProgress] = useState(100);
-    const router = useRouter();
-    useEffect(() => {
+    const [isToastOpen, setIsToastOpen] = (0, react_1.useState)(isOpen);
+    const [progress, setProgress] = (0, react_1.useState)(100);
+    const router = (0, navigation_1.useRouter)();
+    (0, react_2.useEffect)(() => {
         setIsToastOpen(isOpen);
     }, [isOpen]);
-    useEffect(() => {
+    (0, react_2.useEffect)(() => {
         if (time) {
             // 총 시간, 사용하는 곳에서 time =""를 설정한 값
             const totalTime = parseInt(time) * 1000;
@@ -49,15 +51,15 @@ const Toast = ({ children, isOpen = true, onClose, color = "basic", size = "medi
     let closeButtonColor = "";
     let progressBarColor = "";
     if (variant === "solid") {
-        ToastVariant = `${bgColors[color]}`;
+        ToastVariant = `${ToastColor_1.bgColors[color]}`;
         closeButtonColor = color === "white" ? "bg-slate-400" : "bg-white";
         progressBarColor = "bg-gray";
     }
     else if (variant === "border") {
-        ToastVariant = `${borderColors[color]}`;
+        ToastVariant = `${ToastColor_1.borderColors[color]}`;
         closeButtonColor =
-            color === "white" ? "bg-slate-400" : bgColors[color] || "bg-slate-400";
-        progressBarColor = bgColors[color];
+            color === "white" ? "bg-slate-400" : ToastColor_1.bgColors[color] || "bg-slate-400";
+        progressBarColor = ToastColor_1.bgColors[color];
     }
     const ToastTextAlign = {
         left: "text-left",
@@ -66,7 +68,7 @@ const Toast = ({ children, isOpen = true, onClose, color = "basic", size = "medi
     };
     const BasicToast = "min-w-md   box-border fixed select-none ";
     return (<>
-      <section className={`${BasicToast} ${ToastPosition[position]} ${ToastSize[size]} ${isToastOpen ? "opacity-100" : "pointer-events-none opacity-0"} ${path ? "cursor-pointer" : ""} ${className || ""} z-[999]`} onClick={() => {
+      <section className={`${BasicToast} ${ToastPosition_1.ToastPosition[position]} ${ToastSize[size]} ${isToastOpen ? "opacity-100" : "pointer-events-none opacity-0"} ${path ? "cursor-pointer" : ""} ${className || ""} z-[999]`} onClick={() => {
             if (path) {
                 router.push(path);
             }
@@ -86,4 +88,4 @@ const Toast = ({ children, isOpen = true, onClose, color = "basic", size = "medi
       </section>
     </>);
 };
-export default Toast;
+exports.default = Toast;

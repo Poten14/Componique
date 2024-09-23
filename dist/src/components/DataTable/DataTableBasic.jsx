@@ -1,3 +1,5 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 const DataTableBasic = ({ data, thColor = "White", tdColor = "White", }) => {
     const col = data.length > 0 ? Object.keys(data[0]) : [];
     // Tailwind 색상 매핑 객체 (다크 모드 포함)
@@ -39,4 +41,4 @@ const DataTableBasic = ({ data, thColor = "White", tdColor = "White", }) => {
       </table>
     </div>);
 };
-export default DataTableBasic;
+exports.default = DataTableBasic;

@@ -1,12 +1,40 @@
+"use strict";
 "use client";
-import React, { useState } from "react";
-import CodeBox from "@components/CodeBox";
-import RadioButtonBasic from "@components/RadioButton/RadioButtonBasic";
-import RadioButtonDescription from "@components/RadioButton/RadioButtonDescription";
-import RadioButtonInline from "@components/RadioButton/RadioButtonInline";
+var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    var desc = Object.getOwnPropertyDescriptor(m, k);
+    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
+      desc = { enumerable: true, get: function() { return m[k]; } };
+    }
+    Object.defineProperty(o, k2, desc);
+}) : (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    o[k2] = m[k];
+}));
+var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {
+    Object.defineProperty(o, "default", { enumerable: true, value: v });
+}) : function(o, v) {
+    o["default"] = v;
+});
+var __importStar = (this && this.__importStar) || function (mod) {
+    if (mod && mod.__esModule) return mod;
+    var result = {};
+    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
+    __setModuleDefault(result, mod);
+    return result;
+};
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+const react_1 = __importStar(require("react"));
+const CodeBox_1 = __importDefault(require("@components/CodeBox"));
+const RadioButtonBasic_1 = __importDefault(require("@components/RadioButton/RadioButtonBasic"));
+const RadioButtonDescription_1 = __importDefault(require("@components/RadioButton/RadioButtonDescription"));
+const RadioButtonInline_1 = __importDefault(require("@components/RadioButton/RadioButtonInline"));
 const RadioButton = () => {
-    const [selectedValue, setSelectedValue] = useState("");
-    const [copied, setCopied] = useState({});
+    const [selectedValue, setSelectedValue] = (0, react_1.useState)("");
+    const [copied, setCopied] = (0, react_1.useState)({});
     const handleCopy = (index) => {
         setCopied((prev) => ({ ...prev, [index]: true }));
         setTimeout(() => setCopied((prev) => ({ ...prev, [index]: false })), 500);
@@ -23,18 +51,18 @@ const RadioButton = () => {
       </p>
       <h2 className="text-[#2D3748] dark:text-white">1.1. Import</h2>
       {/* 카피버튼 시작 */}
-      <CodeBox code={`import RadioButtonBasic from '@components/RadioButton/RadioButtonBasic';`} copyText={`import RadioButtonBasic from '@components/RadioButton/RadioButtonBasic';`} language="tsx" index={1} copied={copied} handleCopy={handleCopy}/>
+      <CodeBox_1.default code={`import RadioButtonBasic from '@components/RadioButton/RadioButtonBasic';`} copyText={`import RadioButtonBasic from '@components/RadioButton/RadioButtonBasic';`} language="tsx" index={1} copied={copied} handleCopy={handleCopy}/>
       {/* 카피버튼 끝 */}
       <h2 className="text-[#2D3748] dark:text-white">1.2. Usage</h2>
       <p>기본 사용 예제는 아래와 같습니다:</p>
       <div className="space-y-7" style={{ marginBottom: "20px" }}>
         {/* RadioButtonBasic 사용 예 */}
-        <RadioButtonBasic name="basicOptions" value="option1" checked={selectedValue === "option1"} onChange={handleChange} label="Option 1" size="small" color="sky"/>
-        <RadioButtonBasic name="basicOptions" value="option2" checked={selectedValue === "option2"} onChange={handleChange} label="Option 2" size="small" color="grey"/>
+        <RadioButtonBasic_1.default name="basicOptions" value="option1" checked={selectedValue === "option1"} onChange={handleChange} label="Option 1" size="small" color="sky"/>
+        <RadioButtonBasic_1.default name="basicOptions" value="option2" checked={selectedValue === "option2"} onChange={handleChange} label="Option 2" size="small" color="grey"/>
         {/* 기타 옵션들 */}
       </div>
       {/* 카피버튼 시작 */}
-      <CodeBox code={`
+      <CodeBox_1.default code={`
 import RadioButtonBasic from '@components/RadioButton/RadioButtonBasic';
 
 function Example() {
@@ -102,12 +130,12 @@ export default Example;`} language="tsx" index={2} copied={copied} handleCopy={h
       </ul>
       <div className="my-7 space-y-7">
         {/* 다양한 크기 옵션 */}
-        <RadioButtonBasic name="basicOptions" value="option1" checked={selectedValue === "option1"} onChange={handleChange} label="Small Option" size="small" color="sky"/>
-        <RadioButtonBasic name="basicOptions" value="option2" checked={selectedValue === "option2"} onChange={handleChange} label="Medium Option" size="medium" color="blue"/>
-        <RadioButtonBasic name="basicOptions" value="option3" checked={selectedValue === "option3"} onChange={handleChange} label="Large Option" size="large" color="purple"/>
+        <RadioButtonBasic_1.default name="basicOptions" value="option1" checked={selectedValue === "option1"} onChange={handleChange} label="Small Option" size="small" color="sky"/>
+        <RadioButtonBasic_1.default name="basicOptions" value="option2" checked={selectedValue === "option2"} onChange={handleChange} label="Medium Option" size="medium" color="blue"/>
+        <RadioButtonBasic_1.default name="basicOptions" value="option3" checked={selectedValue === "option3"} onChange={handleChange} label="Large Option" size="large" color="purple"/>
       </div>
       {/* 카피버튼 시작 */}
-      <CodeBox code={`
+      <CodeBox_1.default code={`
 import RadioButtonBasic from '@components/RadioButton/RadioButtonBasic';
 
 function Example() {
@@ -227,12 +255,12 @@ export default Example;`} language="tsx" index={3} copied={copied} handleCopy={h
       </ul>
       <div className="my-7 space-y-7">
         {/* 다양한 색상 옵션 */}
-        <RadioButtonBasic name="basicOptions" value="option1" checked={selectedValue === "option1"} onChange={handleChange} label="Sky Option" size="medium" color="sky"/>
-        <RadioButtonBasic name="basicOptions" value="option2" checked={selectedValue === "option2"} onChange={handleChange} label="Grey Option" size="medium" color="grey"/>
+        <RadioButtonBasic_1.default name="basicOptions" value="option1" checked={selectedValue === "option1"} onChange={handleChange} label="Sky Option" size="medium" color="sky"/>
+        <RadioButtonBasic_1.default name="basicOptions" value="option2" checked={selectedValue === "option2"} onChange={handleChange} label="Grey Option" size="medium" color="grey"/>
         {/* 기타 옵션들 */}
       </div>
       {/* 카피버튼 시작 */}
-      <CodeBox code={`
+      <CodeBox_1.default code={`
 import RadioButtonBasic from '@components/RadioButton/RadioButtonBasic';
 
 function Example() {
@@ -421,7 +449,7 @@ export default Example;`} language="tsx" index={4} copied={copied} handleCopy={h
       </table>
       <h2 className="text-[#2D3748] dark:text-white">1.6. Full Example</h2>
       {/* 카피버튼 시작 */}
-      <CodeBox code={`
+      <CodeBox_1.default code={`
 import RadioButtonBasic from '@components/RadioButton/RadioButtonBasic';
 
 function Example() {
@@ -522,16 +550,16 @@ export default Example;`} language="tsx" index={5} copied={copied} handleCopy={h
         </p>
         <h2 className="text-[#2D3748] dark:text-white">2.1 Import</h2>
         {/* 카피버튼 시작 */}
-        <CodeBox code={`import RadioButtonDescription from '@components/RadioButton/RadioButtonDescription';`} copyText={`import RadioButtonDescription from '@components/RadioButton/RadioButtonDescription';`} language="tsx" index={1} copied={copied} handleCopy={handleCopy}/>
+        <CodeBox_1.default code={`import RadioButtonDescription from '@components/RadioButton/RadioButtonDescription';`} copyText={`import RadioButtonDescription from '@components/RadioButton/RadioButtonDescription';`} language="tsx" index={1} copied={copied} handleCopy={handleCopy}/>
         {/* 카피버튼 끝 */}
 
         <h2 className="text-[#2D3748] dark:text-white">2.2. Usage</h2>
         <p>기본 사용 예제는 아래와 같습니다:</p>
         <div style={{ marginBottom: "20px" }}>
-          <RadioButtonDescription name="descriptionOptions" value="option1" checked={selectedValue === "option1"} onChange={handleChange} label="Option 1" description="This is a description for option 1." size="medium" color="blue"/>
+          <RadioButtonDescription_1.default name="descriptionOptions" value="option1" checked={selectedValue === "option1"} onChange={handleChange} label="Option 1" description="This is a description for option 1." size="medium" color="blue"/>
         </div>
         {/* 카피버튼 시작 */}
-        <CodeBox code={`
+        <CodeBox_1.default code={`
 import RadioButtonDescription from '@components/RadioButton/RadioButtonDescription';
 
 function DescriptionExample() {
@@ -601,12 +629,12 @@ export default DescriptionExample;`} language="tsx" index={2} copied={copied} ha
           </li>
         </ul>
         <div className="my-7 space-y-7">
-          <RadioButtonDescription name="descriptionOptions" value="option1" checked={selectedValue === "option1"} onChange={handleChange} label="Small Option" description="This is a description for the small option." size="small" color="sky"/>
-          <RadioButtonDescription name="descriptionOptions" value="option2" checked={selectedValue === "option2"} onChange={handleChange} label="Medium Option" description="This is a description for the medium option." size="medium" color="blue"/>
-          <RadioButtonDescription name="descriptionOptions" value="option3" checked={selectedValue === "option3"} onChange={handleChange} label="Large Option" description="This is a description for the large option." size="large" color="purple"/>
+          <RadioButtonDescription_1.default name="descriptionOptions" value="option1" checked={selectedValue === "option1"} onChange={handleChange} label="Small Option" description="This is a description for the small option." size="small" color="sky"/>
+          <RadioButtonDescription_1.default name="descriptionOptions" value="option2" checked={selectedValue === "option2"} onChange={handleChange} label="Medium Option" description="This is a description for the medium option." size="medium" color="blue"/>
+          <RadioButtonDescription_1.default name="descriptionOptions" value="option3" checked={selectedValue === "option3"} onChange={handleChange} label="Large Option" description="This is a description for the large option." size="large" color="purple"/>
         </div>
         {/* 카피버튼 시작 */}
-        <CodeBox code={`
+        <CodeBox_1.default code={`
 import RadioButtonDescription from '@components/RadioButton/RadioButtonDescription';
 
 function SizeExample() {
@@ -732,13 +760,13 @@ export default SizeExample;`} language="tsx" index={3} copied={copied} handleCop
           </li>
         </ul>
         <div className="my-7 space-y-7">
-          <RadioButtonDescription name="descriptionOptions" value="option1" checked={selectedValue === "option1"} onChange={handleChange} label="Sky Option" description="This is a sky-colored option." size="medium" color="sky"/>
-          <RadioButtonDescription name="descriptionOptions" value="option2" checked={selectedValue === "option2"} onChange={handleChange} label="Grey Option" description="This is a grey-colored option." size="medium" color="grey"/>
-          <RadioButtonDescription name="descriptionOptions" value="option3" checked={selectedValue === "option3"} onChange={handleChange} label="Blue Option" description="This is a blue-colored option." size="medium" color="blue"/>
+          <RadioButtonDescription_1.default name="descriptionOptions" value="option1" checked={selectedValue === "option1"} onChange={handleChange} label="Sky Option" description="This is a sky-colored option." size="medium" color="sky"/>
+          <RadioButtonDescription_1.default name="descriptionOptions" value="option2" checked={selectedValue === "option2"} onChange={handleChange} label="Grey Option" description="This is a grey-colored option." size="medium" color="grey"/>
+          <RadioButtonDescription_1.default name="descriptionOptions" value="option3" checked={selectedValue === "option3"} onChange={handleChange} label="Blue Option" description="This is a blue-colored option." size="medium" color="blue"/>
           {/* 기타 옵션들 */}
         </div>
         {/* 카피버튼 시작 */}
-        <CodeBox code={`
+        <CodeBox_1.default code={`
 import RadioButtonDescription from '@components/RadioButton/RadioButtonDescription';
 
 function ColorExample() {
@@ -841,10 +869,10 @@ export default ColorExample;`} language="tsx" index={4} copied={copied} handleCo
           설정할 수 있습니다. 이 상태에서는 사용자 입력을 받을 수 없습니다:
         </p>
         <div className="my-7 space-y-7">
-          <RadioButtonDescription name="descriptionOptions" value="option1" checked={selectedValue === "option1"} onChange={handleChange} label="Disabled Option" description="This option is disabled." size="medium" color="blue" disabled/>
+          <RadioButtonDescription_1.default name="descriptionOptions" value="option1" checked={selectedValue === "option1"} onChange={handleChange} label="Disabled Option" description="This option is disabled." size="medium" color="blue" disabled/>
         </div>
         {/* 카피버튼 시작 */}
-        <CodeBox code={`
+        <CodeBox_1.default code={`
 import RadioButtonDescription from '@components/RadioButton/RadioButtonDescription';
 
 function DisabledExample() {
@@ -1026,7 +1054,7 @@ export default DisabledExample;`} language="tsx" index={5} copied={copied} handl
         </table>
         <h2 className="text-[#2D3748] dark:text-white">2.7. Full Example</h2>
         {/* 카피버튼 시작 */}
-        <CodeBox code={`
+        <CodeBox_1.default code={`
 import RadioButtonInline from '@components/RadioButton/RadioButtonInline';
 
 function FullExample() {
@@ -1148,22 +1176,22 @@ export default FullExample;`} language="tsx" index={6} copied={copied} handleCop
           </p>
           <h2 className="text-[#2D3748] dark:text-white">3.1. Import</h2>
           {/* 카피버튼 시작 */}
-          <CodeBox code={`import RadioButtonInline from '@components/RadioButton/RadioButtonInline';`} copyText={`import RadioButtonInline from '@components/RadioButton/RadioButtonInline';`} language="tsx" index={1} copied={copied} handleCopy={handleCopy}/>
+          <CodeBox_1.default code={`import RadioButtonInline from '@components/RadioButton/RadioButtonInline';`} copyText={`import RadioButtonInline from '@components/RadioButton/RadioButtonInline';`} language="tsx" index={1} copied={copied} handleCopy={handleCopy}/>
           {/* 카피버튼 끝 */}
 
           <h2 className="text-[#2D3748] dark:text-white">3.2. Usage</h2>
           <p>기본 사용 예제는 아래와 같습니다:</p>
           <div style={{ marginBottom: "20px" }}>
-            <RadioButtonInline name="inlineOptions" value="option1" checked={selectedValue === "option1"} onChange={handleChange} label="Option 1" size="small" color="sky"/>
-            <RadioButtonInline name="inlineOptions" value="option2" checked={selectedValue === "option2"} onChange={handleChange} label="Option 2" size="small" color="grey"/>
-            <RadioButtonInline name="inlineOptions" value="option3" checked={selectedValue === "option3"} onChange={handleChange} label="Option 3" size="medium" color="blue"/>
-            <RadioButtonInline name="inlineOptions" value="option4" checked={selectedValue === "option4"} onChange={handleChange} label="Option 4" size="medium" color="purple"/>
-            <RadioButtonInline name="inlineOptions" value="option5" checked={selectedValue === "option5"} onChange={handleChange} label="Option 5" size="medium" color="green"/>
-            <RadioButtonInline name="inlineOptions" value="option6" checked={selectedValue === "option6"} onChange={handleChange} label="Option 6" size="large" color="yellow"/>
-            <RadioButtonInline name="inlineOptions" value="option7" checked={selectedValue === "option7"} onChange={handleChange} label="Option 7" size="large" color="red"/>
+            <RadioButtonInline_1.default name="inlineOptions" value="option1" checked={selectedValue === "option1"} onChange={handleChange} label="Option 1" size="small" color="sky"/>
+            <RadioButtonInline_1.default name="inlineOptions" value="option2" checked={selectedValue === "option2"} onChange={handleChange} label="Option 2" size="small" color="grey"/>
+            <RadioButtonInline_1.default name="inlineOptions" value="option3" checked={selectedValue === "option3"} onChange={handleChange} label="Option 3" size="medium" color="blue"/>
+            <RadioButtonInline_1.default name="inlineOptions" value="option4" checked={selectedValue === "option4"} onChange={handleChange} label="Option 4" size="medium" color="purple"/>
+            <RadioButtonInline_1.default name="inlineOptions" value="option5" checked={selectedValue === "option5"} onChange={handleChange} label="Option 5" size="medium" color="green"/>
+            <RadioButtonInline_1.default name="inlineOptions" value="option6" checked={selectedValue === "option6"} onChange={handleChange} label="Option 6" size="large" color="yellow"/>
+            <RadioButtonInline_1.default name="inlineOptions" value="option7" checked={selectedValue === "option7"} onChange={handleChange} label="Option 7" size="large" color="red"/>
           </div>
           {/* 카피버튼 시작 */}
-          <CodeBox code={`
+          <CodeBox_1.default code={`
 import RadioButtonInline from '@components/RadioButton/RadioButtonInline';
 
 function Example() {
@@ -1231,12 +1259,12 @@ export default Example;`} language="tsx" index={2} copied={copied} handleCopy={h
             </li>
           </ul>
           <div className="my-7 space-y-7">
-            <RadioButtonInline name="inlineOptions" value="option1" checked={selectedValue === "option1"} onChange={handleChange} label="Small Option" size="small" color="sky"/>
-            <RadioButtonInline name="inlineOptions" value="option2" checked={selectedValue === "option2"} onChange={handleChange} label="Medium Option" size="medium" color="blue"/>
-            <RadioButtonInline name="inlineOptions" value="option3" checked={selectedValue === "option3"} onChange={handleChange} label="Large Option" size="large" color="purple"/>
+            <RadioButtonInline_1.default name="inlineOptions" value="option1" checked={selectedValue === "option1"} onChange={handleChange} label="Small Option" size="small" color="sky"/>
+            <RadioButtonInline_1.default name="inlineOptions" value="option2" checked={selectedValue === "option2"} onChange={handleChange} label="Medium Option" size="medium" color="blue"/>
+            <RadioButtonInline_1.default name="inlineOptions" value="option3" checked={selectedValue === "option3"} onChange={handleChange} label="Large Option" size="large" color="purple"/>
           </div>
           {/* 카피버튼 시작 */}
-          <CodeBox code={`
+          <CodeBox_1.default code={`
 import RadioButtonInline from '@components/RadioButton/RadioButtonInline';
 
 function SizeExample() {
@@ -1356,16 +1384,16 @@ export default SizeExample;`} language="tsx" index={3} copied={copied} handleCop
             </li>
           </ul>
           <div className="my-7 space-y-7">
-            <RadioButtonInline name="inlineOptions" value="option1" checked={selectedValue === "option1"} onChange={handleChange} label="Sky Option" size="medium" color="sky"/>
-            <RadioButtonInline name="inlineOptions" value="option2" checked={selectedValue === "option2"} onChange={handleChange} label="Grey Option" size="medium" color="grey"/>
-            <RadioButtonInline name="inlineOptions" value="option3" checked={selectedValue === "option3"} onChange={handleChange} label="Blue Option" size="medium" color="blue"/>
-            <RadioButtonInline name="inlineOptions" value="option4" checked={selectedValue === "option4"} onChange={handleChange} label="Purple Option" size="medium" color="purple"/>
-            <RadioButtonInline name="inlineOptions" value="option5" checked={selectedValue === "option5"} onChange={handleChange} label="Green Option" size="medium" color="green"/>
-            <RadioButtonInline name="inlineOptions" value="option6" checked={selectedValue === "option6"} onChange={handleChange} label="Yellow Option" size="medium" color="yellow"/>
-            <RadioButtonInline name="inlineOptions" value="option7" checked={selectedValue === "option7"} onChange={handleChange} label="Red Option" size="medium" color="red"/>
+            <RadioButtonInline_1.default name="inlineOptions" value="option1" checked={selectedValue === "option1"} onChange={handleChange} label="Sky Option" size="medium" color="sky"/>
+            <RadioButtonInline_1.default name="inlineOptions" value="option2" checked={selectedValue === "option2"} onChange={handleChange} label="Grey Option" size="medium" color="grey"/>
+            <RadioButtonInline_1.default name="inlineOptions" value="option3" checked={selectedValue === "option3"} onChange={handleChange} label="Blue Option" size="medium" color="blue"/>
+            <RadioButtonInline_1.default name="inlineOptions" value="option4" checked={selectedValue === "option4"} onChange={handleChange} label="Purple Option" size="medium" color="purple"/>
+            <RadioButtonInline_1.default name="inlineOptions" value="option5" checked={selectedValue === "option5"} onChange={handleChange} label="Green Option" size="medium" color="green"/>
+            <RadioButtonInline_1.default name="inlineOptions" value="option6" checked={selectedValue === "option6"} onChange={handleChange} label="Yellow Option" size="medium" color="yellow"/>
+            <RadioButtonInline_1.default name="inlineOptions" value="option7" checked={selectedValue === "option7"} onChange={handleChange} label="Red Option" size="medium" color="red"/>
           </div>
           {/* 카피버튼 시작 */}
-          <CodeBox code={`
+          <CodeBox_1.default code={`
 import RadioButtonInline from '@components/RadioButton/RadioButtonInline';
 
 function ColorExample() {
@@ -1645,7 +1673,7 @@ export default ColorExample;`} language="tsx" index={4} copied={copied} handleCo
 
           <h2 className="text-[#2D3748] dark:text-white">3.6. Full Example</h2>
           {/* 카피버튼 시작 */}
-          <CodeBox code={`
+          <CodeBox_1.default code={`
 import RadioButtonInline from '@components/RadioButton/RadioButtonInline';
 
 function FullExample() {
@@ -1756,4 +1784,4 @@ export default FullExample;`} language="tsx" index={5} copied={copied} handleCop
       </div>
     </div>);
 };
-export default RadioButton;
+exports.default = RadioButton;

@@ -1,12 +1,40 @@
+"use strict";
 "use client";
-import React, { useState } from "react";
-import CodeBox from "@components/CodeBox";
-import BadgeBasic from "@components/Badge/BadgeBasic";
-import BadgeCounter from "@components/Badge/BadgeCounter";
-import BadgeDot from "@components/Badge/BadgeDot";
-import BadgeIcon from "@components/Badge/BadgeIcon";
+var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    var desc = Object.getOwnPropertyDescriptor(m, k);
+    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
+      desc = { enumerable: true, get: function() { return m[k]; } };
+    }
+    Object.defineProperty(o, k2, desc);
+}) : (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    o[k2] = m[k];
+}));
+var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {
+    Object.defineProperty(o, "default", { enumerable: true, value: v });
+}) : function(o, v) {
+    o["default"] = v;
+});
+var __importStar = (this && this.__importStar) || function (mod) {
+    if (mod && mod.__esModule) return mod;
+    var result = {};
+    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
+    __setModuleDefault(result, mod);
+    return result;
+};
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+const react_1 = __importStar(require("react"));
+const CodeBox_1 = __importDefault(require("@components/CodeBox"));
+const BadgeBasic_1 = __importDefault(require("@components/Badge/BadgeBasic"));
+const BadgeCounter_1 = __importDefault(require("@components/Badge/BadgeCounter"));
+const BadgeDot_1 = __importDefault(require("@components/Badge/BadgeDot"));
+const BadgeIcon_1 = __importDefault(require("@components/Badge/BadgeIcon"));
 const BadgeDocs = () => {
-    const [copied, setCopied] = useState({});
+    const [copied, setCopied] = (0, react_1.useState)({});
     const handleCopy = (index) => {
         setCopied((prev) => ({ ...prev, [index]: true }));
         setTimeout(() => setCopied((prev) => ({ ...prev, [index]: false })), 500);
@@ -19,14 +47,14 @@ const BadgeDocs = () => {
         </p>
     <br />
         <h1 className="text-[#2D3748] dark:text-white">1.1. Import</h1>
-        <CodeBox code={`import Badge from '@components/Badge/Badge';`} copyText={`import Badge from '@components/Badge/Badge';`} language="tsx" index={1} copied={copied} handleCopy={handleCopy}/>
+        <CodeBox_1.default code={`import Badge from '@components/Badge/Badge';`} copyText={`import Badge from '@components/Badge/Badge';`} language="tsx" index={1} copied={copied} handleCopy={handleCopy}/>
     <br />
         <h1 className="text-[#2D3748] dark:text-white">1.2. Usage</h1>
         <p>기본 사용 예제는 아래와 같습니다:</p>
         <div className="my-7">
-          <BadgeBasic />
+          <BadgeBasic_1.default />
         </div>
-        <CodeBox code={`
+        <CodeBox_1.default code={`
 import Badge from './Badge';
 
 const BadgeBasic = () => {
@@ -54,9 +82,9 @@ export default BadgeBasic;
           <code>BadgeCounter</code>는 숫자를 강조하여 알림 수나 메시지 수를 표시합니다.
         </p>
         <div className="my-7">
-          <BadgeCounter />
+          <BadgeCounter_1.default />
         </div>
-        <CodeBox code={`
+        <CodeBox_1.default code={`
 import Badge from './Badge';
 
 const BadgeCounter = () => {
@@ -85,9 +113,9 @@ export default BadgeCounter;
           <code>BadgeDot</code>는 작은 점 형태로 알림이나 상태를 간단하게 표시합니다.
         </p>
         <div className="my-7">
-          <BadgeDot />
+          <BadgeDot_1.default />
         </div>
-        <CodeBox code={`
+        <CodeBox_1.default code={`
 import Badge from './Badge';
 
 const BadgeDot = () => (
@@ -112,9 +140,9 @@ export default BadgeDot;
           <code>BadgeIcon</code>는 텍스트와 아이콘을 함께 표시하여 더 직관적인 정보를 제공합니다.
         </p>
         <div className="my-7">
-          <BadgeIcon />
+          <BadgeIcon_1.default />
         </div>
-        <CodeBox code={`
+        <CodeBox_1.default code={`
 import Badge from './Badge';
 import { FaStar } from 'react-icons/fa';
 
@@ -144,9 +172,9 @@ export default BadgeIcon;
           <code>Badge</code> 컴포넌트는 다크 모드를 지원합니다. 다크 모드에서 배경색과 테두리 색상이 자동으로 변경되어 어두운 배경에서도 잘 보입니다.
         </p>
         <div className="my-7">
-          <BadgeBasic />
+          <BadgeBasic_1.default />
         </div>
-        <CodeBox code={`
+        <CodeBox_1.default code={`
 import Badge from './Badge';
 
 const BadgeBasic = () => {
@@ -170,4 +198,4 @@ export default BadgeBasic;
       </div>
     </div>);
 };
-export default BadgeDocs;
+exports.default = BadgeDocs;

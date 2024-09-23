@@ -1,11 +1,13 @@
+"use strict";
 "use client";
-import { useEffect, useState } from "react";
-import { v4 as uuidv4 } from "uuid";
+Object.defineProperty(exports, "__esModule", { value: true });
+const react_1 = require("react");
+const uuid_1 = require("uuid");
 const CheckBox = ({ value, id, name, description, color = "basic", boxSize = "medium", variant = "solid", className, ...rest }) => {
-    const [checkId, setCheckId] = useState(undefined);
+    const [checkId, setCheckId] = (0, react_1.useState)(undefined);
     // 클라이언트 측에서만 UUID 생성하기 위해 useEffect 사용
-    useEffect(() => {
-        setCheckId(`${description}-${uuidv4()}`);
+    (0, react_1.useEffect)(() => {
+        setCheckId(`${description}-${(0, uuid_1.v4)()}`);
     }, [description]);
     //dependencies array에 description인 이유는 description의 내용이 변경될때 마다 새로운 uuid를 넣는 것이 좋다고 생각함
     if (!checkId) {
@@ -67,4 +69,4 @@ const CheckBox = ({ value, id, name, description, color = "basic", boxSize = "me
       </label>
     </div>);
 };
-export default CheckBox;
+exports.default = CheckBox;

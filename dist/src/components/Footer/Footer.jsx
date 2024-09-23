@@ -1,10 +1,15 @@
+"use strict";
 "use client";
-import Image from "next/image";
-import React from "react";
-import { FaGithub } from "react-icons/fa";
-import { IoEllipsisVerticalOutline } from "react-icons/io5";
-import { RxDoubleArrowUp } from "react-icons/rx";
-import Icon from "@components/Icon/Icon";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+const image_1 = __importDefault(require("next/image"));
+const react_1 = __importDefault(require("react"));
+const fa_1 = require("react-icons/fa");
+const io5_1 = require("react-icons/io5");
+const rx_1 = require("react-icons/rx");
+const Icon_1 = __importDefault(require("@components/Icon/Icon"));
 const team = [
     {
         name: "Kim Jun Su",
@@ -37,9 +42,9 @@ const Footer = () => {
         <hr className="mb-4 w-3/6 border-t border-[#bcbcbc] dark:border-[#dddddd]"/>
 
         {/* 다크 모드에서 로고 이미지를 변경 */}
-        <Image src="/FooterLogo.svg" alt="FooterLogo" width={300} height={300} className="mb-3 dark:hidden" // 다크 모드에서 숨김
+        <image_1.default src="/FooterLogo.svg" alt="FooterLogo" width={300} height={300} className="mb-3 dark:hidden" // 다크 모드에서 숨김
     />
-        <Image src="/FooterLogoDark.svg" alt="FooterLogo Dark" width={300} height={300} className="mb-3 hidden dark:block" // 다크 모드에서 보이기
+        <image_1.default src="/FooterLogoDark.svg" alt="FooterLogo Dark" width={300} height={300} className="mb-3 hidden dark:block" // 다크 모드에서 보이기
     />
 
         <div className="flex flex-col items-center justify-center">
@@ -47,24 +52,24 @@ const Footer = () => {
           <ul className="mb-4">
             {team.map((member, index) => (<li key={index} className="mb-2 flex items-center justify-center">
                 <a className="mr-2 flex items-center text-stone-950 hover:text-slate-700 dark:text-[#DFDFDF]" href={member.github} target="_blank" rel="noopener noreferrer">
-                  <Icon name="icon-github"/>
+                  <Icon_1.default name="icon-github"/>
                   {member.name}
                 </a>
-                <IoEllipsisVerticalOutline className="mx-2 dark:text-white"/>
+                <io5_1.IoEllipsisVerticalOutline className="mx-2 dark:text-white"/>
                 <a href={member.blog} target="_blank" rel="noopener noreferrer" className="flex items-center text-stone-950 hover:text-slate-700 dark:text-[#DFDFDF]">
-                  <Icon name="icon-blog"/>
+                  <Icon_1.default name="icon-blog"/>
                   Blog
                 </a>
               </li>))}
           </ul>
 
           <a href="https://github.com/Poten14/Componique" className="mb-4 flex items-center text-stone-950 hover:text-slate-700 dark:text-[#DFDFDF]" target="_blank" rel="noopener noreferrer">
-            <FaGithub className="mr-2"/>
+            <fa_1.FaGithub className="mr-2"/>
             Project Repository on GitHub
           </a>
 
           <button onClick={TopButton} className="flex items-center">
-            <RxDoubleArrowUp className="text-5xl text-[#9AC5E5] dark:text-[#476D89]"/>
+            <rx_1.RxDoubleArrowUp className="text-5xl text-[#9AC5E5] dark:text-[#476D89]"/>
           </button>
         </div>
 
@@ -74,4 +79,4 @@ const Footer = () => {
       </div>
     </footer>);
 };
-export default Footer;
+exports.default = Footer;

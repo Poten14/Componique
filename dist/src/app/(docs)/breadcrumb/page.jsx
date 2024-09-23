@@ -1,11 +1,39 @@
+"use strict";
 "use client";
-import React, { useState } from "react";
-import BreadCrumb from "@components/BreadCrumb/BreadCrumb";
-import CodeBox from "@components/CodeBox";
-import BreadCrumbSlash from "@components/BreadCrumb/BreadCrumbSlash";
-import BreadCrumbDropdown from "@components/BreadCrumb/BreadCrumbDropdown";
+var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    var desc = Object.getOwnPropertyDescriptor(m, k);
+    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
+      desc = { enumerable: true, get: function() { return m[k]; } };
+    }
+    Object.defineProperty(o, k2, desc);
+}) : (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    o[k2] = m[k];
+}));
+var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {
+    Object.defineProperty(o, "default", { enumerable: true, value: v });
+}) : function(o, v) {
+    o["default"] = v;
+});
+var __importStar = (this && this.__importStar) || function (mod) {
+    if (mod && mod.__esModule) return mod;
+    var result = {};
+    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
+    __setModuleDefault(result, mod);
+    return result;
+};
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+const react_1 = __importStar(require("react"));
+const BreadCrumb_1 = __importDefault(require("@components/BreadCrumb/BreadCrumb"));
+const CodeBox_1 = __importDefault(require("@components/CodeBox"));
+const BreadCrumbSlash_1 = __importDefault(require("@components/BreadCrumb/BreadCrumbSlash"));
+const BreadCrumbDropdown_1 = __importDefault(require("@components/BreadCrumb/BreadCrumbDropdown"));
 const BreadCrumbDocs = () => {
-    const [copied, setCopied] = useState({});
+    const [copied, setCopied] = (0, react_1.useState)({});
     const handleCopy = (index) => {
         setCopied((prev) => ({ ...prev, [index]: true }));
         setTimeout(() => setCopied((prev) => ({ ...prev, [index]: false })), 500);
@@ -20,18 +48,18 @@ const BreadCrumbDocs = () => {
       </p>
 
       <h2 className="text-[#2D3748]">1.1. Import</h2>
-      <CodeBox code={`import BreadCrumb from '@components/BreadCrumb/BreadCrumb';`} copyText={`import BreadCrumb from '@components/BreadCrumb/BreadCrumb';`} language="tsx" index={1} copied={copied} handleCopy={handleCopy}/>
+      <CodeBox_1.default code={`import BreadCrumb from '@components/BreadCrumb/BreadCrumb';`} copyText={`import BreadCrumb from '@components/BreadCrumb/BreadCrumb';`} language="tsx" index={1} copied={copied} handleCopy={handleCopy}/>
 
       <h2 className="text-[#2D3748]">1.2. Usage</h2>
       <p>기본 사용 예제는 아래와 같습니다:</p>
       <div className="my-7">
-        <BreadCrumb items={[
+        <BreadCrumb_1.default items={[
             { href: "/", children: "Home" },
             { href: "/docs", children: "Docs" },
             { children: "Breadcrumb" },
         ]}/>
       </div>
-      <CodeBox code={`import BreadCrumb from '@components/BreadCrumb/BreadCrumb';
+      <CodeBox_1.default code={`import BreadCrumb from '@components/BreadCrumb/BreadCrumb';
 
 function Example() {
   return (
@@ -68,14 +96,14 @@ export default Example;`} language="tsx" index={2} copied={copied} handleCopy={h
       </p>
 
       <div className="my-7">
-        <BreadCrumb items={[
+        <BreadCrumb_1.default items={[
             { href: "/", children: "Home" },
             { href: "/docs", children: "Docs" },
             { children: "Breadcrumb" },
         ]} hoverColor="Basic" activeColor="Basic"/>
       </div>
 
-      <CodeBox code={`import BreadCrumb from '@components/BreadCrumb/BreadCrumb';
+      <CodeBox_1.default code={`import BreadCrumb from '@components/BreadCrumb/BreadCrumb';
 
 function Example() {
   return (
@@ -163,7 +191,7 @@ export default Example;`} language="tsx" index={3} copied={copied} handleCopy={h
       </table>
 
       <h2 className="text-[#2D3748]">1.5. Full Example</h2>
-      <CodeBox code={`import BreadCrumb from '@components/BreadCrumb/BreadCrumb';
+      <CodeBox_1.default code={`import BreadCrumb from '@components/BreadCrumb/BreadCrumb';
 
 function Example() {
   return (
@@ -211,18 +239,18 @@ export default Example;`} language="tsx" index={4} copied={copied} handleCopy={h
       </p>
 
       <h2 className="text-[#2D3748]">2.1. Import</h2>
-      <CodeBox code={`import BreadCrumbSlash from '@components/BreadCrumb/BreadCrumbSlash';`} copyText={`import BreadCrumbSlash from '@components/BreadCrumb/BreadCrumbSlash';`} language="tsx" index={1} copied={copied} handleCopy={handleCopy}/>
+      <CodeBox_1.default code={`import BreadCrumbSlash from '@components/BreadCrumb/BreadCrumbSlash';`} copyText={`import BreadCrumbSlash from '@components/BreadCrumb/BreadCrumbSlash';`} language="tsx" index={1} copied={copied} handleCopy={handleCopy}/>
 
       <h2 className="text-[#2D3748]">2.2. Usage</h2>
       <p>기본 사용 예제는 아래와 같습니다:</p>
       <div className="my-7">
-        <BreadCrumbSlash items={[
+        <BreadCrumbSlash_1.default items={[
             { href: "/", children: "Home" },
             { href: "/docs", children: "Docs" },
             { children: "Breadcrumb" },
         ]}/>
       </div>
-      <CodeBox code={`import BreadCrumbSlash from '@components/BreadCrumb/BreadCrumbSlash';
+      <CodeBox_1.default code={`import BreadCrumbSlash from '@components/BreadCrumb/BreadCrumbSlash';
 
 function Example() {
   return (
@@ -259,14 +287,14 @@ export default Example;`} language="tsx" index={2} copied={copied} handleCopy={h
       </p>
 
       <div className="my-7">
-        <BreadCrumbSlash items={[
+        <BreadCrumbSlash_1.default items={[
             { href: "/", children: "Home" },
             { href: "/docs", children: "Docs" },
             { children: "Breadcrumb" },
         ]} hoverColor="Basic" activeColor="Basic"/>
       </div>
 
-      <CodeBox code={`import BreadCrumbSlash from '@components/BreadCrumb/BreadCrumbSlash';
+      <CodeBox_1.default code={`import BreadCrumbSlash from '@components/BreadCrumb/BreadCrumbSlash';
 
 function Example() {
   return (
@@ -354,7 +382,7 @@ export default Example;`} language="tsx" index={3} copied={copied} handleCopy={h
       </table>
 
       <h2 className="text-[#2D3748]">2.5. Full Example</h2>
-      <CodeBox code={`import BreadCrumbSlash from '@components/BreadCrumb/BreadCrumbSlash';
+      <CodeBox_1.default code={`import BreadCrumbSlash from '@components/BreadCrumb/BreadCrumbSlash';
 
 function Example() {
   return (
@@ -400,12 +428,12 @@ export default Example;`} language="tsx" index={4} copied={copied} handleCopy={h
       </p>
 
       <h2 className="text-[#2D3748]">3.1. Import</h2>
-      <CodeBox code={`import BreadCrumbDropdown from '@components/BreadCrumb/BreadCrumbDropdown';`} copyText={`import BreadCrumbDropdown from '@components/BreadCrumb/BreadCrumbDropdown';`} language="tsx" index={1} copied={copied} handleCopy={handleCopy}/>
+      <CodeBox_1.default code={`import BreadCrumbDropdown from '@components/BreadCrumb/BreadCrumbDropdown';`} copyText={`import BreadCrumbDropdown from '@components/BreadCrumb/BreadCrumbDropdown';`} language="tsx" index={1} copied={copied} handleCopy={handleCopy}/>
 
       <h2 className="text-[#2D3748]">3.2. Usage</h2>
       <p>기본 사용 예제는 아래와 같습니다:</p>
       <div className="my-7">
-        <BreadCrumbDropdown items={[
+        <BreadCrumbDropdown_1.default items={[
             { href: "/", children: "Home" },
             { href: "/docs", children: "Docs" },
             {
@@ -417,7 +445,7 @@ export default Example;`} language="tsx" index={4} copied={copied} handleCopy={h
             },
         ]}/>
       </div>
-      <CodeBox code={`import BreadCrumbDropdown from '@components/BreadCrumb/BreadCrumbDropdown';
+      <CodeBox_1.default code={`import BreadCrumbDropdown from '@components/BreadCrumb/BreadCrumbDropdown';
 
 function Example() {
   return (
@@ -468,7 +496,7 @@ export default Example;`} language="tsx" index={2} copied={copied} handleCopy={h
       </p>
 
       <div className="my-7">
-        <BreadCrumbDropdown items={[
+        <BreadCrumbDropdown_1.default items={[
             { href: "/", children: "Home" },
             { href: "/docs", children: "Docs" },
             {
@@ -483,7 +511,7 @@ export default Example;`} language="tsx" index={2} copied={copied} handleCopy={h
         ]}/>
       </div>
 
-      <CodeBox code={`import BreadCrumbDropdown from '@components/BreadCrumb/BreadCrumbDropdown';
+      <CodeBox_1.default code={`import BreadCrumbDropdown from '@components/BreadCrumb/BreadCrumbDropdown';
 
 function Example() {
   return (
@@ -559,7 +587,7 @@ export default Example;`} language="tsx" index={3} copied={copied} handleCopy={h
       </table>
 
       <h2 className="text-[#2D3748]">3.5. Full Example</h2>
-      <CodeBox code={`import BreadCrumbDropdown from '@components/BreadCrumb/BreadCrumbDropdown';
+      <CodeBox_1.default code={`import BreadCrumbDropdown from '@components/BreadCrumb/BreadCrumbDropdown';
 
 function Example() {
   return (
@@ -610,4 +638,4 @@ function Example() {
 export default Example;`} language="tsx" index={4} copied={copied} handleCopy={handleCopy}/>
     </div>);
 };
-export default BreadCrumbDocs;
+exports.default = BreadCrumbDocs;
