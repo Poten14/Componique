@@ -1,10 +1,15 @@
-import BarsSpinner from "./BarsSpinner";
-import BasicSpinner from "./BasicSpinner";
-import SquareSpinner from "./SquareSpinner";
+"use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+const BarsSpinner_1 = __importDefault(require("./BarsSpinner"));
+const BasicSpinner_1 = __importDefault(require("./BasicSpinner"));
+const SquareSpinner_1 = __importDefault(require("./SquareSpinner"));
 const shapeClasses = {
-    Basic: BasicSpinner,
-    Square: SquareSpinner,
-    Bars: BarsSpinner,
+    Basic: BasicSpinner_1.default,
+    Square: SquareSpinner_1.default,
+    Bars: BarsSpinner_1.default,
 };
 const FullScreenSpinner = ({ spinning, shape = "Basic", }) => {
     if (!spinning)
@@ -15,4 +20,4 @@ const FullScreenSpinner = ({ spinning, shape = "Basic", }) => {
       <SpinnerComponent size="medium" color="White" speed="medium"/>
     </div>);
 };
-export default FullScreenSpinner;
+exports.default = FullScreenSpinner;

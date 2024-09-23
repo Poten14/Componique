@@ -1,8 +1,10 @@
+"use strict";
 "use client";
-import { useState } from "react";
+Object.defineProperty(exports, "__esModule", { value: true });
+const react_1 = require("react");
 const ValidationEmail = () => {
-    const [email, setEmail] = useState("");
-    const [error, setError] = useState("");
+    const [email, setEmail] = (0, react_1.useState)("");
+    const [error, setError] = (0, react_1.useState)("");
     const ValidateEmail = (Email) => {
         const emailType = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; // 이메일 형식 정규식
         return emailType.test(email);
@@ -19,4 +21,4 @@ const ValidationEmail = () => {
         </p>)}
     </div>);
 };
-export default ValidationEmail;
+exports.default = ValidationEmail;

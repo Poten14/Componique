@@ -1,6 +1,34 @@
-import Button from "@components/Button/Button";
-import React, { useEffect, useState } from "react";
-import { createPortal } from "react-dom";
+"use strict";
+var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    var desc = Object.getOwnPropertyDescriptor(m, k);
+    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
+      desc = { enumerable: true, get: function() { return m[k]; } };
+    }
+    Object.defineProperty(o, k2, desc);
+}) : (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    o[k2] = m[k];
+}));
+var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {
+    Object.defineProperty(o, "default", { enumerable: true, value: v });
+}) : function(o, v) {
+    o["default"] = v;
+});
+var __importStar = (this && this.__importStar) || function (mod) {
+    if (mod && mod.__esModule) return mod;
+    var result = {};
+    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
+    __setModuleDefault(result, mod);
+    return result;
+};
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+const Button_1 = __importDefault(require("@components/Button/Button"));
+const react_1 = __importStar(require("react"));
+const react_dom_1 = require("react-dom");
 const SizeClass = {
     xs: "max-w-xs w-11/12 sm:w-auto",
     small: "max-w-sm w-11/12 sm:w-auto",
@@ -18,8 +46,8 @@ const MaxHeight = {
     full: "100vh",
 };
 const OverlayModal = ({ isOpen, onClose, children, title, size = "small", closeOnOverlayClick = true, className = "", closeButtonText = "Close", showCloseIcon = true, }) => {
-    const [isDarkMode, setIsDarkMode] = useState(false);
-    useEffect(() => {
+    const [isDarkMode, setIsDarkMode] = (0, react_1.useState)(false);
+    (0, react_1.useEffect)(() => {
         const checkDarkMode = () => {
             const darkMode = document.documentElement.classList.contains("dark");
             setIsDarkMode(darkMode);
@@ -42,7 +70,7 @@ const OverlayModal = ({ isOpen, onClose, children, title, size = "small", closeO
         if (closeOnOverlayClick)
             onClose();
     };
-    return createPortal(<div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50 backdrop-blur-sm" onClick={handleOverlayClick}>
+    return (0, react_dom_1.createPortal)(<div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50 backdrop-blur-sm" onClick={handleOverlayClick}>
       <div className={`relative transform overflow-hidden rounded-lg p-4 shadow-lg transition-all ${SizeClass[size]} ${className} ${isDarkMode ? "bg-[#2A2E39] text-white" : "bg-white text-black"}`} onClick={(e) => e.stopPropagation()}>
         {showCloseIcon && (<div className="absolute right-4 top-4">
             <button onClick={onClose} className={`${isDarkMode
@@ -58,11 +86,11 @@ const OverlayModal = ({ isOpen, onClose, children, title, size = "small", closeO
           {children}
         </div>
         <div className="mt-4 flex justify-end space-x-2">
-          <Button onClick={onClose} className={`${isDarkMode ? "bg-Navy text-white" : ""}`}>
+          <Button_1.default onClick={onClose} className={`${isDarkMode ? "bg-Navy text-white" : ""}`}>
             {closeButtonText}
-          </Button>
+          </Button_1.default>
         </div>
       </div>
     </div>, document.body);
 };
-export default OverlayModal;
+exports.default = OverlayModal;

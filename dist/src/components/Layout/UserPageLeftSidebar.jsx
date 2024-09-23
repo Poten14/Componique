@@ -1,13 +1,18 @@
+"use strict";
 "use client";
-import { useRouter } from "next/navigation";
-import { useEffect } from "react";
-import { useState } from "react";
-import Image from "next/image";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+const navigation_1 = require("next/navigation");
+const react_1 = require("react");
+const react_2 = require("react");
+const image_1 = __importDefault(require("next/image"));
 const UserPageLeftSidebar = () => {
-    const router = useRouter();
-    const [hoverNumber, setHoverNumber] = useState(null);
-    const [isDarkMode, setIsDarkMode] = useState(false);
-    useEffect(() => {
+    const router = (0, navigation_1.useRouter)();
+    const [hoverNumber, setHoverNumber] = (0, react_2.useState)(null);
+    const [isDarkMode, setIsDarkMode] = (0, react_2.useState)(false);
+    (0, react_1.useEffect)(() => {
         const checkDarkMode = () => {
             const darkMode = document.documentElement.classList.contains("dark");
             setIsDarkMode(darkMode);
@@ -98,7 +103,7 @@ const UserPageLeftSidebar = () => {
                 <p className="mr-2 h-2 w-2 rounded-full bg-Basic"></p>
                 <p className="z-5 text-xl">{item.title}</p>
               </div>
-              <Image src={isDarkMode ? item.imageDark : item.image} alt={item.title} width={200} height={270} className="rounded-xl border border-Basic dark:border-[#2A6490]"/>
+              <image_1.default src={isDarkMode ? item.imageDark : item.image} alt={item.title} width={200} height={270} className="rounded-xl border border-Basic dark:border-[#2A6490]"/>
               <article className={`text-md absolute bottom-0 left-0 z-0 w-[200px] overflow-hidden rounded-b-xl bg-gradient-to-b from-transparent to-blue-400/60 p-3 transition-transform duration-1000 ease-out dark:from-transparent dark:to-white/60 ${hoverNumber === templateList.indexOf(item)
                 ? "opacity-100"
                 : "opacity-0"}`}>
@@ -114,4 +119,4 @@ const UserPageLeftSidebar = () => {
       </div>
     </>);
 };
-export default UserPageLeftSidebar;
+exports.default = UserPageLeftSidebar;

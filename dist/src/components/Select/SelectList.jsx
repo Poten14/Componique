@@ -1,7 +1,9 @@
+"use strict";
 "use client";
-import { useState } from "react";
+Object.defineProperty(exports, "__esModule", { value: true });
+const react_1 = require("react");
 const SelectList = ({ option, onChange, className }) => {
-    const [selectValue, setSelectValue] = useState("");
+    const [selectValue, setSelectValue] = (0, react_1.useState)("");
     const handleOptionClick = (item) => {
         setSelectValue(item);
         if (onChange) {
@@ -18,4 +20,4 @@ const SelectList = ({ option, onChange, className }) => {
       </div>
     </>);
 };
-export default SelectList;
+exports.default = SelectList;

@@ -1,12 +1,40 @@
+"use strict";
 "use client";
-import React, { useState } from "react";
-import CodeBox from "@components/CodeBox";
-import ColorPickerUI from "@components/ColorPicker/ColorPickerUI";
-import GradientPicker from "@components/ColorPicker/GradientPicker";
-import TwoPicker from "@components/ColorPicker/TwoPicker";
-import ColorPicker from "@components/ColorPicker/ColorPicker";
+var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    var desc = Object.getOwnPropertyDescriptor(m, k);
+    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
+      desc = { enumerable: true, get: function() { return m[k]; } };
+    }
+    Object.defineProperty(o, k2, desc);
+}) : (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    o[k2] = m[k];
+}));
+var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {
+    Object.defineProperty(o, "default", { enumerable: true, value: v });
+}) : function(o, v) {
+    o["default"] = v;
+});
+var __importStar = (this && this.__importStar) || function (mod) {
+    if (mod && mod.__esModule) return mod;
+    var result = {};
+    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
+    __setModuleDefault(result, mod);
+    return result;
+};
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+const react_1 = __importStar(require("react"));
+const CodeBox_1 = __importDefault(require("@components/CodeBox"));
+const ColorPickerUI_1 = __importDefault(require("@components/ColorPicker/ColorPickerUI"));
+const GradientPicker_1 = __importDefault(require("@components/ColorPicker/GradientPicker"));
+const TwoPicker_1 = __importDefault(require("@components/ColorPicker/TwoPicker"));
+const ColorPicker_1 = __importDefault(require("@components/ColorPicker/ColorPicker"));
 const ColorPickerDoc = () => {
-    const [copied, setCopied] = useState({});
+    const [copied, setCopied] = (0, react_1.useState)({});
     const handleCopy = (index) => {
         setCopied((prev) => ({ ...prev, [index]: true }));
         setTimeout(() => setCopied((prev) => ({ ...prev, [index]: false })), 500);
@@ -22,15 +50,15 @@ const ColorPickerDoc = () => {
       </p>
       <h2 className="text-[#2D3748]">1.1. Import</h2>
 
-      <CodeBox code={`import ColorPicker from "@components/ColorPicker/ColorPicker";`} copyText={`import ColorPicker from "@components/ColorPicker/ColorPicker";`} language="tsx" index={1} copied={copied} handleCopy={handleCopy}/>
+      <CodeBox_1.default code={`import ColorPicker from "@components/ColorPicker/ColorPicker";`} copyText={`import ColorPicker from "@components/ColorPicker/ColorPicker";`} language="tsx" index={1} copied={copied} handleCopy={handleCopy}/>
 
       <h2 className="text-[#2D3748]">1.2. Usage</h2>
       <p>기본 사용 예제는 아래와 같습니다:</p>
       <div style={{ marginBottom: "20px" }}>
-        <ColorPicker />
+        <ColorPicker_1.default />
       </div>
       <div className="my-7 space-y-4"/>
-      <CodeBox code={`import ColorPicker from "@components/ColorPicker/ColorPicker";
+      <CodeBox_1.default code={`import ColorPicker from "@components/ColorPicker/ColorPicker";
 
 function Example() {
   return (
@@ -55,15 +83,15 @@ export default Example;`} language="tsx" index={2} copied={copied} handleCopy={h
       </p>
       <h2 className="text-[#2D3748]">2.1. Import</h2>
 
-      <CodeBox code={`import ColorPickerUI from '@components/ColorPicker/ColorPickerUI';`} copyText={`import ColorPickerUI from '@components/ColorPicker/ColorPickerUI';`} language="tsx" index={1} copied={copied} handleCopy={handleCopy}/>
+      <CodeBox_1.default code={`import ColorPickerUI from '@components/ColorPicker/ColorPickerUI';`} copyText={`import ColorPickerUI from '@components/ColorPicker/ColorPickerUI';`} language="tsx" index={1} copied={copied} handleCopy={handleCopy}/>
 
       <h2 className="text-[#2D3748]">2.2. Usage</h2>
       <p>기본 사용 예제는 아래와 같습니다:</p>
       <div style={{ marginBottom: "20px" }}>
-        <ColorPickerUI colors={["#ff0000", "#00ff00", "#0000ff"]}/>
+        <ColorPickerUI_1.default colors={["#ff0000", "#00ff00", "#0000ff"]}/>
       </div>
       <div className="my-7 space-y-4"/>
-      <CodeBox code={`import ColorPickerUI from '@components/ColorPicker/ColorPickerUI';
+      <CodeBox_1.default code={`import ColorPickerUI from '@components/ColorPicker/ColorPickerUI';
 
 function Example() {
   return (
@@ -124,15 +152,15 @@ export default Example;`} language="tsx" index={2} copied={copied} handleCopy={h
       </p>
       <h2 className="text-[#2D3748]">3.1. Import</h2>
       <div className="my-7 space-y-4"/>
-      <CodeBox code={`import GradientPicker from '@components/ColorPicker/GradientPicker';`} copyText={`import GradientPicker from '@components/ColorPicker/GradientPicker';`} language="tsx" index={3} copied={copied} handleCopy={handleCopy}/>
+      <CodeBox_1.default code={`import GradientPicker from '@components/ColorPicker/GradientPicker';`} copyText={`import GradientPicker from '@components/ColorPicker/GradientPicker';`} language="tsx" index={3} copied={copied} handleCopy={handleCopy}/>
 
       <h2 className="text-[#2D3748]">3.2. Usage</h2>
       <p>기본 사용 예제는 아래와 같습니다:</p>
       <div style={{ marginBottom: "20px" }}>
-        <GradientPicker />
+        <GradientPicker_1.default />
       </div>
       <div className="my-7 space-y-4"/>
-      <CodeBox code={`import GradientPicker from '@components/ColorPicker/GradientPicker';
+      <CodeBox_1.default code={`import GradientPicker from '@components/ColorPicker/GradientPicker';
 
 function Example() {
   return (
@@ -194,15 +222,15 @@ export default Example;`} language="tsx" index={4} copied={copied} handleCopy={h
         중 하나를 선택하여 사용할 수 있게 합니다.
       </p>
       <h2 className="text-[#2D3748]">4.1. Import</h2>
-      <CodeBox code={`import TwoPicker from '@components/ColorPicker/TwoPicker';`} copyText={`import TwoPicker from '@components/ColorPicker/TwoPicker';`} language="tsx" index={5} copied={copied} handleCopy={handleCopy}/>
+      <CodeBox_1.default code={`import TwoPicker from '@components/ColorPicker/TwoPicker';`} copyText={`import TwoPicker from '@components/ColorPicker/TwoPicker';`} language="tsx" index={5} copied={copied} handleCopy={handleCopy}/>
 
       <h2 className="text-[#2D3748]">4.2. Usage</h2>
       <p>기본 사용 예제는 아래와 같습니다:</p>
       <div style={{ marginBottom: "20px" }}>
-        <TwoPicker />
+        <TwoPicker_1.default />
       </div>
       <div className="my-7 space-y-4"/>
-      <CodeBox code={`import TwoPicker from '@components/ColorPicker/TwoPicker';
+      <CodeBox_1.default code={`import TwoPicker from '@components/ColorPicker/TwoPicker';
 
 function Example() {
   return (
@@ -249,4 +277,4 @@ export default Example;`} language="tsx" index={6} copied={copied} handleCopy={h
       </table>
     </div>);
 };
-export default ColorPickerDoc;
+exports.default = ColorPickerDoc;

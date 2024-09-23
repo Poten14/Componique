@@ -1,6 +1,8 @@
-import { useState } from "react";
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const react_1 = require("react");
 const SwitchRound = () => {
-    const [isOn, setIsOn] = useState(false);
+    const [isOn, setIsOn] = (0, react_1.useState)(false);
     const toggleSwitch = () => {
         setIsOn(!isOn);
     };
@@ -14,4 +16,4 @@ const SwitchRound = () => {
       </div>
     </div>);
 };
-export default SwitchRound;
+exports.default = SwitchRound;

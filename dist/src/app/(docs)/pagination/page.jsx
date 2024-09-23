@@ -1,10 +1,38 @@
+"use strict";
 "use client";
-import React, { useState } from "react";
-import CodeBox from "@components/CodeBox";
-import Pagination from "@components/Pagination/Pagination";
+var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    var desc = Object.getOwnPropertyDescriptor(m, k);
+    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
+      desc = { enumerable: true, get: function() { return m[k]; } };
+    }
+    Object.defineProperty(o, k2, desc);
+}) : (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    o[k2] = m[k];
+}));
+var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {
+    Object.defineProperty(o, "default", { enumerable: true, value: v });
+}) : function(o, v) {
+    o["default"] = v;
+});
+var __importStar = (this && this.__importStar) || function (mod) {
+    if (mod && mod.__esModule) return mod;
+    var result = {};
+    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
+    __setModuleDefault(result, mod);
+    return result;
+};
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+const react_1 = __importStar(require("react"));
+const CodeBox_1 = __importDefault(require("@components/CodeBox"));
+const Pagination_1 = __importDefault(require("@components/Pagination/Pagination"));
 const PaginationDoc = () => {
-    const [copied, setCopied] = useState({});
-    const [currentPage, setCurrentPage] = useState(3);
+    const [copied, setCopied] = (0, react_1.useState)({});
+    const [currentPage, setCurrentPage] = (0, react_1.useState)(3);
     const totalPages = 10;
     const handleCopy = (index) => {
         setCopied((prev) => ({ ...prev, [index]: true }));
@@ -21,16 +49,16 @@ const PaginationDoc = () => {
         커스터마이즈할 수 있습니다.
       </p>
 
-      <CodeBox code={`import { Pagination } from '@componique/react';`} copyText={`import { Pagination } from '@components/Pagination';`} language="tsx" index={1} copied={copied} handleCopy={handleCopy}/>
+      <CodeBox_1.default code={`import { Pagination } from '@componique/react';`} copyText={`import { Pagination } from '@components/Pagination';`} language="tsx" index={1} copied={copied} handleCopy={handleCopy}/>
 
       <h2 className="text-[#2D3748]">1.2. Usage</h2>
       <p>
         아래는 <code>Pagination</code> 컴포넌트의 기본 사용 예제입니다:
       </p>
       <div className="my-7 space-x-3 space-y-4">
-        <Pagination currentPage={currentPage} totalPages={10} onPageChange={handlePageChange}/>
+        <Pagination_1.default currentPage={currentPage} totalPages={10} onPageChange={handlePageChange}/>
       </div>
-      <CodeBox code={`import { Pagination } from '@components/Pagination';
+      <CodeBox_1.default code={`import { Pagination } from '@components/Pagination';
 
 function Example() {
   const [currentPage, setCurrentPage] = useState(3);
@@ -84,10 +112,10 @@ export default Example;`} copyText={`import { Pagination } from '@components/Pag
         </li>
       </ul>
       <div className="my-7 space-y-4">
-        <Pagination currentPage={currentPage} totalPages={10} onPageChange={handlePageChange}/>
-        <Pagination variant="square" currentPage={currentPage} totalPages={10} onPageChange={handlePageChange}/>
+        <Pagination_1.default currentPage={currentPage} totalPages={10} onPageChange={handlePageChange}/>
+        <Pagination_1.default variant="square" currentPage={currentPage} totalPages={10} onPageChange={handlePageChange}/>
       </div>
-      <CodeBox code={`import { Pagination } from '@componique/react';
+      <CodeBox_1.default code={`import { Pagination } from '@componique/react';
 
 function Example() {
   const [currentPage, setCurrentPage] = useState(3);
@@ -163,11 +191,11 @@ export default Example;`} copyText={`import { Pagination } from '@componique/rea
         </li>
       </ul>
       <div className="my-7 space-y-4">
-        <Pagination currentPage={currentPage} totalPages={10} styleType="outlined" onPageChange={handlePageChange}/>
-        <Pagination currentPage={currentPage} totalPages={10} styleType="outlined-focused" onPageChange={handlePageChange}/>
-        <Pagination currentPage={currentPage} totalPages={10} styleType="filled-outlined" onPageChange={handlePageChange}/>
+        <Pagination_1.default currentPage={currentPage} totalPages={10} styleType="outlined" onPageChange={handlePageChange}/>
+        <Pagination_1.default currentPage={currentPage} totalPages={10} styleType="outlined-focused" onPageChange={handlePageChange}/>
+        <Pagination_1.default currentPage={currentPage} totalPages={10} styleType="filled-outlined" onPageChange={handlePageChange}/>
       </div>
-      <CodeBox code={`import { Pagination } from '@componique/react';
+      <CodeBox_1.default code={`import { Pagination } from '@componique/react';
 
 function Example() {
   const [currentPage, setCurrentPage] = useState(3);
@@ -283,16 +311,16 @@ export default Example;`} language="tsx" index={4} copied={copied} handleCopy={h
         </li>
       </ul>
       <div className="my-7 space-y-4">
-        <Pagination styleType="filled" currentPage={currentPage} totalPages={10} color="Basic" onPageChange={handlePageChange}/>
-        <Pagination styleType="filled" currentPage={currentPage} totalPages={10} color="Primary" onPageChange={handlePageChange}/>
-        <Pagination styleType="filled" currentPage={currentPage} totalPages={10} color="gray" onPageChange={handlePageChange}/>
-        <Pagination styleType="filled" currentPage={currentPage} totalPages={10} color="Secondary" onPageChange={handlePageChange}/>
-        <Pagination styleType="filled" currentPage={currentPage} totalPages={10} color="Success" onPageChange={handlePageChange}/>
-        <Pagination styleType="filled" currentPage={currentPage} totalPages={10} color="Warning" onPageChange={handlePageChange}/>
-        <Pagination styleType="filled" currentPage={currentPage} totalPages={10} color="Danger" onPageChange={handlePageChange}/>
-        <Pagination styleType="filled" currentPage={currentPage} totalPages={10} color="White" onPageChange={handlePageChange}/>
+        <Pagination_1.default styleType="filled" currentPage={currentPage} totalPages={10} color="Basic" onPageChange={handlePageChange}/>
+        <Pagination_1.default styleType="filled" currentPage={currentPage} totalPages={10} color="Primary" onPageChange={handlePageChange}/>
+        <Pagination_1.default styleType="filled" currentPage={currentPage} totalPages={10} color="gray" onPageChange={handlePageChange}/>
+        <Pagination_1.default styleType="filled" currentPage={currentPage} totalPages={10} color="Secondary" onPageChange={handlePageChange}/>
+        <Pagination_1.default styleType="filled" currentPage={currentPage} totalPages={10} color="Success" onPageChange={handlePageChange}/>
+        <Pagination_1.default styleType="filled" currentPage={currentPage} totalPages={10} color="Warning" onPageChange={handlePageChange}/>
+        <Pagination_1.default styleType="filled" currentPage={currentPage} totalPages={10} color="Danger" onPageChange={handlePageChange}/>
+        <Pagination_1.default styleType="filled" currentPage={currentPage} totalPages={10} color="White" onPageChange={handlePageChange}/>
       </div>
-      <CodeBox code={`import { Pagination } from '@componique/react';
+      <CodeBox_1.default code={`import { Pagination } from '@componique/react';
 
 function Example() {
   const [currentPage, setCurrentPage] = useState(3);
@@ -540,7 +568,7 @@ export default Example;`} copyText={`import { Pagination } from '@componique/rea
       </table>
 
       <h2 className="text-[#2D3748]">1.7. Full Example</h2>
-      <CodeBox code={`import { Pagination } from '@componique/react';
+      <CodeBox_1.default code={`import { Pagination } from '@componique/react';
 
         function Example() {
           const [currentPage, setCurrentPage] = useState(3);
@@ -591,4 +619,4 @@ export default Example;`} copyText={`import { Pagination } from '@componique/rea
         export default Example;`} language="tsx" index={6} copied={copied} handleCopy={handleCopy}/>
     </div>);
 };
-export default PaginationDoc;
+exports.default = PaginationDoc;

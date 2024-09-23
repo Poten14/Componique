@@ -1,7 +1,9 @@
-import { useState, useEffect } from "react";
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const react_1 = require("react");
 const ProgressBarSlider = ({ percent, showPercent = true, completed = true, }) => {
-    const [progressBar, setProgressBar] = useState(percent);
-    useEffect(() => {
+    const [progressBar, setProgressBar] = (0, react_1.useState)(percent);
+    (0, react_1.useEffect)(() => {
         setProgressBar(percent);
     }, [percent]);
     const handleSliderChange = (event) => {
@@ -20,4 +22,4 @@ const ProgressBarSlider = ({ percent, showPercent = true, completed = true, }) =
       </div>
     </div>);
 };
-export default ProgressBarSlider;
+exports.default = ProgressBarSlider;

@@ -1,8 +1,10 @@
+"use strict";
 "use client";
-import { usePathname, useRouter } from "next/navigation";
+Object.defineProperty(exports, "__esModule", { value: true });
+const navigation_1 = require("next/navigation");
 const SideBar = () => {
-    const router = useRouter();
-    const pathname = usePathname();
+    const router = (0, navigation_1.useRouter)();
+    const pathname = (0, navigation_1.usePathname)();
     return (<>
       <ul className="mx-4 h-full select-none overflow-y-auto dark:bg-[#252629]">
         <li className="text-[#3e3e3e] dark:text-[#DFDFDF]">
@@ -145,4 +147,4 @@ const SideBar = () => {
       </ul>
     </>);
 };
-export default SideBar;
+exports.default = SideBar;

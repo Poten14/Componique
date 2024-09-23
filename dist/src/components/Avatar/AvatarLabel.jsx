@@ -1,3 +1,5 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 const AvatarLabel = ({ src, alt, initial, size = 50, label, }) => {
     return (<div className={`flex items-center justify-center rounded-full bg-Basic font-bold uppercase text-white`} style={{
             width: `${size}px`,
@@ -11,4 +13,4 @@ const AvatarLabel = ({ src, alt, initial, size = 50, label, }) => {
       <span>{label}</span>
     </div>);
 };
-export default AvatarLabel;
+exports.default = AvatarLabel;

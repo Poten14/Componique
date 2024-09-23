@@ -1,13 +1,41 @@
+"use strict";
 "use client";
-import React, { useState } from "react";
-import CodeBox from "@components/CodeBox";
-import CardBasic from "@components/Card/CardBasic";
-import CardInteractive from "@components/Card/CardInteractive";
-import CardImage from "@components/Card/CardImage";
-import CardPricing from "@components/Card/CardPricing";
-import CardReview from "@components/Card/CardReview";
+var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    var desc = Object.getOwnPropertyDescriptor(m, k);
+    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
+      desc = { enumerable: true, get: function() { return m[k]; } };
+    }
+    Object.defineProperty(o, k2, desc);
+}) : (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    o[k2] = m[k];
+}));
+var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {
+    Object.defineProperty(o, "default", { enumerable: true, value: v });
+}) : function(o, v) {
+    o["default"] = v;
+});
+var __importStar = (this && this.__importStar) || function (mod) {
+    if (mod && mod.__esModule) return mod;
+    var result = {};
+    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
+    __setModuleDefault(result, mod);
+    return result;
+};
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+const react_1 = __importStar(require("react"));
+const CodeBox_1 = __importDefault(require("@components/CodeBox"));
+const CardBasic_1 = __importDefault(require("@components/Card/CardBasic"));
+const CardInteractive_1 = __importDefault(require("@components/Card/CardInteractive"));
+const CardImage_1 = __importDefault(require("@components/Card/CardImage"));
+const CardPricing_1 = __importDefault(require("@components/Card/CardPricing"));
+const CardReview_1 = __importDefault(require("@components/Card/CardReview"));
 const CardExample = () => {
-    const [copied, setCopied] = useState({});
+    const [copied, setCopied] = (0, react_1.useState)({});
     const handleCopy = (index) => {
         setCopied((prev) => ({ ...prev, [index]: true }));
         setTimeout(() => setCopied((prev) => ({ ...prev, [index]: false })), 500);
@@ -23,17 +51,17 @@ const CardExample = () => {
         </p>
         <h2 className="text-[#2D3748] dark:text-white">1.1. Import</h2>
         {/* 카피버튼 시작 */}
-        <CodeBox code={`import CardBasic from '@components/Card/CardBasic';`} copyText={`import CardBasic from '@components/Card/CardBasic';`} language="tsx" index={1} copied={copied} handleCopy={handleCopy}/>
+        <CodeBox_1.default code={`import CardBasic from '@components/Card/CardBasic';`} copyText={`import CardBasic from '@components/Card/CardBasic';`} language="tsx" index={1} copied={copied} handleCopy={handleCopy}/>
         {/* 카피버튼 끝 */}
         <h2 className="text-[#2D3748] dark:text-white">1.2. Usage</h2>
         <p>기본 사용 예제는 아래와 같습니다:</p>
         <div style={{ marginBottom: "20px" }}>
-          <CardBasic title="Example Card">
+          <CardBasic_1.default title="Example Card">
             <p>This is an example of a basic card component in React.</p>
-          </CardBasic>
+          </CardBasic_1.default>
         </div>
         {/* 카피버튼 시작 */}
-        <CodeBox code={`import CardBasic from '@components/Card/CardBasic';
+        <CodeBox_1.default code={`import CardBasic from '@components/Card/CardBasic';
 
 function Example() {
   return (
@@ -98,7 +126,7 @@ export default Example;`} language="tsx" index={2} copied={copied} handleCopy={h
 
         <h2 className="text-[#2D3748] dark:text-white">1.4. Full Example</h2>
         {/* 카피버튼 시작 */}
-        <CodeBox code={`import CardBasic from '@components/Card/CardBasic';
+        <CodeBox_1.default code={`import CardBasic from '@components/Card/CardBasic';
 
 function FullExample() {
   return (
@@ -149,18 +177,18 @@ export default FullExample;`} language="tsx" index={3} copied={copied} handleCop
         </p>
         <h2 className="text-[#2D3748] dark:text-white">2.1. Import</h2>
         {/* 카피버튼 시작 */}
-        <CodeBox code={`import CardInteractive from '@components/Card/CardInteractive';`} copyText={`import CardInteractive from '@components/Card/CardInteractive';`} language="tsx" index={4} copied={copied} handleCopy={handleCopy}/>
+        <CodeBox_1.default code={`import CardInteractive from '@components/Card/CardInteractive';`} copyText={`import CardInteractive from '@components/Card/CardInteractive';`} language="tsx" index={4} copied={copied} handleCopy={handleCopy}/>
         {/* 카피버튼 끝 */}
 
         <h2 className="text-[#2D3748] dark:text-white">2.2. Usage</h2>
         <p>기본 사용 예제는 아래와 같습니다:</p>
         <div style={{ marginBottom: "20px" }}>
-          <CardInteractive title="Interactive Card">
+          <CardInteractive_1.default title="Interactive Card">
             <p>This content is hidden until the card is clicked.</p>
-          </CardInteractive>
+          </CardInteractive_1.default>
         </div>
         {/* 카피버튼 시작 */}
-        <CodeBox code={`import CardInteractive from '@components/Card/CardInteractive';
+        <CodeBox_1.default code={`import CardInteractive from '@components/Card/CardInteractive';
 
 function Example() {
   return (
@@ -226,7 +254,7 @@ export default Example;`} language="tsx" index={5} copied={copied} handleCopy={h
 
         <h2 className="text-[#2D3748] dark:text-white">2.4. Full Example</h2>
         {/* 카피버튼 시작 */}
-        <CodeBox code={`import CardInteractive from '@components/Card/CardInteractive';
+        <CodeBox_1.default code={`import CardInteractive from '@components/Card/CardInteractive';
 
 function FullExample() {
   return (
@@ -277,18 +305,18 @@ export default FullExample;`} language="tsx" index={6} copied={copied} handleCop
         </p>
         <h2 className="text-[#2D3748] dark:text-white">3.1. Import</h2>
         {/* 카피버튼 시작 */}
-        <CodeBox code={`import CardImage from '@components/Card/CardImage';`} copyText={`import CardImage from '@components/Card/CardImage';`} language="tsx" index={7} copied={copied} handleCopy={handleCopy}/>
+        <CodeBox_1.default code={`import CardImage from '@components/Card/CardImage';`} copyText={`import CardImage from '@components/Card/CardImage';`} language="tsx" index={7} copied={copied} handleCopy={handleCopy}/>
         {/* 카피버튼 끝 */}
 
         <h2 className="text-[#2D3748] dark:text-white">3.2. Usage</h2>
         <p>기본 사용 예제는 아래와 같습니다:</p>
         <div style={{ marginBottom: "20px" }}>
-          <CardImage title="Image Card">
+          <CardImage_1.default title="Image Card">
             <p>This card includes an image alongside the text.</p>
-          </CardImage>
+          </CardImage_1.default>
         </div>
         {/* 카피버튼 시작 */}
-        <CodeBox code={`import CardImage from '@components/Card/CardImage';
+        <CodeBox_1.default code={`import CardImage from '@components/Card/CardImage';
 
 function Example() {
   return (
@@ -354,7 +382,7 @@ export default Example;`} language="tsx" index={8} copied={copied} handleCopy={h
 
         <h2 className="text-[#2D3748] dark:text-white">3.4. Full Example</h2>
         {/* 카피버튼 시작 */}
-        <CodeBox code={`import CardImage from '@components/Card/CardImage';
+        <CodeBox_1.default code={`import CardImage from '@components/Card/CardImage';
 
 function FullExample() {
   return (
@@ -405,20 +433,20 @@ export default FullExample;`} language="tsx" index={9} copied={copied} handleCop
         </p>
         <h2 className="text-[#2D3748] dark:text-white">4.1. Import</h2>
         {/* 카피버튼 시작 */}
-        <CodeBox code={`import CardPricing from '@components/Card/CardPricing';`} copyText={`import CardPricing from '@components/Card/CardPricing';`} language="tsx" index={10} copied={copied} handleCopy={handleCopy}/>
+        <CodeBox_1.default code={`import CardPricing from '@components/Card/CardPricing';`} copyText={`import CardPricing from '@components/Card/CardPricing';`} language="tsx" index={10} copied={copied} handleCopy={handleCopy}/>
         {/* 카피버튼 끝 */}
 
         <h2 className="text-[#2D3748] dark:text-white">4.2. Usage</h2>
         <p>기본 사용 예제는 아래와 같습니다:</p>
         <div style={{ marginBottom: "20px" }}>
-          <CardPricing title="Pro Plan" description="Access more features with the Pro plan." price="$20/month" features={[
+          <CardPricing_1.default title="Pro Plan" description="Access more features with the Pro plan." price="$20/month" features={[
             "5x more usage",
             "Access to Claude 3 Haiku",
             "Priority access during high-traffic periods",
         ]} buy="Subscribe Now"/>
         </div>
         {/* 카피버튼 시작 */}
-        <CodeBox code={`import CardPricing from '@components/Card/CardPricing';
+        <CodeBox_1.default code={`import CardPricing from '@components/Card/CardPricing';
 
 function Example() {
   return (
@@ -536,7 +564,7 @@ export default Example;`} language="tsx" index={11} copied={copied} handleCopy={
 
         <h2 className="text-[#2D3748] dark:text-white">4.4. Full Example</h2>
         {/* 카피버튼 시작 */}
-        <CodeBox code={`import CardPricing from '@components/Card/CardPricing';
+        <CodeBox_1.default code={`import CardPricing from '@components/Card/CardPricing';
 
 function FullExample() {
   return (
@@ -633,18 +661,18 @@ export default FullExample;`} language="tsx" index={12} copied={copied} handleCo
         </p>
         <h2 className="text-[#2D3748] dark:text-white">5.1. Import</h2>
         {/* 카피버튼 시작 */}
-        <CodeBox code={`import CardReview from '@components/Card/CardReview';`} copyText={`import CardReview from '@components/Card/CardReview';`} language="tsx" index={13} copied={copied} handleCopy={handleCopy}/>
+        <CodeBox_1.default code={`import CardReview from '@components/Card/CardReview';`} copyText={`import CardReview from '@components/Card/CardReview';`} language="tsx" index={13} copied={copied} handleCopy={handleCopy}/>
         {/* 카피버튼 끝 */}
 
         <h2 className="text-[#2D3748] dark:text-white">5.2. Usage</h2>
         <p>기본 사용 예제는 아래와 같습니다:</p>
         <div style={{ marginBottom: "20px" }}>
-          <CardReview avatar="/avatar1.svg" name="John Doe" rate={4}>
+          <CardReview_1.default avatar="/avatar1.svg" name="John Doe" rate={4}>
             <p>This is an excellent product! Highly recommended.</p>
-          </CardReview>
+          </CardReview_1.default>
         </div>
         {/* 카피버튼 시작 */}
-        <CodeBox code={`import CardReview from '@components/Card/CardReview';
+        <CodeBox_1.default code={`import CardReview from '@components/Card/CardReview';
 
 function Example() {
   return (
@@ -734,7 +762,7 @@ export default Example;`} language="tsx" index={14} copied={copied} handleCopy={
 
         <h2 className="text-[#2D3748] dark:text-white">5.4. Full Example</h2>
         {/* 카피버튼 시작 */}
-        <CodeBox code={`import CardReview from '@components/Card/CardReview';
+        <CodeBox_1.default code={`import CardReview from '@components/Card/CardReview';
 
 function FullExample() {
   return (
@@ -775,4 +803,4 @@ export default FullExample;`} language="tsx" index={15} copied={copied} handleCo
       </div>
     </div>);
 };
-export default CardExample;
+exports.default = CardExample;

@@ -1,5 +1,33 @@
-import React, { useState, useEffect } from "react";
-import Image from "next/image";
+"use strict";
+var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    var desc = Object.getOwnPropertyDescriptor(m, k);
+    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
+      desc = { enumerable: true, get: function() { return m[k]; } };
+    }
+    Object.defineProperty(o, k2, desc);
+}) : (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    o[k2] = m[k];
+}));
+var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {
+    Object.defineProperty(o, "default", { enumerable: true, value: v });
+}) : function(o, v) {
+    o["default"] = v;
+});
+var __importStar = (this && this.__importStar) || function (mod) {
+    if (mod && mod.__esModule) return mod;
+    var result = {};
+    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
+    __setModuleDefault(result, mod);
+    return result;
+};
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+const react_1 = __importStar(require("react"));
+const image_1 = __importDefault(require("next/image"));
 const radiusClasses = {
     none: "rounded-none",
     small: "rounded-md",
@@ -14,11 +42,11 @@ const borderClasses = {
     thick: "border-4 border-zinc-300",
 };
 const GroupedAutocomplete = ({ options, placeholder = "Search...", onSelect, radius = "medium", border = "medium", width = "w-64", noOptionsMessage = "No results found", }) => {
-    const [inputValue, setInputValue] = useState("");
-    const [filteredOptions, setFilteredOptions] = useState(options);
-    const [isOpen, setIsOpen] = useState(false);
-    const [isDarkMode, setIsDarkMode] = useState(false);
-    useEffect(() => {
+    const [inputValue, setInputValue] = (0, react_1.useState)("");
+    const [filteredOptions, setFilteredOptions] = (0, react_1.useState)(options);
+    const [isOpen, setIsOpen] = (0, react_1.useState)(false);
+    const [isDarkMode, setIsDarkMode] = (0, react_1.useState)(false);
+    (0, react_1.useEffect)(() => {
         const checkDarkMode = () => {
             const darkMode = document.documentElement.classList.contains("dark");
             setIsDarkMode(darkMode);
@@ -58,7 +86,7 @@ const GroupedAutocomplete = ({ options, placeholder = "Search...", onSelect, rad
             ? "border-gray-600 bg-[#2A2E39] text-white"
             : "border-gray bg-white text-black"} ${borderClasses[border]} ${radius === "full" ? "rounded-full" : radiusClasses[radius]} focus:border-transparent focus:outline-none focus:ring-2 focus:ring-Basic`}/>
         <div className="absolute right-3 top-1/2 -translate-y-1/2 transform">
-          <Image src={isOpen ? "/dropdown1.svg" : "/dropdown2.svg"} alt="dropdown" width={20} height={20}/>
+          <image_1.default src={isOpen ? "/dropdown1.svg" : "/dropdown2.svg"} alt="dropdown" width={20} height={20}/>
         </div>
       </div>
       {isOpen && (<ul className={`absolute left-0 right-0 z-10 mt-1 max-h-60 overflow-y-auto shadow-lg ${isDarkMode ? "bg-[#2A2E39] text-white" : "bg-white text-black"} ${borderClasses[border]} ${radius !== "full" ? radiusClasses[radius] : "rounded-lg"}`}>
@@ -78,4 +106,4 @@ const GroupedAutocomplete = ({ options, placeholder = "Search...", onSelect, rad
         </ul>)}
     </div>);
 };
-export default GroupedAutocomplete;
+exports.default = GroupedAutocomplete;

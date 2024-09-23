@@ -1,12 +1,40 @@
+"use strict";
 "use client";
-import React, { useEffect, useState } from "react";
-import { useTodoListStore } from "app/store/useTodoListStore";
-import Select from "@components/Select/Select";
-import Button from "@components/Button/Button";
-import BasicModal from "@components/Modal/BasicModal";
-import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
-import { vscDarkPlus } from "react-syntax-highlighter/dist/esm/styles/prism";
-import Icon from "@components/Icon/Icon";
+var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    var desc = Object.getOwnPropertyDescriptor(m, k);
+    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
+      desc = { enumerable: true, get: function() { return m[k]; } };
+    }
+    Object.defineProperty(o, k2, desc);
+}) : (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    o[k2] = m[k];
+}));
+var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {
+    Object.defineProperty(o, "default", { enumerable: true, value: v });
+}) : function(o, v) {
+    o["default"] = v;
+});
+var __importStar = (this && this.__importStar) || function (mod) {
+    if (mod && mod.__esModule) return mod;
+    var result = {};
+    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
+    __setModuleDefault(result, mod);
+    return result;
+};
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+const react_1 = __importStar(require("react"));
+const useTodoListStore_1 = require("app/store/useTodoListStore");
+const Select_1 = __importDefault(require("@components/Select/Select"));
+const Button_1 = __importDefault(require("@components/Button/Button"));
+const BasicModal_1 = __importDefault(require("@components/Modal/BasicModal"));
+const react_syntax_highlighter_1 = require("react-syntax-highlighter");
+const prism_1 = require("react-syntax-highlighter/dist/esm/styles/prism");
+const Icon_1 = __importDefault(require("@components/Icon/Icon"));
 const previewTodoListFormCode = (store) => {
     return `
   import React from 'react';
@@ -129,11 +157,11 @@ const previewTodoListFormCode = (store) => {
   `;
 };
 const TodoListRemote = () => {
-    const [isDarkMode, setIsDarkMode] = useState(false);
-    const [isModalOpen, setIsModalOpen] = useState(false);
-    const [copied, setCopied] = useState(false);
-    const todoListStore = useTodoListStore();
-    useEffect(() => {
+    const [isDarkMode, setIsDarkMode] = (0, react_1.useState)(false);
+    const [isModalOpen, setIsModalOpen] = (0, react_1.useState)(false);
+    const [copied, setCopied] = (0, react_1.useState)(false);
+    const todoListStore = (0, useTodoListStore_1.useTodoListStore)();
+    (0, react_1.useEffect)(() => {
         const checkDarkMode = () => {
             const darkMode = document.documentElement.classList.contains("dark");
             setIsDarkMode(darkMode);
@@ -150,7 +178,7 @@ const TodoListRemote = () => {
             observer.disconnect();
         };
     }, []);
-    const { addButtonColor, addButtonSize, addButtonVariant, deleteButtonColor, deleteButtonSize, deleteButtonVariant, checkBoxColor, checkBoxVariant, todoList1, todoList2, todoList3, todoList4, inputSize, inputWidth, setTodoListState, } = useTodoListStore();
+    const { addButtonColor, addButtonSize, addButtonVariant, deleteButtonColor, deleteButtonSize, deleteButtonVariant, checkBoxColor, checkBoxVariant, todoList1, todoList2, todoList3, todoList4, inputSize, inputWidth, setTodoListState, } = (0, useTodoListStore_1.useTodoListStore)();
     const controls = [
         {
             label: "Add Button-Color",
@@ -258,14 +286,14 @@ const TodoListRemote = () => {
           <h2 className="text-2xl font-bold text-[#ffffff] dark:text-[#dfdfdf]">
             Control Panel
           </h2>
-          <Button iconPosition="left" iconSize="large" onClick={() => setIsModalOpen(true)} className="dark:bg-[#2A6490] dark:focus:bg-[#1D4767]">
-            <Icon name="icon-docs" color="white"/>
+          <Button_1.default iconPosition="left" iconSize="large" onClick={() => setIsModalOpen(true)} className="dark:bg-[#2A6490] dark:focus:bg-[#1D4767]">
+            <Icon_1.default name="icon-docs" color="white"/>
             Code
-          </Button>
+          </Button_1.default>
         </div>
         <input type="text" className="mt-2 w-full rounded bg-[#BBD9F0] dark:bg-[#2B4456] dark:text-[#ffffff]" placeholder="   customizing your template" disabled/>
-        <BasicModal open={isModalOpen} onClose={() => setIsModalOpen(false)} showCloseIcon={true} className="custom-modal">
-          <SyntaxHighlighter language="tsx" style={isDarkMode ? vscDarkPlus : undefined} customStyle={{
+        <BasicModal_1.default open={isModalOpen} onClose={() => setIsModalOpen(false)} showCloseIcon={true} className="custom-modal">
+          <react_syntax_highlighter_1.Prism language="tsx" style={isDarkMode ? prism_1.vscDarkPlus : undefined} customStyle={{
             backgroundColor: isDarkMode ? "#2A2E39" : "#F8F8F8",
             padding: "0.5rem",
             borderRadius: "0.5rem",
@@ -277,16 +305,16 @@ const TodoListRemote = () => {
             overflowWrap: "break-word",
         }}>
             {previewTodoListFormCode(todoListStore)}
-          </SyntaxHighlighter>
-          <Button onClick={handleCopy} icon={copied ? "icon-check" : undefined} className="copyButton m-10 dark:bg-[#2A6490]" iconColor={copied ? "green" : "white"}>
+          </react_syntax_highlighter_1.Prism>
+          <Button_1.default onClick={handleCopy} icon={copied ? "icon-check" : undefined} className="copyButton m-10 dark:bg-[#2A6490]" iconColor={copied ? "green" : "white"}>
             {copied ? "Copied!" : "Copy Code"}
-          </Button>
+          </Button_1.default>
           <div className="mb-2 text-right">
-            <Button variant="border" onClick={() => setIsModalOpen(false)} className="dark:text-gray-300 text-sm text-gray dark:border-gray">
+            <Button_1.default variant="border" onClick={() => setIsModalOpen(false)} className="dark:text-gray-300 text-sm text-gray dark:border-gray">
               close
-            </Button>
+            </Button_1.default>
           </div>
-        </BasicModal>
+        </BasicModal_1.default>
       </div>
       {/* Control 패널 */}
       <div className={`remote-control relative top-26 m-auto mt-10 w-[350px] rounded-xl p-2 shadow-xl ${isDarkMode ? "bg-[#333742] text-[#dfdfdf]" : "bg-white"} max-h-[calc(100vh-220px)] overflow-y-auto`}>
@@ -294,11 +322,11 @@ const TodoListRemote = () => {
             <label className={`mb-2 block font-medium ${isDarkMode ? "text-[#dfdfdf]" : "text-Gray"}`}>
               {control.label}
             </label>
-            {control.type === "select" ? (<Select option={control.options || []} placeholder={control.value} onChange={(newValue) => control.onChange(newValue)} className="w-full"/>) : (<input type="text" value={control.value} onChange={(e) => control.onChange(e.target.value)} className={`w-full rounded-lg border p-2 focus:outline-none focus:ring-1 focus:ring-Basic ${isDarkMode
+            {control.type === "select" ? (<Select_1.default option={control.options || []} placeholder={control.value} onChange={(newValue) => control.onChange(newValue)} className="w-full"/>) : (<input type="text" value={control.value} onChange={(e) => control.onChange(e.target.value)} className={`w-full rounded-lg border p-2 focus:outline-none focus:ring-1 focus:ring-Basic ${isDarkMode
                     ? "border-gray-500 bg-[#2A2E39] text-[#dfdfdf]"
                     : "border-gray bg-white"}`}/>)}
           </div>))}
       </div>
     </div>);
 };
-export default TodoListRemote;
+exports.default = TodoListRemote;

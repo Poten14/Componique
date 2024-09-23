@@ -1,5 +1,10 @@
-import React from "react";
-import AvatarBasic from "@components/Avatar/AvatarBasic";
+"use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+const react_1 = __importDefault(require("react"));
+const AvatarBasic_1 = __importDefault(require("@components/Avatar/AvatarBasic"));
 // 별점 매기기
 const ratingStars = (rate) => {
     const stars = [];
@@ -13,7 +18,7 @@ const ratingStars = (rate) => {
 const CardReview = ({ avatar, name, rate, children }) => {
     return (<div className="m-4 max-w-sm rounded-xl border-2 border-Blue bg-white shadow-lg dark:bg-[#2A2E39] dark:text-white">
       <div className="flex items-center px-6 py-4">
-        <AvatarBasic src="/avatar1.svg" alt="퉁퉁이" size={70}/>
+        <AvatarBasic_1.default src="/avatar1.svg" alt="퉁퉁이" size={70}/>
         <div className="flex flex-col">
           <div className="text-lg font-bold dark:text-white">{name}</div>
           <div className="flex">{ratingStars(rate)}</div>
@@ -22,4 +27,4 @@ const CardReview = ({ avatar, name, rate, children }) => {
       <div className="px-6 pb-4 text-slate-700 dark:text-gray">{children}</div>
     </div>);
 };
-export default CardReview;
+exports.default = CardReview;

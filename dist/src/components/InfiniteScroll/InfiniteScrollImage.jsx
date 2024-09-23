@@ -1,14 +1,19 @@
-import { useState, useRef, useCallback, useEffect } from "react";
-import BasicSpinner from "@components/Spinner/BasicSpinner";
-import Image from "next/image";
+"use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+const react_1 = require("react");
+const BasicSpinner_1 = __importDefault(require("@components/Spinner/BasicSpinner"));
+const image_1 = __importDefault(require("next/image"));
 const InfiniteScrollImage = ({ images }) => {
-    const [items, setItems] = useState([]);
-    const [page, setPage] = useState(1);
-    const [isLoading, setIsLoading] = useState(false);
-    const [hasMore, setHasMore] = useState(true);
-    const loader = useRef(null);
+    const [items, setItems] = (0, react_1.useState)([]);
+    const [page, setPage] = (0, react_1.useState)(1);
+    const [isLoading, setIsLoading] = (0, react_1.useState)(false);
+    const [hasMore, setHasMore] = (0, react_1.useState)(true);
+    const loader = (0, react_1.useRef)(null);
     const itemsPerPage = 2;
-    const loadMoreItems = useCallback(() => {
+    const loadMoreItems = (0, react_1.useCallback)(() => {
         if (isLoading || !hasMore)
             return; // 이미 로딩 중이거나 더 이상 로드할 항목이 없으면 함수 종료
         setIsLoading(true); // 로딩 시작
@@ -29,7 +34,7 @@ const InfiniteScrollImage = ({ images }) => {
             setIsLoading(false); // 로딩 종료
         }, 200);
     }, [page, images, isLoading, hasMore]);
-    useEffect(() => {
+    (0, react_1.useEffect)(() => {
         const options = {
             root: null, // viewport를 root로 사용
             rootMargin: "20px", // viewport 경계로부터 20px 지점에서 교차 감지 시작
@@ -56,11 +61,11 @@ const InfiniteScrollImage = ({ images }) => {
     }, [loadMoreItems, isLoading, hasMore]);
     return (<div className="p-4">
       <div className="grid grid-cols-3 gap-4">
-        {items.map((src, index) => (<Image key={index} src={src} alt={`image${index + 1}`} width={200} height={200} className="rounded-md border shadow-sm"/>))}
+        {items.map((src, index) => (<image_1.default key={index} src={src} alt={`image${index + 1}`} width={200} height={200} className="rounded-md border shadow-sm"/>))}
       </div>
       <div ref={loader} className="py-10 text-center">
-        {isLoading && hasMore ? (<BasicSpinner />) : hasMore ? ("Scroll down to load more") : ("No more items to load")}
+        {isLoading && hasMore ? (<BasicSpinner_1.default />) : hasMore ? ("Scroll down to load more") : ("No more items to load")}
       </div>
     </div>);
 };
-export default InfiniteScrollImage;
+exports.default = InfiniteScrollImage;

@@ -1,8 +1,10 @@
+"use strict";
 "use client";
-import { useState } from "react";
+Object.defineProperty(exports, "__esModule", { value: true });
+const react_1 = require("react");
 const ValidationPW = () => {
-    const [PW, setPW] = useState("");
-    const [error, setError] = useState("");
+    const [PW, setPW] = (0, react_1.useState)("");
+    const [error, setError] = (0, react_1.useState)("");
     const validatePW = (PW) => {
         const PWType = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=]).{8,}$/;
         return PWType.test(PW);
@@ -21,4 +23,4 @@ const ValidationPW = () => {
         </p>)}
     </div>);
 };
-export default ValidationPW;
+exports.default = ValidationPW;

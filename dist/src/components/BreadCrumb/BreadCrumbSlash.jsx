@@ -1,3 +1,5 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 const hoverColorClasses = {
     black: "hover:text-black dark:hover:text-white",
     Basic: "hover:text-[#9AC5E5] dark:hover:text-[#9AC5E5]",
@@ -24,4 +26,4 @@ const BreadCrumbSlash = ({ items, hoverColor = "black", activeColor = "black", }
       </div>
     </div>);
 };
-export default BreadCrumbSlash;
+exports.default = BreadCrumbSlash;

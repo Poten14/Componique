@@ -1,11 +1,13 @@
-import { useState, useEffect } from "react";
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const react_1 = require("react");
 // 원형 진행 바 컴포넌트 정의
 const ProgressBarCircle = ({ percent, showPercent = true, // showPercent 기본값을 true로 설정
 completed = false, // completed 기본값을 false로 설정
  }) => {
-    const [progressBar, setProgressBar] = useState(percent); // 진행률 상태를 관리하는 state
+    const [progressBar, setProgressBar] = (0, react_1.useState)(percent); // 진행률 상태를 관리하는 state
     // percent 값이 변경될 때마다 progressBar 상태를 업데이트
-    useEffect(() => {
+    (0, react_1.useEffect)(() => {
         setProgressBar(percent);
     }, [percent]);
     // 원형 진행 바의 크기와 둘레 계산
@@ -29,4 +31,4 @@ completed = false, // completed 기본값을 false로 설정
       </div>
     </div>);
 };
-export default ProgressBarCircle;
+exports.default = ProgressBarCircle;

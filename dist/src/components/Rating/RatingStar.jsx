@@ -1,7 +1,9 @@
+"use strict";
 "use client";
-import { useState } from "react";
+Object.defineProperty(exports, "__esModule", { value: true });
+const react_1 = require("react");
 const RatingStar = ({ stars = 5, onRatingChange }) => {
-    const [rating, setRating] = useState(0);
+    const [rating, setRating] = (0, react_1.useState)(0);
     const handleRating = (star) => {
         setRating(star);
         if (onRatingChange) {
@@ -12,4 +14,4 @@ const RatingStar = ({ stars = 5, onRatingChange }) => {
       {Array.from({ length: stars }, (_, i) => (<button key={i}>⭐</button>))}
     </div>);
 };
-export default RatingStar;
+exports.default = RatingStar;

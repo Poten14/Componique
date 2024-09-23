@@ -1,10 +1,15 @@
+"use strict";
 "use client";
-import Toast from "@components/Toast/Toast";
-import { useState, useEffect } from "react";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+const Toast_1 = __importDefault(require("@components/Toast/Toast"));
+const react_1 = require("react");
 const ToastGroup = ({ toasts, position = "leftBottom", onAllClosed, }) => {
     // Toast들의 열림 상태를 관리하는 변수 선언, 초기값은 모든 Toast가 닫힌 상태로 설정함
-    const [openToasts, setOpenToasts] = useState(Array(toasts.length).fill(false));
-    useEffect(() => {
+    const [openToasts, setOpenToasts] = (0, react_1.useState)(Array(toasts.length).fill(false));
+    (0, react_1.useEffect)(() => {
         // 초기 상태 설정: 모든 Toast를 닫힌 상태로 시작
         setOpenToasts(Array(toasts.length).fill(false));
         // 인덱스 순서대로 Toast를 표시하기 위한 타이머 설정
@@ -28,7 +33,7 @@ const ToastGroup = ({ toasts, position = "leftBottom", onAllClosed, }) => {
             return () => clearTimeout(showTimeout);
         });
     }, [toasts]);
-    useEffect(() => {
+    (0, react_1.useEffect)(() => {
         // 모든 Toast가 닫혔는지 확인
         if (openToasts.every((isOpen) => !isOpen)) {
             // 모든 Toast가 닫혔다면 onAllClosed 콜백 함수 호출
@@ -90,12 +95,12 @@ const ToastGroup = ({ toasts, position = "leftBottom", onAllClosed, }) => {
     }
     return (<div className={`pointer-events-none fixed left-0 top-0 z-[9999] h-full w-full`}>
       {toasts.map((item, index) => (<div key={index}>
-          <Toast key={index} isOpen={openToasts[index]} size={item.size || "medium"} onClose={() => onClickToastCloseHandler(index)} color={item.color} time={item.time} position={position} path={item.path} variant={item.variant} isProgress={item.isProgress} text={item.text} isClose={item.isClose} className={`${item.className} pointer-events-auto ${isBottomPosition
+          <Toast_1.default key={index} isOpen={openToasts[index]} size={item.size || "medium"} onClose={() => onClickToastCloseHandler(index)} color={item.color} time={item.time} position={position} path={item.path} variant={item.variant} isProgress={item.isProgress} text={item.text} isClose={item.isClose} className={`${item.className} pointer-events-auto ${isBottomPosition
                 ? marginBottomClasses[index]
                 : marginTopClasses[index]} absolute ${positionClasses[position]}`}>
             {item.children}
-          </Toast>
+          </Toast_1.default>
         </div>))}
     </div>);
 };
-export default ToastGroup;
+exports.default = ToastGroup;

@@ -1,18 +1,46 @@
+"use strict";
 "use client";
-import React, { useState } from "react";
-import CodeBox from "@components/CodeBox";
-import dynamic from "next/dynamic";
+var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    var desc = Object.getOwnPropertyDescriptor(m, k);
+    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
+      desc = { enumerable: true, get: function() { return m[k]; } };
+    }
+    Object.defineProperty(o, k2, desc);
+}) : (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    o[k2] = m[k];
+}));
+var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {
+    Object.defineProperty(o, "default", { enumerable: true, value: v });
+}) : function(o, v) {
+    o["default"] = v;
+});
+var __importStar = (this && this.__importStar) || function (mod) {
+    if (mod && mod.__esModule) return mod;
+    var result = {};
+    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
+    __setModuleDefault(result, mod);
+    return result;
+};
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+const react_1 = __importStar(require("react"));
+const CodeBox_1 = __importDefault(require("@components/CodeBox"));
+const dynamic_1 = __importDefault(require("next/dynamic"));
 // Dynamic import for SSR-disabled map components
-const DynamicMap = dynamic(() => import("../../../components/Map/MapBasic"), {
+const DynamicMap = (0, dynamic_1.default)(() => Promise.resolve().then(() => __importStar(require("../../../components/Map/MapBasic"))), {
     ssr: false,
     loading: () => <p>지도를 불러오는 중...</p>,
 });
-const DynamicMapPosition = dynamic(() => import("../../../components/Map/MapPosition"), {
+const DynamicMapPosition = (0, dynamic_1.default)(() => Promise.resolve().then(() => __importStar(require("../../../components/Map/MapPosition"))), {
     ssr: false,
     loading: () => <p>지도를 불러오는 중...</p>,
 });
 const MapComponentsDocs = () => {
-    const [copied, setCopied] = useState({});
+    const [copied, setCopied] = (0, react_1.useState)({});
     const handleCopy = (index) => {
         setCopied((prev) => ({ ...prev, [index]: true }));
         setTimeout(() => setCopied((prev) => ({ ...prev, [index]: false })), 500);
@@ -28,7 +56,7 @@ const MapComponentsDocs = () => {
 
       {/* 1.1. MapBasic Import */}
       <h2 className="text-[#2D3748] dark:text-white">1.1. Import</h2>
-      <CodeBox code={`import DynamicMap from './DynamicMap';`} copyText={`import DynamicMap from './DynamicMap';`} language="tsx" index={0} copied={copied} handleCopy={handleCopy}/>
+      <CodeBox_1.default code={`import DynamicMap from './DynamicMap';`} copyText={`import DynamicMap from './DynamicMap';`} language="tsx" index={0} copied={copied} handleCopy={handleCopy}/>
 
       {/* 1.2. MapBasic Usage */}
       <h2 className="text-[#2D3748] dark:text-white">1.2. Usage</h2>
@@ -36,7 +64,7 @@ const MapComponentsDocs = () => {
       <div style={{ marginBottom: "20px" }}>
         <DynamicMap />
       </div>
-      <CodeBox code={`import DynamicMap from './DynamicMap';
+      <CodeBox_1.default code={`import DynamicMap from './DynamicMap';
 
 function Example() {
   return <DynamicMap />;
@@ -94,7 +122,7 @@ export default Example;`} language="tsx" index={1} copied={copied} handleCopy={h
 
       {/* 1.4. MapBasic Full Example */}
       <h2 className="text-[#2D3748] dark:text-white">1.4. Full Example</h2>
-      <CodeBox code={`import React from "react";
+      <CodeBox_1.default code={`import React from "react";
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import { FaMapMarkerAlt } from "react-icons/fa";
 import { renderToString } from "react-dom/server";
@@ -178,7 +206,7 @@ export default MapBasic;`} language="tsx" index={2} copied={copied} handleCopy={
 
       {/* 2.1. MapPosition Import */}
       <h2 className="text-[#2D3748] dark:text-white">2.1. Import</h2>
-      <CodeBox code={`import DynamicMapPosition from './DynamicMapPosition';`} copyText={`import DynamicMapPosition from './DynamicMapPosition';`} language="tsx" index={3} copied={copied} handleCopy={handleCopy}/>
+      <CodeBox_1.default code={`import DynamicMapPosition from './DynamicMapPosition';`} copyText={`import DynamicMapPosition from './DynamicMapPosition';`} language="tsx" index={3} copied={copied} handleCopy={handleCopy}/>
 
       {/* 2.2. MapPosition Usage */}
       <h2 className="text-[#2D3748] dark:text-white">2.2. Usage</h2>
@@ -197,7 +225,7 @@ export default MapBasic;`} language="tsx" index={2} copied={copied} handleCopy={
             { latitude: 37.4563, longitude: 126.7052, showPosition: "인천" },
         ]}/>
       </div>
-      <CodeBox code={`import DynamicMapPosition from './DynamicMapPosition';
+      <CodeBox_1.default code={`import DynamicMapPosition from './DynamicMapPosition';
 
 function Example() {
   const markers = [
@@ -269,7 +297,7 @@ export default Example;`} language="tsx" index={4} copied={copied} handleCopy={h
 
       {/* 2.4. MapPosition Full Example */}
       <h2 className="text-[#2D3748] dark:text-white">2.4. Full Example</h2>
-      <CodeBox code={`import React from "react";
+      <CodeBox_1.default code={`import React from "react";
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import { FaMapMarkerAlt } from "react-icons/fa";
 import { renderToString } from "react-dom/server";
@@ -368,4 +396,4 @@ const MapPosition: React.FC<{ markers: MapPositionProps[] }> = ({ markers }) => 
 export default MapPosition;`} language="tsx" index={5} copied={copied} handleCopy={handleCopy}/>
     </div>);
 };
-export default MapComponentsDocs;
+exports.default = MapComponentsDocs;

@@ -1,17 +1,45 @@
+"use strict";
 "use client";
-import Button from "@components/Button/Button";
-import Image from "next/image";
-import React, { useState, useEffect } from "react";
+var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    var desc = Object.getOwnPropertyDescriptor(m, k);
+    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
+      desc = { enumerable: true, get: function() { return m[k]; } };
+    }
+    Object.defineProperty(o, k2, desc);
+}) : (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    o[k2] = m[k];
+}));
+var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {
+    Object.defineProperty(o, "default", { enumerable: true, value: v });
+}) : function(o, v) {
+    o["default"] = v;
+});
+var __importStar = (this && this.__importStar) || function (mod) {
+    if (mod && mod.__esModule) return mod;
+    var result = {};
+    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
+    __setModuleDefault(result, mod);
+    return result;
+};
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+const Button_1 = __importDefault(require("@components/Button/Button"));
+const image_1 = __importDefault(require("next/image"));
+const react_1 = __importStar(require("react"));
 const GradientPicker = ({ selectColor, }) => {
-    const [colors, setColors] = useState({
+    const [colors, setColors] = (0, react_1.useState)({
         startColor: "#ffffff",
         endColor: "#000000",
     });
-    const [position, setPosition] = useState("to right");
-    const [msg, setMsg] = useState("");
+    const [position, setPosition] = (0, react_1.useState)("to right");
+    const [msg, setMsg] = (0, react_1.useState)("");
     // 그라디언트 코드
     const gradientCode = `linear-gradient(${position}, ${colors.startColor}, ${colors.endColor})`;
-    useEffect(() => {
+    (0, react_1.useEffect)(() => {
         // 그라디언트 코드가 변경될 때마다 selectColor 콜백 호출
         if (selectColor) {
             selectColor(gradientCode);
@@ -57,17 +85,17 @@ const GradientPicker = ({ selectColor, }) => {
             <option value="to top left">top left</option>
           </select>
           <div className="pointer-events-none absolute inset-y-0 right-[66px] flex items-center">
-            <Image src="/selectdown.svg" alt="arrow" width={15} height={15}/>
+            <image_1.default src="/selectdown.svg" alt="arrow" width={15} height={15}/>
           </div>
         </div>
       </div>
       <div className="m-auto flex w-[200px] items-center justify-between">
         <p className="mt-2 text-left text-lg font-bold">Preview</p>
-        <Button radius="small" onClick={() => {
+        <Button_1.default radius="small" onClick={() => {
             onClickCopyHandler(gradientCode);
         }}>
           Copy
-        </Button>
+        </Button_1.default>
       </div>
 
       <div className="m-auto h-16 w-52 rounded border border-slate-200" style={{
@@ -79,4 +107,4 @@ const GradientPicker = ({ selectColor, }) => {
       <textarea readOnly value={gradientCode} className="mt-4 w-52 resize-none rounded p-2 text-xl outline-none" rows={3}/>
     </div>);
 };
-export default GradientPicker;
+exports.default = GradientPicker;

@@ -1,7 +1,9 @@
+"use strict";
 'use client';
-import { useState } from 'react';
+Object.defineProperty(exports, "__esModule", { value: true });
+const react_1 = require("react");
 const RatingFeel = ({ onRatingChange }) => {
-    const [rating, setRating] = useState(0);
+    const [rating, setRating] = (0, react_1.useState)(0);
     const feel = ['😡', '😕', '😐', '😊', '😍'];
     const handleRating = (rate) => {
         setRating(rate);
@@ -17,4 +19,4 @@ const RatingFeel = ({ onRatingChange }) => {
         </button>))}
     </div>);
 };
-export default RatingFeel;
+exports.default = RatingFeel;

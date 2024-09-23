@@ -1,11 +1,39 @@
+"use strict";
 "use client";
-import React, { useState } from "react";
-import CodeBox from "@components/CodeBox";
-import Tooltip from "@components/Tooltip/Tooltip";
-import TooltipBasic from "@components/Tooltip/TooltipBasic";
-import TooltipIcon from "@components/Tooltip/TooltipIcon";
+var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    var desc = Object.getOwnPropertyDescriptor(m, k);
+    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
+      desc = { enumerable: true, get: function() { return m[k]; } };
+    }
+    Object.defineProperty(o, k2, desc);
+}) : (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    o[k2] = m[k];
+}));
+var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {
+    Object.defineProperty(o, "default", { enumerable: true, value: v });
+}) : function(o, v) {
+    o["default"] = v;
+});
+var __importStar = (this && this.__importStar) || function (mod) {
+    if (mod && mod.__esModule) return mod;
+    var result = {};
+    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
+    __setModuleDefault(result, mod);
+    return result;
+};
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+const react_1 = __importStar(require("react"));
+const CodeBox_1 = __importDefault(require("@components/CodeBox"));
+const Tooltip_1 = __importDefault(require("@components/Tooltip/Tooltip"));
+const TooltipBasic_1 = __importDefault(require("@components/Tooltip/TooltipBasic"));
+const TooltipIcon_1 = __importDefault(require("@components/Tooltip/TooltipIcon"));
 const TooltipDocs = () => {
-    const [copied, setCopied] = useState({});
+    const [copied, setCopied] = (0, react_1.useState)({});
     const handleCopy = (index) => {
         setCopied((prev) => ({ ...prev, [index]: true }));
         setTimeout(() => setCopied((prev) => ({ ...prev, [index]: false })), 500);
@@ -20,14 +48,14 @@ const TooltipDocs = () => {
         </p>
 
         <h2 className="text-[#2D3748] dark:text-white">1.1. Import</h2>
-        <CodeBox code={`import Tooltip from '@components/Tooltip/Tooltip';`} copyText={`import Tooltip from '@components/Tooltip/Tooltip';`} language="tsx" index={1} copied={copied} handleCopy={handleCopy}/>
+        <CodeBox_1.default code={`import Tooltip from '@components/Tooltip/Tooltip';`} copyText={`import Tooltip from '@components/Tooltip/Tooltip';`} language="tsx" index={1} copied={copied} handleCopy={handleCopy}/>
 
         <h2 className="text-[#2D3748] dark:text-white">1.2. Usage</h2>
         <p>기본 사용 예제는 아래와 같습니다:</p>
         <div className="my-7">
-          <TooltipBasic />
+          <TooltipBasic_1.default />
         </div>
-        <CodeBox code={`
+        <CodeBox_1.default code={`
 import Tooltip from '@components/Tooltip/Tooltip';
 import { FaGithub } from 'react-icons/fa';
 
@@ -81,20 +109,20 @@ export default Example;
           </li>
         </ul>
         <div className="my-7 space-y-7">
-          <Tooltip content="Top Tooltip" position="top">
+          <Tooltip_1.default content="Top Tooltip" position="top">
             <span>Hover me (Top)</span>
-          </Tooltip>
-          <Tooltip content="Bottom Tooltip" position="bottom">
+          </Tooltip_1.default>
+          <Tooltip_1.default content="Bottom Tooltip" position="bottom">
             <span>Hover me (Bottom)</span>
-          </Tooltip>
-          <Tooltip content="Left Tooltip" position="left">
+          </Tooltip_1.default>
+          <Tooltip_1.default content="Left Tooltip" position="left">
             <span>Hover me (Left)</span>
-          </Tooltip>
-          <Tooltip content="Right Tooltip" position="right">
+          </Tooltip_1.default>
+          <Tooltip_1.default content="Right Tooltip" position="right">
             <span>Hover me (Right)</span>
-          </Tooltip>
+          </Tooltip_1.default>
         </div>
-        <CodeBox code={`
+        <CodeBox_1.default code={`
 import Tooltip from '@components/Tooltip/Tooltip';
 
 function Example() {
@@ -151,14 +179,14 @@ export default Example;
         </p>
 
         <h2 className="text-[#2D3748] dark:text-white">2.1. Import</h2>
-        <CodeBox code={`import TooltipIcon from '@components/Tooltip/TooltipIcon';`} copyText={`import TooltipIcon from '@components/Tooltip/TooltipIcon';`} language="tsx" index={4} copied={copied} handleCopy={handleCopy}/>
+        <CodeBox_1.default code={`import TooltipIcon from '@components/Tooltip/TooltipIcon';`} copyText={`import TooltipIcon from '@components/Tooltip/TooltipIcon';`} language="tsx" index={4} copied={copied} handleCopy={handleCopy}/>
 
         <h2 className="text-[#2D3748] dark:text-white">2.2. Usage</h2>
         <p>아이콘 툴팁의 사용 예제는 아래와 같습니다:</p>
         <div className="my-7">
-          <TooltipIcon />
+          <TooltipIcon_1.default />
         </div>
-        <CodeBox code={`
+        <CodeBox_1.default code={`
 import Tooltip from '@components/Tooltip/Tooltip';
 import { FaGithub, FaFacebookSquare, FaInstagramSquare, FaLine } from 'react-icons/fa';
 import { FaSquareXTwitter } from 'react-icons/fa6';
@@ -218,7 +246,7 @@ export default Example;
 
         {/* Full Example Section */}
         <h2 className="text-[#2D3748] dark:text-white">2.3. Full Example</h2>
-        <CodeBox code={`
+        <CodeBox_1.default code={`
 // TooltipIcon.tsx
 import React from 'react';
 import Tooltip from './Tooltip';
@@ -282,4 +310,4 @@ export default TooltipIcon;
       </div>
     </div>);
 };
-export default TooltipDocs;
+exports.default = TooltipDocs;

@@ -5,8 +5,8 @@
     "composite": true, // 프로젝트를 컴포지트로 만듦
     "emitDeclarationOnly": false, // JS 파일은 생성하지 않고 타입 선언 파일만 생성
     "target": "ESNext",
-    "module": "esnext",
-    "moduleResolution": "bundler",
+    "module": "commonjs",
+    "moduleResolution": "node",
     "jsx": "preserve", // JSX 처리 방식
     "strict": true, // 엄격한 타입 검사
     "outDir": "./dist", // 결과물이 저장될 폴더

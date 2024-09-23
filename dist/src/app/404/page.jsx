@@ -1,10 +1,15 @@
+"use strict";
 "use client";
-import Link from "next/link";
-import Image from "next/image";
-import { useEffect, useState } from "react";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+const link_1 = __importDefault(require("next/link"));
+const image_1 = __importDefault(require("next/image"));
+const react_1 = require("react");
 const Page = () => {
-    const [isDarkMode, setIsDarkMode] = useState(false);
-    useEffect(() => {
+    const [isDarkMode, setIsDarkMode] = (0, react_1.useState)(false);
+    (0, react_1.useEffect)(() => {
         const checkDarkMode = () => {
             const darkMode = document.documentElement.classList.contains("dark");
             setIsDarkMode(darkMode);
@@ -24,17 +29,17 @@ const Page = () => {
     return (<div className="relative h-screen w-full bg-[url('/404Image.svg')] bg-cover bg-center dark:bg-[url('/404ImageDark.svg')]">
       {/* 이미지에 있는 텍스트 아래에 버튼을 배치 */}
       <div className="absolute bottom-1/3 right-80 flex transform items-center justify-center">
-        <Link href={"/"}>
+        <link_1.default href={"/"}>
           <button>
-            <Image src={isDarkMode ? "/404Button-Docs-Dark.svg" : "/404Button-Docs.svg"} alt="DocsButton" width={200} height={200}/>
+            <image_1.default src={isDarkMode ? "/404Button-Docs-Dark.svg" : "/404Button-Docs.svg"} alt="DocsButton" width={200} height={200}/>
           </button>
-        </Link>
-        <Link href={"/userpage"}>
+        </link_1.default>
+        <link_1.default href={"/userpage"}>
           <button className="ml-5">
-            <Image src={isDarkMode ? "/404Button-User-Dark.svg" : "/404Button-User.svg"} alt="UserButton" width={240} height={240}/>
+            <image_1.default src={isDarkMode ? "/404Button-User-Dark.svg" : "/404Button-User.svg"} alt="UserButton" width={240} height={240}/>
           </button>
-        </Link>
+        </link_1.default>
       </div>
     </div>);
 };
-export default Page;
+exports.default = Page;

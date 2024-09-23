@@ -1,3 +1,5 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 const AvatarBasic = ({ src, alt, initial, size = 100 }) => {
     return (<div className={`m-2 flex flex-shrink-0 items-center justify-center rounded-full bg-Basic font-bold uppercase text-white`} 
     /*flex-shrink-0 들어간 이미지가 수축되지 않도록 설정 */
@@ -12,4 +14,4 @@ const AvatarBasic = ({ src, alt, initial, size = 100 }) => {
       {!src && initial}
     </div>);
 };
-export default AvatarBasic;
+exports.default = AvatarBasic;

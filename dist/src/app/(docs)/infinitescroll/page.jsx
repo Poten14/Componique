@@ -1,11 +1,39 @@
+"use strict";
 "use client";
-import React, { useState } from "react";
-import InfiniteScrollBasic from "@components/InfiniteScroll/InfiniteScrollBasic";
-import InfiniteScrollImage from "@components/InfiniteScroll/InfiniteScrollImage";
-import InfiniteScrollKoJson from "@components/InfiniteScroll/InfiniteScrollKoJson";
-import CodeBox from "@components/CodeBox";
+var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    var desc = Object.getOwnPropertyDescriptor(m, k);
+    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
+      desc = { enumerable: true, get: function() { return m[k]; } };
+    }
+    Object.defineProperty(o, k2, desc);
+}) : (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    o[k2] = m[k];
+}));
+var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {
+    Object.defineProperty(o, "default", { enumerable: true, value: v });
+}) : function(o, v) {
+    o["default"] = v;
+});
+var __importStar = (this && this.__importStar) || function (mod) {
+    if (mod && mod.__esModule) return mod;
+    var result = {};
+    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
+    __setModuleDefault(result, mod);
+    return result;
+};
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+const react_1 = __importStar(require("react"));
+const InfiniteScrollBasic_1 = __importDefault(require("@components/InfiniteScroll/InfiniteScrollBasic"));
+const InfiniteScrollImage_1 = __importDefault(require("@components/InfiniteScroll/InfiniteScrollImage"));
+const InfiniteScrollKoJson_1 = __importDefault(require("@components/InfiniteScroll/InfiniteScrollKoJson"));
+const CodeBox_1 = __importDefault(require("@components/CodeBox"));
 const InfiniteScrollDocs = () => {
-    const [copied, setCopied] = useState({});
+    const [copied, setCopied] = (0, react_1.useState)({});
     const handleCopy = (index) => {
         setCopied((prev) => ({ ...prev, [index]: true }));
         setTimeout(() => setCopied((prev) => ({ ...prev, [index]: false })), 500);
@@ -46,14 +74,14 @@ const InfiniteScrollDocs = () => {
           아래는 이 컴포넌트를 사용하는 방법에 대한 설명입니다.
         </p>
         <h2 className="text-[#2D3748] dark:text-white">1.1. Import</h2>
-        <CodeBox code={`import InfiniteScrollBasic from '@components/InfiniteScroll/InfiniteScrollBasic';`} copyText={`import InfiniteScrollBasic from '@components/InfiniteScroll/InfiniteScrollBasic';`} language="tsx" index={0} copied={copied} handleCopy={handleCopy}/>
+        <CodeBox_1.default code={`import InfiniteScrollBasic from '@components/InfiniteScroll/InfiniteScrollBasic';`} copyText={`import InfiniteScrollBasic from '@components/InfiniteScroll/InfiniteScrollBasic';`} language="tsx" index={0} copied={copied} handleCopy={handleCopy}/>
 
         <h2 className="text-[#2D3748] dark:text-white">1.2. Usage</h2>
         <p>기본 사용 예제는 아래와 같습니다:</p>
         <div style={{ marginBottom: "20px" }}>
-          <InfiniteScrollBasic content={content}/>
+          <InfiniteScrollBasic_1.default content={content}/>
         </div>
-        <CodeBox code={`import InfiniteScrollBasic from '@components/InfiniteScroll/InfiniteScrollBasic';
+        <CodeBox_1.default code={`import InfiniteScrollBasic from '@components/InfiniteScroll/InfiniteScrollBasic';
 
 function Example() {
   const content = [
@@ -112,7 +140,7 @@ export default Example;`} language="tsx" index={1} copied={copied} handleCopy={h
         </table>
 
         <h2 className="text-[#2D3748] dark:text-white">1.4. Full Example</h2>
-        <CodeBox code={`import InfiniteScrollBasic from '@components/InfiniteScroll/InfiniteScrollBasic';
+        <CodeBox_1.default code={`import InfiniteScrollBasic from '@components/InfiniteScroll/InfiniteScrollBasic';
 
 function FullExample() {
   const content = [
@@ -150,14 +178,14 @@ export default FullExample;`} language="tsx" index={2} copied={copied} handleCop
           컴포넌트는 이미지 URL 배열을 받아 이미지를 무한히 로드할 수 있습니다.
         </p>
         <h2 className="text-[#2D3748] dark:text-white">2.1. Import</h2>
-        <CodeBox code={`import InfiniteScrollImage from '@components/InfiniteScroll/InfiniteScrollImage';`} copyText={`import InfiniteScrollImage from '@components/InfiniteScroll/InfiniteScrollImage';`} language="tsx" index={0} copied={copied} handleCopy={handleCopy}/>
+        <CodeBox_1.default code={`import InfiniteScrollImage from '@components/InfiniteScroll/InfiniteScrollImage';`} copyText={`import InfiniteScrollImage from '@components/InfiniteScroll/InfiniteScrollImage';`} language="tsx" index={0} copied={copied} handleCopy={handleCopy}/>
 
         <h2 className="text-[#2D3748] dark:text-white">2.2. Usage</h2>
         <p>기본 사용 예제는 아래와 같습니다:</p>
         <div style={{ marginBottom: "20px" }}>
-          <InfiniteScrollImage images={images}/>
+          <InfiniteScrollImage_1.default images={images}/>
         </div>
-        <CodeBox code={`import InfiniteScrollImage from '@components/InfiniteScroll/InfiniteScrollImage';
+        <CodeBox_1.default code={`import InfiniteScrollImage from '@components/InfiniteScroll/InfiniteScrollImage';
 
 function Example() {
 const images = [
@@ -218,7 +246,7 @@ export default Example;`} language="tsx" index={1} copied={copied} handleCopy={h
         </table>
 
         <h2 className="text-[#2D3748] dark:text-white">2.4. Full Example</h2>
-        <CodeBox code={`import InfiniteScrollImage from '@components/InfiniteScroll/InfiniteScrollImage';
+        <CodeBox_1.default code={`import InfiniteScrollImage from '@components/InfiniteScroll/InfiniteScrollImage';
 
 function FullExample() {
 const images = [
@@ -273,14 +301,14 @@ export default FullExample;`} language="tsx" index={2} copied={copied} handleCop
         </p>
 
         <h2 className="text-[#2D3748] dark:text-white">3.1. Import</h2>
-        <CodeBox code={`import InfiniteScrollBlogPosts from '@components/InfiniteScroll/InfiniteScrollBlogPosts';`} copyText={`import InfiniteScrollBlogPosts from '@components/InfiniteScroll/InfiniteScrollBlogPosts';`} language="tsx" index={0} copied={copied} handleCopy={handleCopy}/>
+        <CodeBox_1.default code={`import InfiniteScrollBlogPosts from '@components/InfiniteScroll/InfiniteScrollBlogPosts';`} copyText={`import InfiniteScrollBlogPosts from '@components/InfiniteScroll/InfiniteScrollBlogPosts';`} language="tsx" index={0} copied={copied} handleCopy={handleCopy}/>
 
         <h2 className="text-[#2D3748] dark:text-white">3.2. Usage</h2>
         <p>기본 사용 예제는 아래와 같습니다:</p>
         <div style={{ marginBottom: "20px" }}>
-          <InfiniteScrollKoJson />
+          <InfiniteScrollKoJson_1.default />
         </div>
-        <CodeBox code={`import InfiniteScrollBlogPosts from '@components/InfiniteScroll/InfiniteScrollBlogPosts';
+        <CodeBox_1.default code={`import InfiniteScrollBlogPosts from '@components/InfiniteScroll/InfiniteScrollBlogPosts';
 
 function Example() {
   return <InfiniteScrollBlogPosts />;
@@ -301,7 +329,7 @@ export default Example;`} language="tsx" index={1} copied={copied} handleCopy={h
         </p>
 
         <h2 className="text-[#2D3748] dark:text-white">3.4. Full Example</h2>
-        <CodeBox code={`import { useState, useEffect } from "react";
+        <CodeBox_1.default code={`import { useState, useEffect } from "react";
 import InfiniteScrollBasic from "./InfiniteScrollBasic";
 
 interface BlogPost {
@@ -387,4 +415,4 @@ export default InfiniteScrollBlogPosts;`} language="tsx" index={2} copied={copie
       </div>
     </div>);
 };
-export default InfiniteScrollDocs;
+exports.default = InfiniteScrollDocs;

@@ -1,4 +1,9 @@
-import React from "react";
+"use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+const react_1 = __importDefault(require("react"));
 const sizeClasses = {
     xs: "w-5 h-5 border-2",
     small: "w-10 h-10 border-4",
@@ -24,4 +29,4 @@ const speedClasses = {
 const Spinner = ({ size = "medium", color = "Primary", speed = "medium", }) => {
     return (<div className={`inline-block ${sizeClasses[size]} ${speedClasses[speed]} rounded-full border-solid border-t-transparent ${colorClasses[color]}`}></div>);
 };
-export default Spinner;
+exports.default = Spinner;

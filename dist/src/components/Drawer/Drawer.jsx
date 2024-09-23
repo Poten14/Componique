@@ -1,11 +1,16 @@
+"use strict";
 "use client";
-import { useRouter } from "next/navigation";
-import { useEffect, useState } from "react";
-import Icon from "@components/Icon/Icon";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+const navigation_1 = require("next/navigation");
+const react_1 = require("react");
+const Icon_1 = __importDefault(require("@components/Icon/Icon"));
 const Drawer = ({ menu, logo, isOpen = true, color, bgColor = "basic", onClose, className, position = "left", }) => {
-    const [isDrawerOpen, setIsDrawerOpen] = useState(isOpen);
-    const router = useRouter();
-    useEffect(() => {
+    const [isDrawerOpen, setIsDrawerOpen] = (0, react_1.useState)(isOpen);
+    const router = (0, navigation_1.useRouter)();
+    (0, react_1.useEffect)(() => {
         setIsDrawerOpen(isOpen);
     }, [isOpen]);
     const onclickCloseHandler = () => {
@@ -30,7 +35,7 @@ const Drawer = ({ menu, logo, isOpen = true, color, bgColor = "basic", onClose, 
         if (onClose)
             onClose();
     };
-    useEffect(() => {
+    (0, react_1.useEffect)(() => {
         if (isDrawerOpen) {
             document.body.style.overflow = "hidden";
         }
@@ -116,7 +121,7 @@ const Drawer = ({ menu, logo, isOpen = true, color, bgColor = "basic", onClose, 
                     : "mx-2"} box-border cursor-pointer overflow-hidden text-ellipsis whitespace-nowrap rounded px-5 py-2 hover:bg-gray dark:hover:bg-[#2a2e39] ${color
                     ? bgColors[color]
                     : "bg-[#F8F8F8] dark:bg-[#2A2E39] dark:text-white"} ${color === "black" ? "text-white" : ""} ${item.className || ""}`} onClick={() => onClickMenuCloseHandler(item.path)}>
-                      {item.icon && (<Icon name={item.icon} size={16} color="currentColor"/>)}
+                      {item.icon && (<Icon_1.default name={item.icon} size={16} color="currentColor"/>)}
                       {item.name}
                     </li>))}
                 </ul>
@@ -126,4 +131,4 @@ const Drawer = ({ menu, logo, isOpen = true, color, bgColor = "basic", onClose, 
       </div>
     </section>);
 };
-export default Drawer;
+exports.default = Drawer;

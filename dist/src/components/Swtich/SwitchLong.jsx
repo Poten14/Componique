@@ -1,6 +1,8 @@
-import { useState } from "react";
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const react_1 = require("react");
 const SwitchLong = ({ size = "medium", onColor = "bg-Basic", offColor = "bg-[#9E9E9E] dark:bg-[#333742]", }) => {
-    const [isOn, setIsOn] = useState(false);
+    const [isOn, setIsOn] = (0, react_1.useState)(false);
     const toggleSwitch = () => {
         setIsOn(!isOn);
     };
@@ -32,4 +34,4 @@ const SwitchLong = ({ size = "medium", onColor = "bg-Basic", offColor = "bg-[#9E
       </div>
     </div>);
 };
-export default SwitchLong;
+exports.default = SwitchLong;

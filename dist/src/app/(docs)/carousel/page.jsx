@@ -1,11 +1,39 @@
+"use strict";
 "use client";
-import React, { useState } from "react";
-import Carousel from "@components/Carousel/Carousel";
-import CodeBox from "@components/CodeBox";
-import CarouselAutoplay from "@components/Carousel/CarouselAutoplay";
-import CarouselDots from "@components/Carousel/CarouselDots";
+var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    var desc = Object.getOwnPropertyDescriptor(m, k);
+    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
+      desc = { enumerable: true, get: function() { return m[k]; } };
+    }
+    Object.defineProperty(o, k2, desc);
+}) : (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    o[k2] = m[k];
+}));
+var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {
+    Object.defineProperty(o, "default", { enumerable: true, value: v });
+}) : function(o, v) {
+    o["default"] = v;
+});
+var __importStar = (this && this.__importStar) || function (mod) {
+    if (mod && mod.__esModule) return mod;
+    var result = {};
+    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
+    __setModuleDefault(result, mod);
+    return result;
+};
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+const react_1 = __importStar(require("react"));
+const Carousel_1 = __importDefault(require("@components/Carousel/Carousel"));
+const CodeBox_1 = __importDefault(require("@components/CodeBox"));
+const CarouselAutoplay_1 = __importDefault(require("@components/Carousel/CarouselAutoplay"));
+const CarouselDots_1 = __importDefault(require("@components/Carousel/CarouselDots"));
 const CarouselDocs = () => {
-    const [copied, setCopied] = useState({});
+    const [copied, setCopied] = (0, react_1.useState)({});
     const handleCopy = (index) => {
         setCopied((prev) => ({ ...prev, [index]: true }));
         setTimeout(() => setCopied((prev) => ({ ...prev, [index]: false })), 500);
@@ -19,18 +47,18 @@ const CarouselDocs = () => {
       </p>
 
       <h2 className="text-[#2D3748]">1.1. Import</h2>
-      <CodeBox code={`import Carousel from '@components/Carousel';`} copyText={`import Carousel from '@components/Carousel';`} language="tsx" index={1} copied={copied} handleCopy={handleCopy}/>
+      <CodeBox_1.default code={`import Carousel from '@components/Carousel';`} copyText={`import Carousel from '@components/Carousel';`} language="tsx" index={1} copied={copied} handleCopy={handleCopy}/>
 
       <h2 className="text-[#2D3748]">1.2. Usage</h2>
       <p>기본 사용 예제는 아래와 같습니다:</p>
       <div className="my-7">
-        <Carousel images={[
+        <Carousel_1.default images={[
             "images/image1.svg",
             "images/image2.svg",
             "images/image3.svg",
         ]}/>
       </div>
-      <CodeBox code={`import Carousel from '@components/Carousel';
+      <CodeBox_1.default code={`import Carousel from '@components/Carousel';
 
 function Example() {
   return <Carousel images={["images/image1.svg", "images/image2.svg", "images/image3.svg"]} />;
@@ -51,7 +79,7 @@ export default Example;`} language="tsx" index={2} copied={copied} handleCopy={h
       </p>
 
       <div className="my-7">
-        <Carousel images={[
+        <Carousel_1.default images={[
             "images/image1.svg",
             "images/image2.svg",
             "images/image3.svg",
@@ -59,7 +87,7 @@ export default Example;`} language="tsx" index={2} copied={copied} handleCopy={h
         ]}/>
       </div>
 
-      <CodeBox code={`import Carousel from '@components/Carousel';
+      <CodeBox_1.default code={`import Carousel from '@components/Carousel';
 
 function Example() {
   return (
@@ -111,7 +139,7 @@ export default Example;`} language="tsx" index={3} copied={copied} handleCopy={h
       </table>
 
       <h2 className="text-[#2D3748]">1.5. Full Example</h2>
-      <CodeBox code={`import Carousel from '@components/Carousel';
+      <CodeBox_1.default code={`import Carousel from '@components/Carousel';
 
 function Example() {
   return (
@@ -145,18 +173,18 @@ export default Example;`} language="tsx" index={4} copied={copied} handleCopy={h
       </p>
 
       <h2 className="text-[#2D3748]">2.1. Import</h2>
-      <CodeBox code={`import CarouselAutoplay from '@components/CarouselAutoplay';`} copyText={`import CarouselAutoplay from '@components/CarouselAutoplay';`} language="tsx" index={1} copied={copied} handleCopy={handleCopy}/>
+      <CodeBox_1.default code={`import CarouselAutoplay from '@components/CarouselAutoplay';`} copyText={`import CarouselAutoplay from '@components/CarouselAutoplay';`} language="tsx" index={1} copied={copied} handleCopy={handleCopy}/>
 
       <h2 className="text-[#2D3748]">2.2. Usage</h2>
       <p>기본 사용 예제는 아래와 같습니다:</p>
       <div className="my-7">
-        <CarouselAutoplay images={[
+        <CarouselAutoplay_1.default images={[
             "images/image1.svg",
             "images/image2.svg",
             "images/image3.svg",
         ]}/>
       </div>
-      <CodeBox code={`import CarouselAutoplay from '@components/CarouselAutoplay';
+      <CodeBox_1.default code={`import CarouselAutoplay from '@components/CarouselAutoplay';
 
 function Example() {
   return (
@@ -186,7 +214,7 @@ export default Example;`} language="tsx" index={2} copied={copied} handleCopy={h
       </p>
 
       <div className="my-7">
-        <CarouselAutoplay images={[
+        <CarouselAutoplay_1.default images={[
             "images/image1.svg",
             "images/image2.svg",
             "images/image3.svg",
@@ -194,7 +222,7 @@ export default Example;`} language="tsx" index={2} copied={copied} handleCopy={h
         ]} autoplay={true} interval={3000}/>
       </div>
 
-      <CodeBox code={`import CarouselAutoplay from '@components/CarouselAutoplay';
+      <CodeBox_1.default code={`import CarouselAutoplay from '@components/CarouselAutoplay';
 
 function Example() {
   return (
@@ -274,7 +302,7 @@ export default Example;`} language="tsx" index={3} copied={copied} handleCopy={h
       </table>
 
       <h2 className="text-[#2D3748]">2.5. Full Example</h2>
-      <CodeBox code={`import CarouselAutoplay from '@components/CarouselAutoplay';
+      <CodeBox_1.default code={`import CarouselAutoplay from '@components/CarouselAutoplay';
 
 function Example() {
   return (
@@ -313,18 +341,18 @@ export default Example;`} language="tsx" index={4} copied={copied} handleCopy={h
       </p>
 
       <h2 className="text-[#2D3748]">3.1. Import</h2>
-      <CodeBox code={`import CarouselDots from '@components/CarouselDots';`} copyText={`import CarouselDots from '@components/CarouselDots';`} language="tsx" index={1} copied={copied} handleCopy={handleCopy}/>
+      <CodeBox_1.default code={`import CarouselDots from '@components/CarouselDots';`} copyText={`import CarouselDots from '@components/CarouselDots';`} language="tsx" index={1} copied={copied} handleCopy={handleCopy}/>
 
       <h2 className="text-[#2D3748]">3.2. Usage</h2>
       <p>기본 사용 예제는 아래와 같습니다:</p>
       <div className="my-7">
-        <CarouselDots images={[
+        <CarouselDots_1.default images={[
             "images/image1.svg",
             "images/image2.svg",
             "images/image3.svg",
         ]}/>
       </div>
-      <CodeBox code={`import CarouselDots from '@components/CarouselDots';
+      <CodeBox_1.default code={`import CarouselDots from '@components/CarouselDots';
 
 function Example() {
   return (
@@ -354,7 +382,7 @@ export default Example;`} language="tsx" index={2} copied={copied} handleCopy={h
       </p>
 
       <div className="mb-7">
-        <CarouselDots images={[
+        <CarouselDots_1.default images={[
             "images/image1.svg",
             "images/image2.svg",
             "images/image3.svg",
@@ -362,7 +390,7 @@ export default Example;`} language="tsx" index={2} copied={copied} handleCopy={h
         ]} autoplay={true} interval={3000}/>
       </div>
 
-      <CodeBox code={`import CarouselDots from '@components/CarouselDots';
+      <CodeBox_1.default code={`import CarouselDots from '@components/CarouselDots';
 
 function Example() {
   return (
@@ -464,7 +492,7 @@ export default Example;`} language="tsx" index={3} copied={copied} handleCopy={h
       </table>
 
       <h2 className="text-[#2D3748]">3.5. Full Example</h2>
-      <CodeBox code={`import CarouselDots from '@components/CarouselDots';
+      <CodeBox_1.default code={`import CarouselDots from '@components/CarouselDots';
 
 function Example() {
   return (
@@ -505,4 +533,4 @@ function Example() {
 export default Example;`} language="tsx" index={4} copied={copied} handleCopy={handleCopy}/>
     </div>);
 };
-export default CarouselDocs;
+exports.default = CarouselDocs;

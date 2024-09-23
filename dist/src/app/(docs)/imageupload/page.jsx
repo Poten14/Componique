@@ -1,10 +1,38 @@
+"use strict";
 "use client";
-import React, { useState } from "react";
-import ImageUpload from "@components/ImageUpload/Imageupload";
-import CodeBox from "@components/CodeBox";
+var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    var desc = Object.getOwnPropertyDescriptor(m, k);
+    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
+      desc = { enumerable: true, get: function() { return m[k]; } };
+    }
+    Object.defineProperty(o, k2, desc);
+}) : (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    o[k2] = m[k];
+}));
+var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {
+    Object.defineProperty(o, "default", { enumerable: true, value: v });
+}) : function(o, v) {
+    o["default"] = v;
+});
+var __importStar = (this && this.__importStar) || function (mod) {
+    if (mod && mod.__esModule) return mod;
+    var result = {};
+    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
+    __setModuleDefault(result, mod);
+    return result;
+};
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+const react_1 = __importStar(require("react"));
+const Imageupload_1 = __importDefault(require("@components/ImageUpload/Imageupload"));
+const CodeBox_1 = __importDefault(require("@components/CodeBox"));
 const ImageUploadDoc = () => {
-    const [copied, setCopied] = useState({});
-    const [imageData, setImageData] = useState(null);
+    const [copied, setCopied] = (0, react_1.useState)({});
+    const [imageData, setImageData] = (0, react_1.useState)(null);
     const handleCopy = (index) => {
         setCopied((prev) => ({ ...prev, [index]: true }));
         setTimeout(() => setCopied((prev) => ({ ...prev, [index]: false })), 500);
@@ -24,14 +52,14 @@ const ImageUploadDoc = () => {
         업로드 컴포넌트를 커스터마이징 할 수 있습니다.
       </p>
       <h2 className="text-[#2D3748]">1.1. Import</h2>
-      <CodeBox code={`import ImageUpload from '@components/ImageUpload/Imageupload';`} copyText={`import ImageUpload from '@components/ImageUpload/Imageupload';`} language="tsx" index={1} copied={copied} handleCopy={handleCopy}/>
+      <CodeBox_1.default code={`import ImageUpload from '@components/ImageUpload/Imageupload';`} copyText={`import ImageUpload from '@components/ImageUpload/Imageupload';`} language="tsx" index={1} copied={copied} handleCopy={handleCopy}/>
       <h2 className="text-[#2D3748]">1.2. Usage</h2>
       <p>기본 사용 예제는 아래와 같습니다:</p>
       <div style={{ marginBottom: "20px" }}>
-        <ImageUpload />
+        <Imageupload_1.default />
       </div>
       <div className="my-7 space-y-4"/>
-      <CodeBox code={`import ImageUpload from '@components/ImageUpload/Imageupload';
+      <CodeBox_1.default code={`import ImageUpload from '@components/ImageUpload/Imageupload';
 
 function Example() {
   return (
@@ -58,12 +86,12 @@ export default Example;`} language="tsx" index={2} copied={copied} handleCopy={h
         <code>medium</code>, <code>large</code> 입니다.
       </p>
       <div className="flex items-center space-x-4 space-y-4">
-        <ImageUpload size="small"/>
-        <ImageUpload size="medium"/>
-        <ImageUpload size="large"/>
+        <Imageupload_1.default size="small"/>
+        <Imageupload_1.default size="medium"/>
+        <Imageupload_1.default size="large"/>
       </div>
       <div className="my-7 space-y-4"/>
-      <CodeBox code={`import ImageUpload from '@components/ImageUpload/Imageupload';
+      <CodeBox_1.default code={`import ImageUpload from '@components/ImageUpload/Imageupload';
 
 function Example() {
   return (
@@ -102,25 +130,25 @@ export default Example;`} language="tsx" index={3} copied={copied} handleCopy={h
         <code>white</code>, <code>gray</code>, <code>black</code> 입니다.
       </p>
       <div className="flex flex-wrap items-center space-x-4 space-y-4">
-        <ImageUpload color="primary"/>
-        <ImageUpload color="secondary"/>
-        <ImageUpload color="success"/>
-        <ImageUpload color="warning"/>
-        <ImageUpload color="danger"/>
-        <ImageUpload color="red"/>
-        <ImageUpload color="orange"/>
-        <ImageUpload color="yellow"/>
-        <ImageUpload color="green"/>
-        <ImageUpload color="blue"/>
-        <ImageUpload color="purple"/>
-        <ImageUpload color="pink"/>
-        <ImageUpload color="basic"/>
-        <ImageUpload color="white"/>
-        <ImageUpload color="gray"/>
-        <ImageUpload color="black"/>
+        <Imageupload_1.default color="primary"/>
+        <Imageupload_1.default color="secondary"/>
+        <Imageupload_1.default color="success"/>
+        <Imageupload_1.default color="warning"/>
+        <Imageupload_1.default color="danger"/>
+        <Imageupload_1.default color="red"/>
+        <Imageupload_1.default color="orange"/>
+        <Imageupload_1.default color="yellow"/>
+        <Imageupload_1.default color="green"/>
+        <Imageupload_1.default color="blue"/>
+        <Imageupload_1.default color="purple"/>
+        <Imageupload_1.default color="pink"/>
+        <Imageupload_1.default color="basic"/>
+        <Imageupload_1.default color="white"/>
+        <Imageupload_1.default color="gray"/>
+        <Imageupload_1.default color="black"/>
       </div>
       <div className="my-7 space-y-4"/>
-      <CodeBox code={`import ImageUpload from '@components/ImageUpload/Imageupload';
+      <CodeBox_1.default code={`import ImageUpload from '@components/ImageUpload/Imageupload';
 
 function Example() {
   return (
@@ -181,11 +209,11 @@ export default Example;`} language="tsx" index={4} copied={copied} handleCopy={h
         <code>circle</code> 입니다.
       </p>
       <div className="flex flex-wrap items-center space-x-4 space-y-4">
-        <ImageUpload shape="rectangle"/>
-        <ImageUpload shape="circle"/>
+        <Imageupload_1.default shape="rectangle"/>
+        <Imageupload_1.default shape="circle"/>
       </div>
       <div className="my-7 space-y-4"/>
-      <CodeBox code={`import ImageUpload from '@components/ImageUpload/Imageupload';
+      <CodeBox_1.default code={`import ImageUpload from '@components/ImageUpload/Imageupload';
 
 function Example() {
   return (
@@ -218,11 +246,11 @@ export default Example;`} language="tsx" index={5} copied={copied} handleCopy={h
         <code>border</code> 입니다.
       </p>
       <div className="flex flex-wrap items-center space-x-4 space-y-4">
-        <ImageUpload variant="solid" color="primary"/>
-        <ImageUpload variant="border" color="secondary"/>
+        <Imageupload_1.default variant="solid" color="primary"/>
+        <Imageupload_1.default variant="border" color="secondary"/>
       </div>{" "}
       <div className="my-7 space-y-4"/>
-      <CodeBox code={`import ImageUpload from '@components/ImageUpload/Imageupload';
+      <CodeBox_1.default code={`import ImageUpload from '@components/ImageUpload/Imageupload';
 
 function Example() {
   return (
@@ -256,25 +284,25 @@ export default Example;`} language="tsx" index={6} copied={copied} handleCopy={h
         시각적으로 구분할 수 있습니다.
       </p>
       <div className="flex flex-wrap items-center space-x-4 space-y-4">
-        <ImageUpload color="primary" variant="border"/>
-        <ImageUpload color="secondary" variant="border"/>
-        <ImageUpload color="success" variant="border"/>
-        <ImageUpload color="warning" variant="border"/>
-        <ImageUpload color="danger" variant="border"/>
-        <ImageUpload color="red" variant="border"/>
-        <ImageUpload color="orange" variant="border"/>
-        <ImageUpload color="yellow" variant="border"/>
-        <ImageUpload color="green" variant="border"/>
-        <ImageUpload color="blue" variant="border"/>
-        <ImageUpload color="purple" variant="border"/>
-        <ImageUpload color="pink" variant="border"/>
-        <ImageUpload color="basic" variant="border"/>
-        <ImageUpload color="white" variant="border"/>
-        <ImageUpload color="gray" variant="border"/>
-        <ImageUpload color="black" variant="border"/>
+        <Imageupload_1.default color="primary" variant="border"/>
+        <Imageupload_1.default color="secondary" variant="border"/>
+        <Imageupload_1.default color="success" variant="border"/>
+        <Imageupload_1.default color="warning" variant="border"/>
+        <Imageupload_1.default color="danger" variant="border"/>
+        <Imageupload_1.default color="red" variant="border"/>
+        <Imageupload_1.default color="orange" variant="border"/>
+        <Imageupload_1.default color="yellow" variant="border"/>
+        <Imageupload_1.default color="green" variant="border"/>
+        <Imageupload_1.default color="blue" variant="border"/>
+        <Imageupload_1.default color="purple" variant="border"/>
+        <Imageupload_1.default color="pink" variant="border"/>
+        <Imageupload_1.default color="basic" variant="border"/>
+        <Imageupload_1.default color="white" variant="border"/>
+        <Imageupload_1.default color="gray" variant="border"/>
+        <Imageupload_1.default color="black" variant="border"/>
       </div>
       <div className="my-7 space-y-4"/>
-      <CodeBox code={`import { ImageUpload } from '@components/ImageUpload/Imageupload';
+      <CodeBox_1.default code={`import { ImageUpload } from '@components/ImageUpload/Imageupload';
 
 function Example() {
   return (
@@ -333,11 +361,11 @@ export default Example;`} language="tsx" index={6} copied={copied} handleCopy={h
         기본 값은 <code>+ upload</code> 입니다.
       </p>
       <div className="flex flex-wrap items-center space-x-4 space-y-4">
-        <ImageUpload text="Add Image"/>
-        <ImageUpload text="Upload Here"/>
+        <Imageupload_1.default text="Add Image"/>
+        <Imageupload_1.default text="Upload Here"/>
       </div>{" "}
       <div className="my-7 space-y-4"/>
-      <CodeBox code={`import ImageUpload from '@components/ImageUpload/Imageupload';
+      <CodeBox_1.default code={`import ImageUpload from '@components/ImageUpload/Imageupload';
 
 function Example() {
   return (
@@ -366,10 +394,10 @@ export default Example;`} language="tsx" index={7} copied={copied} handleCopy={h
         컴포넌트의 스타일을 커스터마이징할 수 있습니다.
       </p>
       <div className="space-x-4 space-y-4">
-        <ImageUpload className="bg-red-600 text-white"/>
+        <Imageupload_1.default className="bg-red-600 text-white"/>
       </div>{" "}
       <div className="my-7 space-y-4"/>
-      <CodeBox code={`import ImageUpload from '@components/ImageUpload/Imageupload';
+      <CodeBox_1.default code={`import ImageUpload from '@components/ImageUpload/Imageupload';
 
 function Example() {
   return (
@@ -405,9 +433,9 @@ export default Example;`} language="tsx" index={8} copied={copied} handleCopy={h
         예를 들어, 아래와 같은 방식으로 <code>onImageSelect</code>를 구현할 수
         있습니다.
       </p>
-      <ImageUpload onImageSelect={onSelectImageHandler}/>{" "}
+      <Imageupload_1.default onImageSelect={onSelectImageHandler}/>{" "}
       <div className="my-7 space-y-4"/>
-      <CodeBox code={`"use client";
+      <CodeBox_1.default code={`"use client";
 import ImageUpload from '@components/ImageUpload/Imageupload';
 import { useState } from 'react';
 
@@ -452,11 +480,11 @@ export default Example;`} language="tsx" index={9} copied={copied} handleCopy={h
         Docs를 참고 하시면 됩니다.
       </p>
       <div className="flex items-center space-x-4 space-y-4">
-        <ImageUpload icon="icon-plus"/>
-        <ImageUpload icon="icon-image"/>
+        <Imageupload_1.default icon="icon-plus"/>
+        <Imageupload_1.default icon="icon-image"/>
       </div>
       <div className="my-7 space-y-4"/>
-      <CodeBox code={`import ImageUpload from '@components/ImageUpload/Imageupload';
+      <CodeBox_1.default code={`import ImageUpload from '@components/ImageUpload/Imageupload';
 
 function Example() {
   return (
@@ -487,12 +515,12 @@ export default Example;`} language="tsx" index={10} copied={copied} handleCopy={
         입니다.
       </p>
       <div className="flex items-center space-x-4 space-y-4">
-        <ImageUpload iconSize="small"/>
-        <ImageUpload iconSize="medium"/>
-        <ImageUpload iconSize="large"/>
+        <Imageupload_1.default iconSize="small"/>
+        <Imageupload_1.default iconSize="medium"/>
+        <Imageupload_1.default iconSize="large"/>
       </div>
       <div className="my-7 space-y-4"/>
-      <CodeBox code={`import ImageUpload from '@components/ImageUpload/Imageupload';
+      <CodeBox_1.default code={`import ImageUpload from '@components/ImageUpload/Imageupload';
 
 function Example() {
   return (
@@ -523,11 +551,11 @@ export default Example;`} language="tsx" index={11} copied={copied} handleCopy={
         있습니다. 기본값은 <code>"currentColor"</code> 입니다.
       </p>
       <div className="flex items-center space-x-4 space-y-4">
-        <ImageUpload iconColor="red"/>
-        <ImageUpload iconColor="blue"/>
+        <Imageupload_1.default iconColor="red"/>
+        <Imageupload_1.default iconColor="blue"/>
       </div>
       <div className="my-7 space-y-4"/>
-      <CodeBox code={`import ImageUpload from '@components/ImageUpload/Imageupload';
+      <CodeBox_1.default code={`import ImageUpload from '@components/ImageUpload/Imageupload';
 
 function Example() {
   return (
@@ -566,13 +594,13 @@ export default Example;`} language="tsx" index={12} copied={copied} handleCopy={
       </p>
       <p>아래 예시는 icon-image 아이콘을 포함한 예시입니다.</p>
       <div className="flex items-center space-x-4 space-y-4">
-        <ImageUpload icon="icon-image" iconPosition="left" text="left"/>
-        <ImageUpload icon="icon-image" iconPosition="right" text="right"/>
-        <ImageUpload icon="icon-image" iconPosition="top" text="top"/>
-        <ImageUpload icon="icon-image" iconPosition="bottom" text="bottom"/>
+        <Imageupload_1.default icon="icon-image" iconPosition="left" text="left"/>
+        <Imageupload_1.default icon="icon-image" iconPosition="right" text="right"/>
+        <Imageupload_1.default icon="icon-image" iconPosition="top" text="top"/>
+        <Imageupload_1.default icon="icon-image" iconPosition="bottom" text="bottom"/>
       </div>
       <div className="my-7 space-y-4"/>
-      <CodeBox code={`import ImageUpload from '@components/ImageUpload/Imageupload';
+      <CodeBox_1.default code={`import ImageUpload from '@components/ImageUpload/Imageupload';
 
 function Example() {
   return (
@@ -759,4 +787,4 @@ export default Example;`} language="tsx" index={13} copied={copied} handleCopy={
       </table>
     </div>);
 };
-export default ImageUploadDoc;
+exports.default = ImageUploadDoc;

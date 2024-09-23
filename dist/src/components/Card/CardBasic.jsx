@@ -1,3 +1,5 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 const CardBasic = ({ title, children }) => {
     return (<div className="m-4 max-w-sm rounded-xl border-2 border-Blue bg-white shadow-lg dark:bg-[#2A2E39] dark:text-white">
       <div className="px-6 py-4">
@@ -6,4 +8,4 @@ const CardBasic = ({ title, children }) => {
       </div>
     </div>);
 };
-export default CardBasic;
+exports.default = CardBasic;

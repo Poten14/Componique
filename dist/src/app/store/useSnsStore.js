@@ -1,5 +1,8 @@
-import { create } from "zustand";
-export const useSnsStore = create((set) => ({
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.useSnsStore = void 0;
+const zustand_1 = require("zustand");
+exports.useSnsStore = (0, zustand_1.create)((set) => ({
     nickname: "Componique",
     content: "바닷가에서...",
     size: "small",

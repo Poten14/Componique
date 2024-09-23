@@ -1,11 +1,16 @@
+"use strict";
 "use client";
-import React from "react";
-import Button from "@components/Button/Button";
-import Input from "@components/Input/Input";
-import { useLoginStore } from "../../../../store/useLoginStore";
-import CheckBox from "@components/CheckBox/CheckBox";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+const react_1 = __importDefault(require("react"));
+const Button_1 = __importDefault(require("@components/Button/Button"));
+const Input_1 = __importDefault(require("@components/Input/Input"));
+const useLoginStore_1 = require("../../../../store/useLoginStore");
+const CheckBox_1 = __importDefault(require("@components/CheckBox/CheckBox"));
 const LoginForm = () => {
-    const { title, buttonColor, buttonSize, buttonVariant, buttonColor2, buttonSize2, buttonVariant2, placeholder, placeholder2, inputSize, inputWidth, checkboxSize, checkboxColor, checkboxVariant, description, } = useLoginStore();
+    const { title, buttonColor, buttonSize, buttonVariant, buttonColor2, buttonSize2, buttonVariant2, placeholder, placeholder2, inputSize, inputWidth, checkboxSize, checkboxColor, checkboxVariant, description, } = (0, useLoginStore_1.useLoginStore)();
     const handleSubmit = () => {
         alert("로그인 완료");
     };
@@ -16,26 +21,26 @@ const LoginForm = () => {
         </h1>
         <form onSubmit={handleSubmit} className="space-y-6">
           <div>
-            <Input size={inputSize} width={inputWidth} variant="outlined" placeholder={placeholder}/>
+            <Input_1.default size={inputSize} width={inputWidth} variant="outlined" placeholder={placeholder}/>
           </div>
           <div>
-            <Input size={inputSize} width={inputWidth} variant="outlined" placeholder={placeholder2}/>
+            <Input_1.default size={inputSize} width={inputWidth} variant="outlined" placeholder={placeholder2}/>
           </div>
           <div className="flex text-Gray">
-            <CheckBox boxSize={checkboxSize} color={checkboxColor} variant={checkboxVariant} description={description}/>
+            <CheckBox_1.default boxSize={checkboxSize} color={checkboxColor} variant={checkboxVariant} description={description}/>
           </div>
           <div className="mt-6">
-            <Button color={buttonColor} size={buttonSize} variant={buttonVariant} onClick={handleSubmit} className="w-full text-white">
+            <Button_1.default color={buttonColor} size={buttonSize} variant={buttonVariant} onClick={handleSubmit} className="w-full text-white">
               login
-            </Button>
+            </Button_1.default>
           </div>
           <div className="mt-4 text-center">
-            <Button color={buttonColor2} size={buttonSize2} variant={buttonVariant2} className="w-full text-white" onClick={() => alert("회원가입 페이지로 이동")}>
+            <Button_1.default color={buttonColor2} size={buttonSize2} variant={buttonVariant2} className="w-full text-white" onClick={() => alert("회원가입 페이지로 이동")}>
               sign up
-            </Button>
+            </Button_1.default>
           </div>
         </form>
       </div>
     </div>);
 };
-export default LoginForm;
+exports.default = LoginForm;

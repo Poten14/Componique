@@ -1,9 +1,14 @@
-import { useState } from "react";
-import Image from "next/image";
+"use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+const react_1 = require("react");
+const image_1 = __importDefault(require("next/image"));
 const DropDownBasicMultiSelect = ({ option, placeholder = "Select Options", onSelect, type = "basic", // 기본 스타일은 "basic"
  }) => {
-    const [isOpen, setIsOpen] = useState(false);
-    const [selectedOptions, setSelectedOptions] = useState([]);
+    const [isOpen, setIsOpen] = (0, react_1.useState)(false);
+    const [selectedOptions, setSelectedOptions] = (0, react_1.useState)([]);
     const toggleDropdown = () => {
         setIsOpen(!isOpen);
     };
@@ -45,7 +50,7 @@ const DropDownBasicMultiSelect = ({ option, placeholder = "Select Options", onSe
           {displaySelectedOptions()}
         </span>
 
-        <Image src={isOpen ? "/dropdown1.svg" : "/dropdown2.svg"} alt="dropdown" width={20} height={20}/>
+        <image_1.default src={isOpen ? "/dropdown1.svg" : "/dropdown2.svg"} alt="dropdown" width={20} height={20}/>
       </div>
       {isOpen && (<ul className="absolute z-10 w-full bg-white dark:bg-[#2A2E39]">
           {option.map((item, index) => (<li key={index} onClick={() => handleOptionClick(item)} className={`cursor-pointer p-2 text-zinc-800 hover:bg-[#E8F5FF] dark:text-white dark:hover:bg-[#2A6490] ${selectedOptions.includes(item) ? "bg-blue-100" : ""}`}>
@@ -54,4 +59,4 @@ const DropDownBasicMultiSelect = ({ option, placeholder = "Select Options", onSe
         </ul>)}
     </div>);
 };
-export default DropDownBasicMultiSelect;
+exports.default = DropDownBasicMultiSelect;

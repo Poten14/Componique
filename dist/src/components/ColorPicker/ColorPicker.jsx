@@ -1,8 +1,13 @@
+"use strict";
 "use client";
-import ColorPickerUI from "@components/ColorPicker/ColorPickerUI";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+const ColorPickerUI_1 = __importDefault(require("@components/ColorPicker/ColorPickerUI"));
 const ColorPicker = ({ selectColor, }) => {
     return (<>
-      <ColorPickerUI colors={[
+      <ColorPickerUI_1.default colors={[
             // 무채색
             "#ffffff",
             "#eeeeee",
@@ -69,4 +74,4 @@ const ColorPicker = ({ selectColor, }) => {
         ]} selectColor={selectColor}/>
     </>);
 };
-export default ColorPicker;
+exports.default = ColorPicker;

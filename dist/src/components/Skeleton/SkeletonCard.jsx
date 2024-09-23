@@ -1,3 +1,5 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 const SkeletonCard = ({ width = "w-1/5", height = "h-auto", imageHeight = "h-48", hasAvatar = true, hasImage = true, animate = true, }) => {
     const animationClass = animate ? "animate-pulse" : "";
     return (<>
@@ -25,4 +27,4 @@ const SkeletonCard = ({ width = "w-1/5", height = "h-auto", imageHeight = "h-48"
       </div>
     </>);
 };
-export default SkeletonCard;
+exports.default = SkeletonCard;

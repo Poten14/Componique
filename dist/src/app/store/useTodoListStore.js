@@ -1,5 +1,8 @@
-import { create } from "zustand";
-export const useTodoListStore = create((set) => ({
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.useTodoListStore = void 0;
+const zustand_1 = require("zustand");
+exports.useTodoListStore = (0, zustand_1.create)((set) => ({
     addButtonColor: "primary",
     addButtonSize: "medium",
     addButtonVariant: "solid",

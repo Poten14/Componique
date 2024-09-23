@@ -1,7 +1,32 @@
-import React, { useEffect, useState } from "react";
+"use strict";
+var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    var desc = Object.getOwnPropertyDescriptor(m, k);
+    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
+      desc = { enumerable: true, get: function() { return m[k]; } };
+    }
+    Object.defineProperty(o, k2, desc);
+}) : (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    o[k2] = m[k];
+}));
+var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {
+    Object.defineProperty(o, "default", { enumerable: true, value: v });
+}) : function(o, v) {
+    o["default"] = v;
+});
+var __importStar = (this && this.__importStar) || function (mod) {
+    if (mod && mod.__esModule) return mod;
+    var result = {};
+    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
+    __setModuleDefault(result, mod);
+    return result;
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+const react_1 = __importStar(require("react"));
 const Pagination = ({ currentPage = 1, totalPages = 10, variant = "circle", styleType = "outlined", color = "Basic", onPageChange, showFirstLastButtons = false, disabled = false, }) => {
-    const [isDarkMode, setIsDarkMode] = useState(false);
-    useEffect(() => {
+    const [isDarkMode, setIsDarkMode] = (0, react_1.useState)(false);
+    (0, react_1.useEffect)(() => {
         const checkDarkMode = () => {
             const darkMode = document.documentElement.classList.contains("dark");
             setIsDarkMode(darkMode);
@@ -59,7 +84,7 @@ const Pagination = ({ currentPage = 1, totalPages = 10, variant = "circle", styl
       <button className={`${baseButtonClasses} ${shapeClass} border-none ${currentPage === 1 ? "cursor-not-allowed text-Gray" : "text-Gray"}`} onClick={() => !disabled && onPageChange(currentPage - 1)} disabled={currentPage === 1 || disabled}>
         &lt;
       </button>
-      {pageNumbers.map((number, index) => (<React.Fragment key={index}>
+      {pageNumbers.map((number, index) => (<react_1.default.Fragment key={index}>
           {typeof number === "string" ? (<span className="px-2">...</span>) : (<button className={`${baseButtonClasses} ${shapeClass} ${currentPage === number
                     ? styleType === "filled"
                         ? `${colorClasses[color]} text-white`
@@ -79,7 +104,7 @@ const Pagination = ({ currentPage = 1, totalPages = 10, variant = "circle", styl
                                 : "text-Gray"}`} onClick={() => !disabled && onPageChange(number)} disabled={disabled}>
               {number}
             </button>)}
-        </React.Fragment>))}
+        </react_1.default.Fragment>))}
       <button className={`${baseButtonClasses} ${shapeClass} border-none ${currentPage === totalPages
             ? "cursor-not-allowed text-Gray"
             : "text-Gray"}`} onClick={() => !disabled && onPageChange(currentPage + 1)} disabled={currentPage === totalPages || disabled}>
@@ -92,4 +117,4 @@ const Pagination = ({ currentPage = 1, totalPages = 10, variant = "circle", styl
         </button>)}
     </div>);
 };
-export default Pagination;
+exports.default = Pagination;

@@ -1,4 +1,9 @@
-import React from "react";
+"use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+const react_1 = __importDefault(require("react"));
 const sizeClasses = {
     xs: "h-3 w-3",
     small: "h-4 w-4",
@@ -26,4 +31,4 @@ const SquareSpinner = ({ size = "medium", color = "Basic", speed = "medium", }) 
       {[...Array(5)].map((_, index) => (<div key={index} className={`${sizeClasses[size]} ${speedClasses[speed]} ${colorClasses[color]} rounded`}></div>))}
     </div>);
 };
-export default SquareSpinner;
+exports.default = SquareSpinner;

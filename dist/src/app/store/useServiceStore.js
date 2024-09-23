@@ -1,6 +1,12 @@
-import create from "zustand";
+"use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.useServiceStore = void 0;
+const zustand_1 = __importDefault(require("zustand"));
 // Zustand를 사용하여 고객센터 폼 상태 관리
-export const useServiceStore = create((set) => ({
+exports.useServiceStore = (0, zustand_1.default)((set) => ({
     numberType: "02", // 기본값 설정
     phoneNumber: "", // 기본값 설정
     serviceItem: "",

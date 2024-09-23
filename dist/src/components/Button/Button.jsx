@@ -1,4 +1,9 @@
-import Icon from "@components/Icon/Icon";
+"use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+const Icon_1 = __importDefault(require("@components/Icon/Icon"));
 const Button = ({ size = "medium", color = "basic", radius = "medium", variant = "solid", className, icon, iconColor, disabled = false, iconSize = "medium", iconPosition = "left", children, ...rest }) => {
     const buttonSize = size === "small"
         ? "px-2 py-2 text-xs"
@@ -94,9 +99,9 @@ const Button = ({ size = "medium", color = "basic", radius = "medium", variant =
     const iconSizes = iconSize === "small" ? 12 : iconSize === "medium" ? 16 : 20;
     const basicButton = "font-bold text-sm rounded  px-3 py-2 text-white";
     return (<button className={`${basicButton} ${buttonSize} ${buttonRadius} ${ButtonVariant} ${className || ""}`} {...rest}>
-      {icon && iconPosition === "left" && (<Icon name={icon} size={iconSizes} color={iconColor || "black"}/>)}
+      {icon && iconPosition === "left" && (<Icon_1.default name={icon} size={iconSizes} color={iconColor || "black"}/>)}
       {children}
-      {icon && iconPosition === "right" && (<Icon name={icon} size={iconSizes} color={iconColor || "black"}/>)}
+      {icon && iconPosition === "right" && (<Icon_1.default name={icon} size={iconSizes} color={iconColor || "black"}/>)}
     </button>);
 };
-export default Button;
+exports.default = Button;

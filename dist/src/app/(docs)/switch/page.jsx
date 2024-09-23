@@ -1,13 +1,41 @@
+"use strict";
 "use client";
-import React, { useState } from "react";
-import CodeBox from "@components/CodeBox";
-import SwitchBasic from "@components/Swtich/SwitchBasic";
-import SwitchHorizental from "@components/Swtich/SwitchHorizental";
-import SwitchLong from "@components/Swtich/SwitchLong";
-import SwitchRound from "@components/Swtich/SwitchRound";
-import SwitchLabeled from "@components/Swtich/SwitchLabeled";
+var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    var desc = Object.getOwnPropertyDescriptor(m, k);
+    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
+      desc = { enumerable: true, get: function() { return m[k]; } };
+    }
+    Object.defineProperty(o, k2, desc);
+}) : (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    o[k2] = m[k];
+}));
+var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {
+    Object.defineProperty(o, "default", { enumerable: true, value: v });
+}) : function(o, v) {
+    o["default"] = v;
+});
+var __importStar = (this && this.__importStar) || function (mod) {
+    if (mod && mod.__esModule) return mod;
+    var result = {};
+    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
+    __setModuleDefault(result, mod);
+    return result;
+};
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+const react_1 = __importStar(require("react"));
+const CodeBox_1 = __importDefault(require("@components/CodeBox"));
+const SwitchBasic_1 = __importDefault(require("@components/Swtich/SwitchBasic"));
+const SwitchHorizental_1 = __importDefault(require("@components/Swtich/SwitchHorizental"));
+const SwitchLong_1 = __importDefault(require("@components/Swtich/SwitchLong"));
+const SwitchRound_1 = __importDefault(require("@components/Swtich/SwitchRound"));
+const SwitchLabeled_1 = __importDefault(require("@components/Swtich/SwitchLabeled"));
 const SwitchDocs = () => {
-    const [copied, setCopied] = useState({});
+    const [copied, setCopied] = (0, react_1.useState)({});
     const handleCopy = (index) => {
         setCopied((prev) => ({ ...prev, [index]: true }));
         setTimeout(() => setCopied((prev) => ({ ...prev, [index]: false })), 500);
@@ -23,14 +51,14 @@ const SwitchDocs = () => {
         </p>
 
         <h2 className="text-[#2D3748] dark:text-white">1.1. Import</h2>
-        <CodeBox code={`import SwitchBasic from '@components/Switch/SwitchBasic';`} copyText={`import SwitchBasic from '@components/Switch/SwitchBasic';`} language="tsx" index={1} copied={copied} handleCopy={handleCopy}/>
+        <CodeBox_1.default code={`import SwitchBasic from '@components/Switch/SwitchBasic';`} copyText={`import SwitchBasic from '@components/Switch/SwitchBasic';`} language="tsx" index={1} copied={copied} handleCopy={handleCopy}/>
 
         <h2 className="text-[#2D3748] dark:text-white">1.2. Usage</h2>
         <p>기본 사용 예제는 아래와 같습니다:</p>
         <div className="my-7">
-          <SwitchBasic />
+          <SwitchBasic_1.default />
         </div>
-        <CodeBox code={`
+        <CodeBox_1.default code={`
 import SwitchBasic from '@components/Switch/SwitchBasic';
 
 function Example() {
@@ -76,11 +104,11 @@ export default Example;
           </li>
         </ul>
         <div className="my-7 space-y-7">
-          <SwitchBasic size="small"/>
-          <SwitchBasic size="medium"/>
-          <SwitchBasic size="large"/>
+          <SwitchBasic_1.default size="small"/>
+          <SwitchBasic_1.default size="medium"/>
+          <SwitchBasic_1.default size="large"/>
         </div>
-        <CodeBox code={`
+        <CodeBox_1.default code={`
 import SwitchBasic from '@components/Switch/SwitchBasic';
 
 function Example() {
@@ -167,7 +195,7 @@ export default Example;
         </table>
 
         <h2 className="text-[#2D3748] dark:text-white">1.5. Full Example</h2>
-        <CodeBox code={`
+        <CodeBox_1.default code={`
 // SwitchBasic.tsx
 import { useState } from "react";
 
@@ -323,14 +351,14 @@ export default SwitchBasic;
         </p>
 
         <h2 className="text-[#2D3748] dark:text-white">2.1. Import</h2>
-        <CodeBox code={`import SwitchHorizental from '@components/Switch/SwitchHorizental';`} copyText={`import SwitchHorizental from '@components/Switch/SwitchHorizental';`} language="tsx" index={5} copied={copied} handleCopy={handleCopy}/>
+        <CodeBox_1.default code={`import SwitchHorizental from '@components/Switch/SwitchHorizental';`} copyText={`import SwitchHorizental from '@components/Switch/SwitchHorizental';`} language="tsx" index={5} copied={copied} handleCopy={handleCopy}/>
 
         <h2 className="text-[#2D3748] dark:text-white">2.2. Usage</h2>
         <p>기본 사용 예제는 아래와 같습니다:</p>
         <div className="my-7">
-          <SwitchHorizental />
+          <SwitchHorizental_1.default />
         </div>
-        <CodeBox code={`
+        <CodeBox_1.default code={`
 import SwitchHorizental from '@components/Switch/SwitchHorizental';
 
 function Example() {
@@ -368,11 +396,11 @@ export default Example;
           </li>
         </ul>
         <div className="my-7 space-y-7">
-          <SwitchHorizental size="small"/>
-          <SwitchHorizental size="medium"/>
-          <SwitchHorizental size="large"/>
+          <SwitchHorizental_1.default size="small"/>
+          <SwitchHorizental_1.default size="medium"/>
+          <SwitchHorizental_1.default size="large"/>
         </div>
-        <CodeBox code={`
+        <CodeBox_1.default code={`
 import SwitchHorizental from '@components/Switch/SwitchHorizental';
 
 function Example() {
@@ -456,7 +484,7 @@ export default Example;
         </table>
 
         <h2 className="text-[#2D3748] dark:text-white">2.5. Full Example</h2>
-        <CodeBox code={`
+        <CodeBox_1.default code={`
 // SwitchHorizental.tsx
 import { useState } from "react";
 
@@ -650,14 +678,14 @@ export default Example;
         </p>
 
         <h2 className="text-[#2D3748] dark:text-white">3.1. Import</h2>
-        <CodeBox code={`import SwitchLong from '@components/Switch/SwitchLong';`} copyText={`import SwitchLong from '@components/Switch/SwitchLong';`} language="tsx" index={9} copied={copied} handleCopy={handleCopy}/>
+        <CodeBox_1.default code={`import SwitchLong from '@components/Switch/SwitchLong';`} copyText={`import SwitchLong from '@components/Switch/SwitchLong';`} language="tsx" index={9} copied={copied} handleCopy={handleCopy}/>
 
         <h2 className="text-[#2D3748] dark:text-white">3.2. Usage</h2>
         <p>기본 사용 예제는 아래와 같습니다:</p>
         <div className="my-7">
-          <SwitchLong />
+          <SwitchLong_1.default />
         </div>
-        <CodeBox code={`
+        <CodeBox_1.default code={`
 import SwitchLong from '@components/Switch/SwitchLong';
 
 function Example() {
@@ -695,11 +723,11 @@ export default Example;
           </li>
         </ul>
         <div className="my-7 space-y-7">
-          <SwitchLong size="small"/>
-          <SwitchLong size="medium"/>
-          <SwitchLong size="large"/>
+          <SwitchLong_1.default size="small"/>
+          <SwitchLong_1.default size="medium"/>
+          <SwitchLong_1.default size="large"/>
         </div>
-        <CodeBox code={`
+        <CodeBox_1.default code={`
 import SwitchLong from '@components/Switch/SwitchLong';
 
 function Example() {
@@ -783,7 +811,7 @@ export default Example;
         </table>
 
         <h2 className="text-[#2D3748] dark:text-white">3.5. Full Example</h2>
-        <CodeBox code={`
+        <CodeBox_1.default code={`
 // SwitchLong.tsx
 import { useState } from "react";
 
@@ -969,14 +997,14 @@ export default Example;
         </p>
 
         <h2 className="text-[#2D3748] dark:text-white">4.1. Import</h2>
-        <CodeBox code={`import SwitchRound from '@components/Switch/SwitchRound';`} copyText={`import SwitchRound from '@components/Switch/SwitchRound';`} language="tsx" index={13} copied={copied} handleCopy={handleCopy}/>
+        <CodeBox_1.default code={`import SwitchRound from '@components/Switch/SwitchRound';`} copyText={`import SwitchRound from '@components/Switch/SwitchRound';`} language="tsx" index={13} copied={copied} handleCopy={handleCopy}/>
 
         <h2 className="text-[#2D3748] dark:text-white">4.2. Usage</h2>
         <p>기본 사용 예제는 아래와 같습니다:</p>
         <div className="my-7">
-          <SwitchRound />
+          <SwitchRound_1.default />
         </div>
-        <CodeBox code={`
+        <CodeBox_1.default code={`
 import SwitchRound from '@components/Switch/SwitchRound';
 
 function Example() {
@@ -1010,9 +1038,9 @@ export default Example;
           </li>
         </ul>
         <div className="my-7 space-y-7">
-          <SwitchRound />
+          <SwitchRound_1.default />
         </div>
-        <CodeBox code={`
+        <CodeBox_1.default code={`
 import SwitchRound from '@components/Switch/SwitchRound';
 
 function Example() {
@@ -1080,7 +1108,7 @@ export default Example;
         </table>
 
         <h2 className="text-[#2D3748] dark:text-white">4.5. Full Example</h2>
-        <CodeBox code={`
+        <CodeBox_1.default code={`
 // SwitchRound.tsx
 import { useState } from "react";
 
@@ -1190,14 +1218,14 @@ export default Example;
         </p>
 
         <h2 className="text-[#2D3748] dark:text-white">5.1. Import</h2>
-        <CodeBox code={`import SwitchLabeled from '@components/Switch/SwitchLabeled';`} copyText={`import SwitchLabeled from '@components/Switch/SwitchLabeled';`} language="tsx" index={17} copied={copied} handleCopy={handleCopy}/>
+        <CodeBox_1.default code={`import SwitchLabeled from '@components/Switch/SwitchLabeled';`} copyText={`import SwitchLabeled from '@components/Switch/SwitchLabeled';`} language="tsx" index={17} copied={copied} handleCopy={handleCopy}/>
 
         <h2 className="text-[#2D3748] dark:text-white">5.2. Usage</h2>
         <p>기본 사용 예제는 아래와 같습니다:</p>
         <div className="my-7">
-          <SwitchLabeled />
+          <SwitchLabeled_1.default />
         </div>
-        <CodeBox code={`
+        <CodeBox_1.default code={`
 import SwitchLabeled from '@components/Switch/SwitchLabeled';
 
 function Example() {
@@ -1231,9 +1259,9 @@ export default Example;
           </li>
         </ul>
         <div className="my-7 space-y-7">
-          <SwitchLabeled />
+          <SwitchLabeled_1.default />
         </div>
-        <CodeBox code={`
+        <CodeBox_1.default code={`
 import SwitchLabeled from '@components/Switch/SwitchLabeled';
 
 function Example() {
@@ -1301,7 +1329,7 @@ export default Example;
         </table>
 
         <h2 className="text-[#2D3748] dark:text-white">5.5. Full Example</h2>
-        <CodeBox code={`
+        <CodeBox_1.default code={`
 // SwitchLabeled.tsx
 import { useState } from "react";
 
@@ -1409,4 +1437,4 @@ export default Example;
       </div>
     </div>);
 };
-export default SwitchDocs;
+exports.default = SwitchDocs;

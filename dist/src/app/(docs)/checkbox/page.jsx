@@ -1,10 +1,38 @@
+"use strict";
 "use client";
-import React, { useState } from "react";
-import CheckBox from "@components/CheckBox/CheckBox";
-import CodeBox from "@components/CodeBox";
+var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    var desc = Object.getOwnPropertyDescriptor(m, k);
+    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
+      desc = { enumerable: true, get: function() { return m[k]; } };
+    }
+    Object.defineProperty(o, k2, desc);
+}) : (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    o[k2] = m[k];
+}));
+var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {
+    Object.defineProperty(o, "default", { enumerable: true, value: v });
+}) : function(o, v) {
+    o["default"] = v;
+});
+var __importStar = (this && this.__importStar) || function (mod) {
+    if (mod && mod.__esModule) return mod;
+    var result = {};
+    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
+    __setModuleDefault(result, mod);
+    return result;
+};
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+const react_1 = __importStar(require("react"));
+const CheckBox_1 = __importDefault(require("@components/CheckBox/CheckBox"));
+const CodeBox_1 = __importDefault(require("@components/CodeBox"));
 const CheckBoxDoc = () => {
-    const [copied, setCopied] = useState({});
-    const [checkBoxStates, setCheckBoxStates] = useState({
+    const [copied, setCopied] = (0, react_1.useState)({});
+    const [checkBoxStates, setCheckBoxStates] = (0, react_1.useState)({
         example: true,
         small: true,
         medium: true,
@@ -40,14 +68,14 @@ const CheckBoxDoc = () => {
       </p>
 
       <h2 className="text-[#2D3748]">1.1. Import</h2>
-      <CodeBox code={`import { CheckBox } from '@components/CheckBox';`} copyText={`import { CheckBox } from '@components/CheckBox';`} language="tsx" index={1} copied={copied} handleCopy={handleCopy}/>
+      <CodeBox_1.default code={`import { CheckBox } from '@components/CheckBox';`} copyText={`import { CheckBox } from '@components/CheckBox';`} language="tsx" index={1} copied={copied} handleCopy={handleCopy}/>
 
       <h2 className="text-[#2D3748]">1.2. Usage</h2>
       <p>기본 사용 예제는 아래와 같습니다:</p>
       <div style={{ marginBottom: "20px" }}>
-        <CheckBox description="Example CheckBox" checked={checkBoxStates.example} onChange={handleCheckBoxChange("example")}/>
+        <CheckBox_1.default description="Example CheckBox" checked={checkBoxStates.example} onChange={handleCheckBoxChange("example")}/>
       </div>
-      <CodeBox code={`import { CheckBox } from '@components/CheckBox';
+      <CodeBox_1.default code={`import { CheckBox } from '@components/CheckBox';
 
 function Example() {
   return (
@@ -72,12 +100,12 @@ export default Example;`} language="tsx" index={2} copied={copied} handleCopy={h
         <code>large</code>입니다.
       </p>
       <div className="space-y-4">
-        <CheckBox boxSize="small" description="Small CheckBox" checked={checkBoxStates.small} onChange={handleCheckBoxChange("small")}/>
-        <CheckBox boxSize="medium" description="Medium CheckBox" checked={checkBoxStates.medium} onChange={handleCheckBoxChange("medium")}/>
-        <CheckBox boxSize="large" description="Large CheckBox" checked={checkBoxStates.large} onChange={handleCheckBoxChange("large")}/>
+        <CheckBox_1.default boxSize="small" description="Small CheckBox" checked={checkBoxStates.small} onChange={handleCheckBoxChange("small")}/>
+        <CheckBox_1.default boxSize="medium" description="Medium CheckBox" checked={checkBoxStates.medium} onChange={handleCheckBoxChange("medium")}/>
+        <CheckBox_1.default boxSize="large" description="Large CheckBox" checked={checkBoxStates.large} onChange={handleCheckBoxChange("large")}/>
       </div>
       <div className="my-7 space-y-4"/>
-      <CodeBox code={`import { CheckBox } from '@components/CheckBox';
+      <CodeBox_1.default code={`import { CheckBox } from '@components/CheckBox';
 
 function Example() {
   return (
@@ -115,14 +143,14 @@ export default Example;`} language="tsx" index={3} copied={copied} handleCopy={h
         <code>pink</code>, <code>basic</code>입니다.
       </p>
       <div className="space-y-4">
-        <CheckBox description="Primary CheckBox" color="primary" checked={checkBoxStates.primary} onChange={handleCheckBoxChange("primary")}/>
-        <CheckBox description="Secondary CheckBox" color="secondary" checked={checkBoxStates.secondary} onChange={handleCheckBoxChange("secondary")}/>
-        <CheckBox description="Success CheckBox" color="success" checked={checkBoxStates.success} onChange={handleCheckBoxChange("success")}/>
-        <CheckBox description="Warning CheckBox" color="warning" checked={checkBoxStates.warning} onChange={handleCheckBoxChange("warning")}/>
-        <CheckBox description="Danger CheckBox" color="danger" checked={checkBoxStates.danger} onChange={handleCheckBoxChange("danger")}/>
+        <CheckBox_1.default description="Primary CheckBox" color="primary" checked={checkBoxStates.primary} onChange={handleCheckBoxChange("primary")}/>
+        <CheckBox_1.default description="Secondary CheckBox" color="secondary" checked={checkBoxStates.secondary} onChange={handleCheckBoxChange("secondary")}/>
+        <CheckBox_1.default description="Success CheckBox" color="success" checked={checkBoxStates.success} onChange={handleCheckBoxChange("success")}/>
+        <CheckBox_1.default description="Warning CheckBox" color="warning" checked={checkBoxStates.warning} onChange={handleCheckBoxChange("warning")}/>
+        <CheckBox_1.default description="Danger CheckBox" color="danger" checked={checkBoxStates.danger} onChange={handleCheckBoxChange("danger")}/>
       </div>
       <div className="my-7 space-y-4"/>
-      <CodeBox code={`import { CheckBox } from '@components/CheckBox';
+      <CodeBox_1.default code={`import { CheckBox } from '@components/CheckBox';
 
 function Example() {
   return (
@@ -161,11 +189,11 @@ export default Example;`} language="tsx" index={4} copied={copied} handleCopy={h
         가능한 값은 <code>solid</code>와 <code>border</code>입니다.
       </p>
       <div className="space-y-4">
-        <CheckBox description="Solid CheckBox" variant="solid" checked={checkBoxStates.solid} onChange={handleCheckBoxChange("solid")}/>
-        <CheckBox description="Border CheckBox" variant="border" checked={checkBoxStates.border} onChange={handleCheckBoxChange("border")}/>
+        <CheckBox_1.default description="Solid CheckBox" variant="solid" checked={checkBoxStates.solid} onChange={handleCheckBoxChange("solid")}/>
+        <CheckBox_1.default description="Border CheckBox" variant="border" checked={checkBoxStates.border} onChange={handleCheckBoxChange("border")}/>
       </div>
       <div className="my-7 space-y-4"/>
-      <CodeBox code={`import { CheckBox } from '@components/CheckBox';
+      <CodeBox_1.default code={`import { CheckBox } from '@components/CheckBox';
 
 function Example() {
   return (
@@ -199,14 +227,14 @@ export default Example;`} language="tsx" index={5} copied={copied} handleCopy={h
         상태일 때 테두리 색상이 강조됩니다.
       </p>
       <div className="space-y-4">
-        <CheckBox description="Primary CheckBox (Border)" color="primary" variant="border" checked={checkBoxStates.primary} onChange={handleCheckBoxChange("primary")}/>
-        <CheckBox description="Secondary CheckBox (Border)" color="secondary" variant="border" checked={checkBoxStates.secondary} onChange={handleCheckBoxChange("secondary")}/>
-        <CheckBox description="Success CheckBox (Border)" color="success" variant="border" checked={checkBoxStates.success} onChange={handleCheckBoxChange("success")}/>
-        <CheckBox description="Warning CheckBox (Border)" color="warning" variant="border" checked={checkBoxStates.warning} onChange={handleCheckBoxChange("warning")}/>
-        <CheckBox description="Danger CheckBox (Border)" color="danger" variant="border" checked={checkBoxStates.danger} onChange={handleCheckBoxChange("danger")}/>
+        <CheckBox_1.default description="Primary CheckBox (Border)" color="primary" variant="border" checked={checkBoxStates.primary} onChange={handleCheckBoxChange("primary")}/>
+        <CheckBox_1.default description="Secondary CheckBox (Border)" color="secondary" variant="border" checked={checkBoxStates.secondary} onChange={handleCheckBoxChange("secondary")}/>
+        <CheckBox_1.default description="Success CheckBox (Border)" color="success" variant="border" checked={checkBoxStates.success} onChange={handleCheckBoxChange("success")}/>
+        <CheckBox_1.default description="Warning CheckBox (Border)" color="warning" variant="border" checked={checkBoxStates.warning} onChange={handleCheckBoxChange("warning")}/>
+        <CheckBox_1.default description="Danger CheckBox (Border)" color="danger" variant="border" checked={checkBoxStates.danger} onChange={handleCheckBoxChange("danger")}/>
       </div>
       <div className="my-7 space-y-4"/>
-      <CodeBox code={`import { CheckBox } from '@components/CheckBox';
+      <CodeBox_1.default code={`import { CheckBox } from '@components/CheckBox';
 
 function Example() {
   return (
@@ -241,10 +269,10 @@ export default Example;`} language="tsx" index={6} copied={copied} handleCopy={h
         <code>disabled</code> prop을 이용하여 체크박스를 비활성화할 수 있습니다.
       </p>
       <div className="space-y-4">
-        <CheckBox description="Disabled CheckBox" checked={checkBoxStates.example} disabled={true}/>
+        <CheckBox_1.default description="Disabled CheckBox" checked={checkBoxStates.example} disabled={true}/>
       </div>
       <div className="my-7 space-y-4"/>
-      <CodeBox code={`import { CheckBox } from '@components/CheckBox';
+      <CodeBox_1.default code={`import { CheckBox } from '@components/CheckBox';
 
 function Example() {
   return (
@@ -269,10 +297,10 @@ export default Example;`} language="tsx" index={7} copied={copied} handleCopy={h
       </p>
       <p>아래 예시는 체크하면 빨간색 배경이 되도록 커스터마이징한 것입니다.</p>
       <div className="space-y-4">
-        <CheckBox variant="border" color="basic" className="checked:!bg-red-500" description="Custom ClassName CheckBox" checked={checkBoxStates.custom} onChange={handleCheckBoxChange("custom")}/>
+        <CheckBox_1.default variant="border" color="basic" className="checked:!bg-red-500" description="Custom ClassName CheckBox" checked={checkBoxStates.custom} onChange={handleCheckBoxChange("custom")}/>
       </div>
       <div className="my-7 space-y-4"/>
-      <CodeBox code={`import { CheckBox } from '@components/CheckBox';
+      <CodeBox_1.default code={`import { CheckBox } from '@components/CheckBox';
 
 function Example() {
   return (
@@ -406,4 +434,4 @@ export default Example;`} language="tsx" index={8} copied={copied} handleCopy={h
       </table>
     </div>);
 };
-export default CheckBoxDoc;
+exports.default = CheckBoxDoc;

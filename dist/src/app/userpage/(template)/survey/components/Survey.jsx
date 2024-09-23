@@ -1,14 +1,19 @@
+"use strict";
 "use client";
-import CheckBox from "@components/CheckBox/CheckBox";
-import ProgressBarBasic from "@components/ProgressBar/ProgressBarBasic";
-import Button from "@components/Button/Button";
-import RadioButtonBasic from "@components/RadioButton/RadioButtonBasic";
-import { useState } from "react";
-import { useSurveyStore } from "app/store/useSurveyStore";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+const CheckBox_1 = __importDefault(require("@components/CheckBox/CheckBox"));
+const ProgressBarBasic_1 = __importDefault(require("@components/ProgressBar/ProgressBarBasic"));
+const Button_1 = __importDefault(require("@components/Button/Button"));
+const RadioButtonBasic_1 = __importDefault(require("@components/RadioButton/RadioButtonBasic"));
+const react_1 = require("react");
+const useSurveyStore_1 = require("app/store/useSurveyStore");
 const Survey = () => {
-    const [basicSelectedValue, setBasicSelectedValue] = useState("");
-    const [selectCheckbox, setSelectCheckbox] = useState([]);
-    const { title1, description1, checkboxSize, checkboxColor, checkboxVariant, checkboxText1, checkboxText2, checkboxText3, checkboxText4, title2, description2, radiobuttonSize, radiobuttonColor, radioLabel1, radioLabel2, radioLabel3, radioLabel4, radioLabel5, submitButton, cancelButton, setSurveyState, } = useSurveyStore();
+    const [basicSelectedValue, setBasicSelectedValue] = (0, react_1.useState)("");
+    const [selectCheckbox, setSelectCheckbox] = (0, react_1.useState)([]);
+    const { title1, description1, checkboxSize, checkboxColor, checkboxVariant, checkboxText1, checkboxText2, checkboxText3, checkboxText4, title2, description2, radiobuttonSize, radiobuttonColor, radioLabel1, radioLabel2, radioLabel3, radioLabel4, radioLabel5, submitButton, cancelButton, setSurveyState, } = (0, useSurveyStore_1.useSurveyStore)();
     const handleBasicChange = (event) => {
         setBasicSelectedValue(event.target.value);
     };
@@ -37,40 +42,40 @@ const Survey = () => {
     return (<div className="grid place-items-center gap-y-6">
       <div className="grid place-items-center gap-y-6 rounded-lg bg-white p-8 shadow-lg dark:bg-[#333742]">
         <div className="w-[470px] dark:text-white">
-          <ProgressBarBasic percent={progressBarPercent()} showPercent completed/>
+          <ProgressBarBasic_1.default percent={progressBarPercent()} showPercent completed/>
         </div>
         <div className="w-[470px] rounded-lg border border-[#9AC5E5] p-4">
           <h2 className="mb-2 text-lg">{title1}</h2>
           <p className="mb-2 mt-[-4px] text-sm text-Gray">{description1}</p>
           <div className="space-y-2 dark:text-white">
-            <CheckBox color={checkboxColor} description={checkboxText1} variant={checkboxVariant} boxSize={checkboxSize} onChange={(e) => 
+            <CheckBox_1.default color={checkboxColor} description={checkboxText1} variant={checkboxVariant} boxSize={checkboxSize} onChange={(e) => 
         //여러 체크박스 중 어떤 것을 선택하거나 해제했는지 파악하기 위해 뒤에 해당하는 값을 넣음
         onChangeCheckboxHandler(e.target.checked, checkboxText1)}/>
-            <CheckBox color={checkboxColor} description={checkboxText2} boxSize={checkboxSize} variant={checkboxVariant} onChange={(e) => onChangeCheckboxHandler(e.target.checked, checkboxText2)}/>
-            <CheckBox color={checkboxColor} description={checkboxText3} boxSize={checkboxSize} variant={checkboxVariant} onChange={(e) => onChangeCheckboxHandler(e.target.checked, checkboxText3)}/>
-            <CheckBox color={checkboxColor} description={checkboxText4} boxSize={checkboxSize} variant={checkboxVariant} onChange={(e) => onChangeCheckboxHandler(e.target.checked, checkboxText4)}/>
+            <CheckBox_1.default color={checkboxColor} description={checkboxText2} boxSize={checkboxSize} variant={checkboxVariant} onChange={(e) => onChangeCheckboxHandler(e.target.checked, checkboxText2)}/>
+            <CheckBox_1.default color={checkboxColor} description={checkboxText3} boxSize={checkboxSize} variant={checkboxVariant} onChange={(e) => onChangeCheckboxHandler(e.target.checked, checkboxText3)}/>
+            <CheckBox_1.default color={checkboxColor} description={checkboxText4} boxSize={checkboxSize} variant={checkboxVariant} onChange={(e) => onChangeCheckboxHandler(e.target.checked, checkboxText4)}/>
           </div>
         </div>
         <div className="w-[470px] rounded-lg border border-[#9AC5E5] p-4 leading-7">
           <h2 className="mb-2 text-lg">{title2}</h2>
           <p className="mb-2 mt-[-4px] text-sm text-Gray">{description2}</p>
           <div className="dark:text-white">
-            <RadioButtonBasic name="basicOptions" value="option1" checked={basicSelectedValue === "option1"} onChange={handleBasicChange} label={radioLabel1} size={radiobuttonSize} color={radiobuttonColor}/>
-            <RadioButtonBasic name="basicOptions" value="option2" checked={basicSelectedValue === "option2"} onChange={handleBasicChange} label={radioLabel2} size={radiobuttonSize} color={radiobuttonColor}/>
-            <RadioButtonBasic name="basicOptions" value="option3" checked={basicSelectedValue === "option3"} onChange={handleBasicChange} label={radioLabel3} size={radiobuttonSize} color={radiobuttonColor}/>
-            <RadioButtonBasic name="basicOptions" value="option4" checked={basicSelectedValue === "option4"} onChange={handleBasicChange} label={radioLabel4} color={radiobuttonColor} size={radiobuttonSize}/>
-            <RadioButtonBasic name="basicOptions" value="option5" checked={basicSelectedValue === "option5"} onChange={handleBasicChange} label={radioLabel5} color={radiobuttonColor} size={radiobuttonSize}/>
+            <RadioButtonBasic_1.default name="basicOptions" value="option1" checked={basicSelectedValue === "option1"} onChange={handleBasicChange} label={radioLabel1} size={radiobuttonSize} color={radiobuttonColor}/>
+            <RadioButtonBasic_1.default name="basicOptions" value="option2" checked={basicSelectedValue === "option2"} onChange={handleBasicChange} label={radioLabel2} size={radiobuttonSize} color={radiobuttonColor}/>
+            <RadioButtonBasic_1.default name="basicOptions" value="option3" checked={basicSelectedValue === "option3"} onChange={handleBasicChange} label={radioLabel3} size={radiobuttonSize} color={radiobuttonColor}/>
+            <RadioButtonBasic_1.default name="basicOptions" value="option4" checked={basicSelectedValue === "option4"} onChange={handleBasicChange} label={radioLabel4} color={radiobuttonColor} size={radiobuttonSize}/>
+            <RadioButtonBasic_1.default name="basicOptions" value="option5" checked={basicSelectedValue === "option5"} onChange={handleBasicChange} label={radioLabel5} color={radiobuttonColor} size={radiobuttonSize}/>
           </div>
         </div>
         <div className="flex w-[470px] justify-end">
-          <Button className="mr-2 w-[75px]" color="danger">
+          <Button_1.default className="mr-2 w-[75px]" color="danger">
             {cancelButton}
-          </Button>
-          <Button className="w-[75px]" color="primary">
+          </Button_1.default>
+          <Button_1.default className="w-[75px]" color="primary">
             {submitButton}
-          </Button>
+          </Button_1.default>
         </div>
       </div>
     </div>);
 };
-export default Survey;
+exports.default = Survey;
