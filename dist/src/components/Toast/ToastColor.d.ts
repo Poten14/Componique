@@ -1,0 +1,36 @@
+export declare const bgColors: {
+    primary: string;
+    secondary: string;
+    success: string;
+    warning: string;
+    danger: string;
+    red: string;
+    orange: string;
+    yellow: string;
+    green: string;
+    blue: string;
+    purple: string;
+    pink: string;
+    basic: string;
+    white: string;
+    gray: string;
+    black: string;
+};
+export declare const borderColors: {
+    primary: string;
+    secondary: string;
+    success: string;
+    warning: string;
+    danger: string;
+    red: string;
+    orange: string;
+    yellow: string;
+    green: string;
+    blue: string;
+    purple: string;
+    pink: string;
+    basic: string;
+    white: string;
+    gray: string;
+    black: string;
+};

@@ -1,0 +1,54 @@
+import { ExtraSize, Size } from "types/type";
+type ButtonColor = "basic" | "primary" | "secondary" | "success" | "warning" | "danger" | "red" | "orange" | "yellow" | "green" | "blue" | "purple" | "pink";
+type DropDownType1 = "basic" | "rounded" | "borderless-rounded" | "less-rounded";
+type DropDownType2 = "basic" | "rounded" | "borderless-rounded" | "less-rounded";
+type InputVariant = "outlined" | "filled";
+type TextareaColor = "red" | "skyblue" | "green" | "gray";
+type TextareaResize = "none" | "both" | "horizontal" | "vertical";
+type ImageUploadShape = "rectangle" | "circle";
+type ImageUploadVariant = "solid" | "border";
+type ImageUploadColor = "basic" | "primary" | "secondary" | "success" | "warning" | "danger" | "red" | "orange" | "yellow" | "green" | "blue" | "purple" | "pink" | "white" | "gray" | "black";
+interface GroupedOption {
+    groupName: string;
+    items: string[];
+}
+interface ServiceState {
+    numberType: string;
+    phoneNumber: string;
+    serviceItem: string;
+    inputSize1: ExtraSize;
+    inputVariant1: InputVariant;
+    inputSize2: ExtraSize;
+    inputVariant2: InputVariant;
+    name: string;
+    email: string;
+    phone: string;
+    title: string;
+    details: string;
+    attachment: string | null;
+    inputWidth: string;
+    buttonColor1: ButtonColor;
+    buttonSize1: Size;
+    buttonVariant1: "solid" | "border" | "flat" | "light";
+    buttonColor2: ButtonColor;
+    buttonSize2: Size;
+    buttonVariant2: "solid" | "border" | "flat" | "light";
+    toastMessage: string;
+    toastColor: "success" | "danger";
+    isToastVisible: boolean;
+    dropDownOption1: string[];
+    dropDownOption2: GroupedOption[];
+    dropDownType1: DropDownType1;
+    dropDownType2: DropDownType2;
+    detailSize: ExtraSize;
+    detailColor: TextareaColor;
+    detailResize: TextareaResize;
+    imageUploadSize: Size;
+    imageUploadColor: ImageUploadColor;
+    imageUploadShape: ImageUploadShape;
+    imageUploadVariant: ImageUploadVariant;
+    onImageSelect: (data: string | null) => void;
+    setServiceState: (key: keyof Omit<ServiceState, "setServiceState">, value: any) => void;
+}
+export declare const useServiceStore: import("zustand").UseBoundStore<import("zustand").StoreApi<ServiceState>>;
+export {};
