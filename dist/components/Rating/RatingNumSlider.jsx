@@ -14,7 +14,7 @@ const RatingNumSlider = ({ min = 1, max = 10, step = 1, onRatingChange, }) => {
     return (<div className="felx items-center">
       <input type="range" min={min} max={max} step={step} value={rating} onChange={handleChange} className="range-slider"/>
       <span className="m-4 dark:text-[#cdcdcd]">{rating}</span>
-      <style jsx>{`
+      <style>{`
         .range-slider {
           -webkit-appearance: none;
           width: 100%;
@@ -40,7 +40,7 @@ const RatingNumSlider = ({ min = 1, max = 10, step = 1, onRatingChange, }) => {
         .range-slider::-moz-range-thumb {
           width: 20px;
           height: 20px;
-          background-color: #;
+          background-color: #9ac5e5;  {/* 여기에 '#' 누락된 부분 수정 */}
           border-radius: 50%;
           cursor: pointer;
         }

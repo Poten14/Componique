@@ -3,7 +3,7 @@
 import React from "react";
 import Image from "next/image";
 import Logo from "../../../public/images/logo.svg";
-import SearchInput2 from "@components/Input/SearchInput2";
+import SearchInput2 from "../Input/SearchInput2";
 import { Size } from "types/type";
 
 type NavbarSearchProps = {

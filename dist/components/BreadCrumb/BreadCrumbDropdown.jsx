@@ -6,7 +6,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const react_1 = require("react");
 const navigation_1 = require("next/navigation");
-const Icon_1 = __importDefault(require("@components/Icon/Icon"));
+const Icon_1 = __importDefault(require("../Icon/Icon"));
 const BreadCrumbDropdown = ({ items }) => {
     const [dropdownOpen, setDropdownOpen] = (0, react_1.useState)(false);
     const [activeDropdown, setActiveDropdown] = (0, react_1.useState)(null);

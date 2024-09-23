@@ -1,4 +1,4 @@
-import Button from "@components/Button/Button";
+import Button from "../Button/Button";
 import React, { ReactNode, useEffect, useState } from "react";
 import { createPortal } from "react-dom";
 import { ExtraSize } from "types/type";

@@ -26,7 +26,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const Button_1 = __importDefault(require("@components/Button/Button"));
+const Button_1 = __importDefault(require("../Button/Button"));
 const react_1 = __importStar(require("react"));
 const react_dom_1 = require("react-dom");
 const SizeClass = {

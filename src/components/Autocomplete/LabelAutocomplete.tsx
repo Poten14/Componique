@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import { Size } from "types/type";
-import Icon from "@components/Icon/Icon";
+import Icon from "../Icon/Icon";
 
 export interface Option {
   label: string;

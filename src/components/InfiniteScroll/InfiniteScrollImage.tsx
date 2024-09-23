@@ -1,5 +1,5 @@
 import { useState, useRef, useCallback, useEffect } from "react";
-import BasicSpinner from "@components/Spinner/BasicSpinner";
+import BasicSpinner from "../Spinner/BasicSpinner";
 import Image from "next/image";
 
 // 컴포넌트의 props 타입 정의

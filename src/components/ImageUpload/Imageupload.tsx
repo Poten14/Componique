@@ -3,9 +3,9 @@ import React, { useState, ChangeEvent } from "react";
 import { Color16, Size } from "types/type";
 import { v4 as uuidv4 } from "uuid";
 import { useEffect } from "react";
-import { IconName } from "@components/Icon/Icon";
+import { IconName } from "../Icon/Icon";
 import Image from "next/image";
-import Icon from "@components/Icon/Icon";
+import Icon from "../Icon/Icon";
 type ImageUploadProps = {
   shape?: "rectangle" | "circle";
   size?: Size;

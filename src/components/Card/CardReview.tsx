@@ -1,5 +1,5 @@
 import React from "react";
-import AvatarBasic from "@components/Avatar/AvatarBasic";
+import AvatarBasic from "../Avatar/AvatarBasic";
 
 // ReviewCardProps 인터페이스 정의
 interface ReviewCardProps {

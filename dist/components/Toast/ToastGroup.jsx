@@ -4,7 +4,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const Toast_1 = __importDefault(require("@components/Toast/Toast"));
+const Toast_1 = __importDefault(require("../Toast/Toast"));
 const react_1 = require("react");
 const ToastGroup = ({ toasts, position = "leftBottom", onAllClosed, }) => {
     // Toast들의 열림 상태를 관리하는 변수 선언, 초기값은 모든 Toast가 닫힌 상태로 설정함

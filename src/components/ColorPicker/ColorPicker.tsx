@@ -1,6 +1,6 @@
 "use client";
 
-import ColorPickerUI from "@components/ColorPicker/ColorPickerUI";
+import ColorPickerUI from "../ColorPicker/ColorPickerUI";
 
 const ColorPicker: React.FC<{ selectColor?: (color: string) => void }> = ({
   selectColor,

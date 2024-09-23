@@ -5,7 +5,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const react_1 = require("react");
-const Button_1 = __importDefault(require("@components/Button/Button"));
+const Button_1 = __importDefault(require("../Button/Button"));
 const ColorPickerUI = ({ colors, selectColor }) => {
     const [selectedColor, setSelectedColor] = (0, react_1.useState)("#ffffff");
     const [msg, setMsg] = (0, react_1.useState)("");

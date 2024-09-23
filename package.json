@@ -12,6 +12,7 @@
   "dependencies": {
     "@react-google-maps/api": "^2.19.3",
     "@tailwindcss/typography": "^0.5.14",
+    "@types/styled-jsx": "^3.4.4",
     "@types/uuid": "^10.0.0",
     "leaflet": "^1.9.4",
     "masonic": "^4.0.1",

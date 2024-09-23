@@ -4,7 +4,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const react_1 = require("react");
-const BasicSpinner_1 = __importDefault(require("@components/Spinner/BasicSpinner"));
+const BasicSpinner_1 = __importDefault(require("../Spinner/BasicSpinner"));
 const InfiniteScrollBasic = ({ content }) => {
     const [items, setItems] = (0, react_1.useState)([]); // txt파일을 문장별로 저장
     const [page, setPage] = (0, react_1.useState)(1); // 현재 로드된 페이지 번호 저장

@@ -1,6 +1,6 @@
 "use client";
 
-import Icon from "@components/Icon/Icon";
+import Icon from "../Icon/Icon";
 import React, { useState, useEffect } from "react";
 import { Size } from "types/type";
 
@@ -67,7 +67,7 @@ const SearchInput2: React.FC<SearchInputProps> = ({
     <div
       className={`flex items-center rounded-full pl-2 shadow-md transition-all duration-300 ${
         isExpanded ? expandedSizeClasses[size] : sizeClasses[size]
-      } ${isDarkMode ? "border-Navy border bg-transparent" : "bg-white"}`}
+      } ${isDarkMode ? "border border-Navy bg-transparent" : "bg-white"}`}
     >
       <input
         type="text"

@@ -9,7 +9,7 @@ const react_1 = __importDefault(require("react"));
 const fa_1 = require("react-icons/fa");
 const io5_1 = require("react-icons/io5");
 const rx_1 = require("react-icons/rx");
-const Icon_1 = __importDefault(require("@components/Icon/Icon"));
+const Icon_1 = __importDefault(require("../Icon/Icon"));
 const team = [
     {
         name: "Kim Jun Su",

@@ -3,7 +3,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const Icon_1 = __importDefault(require("@components/Icon/Icon"));
+const Icon_1 = __importDefault(require("../Icon/Icon"));
 const Button = ({ size = "medium", color = "basic", radius = "medium", variant = "solid", className, icon, iconColor, disabled = false, iconSize = "medium", iconPosition = "left", children, ...rest }) => {
     const buttonSize = size === "small"
         ? "px-2 py-2 text-xs"

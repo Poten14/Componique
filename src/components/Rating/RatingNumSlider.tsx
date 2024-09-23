@@ -37,7 +37,7 @@ const RatingNumSlider = ({
         className="range-slider"
       />
       <span className="m-4 dark:text-[#cdcdcd]">{rating}</span>
-      <style jsx>{`
+      <style>{`
         .range-slider {
           -webkit-appearance: none;
           width: 100%;
@@ -63,7 +63,7 @@ const RatingNumSlider = ({
         .range-slider::-moz-range-thumb {
           width: 20px;
           height: 20px;
-          background-color: #;
+          background-color: #9ac5e5;  {/* 여기에 '#' 누락된 부분 수정 */}
           border-radius: 50%;
           cursor: pointer;
         }
