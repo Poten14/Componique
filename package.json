@@ -1,6 +1,6 @@
 {
   "name": "componique",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "private": false,
   "scripts": {
     "dev": "next dev",
@@ -44,7 +44,7 @@
   },
   "description": "- 다양한 UI 컴포넌트 제공\r - 컴포넌트 문서화 및 사용 예시 제공\r - 직접 체헙 해볼수 있는 커스터마이징 패널이 포함된 템플릿 페이지 제공\r - NPM 배포",
   "main": "dist/index.js",
-  "types": "dist",
+  "types": "dist/index.d.ts",
   "files": [
     "dist/**/*"
   ],

@@ -10,6 +10,7 @@
     "jsx": "preserve", // JSX 처리 방식
     "strict": true, // 엄격한 타입 검사
     "outDir": "./dist", // 결과물이 저장될 폴더
+    "rootDir": "./src",
     "baseUrl": "./src", // 기본 경로 설정
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
@@ -37,5 +38,5 @@
     ".next/types/**/*.ts",
     "src/**/*"
   ],
-  "exclude": ["node_modules", "dist", "tailwind.config.ts"]
+  "exclude": ["node_modules", "dist", "tailwind.config.ts", ".next"]
 }
