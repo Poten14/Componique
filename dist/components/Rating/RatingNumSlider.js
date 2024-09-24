@@ -1,6 +1,7 @@
 "use strict";
 "use client";
 Object.defineProperty(exports, "__esModule", { value: true });
+const jsx_runtime_1 = require("react/jsx-runtime");
 const react_1 = require("react");
 const RatingNumSlider = ({ min = 1, max = 10, step = 1, onRatingChange, }) => {
     const [rating, setRating] = (0, react_1.useState)(0);
@@ -11,10 +12,7 @@ const RatingNumSlider = ({ min = 1, max = 10, step = 1, onRatingChange, }) => {
             onRatingChange(value);
         }
     };
-    return (<div className="felx items-center">
-      <input type="range" min={min} max={max} step={step} value={rating} onChange={handleChange} className="range-slider"/>
-      <span className="m-4 dark:text-[#cdcdcd]">{rating}</span>
-      <style jsx>{`
+    return ((0, jsx_runtime_1.jsxs)("div", { className: "felx items-center", children: [(0, jsx_runtime_1.jsx)("input", { type: "range", min: min, max: max, step: step, value: rating, onChange: handleChange, className: "range-slider" }), (0, jsx_runtime_1.jsx)("span", { className: "m-4 dark:text-[#cdcdcd]", children: rating }), (0, jsx_runtime_1.jsx)("style", { jsx: true, children: `
         .range-slider {
           -webkit-appearance: none;
           width: 100%;
@@ -44,7 +42,6 @@ const RatingNumSlider = ({ min = 1, max = 10, step = 1, onRatingChange, }) => {
           border-radius: 50%;
           cursor: pointer;
         }
-      `}</style>
-    </div>);
+      ` })] }));
 };
 exports.default = RatingNumSlider;

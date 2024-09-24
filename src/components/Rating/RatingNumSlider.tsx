@@ -37,7 +37,7 @@ const RatingNumSlider = ({
         className="range-slider"
       />
       <span className="m-4 dark:text-[#cdcdcd]">{rating}</span>
-      <style>{`
+      <style jsx>{`
         .range-slider {
           -webkit-appearance: none;
           width: 100%;
