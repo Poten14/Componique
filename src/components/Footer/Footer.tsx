@@ -29,6 +29,9 @@ const team = [
     github: "https://github.com/allone9425",
     blog: "https://velog.io/@dawnrose",
   },
+  {
+    name: "Kim Deok joong"
+  },
 ];
 
 const Footer = () => {
