@@ -32,6 +32,7 @@ const team = [
  {
     name: "Kim Deok joong"
   },
+  
 ];
 
 const Footer = () => {
