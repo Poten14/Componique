@@ -17,7 +17,7 @@ jobs:
         id: push_directory
         uses: cpina/github-action-push-to-another-repository@main
         env:
-          API_TOKEN_GITHUB: ${{ secrets.AUTH_TOKEN }}
+          API_TOKEN_GITHUB: ${{ secrets.AUTH_COM }}
         with:
           source-directory: "output"
           destination-github-username: 5622lsk
